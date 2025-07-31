@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageOptim - Intelligent JPEG Image Compression Without Quality Loss</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-images"></i>
+                <span>ImageOptim</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#compress" class="nav-link">Compress</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#login" class="nav-link" id="loginLink" onclick="console.log('Inline click handler'); if(!window.currentUser){console.log('Opening LOGIN modal from inline'); openLoginModal(false); return false;}">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+                <button class="upgrade-btn" onclick="openPremiumModal()" id="upgradeBtn" style="display: none;">
+                    <i class="fas fa-crown"></i>
+                    Upgrade to Premium
+                </button>
+                <button class="btn-primary" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-download"></i>
+                    Compress Image
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Intelligent JPEG Image Compression Without Quality Loss</h1>
+                    <p>Reduce your image file sizes without sacrificing visual quality. Advanced algorithms and visual assessment tools to ensure your images look perfect while using less storage.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary btn-large">Get Started</button>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-optimizer-demo">
+                        <div class="optimizer-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Image Optimizer Ready</span>
+                        </div>
+                        <div class="comparison-demo">
+                            <div class="demo-file">
+                                <span class="demo-label">Original</span>
+                                <span class="demo-size">24 MB</span>
+                            </div>
+                            <div class="demo-arrow">→</div>
+                            <div class="demo-file">
+                                <span class="demo-label">Compressed</span>
+                                <span class="demo-size">580 KB</span>
+                            </div>
+                        </div>
+                        <div class="size-reduction">
+                            <i class="fas fa-check"></i>
+                            <span>Size reduction: 76% smaller</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Interface -->
+    <section id="compress" class="upload-section">
+        <div class="container">
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop Your JPEG Images Here</h3>
+                        <p>Or click to browse files</p>
+                        <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,image/jpeg,image/jpg,image/*" hidden>
+                        <button class="btn-secondary" id="browseBtn">
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="upload-options">
+                    <div class="quality-control">
+                        <label for="qualitySlider">Compression Quality:</label>
+                        <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                        <span id="qualityValue">80%</span>
+                    </div>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-quality="95">Best Quality</button>
+                        <button class="preset-btn active" data-quality="80">Web Optimized</button>
+                        <button class="preset-btn" data-quality="60">High Compression</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processing Queue -->
+    <section class="processing-section" id="processingSection" style="display: none;">
+        <div class="container">
+            <div class="processing-header">
+                <h3>Processing Queue <span id="queueCount">(0 files)</span></h3>
+                <button class="btn-secondary" id="clearQueue">Clear Queue</button>
+            </div>
+            <div class="processing-list" id="processingList"></div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="container">
+            <h3>Your Compressed Images</h3>
+            <div class="results-grid" id="resultsGrid"></div>
+            
+            <!-- Ad after results -->
+            <div class="results-ad" id="resultsAd">
+                <div class="ad-label">ADVERTISEMENT</div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="ZZZZZZZZZZ"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Perfect Image Compression</h2>
+                <p>Our intelligent JPEG compression tool offers a comprehensive set of features to help you optimize your images without sacrificing quality.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Drag & Drop Upload</h3>
+                    <p>Simply drag and drop your JPG images to begin compression. Supports multiple files in batch processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Intelligent Compression</h3>
+                    <p>Advanced algorithms that analyze each image for optimal compression without losing important details.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visual Comparison</h3>
+                    <p>Interactive side-by-side comparison with before and after to assess visual quality with precision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Adjustable Quality</h3>
+                    <p>Fine-tune compression quality from 1-100% to find the perfect balance between size and visual fidelity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Difference Analysis</h3>
+                    <p>Visualize compression artifacts with our difference highlighting tool to identify quality issues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Batch Processing</h3>
+                    <p>Process multiple images simultaneously with our queue system for fast batch optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About ImageOptim</h2>
+                <p>Learn more about our mission to provide the best image compression technology</p>
+            </div>
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Our Mission</h3>
+                        <p>ImageOptim was created to solve a common problem faced by web developers, designers, and content creators: the need to reduce image file sizes without sacrificing visual quality. Our advanced compression algorithms ensure your images look perfect while using minimal storage space.</p>
+                        
+                        <h3>Why Choose ImageOptim?</h3>
+                        <ul class="about-features">
+                            <li><strong>Privacy First:</strong> All compression happens in your browser - your images never leave your device</li>
+                            <li><strong>Advanced Technology:</strong> State-of-the-art algorithms that preserve image quality</li>
+                            <li><strong>User-Friendly:</strong> Simple drag-and-drop interface that anyone can use</li>
+                            <li><strong>Fast Processing:</strong> Batch compression with real-time progress tracking</li>
+                            <li><strong>No Installation Required:</strong> Works directly in your web browser</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10M+</div>
+                            <div class="stat-label">Images Processed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Average Size Reduction</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Happy Users</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Privacy Protected</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-cta">
+                    <h3>Ready to Optimize Your Images?</h3>
+                    <p>Join thousands of users who trust ImageOptim for their image compression needs.</p>
+                    <button class="btn-primary btn-large" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-compress"></i>
+                        Start Compressing Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our JPEG compression tool</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How much can I compress my images?</h3>
+                    <p>Typically, you can reduce file sizes by 60-90% while maintaining excellent visual quality, depending on the original image and your quality settings.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a file size limit?</h3>
+                    <p>Free users can upload files up to 10MB each. Premium users enjoy unlimited file sizes and batch processing.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What formats are supported?</h3>
+                    <p>Currently, we support JPEG/JPG formats. Support for PNG, WebP, and other formats is coming soon.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are my images stored on your servers?</h3>
+                    <p>No, all compression happens in your browser. Your images are never uploaded to our servers, ensuring complete privacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Create an Account</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group" id="nameFields">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group" id="confirmPasswordField">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" id="authSubmitBtn">Create Account</button>
+                </form>
+                <div class="auth-switch">
+                    <p id="authSwitchText">Already have an account? <a href="#" onclick="toggleAuthMode()">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advertisement Section -->
+    <!-- 
+    GOOGLE ADSENSE SETUP INSTRUCTIONS:
+    1. Sign up for Google AdSense at https://www.google.com/adsense/
+    2. Add your website and verify ownership
+    3. Create ad units in your AdSense dashboard
+    4. Replace all instances of:
+       - ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID
+       - XXXXXXXXXX with your banner ad slot ID
+       - YYYYYYYYYY with your sidebar ad slot ID  
+       - ZZZZZZZZZZ with your results ad slot ID
+    5. Wait for AdSense approval (can take 24-48 hours)
+    6. Monitor performance in AdSense dashboard
+    -->
+    <div class="advertisement-section" id="bannerAd">
+        <div class="ad-container">
+            <div class="ad-label">ADVERTISEMENT</div>
+            <div class="ad-content">
+                <!-- Google AdSense Display Ad -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                     crossorigin="anonymous"></script>
+                <!-- ImageOptim Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Advertisement -->
+    <div class="sidebar-ad" id="sidebarAd" style="display: none;">
+        <div class="ad-label">ADVERTISEMENT</div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+             crossorigin="anonymous"></script>
+        <!-- ImageOptim Sidebar Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="YYYYYYYYYY"
+             data-ad-format="vertical"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Premium Upgrade Modal -->
+    <div id="premiumModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upgrade to Premium</h2>
+                <span class="close" onclick="closePremiumModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="premium-plans">
+                    <div class="plan-card">
+                        <h3>Premium Monthly</h3>
+                        <div class="price">$9.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Unlimited file uploads</li>
+                            <li><i class="fas fa-check"></i> No file size limits</li>
+                            <li><i class="fas fa-check"></i> Batch processing up to 100 files</li>
+                            <li><i class="fas fa-check"></i> Priority processing</li>
+                            <li><i class="fas fa-check"></i> Advanced compression algorithms</li>
+                            <li><i class="fas fa-check"></i> No advertisements</li>
+                        </ul>
+                        <button class="btn-primary btn-large" onclick="initializePayment('monthly')">
+                            Subscribe Monthly
+                        </button>
+                    </div>
+                    <div class="plan-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Premium Yearly</h3>
+                        <div class="price">$99.99<span>/year</span></div>
+                        <div class="savings">Save $19.89 per year!</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Everything in Monthly</li>
+                            <li><i class="fas fa-check"></i> 2 months free</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                        </ul>
+                        <button class="btn-primary btn-large" onclick="initializePayment('yearly')">
+                            Subscribe Yearly
+                        </button>
+                    </div>
+                </div>
+                <div class="payment-security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure payment powered by Stripe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- Try to load CompressorJS from multiple CDNs -->
+    <script>
+        window.compressionLibraryLoaded = false;
+        
+        function tryLoadCompressor(urls, index = 0) {
+            if (index >= urls.length) {
+                console.log('All CDN attempts failed, using standalone compression');
+                window.compressionLibraryLoaded = 'canvas-only';
+                return;
+            }
+            
+            const script = document.createElement('script');
+            script.src = urls[index];
+            
+            script.onload = () => {
+                if (typeof Compressor !== 'undefined') {
+                    console.log('✅ CompressorJS loaded from:', urls[index]);
+                    window.compressionLibraryLoaded = true;
+                } else {
+                    tryLoadCompressor(urls, index + 1);
+                }
+            };
+            
+            script.onerror = () => {
+                console.log('❌ Failed to load from:', urls[index]);
+                tryLoadCompressor(urls, index + 1);
+            };
+            
+            document.head.appendChild(script);
+        }
+        
+        // Try multiple CDNs
+        const cdnUrls = [
+            'https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js',
+            'https://unpkg.com/compressorjs@1.2.1/dist/compressor.min.js',
+            'https://cdn.jsdelivr.net/npm/compressorjs@1.2.1/dist/compressor.min.js'
+        ];
+        
+        tryLoadCompressor(cdnUrls);
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

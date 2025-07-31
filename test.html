@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compression Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-area { border: 2px dashed #ccc; padding: 20px; margin: 20px 0; }
+        .results { background: #f5f5f5; padding: 15px; margin: 10px 0; }
+        button { padding: 10px 20px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Compression Library Test</h1>
+    
+    <div class="test-area">
+        <h3>Test File Upload</h3>
+        <input type="file" id="testFile" accept=".jpg,.jpeg,image/jpeg,image/jpg,image/*">
+        <button onclick="testCompression()">Test Compression</button>
+        <button onclick="testCanvas()">Test Canvas</button>
+    </div>
+    
+    <div id="results" class="results" style="display:none;">
+        <h3>Test Results</h3>
+        <div id="output"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
+    <script>
+        console.log('CompressorJS loaded:', typeof Compressor !== 'undefined');
+        
+        function testCompression() {
+            const fileInput = document.getElementById('testFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert('Please select a file first');
+                return;
+            }
+            
+            console.log('Testing file:', file.name, file.size, file.type);
+            
+            const results = document.getElementById('results');
+            const output = document.getElementById('output');
+            results.style.display = 'block';
+            output.innerHTML = '<p>Testing compression...</p>';
+            
+            new Compressor(file, {
+                quality: 0.8,
+                success(result) {
+                    console.log('✅ Compression successful!');
+                    console.log('Original:', file.size, 'Compressed:', result.size);
+                    
+                    const savings = ((file.size - result.size) / file.size * 100).toFixed(1);
+                    output.innerHTML = `
+                        <p><strong>✅ Compression Successful!</strong></p>
+                        <p>Original size: ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        <p>Compressed size: ${(result.size / 1024 / 1024).toFixed(2)} MB</p>
+                        <p>Savings: ${savings}%</p>
+                    `;
+                },
+                error(err) {
+                    console.error('❌ Compression failed:', err);
+                    output.innerHTML = `
+                        <p><strong>❌ Compression Failed!</strong></p>
+                        <p>Error: ${err.message}</p>
+                    `;
+                }
+            });
+        }
+        
+        function testCanvas() {
+            const fileInput = document.getElementById('testFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert('Please select a file first');
+                return;
+            }
+            
+            console.log('Testing canvas with file:', file.name);
+            
+            const results = document.getElementById('results');
+            const output = document.getElementById('output');
+            results.style.display = 'block';
+            output.innerHTML = '<p>Testing canvas compression...</p>';
+            
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob((blob) => {
+                    if (blob) {
+                        const savings = ((file.size - blob.size) / file.size * 100).toFixed(1);
+                        output.innerHTML = `
+                            <p><strong>✅ Canvas Compression Successful!</strong></p>
+                            <p>Original size: ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                            <p>Canvas size: ${(blob.size / 1024 / 1024).toFixed(2)} MB</p>
+                            <p>Savings: ${savings}%</p>
+                        `;
+                    } else {
+                        output.innerHTML = '<p><strong>❌ Canvas compression failed!</strong></p>';
+                    }
+                }, 'image/jpeg', 0.8);
+            };
+            
+            img.onerror = function() {
+                output.innerHTML = '<p><strong>❌ Failed to load image!</strong></p>';
+            };
+            
+            img.src = URL.createObjectURL(file);
+        }
+    </script>
+</body>
+</html>

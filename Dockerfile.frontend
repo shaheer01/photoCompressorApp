@@ -1,0 +1,60 @@
+# Multi-stage build for frontend
+FROM node:18-alpine as builder
+
+WORKDIR /app
+
+# Copy package files (if you have any for build tools)
+COPY package*.json ./
+
+# Install build dependencies (if any)
+RUN npm ci && npm cache clean --force
+
+# Copy frontend files
+COPY index.html .
+COPY styles.css .
+COPY script.js .
+COPY frontend-api.js .
+COPY test.html .
+COPY README.md .
+
+# Create optimized build (minification, etc.)
+RUN mkdir -p dist && \
+    cp index.html dist/ && \
+    cp styles.css dist/ && \
+    cp script.js dist/ && \
+    cp frontend-api.js dist/ && \
+    cp test.html dist/
+
+# Production stage with Nginx
+FROM nginx:alpine
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Copy custom nginx configuration
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Copy built frontend files
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copy any additional static assets
+COPY --from=builder /app/README.md /usr/share/nginx/html/
+
+# Create nginx user and set permissions
+RUN chown -R nginx:nginx /usr/share/nginx/html && \
+    chown -R nginx:nginx /var/cache/nginx && \
+    chown -R nginx:nginx /var/log/nginx && \
+    chown -R nginx:nginx /etc/nginx/conf.d
+
+# Switch to non-root user
+USER nginx
+
+# Expose ports
+EXPOSE 80 443
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:80/health || exit 1
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
