@@ -1,47 +1,51 @@
-const { Pool } = require('pg');
+const mysql = require('mysql2/promise');
 const logger = require('../utils/logger');
 
 // Database connection pool
 let pool;
 
 const dbConfig = {
-    user: process.env.DB_USER,
     host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306,
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT || 5432,
-    max: 20, // Maximum number of clients in the pool
-    idleTimeoutMillis: 30000, // How long a client is allowed to remain idle
-    connectionTimeoutMillis: 2000, // How long to wait for a connection
+    database: process.env.DB_NAME,
+    connectionLimit: 20, // Maximum number of connections in the pool
+    acquireTimeout: 30000, // How long to wait for a connection
+    timeout: 60000, // Query timeout
+    reconnect: true,
+    multipleStatements: false,
     ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 };
 
 // Alternative: use DATABASE_URL if provided (for services like Heroku)
 if (process.env.DATABASE_URL) {
-    pool = new Pool({
-        connectionString: process.env.DATABASE_URL,
-        ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
-    });
+    pool = mysql.createPool(process.env.DATABASE_URL);
 } else {
-    pool = new Pool(dbConfig);
+    pool = mysql.createPool(dbConfig);
 }
 
 // Error handling for pool
-pool.on('error', (err) => {
-    logger.error('Unexpected error on idle client', err);
+pool.on('connection', (connection) => {
+    logger.info(`New database connection established as id ${connection.threadId}`);
 });
 
-pool.on('connect', () => {
-    logger.info('New database connection established');
+pool.on('error', (err) => {
+    logger.error('Database pool error:', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        logger.info('Attempting to reconnect to database...');
+    } else {
+        throw err;
+    }
 });
 
 // Test database connection
 async function connectDB() {
     try {
-        const client = await pool.connect();
-        const result = await client.query('SELECT NOW()');
-        client.release();
-        logger.info(`Database connected successfully at ${result.rows[0].now}`);
+        const connection = await pool.getConnection();
+        const [result] = await connection.execute('SELECT NOW() as now');
+        connection.release();
+        logger.info(`Database connected successfully at ${result[0].now}`);
         return true;
     } catch (error) {
         logger.error('Database connection failed:', error.message);
@@ -50,13 +54,13 @@ async function connectDB() {
 }
 
 // Query helper function
-async function query(text, params) {
+async function query(text, params = []) {
     const start = Date.now();
     try {
-        const result = await pool.query(text, params);
+        const [rows] = await pool.execute(text, params);
         const duration = Date.now() - start;
         logger.debug(`Query executed in ${duration}ms: ${text}`);
-        return result;
+        return { rows }; // Keep same interface as pg
     } catch (error) {
         logger.error('Database query error:', {
             query: text,
@@ -69,17 +73,30 @@ async function query(text, params) {
 
 // Transaction helper
 async function transaction(callback) {
-    const client = await pool.connect();
+    const connection = await pool.getConnection();
     try {
-        await client.query('BEGIN');
+        await connection.beginTransaction();
+        
+        // Create a client-like object with execute method for compatibility
+        const client = {
+            query: async (text, params = []) => {
+                const [rows] = await connection.execute(text, params);
+                return { rows };
+            },
+            execute: async (text, params = []) => {
+                const [rows] = await connection.execute(text, params);
+                return { rows };
+            }
+        };
+        
         const result = await callback(client);
-        await client.query('COMMIT');
+        await connection.commit();
         return result;
     } catch (error) {
-        await client.query('ROLLBACK');
+        await connection.rollback();
         throw error;
     } finally {
-        client.release();
+        connection.release();
     }
 }
 

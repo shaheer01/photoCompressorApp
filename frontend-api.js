@@ -312,6 +312,23 @@ class ImageOptimAPI {
     getCurrentUser() {
         return this.user;
     }
+
+    async getCurrentUserFromAPI() {
+        if (!this.token) {
+            return { success: false, user: null };
+        }
+        try {
+            const response = await this.request('/users/profile');
+            if (response && response.user) {
+                this.user = response.user;
+                return { success: true, user: response.user };
+            }
+            return { success: false, user: null };
+        } catch (error) {
+            console.error('Error fetching current user:', error);
+            return { success: false, user: null };
+        }
+    }
 }
 
 // Global API instance
@@ -451,12 +468,14 @@ function migrateToAPI() {
 }
 
 // Initialize API migration when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', migrateToAPI);
-} else {
-    migrateToAPI();
-}
+// Disabled since script.js has been updated to use API directly
+// if (document.readyState === 'loading') {
+//     document.addEventListener('DOMContentLoaded', migrateToAPI);
+// } else {
+//     migrateToAPI();
+// }
 
 // Export for use in other files
 window.ImageOptimAPI = ImageOptimAPI;
 window.api = api;
+window.imageOptimAPI = api;

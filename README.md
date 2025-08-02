@@ -66,7 +66,7 @@ photoCompressorApp/
 
 ## ⚙️ Setup Instructions
 
-### 1. Basic Setup
+### Option 1: Development Mode (Static Files)
 ```bash
 # Clone or download the project
 cd photoCompressorApp
@@ -76,6 +76,23 @@ open index.html                    # macOS
 start index.html                   # Windows
 python3 -m http.server 8000       # Local server
 ```
+
+### Option 2: Production Mode (Full Backend)
+```bash
+# Test your environment first
+./test-deployment.sh
+
+# Deploy with Docker (includes database, API, payments)
+./deploy.sh init
+
+# Check deployment status
+./deploy.sh status
+
+# View logs
+./deploy.sh logs
+```
+
+**Production URL**: http://localhost (after deployment)
 
 ### 2. Google AdSense Configuration
 1. Sign up for Google AdSense

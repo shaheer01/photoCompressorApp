@@ -2,7 +2,20 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(open index.html)"
+      "Bash(open index.html)",
+      "Bash(docker rmi:*)",
+      "Bash(true)",
+      "Bash(./test-deployment.sh)",
+      "Bash(./deploy.sh:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker run:*)",
+      "Bash(curl:*)",
+      "Bash(docker inspect:*)",
+      "Bash(lsof:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker network prune:*)",
+      "Bash(npm install)",
+      "Bash(docker exec:*)"
     ],
     "deny": []
   }

@@ -1,31 +1,4 @@
-# Multi-stage build for frontend
-FROM node:18-alpine as builder
-
-WORKDIR /app
-
-# Copy package files (if you have any for build tools)
-COPY package*.json ./
-
-# Install build dependencies (if any)
-RUN npm ci && npm cache clean --force
-
-# Copy frontend files
-COPY index.html .
-COPY styles.css .
-COPY script.js .
-COPY frontend-api.js .
-COPY test.html .
-COPY README.md .
-
-# Create optimized build (minification, etc.)
-RUN mkdir -p dist && \
-    cp index.html dist/ && \
-    cp styles.css dist/ && \
-    cp script.js dist/ && \
-    cp frontend-api.js dist/ && \
-    cp test.html dist/
-
-# Production stage with Nginx
+# Frontend Nginx-based container (no Node.js build needed)
 FROM nginx:alpine
 
 # Install curl for health checks
@@ -34,20 +7,34 @@ RUN apk add --no-cache curl
 # Copy custom nginx configuration
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-# Copy built frontend files
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Copy frontend files directly (no build step needed)
+COPY index.html /usr/share/nginx/html/
+COPY styles.css /usr/share/nginx/html/
+COPY script.js /usr/share/nginx/html/
+COPY frontend-api.js /usr/share/nginx/html/
+COPY migration-helper.js /usr/share/nginx/html/
+COPY test.html /usr/share/nginx/html/
+COPY debug.html /usr/share/nginx/html/
+COPY simple-test.html /usr/share/nginx/html/
+COPY working-test.html /usr/share/nginx/html/
+COPY safe-api.js /usr/share/nginx/html/
 
-# Copy any additional static assets
-COPY --from=builder /app/README.md /usr/share/nginx/html/
+# Create a simple health check endpoint
+RUN echo 'healthy' > /usr/share/nginx/html/health
 
-# Create nginx user and set permissions
+# Set proper permissions
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/log/nginx && \
     chown -R nginx:nginx /etc/nginx/conf.d
 
-# Switch to non-root user
-USER nginx
+# Create nginx directories with proper permissions  
+RUN mkdir -p /var/run /var/cache/nginx /var/log/nginx && \
+    chown -R nginx:nginx /var/run /var/cache/nginx /var/log/nginx && \
+    touch /var/run/nginx.pid && \
+    chown nginx:nginx /var/run/nginx.pid
+
+# Don't switch to non-root user for nginx - it handles this internally
 
 # Expose ports
 EXPOSE 80 443

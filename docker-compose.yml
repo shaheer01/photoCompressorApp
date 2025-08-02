@@ -1,24 +1,25 @@
 version: '3.8'
 
 services:
-  # PostgreSQL Database
-  postgres:
-    image: postgres:15-alpine
-    container_name: imageoptim_postgres
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: imageoptim_mysql
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${DB_NAME:-imageoptim_db}
-      POSTGRES_USER: ${DB_USER:-imageoptim_user}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-your_secure_password}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_secure_password}
+      MYSQL_DATABASE: ${DB_NAME:-imageoptim_db}
+      MYSQL_USER: ${DB_USER:-imageoptim_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-your_secure_password}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
       - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
     ports:
-      - "${DB_PORT:-5432}:5432"
+      - "${DB_PORT:-3308}:3306"
     networks:
       - imageoptim_network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-imageoptim_user} -d ${DB_NAME:-imageoptim_db}"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USER:-imageoptim_user}", "-p${DB_PASSWORD:-your_secure_password}"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -32,7 +33,7 @@ services:
     volumes:
       - redis_data:/data
     ports:
-      - "6379:6379"
+      - "6380:6379"
     networks:
       - imageoptim_network
     healthcheck:
@@ -53,8 +54,8 @@ services:
       PORT: ${PORT:-3001}
       
       # Database
-      DB_HOST: postgres
-      DB_PORT: 5432
+      DB_HOST: mysql
+      DB_PORT: 3306
       DB_NAME: ${DB_NAME:-imageoptim_db}
       DB_USER: ${DB_USER:-imageoptim_user}
       DB_PASSWORD: ${DB_PASSWORD:-your_secure_password}
@@ -95,7 +96,7 @@ services:
     ports:
       - "${BACKEND_PORT:-3001}:3001"
     depends_on:
-      postgres:
+      mysql:
         condition: service_healthy
     networks:
       - imageoptim_network
@@ -103,7 +104,7 @@ services:
       - ./backend/logs:/app/logs
       - ./backend/uploads:/app/uploads
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -123,14 +124,14 @@ services:
     networks:
       - imageoptim_network
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/ssl:/etc/nginx/ssl:ro
       - ./logs/nginx:/var/log/nginx
+      # Optional: mount SSL certificates if you have them
+      # - ./nginx/ssl:/etc/nginx/ssl:ro
     environment:
       - BACKEND_URL=http://backend:3001
 
 volumes:
-  postgres_data:
+  mysql_data:
     driver: local
   redis_data:
     driver: local

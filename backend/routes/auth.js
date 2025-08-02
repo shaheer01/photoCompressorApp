@@ -50,7 +50,7 @@ router.post('/register', authLimiter, registerValidation, async (req, res) => {
 
         // Check if user already exists
         const existingUser = await query(
-            'SELECT id FROM users WHERE email = $1',
+            'SELECT id FROM users WHERE email = ?',
             [email]
         );
 
@@ -70,18 +70,25 @@ router.post('/register', authLimiter, registerValidation, async (req, res) => {
             // Insert user
             const userResult = await client.query(
                 `INSERT INTO users (first_name, last_name, email, password_hash, created_at)
-                 VALUES ($1, $2, $3, $4, NOW())
-                 RETURNING id, first_name, last_name, email, is_premium, created_at`,
+                 VALUES (?, ?, ?, ?, NOW())`,
                 [firstName, lastName, email, passwordHash]
             );
 
-            const user = userResult.rows[0];
+            const userId = userResult.rows.insertId;
+
+            // Get the inserted user data
+            const getUserResult = await client.query(
+                'SELECT id, first_name, last_name, email, is_premium, created_at FROM users WHERE id = ?',
+                [userId]
+            );
+
+            const user = getUserResult.rows[0];
 
             // Initialize usage statistics for today
             await client.query(
                 `INSERT INTO usage_statistics (user_id, date, images_processed, total_original_size_mb, total_compressed_size_mb, total_savings_mb)
-                 VALUES ($1, CURRENT_DATE, 0, 0, 0, 0)
-                 ON CONFLICT (user_id, date) DO NOTHING`,
+                 VALUES (?, CURRENT_DATE, 0, 0, 0, 0)
+                 ON DUPLICATE KEY UPDATE user_id = user_id`,
                 [user.id]
             );
 
@@ -98,7 +105,7 @@ router.post('/register', authLimiter, registerValidation, async (req, res) => {
 
         // Update login statistics
         await query(
-            'UPDATE users SET last_login = NOW(), login_count = login_count + 1 WHERE id = $1',
+            'UPDATE users SET last_login = NOW(), login_count = login_count + 1 WHERE id = ?',
             [userData.id]
         );
 
@@ -146,7 +153,7 @@ router.post('/login', authLimiter, loginValidation, async (req, res) => {
 
         // Find user
         const userResult = await query(
-            'SELECT id, first_name, last_name, email, password_hash, is_premium, subscription_type, is_active FROM users WHERE email = $1',
+            'SELECT id, first_name, last_name, email, password_hash, is_premium, subscription_type, is_active FROM users WHERE email = ?',
             [email]
         );
 
@@ -186,7 +193,7 @@ router.post('/login', authLimiter, loginValidation, async (req, res) => {
 
         // Update login statistics
         await query(
-            'UPDATE users SET last_login = NOW(), login_count = login_count + 1 WHERE id = $1',
+            'UPDATE users SET last_login = NOW(), login_count = login_count + 1 WHERE id = ?',
             [user.id]
         );
 
@@ -337,7 +344,7 @@ router.get('/verify', async (req, res) => {
 
         // Check if session exists
         const sessionResult = await query(
-            'SELECT user_id FROM user_sessions WHERE token_hash = $1 AND expires_at > NOW()',
+            'SELECT user_id FROM user_sessions WHERE token_hash = ? AND expires_at > NOW()',
             [token]
         );
 
@@ -350,7 +357,7 @@ router.get('/verify', async (req, res) => {
 
         // Get user info
         const userResult = await query(
-            'SELECT id, first_name, last_name, email, is_premium, subscription_type FROM users WHERE id = $1 AND is_active = true',
+            'SELECT id, first_name, last_name, email, is_premium, subscription_type FROM users WHERE id = ? AND is_active = true',
             [decoded.userId]
         );
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ImageOptim - Intelligent JPEG Image Compression Without Quality Loss</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -19,7 +20,7 @@
                 <a href="#compress" class="nav-link">Compress</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#login" class="nav-link" id="loginLink" onclick="console.log('Inline click handler'); if(!window.currentUser){console.log('Opening LOGIN modal from inline'); openLoginModal(false); return false;}">
+                <a href="#login" class="nav-link" id="loginLink">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Login</span>
                 </a>
@@ -461,6 +462,7 @@
         tryLoadCompressor(cdnUrls);
     </script>
     
+    <script src="safe-api.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

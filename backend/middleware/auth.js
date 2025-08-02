@@ -20,7 +20,7 @@ const verifyToken = async (req, res, next) => {
         
         // Check if token exists in database (for token revocation)
         const sessionResult = await query(
-            'SELECT * FROM user_sessions WHERE token_hash = $1 AND expires_at > NOW()',
+            'SELECT * FROM user_sessions WHERE token_hash = ? AND expires_at > NOW()',
             [token]
         );
         
@@ -33,7 +33,7 @@ const verifyToken = async (req, res, next) => {
 
         // Get user details
         const userResult = await query(
-            'SELECT id, first_name, last_name, email, is_premium, subscription_type, is_active FROM users WHERE id = $1 AND is_active = true',
+            'SELECT id, first_name, last_name, email, is_premium, subscription_type, is_active FROM users WHERE id = ? AND is_active = true',
             [decoded.userId]
         );
 
@@ -46,7 +46,7 @@ const verifyToken = async (req, res, next) => {
 
         // Update last used timestamp for session
         await query(
-            'UPDATE user_sessions SET last_used = NOW() WHERE token_hash = $1',
+            'UPDATE user_sessions SET last_used = NOW() WHERE token_hash = ?',
             [token]
         );
 
@@ -109,7 +109,7 @@ const optionalAuth = async (req, res, next) => {
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             
             const userResult = await query(
-                'SELECT id, first_name, last_name, email, is_premium, subscription_type FROM users WHERE id = $1 AND is_active = true',
+                'SELECT id, first_name, last_name, email, is_premium, subscription_type FROM users WHERE id = ? AND is_active = true',
                 [decoded.userId]
             );
             
@@ -148,7 +148,7 @@ const storeSession = async (userId, token, deviceInfo, ipAddress) => {
     
     await query(
         `INSERT INTO user_sessions (user_id, token_hash, device_info, ip_address, expires_at)
-         VALUES ($1, $2, $3, $4, $5)`,
+         VALUES (?, ?, ?, ?, ?)`,
         [userId, token, deviceInfo, ipAddress, expiresAt]
     );
 };
@@ -156,7 +156,7 @@ const storeSession = async (userId, token, deviceInfo, ipAddress) => {
 // Revoke session
 const revokeSession = async (token) => {
     await query(
-        'DELETE FROM user_sessions WHERE token_hash = $1',
+        'DELETE FROM user_sessions WHERE token_hash = ?',
         [token]
     );
 };
@@ -174,7 +174,7 @@ const cleanExpiredSessions = async () => {
 // Revoke all user sessions (for logout all devices)
 const revokeAllUserSessions = async (userId) => {
     const result = await query(
-        'DELETE FROM user_sessions WHERE user_id = $1',
+        'DELETE FROM user_sessions WHERE user_id = ?',
         [userId]
     );
     

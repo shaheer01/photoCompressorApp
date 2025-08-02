@@ -6,7 +6,17 @@ let isProcessing = false;
 let currentUser = null;
 
 // Stripe Configuration
-const stripe = Stripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); // Replace with your publishable key
+let stripe = null;
+try {
+    // Only initialize Stripe if we have a real key
+    const stripeKey = 'pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+    if (stripeKey && !stripeKey.includes('XXXX')) {
+        stripe = Stripe(stripeKey);
+    }
+} catch (error) {
+    console.log('Stripe not initialized - payments disabled');
+}
+
 const STRIPE_PRICES = {
     monthly: 'price_XXXXXXXXXXXXXX', // Replace with your monthly price ID
     yearly: 'price_XXXXXXXXXXXXXX'   // Replace with your yearly price ID
@@ -29,10 +39,11 @@ const authForm = document.getElementById('authForm');
 
 // Initialize Application
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded');
+    console.log('DOM Content Loaded - ImageOptim starting...');
     
     // Small delay to ensure all elements are fully loaded
     setTimeout(() => {
+        console.log('Initializing app components...');
         initializeEventListeners();
         checkUserAuthentication();
         initializeAds();
@@ -1087,9 +1098,32 @@ function handleAuthentication(e) {
             registrationDate: new Date().toISOString()
         };
         
-        // Save to registered users list
+        // Save to registered users list (localStorage)
         existingUsers.push(userData);
         localStorage.setItem('registeredUsers', JSON.stringify(existingUsers));
+        
+        // ALSO try to save to MySQL database (safe - won't break if it fails)
+        try {
+            if (window.safeAPI && window.safeAPI.available) {
+                console.log('🔄 Attempting to save user to MySQL database...');
+                const apiResult = await window.safeAPI.register({
+                    firstName: userData.firstName,
+                    lastName: userData.lastName,
+                    email: userData.email,
+                    password: userData.password
+                });
+                
+                if (apiResult.success) {
+                    console.log('✅ User also saved to MySQL database successfully');
+                } else {
+                    console.log('⚠️ MySQL save failed:', apiResult.error);
+                }
+            } else {
+                console.log('💾 MySQL not available, using localStorage only');
+            }
+        } catch (error) {
+            console.log('⚠️ MySQL integration error (using localStorage):', error.message);
+        }
         
         // Set as current user
         const currentUserData = { ...userData };
@@ -1114,31 +1148,62 @@ function handleAuthentication(e) {
             return;
         }
         
-        // Check if user exists in registered users
-        const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-        const registeredUser = existingUsers.find(user => user.email === email);
+        // HYBRID LOGIN: Try MySQL first, then fallback to localStorage
+        let userData = null;
+        let loginSource = 'localStorage';
         
-        if (!registeredUser) {
-            showNotification('No account found with this email. Please create an account first.', 'error');
-            return;
+        // First, try to login using MySQL API
+        if (window.safeAPI && window.safeAPI.available) {
+            try {
+                console.log('🔄 Attempting MySQL login...');
+                const apiResult = await window.safeAPI.login(email, password);
+                
+                if (apiResult.success) {
+                    console.log('✅ MySQL login successful');
+                    userData = {
+                        firstName: apiResult.user.firstName,
+                        lastName: apiResult.user.lastName,
+                        email: apiResult.user.email,
+                        isPremium: apiResult.user.isPremium,
+                        registrationDate: new Date().toISOString()
+                    };
+                    loginSource = 'MySQL';
+                }
+            } catch (error) {
+                console.log('⚠️ MySQL login failed, trying localStorage:', error.message);
+            }
         }
         
-        // Check password
-        if (registeredUser.password !== password) {
-            showNotification('Incorrect password. Please try again.', 'error');
-            return;
+        // If MySQL login failed, try localStorage
+        if (!userData) {
+            console.log('🔄 Attempting localStorage login...');
+            const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+            const registeredUser = existingUsers.find(user => user.email === email);
+            
+            if (!registeredUser) {
+                showNotification('No account found with this email. Please create an account first.', 'error');
+                return;
+            }
+            
+            // Check password
+            if (registeredUser.password !== password) {
+                showNotification('Incorrect password. Please try again.', 'error');
+                return;
+            }
+            
+            // localStorage login successful
+            userData = {
+                firstName: registeredUser.firstName,
+                lastName: registeredUser.lastName,
+                email: registeredUser.email,
+                isPremium: registeredUser.isPremium,
+                registrationDate: registeredUser.registrationDate
+            };
+            console.log('✅ localStorage login successful');
         }
         
-        // Login successful - use the registered user's data
-        const userData = {
-            firstName: registeredUser.firstName,
-            lastName: registeredUser.lastName,
-            email: registeredUser.email,
-            isPremium: registeredUser.isPremium,
-            registrationDate: registeredUser.registrationDate
-        };
-        
-        console.log('Login successful for user:', userData);
+        // Login successful from either source
+        console.log(`Login successful for user: ${userData.firstName} (source: ${loginSource})`);
         localStorage.setItem('currentUser', JSON.stringify(userData));
         currentUser = userData;
         window.currentUser = userData;

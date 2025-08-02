@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageOptim Debug</title>
+</head>
+<body>
+    <h1>ImageOptim Debug Page</h1>
+    
+    <button onclick="testLogin()" style="padding: 10px 20px; margin: 10px; font-size: 16px;">
+        Test Login Modal
+    </button>
+    
+    <button onclick="testUpload()" style="padding: 10px 20px; margin: 10px; font-size: 16px;">
+        Test File Upload
+    </button>
+    
+    <div id="debug-output" style="margin-top: 20px; padding: 10px; background: #f0f0f0; white-space: pre-wrap;"></div>
+    
+    <script src="frontend-api.js"></script>
+    <script>
+        const debugOutput = document.getElementById('debug-output');
+        
+        function log(message) {
+            debugOutput.textContent += new Date().toLocaleTimeString() + ': ' + message + '\n';
+            console.log(message);
+        }
+        
+        function testLogin() {
+            log('Testing login functionality...');
+            
+            if (typeof window.imageOptimAPI === 'undefined') {
+                log('ERROR: imageOptimAPI not loaded');
+                return;
+            }
+            
+            log('API loaded successfully');
+            
+            // Test basic functionality
+            try {
+                log('API base URL: ' + window.imageOptimAPI.baseURL);
+                log('API token: ' + (window.imageOptimAPI.token ? 'Present' : 'None'));
+                log('Test completed successfully');
+            } catch (error) {
+                log('ERROR: ' + error.message);
+            }
+        }
+        
+        function testUpload() {
+            log('Testing upload functionality...');
+            
+            // Create a simple file input test
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/jpeg,image/jpg';
+            input.onchange = function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    log('File selected: ' + e.target.files[0].name);
+                    log('File size: ' + e.target.files[0].size + ' bytes');
+                    log('File type: ' + e.target.files[0].type);
+                }
+            };
+            input.click();
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', function() {
+            log('Debug page loaded');
+            log('Window.imageOptimAPI: ' + typeof window.imageOptimAPI);
+            log('Window.api: ' + typeof window.api);
+        });
+    </script>
+</body>
+</html>
