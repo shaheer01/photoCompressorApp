@@ -1,13 +1,22 @@
 // Safe API client - won't break if backend is unavailable
 class SafeAPIClient {
     constructor() {
+        // Only try to connect to API if running locally
+        this.isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         this.baseURL = 'http://localhost:3001/api';
         this.available = false;
         this.token = localStorage.getItem('accessToken');
         this.connectionTested = false;
         
-        // Test if API is available
-        this.testConnection();
+        // Only test connection if running locally
+        if (this.isLocal) {
+            this.testConnection();
+        } else {
+            // On live site, skip API and use browser-only mode
+            this.available = false;
+            this.connectionTested = true;
+            console.log('🌐 Running on live site - using browser-only compression mode');
+        }
     }
     
     async testConnection() {

@@ -1054,7 +1054,7 @@ function toggleAuthMode() {
     openLoginModal(!isCurrentlyRegister);
 }
 
-function handleAuthentication(e) {
+async function handleAuthentication(e) {
     e.preventDefault();
     console.log('Form submitted');
     
