@@ -16,7 +16,9 @@
       "Bash(docker network prune:*)",
       "Bash(npm install)",
       "Bash(docker exec:*)",
-      "Bash(docker cp:*)"
+      "Bash(docker cp:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   },

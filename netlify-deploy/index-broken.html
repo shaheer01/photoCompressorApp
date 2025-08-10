@@ -62,6 +62,14 @@
                 <a href="#compress" class="nav-link">Compress</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#login" class="nav-link" id="loginLink">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+                <button class="upgrade-btn" onclick="openPremiumModal()" id="upgradeBtn" style="display: none;">
+                    <i class="fas fa-crown"></i>
+                    Upgrade to Premium
+                </button>
                 <button class="btn-primary" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">
                     <i class="fas fa-download"></i>
                     Compress Image
@@ -78,8 +86,8 @@
                     <h1>Free Image Compressor - Compress JPEG Photos Without Quality Loss</h1>
                     <p>Compress images online for free with our intelligent photo optimizer. Reduce image file size by up to 90% without sacrificing visual quality. Our advanced image compression algorithms and visual assessment tools ensure your photos look perfect while using minimal storage space.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary btn-large" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">Get Started</button>
-                        <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                        <button class="btn-primary btn-large">Get Started</button>
+                        <button class="btn-secondary">Learn More</button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -122,10 +130,10 @@
                         <button class="btn-secondary" id="browseBtn">
                             Browse Files
                         </button>
-                        <div class="privacy-notice">
+                        <p class="privacy-notice">
                             <i class="fas fa-shield-alt" alt="Privacy protection icon"></i>
-                            <span>Your images are processed locally in your browser for complete privacy</span>
-                        </div>
+                            Uploaded doc will be deleted once you reload the page to protect privacy.
+                        </p>
                     </div>
                 </div>
                 
@@ -161,6 +169,22 @@
         <div class="container">
             <h3>Your Compressed Images</h3>
             <div class="results-grid" id="resultsGrid"></div>
+            
+            <!-- Ad after results -->
+            <div class="results-ad" id="resultsAd">
+                <div class="ad-label">ADVERTISEMENT</div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="ZZZZZZZZZZ"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
     </section>
 
@@ -286,7 +310,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>Is there a file size limit?</h3>
-                    <p>You can upload files up to 10MB each for optimal performance and processing speed.</p>
+                    <p>Free users can upload files up to 10MB each. Premium users enjoy unlimited file sizes and batch processing.</p>
                 </div>
                 <div class="faq-item">
                     <h3>What image formats does the photo compressor support?</h3>
@@ -300,6 +324,149 @@
         </div>
     </section>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Create an Account</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group" id="nameFields">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group" id="confirmPasswordField">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" id="authSubmitBtn">Create Account</button>
+                </form>
+                <div class="auth-switch">
+                    <p id="authSwitchText">Already have an account? <a href="#" onclick="toggleAuthMode()">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advertisement Section -->
+    <!-- 
+    GOOGLE ADSENSE SETUP INSTRUCTIONS:
+    1. Sign up for Google AdSense at https://www.google.com/adsense/
+    2. Add your website and verify ownership
+    3. Create ad units in your AdSense dashboard
+    4. Replace all instances of:
+       - ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID
+       - XXXXXXXXXX with your banner ad slot ID
+       - YYYYYYYYYY with your sidebar ad slot ID  
+       - ZZZZZZZZZZ with your results ad slot ID
+    5. Wait for AdSense approval (can take 24-48 hours)
+    6. Monitor performance in AdSense dashboard
+    -->
+    <div class="advertisement-section" id="bannerAd">
+        <div class="ad-container">
+            <div class="ad-label">ADVERTISEMENT</div>
+            <div class="ad-content">
+                <!-- Google AdSense Display Ad -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                     crossorigin="anonymous"></script>
+                <!-- ImageOptim Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Advertisement -->
+    <div class="sidebar-ad" id="sidebarAd" style="display: none;">
+        <div class="ad-label">ADVERTISEMENT</div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+             crossorigin="anonymous"></script>
+        <!-- ImageOptim Sidebar Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="YYYYYYYYYY"
+             data-ad-format="vertical"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Premium Upgrade Modal -->
+    <div id="premiumModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upgrade to Premium</h2>
+                <span class="close" onclick="closePremiumModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="premium-plans">
+                    <div class="plan-card">
+                        <h3>Premium Monthly</h3>
+                        <div class="price">$9.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Unlimited file uploads</li>
+                            <li><i class="fas fa-check"></i> No file size limits</li>
+                            <li><i class="fas fa-check"></i> Batch processing up to 100 files</li>
+                            <li><i class="fas fa-check"></i> Priority processing</li>
+                            <li><i class="fas fa-check"></i> Advanced compression algorithms</li>
+                            <li><i class="fas fa-check"></i> No advertisements</li>
+                        </ul>
+                        <button class="btn-primary btn-large" onclick="initializePayment('monthly')">
+                            Subscribe Monthly
+                        </button>
+                    </div>
+                    <div class="plan-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Premium Yearly</h3>
+                        <div class="price">$99.99<span>/year</span></div>
+                        <div class="savings">Save $19.89 per year!</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Everything in Monthly</li>
+                            <li><i class="fas fa-check"></i> 2 months free</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                        </ul>
+                        <button class="btn-primary btn-large" onclick="initializePayment('yearly')">
+                            Subscribe Yearly
+                        </button>
+                    </div>
+                </div>
+                <div class="payment-security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure payment powered by Stripe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    
     <!-- Try to load CompressorJS from multiple CDNs -->
     <script>
         window.compressionLibraryLoaded = false;
@@ -341,393 +508,7 @@
         tryLoadCompressor(cdnUrls);
     </script>
     
-    <script>
-        // Clean, working compression script without authentication complexity
-        console.log('🚀 CompressPhotos loading...');
-        
-        let uploadedFiles = [];
-        let compressedFiles = [];
-        let compressionQueue = [];
-        let isProcessing = false;
-
-        // DOM Elements
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-        const qualitySlider = document.getElementById('qualitySlider');
-        const qualityValue = document.getElementById('qualityValue');
-        const presetButtons = document.querySelectorAll('.preset-btn');
-        const processingSection = document.getElementById('processingSection');
-        const processingList = document.getElementById('processingList');
-        const queueCount = document.getElementById('queueCount');
-        const clearQueueBtn = document.getElementById('clearQueue');
-        const resultsSection = document.getElementById('resultsSection');
-        const resultsGrid = document.getElementById('resultsGrid');
-
-        // Initialize when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('✅ DOM ready, initializing...');
-            
-            // Upload area events
-            uploadArea.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (e.target === uploadArea || uploadArea.contains(e.target)) {
-                    console.log('Upload area clicked');
-                    fileInput.click();
-                }
-            });
-            
-            // Browse button
-            const browseBtn = document.getElementById('browseBtn');
-            browseBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('✅ Browse button clicked');
-                fileInput.click();
-            });
-            
-            // File input change
-            fileInput.addEventListener('change', (e) => {
-                const files = Array.from(e.target.files);
-                console.log('✅ Files selected:', files.length);
-                if (files.length > 0) {
-                    processFiles(files);
-                }
-            });
-            
-            // Drag and drop
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.classList.add('dragover');
-            });
-            
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('dragover');
-            });
-            
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('dragover');
-                const files = Array.from(e.dataTransfer.files);
-                console.log('✅ Files dropped:', files.length);
-                processFiles(files);
-            });
-            
-            // Quality controls
-            qualitySlider.addEventListener('input', () => {
-                qualityValue.textContent = qualitySlider.value + '%';
-            });
-            
-            // Preset buttons
-            presetButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    presetButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const quality = btn.getAttribute('data-quality');
-                    qualitySlider.value = quality;
-                    qualityValue.textContent = quality + '%';
-                });
-            });
-            
-            // Clear queue
-            clearQueueBtn.addEventListener('click', () => {
-                compressionQueue = [];
-                compressedFiles = [];
-                isProcessing = false;
-                processingSection.style.display = 'none';
-                resultsSection.style.display = 'none';
-                fileInput.value = '';
-                showNotification('Queue cleared', 'info');
-            });
-            
-            console.log('✅ All event listeners attached');
-        });
-        
-        function processFiles(files) {
-            console.log('Processing files:', files.length);
-            
-            // Filter valid JPEG files
-            const validFiles = files.filter(file => {
-                return file.type.match(/image\/jpe?g/) && file.size > 0 && file.size <= 10 * 1024 * 1024;
-            });
-            
-            if (validFiles.length === 0) {
-                showNotification('Please select valid JPEG files under 10MB', 'error');
-                return;
-            }
-            
-            // Add to queue
-            validFiles.forEach(file => {
-                const queueItem = {
-                    id: Date.now() + Math.random(),
-                    file: file,
-                    status: 'pending',
-                    progress: 0,
-                    originalSize: file.size,
-                    compressedSize: null,
-                    compressedBlob: null
-                };
-                compressionQueue.push(queueItem);
-            });
-            
-            updateQueueDisplay();
-            startProcessing();
-        }
-        
-        function updateQueueDisplay() {
-            queueCount.textContent = `(${compressionQueue.length} files)`;
-            processingSection.style.display = 'block';
-            
-            processingList.innerHTML = '';
-            compressionQueue.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'processing-item';
-                div.innerHTML = `
-                    <div class="file-info">
-                        <div class="file-status ${item.status}" id="status-${item.id}">
-                            ${item.status === 'pending' ? '<i class="fas fa-clock"></i>' : 
-                              item.status === 'processing' ? '<i class="fas fa-spinner fa-spin"></i>' :
-                              item.status === 'completed' ? '<i class="fas fa-check"></i>' :
-                              '<i class="fas fa-times"></i>'}
-                        </div>
-                        <div>
-                            <div class="file-name">${item.file.name}</div>
-                            <div class="file-size">${formatFileSize(item.file.size)}</div>
-                        </div>
-                    </div>
-                    <div class="queue-actions">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-${item.id}" style="width: ${item.progress}%"></div>
-                        </div>
-                    </div>
-                `;
-                processingList.appendChild(div);
-            });
-        }
-        
-        function startProcessing() {
-            if (isProcessing) return;
-            isProcessing = true;
-            
-            const pendingItems = compressionQueue.filter(item => item.status === 'pending');
-            
-            // Process items sequentially
-            let currentIndex = 0;
-            
-            function processNext() {
-                if (currentIndex >= pendingItems.length) {
-                    isProcessing = false;
-                    showResults();
-                    return;
-                }
-                
-                const item = pendingItems[currentIndex];
-                processQueueItem(item).then(() => {
-                    currentIndex++;
-                    processNext();
-                });
-            }
-            
-            processNext();
-        }
-        
-        function processQueueItem(item) {
-            return new Promise((resolve) => {
-                console.log('Processing:', item.file.name);
-                
-                // Update status
-                const statusEl = document.getElementById(`status-${item.id}`);
-                const progressEl = document.getElementById(`progress-${item.id}`);
-                
-                item.status = 'processing';
-                statusEl.className = 'file-status processing';
-                statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-                progressEl.style.width = '10%';
-                
-                const quality = parseInt(qualitySlider.value) / 100;
-                
-                // Use CompressorJS if available
-                if (window.compressionLibraryLoaded === true && typeof Compressor !== 'undefined') {
-                    new Compressor(item.file, {
-                        quality: quality,
-                        success: (compressedFile) => {
-                            console.log('✅ Compression successful:', item.file.name);
-                            
-                            item.compressedBlob = compressedFile;
-                            item.compressedSize = compressedFile.size;
-                            item.status = 'completed';
-                            
-                            statusEl.className = 'file-status completed';
-                            statusEl.innerHTML = '<i class="fas fa-check"></i>';
-                            progressEl.style.width = '100%';
-                            
-                            compressedFiles.push(item);
-                            showNotification(`${item.file.name} compressed successfully!`, 'success');
-                            resolve();
-                        },
-                        error: (error) => {
-                            console.error('❌ Compression failed:', error);
-                            
-                            item.status = 'error';
-                            statusEl.className = 'file-status error';
-                            statusEl.innerHTML = '<i class="fas fa-times"></i>';
-                            
-                            showNotification(`Failed to compress ${item.file.name}`, 'error');
-                            resolve();
-                        }
-                    });
-                } else {
-                    // Fallback: canvas compression
-                    compressWithCanvas(item.file, quality).then(compressedBlob => {
-                        item.compressedBlob = compressedBlob;
-                        item.compressedSize = compressedBlob.size;
-                        item.status = 'completed';
-                        
-                        statusEl.className = 'file-status completed';
-                        statusEl.innerHTML = '<i class="fas fa-check"></i>';
-                        progressEl.style.width = '100%';
-                        
-                        compressedFiles.push(item);
-                        showNotification(`${item.file.name} compressed successfully!`, 'success');
-                        resolve();
-                    }).catch(error => {
-                        console.error('❌ Canvas compression failed:', error);
-                        item.status = 'error';
-                        statusEl.className = 'file-status error';
-                        statusEl.innerHTML = '<i class="fas fa-times"></i>';
-                        showNotification(`Failed to compress ${item.file.name}`, 'error');
-                        resolve();
-                    });
-                }
-            });
-        }
-        
-        function compressWithCanvas(file, quality) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    
-                    ctx.drawImage(img, 0, 0);
-                    URL.revokeObjectURL(img.src);
-                    
-                    canvas.toBlob(resolve, 'image/jpeg', quality);
-                };
-                img.onerror = () => reject(new Error('Failed to load image'));
-                img.src = URL.createObjectURL(file);
-            });
-        }
-        
-        function showResults() {
-            if (compressedFiles.length === 0) return;
-            
-            resultsSection.style.display = 'block';
-            resultsGrid.innerHTML = '';
-            
-            compressedFiles.forEach(item => {
-                const savings = ((item.originalSize - item.compressedSize) / item.originalSize * 100).toFixed(1);
-                
-                const div = document.createElement('div');
-                div.className = 'result-item';
-                div.innerHTML = `
-                    <div class="result-header">
-                        <div class="result-filename">${item.file.name}</div>
-                        <div class="result-stats">
-                            <span>Original: ${formatFileSize(item.originalSize)}</span>
-                            <span>Compressed: ${formatFileSize(item.compressedSize)}</span>
-                            <span style="color: #10b981; font-weight: bold;">${savings}% smaller</span>
-                        </div>
-                    </div>
-                    <div class="image-comparison">
-                        <div class="image-container">
-                            <div class="image-label">Original</div>
-                            <img src="${URL.createObjectURL(item.file)}" alt="Original" />
-                            <div class="image-size">${formatFileSize(item.originalSize)}</div>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-label">Compressed</div>
-                            <img src="${URL.createObjectURL(item.compressedBlob)}" alt="Compressed" />
-                            <div class="image-size">${formatFileSize(item.compressedSize)}</div>
-                        </div>
-                    </div>
-                    <div class="result-actions">
-                        <button class="btn-primary" onclick="downloadImage('${item.id}')">
-                            <i class="fas fa-download"></i> Download
-                        </button>
-                    </div>
-                `;
-                resultsGrid.appendChild(div);
-            });
-            
-            resultsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function downloadImage(itemId) {
-            const item = compressedFiles.find(f => f.id == itemId);
-            if (!item) return;
-            
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(item.compressedBlob);
-            link.download = `compressed_${item.file.name}`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showNotification('Image downloaded successfully!', 'success');
-        }
-        
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-        
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 20px;
-                border-radius: 8px;
-                color: white;
-                font-weight: 600;
-                z-index: 3000;
-                max-width: 400px;
-                animation: slideIn 0.3s ease;
-            `;
-            
-            const colors = {
-                success: '#10b981',
-                error: '#ef4444',
-                warning: '#f59e0b',
-                info: '#2563eb'
-            };
-            
-            notification.style.backgroundColor = colors[type] || colors.info;
-            notification.textContent = message;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-        
-        console.log('✅ CompressPhotos script loaded successfully');
-    </script>
-    
-    <style>
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+    <script src="safe-api.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
