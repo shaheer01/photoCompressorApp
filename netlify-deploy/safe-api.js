@@ -2,7 +2,10 @@
 class SafeAPIClient {
     constructor() {
         // Only try to connect to API if running locally
-        this.isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        this.isLocal = window.location.hostname === 'localhost' || 
+                      window.location.hostname === '127.0.0.1' ||
+                      window.location.hostname.includes('localhost');
+        
         this.baseURL = 'http://localhost:3001/api';
         this.available = false;
         this.token = localStorage.getItem('accessToken');
@@ -10,12 +13,13 @@ class SafeAPIClient {
         
         // Only test connection if running locally
         if (this.isLocal) {
+            console.log('🏠 Running locally - testing API connection');
             this.testConnection();
         } else {
             // On live site, skip API and use browser-only mode
             this.available = false;
             this.connectionTested = true;
-            console.log('🌐 Running on live site - using browser-only compression mode');
+            console.log('🌐 Running on live site (' + window.location.hostname + ') - using browser-only mode');
         }
     }
     

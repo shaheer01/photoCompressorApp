@@ -1054,7 +1054,7 @@ function toggleAuthMode() {
     openLoginModal(!isCurrentlyRegister);
 }
 
-async function handleAuthentication(e) {
+function handleAuthentication(e) {
     e.preventDefault();
     console.log('Form submitted');
     
@@ -1103,26 +1103,25 @@ async function handleAuthentication(e) {
         localStorage.setItem('registeredUsers', JSON.stringify(existingUsers));
         
         // ALSO try to save to MySQL database (safe - won't break if it fails)
-        try {
-            if (window.safeAPI && window.safeAPI.available) {
-                console.log('🔄 Attempting to save user to MySQL database...');
-                const apiResult = await window.safeAPI.register({
-                    firstName: userData.firstName,
-                    lastName: userData.lastName,
-                    email: userData.email,
-                    password: userData.password
-                });
-                
+        // Use non-blocking approach to avoid async issues
+        if (window.safeAPI && window.safeAPI.available) {
+            console.log('🔄 Attempting to save user to MySQL database...');
+            window.safeAPI.register({
+                firstName: userData.firstName,
+                lastName: userData.lastName,
+                email: userData.email,
+                password: userData.password
+            }).then(apiResult => {
                 if (apiResult.success) {
                     console.log('✅ User also saved to MySQL database successfully');
                 } else {
                     console.log('⚠️ MySQL save failed:', apiResult.error);
                 }
-            } else {
-                console.log('💾 MySQL not available, using localStorage only');
-            }
-        } catch (error) {
-            console.log('⚠️ MySQL integration error (using localStorage):', error.message);
+            }).catch(error => {
+                console.log('⚠️ MySQL integration error (using localStorage):', error.message);
+            });
+        } else {
+            console.log('💾 MySQL not available, using localStorage only');
         }
         
         // Set as current user
@@ -1152,26 +1151,28 @@ async function handleAuthentication(e) {
         let userData = null;
         let loginSource = 'localStorage';
         
-        // First, try to login using MySQL API
+        // First, try to login using MySQL API (non-blocking)
         if (window.safeAPI && window.safeAPI.available) {
-            try {
-                console.log('🔄 Attempting MySQL login...');
-                const apiResult = await window.safeAPI.login(email, password);
-                
+            console.log('🔄 Attempting MySQL login...');
+            window.safeAPI.login(email, password).then(apiResult => {
                 if (apiResult.success) {
                     console.log('✅ MySQL login successful');
-                    userData = {
+                    // Update user data if MySQL login succeeded
+                    const mysqlUserData = {
                         firstName: apiResult.user.firstName,
                         lastName: apiResult.user.lastName,
                         email: apiResult.user.email,
                         isPremium: apiResult.user.isPremium,
                         registrationDate: new Date().toISOString()
                     };
-                    loginSource = 'MySQL';
+                    localStorage.setItem('currentUser', JSON.stringify(mysqlUserData));
+                    currentUser = mysqlUserData;
+                    window.currentUser = mysqlUserData;
+                    updateAuthUI();
                 }
-            } catch (error) {
-                console.log('⚠️ MySQL login failed, trying localStorage:', error.message);
-            }
+            }).catch(error => {
+                console.log('⚠️ MySQL login failed:', error.message);
+            });
         }
         
         // If MySQL login failed, try localStorage
