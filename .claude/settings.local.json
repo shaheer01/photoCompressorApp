@@ -15,8 +15,10 @@
       "Bash(docker logs:*)",
       "Bash(docker network prune:*)",
       "Bash(npm install)",
-      "Bash(docker exec:*)"
+      "Bash(docker exec:*)",
+      "Bash(docker cp:*)"
     ],
     "deny": []
-  }
+  },
+  "model": "claude-opus-4-1-20250805"
 }
