@@ -18,7 +18,9 @@
       "Bash(docker exec:*)",
       "Bash(docker cp:*)",
       "Bash(mv:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(cp:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   },
