@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -113,6 +116,23 @@
         </div>
     </section>
 
+    <!-- Advertisement Banner -->
+    <section class="advertisement-section">
+        <div class="container">
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-content">
+                    <ins class="adsbygoogle header-banner-ad"
+                         style="display:block"
+                         data-ad-client="ca-pub-0000000000000000"
+                         data-ad-slot="0000000000"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Upload Interface -->
     <section id="compress" class="upload-section">
         <div class="container">
@@ -165,6 +185,17 @@
         <div class="container">
             <h3>Your Compressed Images</h3>
             <div class="results-grid" id="resultsGrid"></div>
+            
+            <!-- Results Ad -->
+            <div class="results-ad">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle results-ad-unit"
+                     style="display:block"
+                     data-ad-client="ca-pub-0000000000000000"
+                     data-ad-slot="2222222222"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
         </div>
     </section>
 
@@ -850,8 +881,53 @@
             return 'Unknown Region';
         }
         
+        // Initialize Google AdSense ads
+        function initializeAdSenseAds() {
+            try {
+                // Initialize all AdSense ad units
+                const ads = document.querySelectorAll('.adsbygoogle');
+                ads.forEach((ad, index) => {
+                    if (!ad.dataset.initialized) {
+                        setTimeout(() => {
+                            (window.adsbygoogle = window.adsbygoogle || []).push({});
+                            ad.dataset.initialized = 'true';
+                        }, index * 100); // Stagger ad loading
+                    }
+                });
+                
+                console.log(`✅ Initialized ${ads.length} AdSense ad units`);
+            } catch (error) {
+                console.error('AdSense initialization error:', error);
+            }
+        }
+        
+        // Initialize AdSense when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for page to settle before loading ads
+            setTimeout(initializeAdSenseAds, 2000);
+        });
+        
+        // Initialize ads when results are shown
+        const originalShowResults = showResults;
+        showResults = function() {
+            originalShowResults();
+            // Initialize ads in results section
+            setTimeout(initializeAdSenseAds, 500);
+        };
+        
         console.log('✅ CompressPhotos script loaded successfully');
     </script>
+    
+    <!-- Sidebar Advertisement (Hidden on mobile) -->
+    <div class="sidebar-ad" id="sidebarAd">
+        <div class="ad-label">Ad</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-0000000000000000"
+             data-ad-slot="1111111111"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+    </div>
     
     <style>
         @keyframes slideIn {
