@@ -62,6 +62,10 @@
                 <a href="#compress" class="nav-link">Compress</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="analytics.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Analytics
+                </a>
                 <button class="btn-primary" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">
                     <i class="fas fa-download"></i>
                     Compress Image
@@ -367,6 +371,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('✅ DOM ready, initializing...');
             
+            // Initialize analytics tracking
+            initializeAnalytics();
+            
             // Upload area events
             uploadArea.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -560,6 +567,9 @@
                             statusEl.innerHTML = '<i class="fas fa-check"></i>';
                             progressEl.style.width = '100%';
                             
+                            // Track compression analytics
+                            trackCompressionAnalytics(item.originalSize, item.compressedSize);
+                            
                             compressedFiles.push(item);
                             showNotification(`${item.file.name} compressed successfully!`, 'success');
                             resolve();
@@ -585,6 +595,9 @@
                         statusEl.className = 'file-status completed';
                         statusEl.innerHTML = '<i class="fas fa-check"></i>';
                         progressEl.style.width = '100%';
+                        
+                        // Track compression analytics
+                        trackCompressionAnalytics(item.originalSize, item.compressedSize);
                         
                         compressedFiles.push(item);
                         showNotification(`${item.file.name} compressed successfully!`, 'success');
@@ -676,6 +689,9 @@
             link.click();
             document.body.removeChild(link);
             
+            // Track download analytics
+            trackDownloadAnalytics(`compressed_${item.file.name}`);
+            
             showNotification('Image downloaded successfully!', 'success');
         }
         
@@ -718,6 +734,120 @@
             setTimeout(() => {
                 notification.remove();
             }, 3000);
+        }
+        
+        // Analytics tracking functions
+        function initializeAnalytics() {
+            // Track visitor on page load
+            trackVisitor();
+            
+            // Track button clicks
+            document.querySelectorAll('button, .nav-link').forEach(element => {
+                element.addEventListener('click', function() {
+                    trackClick(this.textContent || this.innerText || 'Unknown');
+                });
+            });
+        }
+        
+        function trackVisitor() {
+            let analytics = JSON.parse(localStorage.getItem('compressPhotosAnalytics')) || {
+                visitors: 0,
+                compressions: 0,
+                dataSaved: 0,
+                avgCompression: 75,
+                sessions: [],
+                activities: []
+            };
+            
+            // Check if this is a new session (more than 30 minutes since last visit)
+            const lastVisit = localStorage.getItem('lastVisit');
+            const now = Date.now();
+            const thirtyMinutes = 30 * 60 * 1000;
+            
+            if (!lastVisit || (now - parseInt(lastVisit)) > thirtyMinutes) {
+                analytics.visitors++;
+                analytics.activities.unshift({
+                    text: `New visitor from ${getLocationInfo()}`,
+                    time: 'Just now',
+                    icon: 'visitor'
+                });
+                
+                // Keep only recent 20 activities
+                analytics.activities = analytics.activities.slice(0, 20);
+            }
+            
+            localStorage.setItem('lastVisit', now.toString());
+            localStorage.setItem('compressPhotosAnalytics', JSON.stringify(analytics));
+        }
+        
+        function trackClick(element) {
+            console.log('Click tracked:', element);
+        }
+        
+        function trackCompressionAnalytics(originalSize, compressedSize) {
+            let analytics = JSON.parse(localStorage.getItem('compressPhotosAnalytics')) || {
+                visitors: 0,
+                compressions: 0,
+                dataSaved: 0,
+                avgCompression: 75,
+                activities: []
+            };
+            
+            analytics.compressions++;
+            const saved = (originalSize - compressedSize) / (1024 * 1024); // Convert to MB
+            analytics.dataSaved += saved;
+            
+            // Update average compression
+            const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
+            analytics.avgCompression = Math.round(
+                (analytics.avgCompression + compressionRatio) / 2
+            );
+            
+            // Add activity
+            analytics.activities.unshift({
+                text: `Image compressed: ${formatFileSize(originalSize)} → ${formatFileSize(compressedSize)} (${compressionRatio.toFixed(1)}% reduction)`,
+                time: 'Just now',
+                icon: 'compression'
+            });
+            
+            // Keep only recent 20 activities
+            analytics.activities = analytics.activities.slice(0, 20);
+            
+            localStorage.setItem('compressPhotosAnalytics', JSON.stringify(analytics));
+        }
+        
+        function trackDownloadAnalytics(filename) {
+            let analytics = JSON.parse(localStorage.getItem('compressPhotosAnalytics')) || {
+                activities: []
+            };
+            
+            analytics.activities.unshift({
+                text: `Downloaded: ${filename}`,
+                time: 'Just now',
+                icon: 'download'
+            });
+            
+            analytics.activities = analytics.activities.slice(0, 20);
+            localStorage.setItem('compressPhotosAnalytics', JSON.stringify(analytics));
+        }
+        
+        function getLocationInfo() {
+            // Simple location detection based on timezone
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const regions = {
+                'America/': 'Americas',
+                'Europe/': 'Europe',
+                'Asia/': 'Asia',
+                'Africa/': 'Africa',
+                'Australia/': 'Australia'
+            };
+            
+            for (let region in regions) {
+                if (timezone.startsWith(region)) {
+                    return regions[region];
+                }
+            }
+            return 'Unknown Region';
         }
         
         console.log('✅ CompressPhotos script loaded successfully');

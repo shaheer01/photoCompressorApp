@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - CompressPhotos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <style>
+        /* Analytics Dashboard Specific Styles */
+        .analytics-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 60px;
+            margin-top: 70px;
+        }
+
+        .analytics-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .analytics-title h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .analytics-title p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .dashboard-container {
+            padding: 60px 0;
+            background: #f8fafc;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .metric-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+
+        .metric-card.visitors .metric-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .metric-card.compressions .metric-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .metric-card.data-saved .metric-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .metric-card.avg-compression .metric-icon {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-trend {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .trend-up {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .trend-down {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .chart-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: linear-gradient(45deg, #f1f5f9 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f1f5f9 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f1f5f9 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .activity-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .activity-icon.compression {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .activity-icon.visitor {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .activity-icon.download {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-text {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 2px;
+        }
+
+        .activity-time {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .time-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .time-filter {
+            padding: 8px 16px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .time-filter:hover,
+        .time-filter.active {
+            border-color: #2563eb;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .export-section {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .export-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .export-description {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            padding: 12px 24px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #374151;
+        }
+
+        .export-btn:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .realtime-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .realtime-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        .realtime-text {
+            font-size: 14px;
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .analytics-header {
+                padding: 100px 0 40px;
+            }
+            
+            .analytics-title h1 {
+                font-size: 32px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 20px;
+            }
+            
+            .metric-card {
+                padding: 25px;
+            }
+            
+            .export-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .export-btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-images"></i>
+                <span>CompressPhotos</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="analytics.html" class="nav-link" style="color: #2563eb;">
+                    <i class="fas fa-chart-bar"></i>
+                    Analytics
+                </a>
+                <button class="btn-primary" onclick="window.location.href='index.html#compress'">
+                    <i class="fas fa-compress"></i>
+                    Compress Images
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Analytics Header -->
+    <section class="analytics-header">
+        <div class="container">
+            <div class="analytics-title">
+                <h1>Analytics Dashboard</h1>
+                <p>Real-time insights into CompressPhotos usage, performance metrics, and user engagement statistics</p>
+            </div>
+            
+            <div class="realtime-indicator">
+                <div class="realtime-dot"></div>
+                <span class="realtime-text">Live Data</span>
+            </div>
+            
+            <div class="time-filters">
+                <button class="time-filter active" data-period="today">Today</button>
+                <button class="time-filter" data-period="week">This Week</button>
+                <button class="time-filter" data-period="month">This Month</button>
+                <button class="time-filter" data-period="year">This Year</button>
+                <button class="time-filter" data-period="all">All Time</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-container">
+        <div class="container">
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card visitors">
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i> +12%
+                    </div>
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="metric-value" id="totalVisitors">0</span>
+                    <div class="metric-label">Total Visitors</div>
+                </div>
+
+                <div class="metric-card compressions">
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i> +23%
+                    </div>
+                    <div class="metric-icon">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <span class="metric-value" id="totalCompressions">0</span>
+                    <div class="metric-label">Images Compressed</div>
+                </div>
+
+                <div class="metric-card data-saved">
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i> +18%
+                    </div>
+                    <div class="metric-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <span class="metric-value" id="dataSaved">0 MB</span>
+                    <div class="metric-label">Data Saved</div>
+                </div>
+
+                <div class="metric-card avg-compression">
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i> +5%
+                    </div>
+                    <div class="metric-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <span class="metric-value" id="avgCompression">0%</span>
+                    <div class="metric-label">Avg Compression</div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3 class="chart-title">
+                        <i class="fas fa-chart-line"></i>
+                        Usage Over Time
+                    </h3>
+                    <div class="chart-placeholder">
+                        <div>
+                            <i class="fas fa-chart-line" style="font-size: 48px; margin-bottom: 15px; display: block;"></i>
+                            Interactive usage chart will be displayed here
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">
+                        <i class="fas fa-bell"></i>
+                        Recent Activity
+                    </h3>
+                    <div class="activity-feed" id="activityFeed">
+                        <!-- Activity items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Metrics -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3 class="chart-title">
+                        <i class="fas fa-globe"></i>
+                        Top Countries
+                    </h3>
+                    <div class="chart-placeholder">
+                        <div>
+                            <i class="fas fa-globe" style="font-size: 48px; margin-bottom: 15px; display: block;"></i>
+                            Geographic distribution chart
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Device Breakdown
+                    </h3>
+                    <div class="chart-placeholder">
+                        <div>
+                            <i class="fas fa-mobile-alt" style="font-size: 48px; margin-bottom: 15px; display: block;"></i>
+                            Device type distribution
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Section -->
+            <div class="export-section">
+                <h3 class="export-title">Export Analytics Data</h3>
+                <p class="export-description">Download comprehensive reports in your preferred format</p>
+                <div class="export-buttons">
+                    <button class="export-btn" onclick="exportData('csv')">
+                        <i class="fas fa-file-csv"></i>
+                        Export CSV
+                    </button>
+                    <button class="export-btn" onclick="exportData('json')">
+                        <i class="fas fa-file-code"></i>
+                        Export JSON
+                    </button>
+                    <button class="export-btn" onclick="exportData('pdf')">
+                        <i class="fas fa-file-pdf"></i>
+                        Export PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Analytics Dashboard JavaScript
+        console.log('🚀 Analytics Dashboard loading...');
+
+        // Analytics data management
+        let analyticsData = {
+            visitors: 0,
+            compressions: 0,
+            dataSaved: 0,
+            sessions: [],
+            activities: []
+        };
+
+        // Initialize analytics on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ Analytics Dashboard initialized');
+            
+            loadAnalyticsData();
+            updateMetrics();
+            populateActivityFeed();
+            
+            // Set up time filter buttons
+            const timeFilters = document.querySelectorAll('.time-filter');
+            timeFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    timeFilters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const period = this.getAttribute('data-period');
+                    filterDataByPeriod(period);
+                });
+            });
+            
+            // Update metrics every 30 seconds
+            setInterval(updateMetrics, 30000);
+        });
+
+        function loadAnalyticsData() {
+            // Load analytics data from localStorage
+            const stored = localStorage.getItem('compressPhotosAnalytics');
+            if (stored) {
+                analyticsData = JSON.parse(stored);
+            }
+            
+            // Add some demo data if no data exists
+            if (analyticsData.visitors === 0) {
+                generateDemoData();
+            }
+        }
+
+        function generateDemoData() {
+            // Generate realistic demo data
+            analyticsData = {
+                visitors: Math.floor(Math.random() * 1000) + 500,
+                compressions: Math.floor(Math.random() * 5000) + 2000,
+                dataSaved: Math.floor(Math.random() * 1000) + 200,
+                avgCompression: Math.floor(Math.random() * 30) + 65,
+                sessions: [],
+                activities: []
+            };
+            
+            // Generate recent activities
+            const activities = [
+                'User compressed 3 images, saved 2.4 MB',
+                'New visitor from United States',
+                'User downloaded compressed images',
+                'User compressed large image (8.2 MB → 1.1 MB)',
+                'New visitor from United Kingdom',
+                'User compressed 5 images in batch',
+                'User shared compressed image',
+                'New visitor from Canada',
+                'User compressed profile picture',
+                'User compressed product images'
+            ];
+            
+            const icons = ['compression', 'visitor', 'download', 'compression', 'visitor', 'compression', 'download', 'visitor', 'compression', 'compression'];
+            
+            for (let i = 0; i < 10; i++) {
+                analyticsData.activities.push({
+                    text: activities[i],
+                    time: getRelativeTime(Date.now() - (Math.random() * 3600000)), // Within last hour
+                    icon: icons[i]
+                });
+            }
+            
+            saveAnalyticsData();
+        }
+
+        function updateMetrics() {
+            document.getElementById('totalVisitors').textContent = formatNumber(analyticsData.visitors);
+            document.getElementById('totalCompressions').textContent = formatNumber(analyticsData.compressions);
+            document.getElementById('dataSaved').textContent = formatFileSize(analyticsData.dataSaved * 1024 * 1024);
+            document.getElementById('avgCompression').textContent = analyticsData.avgCompression + '%';
+        }
+
+        function populateActivityFeed() {
+            const activityFeed = document.getElementById('activityFeed');
+            activityFeed.innerHTML = '';
+            
+            analyticsData.activities.forEach(activity => {
+                const activityItem = document.createElement('div');
+                activityItem.className = 'activity-item';
+                activityItem.innerHTML = `
+                    <div class="activity-icon ${activity.icon}">
+                        <i class="fas ${getIconClass(activity.icon)}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">${activity.text}</div>
+                        <div class="activity-time">${activity.time}</div>
+                    </div>
+                `;
+                activityFeed.appendChild(activityItem);
+            });
+        }
+
+        function getIconClass(type) {
+            switch(type) {
+                case 'compression': return 'fa-compress';
+                case 'visitor': return 'fa-user';
+                case 'download': return 'fa-download';
+                default: return 'fa-info';
+            }
+        }
+
+        function filterDataByPeriod(period) {
+            // This would filter analytics data by the selected time period
+            console.log('Filtering data for period:', period);
+            
+            // For demo purposes, just update some values
+            switch(period) {
+                case 'today':
+                    analyticsData.visitors = Math.floor(analyticsData.visitors * 0.1);
+                    analyticsData.compressions = Math.floor(analyticsData.compressions * 0.1);
+                    break;
+                case 'week':
+                    analyticsData.visitors = Math.floor(analyticsData.visitors * 0.3);
+                    analyticsData.compressions = Math.floor(analyticsData.compressions * 0.3);
+                    break;
+                case 'month':
+                    analyticsData.visitors = Math.floor(analyticsData.visitors * 0.7);
+                    analyticsData.compressions = Math.floor(analyticsData.compressions * 0.7);
+                    break;
+                case 'all':
+                    loadAnalyticsData(); // Reset to full data
+                    break;
+            }
+            
+            updateMetrics();
+        }
+
+        function exportData(format) {
+            const data = {
+                exportDate: new Date().toISOString(),
+                period: document.querySelector('.time-filter.active').textContent,
+                metrics: {
+                    totalVisitors: analyticsData.visitors,
+                    totalCompressions: analyticsData.compressions,
+                    dataSaved: analyticsData.dataSaved,
+                    avgCompression: analyticsData.avgCompression
+                },
+                activities: analyticsData.activities
+            };
+            
+            switch(format) {
+                case 'csv':
+                    exportCSV(data);
+                    break;
+                case 'json':
+                    exportJSON(data);
+                    break;
+                case 'pdf':
+                    showNotification('PDF export feature coming soon!', 'info');
+                    break;
+            }
+        }
+
+        function exportCSV(data) {
+            const csv = `Date,Metric,Value
+${data.exportDate},Total Visitors,${data.metrics.totalVisitors}
+${data.exportDate},Total Compressions,${data.metrics.totalCompressions}
+${data.exportDate},Data Saved (MB),${data.metrics.dataSaved}
+${data.exportDate},Average Compression,${data.metrics.avgCompression}%`;
+            
+            downloadFile(csv, 'analytics-export.csv', 'text/csv');
+            showNotification('CSV export downloaded successfully!', 'success');
+        }
+
+        function exportJSON(data) {
+            const json = JSON.stringify(data, null, 2);
+            downloadFile(json, 'analytics-export.json', 'application/json');
+            showNotification('JSON export downloaded successfully!', 'success');
+        }
+
+        function downloadFile(content, filename, contentType) {
+            const blob = new Blob([content], { type: contentType });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        function saveAnalyticsData() {
+            localStorage.setItem('compressPhotosAnalytics', JSON.stringify(analyticsData));
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function getRelativeTime(timestamp) {
+            const now = Date.now();
+            const diff = now - timestamp;
+            const minutes = Math.floor(diff / 60000);
+            
+            if (minutes < 1) return 'Just now';
+            if (minutes < 60) return `${minutes} minutes ago`;
+            
+            const hours = Math.floor(minutes / 60);
+            if (hours < 24) return `${hours} hours ago`;
+            
+            const days = Math.floor(hours / 24);
+            return `${days} days ago`;
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 90px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 600;
+                z-index: 3000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            const colors = {
+                success: '#10b981',
+                error: '#ef4444',
+                warning: '#f59e0b',
+                info: '#2563eb'
+            };
+            
+            notification.style.backgroundColor = colors[type] || colors.info;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Public functions for external analytics tracking
+        window.trackVisitor = function() {
+            analyticsData.visitors++;
+            saveAnalyticsData();
+            updateMetrics();
+        };
+
+        window.trackCompression = function(originalSize, compressedSize) {
+            analyticsData.compressions++;
+            const saved = (originalSize - compressedSize) / (1024 * 1024); // Convert to MB
+            analyticsData.dataSaved += saved;
+            
+            // Update average compression
+            const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
+            analyticsData.avgCompression = Math.round(
+                (analyticsData.avgCompression + compressionRatio) / 2
+            );
+            
+            // Add activity
+            analyticsData.activities.unshift({
+                text: `Image compressed: ${formatFileSize(originalSize)} → ${formatFileSize(compressedSize)}`,
+                time: 'Just now',
+                icon: 'compression'
+            });
+            
+            // Keep only recent 20 activities
+            analyticsData.activities = analyticsData.activities.slice(0, 20);
+            
+            saveAnalyticsData();
+            updateMetrics();
+            populateActivityFeed();
+        };
+
+        window.trackDownload = function(filename) {
+            analyticsData.activities.unshift({
+                text: `Downloaded: ${filename}`,
+                time: 'Just now',
+                icon: 'download'
+            });
+            
+            analyticsData.activities = analyticsData.activities.slice(0, 20);
+            saveAnalyticsData();
+            populateActivityFeed();
+        };
+
+        console.log('✅ Analytics Dashboard script loaded successfully');
+    </script>
+
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</body>
+</html>
