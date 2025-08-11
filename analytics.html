@@ -8,8 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"></script>
+    <!-- Google AdSense with error handling -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"
+            onerror="console.warn('⚠️ AdSense script failed to load on analytics page'); window.adsenseLoadFailed = true;"></script>
     <style>
         /* Analytics Dashboard Specific Styles */
         .analytics-header {
@@ -876,12 +877,24 @@ ${data.exportDate},Average Compression,${data.metrics.avgCompression}%`;
         // Initialize Google AdSense for Analytics Dashboard
         function initializeAnalyticsAds() {
             try {
+                // Check if AdSense failed to load
+                if (window.adsenseLoadFailed || typeof window.adsbygoogle === 'undefined') {
+                    console.warn('⚠️ AdSense not available on analytics page - hiding ad containers');
+                    hideAnalyticsAds();
+                    return;
+                }
+                
                 const ads = document.querySelectorAll('.adsbygoogle');
                 ads.forEach((ad, index) => {
                     if (!ad.dataset.initialized) {
                         setTimeout(() => {
-                            (window.adsbygoogle = window.adsbygoogle || []).push({});
-                            ad.dataset.initialized = 'true';
+                            try {
+                                (window.adsbygoogle = window.adsbygoogle || []).push({});
+                                ad.dataset.initialized = 'true';
+                            } catch (adError) {
+                                console.warn('Analytics ad unit failed to load:', adError);
+                                ad.closest('.chart-container').style.display = 'none';
+                            }
                         }, index * 200); // Stagger ad loading
                     }
                 });
@@ -889,6 +902,16 @@ ${data.exportDate},Average Compression,${data.metrics.avgCompression}%`;
                 console.log(`✅ Initialized ${ads.length} AdSense ad units on Analytics Dashboard`);
             } catch (error) {
                 console.error('AdSense initialization error on Analytics Dashboard:', error);
+                hideAnalyticsAds();
+            }
+        }
+        
+        // Hide analytics ads if AdSense fails
+        function hideAnalyticsAds() {
+            const analyticsAd = document.querySelector('.chart-container:has(.analytics-ad-unit)');
+            if (analyticsAd) {
+                analyticsAd.style.display = 'none';
+                console.log('🔇 Analytics ad container hidden');
             }
         }
         

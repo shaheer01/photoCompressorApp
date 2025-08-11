@@ -24,8 +24,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"></script>
+    <!-- Google AdSense with error handling -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous" 
+            onerror="console.warn('⚠️ AdSense script failed to load - ads will be hidden'); window.adsenseLoadFailed = true;"></script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -881,16 +882,28 @@
             return 'Unknown Region';
         }
         
-        // Initialize Google AdSense ads
+        // Initialize Google AdSense ads with error handling
         function initializeAdSenseAds() {
             try {
+                // Check if AdSense script loaded successfully
+                if (typeof window.adsbygoogle === 'undefined') {
+                    console.warn('⚠️ AdSense script not loaded - hiding ad containers');
+                    hideAdContainers();
+                    return;
+                }
+                
                 // Initialize all AdSense ad units
                 const ads = document.querySelectorAll('.adsbygoogle');
                 ads.forEach((ad, index) => {
                     if (!ad.dataset.initialized) {
                         setTimeout(() => {
-                            (window.adsbygoogle = window.adsbygoogle || []).push({});
-                            ad.dataset.initialized = 'true';
+                            try {
+                                (window.adsbygoogle = window.adsbygoogle || []).push({});
+                                ad.dataset.initialized = 'true';
+                            } catch (adError) {
+                                console.warn('Ad unit failed to load:', adError);
+                                ad.style.display = 'none';
+                            }
                         }, index * 100); // Stagger ad loading
                     }
                 });
@@ -898,13 +911,37 @@
                 console.log(`✅ Initialized ${ads.length} AdSense ad units`);
             } catch (error) {
                 console.error('AdSense initialization error:', error);
+                hideAdContainers();
             }
+        }
+        
+        // Hide ad containers if AdSense fails to load
+        function hideAdContainers() {
+            const adSections = document.querySelectorAll('.advertisement-section, .results-ad, .sidebar-ad');
+            adSections.forEach(section => {
+                section.style.display = 'none';
+            });
+            console.log('🔇 Ad containers hidden due to AdSense loading issues');
         }
         
         // Initialize AdSense when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            // Check if AdSense script failed to load
+            if (window.adsenseLoadFailed) {
+                hideAdContainers();
+                return;
+            }
+            
             // Wait a bit for page to settle before loading ads
-            setTimeout(initializeAdSenseAds, 2000);
+            setTimeout(() => {
+                // Double-check AdSense availability before initializing
+                if (typeof window.adsbygoogle === 'undefined') {
+                    console.warn('⚠️ AdSense not available - this may be due to ad blockers or account approval status');
+                    hideAdContainers();
+                } else {
+                    initializeAdSenseAds();
+                }
+            }, 2000);
         });
         
         // Initialize ads when results are shown
@@ -933,6 +970,28 @@
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Ad containers that can be hidden gracefully */
+        .advertisement-section {
+            transition: opacity 0.3s ease, height 0.3s ease;
+        }
+        
+        .advertisement-section[style*="display: none"] {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .results-ad[style*="display: none"],
+        .sidebar-ad[style*="display: none"] {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
     </style>
 </body>
