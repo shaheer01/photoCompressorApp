@@ -24,9 +24,14 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Google AdSense with error handling -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous" 
-            onerror="console.warn('⚠️ AdSense script failed to load - ads will be hidden'); window.adsenseLoadFailed = true;"></script>
+    <!-- Google AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3643310427710829",
+            enable_page_level_ads: true
+        });
+    </script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -117,22 +122,7 @@
         </div>
     </section>
 
-    <!-- Advertisement Banner -->
-    <section class="advertisement-section">
-        <div class="container">
-            <div class="ad-container">
-                <div class="ad-label">Advertisement</div>
-                <div class="ad-content">
-                    <ins class="adsbygoogle header-banner-ad"
-                         style="display:block"
-                         data-ad-client="ca-pub-3643310427710829"
-                         data-ad-slot="0000000000"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- AdSense Auto Ads will automatically place ads here -->
 
     <!-- Upload Interface -->
     <section id="compress" class="upload-section">
@@ -187,16 +177,7 @@
             <h3>Your Compressed Images</h3>
             <div class="results-grid" id="resultsGrid"></div>
             
-            <!-- Results Ad -->
-            <div class="results-ad">
-                <div class="ad-label">Advertisement</div>
-                <ins class="adsbygoogle results-ad-unit"
-                     style="display:block"
-                     data-ad-client="ca-pub-0000000000000000"
-                     data-ad-slot="2222222222"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-            </div>
+            <!-- Auto Ads will place ads automatically in results area -->
         </div>
     </section>
 
@@ -882,89 +863,13 @@
             return 'Unknown Region';
         }
         
-        // Initialize Google AdSense ads with error handling
-        function initializeAdSenseAds() {
-            try {
-                // Check if AdSense script loaded successfully
-                if (typeof window.adsbygoogle === 'undefined') {
-                    console.warn('⚠️ AdSense script not loaded - hiding ad containers');
-                    hideAdContainers();
-                    return;
-                }
-                
-                // Initialize all AdSense ad units
-                const ads = document.querySelectorAll('.adsbygoogle');
-                ads.forEach((ad, index) => {
-                    if (!ad.dataset.initialized) {
-                        setTimeout(() => {
-                            try {
-                                (window.adsbygoogle = window.adsbygoogle || []).push({});
-                                ad.dataset.initialized = 'true';
-                            } catch (adError) {
-                                console.warn('Ad unit failed to load:', adError);
-                                ad.style.display = 'none';
-                            }
-                        }, index * 100); // Stagger ad loading
-                    }
-                });
-                
-                console.log(`✅ Initialized ${ads.length} AdSense ad units`);
-            } catch (error) {
-                console.error('AdSense initialization error:', error);
-                hideAdContainers();
-            }
-        }
-        
-        // Hide ad containers if AdSense fails to load
-        function hideAdContainers() {
-            const adSections = document.querySelectorAll('.advertisement-section, .results-ad, .sidebar-ad');
-            adSections.forEach(section => {
-                section.style.display = 'none';
-            });
-            console.log('🔇 Ad containers hidden due to AdSense loading issues');
-        }
-        
-        // Initialize AdSense when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if AdSense script failed to load
-            if (window.adsenseLoadFailed) {
-                hideAdContainers();
-                return;
-            }
-            
-            // Wait a bit for page to settle before loading ads
-            setTimeout(() => {
-                // Double-check AdSense availability before initializing
-                if (typeof window.adsbygoogle === 'undefined') {
-                    console.warn('⚠️ AdSense not available - this may be due to ad blockers or account approval status');
-                    hideAdContainers();
-                } else {
-                    initializeAdSenseAds();
-                }
-            }, 2000);
-        });
-        
-        // Initialize ads when results are shown
-        const originalShowResults = showResults;
-        showResults = function() {
-            originalShowResults();
-            // Initialize ads in results section
-            setTimeout(initializeAdSenseAds, 500);
-        };
+        // AdSense Auto Ads - no manual initialization needed
+        console.log('✅ AdSense Auto Ads enabled - Google will automatically place ads');
         
         console.log('✅ CompressPhotos script loaded successfully');
     </script>
     
-    <!-- Sidebar Advertisement (Hidden on mobile) -->
-    <div class="sidebar-ad" id="sidebarAd">
-        <div class="ad-label">Ad</div>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-0000000000000000"
-             data-ad-slot="1111111111"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-    </div>
+    <!-- Auto Ads will handle sidebar placement automatically -->
     
     <style>
         @keyframes slideIn {

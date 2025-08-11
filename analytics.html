@@ -8,9 +8,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
-    <!-- Google AdSense with error handling -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"
-            onerror="console.warn('⚠️ AdSense script failed to load on analytics page'); window.adsenseLoadFailed = true;"></script>
+    <!-- Google AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3643310427710829" crossorigin="anonymous"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3643310427710829",
+            enable_page_level_ads: true
+        });
+    </script>
     <style>
         /* Analytics Dashboard Specific Styles */
         .analytics-header {
@@ -517,21 +522,7 @@
                 </div>
             </div>
 
-            <!-- Analytics Advertisement -->
-            <div class="chart-container">
-                <h3 class="chart-title">
-                    <i class="fas fa-bullhorn"></i>
-                    Sponsored
-                </h3>
-                <div class="ad-content">
-                    <ins class="adsbygoogle analytics-ad-unit"
-                         style="display:block"
-                         data-ad-client="ca-pub-3643310427710829"
-                         data-ad-slot="3333333333"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                </div>
-            </div>
+            <!-- Auto Ads will place ads automatically on analytics page -->
 
             <!-- Export Section -->
             <div class="export-section">
@@ -874,51 +865,8 @@ ${data.exportDate},Average Compression,${data.metrics.avgCompression}%`;
             populateActivityFeed();
         };
 
-        // Initialize Google AdSense for Analytics Dashboard
-        function initializeAnalyticsAds() {
-            try {
-                // Check if AdSense failed to load
-                if (window.adsenseLoadFailed || typeof window.adsbygoogle === 'undefined') {
-                    console.warn('⚠️ AdSense not available on analytics page - hiding ad containers');
-                    hideAnalyticsAds();
-                    return;
-                }
-                
-                const ads = document.querySelectorAll('.adsbygoogle');
-                ads.forEach((ad, index) => {
-                    if (!ad.dataset.initialized) {
-                        setTimeout(() => {
-                            try {
-                                (window.adsbygoogle = window.adsbygoogle || []).push({});
-                                ad.dataset.initialized = 'true';
-                            } catch (adError) {
-                                console.warn('Analytics ad unit failed to load:', adError);
-                                ad.closest('.chart-container').style.display = 'none';
-                            }
-                        }, index * 200); // Stagger ad loading
-                    }
-                });
-                
-                console.log(`✅ Initialized ${ads.length} AdSense ad units on Analytics Dashboard`);
-            } catch (error) {
-                console.error('AdSense initialization error on Analytics Dashboard:', error);
-                hideAnalyticsAds();
-            }
-        }
-        
-        // Hide analytics ads if AdSense fails
-        function hideAnalyticsAds() {
-            const analyticsAd = document.querySelector('.chart-container:has(.analytics-ad-unit)');
-            if (analyticsAd) {
-                analyticsAd.style.display = 'none';
-                console.log('🔇 Analytics ad container hidden');
-            }
-        }
-        
-        // Initialize ads after dashboard loads
-        setTimeout(() => {
-            initializeAnalyticsAds();
-        }, 3000);
+        // AdSense Auto Ads enabled - Google will automatically place ads
+        console.log('✅ AdSense Auto Ads enabled on Analytics Dashboard');
         
         console.log('✅ Analytics Dashboard script loaded successfully');
     </script>
