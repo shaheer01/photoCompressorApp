@@ -131,7 +131,20 @@
         </div>
     </section>
 
-    <!-- AdSense Auto Ads will automatically place ads here -->
+    <!-- AdSense Banner Ad - Top of Page -->
+    <div class="ad-container ad-banner-top">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+            <div class="ad-size">728 x 90</div>
+        </div>
+        <!-- AdSense Auto Ads will replace this placeholder -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3643310427710829"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+    </div>
 
     <!-- Upload Interface -->
     <section id="compress" class="upload-section">
@@ -187,7 +200,18 @@
             <h3>Your Compressed Images</h3>
             <div class="results-grid" id="resultsGrid"></div>
             
-            <!-- Auto Ads will place ads automatically in results area -->
+            <!-- AdSense Rectangle Ad - After Results -->
+            <div class="ad-container ad-rectangle-results">
+                <div class="ad-placeholder">
+                    <span>Advertisement</span>
+                    <div class="ad-size">336 x 280</div>
+                </div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3643310427710829"
+                     data-ad-slot="2345678901"
+                     data-ad-format="rectangle"></ins>
+            </div>
         </div>
     </section>
 
@@ -1058,6 +1082,15 @@
         console.log('✅ CompressPhotos script loaded successfully');
 
     </script>
+
+    <!-- Initialize AdSense ads -->
+    <script>
+        // Initialize all AdSense ad units
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        console.log('✅ AdSense ads initialized');
+    </script>
     
     <!-- Auto Ads will handle sidebar placement automatically -->
     
@@ -1222,6 +1255,70 @@
             color: #60a5fa;
         }
 
+        /* AdSense Ad Container Styles */
+        .ad-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ad-placeholder {
+            color: #9ca3af;
+            font-size: 14px;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .ad-placeholder span {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .ad-size {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .ad-banner-top, .ad-banner-middle {
+            max-width: 728px;
+            margin: 30px auto;
+        }
+
+        .ad-rectangle-results {
+            max-width: 336px;
+            margin: 30px auto;
+        }
+
+        .ad-sidebar-sticky {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            max-width: 300px;
+            z-index: 100;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Hide ads when AdSense loads */
+        .ad-container .adsbygoogle[data-ad-status="filled"] + .ad-placeholder {
+            display: none;
+        }
+
+        @media (max-width: 1200px) {
+            .ad-sidebar-sticky {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
@@ -1230,6 +1327,15 @@
 
             .footer {
                 padding: 40px 0 20px;
+            }
+
+            .ad-banner-top, .ad-banner-middle {
+                max-width: 320px;
+            }
+
+            .ad-container {
+                margin: 20px 0;
+                padding: 15px;
             }
         }
     </style>
