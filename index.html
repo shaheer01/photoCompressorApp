@@ -83,10 +83,7 @@
                 </a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="analytics.html" class="nav-link">
-                    <i class="fas fa-chart-bar"></i>
-                    Analytics
-                </a>
+                <a href="contact.html" class="nav-link">Contact</a>
                 <button class="btn-primary" onclick="document.getElementById('compress').scrollIntoView({behavior: 'smooth'})">
                     <i class="fas fa-download"></i>
                     Compress Image
@@ -1064,6 +1061,57 @@
     
     <!-- Auto Ads will handle sidebar placement automatically -->
     
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CompressPhotos</h3>
+                    <p>Free online image compression tool for optimizing your photos without quality loss. Reduce image file sizes while maintaining visual quality.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#compress">Image Compressor</a></li>
+                        <li><a href="schengen-visa-photo.html">Visa Photo Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQ</a></li>
+                        <li><a href="#compress">How to Use</a></li>
+                        <li><a href="contact.html">Report Bug</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CompressPhotos. All rights reserved. | 
+                   <a href="privacy-policy.html">Privacy</a> | 
+                   <a href="terms-of-service.html">Terms</a> | 
+                   <a href="contact.html">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
     <style>
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
@@ -1090,6 +1138,99 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3, .footer-section h4 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #60a5fa;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        .footer-bottom a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #60a5fa;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer {
+                padding: 40px 0 20px;
+            }
         }
     </style>
 </body>
