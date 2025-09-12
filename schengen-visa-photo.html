@@ -809,6 +809,7 @@
             border-radius: 4px;
             font-size: 12px;
             font-weight: 600;
+            display: none; /* Hide external labels - now drawn on canvas */
         }
         
         .size-label-top {
@@ -882,6 +883,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            display: none; /* Hide external arrows - now drawn on canvas */
         }
         
         .arrow-horizontal {
@@ -1733,22 +1735,25 @@
             // Save context state
             ctx.save();
             
-            // Set guide line styles
+            // Draw dimension arrows and labels INSIDE the canvas
+            drawDimensionGuides();
+            
+            // Set guide line styles for face positioning
             ctx.strokeStyle = 'rgba(239, 68, 68, 0.4)';
             ctx.lineWidth = 2;
             ctx.setLineDash([8, 4]);
             
-            // Face area guidelines (roughly center 65% of canvas)
-            const faceWidth = canvas.width * 0.65;
-            const faceHeight = canvas.height * 0.67;
-            const faceX = (canvas.width - faceWidth) / 2;
-            const faceY = canvas.height * 0.14; // Start 14% from top
+            // Face area guidelines - centered properly within canvas
+            const faceWidth = canvas.width * 0.70; // 70% of canvas width
+            const faceHeight = canvas.height * 0.75; // 75% of canvas height
+            const faceX = (canvas.width - faceWidth) / 2; // Center horizontally
+            const faceY = (canvas.height - faceHeight) / 2; // Center vertically
             
-            // Draw face area rectangle
+            // Draw face area rectangle (centered)
             ctx.strokeRect(faceX, faceY, faceWidth, faceHeight);
             
-            // Eye level line (approximately 22% from top of canvas)
-            const eyeY = canvas.height * 0.22;
+            // Eye level line (approximately 35% from top of face area)
+            const eyeY = faceY + (faceHeight * 0.35);
             ctx.beginPath();
             ctx.moveTo(faceX, eyeY);
             ctx.lineTo(faceX + faceWidth, eyeY);
@@ -1764,13 +1769,96 @@
             // Add text labels
             ctx.fillStyle = 'rgba(239, 68, 68, 0.8)';
             ctx.font = 'bold 11px Arial';
-            ctx.textAlign = 'left';
-            ctx.fillText('Eyes here', faceX + faceWidth + 5, eyeY + 4);
-            
             ctx.textAlign = 'center';
-            ctx.fillText('Face area', centerX, faceY - 8);
+            ctx.fillText('Eyes here', centerX, eyeY - 5);
+            ctx.fillText('Face area', centerX, faceY - 5);
             
             // Restore context state
+            ctx.restore();
+        }
+        
+        function drawDimensionGuides() {
+            // Draw dimension arrows and labels inside the canvas
+            ctx.save();
+            
+            // Set dimension guide styles
+            ctx.strokeStyle = '#10b981'; // Green color
+            ctx.fillStyle = '#10b981';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([]);
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            
+            // Top dimension (35mm)
+            const topY = 20;
+            const arrowLength = 8;
+            
+            // Horizontal arrow line
+            ctx.beginPath();
+            ctx.moveTo(20, topY);
+            ctx.lineTo(canvas.width - 20, topY);
+            ctx.stroke();
+            
+            // Left arrow head
+            ctx.beginPath();
+            ctx.moveTo(20, topY);
+            ctx.lineTo(20 + arrowLength, topY - 4);
+            ctx.lineTo(20 + arrowLength, topY + 4);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Right arrow head
+            ctx.beginPath();
+            ctx.moveTo(canvas.width - 20, topY);
+            ctx.lineTo(canvas.width - 20 - arrowLength, topY - 4);
+            ctx.lineTo(canvas.width - 20 - arrowLength, topY + 4);
+            ctx.closePath();
+            ctx.fill();
+            
+            // 35mm label with background
+            ctx.fillStyle = '#1e40af'; // Blue background
+            ctx.fillRect(canvas.width / 2 - 25, topY - 10, 50, 20);
+            ctx.fillStyle = 'white';
+            ctx.fillText('35mm', canvas.width / 2, topY + 4);
+            
+            // Left dimension (45mm)
+            const leftX = 20;
+            
+            // Vertical arrow line
+            ctx.strokeStyle = '#10b981';
+            ctx.beginPath();
+            ctx.moveTo(leftX, 40);
+            ctx.lineTo(leftX, canvas.height - 20);
+            ctx.stroke();
+            
+            // Top arrow head
+            ctx.fillStyle = '#10b981';
+            ctx.beginPath();
+            ctx.moveTo(leftX, 40);
+            ctx.lineTo(leftX - 4, 40 + arrowLength);
+            ctx.lineTo(leftX + 4, 40 + arrowLength);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Bottom arrow head
+            ctx.beginPath();
+            ctx.moveTo(leftX, canvas.height - 20);
+            ctx.lineTo(leftX - 4, canvas.height - 20 - arrowLength);
+            ctx.lineTo(leftX + 4, canvas.height - 20 - arrowLength);
+            ctx.closePath();
+            ctx.fill();
+            
+            // 45mm label with background (rotated)
+            ctx.save();
+            ctx.translate(leftX - 15, canvas.height / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillStyle = '#1e40af'; // Blue background
+            ctx.fillRect(-25, -10, 50, 20);
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.fillText('45mm', 0, 4);
+            ctx.restore();
+            
             ctx.restore();
         }
         
