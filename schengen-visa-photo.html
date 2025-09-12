@@ -1493,46 +1493,41 @@
         }
         
         function autoAdjustForSchengen(img) {
-            // Auto-adjustment for Schengen visa photo requirements
+            // Simple and reliable auto-centering for Schengen visa photos
             
-            // Try face detection first
-            detectFaceAndPosition(img).then(detected => {
-                currentScale = detected.scale;
-                currentX = detected.x;
-                currentY = detected.y;
-                
-                // Update UI controls
-                document.getElementById('scaleSlider').value = currentScale;
-                document.getElementById('scaleValue').textContent = Math.round(currentScale * 100) + '%';
-                
-                redrawCanvas();
-                console.log(`Face detected: Scale=${Math.round(currentScale * 100)}%, X=${currentX}, Y=${currentY}`);
-            }).catch(() => {
-                // Fallback: basic positioning for portrait photos
-                const aspectRatio = img.width / img.height;
-                
-                if (aspectRatio < 1) {
-                    // Portrait image - assume face is in upper portion
-                    currentScale = Math.min(canvas.width / img.width, canvas.height / img.height) * 1.2;
-                    currentX = 0;
-                    currentY = -20; // Shift up slightly for passport positioning
-                } else {
-                    // Landscape or square - fit and center
-                    currentScale = Math.min(canvas.width / img.width, canvas.height / img.height) * 0.9;
-                    currentX = 0;
-                    currentY = 0;
-                }
-                
-                // Clamp scale to reasonable bounds
-                currentScale = Math.max(0.5, Math.min(2.0, currentScale));
-                
-                // Update UI controls
-                document.getElementById('scaleSlider').value = currentScale;
-                document.getElementById('scaleValue').textContent = Math.round(currentScale * 100) + '%';
-                
-                redrawCanvas();
-                console.log(`Auto-adjusted: Scale=${Math.round(currentScale * 100)}%, X=${currentX}, Y=${currentY}`);
-            });
+            // Always center the image first
+            currentX = 0;
+            currentY = 0;
+            
+            // Calculate scale to fit image within canvas with some margin
+            const scaleX = canvas.width / img.width;
+            const scaleY = canvas.height / img.height;
+            const baseScale = Math.min(scaleX, scaleY) * 0.85; // 85% for comfortable margin
+            
+            const aspectRatio = img.width / img.height;
+            
+            if (aspectRatio < 0.8) {
+                // Portrait image - typical for selfies/photos
+                currentScale = baseScale * 1.2; // Scale up a bit for portraits
+                currentY = -15; // Move slightly up for better face positioning
+            } else if (aspectRatio > 1.2) {
+                // Landscape image
+                currentScale = baseScale * 0.9;
+                currentY = 0; // Keep centered
+            } else {
+                // Square-ish image
+                currentScale = baseScale;
+                currentY = -8; // Slight upward adjustment
+            }
+            
+            // Ensure reasonable scale bounds
+            currentScale = Math.max(0.5, Math.min(2.0, currentScale));
+            
+            // Update UI controls
+            document.getElementById('scaleSlider').value = currentScale;
+            document.getElementById('scaleValue').textContent = Math.round(currentScale * 100) + '%';
+            
+            console.log(`Auto-centered image: Scale=${Math.round(currentScale * 100)}%, X=${currentX}, Y=${currentY}, Aspect=${aspectRatio.toFixed(2)}`);
         }
         
         function formatFileSize(bytes) {
@@ -1574,14 +1569,18 @@
                     };
                     
                     // Calculate optimal scale for Schengen visa requirements
-                    const targetHeadHeight = canvas.height * 0.75; // 75% of canvas height
+                    const targetHeadHeight = canvas.height * 0.65; // 65% of canvas height for better proportion
                     const currentHeadHeight = faceRegion.height / scale;
-                    const optimalScale = (targetHeadHeight / currentHeadHeight) * 
-                                       Math.min(canvas.width / img.width, canvas.height / img.height);
+                    const baseScale = Math.min(canvas.width / img.width, canvas.height / img.height);
+                    const optimalScale = Math.min((targetHeadHeight / currentHeadHeight) * baseScale, baseScale * 1.2);
                     
-                    // Position face slightly above center (typical for passport photos)
-                    const targetX = canvas.width / 2 - faceCenter.x * optimalScale;
-                    const targetY = canvas.height * 0.4 - faceCenter.y * optimalScale; // Face positioned in upper 40%
+                    // Center the face properly within canvas
+                    const scaledFaceX = faceCenter.x * optimalScale;
+                    const scaledFaceY = faceCenter.y * optimalScale;
+                    
+                    // Target position: center horizontally, slightly above center vertically
+                    const targetX = canvas.width / 2 - scaledFaceX;
+                    const targetY = canvas.height * 0.45 - scaledFaceY; // Face positioned at 45% from top
                     
                     resolve({
                         scale: Math.max(0.5, Math.min(2.0, optimalScale)),
