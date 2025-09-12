@@ -27,5 +27,13 @@
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
+    
+    <!-- Schengen Visa Photo Generator -->
+    <url>
+        <loc>https://compressphotos.cloud/schengen-visa-photo.html</loc>
+        <lastmod>2025-08-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
 </urlset>
