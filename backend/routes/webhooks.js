@@ -2,6 +2,7 @@ const express = require('express');
 const Stripe = require('stripe');
 const { query, transaction } = require('../config/database');
 const logger = require('../utils/logger');
+const { trackConversion, trackSubscriptionCancellation } = require('../utils/analytics');
 
 const router = express.Router();
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
@@ -116,7 +117,13 @@ async function handleCheckoutCompleted(session) {
         });
 
         logger.info(`User ${userId} upgraded to premium (${planId})`);
-        
+
+        // Track conversion in analytics
+        await trackConversion(userId, planId, session.amount_total, {
+            checkout_session_id: session.id,
+            subscription_id: subscription.id
+        });
+
     } catch (error) {
         logger.error('Error processing checkout completion:', error);
         throw error;
@@ -301,10 +308,17 @@ async function handleSubscriptionDeleted(subscription) {
         }
 
         const user = userResult.rows[0];
-        
+
+        // Get subscription type before updating
+        const userDataResult = await query(
+            'SELECT subscription_type FROM users WHERE id = $1',
+            [user.id]
+        );
+        const subscriptionType = userDataResult.rows[0]?.subscription_type;
+
         // Downgrade user to free plan
         await query(
-            `UPDATE users SET 
+            `UPDATE users SET
                 is_premium = false,
                 subscription_type = NULL,
                 subscription_id = NULL,
@@ -315,6 +329,9 @@ async function handleSubscriptionDeleted(subscription) {
         );
 
         logger.info(`User ${user.email} downgraded to free plan`);
+
+        // Track subscription cancellation in analytics
+        await trackSubscriptionCancellation(user.id, subscriptionType);
         
         // TODO: Send email notification about cancellation
         

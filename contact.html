@@ -9,6 +9,21 @@
     <link rel="canonical" href="https://compressphotos.cloud/contact.html">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Configuration -->
+    <script src="config.js"></script>
+
+    <!-- Analytics Client -->
+    <script src="analytics-client.js"></script>
+    <script>
+        // Initialize Analytics
+        const analytics = new AnalyticsClient({
+            apiUrl: window.APP_CONFIG.analyticsApiUrl,
+            debug: window.APP_CONFIG.analyticsDebug,
+            enabled: window.APP_CONFIG.analyticsEnabled,
+            autoPageView: true
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation Header -->

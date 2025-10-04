@@ -6,6 +6,7 @@ const crypto = require('crypto');
 const { query, transaction } = require('../config/database');
 const { generateTokens, storeSession, revokeSession, revokeAllUserSessions } = require('../middleware/auth');
 const logger = require('../utils/logger');
+const { trackRegistration, trackLogin } = require('../utils/analytics');
 
 const router = express.Router();
 
@@ -111,6 +112,9 @@ router.post('/register', authLimiter, registerValidation, async (req, res) => {
 
         logger.info(`New user registered: ${email}`);
 
+        // Track registration in analytics
+        await trackRegistration(userData.id, email);
+
         res.status(201).json({
             message: 'Account created successfully',
             user: {
@@ -198,6 +202,9 @@ router.post('/login', authLimiter, loginValidation, async (req, res) => {
         );
 
         logger.info(`User logged in: ${email}`);
+
+        // Track login in analytics
+        await trackLogin(user.id, email);
 
         res.json({
             message: 'Login successful',

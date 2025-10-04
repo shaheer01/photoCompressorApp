@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Placement Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        /* AdSense Ad Container Styles */
+        .ad-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ad-placeholder {
+            color: #9ca3af;
+            font-size: 14px;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .ad-placeholder span {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .ad-size {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .ad-banner-top, .ad-banner-middle {
+            max-width: 728px;
+            margin: 30px auto;
+        }
+
+        .ad-rectangle-results {
+            max-width: 336px;
+            margin: 30px auto;
+        }
+
+        .content-section {
+            background: white;
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #1e293b;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>AdSense Ad Placement Test</h1>
+    
+    <div class="content-section">
+        <h2>This is the main content area</h2>
+        <p>This page is designed to test if our AdSense ad placements are visible and properly styled.</p>
+    </div>
+
+    <!-- Test Ad Placement 1 - Banner -->
+    <div class="ad-container ad-banner-top">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+            <div class="ad-size">728 x 90</div>
+        </div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3643310427710829"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="content-section">
+        <h2>More Content Between Ads</h2>
+        <p>There should be a banner ad above this content section and a rectangle ad below.</p>
+        
+        <div class="highlight">
+            <strong>Expected behavior:</strong><br>
+            - You should see rectangular boxes with dashed borders<br>
+            - Each box should contain "Advertisement" text and dimensions<br>
+            - The boxes should be centered and well-styled
+        </div>
+    </div>
+
+    <!-- Test Ad Placement 2 - Rectangle -->
+    <div class="ad-container ad-rectangle-results">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+            <div class="ad-size">336 x 280</div>
+        </div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3643310427710829"
+             data-ad-slot="2345678901"
+             data-ad-format="rectangle"></ins>
+    </div>
+
+    <div class="content-section">
+        <h2>Final Content Section</h2>
+        <p>If you can see the ad placeholders above, then the styling is working correctly!</p>
+        
+        <div style="background: #dcfce7; padding: 15px; border-left: 4px solid #16a34a; margin: 20px 0;">
+            <strong>✅ Success indicators:</strong><br>
+            - Dashed border boxes are visible<br>
+            - "Advertisement" text is readable<br>
+            - Proper spacing and centering<br>
+            - Different ad sizes are displayed correctly
+        </div>
+    </div>
+
+    <script>
+        console.log('Ad placement test page loaded');
+        console.log('Looking for ad containers...');
+        
+        const adContainers = document.querySelectorAll('.ad-container');
+        console.log(`Found ${adContainers.length} ad containers`);
+        
+        adContainers.forEach((container, index) => {
+            console.log(`Ad container ${index + 1}:`, container.classList.toString());
+        });
+        
+        // Test if styles are being applied
+        const firstAd = document.querySelector('.ad-container');
+        if (firstAd) {
+            const styles = window.getComputedStyle(firstAd);
+            console.log('First ad container styles:', {
+                display: styles.display,
+                border: styles.border,
+                background: styles.backgroundColor,
+                margin: styles.margin,
+                padding: styles.padding
+            });
+        }
+    </script>
+</body>
+</html>

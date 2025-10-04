@@ -570,7 +570,22 @@
         
         tryLoadCompressor(cdnUrls);
     </script>
-    
+
+    <!-- Configuration -->
+    <script src="config.js"></script>
+
+    <!-- Analytics Client -->
+    <script src="analytics-client.js"></script>
+    <script>
+        // Initialize Analytics
+        const analytics = new AnalyticsClient({
+            apiUrl: window.APP_CONFIG.analyticsApiUrl,
+            debug: window.APP_CONFIG.analyticsDebug,
+            enabled: window.APP_CONFIG.analyticsEnabled,
+            autoPageView: true
+        });
+    </script>
+
     <script>
         // Clean, working compression script without authentication complexity
         console.log('🚀 CompressPhotos loading...');
@@ -687,7 +702,11 @@
                 showNotification('Please select valid JPEG files under 10MB', 'error');
                 return;
             }
-            
+
+            // Track image upload
+            const totalSize = validFiles.reduce((sum, file) => sum + file.size, 0);
+            analytics.trackImageUpload(validFiles.length, totalSize);
+
             // Add to queue
             validFiles.forEach(file => {
                 const queueItem = {
@@ -766,16 +785,19 @@
         function processQueueItem(item) {
             return new Promise((resolve) => {
                 console.log('Processing:', item.file.name);
-                
+
+                // Track compression start time
+                const compressionStartTime = Date.now();
+
                 // Update status
                 const statusEl = document.getElementById(`status-${item.id}`);
                 const progressEl = document.getElementById(`progress-${item.id}`);
-                
+
                 item.status = 'processing';
                 statusEl.className = 'file-status processing';
                 statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
                 progressEl.style.width = '10%';
-                
+
                 const quality = parseInt(qualitySlider.value) / 100;
                 
                 // Use CompressorJS if available
@@ -792,10 +814,21 @@
                             statusEl.className = 'file-status completed';
                             statusEl.innerHTML = '<i class="fas fa-check"></i>';
                             progressEl.style.width = '100%';
-                            
-                            // Track compression analytics
+
+                            // Calculate compression time
+                            const compressionTime = Date.now() - compressionStartTime;
+
+                            // Track compression analytics (existing)
                             trackCompressionAnalytics(item.originalSize, item.compressedSize);
-                            
+
+                            // Track with analytics client
+                            analytics.trackImageCompress(
+                                item.originalSize,
+                                item.compressedSize,
+                                Math.round(quality * 100),
+                                compressionTime
+                            );
+
                             compressedFiles.push(item);
                             showNotification(`${item.file.name} compressed successfully!`, 'success');
                             resolve();
@@ -821,10 +854,21 @@
                         statusEl.className = 'file-status completed';
                         statusEl.innerHTML = '<i class="fas fa-check"></i>';
                         progressEl.style.width = '100%';
-                        
-                        // Track compression analytics
+
+                        // Calculate compression time
+                        const compressionTime = Date.now() - compressionStartTime;
+
+                        // Track compression analytics (existing)
                         trackCompressionAnalytics(item.originalSize, item.compressedSize);
-                        
+
+                        // Track with analytics client
+                        analytics.trackImageCompress(
+                            item.originalSize,
+                            item.compressedSize,
+                            Math.round(quality * 100),
+                            compressionTime
+                        );
+
                         compressedFiles.push(item);
                         showNotification(`${item.file.name} compressed successfully!`, 'success');
                         resolve();
@@ -907,7 +951,10 @@
         function downloadImage(itemId) {
             const item = compressedFiles.find(f => f.id == itemId);
             if (!item) return;
-            
+
+            // Track download
+            analytics.trackImageDownload(item.compressedSize, 'jpeg');
+
             const link = document.createElement('a');
             link.href = URL.createObjectURL(item.compressedBlob);
             link.download = `compressed_${item.file.name}`;

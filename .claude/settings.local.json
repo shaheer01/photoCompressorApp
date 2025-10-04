@@ -20,7 +20,12 @@
       "Bash(mv:*)",
       "Bash(rm:*)",
       "Bash(cp:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(open schengen-visa-photo.html)",
+      "Bash(git push:*)",
+      "Bash(open test-ads.html)",
+      "Bash(open:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   },

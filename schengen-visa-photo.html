@@ -1425,6 +1425,21 @@
         }
     </style>
 
+    <!-- Configuration -->
+    <script src="config.js"></script>
+
+    <!-- Analytics Client -->
+    <script src="analytics-client.js"></script>
+    <script>
+        // Initialize Analytics
+        const analytics = new AnalyticsClient({
+            apiUrl: window.APP_CONFIG.analyticsApiUrl,
+            debug: window.APP_CONFIG.analyticsDebug,
+            enabled: window.APP_CONFIG.analyticsEnabled,
+            autoPageView: true
+        });
+    </script>
+
     <script>
         // Schengen visa photo generator functionality
         console.log('🇪🇺 Schengen Visa Photo Generator loading...');
@@ -2156,7 +2171,15 @@
                 document.getElementById('visaPhotoResults').style.display = 'block';
                 
                 showNotification('Schengen visa photo generated successfully!', 'success');
-                
+
+                // Track visa photo generation
+                analytics.track('visa_photo_generated', {
+                    photo_type: 'schengen',
+                    size: '35x45mm',
+                    dpi: 600,
+                    file_size_bytes: blob.size
+                });
+
                 // Scroll to results
                 document.getElementById('visaPhotoResults').scrollIntoView({ behavior: 'smooth' });
             }, 'image/jpeg', 0.95);
@@ -2222,14 +2245,21 @@
         
         function downloadAsJPEG() {
             if (!window.finalVisaPhotoBlob) return;
-            
+
+            // Track download
+            analytics.track('visa_photo_download', {
+                format: 'jpeg',
+                photo_type: 'schengen',
+                file_size_bytes: window.finalVisaPhotoBlob.size
+            });
+
             const link = document.createElement('a');
             link.href = URL.createObjectURL(window.finalVisaPhotoBlob);
             link.download = 'schengen_visa_photo_35x45mm.jpg';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
+
             showNotification('Schengen visa photo downloaded!', 'success');
         }
         
