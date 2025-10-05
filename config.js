@@ -10,7 +10,7 @@ const CONFIG = {
     // For local testing, use: 'http://localhost:8000'
     // For production, deploy analytics backend and use: 'https://analytics.compressphotos.cloud'
     //analyticsApiUrl: 'http://localhost:8000',
-    analyticsApiUrl: 'https://cb4db0cf3662.ngrok-free.app',
+    analyticsApiUrl: 'https://4efa6ee19994.ngrok-free.app',
 
     // Enable/disable analytics tracking
     analyticsEnabled: true,

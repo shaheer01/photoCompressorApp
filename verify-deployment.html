@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Verification Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        pre {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Analytics Deployment Verification</h1>
+
+    <div id="results"></div>
+
+    <button onclick="runTests()">Run Tests</button>
+    <button onclick="testEvent()">Send Test Event</button>
+    <button onclick="location.reload()">Refresh Page</button>
+
+    <script src="config.js"></script>
+    <script src="analytics-client.js"></script>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        function runTests() {
+            document.getElementById('results').innerHTML = '';
+
+            // Test 1: Check if config.js loaded
+            log('Test 1: Checking config.js...', 'info');
+            if (typeof window.APP_CONFIG !== 'undefined') {
+                log('✅ config.js loaded successfully', 'success');
+                log(`<pre>${JSON.stringify(window.APP_CONFIG, null, 2)}</pre>`, 'info');
+
+                // Check analytics URL
+                if (window.APP_CONFIG.analyticsApiUrl.includes('ngrok')) {
+                    log('✅ Analytics URL points to ngrok', 'success');
+                } else if (window.APP_CONFIG.analyticsApiUrl.includes('localhost')) {
+                    log('⚠️ Analytics URL still points to localhost!', 'warning');
+                } else {
+                    log('ℹ️ Analytics URL: ' + window.APP_CONFIG.analyticsApiUrl, 'info');
+                }
+            } else {
+                log('❌ config.js not loaded or APP_CONFIG not defined', 'error');
+            }
+
+            // Test 2: Check if analytics-client.js loaded
+            log('Test 2: Checking analytics-client.js...', 'info');
+            if (typeof window.AnalyticsClient !== 'undefined') {
+                log('✅ analytics-client.js loaded successfully', 'success');
+            } else {
+                log('❌ analytics-client.js not loaded or AnalyticsClient not defined', 'error');
+                return;
+            }
+
+            // Test 3: Check environment detection
+            log('Test 3: Checking environment...', 'info');
+            log(`Current hostname: ${window.location.hostname}`, 'info');
+            log(`Environment: ${window.APP_CONFIG.environment}`, 'info');
+            if (window.location.hostname === 'compressphotos.cloud' ||
+                window.location.hostname === 'www.compressphotos.cloud') {
+                log('✅ Running on production domain', 'success');
+            } else {
+                log('ℹ️ Running on: ' + window.location.hostname, 'info');
+            }
+
+            // Test 4: Initialize analytics
+            log('Test 4: Initializing analytics client...', 'info');
+            try {
+                window.testAnalytics = new AnalyticsClient({
+                    apiUrl: window.APP_CONFIG.analyticsApiUrl,
+                    debug: true,
+                    enabled: true,
+                    appName: 'photoCompressorApp',
+                    appVersion: '1.0.0',
+                    autoPageView: false // Don't auto-track for this test
+                });
+                log('✅ Analytics client initialized', 'success');
+            } catch (error) {
+                log('❌ Failed to initialize analytics: ' + error.message, 'error');
+                console.error(error);
+            }
+        }
+
+        async function testEvent() {
+            if (!window.testAnalytics) {
+                log('❌ Analytics not initialized. Run tests first.', 'error');
+                return;
+            }
+
+            log('🚀 Sending test event...', 'info');
+
+            try {
+                await window.testAnalytics.track('test_event', {
+                    test: true,
+                    timestamp: new Date().toISOString(),
+                    page: 'verification-test'
+                });
+
+                // Wait a bit for the event to send
+                setTimeout(() => {
+                    log('Check browser console and Network tab for results', 'info');
+                }, 1000);
+
+            } catch (error) {
+                log('❌ Error sending event: ' + error.message, 'error');
+                console.error(error);
+            }
+        }
+
+        // Auto-run tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(runTests, 500);
+        });
+    </script>
+</body>
+</html>
