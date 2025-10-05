@@ -7,7 +7,10 @@
 
 const CONFIG = {
     // Analytics Dashboard API URL
-    analyticsApiUrl: 'http://localhost:8000',
+    // For local testing, use: 'http://localhost:8000'
+    // For production, deploy analytics backend and use: 'https://analytics.compressphotos.cloud'
+    //analyticsApiUrl: 'http://localhost:8000',
+    analyticsApiUrl: 'https://cb4db0cf3662.ngrok-free.app',
 
     // Enable/disable analytics tracking
     analyticsEnabled: true,
@@ -23,10 +26,15 @@ const CONFIG = {
 };
 
 // Production configuration (when deployed)
-if (window.location.hostname === 'compressphotos.cloud') {
-    CONFIG.analyticsApiUrl = 'https://analytics.compressphotos.cloud';
+if (window.location.hostname === 'compressphotos.cloud' ||
+    window.location.hostname === 'www.compressphotos.cloud') {
+    // IMPORTANT: Update this URL to your deployed analytics backend
+    // For testing with ngrok: 'https://your-ngrok-url.ngrok-free.app'
+    // For production: 'https://analytics.compressphotos.cloud'
+    CONFIG.analyticsApiUrl = 'http://localhost:8000'; // ⚠️ UPDATE THIS!
     CONFIG.backendApiUrl = 'https://api.compressphotos.cloud';
     CONFIG.analyticsDebug = false;
+    CONFIG.analyticsEnabled = true;
     CONFIG.environment = 'production';
 }
 

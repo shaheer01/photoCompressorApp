@@ -8,6 +8,8 @@ class AnalyticsClient {
         this.apiUrl = config.apiUrl || 'http://localhost:8000';
         this.enabled = config.enabled !== false;
         this.debug = config.debug || false;
+        this.appName = config.appName || 'unknown-app';
+        this.appVersion = config.appVersion || '1.0.0';
         this.userId = this.getUserId();
         this.sessionId = this.getSessionId();
         this.country = 'Unknown';
@@ -113,6 +115,11 @@ class AnalyticsClient {
             country: this.country,
             properties: {
                 ...properties,
+                app_name: this.appName,
+                app_version: this.appVersion,
+                domain: window.location.hostname,
+                protocol: window.location.protocol,
+                path: window.location.pathname,
                 user_agent: navigator.userAgent,
                 screen_resolution: `${window.screen.width}x${window.screen.height}`,
                 timestamp: new Date().toISOString()
