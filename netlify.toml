@@ -54,7 +54,7 @@
       img-src 'self' data: https: blob:;
       style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
       font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
-      connect-src 'self' https://pagead2.googlesyndication.com https://4efa6ee19994.ngrok-free.app https://ipapi.co;
+      connect-src 'self' https://pagead2.googlesyndication.com https://ipapi.co;
       frame-src https://tpc.googlesyndication.com https://googleads.g.doubleclick.net;
     """
 
