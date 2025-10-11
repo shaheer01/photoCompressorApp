@@ -31,7 +31,7 @@ if (window.location.hostname === 'compressphotos.cloud' ||
     // IMPORTANT: Update this URL to your deployed analytics backend
     // For testing with ngrok: 'https://your-ngrok-url.ngrok-free.app'
     // For production: 'https://analytics.compressphotos.cloud'
-    CONFIG.analyticsApiUrl = 'http://localhost:8000'; // ⚠️ UPDATE THIS!
+    CONFIG.analyticsApiUrl = 'https://4efa6ee19994.ngrok-free.app'; // Updated for ngrok testing
     CONFIG.backendApiUrl = 'https://api.compressphotos.cloud';
     CONFIG.analyticsDebug = false;
     CONFIG.analyticsEnabled = true;
