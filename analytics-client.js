@@ -16,6 +16,7 @@ class AnalyticsClient {
         this.country = 'Unknown';
         this.eventQueue = [];
         this.isProcessing = false;
+        this.countryDetected = false;
 
         // Validate API key
         if (!this.apiKey) {
@@ -23,16 +24,24 @@ class AnalyticsClient {
             this.enabled = false;
         }
 
-        // Initialize country detection
-        this.detectCountry();
-
-        // Auto-track page views
-        if (config.autoPageView !== false) {
-            this.trackPageView();
-        }
+        // Initialize country detection and auto-track page view after
+        this.init(config);
 
         // Log initialization
         this.log('Analytics Client initialized', { userId: this.userId, sessionId: this.sessionId, apiKey: this.apiKey ? '***' : 'missing' });
+    }
+
+    /**
+     * Initialize analytics - detect country then track page view
+     */
+    async init(config) {
+        // Detect country first
+        await this.detectCountry();
+
+        // Auto-track page views after country is detected
+        if (config.autoPageView !== false) {
+            this.trackPageView();
+        }
     }
 
     /**
@@ -82,27 +91,72 @@ class AnalyticsClient {
     }
 
     /**
-     * Detect user's country using IP geolocation API
+     * Detect user's country using IP geolocation API with fallbacks
      */
     async detectCountry() {
         try {
             // Try to get country from cache first
             const cachedCountry = localStorage.getItem('analytics_country');
-            if (cachedCountry) {
+            if (cachedCountry && cachedCountry !== 'Unknown') {
                 this.country = cachedCountry;
+                this.countryDetected = true;
+                this.log('Country loaded from cache:', this.country);
                 return;
             }
 
-            // Use a free IP geolocation API
-            const response = await fetch('https://ipapi.co/json/', { timeout: 3000 });
-            if (response.ok) {
-                const data = await response.json();
-                this.country = data.country_name || 'Unknown';
-                localStorage.setItem('analytics_country', this.country);
-                this.log('Country detected:', this.country);
+            // Try multiple geolocation APIs in order
+            const apis = [
+                {
+                    url: 'https://ipapi.co/json/',
+                    extract: (data) => data.country_name
+                },
+                {
+                    url: 'https://ip-api.com/json/',
+                    extract: (data) => data.country
+                },
+                {
+                    url: 'https://ipwho.is/',
+                    extract: (data) => data.country
+                }
+            ];
+
+            for (const api of apis) {
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+                    const response = await fetch(api.url, {
+                        signal: controller.signal,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    clearTimeout(timeoutId);
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        const country = api.extract(data);
+
+                        if (country && country !== 'Unknown') {
+                            this.country = country;
+                            this.countryDetected = true;
+                            localStorage.setItem('analytics_country', this.country);
+                            this.log('Country detected from', api.url, ':', this.country);
+                            return;
+                        }
+                    }
+                } catch (apiError) {
+                    this.log('Failed to detect country from', api.url, apiError.message);
+                    // Continue to next API
+                }
             }
+
+            // If all APIs failed, keep Unknown
+            this.log('All country detection APIs failed, using Unknown');
+            this.countryDetected = true;
+
         } catch (error) {
             this.log('Country detection failed, using default', error);
+            this.countryDetected = true;
         }
     }
 
