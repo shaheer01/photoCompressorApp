@@ -6,6 +6,7 @@
 class AnalyticsClient {
     constructor(config = {}) {
         this.apiUrl = config.apiUrl || 'http://localhost:8000';
+        this.apiKey = config.apiKey; // NEW: API key for authentication
         this.enabled = config.enabled !== false;
         this.debug = config.debug || false;
         this.appName = config.appName || 'unknown-app';
@@ -16,6 +17,12 @@ class AnalyticsClient {
         this.eventQueue = [];
         this.isProcessing = false;
 
+        // Validate API key
+        if (!this.apiKey) {
+            console.warn('[Analytics] No API key provided. Events will not be tracked.');
+            this.enabled = false;
+        }
+
         // Initialize country detection
         this.detectCountry();
 
@@ -25,7 +32,7 @@ class AnalyticsClient {
         }
 
         // Log initialization
-        this.log('Analytics Client initialized', { userId: this.userId, sessionId: this.sessionId });
+        this.log('Analytics Client initialized', { userId: this.userId, sessionId: this.sessionId, apiKey: this.apiKey ? '***' : 'missing' });
     }
 
     /**
@@ -153,6 +160,7 @@ class AnalyticsClient {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'X-API-Key': this.apiKey, // NEW: Include API key
                         'ngrok-skip-browser-warning': 'true', // Skip ngrok warning page
                     },
                     body: JSON.stringify(event)
