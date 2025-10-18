@@ -35,6 +35,7 @@ if (window.location.hostname === 'compressphotos.cloud' ||
     // For testing with ngrok: 'https://your-ngrok-url.ngrok-free.app'
     // For production: 'https://analytics.compressphotos.cloud'
     CONFIG.analyticsApiUrl = 'https://8abf226584ec.ngrok-free.app'; // Using ngrok tunnel
+    CONFIG.analyticsApiKey = 'pk_7a56835f65ca448298a67af7b164b84b'; // API key for event tracking
     CONFIG.backendApiUrl = 'https://api.compressphotos.cloud';
     CONFIG.analyticsDebug = false;
     CONFIG.analyticsEnabled = true; // Enabled with ngrok
