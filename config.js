@@ -12,6 +12,9 @@ const CONFIG = {
     //analyticsApiUrl: 'http://localhost:8000',
     analyticsApiUrl: 'https://8abf226584ec.ngrok-free.app',
 
+    // Analytics API Key
+    analyticsApiKey: 'pk_7a56835f65ca448298a67af7b164b84b',
+
     // Enable/disable analytics tracking
     analyticsEnabled: true,
 
