@@ -11,6 +11,20 @@
   to = "/analytics.html"
   status = 200
 
+# Subdomain redirect - redirect dashboard subdomain root to analytics
+[[redirects]]
+  from = "https://dashboard.compressphotos.cloud/"
+  to = "https://dashboard.compressphotos.cloud/analytics.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://dashboard.compressphotos.cloud/*"
+  to = "https://dashboard.compressphotos.cloud/analytics.html"
+  status = 200
+  force = false
+  conditions = {Role = ["public"]}
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

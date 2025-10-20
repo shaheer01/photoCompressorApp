@@ -30,7 +30,8 @@ const CONFIG = {
 
 // Production configuration (when deployed)
 if (window.location.hostname === 'compressphotos.cloud' ||
-    window.location.hostname === 'www.compressphotos.cloud') {
+    window.location.hostname === 'www.compressphotos.cloud' ||
+    window.location.hostname === 'dashboard.compressphotos.cloud') {
     // IMPORTANT: Update this URL to your deployed analytics backend
     // For testing with ngrok: 'https://your-ngrok-url.ngrok-free.app'
     // For production: 'https://analytics.compressphotos.cloud'
