@@ -30,7 +30,11 @@
       "Bash(for file in schengen-visa-photo.html terms-of-service.html privacy-policy.html contact.html)",
       "Bash(do echo '=== $file ===')",
       "Bash(grep:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(git commit:*)",
+      "Bash(for file in *.html)",
+      "Bash(do if grep -qi \"adsense\\|adsbygoogle\\|pagead2.googlesyndication\" \"$file\")",
+      "Bash(then echo \"=== $file still has AdSense ===\" grep -n \"adsense\\|adsbygoogle\\|pagead2.googlesyndication\" \"$file\" -i)"
     ],
     "deny": []
   },
