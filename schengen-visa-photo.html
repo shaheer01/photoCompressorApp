@@ -841,8 +841,9 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            display: none; /* Hide HTML overlays - guides are drawn on canvas */
         }
-        
+
         .face-area {
             position: absolute;
             top: 50%;
@@ -851,7 +852,7 @@
             width: 196px;  /* 70% of 280px canvas width */
             height: 270px; /* 75% of 360px canvas height */
         }
-        
+
         .face-border {
             position: absolute;
             top: 0;
@@ -861,7 +862,7 @@
             border: 2px dashed rgba(239, 68, 68, 0.6);
             border-radius: 8px;
         }
-        
+
         .eye-line {
             position: absolute;
             top: 35%;  /* Eye level at 35% from top of face area */
