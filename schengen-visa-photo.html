@@ -802,7 +802,8 @@
         .size-guidelines {
             position: absolute;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 280px;
             height: 360px;
             pointer-events: none;
@@ -844,11 +845,11 @@
         
         .face-area {
             position: absolute;
-            top: 50px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 180px;
-            height: 240px;
+            transform: translate(-50%, -50%);
+            width: 196px;  /* 70% of 280px canvas width */
+            height: 270px; /* 75% of 360px canvas height */
         }
         
         .face-border {
@@ -863,17 +864,17 @@
         
         .eye-line {
             position: absolute;
-            top: 80px;
+            top: 35%;  /* Eye level at 35% from top of face area */
             left: 0;
             width: 100%;
             height: 2px;
             background: rgba(239, 68, 68, 0.6);
         }
-        
+
         .eye-line-label {
             position: absolute;
-            top: 75px;
-            right: -60px;
+            top: calc(35% - 5px);  /* Slightly above eye line */
+            right: -70px;
             font-size: 11px;
             color: #ef4444;
             font-weight: 500;
@@ -881,6 +882,7 @@
             padding: 2px 6px;
             border-radius: 3px;
             border: 1px solid #ef4444;
+            white-space: nowrap;
         }
         
         .dimension-arrows {
