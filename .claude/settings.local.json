@@ -25,7 +25,12 @@
       "Bash(git push:*)",
       "Bash(open test-ads.html)",
       "Bash(open:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix subdomain routing for dashboard.compressphotos.cloud\n\nUpdate redirect rules to use Host-based conditions for proper subdomain routing. This ensures requests to dashboard.compressphotos.cloud are correctly routed to the analytics dashboard instead of the main index page.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(for file in schengen-visa-photo.html terms-of-service.html privacy-policy.html contact.html)",
+      "Bash(do echo '=== $file ===')",
+      "Bash(grep:*)",
+      "Bash(done)"
     ],
     "deny": []
   },

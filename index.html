@@ -36,11 +36,7 @@
     <meta name="rating" content="general">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    
-    <!-- Google AdSense Auto Ads - Simplified Implementation -->
-    <script data-ad-client="ca-pub-3643310427710829" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -131,21 +127,6 @@
         </div>
     </section>
 
-    <!-- AdSense Banner Ad - Top of Page -->
-    <div class="ad-container ad-banner-top">
-        <div class="ad-placeholder">
-            <span>Advertisement</span>
-            <div class="ad-size">728 x 90</div>
-        </div>
-        <!-- AdSense Auto Ads will replace this placeholder -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3643310427710829"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-    </div>
-
     <!-- Upload Interface -->
     <section id="compress" class="upload-section">
         <div class="container">
@@ -199,19 +180,6 @@
         <div class="container">
             <h3>Your Compressed Images</h3>
             <div class="results-grid" id="resultsGrid"></div>
-            
-            <!-- AdSense Rectangle Ad - After Results -->
-            <div class="ad-container ad-rectangle-results">
-                <div class="ad-placeholder">
-                    <span>Advertisement</span>
-                    <div class="ad-size">336 x 280</div>
-                </div>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-3643310427710829"
-                     data-ad-slot="2345678901"
-                     data-ad-format="rectangle"></ins>
-            </div>
         </div>
     </section>
 
@@ -1125,25 +1093,11 @@
             }
             return 'Unknown Region';
         }
-        
-        // AdSense Auto Ads - Simplified (no manual initialization needed)
-        console.log('✅ AdSense Auto Ads configured - will activate when network allows');
-        
+
         console.log('✅ CompressPhotos script loaded successfully');
 
     </script>
 
-    <!-- Initialize AdSense ads -->
-    <script>
-        // Initialize all AdSense ad units
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        console.log('✅ AdSense ads initialized');
-    </script>
-    
-    <!-- Auto Ads will handle sidebar placement automatically -->
-    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1305,77 +1259,6 @@
             color: #60a5fa;
         }
 
-        /* AdSense Ad Container Styles */
-        .ad-container {
-            text-align: center;
-            margin: 40px auto !important;
-            padding: 20px !important;
-            background: #f8fafc !important;
-            border: 3px dashed #ef4444 !important;
-            border-radius: 8px;
-            position: relative;
-            max-width: 100%;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
-        .ad-placeholder {
-            color: #ef4444 !important;
-            font-size: 16px !important;
-            font-weight: bold !important;
-            padding: 30px !important;
-            background: #fef2f2 !important;
-            border-radius: 6px;
-            border: 2px solid #ef4444 !important;
-            display: block !important;
-            visibility: visible !important;
-        }
-
-        .ad-placeholder span {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .ad-size {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .ad-banner-top, .ad-banner-middle {
-            max-width: 728px;
-            margin: 30px auto;
-        }
-
-        .ad-rectangle-results {
-            max-width: 336px;
-            margin: 30px auto;
-        }
-
-        .ad-sidebar-sticky {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            max-width: 300px;
-            z-index: 100;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        /* Hide ads when AdSense loads */
-        .ad-container .adsbygoogle[data-ad-status="filled"] + .ad-placeholder {
-            display: none;
-        }
-
-        @media (max-width: 1200px) {
-            .ad-sidebar-sticky {
-                display: none;
-            }
-        }
-
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
@@ -1384,15 +1267,6 @@
 
             .footer {
                 padding: 40px 0 20px;
-            }
-
-            .ad-banner-top, .ad-banner-middle {
-                max-width: 320px;
-            }
-
-            .ad-container {
-                margin: 20px 0;
-                padding: 15px;
             }
         }
     </style>
