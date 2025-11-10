@@ -63,7 +63,7 @@
       img-src 'self' data: https: blob:;
       style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
       font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
-      connect-src 'self' https://ipapi.co https://ip-api.com https://ipwho.is https://backend-production-4db3.up.railway.app;
+      connect-src 'self' https://ipapi.co https://ip-api.com https://ipwho.is https://pulsepointanalytics.space;
       frame-src 'self';
       object-src 'none';
     """

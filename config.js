@@ -10,7 +10,7 @@ const CONFIG = {
     // For local testing, use: 'http://localhost:8000'
     // For production, deploy analytics backend and use: 'https://analytics.compressphotos.cloud'
     //analyticsApiUrl: 'http://localhost:8000',
-    analyticsApiUrl: 'https://backend-production-4db3.up.railway.app',
+    analyticsApiUrl: 'https://pulsepointanalytics.space',
 
     // Analytics API Key
     analyticsApiKey: 'pk_7a56835f65ca448298a67af7b164b84b',
@@ -35,7 +35,7 @@ if (window.location.hostname === 'compressphotos.cloud' ||
     // IMPORTANT: Update this URL to your deployed analytics backend
     // For testing with ngrok: 'https://your-ngrok-url.ngrok-free.app'
     // For production: 'https://analytics.compressphotos.cloud'
-    CONFIG.analyticsApiUrl = 'https://backend-production-4db3.up.railway.app'; // Railway backend
+    CONFIG.analyticsApiUrl = 'https://pulsepointanalytics.space'; // GCP backend
     CONFIG.analyticsApiKey = 'pk_7a56835f65ca448298a67af7b164b84b'; // API key for event tracking
     CONFIG.backendApiUrl = 'https://api.compressphotos.cloud';
     CONFIG.analyticsDebug = false;
