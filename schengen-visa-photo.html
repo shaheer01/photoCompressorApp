@@ -2090,24 +2090,50 @@
             const finalX = (finalCanvas.width - finalScaledWidth) / 2 + (currentX * scaleFactorX);
             const finalY = (finalCanvas.height - finalScaledHeight) / 2 + (currentY * scaleFactorY);
             
-            // Draw final image
+            // Draw final image with background removal
             finalCtx.imageSmoothingEnabled = true;
             finalCtx.imageSmoothingQuality = 'high';
-            finalCtx.drawImage(originalImage, finalX, finalY, finalScaledWidth, finalScaledHeight);
-            
-            // Convert to blob and display
+
+            // Create temporary canvas for background removal processing
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCanvas.width = finalCanvas.width;
+            tempCanvas.height = finalCanvas.height;
+
+            // White background first
+            tempCtx.fillStyle = '#ffffff';
+            tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+            // Draw image
+            tempCtx.imageSmoothingEnabled = true;
+            tempCtx.imageSmoothingQuality = 'high';
+            tempCtx.drawImage(originalImage, finalX, finalY, finalScaledWidth, finalScaledHeight);
+
+            // Apply background removal to make it white (Schengen requirement)
+            console.log('🎨 Applying background removal for Schengen visa photo...');
+            const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+            removeBackground(imageData.data, tempCanvas.width, tempCanvas.height);
+            tempCtx.putImageData(imageData, 0, 0);
+
+            // Draw processed image to final canvas
+            finalCtx.drawImage(tempCanvas, 0, 0);
+
+            // Convert to blob and display with optimized quality
+            // Using 0.98 for visa photos to ensure maximum quality for official documents
             finalCanvas.toBlob((blob) => {
+                console.log(`📸 Visa photo generated: ${(blob.size / 1024).toFixed(1)}KB at 600 DPI`);
+
                 const url = URL.createObjectURL(blob);
                 document.getElementById('finalVisaPhoto').src = url;
-                
+
                 // Store for download
                 window.finalVisaPhotoBlob = blob;
                 window.finalVisaPhotoCanvas = finalCanvas;
-                
+
                 // Show results
                 document.getElementById('photoEditor').style.display = 'none';
                 document.getElementById('visaPhotoResults').style.display = 'block';
-                
+
                 showNotification('Schengen visa photo generated successfully!', 'success');
 
                 // Track visa photo generation
@@ -2120,7 +2146,7 @@
 
                 // Scroll to results
                 document.getElementById('visaPhotoResults').scrollIntoView({ behavior: 'smooth' });
-            }, 'image/jpeg', 0.95);
+            }, 'image/jpeg', 0.98); // Increased from 0.95 to 0.98 for better quality
         }
         
         function drawFinalImageNormally(finalCtx, finalCanvas) {
@@ -2260,17 +2286,19 @@
             printCtx.font = '12px Arial';
             printCtx.fillText(`${photosDrawn} photos ready for cutting`, printCanvas.width / 2, printCanvas.height - 30);
             
-            // Download as JPEG
+            // Download as JPEG with high quality for printing
             printCanvas.toBlob((blob) => {
+                console.log(`📄 Print sheet generated: ${(blob.size / 1024).toFixed(1)}KB with ${photosDrawn} photos`);
+
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
                 link.download = 'schengen_visa_photos_print_ready.jpg';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                
+
                 showNotification(`Print sheet with ${photosDrawn} photos downloaded!`, 'success');
-            }, 'image/jpeg', 0.95);
+            }, 'image/jpeg', 0.98); // Increased from 0.95 to 0.98 for better print quality
         }
         
         function resetGenerator() {
