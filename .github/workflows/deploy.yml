@@ -1,0 +1,100 @@
+name: Deploy to GCP and Netlify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  # Deploy Backend to GCP Cloud Run
+  deploy-backend:
+    name: Deploy Backend to GCP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Configure Docker for GCR
+        run: gcloud auth configure-docker
+
+      - name: Build Docker image
+        run: |
+          cd backend
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:${{ github.sha }} .
+          docker tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:${{ github.sha }} gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:latest
+
+      - name: Push Docker image to GCR
+        run: |
+          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:${{ github.sha }}
+          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy photo-compressor-backend \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/photo-compressor-backend:${{ github.sha }} \
+            --region us-central1 \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory 512Mi \
+            --cpu 1 \
+            --max-instances 10 \
+            --port 3001 \
+            --set-env-vars NODE_ENV=production \
+            --set-secrets DATABASE_URL=photo-compressor-db-url:latest,JWT_SECRET=photo-compressor-jwt-secret:latest
+
+      - name: Get Service URL
+        run: |
+          SERVICE_URL=$(gcloud run services describe photo-compressor-backend --region us-central1 --format 'value(status.url)')
+          echo "Backend deployed to: $SERVICE_URL"
+          echo "SERVICE_URL=$SERVICE_URL" >> $GITHUB_ENV
+
+  # Deploy Frontend to Netlify
+  deploy-frontend:
+    name: Deploy Frontend to Netlify
+    runs-on: ubuntu-latest
+    needs: deploy-backend
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Copy frontend files to deploy directory
+        run: |
+          mkdir -p netlify-deploy
+          cp index.html netlify-deploy/
+          cp schengen-visa-photo.html netlify-deploy/
+          cp styles.css netlify-deploy/
+          cp config.js netlify-deploy/
+          cp frontend-api.js netlify-deploy/
+          cp analytics-client.js netlify-deploy/
+          cp *.html netlify-deploy/ 2>/dev/null || true
+          cp netlify.toml netlify-deploy/
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          cd netlify-deploy
+          netlify deploy --prod --dir . --message "Deploy from GitHub Actions - ${{ github.sha }}"
+
+      - name: Deployment Summary
+        run: |
+          echo "✅ Backend deployed to GCP Cloud Run"
+          echo "✅ Frontend deployed to Netlify"
+          echo "🌐 Frontend URL: https://compressphotos.cloud"

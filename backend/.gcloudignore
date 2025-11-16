@@ -1,0 +1,53 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore
+
+.gcloudignore
+.git
+.gitignore
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+
+# Development files
+*.md
+.env
+.env.local
+.env.development
+
+# Tests
+test/
+tests/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation
+docs/
+*.md
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Uploads directory (uploaded files should be in Cloud Storage)
+uploads/
+
+# Docker files (not needed for Cloud Run)
+Dockerfile
+docker-compose.yml
+.dockerignore
