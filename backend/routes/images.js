@@ -113,7 +113,14 @@ router.post('/compress',
             }
 
             const files = req.files || [];
-            const quality = parseInt(req.body.quality) || 80;
+            // Ensure quality is an integer between 1-100
+            let quality = parseInt(req.body.quality) || 80;
+            // Handle case where quality might be sent as decimal (0-1 range)
+            if (quality > 0 && quality < 1) {
+                quality = Math.round(quality * 100);
+            }
+            // Clamp quality to valid range
+            quality = Math.max(1, Math.min(100, quality));
             const sessionId = req.body.sessionId || `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
             if (files.length === 0) {
@@ -138,16 +145,39 @@ router.post('/compress',
 
                 try {
                     // Compress using Sharp (more reliable than browser-based compression)
-                    const compressedBuffer = await sharp(file.buffer)
-                        .jpeg({ 
+                    let pipeline = sharp(file.buffer);
+
+                    // Get image metadata to handle different formats properly
+                    const metadata = await pipeline.metadata();
+
+                    console.log(`📸 Processing: ${file.originalname}`);
+                    console.log(`   Format: ${metadata.format}, Has Alpha: ${metadata.hasAlpha || false}`);
+                    console.log(`   Dimensions: ${metadata.width}x${metadata.height}`);
+                    console.log(`   Quality Setting: ${quality}%`);
+
+                    // If image has transparency, composite it onto white background
+                    if (metadata.hasAlpha) {
+                        console.log(`   🎨 Removing transparency, applying white background`);
+                        pipeline = pipeline.flatten({ background: '#FFFFFF' });
+                    }
+
+                    // Apply JPEG compression with optimized settings
+                    const compressedBuffer = await pipeline
+                        .jpeg({
                             quality: quality,
                             progressive: true,
-                            mozjpeg: true 
+                            mozjpeg: true,
+                            optimiseScans: true,
+                            chromaSubsampling: '4:2:0' // Better compression for photos
                         })
                         .toBuffer();
 
                     const compressionRatio = ((file.size - compressedBuffer.length) / file.size * 100);
                     const processingTime = Date.now() - fileStartTime;
+
+                    console.log(`   ✅ Compressed: ${(file.size / 1024).toFixed(1)}KB → ${(compressedBuffer.length / 1024).toFixed(1)}KB`);
+                    console.log(`   📊 Compression Ratio: ${compressionRatio.toFixed(1)}% smaller`);
+                    console.log(`   ⏱️  Processing Time: ${processingTime}ms`);
 
                     result = {
                         ...result,

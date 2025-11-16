@@ -770,14 +770,22 @@
                 progressEl.style.width = '10%';
 
                 const quality = parseInt(qualitySlider.value) / 100;
-                
+
                 // Use CompressorJS if available
                 if (window.compressionLibraryLoaded === true && typeof Compressor !== 'undefined') {
                     new Compressor(item.file, {
                         quality: quality,
+                        mimeType: 'image/jpeg',
+                        convertSize: 0, // Always convert to JPEG for consistent compression
+                        checkOrientation: true, // Properly handle EXIF orientation
+                        strict: true, // Use strict mode for better compression
                         success: (compressedFile) => {
+                            const compressionRatio = ((item.originalSize - compressedFile.size) / item.originalSize * 100).toFixed(1);
                             console.log('✅ Compression successful:', item.file.name);
-                            
+                            console.log(`   Quality Setting: ${Math.round(quality * 100)}%`);
+                            console.log(`   Original: ${formatFileSize(item.originalSize)}, Compressed: ${formatFileSize(compressedFile.size)}`);
+                            console.log(`   Compression Ratio: ${compressionRatio}% smaller`);
+
                             item.compressedBlob = compressedFile;
                             item.compressedSize = compressedFile.size;
                             item.status = 'completed';
@@ -817,11 +825,18 @@
                     });
                 } else {
                     // Fallback: canvas compression
+                    console.warn('⚠️ Using canvas fallback compression (CompressorJS not available)');
                     compressWithCanvas(item.file, quality).then(compressedBlob => {
+                        const compressionRatio = ((item.originalSize - compressedBlob.size) / item.originalSize * 100).toFixed(1);
+                        console.log('✅ Canvas compression successful:', item.file.name);
+                        console.log(`   Quality Setting: ${Math.round(quality * 100)}%`);
+                        console.log(`   Original: ${formatFileSize(item.originalSize)}, Compressed: ${formatFileSize(compressedBlob.size)}`);
+                        console.log(`   Compression Ratio: ${compressionRatio}% smaller`);
+
                         item.compressedBlob = compressedBlob;
                         item.compressedSize = compressedBlob.size;
                         item.status = 'completed';
-                        
+
                         statusEl.className = 'file-status completed';
                         statusEl.innerHTML = '<i class="fas fa-check"></i>';
                         progressEl.style.width = '100%';
@@ -861,14 +876,28 @@
                 img.onload = function() {
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
-                    
+
                     canvas.width = img.width;
                     canvas.height = img.height;
-                    
+
+                    // Use better image rendering for quality
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
+
+                    // Fill with white background first (important for transparency)
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
                     ctx.drawImage(img, 0, 0);
                     URL.revokeObjectURL(img.src);
-                    
-                    canvas.toBlob(resolve, 'image/jpeg', quality);
+
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            resolve(blob);
+                        } else {
+                            reject(new Error('Canvas compression failed'));
+                        }
+                    }, 'image/jpeg', quality);
                 };
                 img.onerror = () => reject(new Error('Failed to load image'));
                 img.src = URL.createObjectURL(file);
