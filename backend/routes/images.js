@@ -17,11 +17,11 @@ const upload = multer({
     },
     fileFilter: (req, file, cb) => {
         // Check file type
-        const allowedMimes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+        const allowedMimes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);
         } else {
-            cb(new Error('Only JPEG, PNG, and WebP images are allowed'), false);
+            cb(new Error('Only JPEG, PNG, WebP, and HEIC images are allowed'), false);
         }
     }
 });

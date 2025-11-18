@@ -55,6 +55,7 @@ sudo apt-get install -y \
     build-essential \
     python3 \
     libvips-dev \
+    libheif-dev \
     imagemagick \
     curl \
     git
