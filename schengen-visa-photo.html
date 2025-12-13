@@ -310,10 +310,28 @@
         </div>
     </section>
 
-    
-    
-        
-    </div>
+    <!-- TrackWise Advertisement Banner -->
+    <section class="trackwise-ad-section">
+        <div class="container">
+            <div class="trackwise-ad-banner">
+                <div class="trackwise-ad-content">
+                    <div class="trackwise-ad-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="trackwise-ad-text">
+                        <h3>Manage Your Family's Health with TrackWise</h3>
+                        <p>Track appointments, medications, and health records for your entire family in one secure place. Free to get started!</p>
+                    </div>
+                    <div class="trackwise-ad-cta">
+                        <a href="https://trackwise.cloud" target="_blank" class="btn-trackwise">
+                            <i class="fas fa-external-link-alt"></i>
+                            Try TrackWise Free
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Schengen Visa Requirements Section -->
     <section id="requirements" class="requirements-section">
@@ -1343,22 +1361,123 @@
             }
         }
 
-        
 
-        
 
-        
+        /* TrackWise Advertisement Styles */
+        .trackwise-ad-section {
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            margin: 60px 0;
+        }
 
-        
+        .trackwise-ad-banner {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        
+        .trackwise-ad-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+        }
 
-        .ad-rectangle-middle, 
+        .trackwise-ad-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .trackwise-ad-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .trackwise-ad-text {
+            flex: 1;
+        }
+
+        .trackwise-ad-text h3 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .trackwise-ad-text p {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .trackwise-ad-cta {
+            flex-shrink: 0;
+        }
+
+        .btn-trackwise {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-trackwise:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+        }
+
+
+
+
+
+
+
+        .ad-rectangle-middle,
 
         @media (max-width: 768px) {
-            
+            .trackwise-ad-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+                gap: 20px;
+            }
 
-            
+            .trackwise-ad-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 36px;
+            }
+
+            .trackwise-ad-text h3 {
+                font-size: 22px;
+            }
+
+            .trackwise-ad-text p {
+                font-size: 14px;
+            }
+
+
         }
     </style>
 
