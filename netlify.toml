@@ -20,11 +20,6 @@
   to = "/analytics.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
-
 # Headers for security and performance
 [[headers]]
   for = "/*"

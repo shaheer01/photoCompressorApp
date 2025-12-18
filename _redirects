@@ -5,6 +5,3 @@
 # Redirect old paths (if any)
 /dashboard              /analytics.html    301
 /stats                  /analytics.html    301
-
-# SPA fallback (optional)
-/*                      /index.html        404
