@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Italy 2026. Monthly expenses, salary by profession, IRPEF tax calculator, SSN healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="italy living cost, italy salary, italian tax, cost of living milan, expat italy, costo della vita Italia">
+    <link rel="canonical" href="https://compressphotos.cloud/italy-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1EE;&#x1F1F9;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #008C45 0%, #CD212A 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #008C45; border-bottom: 3px solid #008C45; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #008C45; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #008C45; background: #f0faf4; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #008C45, #4DB87A);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0faf4; border-left: 4px solid #008C45; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #008C45; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #008C45; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #008C45, #CD212A); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#008C45; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Krankenversicherung, tax & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, S&eacute;cu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1EE;&#x1F1F9;</span><div><strong>Italy</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Italy Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, IRPEF tax system, SSN healthcare, and PPP calculator. For expats and newcomers planning to move to Italy.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Grand Canal, Venice - iconic Italian landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="italian">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Italy (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on ISTAT, real 2026 data, and expat reports. Strong North-South divide in costs.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend 2,200 EUR/month, you need roughly 3,100 EUR gross (~30-35% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,200</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,500</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle in Milan/Rome</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,100</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Italy-wide median gross (lower than NW Europe)</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (bilocale / 2-room apartment)</td><td class="eur">650</td><td class="eur">1,200</td><td>Milan/Rome 900-1,400+; Naples/Palermo 400-700</td></tr>
+                    <tr><td></td><td>Condominio (building fees)</td><td class="eur">50</td><td class="eur">120</td><td>Elevator, cleaning, shared spaces; varies by building</td></tr>
+                    <tr><td></td><td>Utilities (luce, gas, acqua)</td><td class="eur">100</td><td class="eur">180</td><td>Electricity (Enel), gas, water; higher in winter for heating</td></tr>
+                    <tr><td></td><td>Internet (fibra)</td><td class="eur">25</td><td class="eur">35</td><td>TIM, Vodafone, Fastweb, Iliad; fiber expanding rapidly</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">16</td><td class="eur">30</td><td>Iliad, ho. Mobile, Very Mobile; very cheap compared to NW Europe</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">841</td><td class="eur">1,565</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">400</td><td class="eur">600</td><td>Esselunga, Conad, Lidl, Eurospin; local markets cheaper</td></tr>
+                    <tr><td></td><td>Eating out (occasional)</td><td class="eur">80</td><td class="eur">200</td><td>Trattoria lunch menu 10-15 EUR; pizza 7-12 EUR</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">480</td><td class="eur">800</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Monthly transit pass (2 persons)</td><td class="eur">70</td><td class="eur">120</td><td>Milan ATM 39 EUR; Rome ATAC 35 EUR; varies by city</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">150</td><td>Car sharing, taxi; fuel ~1.80 EUR/litre</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">70</td><td class="eur">270</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health</td></tr>
+                    <tr><td></td><td>SSN (public healthcare)</td><td class="eur">0</td><td class="eur">0</td><td>Servizio Sanitario Nazionale -- free at point of use for residents</td></tr>
+                    <tr><td></td><td>Ticket sanitario (co-pays)</td><td class="eur">10</td><td class="eur">40</td><td>Small co-pays for specialist visits, tests; exempt if low income</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">10</td><td class="eur">40</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">80</td><td class="eur">200</td><td>Zara, OVS, market stalls; saldi (sales) in Jan & Jul</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">60</td><td class="eur">100</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">50</td><td class="eur">120</td><td>Gym 30-50 EUR/month; swimming pool ~40 EUR/month</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">40</td><td class="eur">70</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">230</td><td class="eur">490</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>RC auto / liability</td><td class="eur">0</td><td class="eur">15</td><td>Optional personal liability; car insurance if you drive</td></tr>
+                    <tr><td></td><td>Home insurance (polizza casa)</td><td class="eur">10</td><td class="eur">20</td><td>Not mandatory but recommended; covers fire, theft</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">10</td><td class="eur">35</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,641</td><td class="eur">~3,200</td><td>Realistic range: 2,200 - 3,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Italy</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from ISTAT, Glassdoor, LinkedIn Salary Insights 2026. Salaries are notably lower than NW Europe.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>13th & 14th month salary (tredicesima & quattordicesima):</strong> Italian law mandates a 13th month salary (tredicesima) paid in December. Many contracts also include a 14th month (quattordicesima) in June/July. The figures below show standard monthly gross -- your actual annual pay is 13-14x the monthly figure.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Medico)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:91%;">5,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:78%;">4,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (Avvocato)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">3,700 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:62%;">3,400 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect (Architetto)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:58%;">3,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant (Commercialista)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Insegnante)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:51%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist (Farmacista)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:51%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (Infermiere)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:45%;">2,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer (Carabiniere)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">2,400 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician (Elettricista)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">2,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef (Cuoco)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:36%;">2,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver (Autista)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">1,900 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker (Commesso)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:29%;">1,600 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>No statutory minimum wage:</strong> Italy does not have a national minimum wage. Pay floors are set by CCNL (Contratto Collettivo Nazionale di Lavoro) -- sector-specific collective bargaining agreements. Most CCNL set minimums around 1,200-1,400 EUR/month gross for entry-level roles. A minimum wage law has been debated but not yet enacted as of 2026.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Regional variation:</strong> Milan and northern Italy salaries are 20-40% higher than Rome, and 40-60% higher than southern Italy (Mezzogiorno). A software engineer in Milan earns ~4,500 EUR/month gross vs ~2,800 EUR in Naples.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Italian Tax System (Sistema Fiscale)</h2>
+            <p class="section-subtitle">Italy uses a progressive income tax (IRPEF) plus regional/municipal surcharges and mandatory social contributions (INPS). Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">IRPEF Income Tax Brackets</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 28,000</td><td class="eur">23%</td><td>First bracket; no-tax area up to ~8,500 EUR for employees</td></tr>
+                    <tr><td>28,001 - 50,000</td><td class="eur">35%</td><td>Middle bracket</td></tr>
+                    <tr><td>50,001+</td><td class="eur">43%</td><td>Top bracket (Aliquota massima)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Additional Taxes & Surcharges</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Addizionale regionale</td><td class="eur">1.23% - 3.33%</td><td>All taxpayers</td><td>Varies by region; Lazio ~3.33%, Lombardia ~1.73%</td></tr>
+                    <tr><td>Addizionale comunale</td><td class="eur">0% - 0.9%</td><td>All taxpayers</td><td>Set by each municipality (comune); Rome ~0.9%</td></tr>
+                    <tr><td>Flat tax for new residents</td><td class="eur">100,000 EUR/year</td><td>New tax residents (high net worth)</td><td>Lump-sum flat tax on foreign income for up to 15 years; popular with wealthy expats</td></tr>
+                    <tr><td>Regime forfettario</td><td class="eur">15% (or 5%)</td><td>Self-employed under 85,000 EUR</td><td>Simplified flat tax regime for freelancers (partita IVA); 5% for first 5 years if eligible</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Contributions (Contributi INPS)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Total Rate</th><th>Employee Share</th><th>Employer Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>INPS pension & social (Lavoratore dipendente)</td><td class="eur">~33%</td><td class="eur">~9.19%</td><td class="eur">~23.81%</td><td>Employer pays the lion's share; covers pension, disability, maternity</td></tr>
+                    <tr><td>INAIL (workplace injury insurance)</td><td class="eur">0.3% - 3%+</td><td class="eur">0%</td><td class="eur">0.3% - 3%+</td><td>Paid entirely by employer; rate depends on job risk level</td></tr>
+                    <tr><td>TFR (Trattamento di Fine Rapporto)</td><td class="eur">~6.91%</td><td class="eur">0%</td><td class="eur">~6.91%</td><td>Severance fund; accrued annually by employer, paid at end of employment</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="itGrossSalary">Annual Gross Salary (RAL - Retribuzione Annua Lorda) in EUR:</label>
+                <input type="number" id="itGrossSalary" value="35000" min="0" max="500000">
+                <label for="itRegion">Region (Addizionale regionale):</label>
+                <select id="itRegion">
+                    <option value="1.73">Lombardia (1.73%)</option>
+                    <option value="3.33">Lazio (3.33%)</option>
+                    <option value="1.73">Emilia-Romagna (1.73%)</option>
+                    <option value="2.03">Piemonte (2.03%)</option>
+                    <option value="1.73">Toscana (1.73%)</option>
+                    <option value="2.03">Campania (2.03%)</option>
+                    <option value="1.73">Veneto (1.73%)</option>
+                    <option value="1.73">Sicilia (1.73%)</option>
+                </select>
+                <label for="itComunale">Municipal surcharge (addizionale comunale %):</label>
+                <input type="number" id="itComunale" value="0.8" min="0" max="0.9" step="0.1">
+                <button class="calc-btn" onclick="calculateITTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="itTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross (RAL)</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">1,800</td><td class="eur">23,400</td><td class="eur">~470</td><td class="eur" style="color:#059669; font-weight:700;">~1,330</td><td>26.1%</td></tr>
+                    <tr><td class="eur">2,500</td><td class="eur">32,500</td><td class="eur">~720</td><td class="eur" style="color:#059669; font-weight:700;">~1,780</td><td>28.8%</td></tr>
+                    <tr><td class="eur">3,500</td><td class="eur">45,500</td><td class="eur">~1,120</td><td class="eur" style="color:#059669; font-weight:700;">~2,380</td><td>32.0%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">65,000</td><td class="eur">~1,850</td><td class="eur" style="color:#059669; font-weight:700;">~3,150</td><td>37.0%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">91,000</td><td class="eur">~2,850</td><td class="eur" style="color:#059669; font-weight:700;">~4,150</td><td>40.7%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Italian salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Italy = 100.</p>
+
+            <div class="calc-container">
+                <label for="itPppAmount">Your monthly spending in Italy (EUR):</label>
+                <input type="number" id="itPppAmount" value="2500" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateITPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="itPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>2,500 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Italy = 100. If Switzerland has a PPP index of 171, your 2,500 EUR in Italy has the same purchasing power as 2,500 x (171/100) = 4,275 EUR in Switzerland. You'd need ~71% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Italian cities. Milan = 100 (most expensive baseline). Data: ISTAT, Numbeo, Immobiliare.it 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent Bilocale (EUR)</th><th>Monthly Pass (EUR)</th><th>Meal Out (EUR)</th><th>Espresso (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Milan (Milano)</strong></td><td class="eur">1,000-1,500</td><td class="eur">39</td><td class="eur">14-25</td><td class="eur">1.30</td><td>Most expensive; fashion & finance capital; best job market</td></tr>
+                    <tr><td><strong>Rome (Roma)</strong></td><td class="eur">800-1,300</td><td class="eur">35</td><td class="eur">12-22</td><td class="eur">1.10</td><td>Capital city; bureaucratic hub; eternal history</td></tr>
+                    <tr><td><strong>Florence (Firenze)</strong></td><td class="eur">750-1,200</td><td class="eur">35</td><td class="eur">12-20</td><td class="eur">1.20</td><td>Art & culture; tourist-heavy; expensive for size</td></tr>
+                    <tr><td><strong>Bologna</strong></td><td class="eur">700-1,100</td><td class="eur">39</td><td class="eur">12-20</td><td class="eur">1.10</td><td>University town; food capital (tortellini, ragu); vibrant</td></tr>
+                    <tr><td><strong>Turin (Torino)</strong></td><td class="eur">550-900</td><td class="eur">38</td><td class="eur">10-18</td><td class="eur">1.10</td><td>Former FIAT capital; underrated; great aperitivo scene</td></tr>
+                    <tr><td><strong>Venice (Venezia)</strong></td><td class="eur">700-1,100</td><td class="eur">37</td><td class="eur">14-25</td><td class="eur">1.50</td><td>Tourist prices; very expensive for locals; unique lifestyle</td></tr>
+                    <tr><td><strong>Naples (Napoli)</strong></td><td class="eur">450-750</td><td class="eur">35</td><td class="eur">8-15</td><td class="eur">1.00</td><td>Cheapest major city; best pizza; chaotic but authentic</td></tr>
+                    <tr><td><strong>Palermo</strong></td><td class="eur">400-650</td><td class="eur">35</td><td class="eur">7-14</td><td class="eur">0.90</td><td>Most affordable; Sicilian cuisine; growing digital nomad scene</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>North-South divide:</strong> Italy has one of Europe's starkest economic divides. Milan's GDP per capita is nearly double that of Naples. Salaries, rents, and services cost significantly more in the North, but infrastructure and job availability are also better. Many young Italians move north or abroad for better opportunities.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Italian Healthcare System (Servizio Sanitario Nazionale)</h2>
+            <p class="section-subtitle">Italy's SSN provides universal healthcare to all residents. Ranked among the best in the world by WHO.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">SSN</div>
+                    <div class="stat-unit">Universal public system</div>
+                    <div class="stat-desc">Free at point of use for all residents</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Tessera</div>
+                    <div class="stat-unit">Sanitaria (health card)</div>
+                    <div class="stat-desc">Your health insurance card; also your codice fiscale card</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ASL</div>
+                    <div class="stat-unit">Local health authority</div>
+                    <div class="stat-desc">Azienda Sanitaria Locale -- register here for a GP</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~36.50</div>
+                    <div class="stat-unit">EUR max ticket</div>
+                    <div class="stat-desc">Maximum co-pay per specialist visit/test</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">How SSN Works</h3>
+            <table class="data-table">
+                <thead><tr><th>Step</th><th>What to Do</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Register</strong></td><td>Go to your local ASL (Azienda Sanitaria Locale)</td><td>Bring codice fiscale, permesso di soggiorno (non-EU), ID, residency certificate</td></tr>
+                    <tr><td><strong>2. Choose GP</strong></td><td>Select a Medico di Base (family doctor)</td><td>Free; your primary care doctor for referrals, prescriptions, sick notes</td></tr>
+                    <tr><td><strong>3. Get tessera</strong></td><td>Receive your Tessera Sanitaria</td><td>Health card valid across Italy and EU (EHIC equivalent on back)</td></tr>
+                    <tr><td><strong>4. Use services</strong></td><td>GP visits free; specialists via referral (impegnativa)</td><td>Pay ticket sanitario (co-pay) for specialist visits and tests</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost (SSN)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (Medico di Base)</td><td class="eur">Free</td><td>No appointment fee; walk-in during orario di studio</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">Ticket ~36.50 EUR</td><td>Need impegnativa (referral) from GP; long wait times in public system</td></tr>
+                    <tr><td>Emergency (Pronto Soccorso)</td><td class="eur">Free (urgent) / 25 EUR (non-urgent)</td><td>Codice bianco (non-urgent) charged; codice rosso/giallo free</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">Free</td><td>Public hospitals; no daily charge for SSN patients</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Free - 5 EUR</td><td>Fascia A (essential) free or small co-pay; Fascia C paid in full</td></tr>
+                    <tr><td>Dental - basic</td><td class="eur">Partially covered</td><td>Very limited SSN dental; most Italians pay privately (50-100 EUR/visit)</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Covered (limited)</td><td>SSN covers some psychotherapy; bonus psicologo program; long waits</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>All prenatal, delivery, postnatal care covered by SSN</td></tr>
+                    <tr><td>Lab tests / diagnostics</td><td class="eur">Ticket ~10-36.50 EUR</td><td>Blood tests, X-rays, MRI; exempt (esente) if chronic condition or low income</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Private healthcare (Sanita privata):</strong> Many Italians use a mix of public and private. Private specialist visits cost 80-200 EUR but have no wait time. Private insurance (assicurazione sanitaria integrativa) costs 50-150 EUR/month and is offered by some employers. The SSN is excellent for emergencies and major care; private is faster for routine specialists.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Italy (Cercare Casa)</h2>
+            <p class="section-subtitle">The Italian rental market varies enormously by city. Understanding contract types and local practices is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Italian Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contratto 4+4</strong></td><td>Standard rental contract</td><td>4 years initial + 4 years automatic renewal; most common residential lease</td></tr>
+                    <tr><td><strong>Contratto 3+2</strong></td><td>Agreed-rent contract</td><td>3 years + 2 years renewal; rent set by local agreements (canone concordato); tax benefits for both parties</td></tr>
+                    <tr><td><strong>Contratto transitorio</strong></td><td>Temporary contract</td><td>1-18 months; for documented temporary needs (work transfer, study)</td></tr>
+                    <tr><td><strong>Caparra</strong></td><td>Security deposit</td><td>Usually 2-3 months rent; legally returnable at end of contract</td></tr>
+                    <tr><td><strong>Cedolare secca</strong></td><td>Flat tax on rent</td><td>Optional 21% flat tax on rental income (10% for canone concordato); landlord benefit that often means no rent increases</td></tr>
+                    <tr><td><strong>Spese condominiali</strong></td><td>Building maintenance fees</td><td>Monthly fee for shared building costs: elevator, stairs, cleaning, common areas</td></tr>
+                    <tr><td><strong>Residenza</strong></td><td>Official residence</td><td>Register at Anagrafe (registry office); needed for SSN, voting, many services</td></tr>
+                    <tr><td><strong>Codice fiscale</strong></td><td>Tax identification code</td><td>Italian equivalent of SSN/NIN; needed for EVERYTHING -- get it first at Agenzia delle Entrate</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Immobiliare.it</td><td>All types</td><td>Largest property portal in Italy; essential for apartment hunting</td></tr>
+                    <tr><td>Idealista.it</td><td>All types</td><td>Second largest; good filters; also popular in Spain and Portugal</td></tr>
+                    <tr><td>Casa.it</td><td>All types</td><td>Third major portal; good for regional listings</td></tr>
+                    <tr><td>Subito.it</td><td>All types</td><td>Italian classifieds (like Craigslist); private rentals, some scams</td></tr>
+                    <tr><td>Bakeca.it</td><td>Rooms / shared</td><td>Good for shared apartments (coinquilini); popular with students</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Affitti Milano", "Case in affitto Roma" groups; expat communities active</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> Codice fiscale, last 3 buste paga (pay slips), copy of ID/passport, permesso di soggiorno (non-EU), work contract (contratto di lavoro). Some landlords also request a guarantor (garante) or proof of employment. The market moves fast in Milan -- be ready to decide within days. Beware of scams asking for deposits before viewing.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Italy (Trasporti)</h2>
+            <p class="section-subtitle">Italy has excellent intercity rail, decent city transit in the north, and a car-dependent culture in the south.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">39</div>
+                    <div class="stat-unit">EUR/month (Milan ATM)</div>
+                    <div class="stat-desc">Abbonamento mensile -- metro, bus, tram</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">300 km/h</div>
+                    <div class="stat-unit">Frecciarossa top speed</div>
+                    <div class="stat-desc">Milan-Rome in 2h50m by high-speed rail</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.80</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.70 EUR; among highest in Europe</td>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ZTL</div>
+                    <div class="stat-unit">Restricted traffic zones</div>
+                    <div class="stat-desc">Zona a Traffico Limitato -- fines if you drive in without permit</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Milan ATM pass (abbonamento)</td><td class="eur">39 EUR/month</td><td>Metro (4 lines), bus, tram citywide; annual 330 EUR</td></tr>
+                    <tr><td>Rome ATAC pass</td><td class="eur">35 EUR/month</td><td>Metro (3 lines), bus, tram; Roma TPL zone</td></tr>
+                    <tr><td>Trenitalia Frecciarossa (Milan-Rome)</td><td class="eur">30-90 EUR</td><td>2h50m high-speed; book early for Super Economy from 29 EUR</td></tr>
+                    <tr><td>Italo (private high-speed)</td><td class="eur">25-85 EUR</td><td>Competes with Trenitalia; often cheaper; Milan-Rome, Florence-Naples</td></tr>
+                    <tr><td>Trenitalia Regionale</td><td class="eur">5-20 EUR</td><td>Regional trains; slower but cheap; no reservation needed</td></tr>
+                    <tr><td>Car insurance (RC Auto)</td><td class="eur">40-100 EUR/month</td><td>Mandatory; much higher in south (Naples can be 2x Milan); based on history</td></tr>
+                    <tr><td>ZTL fine</td><td class="eur">80-335 EUR</td><td>Automatic camera enforcement; many city centers are ZTL -- check before driving!</td></tr>
+                    <tr><td>Autostrada tolls (Milan-Rome)</td><td class="eur">~45 EUR one way</td><td>Telepass for automatic payment; tolls add up quickly on long drives</td></tr>
+                    <tr><td>Bicycle</td><td class="eur">50-250 EUR</td><td>Growing bike lanes in Milan, Bologna; BikeMi sharing 36 EUR/year in Milan</td></tr>
+                    <tr><td>E-scooter rental</td><td class="eur">~0.25 EUR/min</td><td>Lime, Dott, Tier; common in major cities</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Book Trenitalia Frecciarossa or Italo tickets 2-3 months in advance for prices as low as 19-29 EUR (Milan-Rome). The Carta Freccia loyalty program gives points and discounts. For regional travel, look for abbonamenti regionali (monthly regional passes). Unlike Germany's Deutschlandticket, Italy does NOT have a single national transit pass.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Italy -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Italy (Lavorare in Italia)</h2>
+            <p class="section-subtitle">Italian work culture, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20-28</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum 20 days (4 weeks); many CCNL give more</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">13-14</div>
+                    <div class="stat-unit">Monthly salaries/year</div>
+                    <div class="stat-desc">Tredicesima mandatory; quattordicesima common</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">TFR</div>
+                    <div class="stat-unit">Severance fund</div>
+                    <div class="stat-desc">~1 month salary/year accrued; paid on termination</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Permesso</div>
+                    <div class="stat-unit">di Soggiorno</div>
+                    <div class="stat-desc">Residence permit for non-EU workers; apply at Questura</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contratto a tempo indeterminato</strong></td><td>Permanent contract (open-ended)</td><td>The gold standard; very difficult for employer to terminate; strong protections</td></tr>
+                    <tr><td><strong>Contratto a tempo determinato</strong></td><td>Fixed-term contract</td><td>Max 24 months (with extensions); must be converted to permanent or ended</td></tr>
+                    <tr><td><strong>Periodo di prova</strong></td><td>Probation period; varies by CCNL (1-6 months)</td><td>Either party can terminate with no notice; shorter for lower qualifications</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 40 hours/week (by law); 36-38 for some CCNL</td><td>Max 48 hours/week including overtime averaged over 4 months</td></tr>
+                    <tr><td><strong>Ferie (vacation)</strong></td><td>Minimum 4 weeks/year (20 days)</td><td>Most CCNL add 2-5 more; August (Ferragosto) nearly everything closes</td></tr>
+                    <tr><td><strong>Tredicesima</strong></td><td>13th month salary, paid in December</td><td>Mandatory by law; equals one month's salary</td></tr>
+                    <tr><td><strong>Quattordicesima</strong></td><td>14th month salary, paid in June/July</td><td>Not mandatory but common in many CCNL (commerce, tourism, etc.)</td></tr>
+                    <tr><td><strong>TFR (Trattamento Fine Rapporto)</strong></td><td>Severance/end-of-service fund (~1 month/year)</td><td>Accrued annually; paid as lump sum when you leave; can be redirected to pension fund</td></tr>
+                    <tr><td><strong>Sick leave (Malattia)</strong></td><td>INPS pays from day 4; employer supplements</td><td>First 3 days (carenza) -- employer pays or unpaid depending on CCNL; need certificato medico from doctor</td></tr>
+                    <tr><td><strong>Permesso di soggiorno</strong></td><td>Residence permit for non-EU citizens</td><td>Apply at Questura within 8 days of arrival; requires work contract, housing, insurance</td></tr>
+                    <tr><td><strong>Maternita</strong></td><td>5 months mandatory maternity leave</td><td>2 months before + 3 months after birth (or 1+4); 80% salary from INPS</td></tr>
+                    <tr><td><strong>Paternita</strong></td><td>10 days mandatory paternity leave</td><td>100% salary; must be taken within 5 months of birth</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Italian work culture essentials:</strong> (1) <strong>Relationships first</strong> -- building personal rapport (fare bella figura) matters more than efficiency. (2) <strong>Pranzo (lunch)</strong> -- lunch breaks are sacred (1-2 hours); many offices close 13:00-14:30. (3) <strong>Hierarchy</strong> -- titles matter (Dottore/Dottoressa for any degree holder, Ingegnere for engineers). (4) <strong>Flexibility on time</strong> -- meetings may start 10-15 minutes late; don't panic, it's normal. (5) <strong>August shutdown</strong> -- many businesses close entirely for 1-3 weeks around Ferragosto (Aug 15). Plan ahead.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="italian" class="tab-content">
+            <h2 class="section-title">Italian Culture & Essential Phrases</h2>
+            <p class="section-subtitle">Italy is not just a country -- it's a lifestyle. Understanding these cultural norms will help you integrate and avoid faux pas.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Essential Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Italian</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Buongiorno</td><td>Good morning / Hello (formal)</td><td>bwon-JOR-no</td></tr>
+                    <tr><td>Buonasera</td><td>Good evening (after ~5pm)</td><td>bwon-ah-SEH-rah</td></tr>
+                    <tr><td>Grazie / Grazie mille</td><td>Thank you / Thanks a lot</td><td>GRAH-tsee-eh / GRAH-tsee-eh MEE-leh</td></tr>
+                    <tr><td>Per favore / Per piacere</td><td>Please</td><td>pair fah-VOH-reh</td></tr>
+                    <tr><td>Mi scusi / Scusa</td><td>Excuse me (formal / informal)</td><td>mee SKOO-zee / SKOO-zah</td></tr>
+                    <tr><td>Parla inglese?</td><td>Do you speak English?</td><td>PAR-lah een-GLEH-zeh</td></tr>
+                    <tr><td>Non capisco</td><td>I don't understand</td><td>non kah-PEES-ko</td></tr>
+                    <tr><td>Quanto costa?</td><td>How much does it cost?</td><td>KWAN-toh KOS-tah</td></tr>
+                    <tr><td>Un caffe, per favore</td><td>An espresso, please</td><td>oon kaf-FEH pair fah-VOH-reh</td></tr>
+                    <tr><td>Il conto, per favore</td><td>The bill, please</td><td>eel KON-toh pair fah-VOH-reh</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>What to Know</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Espresso etiquette</strong></td><td>Stand at the bar (al banco) for cheaper coffee</td><td>"Un caffe" = espresso. Cappuccino ONLY before 11am (locals will judge). Sitting at a table (al tavolo) costs 2-3x more in tourist areas.</td></tr>
+                    <tr><td><strong>Pranzo vs Cena</strong></td><td>Lunch 12:30-14:30, Dinner 20:00-22:00</td><td>Pranzo (lunch) is the main meal in many regions. Restaurants don't open for cena (dinner) before 19:30. Eating dinner at 18:00 is very foreign.</td></tr>
+                    <tr><td><strong>Aperitivo</strong></td><td>Pre-dinner drinks + snacks, 18:00-21:00</td><td>Italy's version of happy hour. Spritz Aperol (3-7 EUR) with free stuzzichini (snacks). Milan invented "apericena" -- aperitivo buffet as dinner replacement.</td></tr>
+                    <tr><td><strong>Passeggiata</strong></td><td>Evening stroll, typically 17:00-20:00</td><td>Sacred Italian tradition. Families and couples walk the main street (corso) to see and be seen. Join in -- it's how communities bond.</td></tr>
+                    <tr><td><strong>Bella figura</strong></td><td>Making a good impression</td><td>Dress well, present yourself well, be polite. Italians care deeply about appearance and social grace. Sweatpants in public are frowned upon (except for sport).</td></tr>
+                    <tr><td><strong>Coperto</strong></td><td>Cover charge at restaurants (1-3 EUR/person)</td><td>Not a tip -- it's a service/bread charge. Legal in most regions. Tipping is appreciated but not expected (round up or leave 5-10%).</td></tr>
+                    <tr><td><strong>Pausa pranzo</strong></td><td>Lunch break closure</td><td>Many shops, banks, post offices close 13:00-15:30. Plan errands for morning or late afternoon.</td></tr>
+                    <tr><td><strong>Festa / public holidays</strong></td><td>Many regional saints' days</td><td>Each city has its patron saint day (festa patronale) -- banks and shops may close. Plus 12 national holidays/year.</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Food Rules (Non-Negotiable)</h3>
+            <div class="info-box">
+                <i class="fas fa-utensils"></i>
+                <strong>Things that will horrify Italians:</strong> (1) <strong>Cappuccino after lunch</strong> -- milk-based coffee is a breakfast drink only. (2) <strong>Pineapple on pizza</strong> -- don't even joke about it. (3) <strong>Ketchup on pasta</strong> -- this is a declaration of war. (4) <strong>Breaking spaghetti</strong> -- never break pasta before cooking. (5) <strong>Chicken on pasta</strong> -- not an Italian thing (sorry, Alfredo). (6) <strong>Parmesan on fish pasta</strong> -- formaggio and pesce don't mix. Order correctly and you'll earn instant respect.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Practical tips:</strong> (1) <strong>Raccolta differenziata</strong> -- waste sorting is MANDATORY and varies by comune; check your local rules or face fines. (2) <strong>Pharmacies (farmacie)</strong> -- for minor health issues, pharmacists can advise and sell many medications without prescription. Look for the green cross. (3) <strong>Tabaccheria</strong> -- tobacco shops sell bus tickets, stamps, phone top-ups, and bollo (tax stamps). Essential for daily life. (4) <strong>Scontrino fiscale</strong> -- always get a receipt; both customer and vendor can be fined if caught without one.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Italy</h2>
+            <p class="section-subtitle">What gross salary (RAL) do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~28,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,800</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal, small city)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,800</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared room, South Italy, very frugal</small></td><td class="eur">900</td><td class="eur">1,500</td><td class="eur">1,100</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat, small/southern city</small></td><td class="eur">1,400</td><td class="eur">2,300</td><td class="eur">1,600</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">2,400</td><td class="eur">3,800</td><td class="eur">2,600</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (Milan/Rome)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">3,500</td><td class="eur">5,500</td><td class="eur">3,700</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, big city</small></td><td class="eur">3,800</td><td class="eur">6,200</td><td class="eur">4,100</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>codice fiscale</strong> at Agenzia delle Entrate (needed for everything). (2) Apply for <strong>permesso di soggiorno</strong> at Questura (non-EU, within 8 days). (3) Open a bank account (Intesa Sanpaolo, UniCredit, N26 Italy, Revolut). (4) Register <strong>residenza</strong> at the Anagrafe (comune). (5) Register at the <strong>ASL</strong> for SSN healthcare and choose a Medico di Base. (6) Get a SIM card (Iliad, ho. Mobile -- bring codice fiscale!). (7) Buy a monthly <strong>abbonamento</strong> for local transport. (8) Learn to say "un caffe, per favore" -- you'll need it daily.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Agenzia delle Entrate, ISTAT, INPS) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Italy Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#008C45;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator - Italy = 100 (global index 76)
+    const itPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 171, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 147, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 139, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 134, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 132, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 125, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 121, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 118, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 118, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 114, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 112, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 111, region: 'North America' },
+        { name: 'France', currency: 'EUR', ppp: 108, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 105, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 103, region: 'East Asia' },
+        { name: 'UAE', currency: 'AED', ppp: 99, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 89, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 79, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 68, region: 'Middle East' },
+        { name: 'Poland', currency: 'PLN', ppp: 55, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 64, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 52, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 46, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 66, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 35, region: 'Eurasia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 83, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 44, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 25, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 21, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 23, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 26, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 41, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 30, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 33, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 31, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 41, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 44, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 33, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 41, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 31, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 35, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 25, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 23, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 29, region: 'Africa' },
+    ];
+
+    function calculateITPPP() {
+        const amount = parseFloat(document.getElementById('itPppAmount').value) || 2500;
+        const tbody = document.querySelector('#itPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#itPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        itPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateITPPP();
+
+    // Italian Tax Calculator (IRPEF)
+    function calculateITTax() {
+        const annualGross = parseFloat(document.getElementById('itGrossSalary').value) || 35000;
+        const regionRate = parseFloat(document.getElementById('itRegion').value) || 1.73;
+        const comunaleRate = parseFloat(document.getElementById('itComunale').value) || 0.8;
+
+        // INPS employee contribution (~9.19%)
+        const inps = annualGross * 0.0919;
+
+        // Taxable income (after INPS deduction)
+        const taxableIncome = Math.max(0, annualGross - inps);
+
+        // IRPEF progressive tax calculation (2026 brackets)
+        let irpef = 0;
+        if (taxableIncome <= 28000) {
+            irpef = taxableIncome * 0.23;
+        } else if (taxableIncome <= 50000) {
+            irpef = 28000 * 0.23 + (taxableIncome - 28000) * 0.35;
+        } else {
+            irpef = 28000 * 0.23 + 22000 * 0.35 + (taxableIncome - 50000) * 0.43;
+        }
+
+        // Tax deductions for employees (detrazione lavoro dipendente, simplified)
+        let detrazione = 0;
+        if (taxableIncome <= 15000) {
+            detrazione = 1955;
+        } else if (taxableIncome <= 28000) {
+            detrazione = 1910 + 1190 * ((28000 - taxableIncome) / 13000);
+        } else if (taxableIncome <= 50000) {
+            detrazione = 1910 * ((50000 - taxableIncome) / 22000);
+        }
+
+        irpef = Math.max(0, irpef - detrazione);
+
+        // Addizionale regionale
+        const addRegionale = taxableIncome * (regionRate / 100);
+
+        // Addizionale comunale
+        const addComunale = taxableIncome * (comunaleRate / 100);
+
+        const totalTax = irpef + addRegionale + addComunale;
+        const totalDeductions = totalTax + inps;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 13; // 13 months (tredicesima)
+        const grossMonthly = annualGross / 13;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('itTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly (x13):</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>IRPEF tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(irpef/13).toLocaleString()} EUR</span></div>
+                <div><strong>INPS contribution:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(inps/13).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly (x13):</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>INPS: ${Math.round(inps/13)} EUR/mo</div>
+                <div>IRPEF: ${Math.round(irpef/13)} EUR/mo</div>
+                <div>Add. regionale: ${Math.round(addRegionale/13)} EUR/mo</div>
+                <div>Add. comunale: ${Math.round(addComunale/13)} EUR/mo</div>
+                <div>Annual net: ${Math.round(netAnnual).toLocaleString()} EUR</div>
+            </div>
+            <div style="margin-top:10px; padding:8px 12px; background:#f0faf4; border-radius:6px; font-size:13px;">
+                <i class="fas fa-info-circle" style="color:#008C45;"></i> Net shown per month over 13 payments (tredicesima included). Your December pay will be double.
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 1800 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 1800 ? '#059669' : '#dc2626'};">${netMonthly >= 1800 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~1,800 EUR net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 1800 ? '+' : ''}${Math.round(netMonthly - 1800).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>
