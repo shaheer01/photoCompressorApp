@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Finland 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="finland living cost, finland salary, finnish tax, cost of living helsinki, expat finland, elinkustannukset Suomi">
+    <link rel="canonical" href="https://compressphotos.cloud/finland-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1EB;&#x1F1EE;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #003580 0%, #002050 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #003580; border-bottom: 3px solid #003580; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #003580; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #003580; background: #eef2ff; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #003580, #4A7CDB);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #003580; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #003580; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #003580; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #003580, #4A7CDB); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#003580; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Steuern, salaries & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1F9;</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1EB;&#x1F1EE;</span><div><strong>Finland</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Finland Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Finnish tax system, Kela healthcare, and PPP calculator. For expats and newcomers planning to move to Finland.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?w=800&q=80" alt="Helsinki Cathedral and Senate Square - iconic Finnish landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="finnish">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Finland (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on Statistics Finland, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Helsinki is significantly more expensive than other Finnish cities. To earn this take-home, you need a higher gross salary. For example, to spend 2,600 EUR/month, you need roughly 3,800 EUR gross (~32% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,600</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,200</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle in Helsinki</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,800</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~44,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Finland-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (2-room apartment, kaksio)</td><td class="eur">850</td><td class="eur">1,400</td><td>Helsinki 1,100-1,400; Tampere/Oulu 650-900</td></tr>
+                    <tr><td></td><td>Electricity</td><td class="eur">80</td><td class="eur">150</td><td>Often separate from rent; winter heating spikes costs</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">25</td><td class="eur">40</td><td>DNA, Elisa, Telia; Finland has excellent broadband</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">30</td><td class="eur">50</td><td>DNA, Elisa, Telia; unlimited data plans common</td></tr>
+                    <tr><td></td><td>YLE-vero (public broadcasting tax)</td><td class="eur">0</td><td class="eur">14</td><td>Included in income tax; max 163 EUR/year for earners above 14,000</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">985</td><td class="eur">1,654</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">550</td><td class="eur">800</td><td>S-Market, K-Citymarket, Lidl, Prisma; Lidl cheapest</td></tr>
+                    <tr><td></td><td>Dining out (occasional)</td><td class="eur">0</td><td class="eur">150</td><td>Lunch buffets (lounas) 10-14 EUR; restaurants expensive</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">550</td><td class="eur">950</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Public transport (2 persons)</td><td class="eur">120</td><td class="eur">180</td><td>HSL Helsinki 62.70 EUR/month; cheaper in other cities</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">150</td><td>Taxis expensive; car sharing available in Helsinki</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">120</td><td class="eur">330</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health & Wellbeing</td></tr>
+                    <tr><td></td><td>Public healthcare visits</td><td class="eur">0</td><td class="eur">50</td><td>Terveysasema visit 20.90 EUR; annual cap 692 EUR</td></tr>
+                    <tr><td></td><td>Pharmacy / medications</td><td class="eur">20</td><td class="eur">50</td><td>Kela reimburses portion of prescription costs</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">20</td><td class="eur">100</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">100</td><td class="eur">200</td><td>Marimekko is nice but budget with H&M, Prisma</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">60</td><td class="eur">100</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">50</td><td class="eur">130</td><td>Gym 30-50 EUR/month; public saunas 10-20 EUR/visit</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">40</td><td class="eur">70</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">250</td><td class="eur">500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Home insurance (kotivakuutus)</td><td class="eur">15</td><td class="eur">30</td><td>Highly recommended; covers theft, water damage, fire</td></tr>
+                    <tr><td></td><td>Liability insurance</td><td class="eur">5</td><td class="eur">10</td><td>Often bundled with home insurance</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">20</td><td class="eur">40</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,945</td><td class="eur">~3,574</td><td>Realistic range: 2,600 - 4,200 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Finland</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from Statistics Finland, Duunitori, TE-palvelut 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Holiday bonus (lomaraha):</strong> Most Finnish collective agreements include a holiday bonus of 50% of your monthly salary, paid once a year (typically June/July). Some employers pay a Christmas bonus too. The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">8,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Director</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:94%;">7,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:81%;">6,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:75%;">6,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:75%;">6,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Engineer (Mechanical)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:69%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:63%;">5,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Opettaja)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">4,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (Sairaanhoitaja)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">3,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">3,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef (Kokki)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:31%;">2,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Cleaner (Siivooja)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:28%;">2,200 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>No statutory minimum wage:</strong> Finland has NO national minimum wage. Instead, wages are set through collective agreements (TES - tyoehtosopimu) negotiated by strong unions. Most sectors have effective minimums of 1,800-2,200 EUR/month. Union membership is ~65% of workers.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Finnish Tax System (Verotus)</h2>
+            <p class="section-subtitle">Finland uses progressive state income tax plus flat municipal tax. Combined rates are among the highest in the world but fund exceptional public services. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">State Income Tax Brackets (Ansiotulon valtionvero)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 20,500</td><td class="eur">0%</td><td>Tax-free threshold at state level</td></tr>
+                    <tr><td>20,501 - 30,500</td><td class="eur">12.64%</td><td>First progressive bracket</td></tr>
+                    <tr><td>30,501 - 50,400</td><td class="eur">17.50%</td><td>Second bracket</td></tr>
+                    <tr><td>50,401 - 88,200</td><td class="eur">21.50%</td><td>Third bracket</td></tr>
+                    <tr><td>88,201 - 150,000</td><td class="eur">31.50%</td><td>Fourth bracket</td></tr>
+                    <tr><td>150,001+</td><td class="eur">44.00%</td><td>Top marginal rate (state portion only)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Other Taxes & Contributions</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax / Contribution</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Municipal tax (Kunnallisvero)</td><td class="eur">~17-23%</td><td>All residents</td><td>Flat rate; varies by municipality; Helsinki 18.5%, average ~20%</td></tr>
+                    <tr><td>Church tax (Kirkollisvero)</td><td class="eur">1-2%</td><td>Church members only</td><td>Evangelical Lutheran or Orthodox; opt out at maistraatti.fi</td></tr>
+                    <tr><td>YLE tax (Public broadcasting)</td><td class="eur">2.5% (capped)</td><td>Earners above 14,000</td><td>Max 163 EUR/year; collected with income tax</td></tr>
+                    <tr><td>Health insurance (Kela / sairausvakuutus)</td><td class="eur">~1.96%</td><td>Employees</td><td>Medical care + daily allowance contributions</td></tr>
+                    <tr><td>Pension (TyEL - employee share)</td><td class="eur">7.15-8.65%</td><td>Employees</td><td>7.15% under age 53; 8.65% ages 53-62</td></tr>
+                    <tr><td>Pension (TyEL - employer share)</td><td class="eur">~17.39%</td><td>Employers</td><td>Employer pays the larger share of pension</td></tr>
+                    <tr><td>Unemployment insurance (employee)</td><td class="eur">1.50%</td><td>Employees</td><td>Collected automatically from salary</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="fiGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="fiGrossSalary" value="50000" min="0" max="500000">
+                <label for="fiMunicipalRate">Municipal tax rate (%):</label>
+                <select id="fiMunicipalRate">
+                    <option value="18.5">Helsinki (18.5%)</option>
+                    <option value="19.25">Espoo (19.25%)</option>
+                    <option value="20.5">Tampere (20.5%)</option>
+                    <option value="20.5" selected>Average (~20.5%)</option>
+                    <option value="21.0">Turku (21.0%)</option>
+                    <option value="21.75">Oulu (21.75%)</option>
+                    <option value="21.5">Jyvaskyla (21.5%)</option>
+                </select>
+                <label for="fiChurchTax">Church member (Kirkollisvero)?</label>
+                <select id="fiChurchTax">
+                    <option value="0">No</option>
+                    <option value="1.5">Yes (~1.5%)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateFITax()">Calculate Net Salary</button>
+                <div class="calc-result" id="fiTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">2,500</td><td class="eur">30,000</td><td class="eur">~720</td><td class="eur" style="color:#059669; font-weight:700;">~1,780</td><td>28.8%</td></tr>
+                    <tr><td class="eur">3,500</td><td class="eur">42,000</td><td class="eur">~1,100</td><td class="eur" style="color:#059669; font-weight:700;">~2,400</td><td>31.4%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">60,000</td><td class="eur">~1,850</td><td class="eur" style="color:#059669; font-weight:700;">~3,150</td><td>37.0%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">84,000</td><td class="eur">~2,900</td><td class="eur" style="color:#059669; font-weight:700;">~4,100</td><td>41.4%</td></tr>
+                    <tr><td class="eur">10,000</td><td class="eur">120,000</td><td class="eur">~4,500</td><td class="eur" style="color:#059669; font-weight:700;">~5,500</td><td>45.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Finnish salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Finland = 100.</p>
+
+            <div class="calc-container">
+                <label for="fiPppAmount">Your monthly spending in Finland (EUR):</label>
+                <input type="number" id="fiPppAmount" value="3000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateFIPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="fiPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>3,000 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Finland = 100. If Switzerland has a PPP index of 148, your 3,000 EUR in Finland has the same purchasing power as 3,000 x (148/100) = 4,440 EUR in Switzerland. You'd need 48% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Finnish cities. Helsinki = most expensive baseline. Data: Statistics Finland, Vuokraovi, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent Kaksio (EUR)</th><th>Monthly Pass (EUR)</th><th>Lunch Out (EUR)</th><th>Beer 0.5L (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Helsinki</strong></td><td class="eur">1,100-1,500</td><td class="eur">62.70</td><td class="eur">11-15</td><td class="eur">8.00</td><td>Capital; most expensive; vibrant culture; archipelago</td></tr>
+                    <tr><td><strong>Espoo</strong></td><td class="eur">950-1,300</td><td class="eur">62.70</td><td class="eur">10-14</td><td class="eur">7.50</td><td>Part of Helsinki metro; tech hub (Aalto, Nokia HQ)</td></tr>
+                    <tr><td><strong>Tampere</strong></td><td class="eur">700-1,000</td><td class="eur">55</td><td class="eur">10-13</td><td class="eur">7.00</td><td>Growing fast; two universities; sauna capital of the world</td></tr>
+                    <tr><td><strong>Turku</strong></td><td class="eur">650-950</td><td class="eur">52</td><td class="eur">10-13</td><td class="eur">6.50</td><td>Former capital; oldest city; archipelago trail</td></tr>
+                    <tr><td><strong>Oulu</strong></td><td class="eur">600-850</td><td class="eur">48</td><td class="eur">9-12</td><td class="eur">6.50</td><td>Tech hub of the north; affordable; winter sports</td></tr>
+                    <tr><td><strong>Jyvaskyla</strong></td><td class="eur">550-800</td><td class="eur">45</td><td class="eur">9-12</td><td class="eur">6.00</td><td>Student city; Alvar Aalto architecture; lakeside</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Helsinki vs. the rest:</strong> Helsinki and Espoo (capital region) are significantly more expensive than other Finnish cities, especially for rent. Moving to Tampere or Oulu can save you 300-500 EUR/month in rent alone while maintaining excellent quality of life. All Finnish cities have great infrastructure and public services.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Finnish Healthcare System (Terveydenhuolto)</h2>
+            <p class="section-subtitle">Finland has a universal public healthcare system managed by municipalities and funded through taxes and Kela (Social Insurance Institution).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20.90</div>
+                    <div class="stat-unit">EUR per GP visit</div>
+                    <div class="stat-desc">Terveysasema (health station) visit fee</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">692</div>
+                    <div class="stat-unit">EUR annual cap</div>
+                    <div class="stat-desc">Asiakasmaksu ceiling; after this, care is free</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Kela</div>
+                    <div class="stat-unit">Social Insurance</div>
+                    <div class="stat-desc">Reimburses medicine, travel, sickness benefits</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">Occupational healthcare</div>
+                    <div class="stat-desc">Tyoterveyshuolto; employer-provided for all workers</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Healthcare Channels</h3>
+            <table class="data-table">
+                <thead><tr><th>Channel</th><th>Access</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Terveysasema (Public health station)</strong></td><td>All residents</td><td class="eur">20.90 EUR/visit</td><td>Municipal health centers; may have wait times; first point of care</td></tr>
+                    <tr><td><strong>Tyoterveyshuolto (Occupational health)</strong></td><td>All employed persons</td><td class="eur">Free</td><td>Employer-funded; fast access; covers work-related and basic health; best channel for workers</td></tr>
+                    <tr><td><strong>Private clinics (Mehilainen, Terveystalo)</strong></td><td>Anyone</td><td class="eur">80-200 EUR/visit</td><td>Fast appointments; Kela reimburses small portion; many have employer agreements</td></tr>
+                    <tr><td><strong>Hospital (Sairaala)</strong></td><td>Referral needed</td><td class="eur">49.60 EUR/day</td><td>Public hospitals; max 7 days charged per calendar year</td></tr>
+                    <tr><td><strong>Emergency (Paivystys)</strong></td><td>Everyone</td><td class="eur">41.80 EUR</td><td>24/7 emergency rooms; no referral needed; call 112 for emergencies</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What Kela Covers</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Kela Reimbursement</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Prescription medicines</td><td class="eur">40-100% after initial cost</td><td>Annual ceiling 592 EUR; after that Kela pays almost all costs</td></tr>
+                    <tr><td>Private doctor visits</td><td class="eur">Small fixed amount</td><td>Typically 8-18 EUR reimbursement; most cost borne by patient</td></tr>
+                    <tr><td>Dental care (public)</td><td class="eur">Subsidized</td><td>Terveyskeskus dental; 10-20 EUR per visit; long waits common</td></tr>
+                    <tr><td>Maternity package (Aitiyspakkaus)</td><td class="eur">Free</td><td>Famous Finnish baby box OR 170 EUR cash; for all new parents</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Partially covered</td><td>Psychotherapy Kela-reimbursed with referral; 3-year programs available</td></tr>
+                    <tr><td>Travel to medical care</td><td class="eur">Reimbursed above 25 EUR</td><td>Kela travel reimbursement for long-distance medical trips</td></tr>
+                    <tr><td>Student healthcare (YTHS)</td><td class="eur">Included in fees</td><td>Finnish Student Health Service; all degree students; excellent and almost free</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Pro tip:</strong> If you are employed, <strong>always use occupational healthcare (tyoterveyshuolto) first</strong>. It's free, fast, and covers most basic health needs. Save the public terveysasema for when you need specialist referrals. Many employers also provide extended occupational health that covers specialist visits and mental health.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Finland (Asuminen)</h2>
+            <p class="section-subtitle">The Finnish rental market is more accessible than many Nordic countries but Helsinki can be competitive. Understanding key terms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Finnish Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Vuokra-asunto</strong></td><td>Rental apartment</td><td>Main type of housing for newcomers; most common in cities</td></tr>
+                    <tr><td><strong>Kaksio</strong></td><td>One-bedroom (2 rooms)</td><td>Living room + bedroom + kitchen; most common for couples</td></tr>
+                    <tr><td><strong>Yksioe</strong></td><td>Studio (1 room)</td><td>Single room + kitchen/kitchenette; cheapest option</td></tr>
+                    <tr><td><strong>Takuuvuokra</strong></td><td>Security deposit</td><td>Typically 1-2 months rent; returned when you move out</td></tr>
+                    <tr><td><strong>Vastike</strong></td><td>Housing company charge</td><td>Monthly fee for building maintenance; includes water, sometimes heating</td></tr>
+                    <tr><td><strong>Sahkoe</strong></td><td>Electricity</td><td>Usually paid separately; choose your own provider (Helen, Fortum, Vattenfall)</td></tr>
+                    <tr><td><strong>Taloyhtioe</strong></td><td>Housing company</td><td>Building co-op that manages the property; common in Finland</td></tr>
+                    <tr><td><strong>Sauna</strong></td><td>Sauna</td><td>Most apartment buildings have a shared sauna; scheduled time slots</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform / Provider</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Oikotie.fi/vuokra-asunnot</td><td>All types</td><td>Largest housing search platform in Finland</td></tr>
+                    <tr><td>Vuokraovi.com</td><td>All types</td><td>Second major platform; good selection nationwide</td></tr>
+                    <tr><td>Lumo (by Kojamo)</td><td>Corporate rentals</td><td>Largest private rental company; no deposit required; easy process</td></tr>
+                    <tr><td>Sato</td><td>Corporate rentals</td><td>Major rental company; quality apartments; quick applications</td></tr>
+                    <tr><td>HOAS</td><td>Student housing</td><td>Helsinki region student housing; very affordable (300-600 EUR); long queues</td></tr>
+                    <tr><td>TOAS / TYS / PSOAS</td><td>Student housing</td><td>Student housing in Tampere / Turku / Oulu respectively</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Vuokrataan asunto Helsinki" groups; popular for subletting</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Tips for newcomers:</strong> (1) <strong>Lumo and Sato</strong> are easiest for newcomers -- no Finnish credit history needed, online application, often no deposit. (2) Most buildings have a <strong>shared sauna</strong> -- it's a Finnish essential, not a luxury. (3) <strong>Heating is usually included</strong> in rent via vastike, but electricity is separate. (4) Get <strong>renters insurance (kotivakuutus)</strong> -- it's cheap (15-30 EUR/month) and covers a lot. (5) Apply for student housing early -- HOAS queues can be 3-6 months.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Finland (Liikenne)</h2>
+            <p class="section-subtitle">Finland has reliable public transport in cities, excellent rail connections, and a strong cycling culture -- even in winter.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">62.70</div>
+                    <div class="stat-unit">EUR/month</div>
+                    <div class="stat-desc">HSL Helsinki region monthly pass (AB zone)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">VR</div>
+                    <div class="stat-unit">National railway</div>
+                    <div class="stat-desc">VR trains connect all major cities</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.90</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Among highest in Europe; diesel ~1.75 EUR</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Yes!</div>
+                    <div class="stat-unit">Winter cycling</div>
+                    <div class="stat-desc">Oulu is world's #1 winter cycling city; studded tires</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>HSL monthly pass (Helsinki AB)</td><td class="eur">62.70 EUR/month</td><td>Metro, trams, buses, commuter trains in Helsinki region</td></tr>
+                    <tr><td>HSL monthly pass (Helsinki ABCD)</td><td class="eur">107 EUR/month</td><td>Extended zone including Espoo, Vantaa suburbs</td></tr>
+                    <tr><td>Tampere monthly pass (Nysse)</td><td class="eur">55 EUR/month</td><td>All buses and tram in Tampere region</td></tr>
+                    <tr><td>VR train Helsinki-Tampere</td><td class="eur">12-35 EUR</td><td>~1.5 hours; book early for Saver tickets from 7.90 EUR</td></tr>
+                    <tr><td>VR train Helsinki-Oulu</td><td class="eur">30-80 EUR</td><td>~5-6 hours; overnight trains available</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">50-100 EUR/month</td><td>Liikennevakuutus (liability) mandatory; kasko optional</td></tr>
+                    <tr><td>Car tax (ajoneuvovero)</td><td class="eur">~200-500 EUR/year</td><td>Based on CO2 emissions; paid quarterly</td></tr>
+                    <tr><td>Bicycle (second-hand)</td><td class="eur">50-300 EUR</td><td>Tori.fi for used; city bikes (kaupunkipyora) in Helsinki ~35 EUR/season</td></tr>
+                    <tr><td>Kela transport reimbursement</td><td class="eur">Varies</td><td>Kela reimburses travel to medical appointments above 25 EUR one-way</td></tr>
+                    <tr><td>E-scooter rental</td><td class="eur">~0.25 EUR/min</td><td>Tier, Voi, Lime in Helsinki/Tampere; seasonal (Apr-Nov)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-bicycle"></i>
+                <strong>Winter cycling is real:</strong> Oulu (population 210,000) has 20% of trips by bicycle even in winter at -20C. Cities maintain cycling paths year-round. Get <strong>studded winter tires (nastarenkaat)</strong> for your bike -- they cost 30-60 EUR per tire and are essential from November to March. Many Finns cycle to work year-round.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Finland -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Finland (Tyoskentely Suomessa)</h2>
+            <p class="section-subtitle">Finnish work culture emphasizes trust, equality, flat hierarchies, and strong work-life balance.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">5 weeks</div>
+                    <div class="stat-unit">Annual vacation</div>
+                    <div class="stat-desc">25 days minimum after 1 year; + winter holiday days</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">4 months</div>
+                    <div class="stat-unit">Koeaika (probation)</div>
+                    <div class="stat-desc">Typically 4-6 months; 1-day notice during this time</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">320 days</div>
+                    <div class="stat-unit">Parental leave</div>
+                    <div class="stat-desc">Total for both parents; 160 days each; transferable</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~65%</div>
+                    <div class="stat-unit">Union membership</div>
+                    <div class="stat-desc">Strong unions set wages via collective agreements (TES)</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Tyosopimus (Employment contract)</strong></td><td>Must be in writing; permanent (toistaiseksi) or fixed-term (maaraaikainen)</td><td>Read carefully; check TES (collective agreement) for your sector</td></tr>
+                    <tr><td><strong>Koeaika (Probation)</strong></td><td>Typically 4-6 months</td><td>Either party can terminate with 1 day notice; after probation: 1-6 months notice</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 37.5-40 hours/week</td><td>Many office workers do 7.5h/day; flexible hours common in tech</td></tr>
+                    <tr><td><strong>Vacation (Vuosiloma)</strong></td><td>2 days/month (year 1), then 2.5 days/month = 30 days/year</td><td>Summer holiday (kesaloma) typically 4 weeks in July; + winter holiday (talviloma) 1 week</td></tr>
+                    <tr><td><strong>Holiday bonus (Lomaraha)</strong></td><td>50% of monthly salary paid during summer holiday</td><td>Specified in most TES; equals ~4% annual salary boost</td></tr>
+                    <tr><td><strong>Sick leave (Sairausloma)</strong></td><td>Employer pays for first 10 days (after 1 day waiting)</td><td>After that: Kela sickness allowance ~70% of salary; doctor's note needed after 3 days</td></tr>
+                    <tr><td><strong>Parental leave (2024 reform)</strong></td><td>320 weekdays total for both parents</td><td>160 days each; 0-63 days transferable to other parent; Kela pays ~70% of salary</td></tr>
+                    <tr><td><strong>Collective agreements (TES)</strong></td><td>Sector-wide wage agreements negotiated by unions</td><td>Cover ~90% of workers; set minimum wages, overtime rules, vacation terms</td></tr>
+                    <tr><td><strong>Luottamusmies (Shop steward)</strong></td><td>Worker representative elected in workplace</td><td>Handles disputes, monitors TES compliance; protected from dismissal</td></tr>
+                    <tr><td><strong>Irtisanomissuoja (Dismissal protection)</strong></td><td>Employer needs valid reason to terminate after probation</td><td>Financial/production reasons or personal reasons; notice 1-6 months based on tenure</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Finnish Work Culture</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Finnish work culture essentials:</strong> (1) <strong>Flat hierarchy</strong> -- call your boss by first name; titles rarely used. (2) <strong>Trust-based</strong> -- remote work is common; nobody micromanages; results matter more than hours. (3) <strong>Silence is fine</strong> -- Finns don't do small talk in meetings; pauses are normal, not awkward. (4) <strong>Coffee breaks are sacred</strong> -- kahvitauko is a legal right in many TES agreements; Finland drinks the most coffee per capita in the world. (5) <strong>Work-life balance</strong> -- leaving at 4pm is normal; sending emails after hours is unusual. (6) <strong>Equality</strong> -- gender pay gap is one of the smallest in the world; shared parental leave is the norm.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="finnish" class="tab-content">
+            <h2 class="section-title">Essential Finnish Terms & Cultural Guide</h2>
+            <p class="section-subtitle">Finland has a unique culture built on honesty, sauna, sisu, and the world's highest coffee consumption. Here's what you need to know.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Everyday Finnish Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Finnish</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Moi / Hei</td><td>Hi / Hello</td><td>MOY / HAY</td></tr>
+                    <tr><td>Kiitos</td><td>Thank you</td><td>KEE-tos</td></tr>
+                    <tr><td>Ole hyva</td><td>You're welcome / Please</td><td>OH-leh HUE-vah</td></tr>
+                    <tr><td>Anteeksi</td><td>Excuse me / Sorry</td><td>AHN-tayk-si</td></tr>
+                    <tr><td>Puhutko englantia?</td><td>Do you speak English?</td><td>POO-hoot-ko ENG-lahn-tia</td></tr>
+                    <tr><td>En ymmarra</td><td>I don't understand</td><td>en UHM-mahr-rah</td></tr>
+                    <tr><td>Missa on...?</td><td>Where is...?</td><td>MIS-sah on</td></tr>
+                    <tr><td>Paljonko tama maksaa?</td><td>How much does this cost?</td><td>PAHL-yon-ko TAH-mah MAK-sah</td></tr>
+                    <tr><td>Moi moi / Nakemiin</td><td>Bye / Goodbye (formal)</td><td>MOY MOY / NAH-keh-meen</td></tr>
+                    <tr><td>Kippis!</td><td>Cheers! (when drinking)</td><td>KIP-pis</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>What to Know</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sauna</strong></td><td>Not optional -- it's a way of life</td><td>3.3 million saunas for 5.5 million people. Most apartments have building sauna. Sauna is for relaxing, not exercise. Naked is normal (same gender). Business meetings happen in sauna.</td></tr>
+                    <tr><td><strong>Sisu</strong></td><td>Finnish grit / resilience</td><td>Untranslatable concept meaning inner strength, determination, and stoic perseverance. "When you think you've reached the end of your rope, sisu finds more rope." Core of Finnish identity.</td></tr>
+                    <tr><td><strong>Coffee (Kahvi)</strong></td><td>#1 per capita in the world</td><td>Finns drink ~12kg of coffee per person per year (4-5 cups daily). Kahvitauko (coffee break) is sacred. Light roast filter coffee is the standard. Offering coffee is basic hospitality.</td></tr>
+                    <tr><td><strong>No small talk</strong></td><td>Silence is comfortable</td><td>Finns don't do chitchat with strangers. Bus stop silence is normal. Direct, honest communication. If a Finn says "it's fine," it really is fine. No hidden meanings.</td></tr>
+                    <tr><td><strong>Finnish honesty</strong></td><td>Legendary trustworthiness</td><td>Lost wallets are returned with cash intact. Helsinki ranked #1 for honesty in global lost wallet experiments. Queues are respected. Handshake = contract.</td></tr>
+                    <tr><td><strong>Nature (Luonto)</strong></td><td>Jokamiehenoikeus (Every person's right)</td><td>Legal right to roam, camp, pick berries/mushrooms anywhere in nature. Finns deeply connected to forests and lakes (188,000 lakes). Summer cottages (mokki) are sacred.</td></tr>
+                    <tr><td><strong>Alcohol</strong></td><td>Alko monopoly + strict rules</td><td>Strong alcohol (above 5.5%) only from Alko stores. Beer/cider up to 5.5% from supermarkets. Alko closed Sundays. Drinking culture is "go big or go home" -- moderation isn't the Finnish way.</td></tr>
+                    <tr><td><strong>Darkness & Light</strong></td><td>Extreme seasons</td><td>Helsinki: ~6 hours daylight in December, 19 hours in June. Northern Finland: kaamos (polar night) and midnight sun. Get vitamin D supplements and a SAD lamp for winter.</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Shoes off indoors</strong> -- always remove shoes when entering someone's home. No exceptions. (2) <strong>Personal space</strong> -- Finns value physical distance; the bus stop meme is real; don't sit next to someone if other seats are free. (3) <strong>Recycling (Kierratys)</strong> -- serious business; separate bio, cardboard, glass, metal, plastic, mixed waste. Pantti (bottle deposit) 0.10-0.40 EUR. (4) <strong>Everyman's rights</strong> -- you can freely hike, ski, cycle, and pick berries/mushrooms on any land (except near homes). (5) <strong>Punctuality</strong> -- if you say 10:00, you mean 10:00. Arriving late is disrespectful.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Finland</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~40,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~58,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,600</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,800</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal</small></td><td class="eur">1,300</td><td class="eur">2,200</td><td class="eur">1,550</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own yksioe outside Helsinki</small></td><td class="eur">1,900</td><td class="eur">3,200</td><td class="eur">2,150</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, Tampere/Oulu</small></td><td class="eur">2,800</td><td class="eur">4,500</td><td class="eur">3,050</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Couple (Helsinki)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">4,000</td><td class="eur">6,500</td><td class="eur">4,200</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Helsinki</small></td><td class="eur">4,500</td><td class="eur">7,500</td><td class="eur">4,800</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Register at <strong>DVV (maistraatti)</strong> -- Digital and Population Data Services Agency; get your Finnish personal identity code (henkilotunnus). (2) Open a bank account (Nordea, OP, Danske Bank -- you need henkilotunnus first). (3) Register with <strong>Kela</strong> for social insurance benefits. (4) Get a Finnish phone number (DNA, Elisa, Telia). (5) Apply for a <strong>tax card (verokortti)</strong> at vero.fi. (6) Register at your local <strong>terveysasema</strong> (health station). (7) Buy an <strong>HSL card</strong> or city transport pass. (8) Join a <strong>union</strong> for your profession (PAM, TEK, Akava, SAK).
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Vero.fi, Statistics Finland, Kela.fi) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Finland Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#003580;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const fiPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 148, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 127, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 120, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 116, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 114, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 108, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 105, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 102, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 102, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 99, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 97, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 95, region: 'North America' },
+        { name: 'France', currency: 'EUR', ppp: 93, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 91, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 89, region: 'East Asia' },
+        { name: 'Italy', currency: 'EUR', ppp: 86, region: 'Southern Europe' },
+        { name: 'UAE', currency: 'AED', ppp: 85, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 77, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 68, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 59, region: 'Middle East' },
+        { name: 'South Korea', currency: 'KRW', ppp: 72, region: 'East Asia' },
+        { name: 'Poland', currency: 'PLN', ppp: 48, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 56, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 45, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 31, region: 'Eurasia' },
+        { name: 'China', currency: 'CNY', ppp: 39, region: 'East Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 36, region: 'Southeast Asia' },
+        { name: 'Mexico', currency: 'MXN', ppp: 36, region: 'North America' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 36, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 39, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 31, region: 'Africa' },
+        { name: 'Colombia', currency: 'COP', ppp: 27, region: 'South America' },
+        { name: 'Philippines', currency: 'PHP', ppp: 29, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 26, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 27, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 22, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 18, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 20, region: 'South Asia' },
+        { name: 'Egypt', currency: 'EGP', ppp: 20, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 22, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 25, region: 'Africa' },
+    ];
+
+    function calculateFIPPP() {
+        const amount = parseFloat(document.getElementById('fiPppAmount').value) || 3000;
+        const tbody = document.querySelector('#fiPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#fiPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        fiPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateFIPPP();
+
+    // Finnish Tax Calculator
+    function calculateFITax() {
+        const annualGross = parseFloat(document.getElementById('fiGrossSalary').value) || 50000;
+        const municipalRate = parseFloat(document.getElementById('fiMunicipalRate').value) || 20.5;
+        const churchRate = parseFloat(document.getElementById('fiChurchTax').value) || 0;
+
+        // Employee social contributions
+        const pensionRate = 0.0715; // under 53
+        const unemploymentRate = 0.015;
+        const healthRate = 0.0196; // Kela sickness + medical
+
+        const pension = annualGross * pensionRate;
+        const unemployment = annualGross * unemploymentRate;
+        const healthIns = annualGross * healthRate;
+
+        const totalSocial = pension + unemployment + healthIns;
+
+        // Taxable income (after employee pension and unemployment deductions)
+        const taxableIncome = Math.max(0, annualGross - pension - unemployment);
+
+        // State income tax (progressive)
+        let stateTax = 0;
+        if (taxableIncome <= 20500) {
+            stateTax = 0;
+        } else if (taxableIncome <= 30500) {
+            stateTax = (taxableIncome - 20500) * 0.1264;
+        } else if (taxableIncome <= 50400) {
+            stateTax = 1264 + (taxableIncome - 30500) * 0.175;
+        } else if (taxableIncome <= 88200) {
+            stateTax = 1264 + 3482.5 + (taxableIncome - 50400) * 0.215;
+        } else if (taxableIncome <= 150000) {
+            stateTax = 1264 + 3482.5 + 8127 + (taxableIncome - 88200) * 0.315;
+        } else {
+            stateTax = 1264 + 3482.5 + 8127 + 19467 + (taxableIncome - 150000) * 0.44;
+        }
+        stateTax = Math.max(0, Math.round(stateTax));
+
+        // Municipal tax (flat rate on taxable income minus basic deduction)
+        const municipalDeduction = Math.min(3500, Math.max(0, taxableIncome * 0.1));
+        const municipalTaxableIncome = Math.max(0, taxableIncome - municipalDeduction);
+        const municipalTax = municipalTaxableIncome * (municipalRate / 100);
+
+        // Church tax
+        const churchTax = churchRate > 0 ? municipalTaxableIncome * (churchRate / 100) : 0;
+
+        // YLE tax
+        let yleTax = 0;
+        if (taxableIncome > 14000) {
+            yleTax = Math.min(163, taxableIncome * 0.025);
+        }
+
+        const totalTax = stateTax + municipalTax + churchTax + yleTax;
+        const totalDeductions = totalTax + totalSocial;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('fiTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#003580; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round((stateTax + municipalTax + churchTax + yleTax)/12).toLocaleString()} EUR</span></div>
+                <div><strong>Social contributions:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalSocial/12).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>State tax: ${Math.round(stateTax/12)} EUR/mo</div>
+                <div>Municipal (${municipalRate}%): ${Math.round(municipalTax/12)} EUR/mo</div>
+                <div>Pension (TyEL): ${Math.round(pension/12)} EUR/mo</div>
+                <div>Unemployment: ${Math.round(unemployment/12)} EUR/mo</div>
+                <div>Health (Kela): ${Math.round(healthIns/12)} EUR/mo</div>
+                ${churchTax > 0 ? `<div>Church tax: ${Math.round(churchTax/12)} EUR/mo</div>` : ''}
+                <div>YLE tax: ${Math.round(yleTax/12)} EUR/mo</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 2600 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 2600 ? '#059669' : '#dc2626'};">${netMonthly >= 2600 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~2,600 EUR net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 2600 ? '+' : ''}${Math.round(netMonthly - 2600).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>
