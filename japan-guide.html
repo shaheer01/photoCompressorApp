@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Japan 2026. Monthly expenses in JPY, salary by profession, tax calculator, healthcare, housing with key money, and PPP comparisons for expats.">
+    <meta name="keywords" content="japan living cost, japan salary, japanese tax, cost of living tokyo, expat japan, 日本 生活費">
+    <link rel="canonical" href="https://compressphotos.cloud/japan-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1EF;&#x1F1F5;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #BC002D 0%, #8B0020 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #BC002D; border-bottom: 3px solid #BC002D; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #BC002D; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #BC002D; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #BC002D, #E04060);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #fff5f5; border-left: 4px solid #BC002D; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #BC002D; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #BC002D; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #BC002D, #8B0020); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#BC002D; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-asia"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Sozialversicherung, tax & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div><strong>Japan</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Japan Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Japanese tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to Japan.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80" alt="Mount Fuji and cherry blossoms - iconic Japanese landscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="japanese">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Japan (Tokyo vs Other Cities)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in JPY. Based on Statistics Bureau of Japan, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Tokyo is 20-40% more expensive than regional cities. To earn this take-home, you need a higher gross salary. For example, to spend 350,000 JPY/month, you need roughly 480,000 JPY gross (~27% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~300,000</div>
+                    <div class="stat-unit">JPY/month (low)</div>
+                    <div class="stat-desc">Frugal couple in regional city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~500,000</div>
+                    <div class="stat-unit">JPY/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle in Tokyo</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~480,000</div>
+                    <div class="stat-unit">JPY avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover mid-range expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500,000</div>
+                    <div class="stat-unit">JPY avg annual salary</div>
+                    <div class="stat-desc">Japan-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (JPY)</th><th>High (JPY)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1LDK apartment)</td><td class="eur">70,000</td><td class="eur">150,000</td><td>70K in regional cities; 120-150K in central Tokyo</td></tr>
+                    <tr><td></td><td>Internet (hikari fiber)</td><td class="eur">4,000</td><td class="eur">6,000</td><td>NTT, SoftBank, au hikari; very fast nationwide</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">4,000</td><td class="eur">10,000</td><td>ahamo, povo, LINEMO budget; docomo, au, SoftBank premium</td></tr>
+                    <tr><td></td><td>Utilities (gas, electric, water)</td><td class="eur">15,000</td><td class="eur">25,000</td><td>Higher in summer (AC) and winter (heating); varies by region</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">93,000</td><td class="eur">191,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">50,000</td><td class="eur">80,000</td><td>Gyomu Super, OK Store budget; Seijo Ishii, Kinokuniya premium</td></tr>
+                    <tr><td></td><td>Eating out / konbini meals</td><td class="eur">15,000</td><td class="eur">40,000</td><td>Konbini bento 500-800 JPY; ramen 900-1,200 JPY; izakaya 3,000-5,000/person</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">65,000</td><td class="eur">120,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Train pass / commuter teikiken (2 persons)</td><td class="eur">15,000</td><td class="eur">40,000</td><td>Employer often covers commute (tsukinteate); IC card top-ups otherwise</td></tr>
+                    <tr><td></td><td>Occasional taxi / car</td><td class="eur">0</td><td class="eur">15,000</td><td>Taxi expensive; car ownership rare in cities</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">15,000</td><td class="eur">55,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance</td></tr>
+                    <tr><td></td><td>National Health Insurance (NHI) or shakai hoken</td><td class="eur">20,000</td><td class="eur">40,000</td><td>Shakai hoken split 50/50 with employer; NHI for self-employed varies by income</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">20,000</td><td class="eur">40,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">10,000</td><td class="eur">30,000</td><td>Uniqlo, GU affordable; department stores higher</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">5,000</td><td class="eur">15,000</td><td>Haircuts, toiletries, cosmetics; drugstores like Matsumoto Kiyoshi</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">5,000</td><td class="eur">15,000</td><td>Gym 7,000-12,000 JPY/month; onsen day trip 800-2,000 JPY</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">5,000</td><td class="eur">10,000</td><td>100-yen shops (Daiso, Seria) are incredibly useful</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">25,000</td><td class="eur">70,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance & Miscellaneous</td></tr>
+                    <tr><td></td><td>Renter's / fire insurance (kasai hoken)</td><td class="eur">1,000</td><td class="eur">2,000</td><td>Usually required by landlord; ~15,000-20,000 JPY/year</td></tr>
+                    <tr><td></td><td>NHK fee (broadcasting)</td><td class="eur">1,100</td><td class="eur">2,200</td><td>Mandatory if you own a TV/smartphone; collectors visit door-to-door</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">2,100</td><td class="eur">4,200</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~220,100</td><td class="eur">~480,200</td><td>Realistic range: 250,000 - 500,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Japan</h2>
+            <p class="section-subtitle">Monthly gross salaries in JPY. Data from National Tax Agency, doda, GreenJapan, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-yen-sign"></i>
+                <strong>Bonus (bonasu):</strong> Most Japanese companies pay bonuses twice a year (summer in June and winter in December), typically 2-4 months salary total. The figures below show standard monthly gross excluding bonuses. Annual income is often quoted as "monthly x 16" for good companies.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (isha)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">800,000+ JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Investment Banker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:94%;">750,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:88%;">700,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (bengoshi)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:81%;">650,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:75%;">600,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist (yakuzaishi)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:69%;">550,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (mid)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:63%;">500,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (junior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">450,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">450,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect (kenchikushi)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">400,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (public school)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">400,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">380,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (kangoshi)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">350,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Office Worker (salaryman)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:41%;">330,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">ALT / English Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:34%;">270,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Convenience Store Staff</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:28%;">220,000 JPY</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Part-time (arubaito)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:22%;">180,000 JPY</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-yen-sign"></i>
+                <strong>Minimum wage (2026):</strong> Japan's minimum wage varies by prefecture. Tokyo: ~1,163 JPY/hour, national average: ~1,055 JPY/hour. Approximately 180,000-200,000 JPY/month gross for full-time at minimum wage. Reviewed annually in October.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Japanese Tax System (zeikin)</h2>
+            <p class="section-subtitle">Japan uses progressive national income tax plus flat resident tax and mandatory social insurance. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">National Income Tax Brackets (shotokuzei)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (JPY)</th><th>Tax Rate</th><th>Deduction (JPY)</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 1,950,000</td><td class="eur">5%</td><td class="eur">0</td></tr>
+                    <tr><td>1,950,001 - 3,300,000</td><td class="eur">10%</td><td class="eur">97,500</td></tr>
+                    <tr><td>3,300,001 - 6,950,000</td><td class="eur">20%</td><td class="eur">427,500</td></tr>
+                    <tr><td>6,950,001 - 9,000,000</td><td class="eur">23%</td><td class="eur">636,000</td></tr>
+                    <tr><td>9,000,001 - 18,000,000</td><td class="eur">33%</td><td class="eur">1,536,000</td></tr>
+                    <tr><td>18,000,001 - 40,000,000</td><td class="eur">40%</td><td class="eur">2,796,000</td></tr>
+                    <tr><td>40,000,001+</td><td class="eur">45%</td><td class="eur">4,796,000</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Additional Taxes</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Resident tax (juuminzei)</td><td class="eur">~10%</td><td>All residents</td><td>Flat ~10% (prefectural 4% + municipal 6%); paid on previous year's income</td></tr>
+                    <tr><td>Reconstruction surtax (fukkou tokubetsu zei)</td><td class="eur">2.1%</td><td>All taxpayers</td><td>Applied on income tax amount; funding Tohoku reconstruction until 2037</td></tr>
+                    <tr><td>Consumption tax (shouhizei)</td><td class="eur">10%</td><td>Everyone</td><td>8% on food/drinks (reduced rate); 10% on everything else</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Insurance (shakai hoken) - Employee Share</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Total Rate</th><th>Employee Share</th><th>Employer Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Health Insurance (kenkou hoken)</td><td class="eur">~10%</td><td class="eur">~5%</td><td class="eur">~5%</td><td>Varies by prefecture and insurer; includes nursing care for 40+</td></tr>
+                    <tr><td>Pension (kousei nenkin)</td><td class="eur">18.3%</td><td class="eur">9.15%</td><td class="eur">9.15%</td><td>National Pension (kokumin nenkin) for self-employed: ~16,980 JPY/month flat</td></tr>
+                    <tr><td>Employment Insurance (koyou hoken)</td><td class="eur">1.55%</td><td class="eur">0.6%</td><td class="eur">0.95%</td><td>Covers unemployment benefits</td></tr>
+                    <tr><td>Workers' Accident Insurance</td><td class="eur">~0.3%</td><td class="eur">0%</td><td class="eur">~0.3%</td><td>Fully employer-paid; covers work injuries</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-gift"></i>
+                <strong>Furusato nozei (hometown tax):</strong> A unique Japanese system where you "donate" to regional municipalities and receive local specialty goods (wagyu beef, rice, fruits, seafood) in return. You get tax deductions roughly equal to your donation minus 2,000 JPY. Effectively free high-quality gifts! Use sites like furusato-tax.jp or rakuten furusato nozei. Highly recommended.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="jpGrossSalary">Annual Gross Salary (JPY):</label>
+                <input type="number" id="jpGrossSalary" value="5000000" min="0" max="100000000">
+                <label for="jpDependent">Number of dependents:</label>
+                <select id="jpDependent">
+                    <option value="0">0 (single)</option>
+                    <option value="1">1 dependent</option>
+                    <option value="2">2 dependents</option>
+                </select>
+                <button class="calc-btn" onclick="calculateJPTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="jpTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">250,000</td><td class="eur">3,000,000</td><td class="eur">~50,000</td><td class="eur" style="color:#059669; font-weight:700;">~200,000</td><td>20.0%</td></tr>
+                    <tr><td class="eur">350,000</td><td class="eur">4,200,000</td><td class="eur">~80,000</td><td class="eur" style="color:#059669; font-weight:700;">~270,000</td><td>22.9%</td></tr>
+                    <tr><td class="eur">500,000</td><td class="eur">6,000,000</td><td class="eur">~130,000</td><td class="eur" style="color:#059669; font-weight:700;">~370,000</td><td>26.0%</td></tr>
+                    <tr><td class="eur">700,000</td><td class="eur">8,400,000</td><td class="eur">~200,000</td><td class="eur" style="color:#059669; font-weight:700;">~500,000</td><td>28.6%</td></tr>
+                    <tr><td class="eur">1,000,000</td><td class="eur">12,000,000</td><td class="eur">~320,000</td><td class="eur" style="color:#059669; font-weight:700;">~680,000</td><td>32.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Japanese salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Japan = 100.</p>
+
+            <div class="calc-container">
+                <label for="jpPppAmount">Your monthly spending in Japan (JPY):</label>
+                <input type="number" id="jpPppAmount" value="350000" min="10000" max="5000000">
+                <button class="calc-btn" onclick="calculateJPPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="jpPppTable">
+                <thead><tr><th>Country</th><th>PPP Index</th><th>Region</th><th>350,000 JPY buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Japan = 100. If Switzerland has a PPP index of 167, your 350,000 JPY in Japan has the same purchasing power as 350,000 x (167/100) = 584,500 JPY in Switzerland. You'd need ~67% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Japanese cities. Tokyo = 100 (most expensive baseline). Data: Statistics Bureau of Japan, Numbeo, SUUMO 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1LDK (JPY)</th><th>Monthly Pass (JPY)</th><th>Ramen (JPY)</th><th>Beer 500ml (JPY)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Tokyo</strong></td><td class="eur">100,000-160,000</td><td class="eur">10,000-20,000</td><td class="eur">900-1,200</td><td class="eur">500-700</td><td>Most expensive; endless entertainment, jobs & culture</td></tr>
+                    <tr><td><strong>Yokohama</strong></td><td class="eur">80,000-130,000</td><td class="eur">10,000-18,000</td><td class="eur">850-1,100</td><td class="eur">450-650</td><td>Close to Tokyo; port city; Chinatown; slightly cheaper</td></tr>
+                    <tr><td><strong>Osaka</strong></td><td class="eur">70,000-120,000</td><td class="eur">8,000-15,000</td><td class="eur">800-1,000</td><td class="eur">400-600</td><td>Street food capital; friendly locals; great nightlife</td></tr>
+                    <tr><td><strong>Kyoto</strong></td><td class="eur">65,000-110,000</td><td class="eur">7,000-12,000</td><td class="eur">800-1,000</td><td class="eur">400-550</td><td>Cultural heart; temples; limited jobs outside tourism</td></tr>
+                    <tr><td><strong>Nagoya</strong></td><td class="eur">60,000-100,000</td><td class="eur">7,000-13,000</td><td class="eur">800-1,000</td><td class="eur">400-550</td><td>Toyota City; industrial hub; affordable; miso culture</td></tr>
+                    <tr><td><strong>Fukuoka</strong></td><td class="eur">55,000-90,000</td><td class="eur">6,000-10,000</td><td class="eur">700-900</td><td class="eur">350-500</td><td>Best ramen; startup hub; compact; beach access</td></tr>
+                    <tr><td><strong>Sapporo</strong></td><td class="eur">45,000-80,000</td><td class="eur">5,000-9,000</td><td class="eur">750-950</td><td class="eur">350-500</td><td>Snow festivals; fresh seafood; cold winters; spacious</td></tr>
+                    <tr><td><strong>Kobe</strong></td><td class="eur">60,000-100,000</td><td class="eur">7,000-12,000</td><td class="eur">800-1,000</td><td class="eur">400-550</td><td>Cosmopolitan port city; Kobe beef; mountains & sea</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Fukuoka advantage:</strong> Increasingly popular with young professionals and remote workers. Rent is 40-50% less than Tokyo, food is cheaper and arguably better (Hakata ramen, fresh fish from Genkai Sea), the airport is 5 minutes from downtown by subway, and the startup ecosystem is growing with government support.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Japanese Healthcare System (iryo seido)</h2>
+            <p class="section-subtitle">Japan has universal healthcare with two main systems: Employee Health Insurance (shakai hoken) and National Health Insurance (kokumin kenko hoken / NHI).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-unit">Patient copay</div>
+                    <div class="stat-desc">You pay 30% of medical costs; insurance covers 70%</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~80,000</div>
+                    <div class="stat-unit">JPY monthly cap</div>
+                    <div class="stat-desc">High-cost medical expense system (kogaku ryouyouhi)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Very Fast</div>
+                    <div class="stat-unit">Access to care</div>
+                    <div class="stat-desc">Walk-in clinics everywhere; minimal waiting</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Affordable</div>
+                    <div class="stat-unit">Prescriptions</div>
+                    <div class="stat-desc">30% copay on medications; generics available</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Shakai Hoken vs NHI Comparison</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Shakai Hoken (Employee)</th><th>NHI (National)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Who</strong></td><td>Company employees (full-time)</td><td>Self-employed, freelancers, unemployed, students</td></tr>
+                    <tr><td><strong>Cost basis</strong></td><td>% of salary; split 50/50 with employer</td><td>Based on previous year's income; paid fully by individual</td></tr>
+                    <tr><td><strong>Includes pension</strong></td><td>Yes (kousei nenkin bundled)</td><td>No; must pay kokumin nenkin separately (~16,980 JPY/month)</td></tr>
+                    <tr><td><strong>Dependents</strong></td><td>Spouse/children covered at no extra cost if earning under 1.3M JPY/year</td><td>Each person pays individually</td></tr>
+                    <tr><td><strong>Injury/illness leave</strong></td><td>Shoubyou teatekin: 2/3 of salary for up to 18 months</td><td>Not available</td></tr>
+                    <tr><td><strong>Maternity benefit</strong></td><td>Shussan teatekin: 2/3 of salary during leave</td><td>Lump sum only (500,000 JPY)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What Healthcare Costs Look Like</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Your Cost (30% copay)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (clinic)</td><td class="eur">~1,000-2,000 JPY</td><td>Walk-in; no appointment needed at most clinics</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">~2,000-5,000 JPY</td><td>No referral needed but some large hospitals charge extra without one (sentei ryouyouhi)</td></tr>
+                    <tr><td>Hospital stay (per day)</td><td class="eur">~5,000-15,000 JPY</td><td>Shared room covered; private room (koshitsu) extra 5,000-30,000 JPY/day</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">~500-3,000 JPY</td><td>30% copay; pharmacy (yakkyoku) separate from clinic</td></tr>
+                    <tr><td>Dental (basic)</td><td class="eur">~2,000-5,000 JPY</td><td>Check-ups, fillings, extractions covered; cosmetic/implants not covered</td></tr>
+                    <tr><td>Mental health</td><td class="eur">~1,500-3,000 JPY</td><td>Covered under insurance; jiritsu shien iryo reduces copay to 10% for ongoing conditions</td></tr>
+                    <tr><td>Maternity (delivery)</td><td class="eur">~100,000-200,000 JPY</td><td>Normal delivery not covered by insurance but 500,000 JPY lump-sum grant offsets most costs</td></tr>
+                    <tr><td>Annual health check (kenko shindan)</td><td class="eur">Free - 5,000 JPY</td><td>Employer-provided for employees; city office provides for NHI members</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>High-cost medical expense system (kogaku ryouyouhi seido):</strong> If your medical bills in a single month exceed a threshold (around 80,000 JPY for average incomes), the government reimburses the excess. This means even major surgery or hospitalization won't bankrupt you. Apply at your insurance office or use a "gendo gaku tekiyou nintei sho" (limit certificate) in advance.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Japan (sumai sagashi)</h2>
+            <p class="section-subtitle">Japanese housing has unique customs and terminology. Understanding key money, deposits, and room naming is essential before apartment hunting.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms & Upfront Costs</h3>
+            <table class="data-table">
+                <thead><tr><th>Japanese Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Reikin (礼金)</strong></td><td>Key money / gift money</td><td>Non-refundable "thank you" payment to landlord; typically 0-2 months rent. Negotiable in some areas</td></tr>
+                    <tr><td><strong>Shikikin (敷金)</strong></td><td>Security deposit</td><td>Refundable deposit; typically 1-2 months rent; deductions for cleaning/repairs at move-out</td></tr>
+                    <tr><td><strong>Hoshounin (保証人)</strong></td><td>Guarantor</td><td>Japanese national who guarantees your rent. Alternative: guarantor company (hoshougaisha) for fee of 0.5-1 month rent</td></tr>
+                    <tr><td><strong>Chuukai tesuuryou (仲介手数料)</strong></td><td>Agent fee</td><td>Real estate agent commission; typically 1 month rent + tax</td></tr>
+                    <tr><td><strong>Kasai hoken (火災保険)</strong></td><td>Fire insurance</td><td>Required; ~15,000-20,000 JPY for 2-year policy</td></tr>
+                    <tr><td><strong>Manshon (マンション)</strong></td><td>Concrete apartment building</td><td>Reinforced concrete; better soundproofing; more expensive. NOT a mansion!</td></tr>
+                    <tr><td><strong>Apaato (アパート)</strong></td><td>Wooden/light-steel apartment</td><td>Cheaper; thinner walls; typically 2 stories; common for budget living</td></tr>
+                    <tr><td><strong>Tatami</strong></td><td>Traditional straw mat flooring</td><td>Room sizes often measured in tatami (jo); 1 tatami = ~1.65 sqm</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Room Layout Naming System</h3>
+            <table class="data-table">
+                <thead><tr><th>Type</th><th>Layout</th><th>Best For</th><th>Tokyo Rent Range (JPY)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1R (wan ruumu)</strong></td><td>One room, no separate kitchen</td><td>Single person, budget</td><td class="eur">60,000-90,000</td></tr>
+                    <tr><td><strong>1K</strong></td><td>One room + separate kitchen</td><td>Single person</td><td class="eur">70,000-100,000</td></tr>
+                    <tr><td><strong>1DK</strong></td><td>One room + dining kitchen</td><td>Single or couple</td><td class="eur">80,000-120,000</td></tr>
+                    <tr><td><strong>1LDK</strong></td><td>One room + living/dining/kitchen</td><td>Couple, most popular</td><td class="eur">100,000-160,000</td></tr>
+                    <tr><td><strong>2LDK</strong></td><td>Two rooms + living/dining/kitchen</td><td>Couple or small family</td><td class="eur">140,000-250,000</td></tr>
+                    <tr><td><strong>3LDK</strong></td><td>Three rooms + LDK</td><td>Family</td><td class="eur">200,000-400,000</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>SUUMO (suumo.jp)</td><td>All types</td><td>Largest housing portal in Japan; essential for searching</td></tr>
+                    <tr><td>Homes.co.jp</td><td>All types</td><td>Second largest; good filtering options</td></tr>
+                    <tr><td>GaijinPot Apartments</td><td>Foreigner-friendly</td><td>English interface; listings that accept foreigners; higher prices</td></tr>
+                    <tr><td>Real Estate Japan</td><td>Foreigner-friendly</td><td>English; curated listings for expats</td></tr>
+                    <tr><td>UR (Urban Renaissance Agency)</td><td>Public housing</td><td>No key money, no guarantor needed; great for foreigners; government-run</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Total move-in costs:</strong> Expect to pay 4-6 months of rent upfront: reikin (1 month) + shikikin (1 month) + agent fee (1 month) + first month rent + fire insurance + guarantor fee. For a 100,000 JPY/month apartment, budget 400,000-600,000 JPY to move in. UR apartments eliminate key money and guarantor requirements -- highly recommended for newcomers.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Japan (koutsuu)</h2>
+            <p class="section-subtitle">Japan has the world's most punctual and extensive public transport system. Trains are the backbone of daily commuting.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">Suica</div>
+                    <div class="stat-unit">IC card (East Japan)</div>
+                    <div class="stat-desc">Tap-and-go for trains, buses, konbini, vending machines</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">320 km/h</div>
+                    <div class="stat-unit">Shinkansen speed</div>
+                    <div class="stat-desc">Tokyo-Osaka in 2h15m; Tokyo-Kyoto in 2h10m</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~150</div>
+                    <div class="stat-unit">JPY/litre petrol</div>
+                    <div class="stat-desc">Car culture mainly in rural areas; expensive in cities</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">27,000+</div>
+                    <div class="stat-unit">km rail network</div>
+                    <div class="stat-desc">JR Group + private railways; legendary punctuality</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Suica / Pasmo (IC card)</td><td class="eur">Deposit 500 JPY</td><td>Rechargeable; works on virtually all trains, buses, konbini nationwide</td></tr>
+                    <tr><td>Commuter pass (teikiken)</td><td class="eur">5,000-20,000 JPY/month</td><td>Fixed route only; employers usually reimburse (tsuukin teate)</td></tr>
+                    <tr><td>Tokyo Metro single ride</td><td class="eur">170-320 JPY</td><td>Distance-based; IC card slightly cheaper than paper tickets</td></tr>
+                    <tr><td>JR Yamanote Line (Tokyo loop)</td><td class="eur">150-200 JPY</td><td>The essential Tokyo loop connecting major stations</td></tr>
+                    <tr><td>Shinkansen Tokyo-Osaka</td><td class="eur">~14,000 JPY</td><td>Reserved seat (Nozomi); ~2h15m; unreserved ~13,300 JPY</td></tr>
+                    <tr><td>Shinkansen Tokyo-Kyoto</td><td class="eur">~13,500 JPY</td><td>~2h10m; book via SmartEX app for discounts</td></tr>
+                    <tr><td>Bicycle (mamachari)</td><td class="eur">10,000-30,000 JPY</td><td>Ubiquitous; register at police (bouhan touroku); parking required</td></tr>
+                    <tr><td>Taxi (initial fare)</td><td class="eur">~500 JPY</td><td>Clean and safe; 80-100 JPY per 255m after; doors open automatically</td></tr>
+                    <tr><td>Domestic flight (LCC)</td><td class="eur">5,000-15,000 JPY</td><td>Peach, Jetstar Japan, Spring Japan; great for Okinawa, Hokkaido</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tips:</strong> (1) Your employer almost always pays your commuter pass (tsuukin teate) -- confirm during job offer. (2) Last trains run around midnight; plan accordingly or budget for a taxi/capsule hotel. (3) Shinkansen is rarely discounted, but the "Platt Kodama" and "EX Hayatoku" offer savings for flexible travelers. (4) Cycling is extremely popular -- a mamachari (utility bike) is one of the best investments you'll make. Register it at the police station to avoid theft issues.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Japan -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Japan (nihon de hataraku)</h2>
+            <p class="section-subtitle">Japanese work culture, visa types, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-unit">Paid leave days/year</div>
+                    <div class="stat-desc">Legal minimum 10 days (after 6 months); increases to 20 days</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">2x/year</div>
+                    <div class="stat-unit">Bonus (bonasu)</div>
+                    <div class="stat-desc">Summer (June) + winter (Dec); typically 2-4 months total</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Changing</div>
+                    <div class="stat-unit">Overtime culture</div>
+                    <div class="stat-desc">Work reform laws cap overtime at 45h/month; improving</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">16 days</div>
+                    <div class="stat-unit">National holidays</div>
+                    <div class="stat-desc">Plus Golden Week, Obon, New Year closures</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Visa Types for Working in Japan</h3>
+            <table class="data-table">
+                <thead><tr><th>Visa Type</th><th>For Whom</th><th>Duration</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Engineer/Specialist in Humanities/International Services</strong></td><td>Tech workers, translators, designers, business roles</td><td>1-5 years (renewable)</td><td>Most common work visa; requires bachelor's degree or 10+ years experience</td></tr>
+                    <tr><td><strong>Highly Skilled Professional (HSP)</strong></td><td>High-earning professionals; point-based</td><td>1-5 years</td><td>70+ points = fast-track permanent residence (1-3 years); spouse can work</td></tr>
+                    <tr><td><strong>Specified Skilled Worker (SSW)</strong></td><td>Blue-collar workers in 14 industries</td><td>Up to 5 years</td><td>New category since 2019; construction, nursing, agriculture, etc.</td></tr>
+                    <tr><td><strong>Instructor</strong></td><td>English/language teachers (direct hire)</td><td>1-3 years</td><td>For ALTs hired by boards of education; JET Programme falls here</td></tr>
+                    <tr><td><strong>Working Holiday</strong></td><td>18-30 year olds from eligible countries</td><td>1 year</td><td>Can work part-time; great for trying Japan before committing</td></tr>
+                    <tr><td><strong>Spouse of Japanese National</strong></td><td>Married to Japanese citizen</td><td>1-5 years</td><td>No work restrictions; can do any job</td></tr>
+                    <tr><td><strong>Permanent Resident (eijuuken)</strong></td><td>Long-term residents</td><td>Permanent</td><td>Usually requires 10+ years in Japan; HSP can get in 1-3 years</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Employment Rights & Culture</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Paid leave (yuukyuu kyuuka)</strong></td><td>10 days after 6 months; increases each year to max 20 days</td><td>Employers MUST ensure workers take at least 5 days/year (law since 2019)</td></tr>
+                    <tr><td><strong>Overtime (zangyou)</strong></td><td>Capped at 45 hours/month, 360 hours/year</td><td>Work reform law (hatarakikata kaikaku); penalties for violations</td></tr>
+                    <tr><td><strong>Probation (shiyou kikan)</strong></td><td>Typically 3-6 months</td><td>Can be terminated more easily but still requires valid reason</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>No statutory sick leave law</td><td>Use paid leave or unpaid; shakai hoken pays 2/3 salary for extended illness</td></tr>
+                    <tr><td><strong>Maternity leave (sanzen sango kyuuka)</strong></td><td>6 weeks before, 8 weeks after birth</td><td>2/3 salary from health insurance; job protected</td></tr>
+                    <tr><td><strong>Childcare leave (ikuji kyuugyou)</strong></td><td>Up to 1 year (extendable to 2 years)</td><td>67% salary for first 180 days, then 50%; both parents eligible</td></tr>
+                    <tr><td><strong>Retirement age</strong></td><td>60-65 (being raised to 70 optionally)</td><td>Many companies offer re-employment (saikoyou) at reduced salary after 60</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>Minimum 30 days (by law)</td><td>Employer must give 30 days notice or pay 30 days salary in lieu</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Japanese work culture essentials:</strong> (1) <strong>Overtime is declining</strong> -- "Black companies" (burakku kigyou) are being named and shamed; foreign companies and startups tend to have better work-life balance. (2) <strong>Nomikai</strong> -- after-work drinking parties are common; attendance is culturally expected but declining among younger workers. (3) <strong>Business cards (meishi)</strong> -- present and receive with both hands; study it carefully before putting it down. (4) <strong>Keigo</strong> -- use polite/formal Japanese with superiors and clients; critical for professional relationships. (5) <strong>Hanko/inkan</strong> -- personal seal used instead of signatures; being replaced by digital signatures slowly.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="japanese" class="tab-content">
+            <h2 class="section-title">Essential Japanese & Local Customs</h2>
+            <p class="section-subtitle">Japan has unique social customs and etiquette. Knowing these will make your daily life much smoother.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Essential Japanese Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Japanese</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Sumimasen</td><td>Excuse me / Sorry / Thank you</td><td>soo-mee-mah-SEN</td></tr>
+                    <tr><td>Arigatou gozaimasu</td><td>Thank you (polite)</td><td>ah-ree-GAH-toh go-zai-MAHS</td></tr>
+                    <tr><td>Onegaishimasu</td><td>Please (when requesting)</td><td>oh-neh-gai-shee-MAHS</td></tr>
+                    <tr><td>Konnichiwa</td><td>Hello / Good afternoon</td><td>kon-nee-chee-WAH</td></tr>
+                    <tr><td>Eigo wa hanasemasu ka?</td><td>Do you speak English?</td><td>AY-go wa ha-na-seh-MAHS ka</td></tr>
+                    <tr><td>Wakarimasen</td><td>I don't understand</td><td>wa-ka-ree-mah-SEN</td></tr>
+                    <tr><td>Ikura desu ka?</td><td>How much is it?</td><td>ee-KOO-ra DES ka</td></tr>
+                    <tr><td>Kore wo kudasai</td><td>This one, please</td><td>KO-reh wo koo-da-SAI</td></tr>
+                    <tr><td>Daijoubu desu</td><td>It's okay / I'm fine / No thank you</td><td>dai-JOH-boo DES</td></tr>
+                    <tr><td>Otsukaresama desu</td><td>Good work today (universal workplace greeting)</td><td>oh-tsoo-kah-reh-SAH-ma DES</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Etiquette & Customs</h3>
+            <table class="data-table">
+                <thead><tr><th>Custom</th><th>What to Do</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Bowing (ojigi)</strong></td><td>Light bow (15 degrees) for greetings; deeper for apologies</td><td>Most natural way to greet; handshakes are understood but bowing is appreciated</td></tr>
+                    <tr><td><strong>Shoes off (kutsu wo nugu)</strong></td><td>Remove shoes at homes, temples, some restaurants (look for genkan/shoe area)</td><td>Deeply ingrained; indoor slippers often provided; separate toilet slippers exist</td></tr>
+                    <tr><td><strong>Train etiquette</strong></td><td>No talking on phone; speak quietly; give up priority seats; queue orderly</td><td>Trains are sacred quiet space; offenders get disapproving looks</td></tr>
+                    <tr><td><strong>Keigo (polite speech)</strong></td><td>Use -masu/-desu forms; add "san" to names; avoid first names with strangers</td><td>Politeness levels are embedded in the language; crucial for work and daily life</td></tr>
+                    <tr><td><strong>Tipping</strong></td><td>Do NOT tip anywhere -- it can be seen as rude or confusing</td><td>Service is included; excellent service is the cultural standard</td></tr>
+                    <tr><td><strong>Garbage separation (gomi bunbetsu)</strong></td><td>Separate into burnable, non-burnable, recyclable, PET bottles, cans, glass</td><td>Strict rules vary by city; designated bags required; specific pickup days</td></tr>
+                    <tr><td><strong>Cash (genkin)</strong></td><td>Always carry cash; many restaurants, small shops, and clinics are cash-only</td><td>Japan is modernizing (PayPay, etc.) but cash is still king in many places</td></tr>
+                    <tr><td><strong>Konbini culture</strong></td><td>7-Eleven, FamilyMart, Lawson -- for everything from food to bills to ATMs</td><td>24/7 convenience stores are a lifeline; pay bills, buy tickets, print documents, get cash</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Practical Daily Life</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Konbini ATMs</strong> -- 7-Eleven and Japan Post ATMs work with foreign cards; regular bank ATMs often don't. (2) <strong>Garbage days</strong> -- each neighborhood has specific collection days; put garbage out in the morning (not the night before); wrong sorting = bag left behind with a sticker. (3) <strong>Tattoos</strong> -- still taboo at many onsen (hot springs) and public baths; some gyms too. Cover with bandages or find tattoo-friendly spots. (4) <strong>Quiet hours</strong> -- be quiet in apartments generally, but especially after 9pm; thin walls mean your neighbors hear everything. (5) <strong>LINE app</strong> -- Japan's WhatsApp; everyone uses it; essential for socializing and even some business communication. (6) <strong>My Number card</strong> -- Japan's ID/tax number system; apply at city hall; increasingly required for banking and services.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Japan</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,000,000</div>
+                    <div class="stat-unit">JPY/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in regional city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,000,000</div>
+                    <div class="stat-unit">JPY/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in regional city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~250,000</div>
+                    <div class="stat-unit">JPY/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (very frugal, regional)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~400,000</div>
+                    <div class="stat-unit">JPY/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (JPY)</th><th>Gross Salary Needed (JPY)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Share house, very frugal</small></td><td class="eur">150,000</td><td class="eur">220,000</td><td class="eur">180,000</td><td class="eur eur-low">+30,000</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>1K apartment, regional city</small></td><td class="eur">200,000</td><td class="eur">280,000</td><td class="eur">230,000</td><td class="eur eur-low">+30,000</td></tr>
+                    <tr><td><strong>Couple (regional city)</strong><br><small>1LDK, comfortable</small></td><td class="eur">300,000</td><td class="eur">420,000</td><td class="eur">330,000</td><td class="eur eur-low">+30,000</td></tr>
+                    <tr><td><strong>Couple (Tokyo)</strong><br><small>1LDK, good lifestyle</small></td><td class="eur">450,000</td><td class="eur">620,000</td><td class="eur">480,000</td><td class="eur eur-low">+30,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2LDK, Tokyo area</small></td><td class="eur">550,000</td><td class="eur">770,000</td><td class="eur">590,000</td><td class="eur eur-low">+40,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Do your <strong>juuminhyou registration</strong> at the city/ward office (kuyakusho) within 14 days. (2) Get your <strong>residence card (zairyuu kaado)</strong> at immigration (received at airport for some visa types). (3) Open a bank account (Shinsei Bank, SMBC, MUFG; Japan Post is foreigner-friendly). (4) Apply for <strong>National Health Insurance</strong> or confirm shakai hoken enrollment. (5) Get a <strong>My Number card</strong> at city hall. (6) Buy a <strong>Suica or Pasmo</strong> IC card for transport. (7) Get a SIM card (ahamo, povo, LINEMO, or Sakura Mobile for English support). (8) Sign up for <strong>LINE</strong> app.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (National Tax Agency, Statistics Bureau of Japan, your city hall) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Japan Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#BC002D;">Image Compressor</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const jpPppCountries = [
+        { name: 'Switzerland', ppp: 167, region: 'Western Europe' },
+        { name: 'Norway', ppp: 144, region: 'Nordic' },
+        { name: 'Denmark', ppp: 136, region: 'Nordic' },
+        { name: 'Singapore', ppp: 131, region: 'Southeast Asia' },
+        { name: 'USA', ppp: 128, region: 'North America' },
+        { name: 'Australia', ppp: 122, region: 'Oceania' },
+        { name: 'Sweden', ppp: 118, region: 'Nordic' },
+        { name: 'Netherlands', ppp: 115, region: 'Western Europe' },
+        { name: 'Ireland', ppp: 115, region: 'Western Europe' },
+        { name: 'United Kingdom', ppp: 112, region: 'Western Europe' },
+        { name: 'Germany', ppp: 109, region: 'Western Europe' },
+        { name: 'Canada', ppp: 108, region: 'North America' },
+        { name: 'France', ppp: 105, region: 'Western Europe' },
+        { name: 'New Zealand', ppp: 103, region: 'Oceania' },
+        { name: 'UAE', ppp: 96, region: 'Middle East' },
+        { name: 'Spain', ppp: 87, region: 'Southern Europe' },
+        { name: 'Portugal', ppp: 77, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', ppp: 67, region: 'Middle East' },
+        { name: 'South Korea', ppp: 90, region: 'East Asia' },
+        { name: 'China', ppp: 48, region: 'East Asia' },
+        { name: 'India', ppp: 28, region: 'South Asia' },
+        { name: 'Thailand', ppp: 45, region: 'Southeast Asia' },
+        { name: 'Vietnam', ppp: 33, region: 'Southeast Asia' },
+        { name: 'Philippines', ppp: 36, region: 'Southeast Asia' },
+        { name: 'Indonesia', ppp: 34, region: 'Southeast Asia' },
+        { name: 'Malaysia', ppp: 45, region: 'Southeast Asia' },
+        { name: 'Brazil', ppp: 48, region: 'South America' },
+        { name: 'Mexico', ppp: 45, region: 'North America' },
+        { name: 'Turkey', ppp: 39, region: 'Eurasia' },
+        { name: 'Poland', ppp: 60, region: 'Eastern Europe' },
+        { name: 'Czech Republic', ppp: 70, region: 'Eastern Europe' },
+        { name: 'South Africa', ppp: 39, region: 'Africa' },
+        { name: 'Nigeria', ppp: 28, region: 'Africa' },
+        { name: 'Egypt', ppp: 25, region: 'Africa' },
+        { name: 'Pakistan', ppp: 23, region: 'South Asia' },
+    ];
+
+    function calculateJPPPP() {
+        const amount = parseFloat(document.getElementById('jpPppAmount').value) || 350000;
+        const tbody = document.querySelector('#jpPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#jpPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} JPY buys equiv. of`;
+
+        jpPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} JPY (${diff})</td></tr>`;
+        });
+    }
+    calculateJPPPP();
+
+    // Japanese Tax Calculator
+    function calculateJPTax() {
+        const annualGross = parseFloat(document.getElementById('jpGrossSalary').value) || 5000000;
+        const dependents = parseInt(document.getElementById('jpDependent').value) || 0;
+
+        // Employment income deduction (kyuuyo shotoku koujyo)
+        let employmentDeduction = 0;
+        if (annualGross <= 1625000) employmentDeduction = 550000;
+        else if (annualGross <= 1800000) employmentDeduction = annualGross * 0.4 - 100000;
+        else if (annualGross <= 3600000) employmentDeduction = annualGross * 0.3 + 80000;
+        else if (annualGross <= 6600000) employmentDeduction = annualGross * 0.2 + 440000;
+        else if (annualGross <= 8500000) employmentDeduction = annualGross * 0.1 + 1100000;
+        else employmentDeduction = 1950000;
+
+        // Social insurance (employee share ~15%)
+        const socialInsurance = annualGross * 0.15;
+
+        // Basic deduction
+        const basicDeduction = 480000;
+        const dependentDeduction = dependents * 380000;
+
+        // Taxable income
+        const taxableIncome = Math.max(0, annualGross - employmentDeduction - socialInsurance - basicDeduction - dependentDeduction);
+
+        // National income tax (progressive)
+        let incomeTax = 0;
+        if (taxableIncome <= 1950000) {
+            incomeTax = taxableIncome * 0.05;
+        } else if (taxableIncome <= 3300000) {
+            incomeTax = taxableIncome * 0.10 - 97500;
+        } else if (taxableIncome <= 6950000) {
+            incomeTax = taxableIncome * 0.20 - 427500;
+        } else if (taxableIncome <= 9000000) {
+            incomeTax = taxableIncome * 0.23 - 636000;
+        } else if (taxableIncome <= 18000000) {
+            incomeTax = taxableIncome * 0.33 - 1536000;
+        } else if (taxableIncome <= 40000000) {
+            incomeTax = taxableIncome * 0.40 - 2796000;
+        } else {
+            incomeTax = taxableIncome * 0.45 - 4796000;
+        }
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        // Reconstruction surtax
+        const reconstructionTax = Math.round(incomeTax * 0.021);
+
+        // Resident tax (~10%)
+        const residentTax = Math.round(taxableIncome * 0.10);
+
+        const totalTax = incomeTax + reconstructionTax + residentTax;
+        const totalDeductions = totalTax + socialInsurance;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('jpTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} JPY</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} JPY</span></div>
+                <div><strong>Resident tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(residentTax/12).toLocaleString()} JPY</span></div>
+                <div><strong>Social insurance:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(socialInsurance/12).toLocaleString()} JPY</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} JPY</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Health + pension: ${Math.round(socialInsurance/12).toLocaleString()} JPY/mo</div>
+                <div>Reconstruction tax: ${Math.round(reconstructionTax/12).toLocaleString()} JPY/mo</div>
+                <div>Taxable income: ${Math.round(taxableIncome).toLocaleString()} JPY/yr</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 250000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 250000 ? '#059669' : '#dc2626'};">${netMonthly >= 250000 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~250,000 JPY net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 250000 ? '+' : ''}${Math.round(netMonthly - 250000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>
