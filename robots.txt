@@ -6,8 +6,6 @@ Sitemap: https://compressphotos.cloud/sitemap.xml
 
 # Allow search engine bots to crawl all content
 Allow: /index.html
-Allow: /analytics.html
-Allow: /analytics
 Allow: /styles.css
 
 # Disallow unnecessary files
@@ -15,3 +13,11 @@ Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /.env
 Disallow: /README.md
+
+# Disallow test and debug files
+Disallow: /test.html
+Disallow: /debug.html
+Disallow: /simple-test.html
+Disallow: /working-test.html
+Disallow: /verify-deployment.html
+Disallow: /analytics.html
