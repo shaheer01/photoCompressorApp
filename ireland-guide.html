@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Ireland 2026. Monthly expenses, salary by profession, PAYE tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="ireland living cost, ireland salary, irish tax, cost of living dublin, expat ireland, PAYE USC PRSI">
+    <link rel="canonical" href="https://compressphotos.cloud/ireland-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1EE;&#x1F1EA;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #169B62 0%, #0D5E3C 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #169B62; border-bottom: 3px solid #169B62; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #169B62; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #169B62; background: #f0fdf4; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #169B62, #4DC48E);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0fdf4; border-left: 4px solid #169B62; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #169B62; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #169B62; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #169B62, #0D5E3C); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#169B62; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Steuern, salaries & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, S&eacute;cu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div><strong>Ireland</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Ireland Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Irish tax system (PAYE, USC, PRSI), healthcare, and PPP calculator. For expats and newcomers planning to move to Ireland.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?w=800&q=80" alt="Ireland countryside - iconic Irish landscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="irish">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Ireland (Outside Dublin)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on CSO, Daft.ie, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Dublin is significantly more expensive, especially rent. To earn this take-home, you need a higher gross salary. See the <strong>Tax Structure</strong> tab for PAYE, USC, and PRSI details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,800</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple outside Dublin</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle in Dublin</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,800</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~49,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Ireland-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1-bed apartment)</td><td class="eur">1,100</td><td class="eur">2,200</td><td>Dublin 1,800-2,200; Cork/Galway 1,100-1,500; severe rental crisis</td></tr>
+                    <tr><td></td><td>Electricity & gas</td><td class="eur">150</td><td class="eur">250</td><td>Electric Ireland, Bord Gais, SSE Airtricity; BER rating matters</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">40</td><td class="eur">60</td><td>Vodafone, Virgin Media, Sky; fibre widespread in cities</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">30</td><td class="eur">50</td><td>Three, Vodafone, 48; budget options GoMo, Tesco Mobile</td></tr>
+                    <tr><td></td><td>TV licence</td><td class="eur">13.75</td><td class="eur">13.75</td><td>Mandatory 165 EUR/year per household; inspectors call</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">1,334</td><td class="eur">2,574</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">500</td><td class="eur">750</td><td>Aldi, Lidl cheapest; Tesco, Dunnes, SuperValu mid-range</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">500</td><td class="eur">750</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Public transport (2 Leap cards)</td><td class="eur">160</td><td class="eur">240</td><td>TFI 90-min fare; Dublin Bus, Luas, DART; cheaper outside Dublin</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">200</td><td>Free Now, Uber (limited); car essential outside cities</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">160</td><td class="eur">440</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Healthcare</td></tr>
+                    <tr><td></td><td>GP visits / health insurance</td><td class="eur">0</td><td class="eur">250</td><td>Medical card = free; otherwise GP visit 55-70 EUR each; private insurance 100-250 EUR/month</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">0</td><td class="eur">250</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">100</td><td class="eur">200</td><td>Penneys (Primark) for budget; Grafton St for splurging</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">80</td><td class="eur">130</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Pubs & eating out</td><td class="eur">150</td><td class="eur">350</td><td>Pint 5.50-7.50 EUR; meal out 15-30 EUR; pub culture central to life</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">60</td><td class="eur">150</td><td>Gym 30-60 EUR/month; GAA club cheap; hiking free</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">50</td><td class="eur">80</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">440</td><td class="eur">910</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Home/contents insurance</td><td class="eur">20</td><td class="eur">40</td><td>Recommended; covers theft, fire, water damage</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">20</td><td class="eur">40</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~2,454</td><td class="eur">~4,964</td><td>Realistic range: 2,800 - 4,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Ireland</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from CSO, Morgan McKinley, Glassdoor 2026. Ireland is a major tech & pharma hub.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Tech & pharma hub:</strong> Ireland hosts European HQs of Apple, Google, Meta, Microsoft, Pfizer, and many more. Tech and pharmaceutical salaries are among the highest in Europe. Most roles pay 13 months (some offer bonuses on top).
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Consultant Doctor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">10,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Senior Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:85%;">8,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:78%;">7,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">7,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (Solicitor)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:68%;">6,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chemical Engineer (Pharma)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:65%;">6,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:62%;">6,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant (Chartered)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:52%;">5,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">5,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Secondary)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:48%;">4,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:42%;">4,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Garda (Police)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">3,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Admin / Office Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">3,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:25%;">2,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Hospitality / Bar Staff</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:23%;">2,300 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Minimum wage (2026):</strong> Ireland's national minimum wage is 13.50 EUR/hour, approximately 2,340 EUR/month gross for a 40-hour week. The Living Wage (voluntary) is ~14.80 EUR/hour. Tipping is discretionary but 10-15% is common in restaurants.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Irish Tax System (PAYE, USC, PRSI)</h2>
+            <p class="section-subtitle">Ireland uses a PAYE system with income tax, Universal Social Charge (USC), and Pay Related Social Insurance (PRSI). Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Bands</h3>
+            <table class="data-table">
+                <thead><tr><th>Band</th><th>Single Person</th><th>Married (One Earner)</th><th>Tax Rate</th></tr></thead>
+                <tbody>
+                    <tr><td>Standard rate band</td><td class="eur">First 42,000</td><td class="eur">First 51,000</td><td class="eur">20%</td></tr>
+                    <tr><td>Higher rate band</td><td class="eur">Balance</td><td class="eur">Balance</td><td class="eur">40%</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Tax Credits (Annual)</h3>
+            <table class="data-table">
+                <thead><tr><th>Credit</th><th>Amount (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Personal Tax Credit (Single)</td><td class="eur">1,875</td><td>Every PAYE worker gets this</td></tr>
+                    <tr><td>Personal Tax Credit (Married)</td><td class="eur">3,750</td><td>Double for married couples</td></tr>
+                    <tr><td>Employee Tax Credit (PAYE)</td><td class="eur">1,875</td><td>Automatic for PAYE employees</td></tr>
+                    <tr><td>Rent Tax Credit</td><td class="eur">750</td><td>Per person; introduced 2022; for private renters</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Universal Social Charge (USC)</h3>
+            <table class="data-table">
+                <thead><tr><th>Income Band (EUR)</th><th>USC Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>First 12,012</td><td class="eur">0.5%</td><td>Exempt if total income under 13,000 EUR</td></tr>
+                    <tr><td>12,013 - 25,760</td><td class="eur">2%</td><td></td></tr>
+                    <tr><td>25,761 - 70,044</td><td class="eur">4%</td><td></td></tr>
+                    <tr><td>70,045+</td><td class="eur">8%</td><td>Self-employed pay 11% surcharge above 100,000</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">PRSI (Pay Related Social Insurance)</h3>
+            <table class="data-table">
+                <thead><tr><th>Component</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Employee PRSI (Class A)</td><td class="eur">4%</td><td>Employee</td><td>On all earnings; covers state pension, illness, maternity benefits</td></tr>
+                    <tr><td>Employer PRSI</td><td class="eur">11.05%</td><td>Employer</td><td>Not deducted from your pay; employer cost</td></tr>
+                    <tr><td>PRSI Credit</td><td class="eur">Up to 12 EUR/week</td><td>Low earners</td><td>Tapered credit for earnings 352-424 EUR/week</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="ieGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="ieGrossSalary" value="55000" min="0" max="500000">
+                <label for="ieStatus">Filing Status:</label>
+                <select id="ieStatus">
+                    <option value="single">Single</option>
+                    <option value="married">Married (one earner)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateIETax()">Calculate Net Salary</button>
+                <div class="calc-result" id="ieTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + USC + PRSI</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">2,500</td><td class="eur">30,000</td><td class="eur">~430</td><td class="eur" style="color:#059669; font-weight:700;">~2,070</td><td>17.2%</td></tr>
+                    <tr><td class="eur">3,750</td><td class="eur">45,000</td><td class="eur">~840</td><td class="eur" style="color:#059669; font-weight:700;">~2,910</td><td>22.4%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">60,000</td><td class="eur">~1,380</td><td class="eur" style="color:#059669; font-weight:700;">~3,620</td><td>27.6%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">84,000</td><td class="eur">~2,230</td><td class="eur" style="color:#059669; font-weight:700;">~4,770</td><td>31.9%</td></tr>
+                    <tr><td class="eur">10,000</td><td class="eur">120,000</td><td class="eur">~3,530</td><td class="eur" style="color:#059669; font-weight:700;">~6,470</td><td>35.3%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Irish salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Ireland = 100.</p>
+
+            <div class="calc-container">
+                <label for="iePppAmount">Your monthly spending in Ireland (EUR):</label>
+                <input type="number" id="iePppAmount" value="3000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateIEPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="iePppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>3,000 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Ireland = 100. If a country has a PPP index of 58, your 3,000 EUR in Ireland has the same purchasing power as 3,000 x (58/100) = 1,740 EUR in that country. You'd need ~42% less money there for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Irish cities. Dublin = most expensive baseline. Data: CSO, Daft.ie, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (EUR)</th><th>Monthly Bus Pass (EUR)</th><th>Meal Out (EUR)</th><th>Pint (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Dublin</strong></td><td class="eur">1,800-2,200</td><td class="eur">120</td><td class="eur">16-28</td><td class="eur">6.50-7.50</td><td>Most expensive; tech hub; DART, Luas, Dublin Bus</td></tr>
+                    <tr><td><strong>Cork</strong></td><td class="eur">1,300-1,600</td><td class="eur">80</td><td class="eur">14-22</td><td class="eur">5.50-6.50</td><td>Second city; "real capital"; pharma & tech hub; English Market</td></tr>
+                    <tr><td><strong>Galway</strong></td><td class="eur">1,200-1,500</td><td class="eur">70</td><td class="eur">14-22</td><td class="eur">5.50-6.50</td><td>Cultural capital; arts festivals; near Connemara & Aran Islands</td></tr>
+                    <tr><td><strong>Limerick</strong></td><td class="eur">1,000-1,300</td><td class="eur">65</td><td class="eur">12-20</td><td class="eur">5.00-6.00</td><td>Affordable; university city; Shannon region; growing tech scene</td></tr>
+                    <tr><td><strong>Waterford</strong></td><td class="eur">900-1,200</td><td class="eur">60</td><td class="eur">12-18</td><td class="eur">5.00-5.50</td><td>Oldest city in Ireland; Waterford Crystal; affordable & coastal</td></tr>
+                    <tr><td><strong>Kilkenny</strong></td><td class="eur">900-1,100</td><td class="eur">55</td><td class="eur">12-18</td><td class="eur">5.00-5.50</td><td>Medieval charm; Smithwick's brewery; great quality of life</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Dublin rent crisis:</strong> Dublin is one of the most expensive cities in Europe for rent. Average 1-bed rent is over 2,000 EUR/month. Many expats and young professionals house-share to reduce costs. Outside Dublin, rents are 30-50% lower, but fewer jobs are available. Remote work has made cities like Galway, Limerick, and Cork more attractive.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Irish Healthcare System (HSE)</h2>
+            <p class="section-subtitle">Ireland has a public healthcare system (HSE) supplemented by private insurance. Access depends on income and residency status.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">55-70</div>
+                    <div class="stat-unit">EUR per GP visit</div>
+                    <div class="stat-desc">Without medical card or GP visit card</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">A&E (with referral)</div>
+                    <div class="stat-desc">100 EUR charge without GP referral letter</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">VHI</div>
+                    <div class="stat-unit">Largest insurer</div>
+                    <div class="stat-desc">Also Laya Healthcare, Irish Life Health</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">80 EUR/night</div>
+                    <div class="stat-unit">Public hospital stay</div>
+                    <div class="stat-desc">Max 800 EUR/year (10 nights); medical card = free</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Medical Card vs GP Visit Card</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Medical Card</th><th>GP Visit Card</th><th>No Card</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Eligibility</strong></td><td>Means-tested; income below thresholds</td><td>Everyone under 8 or over 70; means-tested for others</td><td>Everyone else</td></tr>
+                    <tr><td><strong>GP visits</strong></td><td>Free</td><td>Free</td><td>55-70 EUR per visit</td></tr>
+                    <tr><td><strong>Prescriptions</strong></td><td>Free (small co-pay per item)</td><td>Full price (max 80 EUR/month under DPS)</td><td>Full price (max 80 EUR/month under DPS)</td></tr>
+                    <tr><td><strong>Hospital</strong></td><td>Free public hospital care</td><td>80 EUR/night (max 800 EUR/year)</td><td>80 EUR/night (max 800 EUR/year)</td></tr>
+                    <tr><td><strong>Dental</strong></td><td>Basic dental covered (DTSS)</td><td>Not covered</td><td>Not covered</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Private Health Insurance</h3>
+            <table class="data-table">
+                <thead><tr><th>Provider</th><th>Basic Plan (EUR/month)</th><th>Mid-Tier (EUR/month)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>VHI</strong></td><td class="eur">80-120</td><td class="eur">150-250</td><td>State-owned; largest provider; widest hospital network</td></tr>
+                    <tr><td><strong>Laya Healthcare</strong></td><td class="eur">70-110</td><td class="eur">140-230</td><td>Popular with corporates; good online portal</td></tr>
+                    <tr><td><strong>Irish Life Health</strong></td><td class="eur">75-115</td><td class="eur">145-240</td><td>Part of Irish Life group; competitive plans</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Key Healthcare Benefits</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Maternity care</td><td class="eur">Free (public)</td><td>Full antenatal, delivery, and postnatal care under Maternity & Infant Care Scheme</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Max 80 EUR/month</td><td>Drug Payment Scheme (DPS) caps household spending at 80 EUR/month</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Varies</td><td>HSE provides some free services; long waiting lists; private therapists 60-100 EUR/session</td></tr>
+                    <tr><td>Children under 6</td><td class="eur">Free GP visits</td><td>All children under 6 get free GP visits regardless of income</td></tr>
+                    <tr><td>Over 70s</td><td class="eur">Free GP visits</td><td>Automatic GP visit card for everyone over 70</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Tax relief on health insurance:</strong> Ireland offers tax relief at 20% on health insurance premiums. This is applied at source by your insurer, so your quoted price already includes the relief. If you pay privately, claim it back via Revenue myAccount.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Ireland</h2>
+            <p class="section-subtitle">Ireland is experiencing a severe housing crisis, especially in Dublin. Understanding the system is crucial for newcomers.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Term</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>RTB (Residential Tenancies Board)</strong></td><td>Regulates the rental market; all tenancies must be registered; handles disputes</td></tr>
+                    <tr><td><strong>RPZ (Rent Pressure Zone)</strong></td><td>Areas where rent increases are capped at 2% per year (most of Dublin, Cork, Galway etc.)</td></tr>
+                    <tr><td><strong>HAP (Housing Assistance Payment)</strong></td><td>Government rent subsidy for those on low income; paid directly to landlord by council</td></tr>
+                    <tr><td><strong>Deposit</strong></td><td>Typically 1 month's rent; must be returned within 14 days of lease end (minus deductions)</td></tr>
+                    <tr><td><strong>BER Rating</strong></td><td>Building Energy Rating (A-G); landlords must provide BER cert; affects heating costs significantly</td></tr>
+                    <tr><td><strong>Part 4 Tenancy</strong></td><td>After 6 months, tenant gains Part 4 rights (security of tenure for up to 6 years)</td></tr>
+                    <tr><td><strong>Notice Period</strong></td><td>Increases with tenancy length: 28 days (&lt;6 months) to 224 days (8+ years)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Daft.ie</td><td>All types</td><td>Largest property site in Ireland; essential for renting and buying</td></tr>
+                    <tr><td>MyHome.ie</td><td>All types</td><td>Owned by Irish Times; good selection of properties</td></tr>
+                    <tr><td>Rent.ie</td><td>Rentals</td><td>Dedicated rental platform; good for filtering</td></tr>
+                    <tr><td>Facebook groups</td><td>Room shares</td><td>"Dublin rooms to rent" groups; popular for house shares</td></tr>
+                    <tr><td>Spotahome / HousingAnywhere</td><td>Mid-term rentals</td><td>Good for expats; can book before arriving in Ireland</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Rental crisis warning:</strong> Ireland's rental market is extremely tight. In Dublin, viewings attract 50-100+ people. Tips: (1) Have documents ready (employer letter, references, ID, proof of income). (2) Be ready to pay deposit immediately. (3) Consider house-sharing initially. (4) Beware of scams -- never pay before viewing. (5) Use Daft.ie alerts for new listings. (6) Consider commuter towns (Maynooth, Navan, Drogheda) for better value.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Ireland</h2>
+            <p class="section-subtitle">Dublin has decent public transport; the rest of Ireland is largely car-dependent. The TFI 90-minute fare has transformed Dublin commuting.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">1.70</div>
+                    <div class="stat-unit">EUR (90-min fare)</div>
+                    <div class="stat-desc">TFI 90-minute fare -- any Dublin bus/Luas/DART</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Leap Card</div>
+                    <div class="stat-unit">Prepaid smartcard</div>
+                    <div class="stat-desc">20-30% cheaper than cash fares; essential</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.80</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.70 EUR; prices vary regionally</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">120 km/h</div>
+                    <div class="stat-unit">Motorway speed limit</div>
+                    <div class="stat-desc">100 km/h on national roads; 80 km/h on regionals</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>TFI 90-minute fare (Leap)</td><td class="eur">1.70 EUR</td><td>Unlimited transfers on Dublin Bus, Luas, DART within 90 minutes</td></tr>
+                    <tr><td>Dublin Bus (Leap single)</td><td class="eur">1.70 EUR</td><td>Go-Ahead Ireland also operates some Dublin routes</td></tr>
+                    <tr><td>Luas (tram)</td><td class="eur">1.70-2.50 EUR</td><td>Red line (east-west) and Green line (north-south); Leap card essential</td></tr>
+                    <tr><td>DART (suburban rail)</td><td class="eur">2.00-5.00 EUR</td><td>Coastal rail: Malahide to Greystones; scenic commuter route</td></tr>
+                    <tr><td>Irish Rail (intercity)</td><td class="eur">15-60 EUR</td><td>Dublin to Cork ~3h; Dublin to Galway ~2.5h; book online for best fares</td></tr>
+                    <tr><td>Bus Eireann / Expressway</td><td class="eur">10-25 EUR</td><td>Intercity bus; cheaper than train; covers more towns</td></tr>
+                    <tr><td>Leap Card (monthly cap)</td><td class="eur">~120 EUR</td><td>Dublin monthly cap; once reached, remaining journeys free</td></tr>
+                    <tr><td>Taxsaver (employer scheme)</td><td class="eur">Saves 30-50%</td><td>Pre-tax purchase of annual bus/rail tickets through employer</td></tr>
+                    <tr><td>Cycle to Work scheme</td><td class="eur">Up to 3,000 EUR</td><td>Tax-free bicycle purchase through employer; e-bikes up to 3,000 EUR</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">80-200 EUR/month</td><td>Expensive in Ireland; named driver experience helps; use comparethemarket.ie</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> The TFI 90-minute fare is a game-changer for Dublin commuters. For 1.70 EUR you can take a bus, then Luas, then DART -- all within 90 minutes on one fare. Always use a Leap card (never pay cash on buses -- exact fare only, no change given). Young Adult Leap (19-25) gets 50% off all fares.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Ireland -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Ireland</h2>
+            <p class="section-subtitle">Irish employment law, work permits, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20</div>
+                    <div class="stat-unit">Annual leave days</div>
+                    <div class="stat-desc">Legal minimum; many employers offer 22-25</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">6 months</div>
+                    <div class="stat-unit">Probation (typical)</div>
+                    <div class="stat-desc">Statutory max 12 months; 1 week notice during</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">26 weeks</div>
+                    <div class="stat-unit">Maternity leave</div>
+                    <div class="stat-desc">Paid at 274 EUR/week (Maternity Benefit)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">9</div>
+                    <div class="stat-unit">Public holidays</div>
+                    <div class="stat-desc">Including St Patrick's Day and St Brigid's Day</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Critical Skills Permit</strong></td><td>For occupations on Critical Skills list (tech, pharma, medical)</td><td>Min salary 32,000 EUR (listed) or 64,000 EUR (any role); leads to Stamp 4 after 2 years</td></tr>
+                    <tr><td><strong>Stamp 1G</strong></td><td>General work permit for non-EEA nationals</td><td>Employer-specific; min salary 34,000 EUR; labour market needs test required</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Max 48 hours/week (averaged over 4 months)</td><td>Organisation of Working Time Act 1997; rest periods mandatory</td></tr>
+                    <tr><td><strong>Annual leave</strong></td><td>Minimum 20 days (4 working weeks)</td><td>Plus 9 public holidays; many employers offer 22-25 days</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>5 statutory sick days/year (paid at 70% of salary, max 110 EUR/day)</td><td>Increasing to 7 days in 2026; Illness Benefit from DEASP after 3 waiting days</td></tr>
+                    <tr><td><strong>Redundancy</strong></td><td>2 weeks pay per year of service + 1 week</td><td>After 2+ years continuous service; statutory redundancy payment tax-free up to limits</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>1-8 weeks depending on service length</td><td>1 week (&lt;2 years) to 8 weeks (15+ years); contract may specify longer</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>26 weeks paid + 16 weeks unpaid</td><td>Maternity Benefit 274 EUR/week; many employers top up to full salary</td></tr>
+                    <tr><td><strong>Paternity leave</strong></td><td>2 weeks</td><td>Paternity Benefit 274 EUR/week from DEASP</td></tr>
+                    <tr><td><strong>Parent's leave</strong></td><td>9 weeks per parent (per child under 12)</td><td>Parent's Benefit 274 EUR/week; in addition to maternity/paternity</td></tr>
+                    <tr><td><strong>WRC (Workplace Relations Commission)</strong></td><td>Handles employment disputes and complaints</td><td>Free to use; covers unfair dismissal, discrimination, payment disputes</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Irish work culture essentials:</strong> (1) <strong>Friendly & informal</strong> -- first-name basis is standard; hierarchy exists but is less rigid than continental Europe. (2) <strong>Tea breaks are sacred</strong> -- the kettle is the social hub of every office; offering to make tea is a social bonding ritual. (3) <strong>"Sure look"</strong> -- the Irish are masters of understatement and indirect communication. (4) <strong>Friday pints</strong> -- pub after work on Fridays is a common team bonding tradition. (5) <strong>Remote/hybrid work</strong> -- very common post-COVID; Right to Request Remote Work Act 2024.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="irish" class="tab-content">
+            <h2 class="section-title">Local Basics & Irish Culture</h2>
+            <p class="section-subtitle">Essential cultural knowledge, Irish phrases (Gaeilge), and customs you need to know.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Essential Irish English & Gaeilge Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Context</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Craic</strong> (crack)</td><td>Fun, entertainment, news</td><td>"What's the craic?" = How are you? / What's happening?</td></tr>
+                    <tr><td><strong>Grand</strong></td><td>Fine, okay, good</td><td>"That's grand" = That's fine. The most Irish word ever.</td></tr>
+                    <tr><td><strong>Slainte</strong> (slawn-cha)</td><td>Cheers / Health</td><td>Said when raising glasses; Irish for "health"</td></tr>
+                    <tr><td><strong>Dia dhuit</strong> (dee-ah gwit)</td><td>Hello (formal)</td><td>Irish greeting; literally "God to you"</td></tr>
+                    <tr><td><strong>Go raibh maith agat</strong></td><td>Thank you</td><td>Pronounced "guh rev mah ah-gut"</td></tr>
+                    <tr><td><strong>Failte</strong> (fall-cha)</td><td>Welcome</td><td>"Cead mile failte" = a hundred thousand welcomes</td></tr>
+                    <tr><td><strong>Gaeilge</strong> (gale-gah)</td><td>The Irish language</td><td>First official language; spoken daily in Gaeltacht regions</td></tr>
+                    <tr><td><strong>Your man / Your one</strong></td><td>That guy / That woman</td><td>"Your man over there" = that person (not necessarily someone you know)</td></tr>
+                    <tr><td><strong>Acting the maggot</strong></td><td>Messing around, being silly</td><td>"Stop acting the maggot" = stop messing around</td></tr>
+                    <tr><td><strong>Giving out</strong></td><td>Complaining</td><td>"She was giving out about the weather" = She was complaining</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Pub Culture & the Rounds System</h3>
+            <table class="data-table">
+                <thead><tr><th>Custom</th><th>Explanation</th><th>Tips</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Rounds system</strong></td><td>Each person takes turns buying drinks for the entire group</td><td>NEVER skip your round; it's a serious social faux pas. "It's my round" is essential vocabulary.</td></tr>
+                    <tr><td><strong>Pint of Guinness</strong></td><td>The national drink; served in 2 parts (pour, wait, top up)</td><td>5.50-7.50 EUR; takes ~2 minutes to pour properly. Don't rush it.</td></tr>
+                    <tr><td><strong>Trad sessions</strong></td><td>Traditional Irish music played live in pubs</td><td>Free to watch; don't talk over the music; tip the musicians via a hat/jar</td></tr>
+                    <tr><td><strong>Last orders</strong></td><td>Final call for drinks before closing</td><td>Pubs close at 11:30pm (Sun-Thu) or 12:30am (Fri-Sat); nightclubs until 2:30am</td></tr>
+                    <tr><td><strong>Carvery lunch</strong></td><td>Traditional pub lunch (roast meat, veg, potatoes)</td><td>Great value at 12-16 EUR; served 12-3pm in most pubs</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">GAA & Sports</h3>
+            <table class="data-table">
+                <thead><tr><th>Sport</th><th>What It Is</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Hurling</strong></td><td>Fastest field sport in the world; played with hurl (stick) and sliotar (ball)</td><td>Uniquely Irish; All-Ireland final in Croke Park is a national event</td></tr>
+                    <tr><td><strong>Gaelic Football</strong></td><td>Mix of soccer and rugby; played with round ball</td><td>Most popular GAA sport; every county has a team; fierce local rivalries</td></tr>
+                    <tr><td><strong>GAA Club</strong></td><td>Local Gaelic Athletic Association club</td><td>Heart of every community; cheap to join; great way to meet locals</td></tr>
+                    <tr><td><strong>Rugby</strong></td><td>Ireland competes as all-island team (incl. Northern Ireland)</td><td>Six Nations, World Cup; Leinster, Munster, Connacht, Ulster provinces</td></tr>
+                    <tr><td><strong>Soccer</strong></td><td>League of Ireland; many follow English Premier League</td><td>LOI growing; Shamrock Rovers, Dundalk, Shelbourne popular</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Weather</strong> -- it rains. A lot. Always carry a rain jacket. "There's no bad weather, only bad clothes." (2) <strong>Tea</strong> -- Ireland drinks more tea per capita than almost any country. Barry's vs Lyons is a fierce debate. (3) <strong>Tayto crisps</strong> -- a cultural institution; crisp sandwich is a legitimate meal. (4) <strong>Sunday roast</strong> -- family tradition; roast dinner with all the trimmings. (5) <strong>Mammies</strong> -- Irish mothers are legendary; "have you eaten?" is the national greeting from any Irish mammy. (6) <strong>The Angelus</strong> -- 6pm bells on RTE (national TV); a cultural moment even for non-religious.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Ireland</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~40,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living outside Dublin</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~65,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults outside Dublin</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,800</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple outside Dublin</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,000</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>House share, very frugal</small></td><td class="eur">1,400</td><td class="eur">2,200</td><td class="eur">1,650</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Basic single (outside Dublin)</strong><br><small>Own flat in Limerick/Waterford</small></td><td class="eur">2,000</td><td class="eur">3,200</td><td class="eur">2,300</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Couple (outside Dublin)</strong><br><small>2 adults, comfortable</small></td><td class="eur">3,000</td><td class="eur">5,000</td><td class="eur">3,400</td><td class="eur eur-low">+400</td></tr>
+                    <tr><td><strong>Couple (Dublin)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">4,500</td><td class="eur">7,500</td><td class="eur">4,900</td><td class="eur eur-low">+400</td></tr>
+                    <tr><td><strong>Family with child (Dublin)</strong><br><small>2 adults + 1 child</small></td><td class="eur">5,500</td><td class="eur">9,000</td><td class="eur">5,800</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>PPS Number</strong> (Personal Public Service) -- needed for work, tax, and social welfare; apply at your local Intreo centre. (2) Open a bank account (AIB, Bank of Ireland, Revolut, N26). (3) Register with Revenue using <strong>myAccount</strong> for your tax credits. (4) Get a <strong>Leap card</strong> (any newsagent or online). (5) Register with a GP (doctor). (6) Get a SIM card (Three, Vodafone, GoMo). (7) Join Daft.ie alerts for housing. (8) Apply for IRP (Immigration Registration) if non-EEA at local immigration office.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax bands change annually. Always verify current rates with official sources (Revenue.ie, CSO.ie, CitizensInformation.ie) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Ireland Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#169B62;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const iePppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 144, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 124, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 118, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 113, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 111, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 106, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 102, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 100, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 97, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 94, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 93, region: 'North America' },
+        { name: 'France', currency: 'EUR', ppp: 91, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 89, region: 'Oceania' },
+        { name: 'UAE', currency: 'AED', ppp: 83, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 76, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 67, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 58, region: 'Middle East' },
+        { name: 'Italy', currency: 'EUR', ppp: 78, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 47, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 55, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 30, region: 'Eurasia' },
+        { name: 'Japan', currency: 'JPY', ppp: 79, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 71, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 38, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 22, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 18, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 20, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 35, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 25, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 28, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 26, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 35, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 38, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 28, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 35, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 26, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 30, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 22, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 20, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 24, region: 'Africa' },
+    ];
+
+    function calculateIEPPP() {
+        const amount = parseFloat(document.getElementById('iePppAmount').value) || 3000;
+        const tbody = document.querySelector('#iePppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#iePppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        iePppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateIEPPP();
+
+    // Irish Tax Calculator (PAYE + USC + PRSI)
+    function calculateIETax() {
+        const annualGross = parseFloat(document.getElementById('ieGrossSalary').value) || 55000;
+        const status = document.getElementById('ieStatus').value;
+
+        // Tax credits
+        const personalCredit = status === 'married' ? 3750 : 1875;
+        const employeeCredit = 1875;
+        const totalCredits = personalCredit + employeeCredit;
+
+        // Standard rate band
+        const standardBand = status === 'married' ? 51000 : 42000;
+
+        // Income Tax
+        let incomeTax = 0;
+        if (annualGross <= standardBand) {
+            incomeTax = annualGross * 0.20;
+        } else {
+            incomeTax = standardBand * 0.20 + (annualGross - standardBand) * 0.40;
+        }
+        incomeTax = Math.max(0, incomeTax - totalCredits);
+
+        // USC
+        let usc = 0;
+        if (annualGross > 13000) {
+            let remaining = annualGross;
+            // Band 1: 0-12,012 at 0.5%
+            usc += Math.min(remaining, 12012) * 0.005;
+            remaining -= 12012;
+            if (remaining > 0) {
+                // Band 2: 12,013-25,760 at 2%
+                usc += Math.min(remaining, 25760 - 12012) * 0.02;
+                remaining -= (25760 - 12012);
+            }
+            if (remaining > 0) {
+                // Band 3: 25,761-70,044 at 4%
+                usc += Math.min(remaining, 70044 - 25760) * 0.04;
+                remaining -= (70044 - 25760);
+            }
+            if (remaining > 0) {
+                // Band 4: 70,045+ at 8%
+                usc += remaining * 0.08;
+            }
+        }
+
+        // PRSI (Class A - 4%)
+        const prsi = annualGross * 0.04;
+
+        const totalDeductions = incomeTax + usc + prsi;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('ieTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Income tax (PAYE):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} EUR</span></div>
+                <div><strong>USC:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(usc/12).toLocaleString()} EUR</span></div>
+                <div><strong>PRSI:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(prsi/12).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>PAYE: ${Math.round(incomeTax/12)} EUR/mo</div>
+                <div>USC: ${Math.round(usc/12)} EUR/mo</div>
+                <div>PRSI: ${Math.round(prsi/12)} EUR/mo</div>
+                <div>Tax credits applied: ${totalCredits.toLocaleString()} EUR/yr</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 2800 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 2800 ? '#059669' : '#dc2626'};">${netMonthly >= 2800 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~2,800 EUR net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 2800 ? '+' : ''}${Math.round(netMonthly - 2800).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>
