@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Portugal 2026. Monthly expenses, salary by profession, IRS tax calculator, SNS healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="portugal living cost, portugal salary, portuguese tax, cost of living lisbon, expat portugal, custo de vida Portugal">
+    <link rel="canonical" href="https://compressphotos.cloud/portugal-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F5;&#x1F1F9;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #006600 0%, #004400 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #006600; border-bottom: 3px solid #006600; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #006600; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #006600; background: #f0fff0; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #006600, #00AA00);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0fff0; border-left: 4px solid #006600; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #006600; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #006600; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #006600, #00AA00); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#006600; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">🇩🇪</span><div>Germany<small>Steuern, Sozialabgaben & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html" style="background:#fffbeb;"><span class="country-flag">🇵🇹</span><div><strong>Portugal</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Portugal Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Portuguese IRS tax system, SNS healthcare, and PPP calculator. For expats and digital nomads planning to move to Portugal.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80" alt="Lisbon tram and colorful buildings - iconic Portuguese cityscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="portuguese">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Portugal (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on INE, Pordata, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend 1,800 EUR/month, you need roughly 2,500 EUR gross (~28% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,800</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,000</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,500</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~22,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Portugal-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (T1 apartment)</td><td class="eur">550</td><td class="eur">950</td><td>Lisbon/Porto much higher; smaller cities very affordable</td></tr>
+                    <tr><td></td><td>Utilities (electricity, water, gas)</td><td class="eur">80</td><td class="eur">140</td><td>EDP, Galp Energia; electricity can be high in winter without central heating</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">30</td><td class="eur">45</td><td>MEO, NOS, Vodafone; fiber widely available</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">20</td><td class="eur">40</td><td>MEO, NOS, Vodafone, WTF; prepaid from 10 EUR/month</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">680</td><td class="eur">1,175</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">350</td><td class="eur">550</td><td>Pingo Doce, Continente, Lidl, Aldi; local markets (mercados) even cheaper</td></tr>
+                    <tr><td></td><td>Eating out (occasional)</td><td class="eur">80</td><td class="eur">150</td><td>Menu do dia (daily menu) 8-12 EUR; very affordable dining</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">430</td><td class="eur">700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Public transport pass (2 persons)</td><td class="eur">80</td><td class="eur">120</td><td>Navegante pass 40 EUR/person in Lisbon metro area; Porto Andante</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">100</td><td>Bolt, Uber widely available; fuel ~1.70 EUR/litre</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">80</td><td class="eur">220</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance</td></tr>
+                    <tr><td></td><td>SNS (public, employee contribution via SS)</td><td class="eur">0</td><td class="eur">0</td><td>Public healthcare free for residents (paid via Seguranca Social contributions)</td></tr>
+                    <tr><td></td><td>Private health insurance (optional)</td><td class="eur">50</td><td class="eur">150</td><td>Multicare, Medis, AdvanceCare; faster access to specialists</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">50</td><td class="eur">150</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">60</td><td class="eur">150</td><td></td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">40</td><td class="eur">80</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">40</td><td class="eur">100</td><td>Gym 25-40 EUR/month; outdoor activities abundant and free</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">30</td><td class="eur">60</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">170</td><td class="eur">390</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Home insurance (seguro de casa)</td><td class="eur">10</td><td class="eur">25</td><td>Required by most landlords; Fidelidade, Allianz, Tranquilidade</td></tr>
+                    <tr><td></td><td>Personal liability</td><td class="eur">5</td><td class="eur">10</td><td>Optional but recommended</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">15</td><td class="eur">35</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,425</td><td class="eur">~2,670</td><td>Realistic range: 1,800 - 3,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Portugal</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from INE, Pordata, Glassdoor, Teamlyzer 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>14 months salary:</strong> Portuguese law mandates <strong>subsidio de ferias</strong> (holiday pay) and <strong>subsidio de Natal</strong> (Christmas pay), each equal to one month's base salary. So annual gross = monthly salary x 14. The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:89%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:78%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">3,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:64%;">2,900 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:58%;">2,600 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">2,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:49%;">2,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">2,100 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">2,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">1,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">1,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer (GNR/PSP)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:36%;">1,600 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:31%;">1,400 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">1,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:22%;">1,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Waiter / Hospitality</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:20%;">920 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Minimum wage (SMN) 2026:</strong> Portugal's Salario Minimo Nacional is <strong>870 EUR/month</strong> (x14 = 12,180 EUR/year). This has risen significantly from 760 EUR in 2023. The government targets 1,000 EUR SMN by 2028.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Portuguese Tax System (Sistema Fiscal)</h2>
+            <p class="section-subtitle">Portugal uses a progressive income tax (IRS - Imposto sobre o Rendimento das Pessoas Singulares) plus mandatory social security contributions. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">IRS Income Tax Brackets</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 7,703</td><td class="eur">13.25%</td><td>Lowest bracket</td></tr>
+                    <tr><td>7,704 - 11,623</td><td class="eur">18%</td><td></td></tr>
+                    <tr><td>11,624 - 16,472</td><td class="eur">23%</td><td></td></tr>
+                    <tr><td>16,473 - 21,321</td><td class="eur">26%</td><td></td></tr>
+                    <tr><td>21,322 - 27,146</td><td class="eur">32.75%</td><td></td></tr>
+                    <tr><td>27,147 - 39,791</td><td class="eur">37%</td><td></td></tr>
+                    <tr><td>39,792 - 51,997</td><td class="eur">43.5%</td><td></td></tr>
+                    <tr><td>51,998 - 81,199</td><td class="eur">45%</td><td></td></tr>
+                    <tr><td>81,200+</td><td class="eur">48%</td><td>Highest bracket; + 3.5% solidarity surcharge on income above 80,000 EUR</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Security (Seguranca Social)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Employee Share</th><th>Employer Share</th><th>Total</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Seguranca Social</td><td class="eur">11%</td><td class="eur">23.75%</td><td class="eur">34.75%</td><td>Covers pension, unemployment, sickness, maternity; no cap on contributions</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">NHR / IFICI Tax Regime (New Residents)</h3>
+            <div class="info-box">
+                <i class="fas fa-star"></i>
+                <strong>IFICI Regime (formerly NHR):</strong> Since 2024, the NHR (Non-Habitual Resident) regime was replaced by the <strong>IFICI</strong> (Incentivo Fiscal a Investigacao Cientifica e Inovacao). Key benefits: (1) <strong>20% flat tax</strong> on eligible Portuguese-source employment income from qualifying activities (scientific research, tech, innovation). (2) <strong>Tax exemption</strong> on most foreign-source income for 10 years. (3) Must not have been a Portuguese tax resident in the prior 5 years. This is more restrictive than the old NHR but still attractive for tech workers and researchers.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">IVA (VAT) Rates</h3>
+            <table class="data-table">
+                <thead><tr><th>Rate</th><th>Applies To</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">23%</td><td>Standard rate</td><td>Most goods and services; mainland Portugal</td></tr>
+                    <tr><td class="eur">13%</td><td>Intermediate rate</td><td>Restaurant meals, some food products, agricultural inputs</td></tr>
+                    <tr><td class="eur">6%</td><td>Reduced rate</td><td>Essential food, books, newspapers, public transport, medicines</td></tr>
+                    <tr><td class="eur">22% / 12% / 5%</td><td>Azores rates</td><td>Lower rates in autonomous regions (Azores)</td></tr>
+                    <tr><td class="eur">16% / 9% / 4%</td><td>Madeira rates</td><td>Lower rates in Madeira</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="ptGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="ptGrossSalary" value="25000" min="0" max="500000">
+                <label for="ptMaritalStatus">Marital status:</label>
+                <select id="ptMaritalStatus">
+                    <option value="single">Single (solteiro/a)</option>
+                    <option value="married">Married (casado/a) - joint filing</option>
+                </select>
+                <label for="ptNHR">IFICI / NHR Regime?</label>
+                <select id="ptNHR">
+                    <option value="no">No - standard IRS rates</option>
+                    <option value="yes">Yes - 20% flat rate (eligible income)</option>
+                </select>
+                <button class="calc-btn" onclick="calculatePTTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="ptTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross (x14)</th><th>Tax + SS</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">1,000</td><td class="eur">14,000</td><td class="eur">~200</td><td class="eur" style="color:#059669; font-weight:700;">~800</td><td>20.0%</td></tr>
+                    <tr><td class="eur">1,500</td><td class="eur">21,000</td><td class="eur">~370</td><td class="eur" style="color:#059669; font-weight:700;">~1,130</td><td>24.7%</td></tr>
+                    <tr><td class="eur">2,000</td><td class="eur">28,000</td><td class="eur">~560</td><td class="eur" style="color:#059669; font-weight:700;">~1,440</td><td>28.0%</td></tr>
+                    <tr><td class="eur">3,000</td><td class="eur">42,000</td><td class="eur">~1,000</td><td class="eur" style="color:#059669; font-weight:700;">~2,000</td><td>33.3%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">70,000</td><td class="eur">~1,950</td><td class="eur" style="color:#059669; font-weight:700;">~3,050</td><td>39.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Portuguese salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Portugal = 100.</p>
+
+            <div class="calc-container">
+                <label for="ptPppAmount">Your monthly spending in Portugal (EUR):</label>
+                <input type="number" id="ptPppAmount" value="2000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculatePTPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="ptPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>2,000 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Portugal = 100. If Germany has a PPP index of 147, your 2,000 EUR in Portugal has the same purchasing power as 2,000 x (147/100) = 2,940 EUR in Germany. You'd need ~47% more money in Germany for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Portuguese cities. Lisbon = 100 (most expensive baseline). Data: INE, Numbeo, Idealista 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent T1 (EUR)</th><th>Monthly Pass (EUR)</th><th>Meal Out (EUR)</th><th>Beer 0.5L (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Lisbon</strong></td><td class="eur">900-1,400</td><td class="eur">40</td><td class="eur">10-18</td><td class="eur">2.50</td><td>Capital; most expensive; tech hub; vibrant nightlife</td></tr>
+                    <tr><td><strong>Porto</strong></td><td class="eur">700-1,100</td><td class="eur">40</td><td class="eur">8-15</td><td class="eur">2.00</td><td>Second city; wine, culture, river Douro; growing fast</td></tr>
+                    <tr><td><strong>Braga</strong></td><td class="eur">450-750</td><td class="eur">35</td><td class="eur">7-12</td><td class="eur">1.80</td><td>Young, university city; affordable; religious heritage</td></tr>
+                    <tr><td><strong>Coimbra</strong></td><td class="eur">400-700</td><td class="eur">30</td><td class="eur">7-12</td><td class="eur">1.70</td><td>University of Coimbra (UNESCO); student culture; central</td></tr>
+                    <tr><td><strong>Faro / Algarve</strong></td><td class="eur">600-1,000</td><td class="eur">35</td><td class="eur">9-15</td><td class="eur">2.20</td><td>Tourism-driven; beaches; higher in summer; expat community</td></tr>
+                    <tr><td><strong>Funchal (Madeira)</strong></td><td class="eur">550-900</td><td class="eur">30</td><td class="eur">8-14</td><td class="eur">2.00</td><td>Island paradise; lower IVA; digital nomad hub; year-round mild climate</td></tr>
+                    <tr><td><strong>Aveiro</strong></td><td class="eur">400-650</td><td class="eur">30</td><td class="eur">7-11</td><td class="eur">1.60</td><td>"Venice of Portugal"; canals, ovos moles; affordable</td></tr>
+                    <tr><td><strong>Setubal</strong></td><td class="eur">450-700</td><td class="eur">40</td><td class="eur">7-13</td><td class="eur">1.80</td><td>Near Lisbon; seafood; Arrabida nature park; good value</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Navegante pass:</strong> In the Lisbon metropolitan area, the <strong>Navegante Metropolitano</strong> pass costs just 40 EUR/month for unlimited travel on Metro, Carris (buses/trams), Fertagus, CP trains, and Transtejo ferries. Porto has a similar Andante system. This is one of the cheapest unlimited transit passes in Western Europe.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Portuguese Healthcare System (SNS)</h2>
+            <p class="section-subtitle">Portugal has a universal public healthcare system: the Servico Nacional de Saude (SNS). It's funded through taxes and Seguranca Social contributions.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">SNS</div>
+                    <div class="stat-unit">National Health Service</div>
+                    <div class="stat-desc">Universal coverage for all residents</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">GP visits (since 2024)</div>
+                    <div class="stat-desc">Taxas moderadoras eliminated for primary care</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Utente</div>
+                    <div class="stat-unit">Health number</div>
+                    <div class="stat-desc">Numero de utente - your SNS patient ID</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ADSE</div>
+                    <div class="stat-unit">Civil servant insurance</div>
+                    <div class="stat-desc">Enhanced coverage for public sector workers</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">SNS vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>SNS (Public)</th><th>Private (Seguro de Saude)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Eligibility</strong></td><td>All legal residents with numero de utente</td><td>Anyone willing to pay premiums</td></tr>
+                    <tr><td><strong>Cost</strong></td><td>Free or low taxas moderadoras (co-pays)</td><td>50-200 EUR/month depending on age and coverage</td></tr>
+                    <tr><td><strong>GP access</strong></td><td>Register at Centro de Saude; assigned medico de familia</td><td>Choose any doctor; faster appointments</td></tr>
+                    <tr><td><strong>Waiting times</strong></td><td>Can be long for specialists (weeks to months)</td><td>Much shorter; often same-week appointments</td></tr>
+                    <tr><td><strong>Quality</strong></td><td>Good for emergencies and primary care</td><td>Better facilities; English-speaking doctors common</td></tr>
+                    <tr><td><strong>Emergency (Urgencia)</strong></td><td>Available 24/7 at public hospitals</td><td>Private hospitals also have urgencia (CUF, Lusiadas)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered (SNS)</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (Centro de Saude)</td><td class="eur">Free</td><td>Register at your local centro de saude; get assigned a medico de familia</td></tr>
+                    <tr><td>Specialist visit (SNS)</td><td class="eur">Free - 5 EUR</td><td>Referral from GP required; waiting times can be long</td></tr>
+                    <tr><td>Emergency (Urgencia)</td><td class="eur">Free</td><td>Taxas moderadoras eliminated; triage by Manchester protocol</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">Free</td><td>Fully covered under SNS</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Partial co-pay</td><td>Government subsidizes 15-95% depending on drug type; generics widely available</td></tr>
+                    <tr><td>Dental - basic</td><td class="eur">Limited coverage</td><td>SNS dental very limited; most Portuguese use private dentists (40-80 EUR/visit)</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Covered (SNS)</td><td>Psychiatric care covered; psychology waiting lists very long; private ~50-70 EUR/session</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>Prenatal care, delivery, postnatal; excellent maternity care</td></tr>
+                    <tr><td>SNS 24 helpline</td><td class="eur">Free</td><td>Call 808 24 24 24; nurse triage by phone; available 24/7</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Getting your Utente number:</strong> As a new resident, register at your local <strong>Centro de Saude</strong> (health center) with your residence permit or proof of address. You'll receive a <strong>numero de utente</strong> (patient number) which gives you access to the entire SNS system. Many expats also get private insurance (Multicare, Medis) for faster specialist access -- it's affordable at 50-100 EUR/month.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Portugal (Mercado Imobiliario)</h2>
+            <p class="section-subtitle">The Portuguese rental market has tightened significantly in Lisbon and Porto since 2020. Understanding key terms and platforms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Portuguese Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>T0, T1, T2, T3</strong></td><td>Studio, 1-bed, 2-bed, 3-bed</td><td>T = tipologia; number refers to bedrooms (T0 = studio, T1 = 1 bedroom, etc.)</td></tr>
+                    <tr><td><strong>Renda</strong></td><td>Monthly rent</td><td>Usually includes condominio in apartments; utilities separate</td></tr>
+                    <tr><td><strong>Caucao</strong></td><td>Security deposit</td><td>Typically 1-2 months rent; returned at end of contract</td></tr>
+                    <tr><td><strong>Contrato de arrendamento</strong></td><td>Rental contract</td><td>Must be registered with Financas (tax authority); protects both parties</td></tr>
+                    <tr><td><strong>Fiador</strong></td><td>Guarantor</td><td>Some landlords require a Portuguese guarantor; alternatives: extra deposit or bank guarantee</td></tr>
+                    <tr><td><strong>Condominio</strong></td><td>Building maintenance fee</td><td>Paid monthly for common areas, elevator, cleaning; usually 20-80 EUR/month</td></tr>
+                    <tr><td><strong>Financas / NIF</strong></td><td>Tax office / Tax number</td><td>You need a NIF (Numero de Identificacao Fiscal) before renting; get at Financas office or online</td></tr>
+                    <tr><td><strong>Atestado de residencia</strong></td><td>Proof of residence</td><td>From Junta de Freguesia (local parish council); needed for various registrations</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Idealista.pt</td><td>All types</td><td>Largest housing platform in Portugal; essential for apartment hunting</td></tr>
+                    <tr><td>Imovirtual.com</td><td>All types</td><td>Second largest; good selection of rentals and sales</td></tr>
+                    <tr><td>OLX.pt</td><td>All types</td><td>Classifieds; sometimes direct from owner (particular); beware scams</td></tr>
+                    <tr><td>Casa Sapo</td><td>All types</td><td>Portuguese property portal; aggregates listings</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Casas para alugar em Lisboa/Porto" groups; popular for expats and locals</td></tr>
+                    <tr><td>Uniplaces / Spotahome</td><td>Furnished / short-term</td><td>Good for initial arrival; higher prices but verified listings; no need for fiador</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Golden Visa & Housing Regulations</h3>
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Golden Visa changes (2023+):</strong> Portugal ended Golden Visa real estate investment in residential property. Investment fund options (500,000 EUR minimum) remain available. This change was made to help cool the overheated housing market, particularly in Lisbon and Porto. Meanwhile, the government has introduced <strong>Mais Habitacao</strong> measures to increase housing supply and rent controls.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-home"></i>
+                <strong>Documents you'll need:</strong> NIF (tax number), valid ID/passport, proof of income (last 3 payslips or employment contract), bank statements, and sometimes a fiador (guarantor). In Lisbon, competitive apartments receive 20-50+ applications. Start searching 1-2 months before your move date. Be prepared to pay 2-3 months upfront (first month + caucao).
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Portugal (Transportes)</h2>
+            <p class="section-subtitle">Portugal has improving public transport in cities, an extensive motorway network, and affordable regional trains.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">40</div>
+                    <div class="stat-unit">EUR/month</div>
+                    <div class="stat-desc">Navegante Metropolitano - Lisbon metro area</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">CP</div>
+                    <div class="stat-unit">National rail</div>
+                    <div class="stat-desc">Comboios de Portugal; Alfa Pendular high-speed</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.70</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.55 EUR; fluctuates weekly</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">120</div>
+                    <div class="stat-unit">km/h motorway limit</div>
+                    <div class="stat-desc">Autoestradas (tolled); Via Verde electronic tolling</td>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Navegante Metropolitano (Lisbon)</td><td class="eur">40 EUR/month</td><td>All Metro, Carris buses/trams, CP urban trains, Fertagus, Transtejo ferries</td></tr>
+                    <tr><td>Navegante Municipal (Lisbon city only)</td><td class="eur">30 EUR/month</td><td>Carris + Metro within Lisbon municipality only</td></tr>
+                    <tr><td>Porto Andante pass</td><td class="eur">40 EUR/month</td><td>Metro do Porto, STCP buses; zoned system</td></tr>
+                    <tr><td>Viva Viagem card</td><td class="eur">0.50 EUR (card)</td><td>Rechargeable card for pay-per-trip in Lisbon (1.65 EUR/trip Metro)</td></tr>
+                    <tr><td>Lisboa Viva card</td><td class="eur">Free with photo</td><td>Personal card for Navegante monthly passes; register at ticket office</td></tr>
+                    <tr><td>CP Alfa Pendular (Lisbon-Porto)</td><td class="eur">25-35 EUR</td><td>~2h45; fastest train; book early on cp.pt for best prices</td></tr>
+                    <tr><td>CP Regional trains</td><td class="eur">5-15 EUR</td><td>Slower but scenic; affordable intercity travel</td></tr>
+                    <tr><td>Rede Expressos (bus)</td><td class="eur">10-22 EUR</td><td>Intercity buses; Lisbon-Porto from 10 EUR; comfortable coaches</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">30-80 EUR/month</td><td>Seguro automovel mandatory; Fidelidade, Allianz, Tranquilidade</td></tr>
+                    <tr><td>Motorway tolls (Via Verde)</td><td class="eur">Varies</td><td>Lisbon-Porto ~22 EUR one way; Via Verde electronic tolling device recommended</td></tr>
+                    <tr><td>Bolt / Uber</td><td class="eur">5-15 EUR</td><td>Widely available in cities; Bolt often cheaper than taxi; TVDE licensed</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Get a <strong>Lisboa Viva card</strong> at any Metro station with a photo. Load the Navegante Metropolitano pass (40 EUR) for unlimited travel across the entire Lisbon metro area including trains to Sintra, Cascais, and across the river. For intercity, book CP Alfa Pendular tickets on <strong>cp.pt</strong> at least a week in advance for discounts up to 65%.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Portugal -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Portugal (Trabalhar em Portugal)</h2>
+            <p class="section-subtitle">Portuguese work culture, employment rights, visa options, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">22</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum; many get 22-25 days</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">14</div>
+                    <div class="stat-unit">Monthly salaries/year</div>
+                    <div class="stat-desc">Subsidio de ferias + Subsidio de Natal</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">13</div>
+                    <div class="stat-unit">Feriados (public holidays)</div>
+                    <div class="stat-desc">Plus local municipal holidays</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">D7/D8</div>
+                    <div class="stat-unit">Popular visas</div>
+                    <div class="stat-desc">Passive income / Digital nomad visa</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contrato de trabalho</strong></td><td>Employment contract; written form required</td><td>Fixed-term (a termo) or permanent (sem termo); probation 90-240 days</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 40 hours/week, 8 hours/day</td><td>Maximum 2 hours overtime/day; overtime pay: +25% first hour, +37.5% after</td></tr>
+                    <tr><td><strong>Vacation (Ferias)</strong></td><td>22 working days per year (minimum)</td><td>Plus subsidio de ferias (extra month's pay); must take at least 10 consecutive days</td></tr>
+                    <tr><td><strong>14 months pay</strong></td><td>Subsidio de ferias (June/July) + Subsidio de Natal (November/December)</td><td>Each equals one month's base salary; can be paid monthly (1/12th each month)</td></tr>
+                    <tr><td><strong>Sick leave (Baixa medica)</strong></td><td>Seg. Social pays from day 4 onwards</td><td>55% of salary (days 4-30), 60% (31-90 days), 70% (91-365), 75% (365+)</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>120 days at 100% pay, or 150 days at 80%</td><td>Parental leave can be shared; father gets 28 mandatory days</td></tr>
+                    <tr><td><strong>D7 Visa</strong></td><td>Passive income visa for non-EU citizens</td><td>Need proof of passive income (pension, investments, rental) ~760 EUR/month minimum</td></tr>
+                    <tr><td><strong>D8 Visa (Digital Nomad)</strong></td><td>For remote workers employed outside Portugal</td><td>Need income of at least 4x SMN (~3,480 EUR/month); work for non-Portuguese employer</td></tr>
+                    <tr><td><strong>IFICI (ex-NHR) Regime</strong></td><td>20% flat tax on qualifying income for 10 years</td><td>Must not have been PT tax resident in prior 5 years; for qualifying professions</td></tr>
+                    <tr><td><strong>Dismissal protection</strong></td><td>Strong protections after probation period</td><td>Employer needs just cause; severance: 14-18 days of base salary per year of service</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Feriados (Public Holidays) 2026</h3>
+            <table class="data-table">
+                <thead><tr><th>Date</th><th>Holiday</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>1 January</td><td>Ano Novo (New Year)</td><td></td></tr>
+                    <tr><td>17 April</td><td>Sexta-feira Santa (Good Friday)</td><td>Moves annually</td></tr>
+                    <tr><td>19 April</td><td>Domingo de Pascoa (Easter Sunday)</td><td>Moves annually</td></tr>
+                    <tr><td>25 April</td><td>Dia da Liberdade (Freedom Day)</td><td>Celebrates 1974 Carnation Revolution</td></tr>
+                    <tr><td>1 May</td><td>Dia do Trabalhador (Labour Day)</td><td></td></tr>
+                    <tr><td>4 June</td><td>Corpo de Deus (Corpus Christi)</td><td>Moves annually</td></tr>
+                    <tr><td>10 June</td><td>Dia de Portugal</td><td>Portugal Day / Camoes Day</td></tr>
+                    <tr><td>15 August</td><td>Assuncao de Nossa Senhora</td><td>Assumption of Mary</td></tr>
+                    <tr><td>5 October</td><td>Implantacao da Republica</td><td>Republic Day</td></tr>
+                    <tr><td>1 November</td><td>Dia de Todos os Santos</td><td>All Saints' Day</td></tr>
+                    <tr><td>1 December</td><td>Restauracao da Independencia</td><td>Independence Restoration Day</td></tr>
+                    <tr><td>8 December</td><td>Imaculada Conceicao</td><td>Immaculate Conception</td></tr>
+                    <tr><td>25 December</td><td>Natal (Christmas)</td><td></td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Portuguese work culture:</strong> (1) <strong>Relationships first</strong> -- Portuguese value personal connections; build rapport before diving into business. (2) <strong>Almoco (lunch)</strong> -- lunch is sacred, often 1-1.5 hours; many workers eat together. (3) <strong>Hora portuguesa</strong> -- meetings may start 10-15 minutes late; flexibility is expected. (4) <strong>Hierarchy</strong> -- respect for seniority and titles (Doutor/Doutora, Engenheiro/a). (5) <strong>Remote work</strong> -- growing rapidly, especially in tech; Portugal is a top digital nomad destination.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="portuguese" class="tab-content">
+            <h2 class="section-title">Essential Portuguese Culture & Language</h2>
+            <p class="section-subtitle">Portugal has a rich culture of warmth, hospitality, and saudade. Knowing these basics will help you connect with locals.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Everyday Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Portuguese</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Bom dia / Boa tarde / Boa noite</td><td>Good morning / afternoon / evening</td><td>bom DEE-ah / BOH-ah TAR-deh / BOH-ah NOY-teh</td></tr>
+                    <tr><td>Obrigado / Obrigada</td><td>Thank you (male/female speaker)</td><td>oh-bree-GAH-doo / oh-bree-GAH-dah</td></tr>
+                    <tr><td>Por favor</td><td>Please</td><td>por fah-VOR</td></tr>
+                    <tr><td>Desculpe</td><td>Excuse me / Sorry</td><td>desh-KOOL-peh</td></tr>
+                    <tr><td>Fala ingles?</td><td>Do you speak English?</td><td>FAH-lah in-GLESH</td></tr>
+                    <tr><td>Nao entendo</td><td>I don't understand</td><td>now en-TEN-doo</td></tr>
+                    <tr><td>Onde fica...?</td><td>Where is...?</td><td>ON-deh FEE-kah</td></tr>
+                    <tr><td>Quanto custa?</td><td>How much does it cost?</td><td>KWAN-too KOOSH-tah</td></tr>
+                    <tr><td>Um cafe, por favor</td><td>An espresso, please</td><td>oom kah-FEH por fah-VOR</td></tr>
+                    <tr><td>A conta, por favor</td><td>The bill, please</td><td>ah KON-tah por fah-VOR</td></tr>
+                    <tr><td>Saude!</td><td>Cheers! (when drinking)</td><td>sah-OO-deh</td></tr>
+                    <tr><td>Ate logo / Adeus</td><td>See you later / Goodbye</td><td>ah-TEH LOH-goo / ah-DEYSH</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Bureaucracy Survival Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Portuguese Term</th><th>English</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>NIF</strong></td><td>Tax identification number</td><td>FIRST thing to get; needed for everything (renting, banking, phone contracts)</td></tr>
+                    <tr><td><strong>Financas</strong></td><td>Tax authority office</td><td>Where you get your NIF and handle tax matters; also online at portaldasfinancas.gov.pt</td></tr>
+                    <tr><td><strong>SEF / AIMA</strong></td><td>Immigration service</td><td>Handles residence permits; renamed from SEF to AIMA in 2023; notorious backlogs</td></tr>
+                    <tr><td><strong>Junta de Freguesia</strong></td><td>Local parish council</td><td>Issues atestado de residencia; handles local administrative matters</td></tr>
+                    <tr><td><strong>Numero de utente</strong></td><td>Health service number</td><td>Get at Centro de Saude; needed for SNS healthcare access</td></tr>
+                    <tr><td><strong>Seguranca Social</strong></td><td>Social security</td><td>NISS number for employment; handles pensions, benefits, sick pay</td></tr>
+                    <tr><td><strong>Loja do Cidadao</strong></td><td>One-stop citizen shop</td><td>Multiple government services under one roof; book appointment online</td></tr>
+                    <tr><td><strong>Titulo de residencia</strong></td><td>Residence permit</td><td>For non-EU citizens; apply through AIMA; biometric card</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Saudade</strong> -- untranslatable Portuguese word for a deep longing or nostalgia; central to the national identity and expressed through fado music. (2) <strong>Cafe culture</strong> -- a "cafe" (bica in Lisbon, cimbalino in Porto) is a tiny espresso costing 0.70-1.00 EUR; Portuguese drink several daily, standing at the counter (balcao). (3) <strong>Pastel de nata</strong> -- iconic custard tart; found in every pastelaria; best from Pasteis de Belem in Lisbon. (4) <strong>Fado</strong> -- traditional Portuguese music genre (UNESCO Intangible Heritage); melancholic guitar and vocal; experience it in Alfama (Lisbon) or Coimbra. (5) <strong>Almoco (lunch)</strong> -- the main meal of the day; menu do dia (daily set menu) at local restaurants costs 8-12 EUR for soup + main + drink + coffee. (6) <strong>Hora portuguesa</strong> -- the Portuguese are more relaxed about time; social events may start 15-30 minutes late. (7) <strong>Tipping</strong> -- not mandatory but appreciated; round up or leave 5-10% at restaurants; leave small change at cafes.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Portugal</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~18,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,800</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,500</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal</small></td><td class="eur">800</td><td class="eur">1,200</td><td class="eur">950</td><td class="eur eur-low">+150</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own T1 outside Lisbon/Porto</small></td><td class="eur">1,200</td><td class="eur">1,800</td><td class="eur">1,350</td><td class="eur eur-low">+150</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">1,800</td><td class="eur">2,800</td><td class="eur">2,000</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (Lisbon/Porto)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">2,800</td><td class="eur">4,500</td><td class="eur">3,050</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Lisbon</small></td><td class="eur">3,500</td><td class="eur">5,500</td><td class="eur">3,750</td><td class="eur eur-low">+250</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>NIF</strong> at Financas or through a fiscal representative (non-EU may need one initially). (2) Open a bank account (ActivoBank, Moey, Millennium BCP, CGD). (3) Get your <strong>numero de utente</strong> at the local Centro de Saude. (4) Register with <strong>AIMA</strong> (if non-EU) for your residence permit. (5) Get your <strong>NISS</strong> (social security number) at Seguranca Social. (6) Buy a SIM card (MEO, NOS, or Vodafone; WTF for budget). (7) Get a <strong>Lisboa Viva / Navegante</strong> card (40 EUR/month unlimited transport). (8) Register your rental contract at <strong>Financas</strong>.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Portal das Financas, INE, Seguranca Social Direta) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Portugal Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#006600;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const ptPppCountries = [
+        { name: 'Netherlands', currency: 'EUR', ppp: 154, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 154, region: 'Nordic' },
+        { name: 'Germany', currency: 'EUR', ppp: 147, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 143, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 149, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 150, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 151, region: 'Western Europe' },
+        { name: 'Spain', currency: 'EUR', ppp: 115, region: 'Southern Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 122, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 96, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 74, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 85, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 69, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 62, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 88, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 47, region: 'Eurasia' },
+        { name: 'USA', currency: 'USD', ppp: 162, region: 'North America' },
+        { name: 'Canada', currency: 'CAD', ppp: 140, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 147, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 135, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 124, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 110, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 59, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 34, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 28, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 31, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 35, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 54, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 40, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 44, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 41, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 54, region: 'Southeast Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 162, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 59, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 44, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 54, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 41, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 47, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 34, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 31, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 38, region: 'Africa' },
+        { name: 'UAE', currency: 'AED', ppp: 129, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 85, region: 'Middle East' },
+        { name: 'Switzerland', currency: 'CHF', ppp: 199, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 176, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 169, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 154, region: 'Nordic' },
+        { name: 'Ireland', currency: 'EUR', ppp: 165, region: 'Western Europe' },
+    ];
+
+    function calculatePTPPP() {
+        const amount = parseFloat(document.getElementById('ptPppAmount').value) || 2000;
+        const tbody = document.querySelector('#ptPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#ptPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        ptPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculatePTPPP();
+
+    // Portuguese Tax Calculator
+    function calculatePTTax() {
+        const annualGross = parseFloat(document.getElementById('ptGrossSalary').value) || 25000;
+        const marital = document.getElementById('ptMaritalStatus').value;
+        const nhr = document.getElementById('ptNHR').value;
+
+        // Social Security (employee share: 11%)
+        const socialSecurity = annualGross * 0.11;
+
+        // Taxable income
+        const taxableIncome = annualGross - socialSecurity;
+        const divisor = marital === 'married' ? 2 : 1;
+        const taxablePerPerson = taxableIncome / divisor;
+
+        let incomeTax = 0;
+
+        if (nhr === 'yes') {
+            // IFICI flat rate 20%
+            incomeTax = taxableIncome * 0.20;
+        } else {
+            // Progressive IRS brackets (per person for married filing jointly)
+            let taxPerPerson = 0;
+            if (taxablePerPerson <= 7703) {
+                taxPerPerson = taxablePerPerson * 0.1325;
+            } else if (taxablePerPerson <= 11623) {
+                taxPerPerson = 7703 * 0.1325 + (taxablePerPerson - 7703) * 0.18;
+            } else if (taxablePerPerson <= 16472) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (taxablePerPerson - 11623) * 0.23;
+            } else if (taxablePerPerson <= 21321) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (taxablePerPerson - 16472) * 0.26;
+            } else if (taxablePerPerson <= 27146) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (21321 - 16472) * 0.26 + (taxablePerPerson - 21321) * 0.3275;
+            } else if (taxablePerPerson <= 39791) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (21321 - 16472) * 0.26 + (27146 - 21321) * 0.3275 + (taxablePerPerson - 27146) * 0.37;
+            } else if (taxablePerPerson <= 51997) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (21321 - 16472) * 0.26 + (27146 - 21321) * 0.3275 + (39791 - 27146) * 0.37 + (taxablePerPerson - 39791) * 0.435;
+            } else if (taxablePerPerson <= 81199) {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (21321 - 16472) * 0.26 + (27146 - 21321) * 0.3275 + (39791 - 27146) * 0.37 + (51997 - 39791) * 0.435 + (taxablePerPerson - 51997) * 0.45;
+            } else {
+                taxPerPerson = 7703 * 0.1325 + (11623 - 7703) * 0.18 + (16472 - 11623) * 0.23 + (21321 - 16472) * 0.26 + (27146 - 21321) * 0.3275 + (39791 - 27146) * 0.37 + (51997 - 39791) * 0.435 + (81199 - 51997) * 0.45 + (taxablePerPerson - 81199) * 0.48;
+            }
+            incomeTax = taxPerPerson * divisor;
+        }
+
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        // Solidarity surcharge (taxa adicional de solidariedade)
+        let solidarity = 0;
+        if (taxableIncome > 80000 && nhr !== 'yes') {
+            if (taxableIncome <= 250000) {
+                solidarity = (taxableIncome - 80000) * 0.025;
+            } else {
+                solidarity = (250000 - 80000) * 0.025 + (taxableIncome - 250000) * 0.05;
+            }
+        }
+
+        const totalTax = incomeTax + Math.round(solidarity);
+        const totalDeductions = totalTax + socialSecurity;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 14; // 14 months pay
+        const grossMonthly = annualGross / 14;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('ptTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly (x14):</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>IRS (income tax):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/14).toLocaleString()} EUR</span></div>
+                <div><strong>Seg. Social (11%):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(socialSecurity/14).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly (x14):</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; font-size:13px; color:#64748b;">
+                <div>Annual gross: ${annualGross.toLocaleString()} EUR | Annual net: ${Math.round(netAnnual).toLocaleString()} EUR | Paid over 14 months</div>
+                ${nhr === 'yes' ? '<div style="color:#006600; font-weight:600; margin-top:5px;">IFICI regime: 20% flat rate applied</div>' : ''}
+                ${solidarity > 0 ? `<div>Solidarity surcharge: ${Math.round(solidarity/14)} EUR/mo</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly * 14 / 12 >= 1800 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly * 14 / 12 >= 1800 ? '#059669' : '#dc2626'};">${netMonthly * 14 / 12 >= 1800 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~1,800 EUR net/month | You have ${Math.round(netMonthly * 14 / 12).toLocaleString()} (${netMonthly * 14 / 12 >= 1800 ? '+' : ''}${Math.round(netMonthly * 14 / 12 - 1800).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

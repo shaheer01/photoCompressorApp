@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Singapore 2026. Monthly expenses, salary by profession, tax calculator, CPF, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="singapore living cost, singapore salary, singapore tax, cost of living singapore, expat singapore, CPF, HDB, COE">
+    <link rel="canonical" href="https://compressphotos.cloud/singapore-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F8;&#x1F1EC;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #EF3340 0%, #1a1a2e 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #EF3340; border-bottom: 3px solid #EF3340; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #EF3340; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #EF3340; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #EF3340, #FF6B6B);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #EF3340; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #EF3340; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #EF3340; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #EF3340, #1a1a2e); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#EF3340; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Tax, healthcare & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html" style="background:#fff5f5;"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div><strong>Singapore</strong><small>You are here</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Singapore Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Singapore tax system, CPF, healthcare, and PPP calculator. For expats and newcomers planning to move to the Lion City.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" alt="Marina Bay Sands and Singapore skyline at night" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="sgbasics">Singapore Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Singapore (Couple)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in SGD. Based on MOM data, real 2026 figures, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Singapore has very low income tax compared to most developed countries. Hawker food is incredibly affordable, but rent and car ownership are among the world's most expensive. See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">SGD/month (low)</div>
+                    <div class="stat-desc">Frugal couple in HDB flat</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~8,500</div>
+                    <div class="stat-unit">SGD/month (high)</div>
+                    <div class="stat-desc">Comfortable condo lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,500</div>
+                    <div class="stat-unit">SGD gross needed</div>
+                    <div class="stat-desc">Gross salary to cover mid-range expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~78,000</div>
+                    <div class="stat-unit">SGD avg annual</div>
+                    <div class="stat-desc">Singapore median gross salary</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (SGD)</th><th>High (SGD)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent - HDB 1-bedroom</td><td class="eur">2,000</td><td class="eur">3,000</td><td>HDB flats are most common; location matters hugely</td></tr>
+                    <tr><td></td><td>Rent - Condo 1-bedroom</td><td class="eur">3,000</td><td class="eur">5,000+</td><td>Pool, gym, security; Orchard/CBD area at top end</td></tr>
+                    <tr><td></td><td>Utilities (electricity, water, gas)</td><td class="eur">150</td><td class="eur">300</td><td>Air-con is the biggest cost; SP Group is main provider</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">40</td><td class="eur">60</td><td>Singtel, StarHub, M1; fibre widely available</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">40</td><td class="eur">80</td><td>Singtel, StarHub, M1, MVNOs like Circles.Life, GIGA</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">2,230</td><td class="eur">3,440</td><td>Using HDB low / Condo high range</td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Hawker centres / food courts (2 adults)</td><td class="eur">600</td><td class="eur">800</td><td>$3-6 per meal; chicken rice, laksa, nasi lemak</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">800</td><td class="eur">1,200</td><td>FairPrice, Cold Storage, Sheng Siong; imported goods expensive</td></tr>
+                    <tr><td></td><td>Dining out / restaurants</td><td class="eur">200</td><td class="eur">600</td><td>Restaurants 30-80 SGD/person; alcohol very expensive</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">1,600</td><td class="eur">2,600</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>MRT / Bus (EZ-Link, 2 persons)</td><td class="eur">100</td><td class="eur">150</td><td>$0.80-2.50 per trip; very efficient network</td></tr>
+                    <tr><td></td><td>Taxi / Grab</td><td class="eur">100</td><td class="eur">200</td><td>Grab is the dominant ride-hailing app</td></tr>
+                    <tr><td></td><td>Car ownership</td><td class="eur" colspan="2" style="text-align:center; color:#dc2626; font-weight:700;">NOT RECOMMENDED</td><td>COE costs $100K+! Total car cost can exceed $200K</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">200</td><td class="eur">350</td><td>Without car ownership</td></tr>
+
+                    <tr class="category-header"><td colspan="5">Healthcare</td></tr>
+                    <tr><td></td><td>MediShield Life (mandatory)</td><td class="eur">0</td><td class="eur">0</td><td>Paid via CPF Medisave (citizens/PRs); foreigners need private</td></tr>
+                    <tr><td></td><td>Private health insurance</td><td class="eur">200</td><td class="eur">400</td><td>Recommended for expats; company may provide</td></tr>
+                    <tr class="subtotal"><td></td><td>Healthcare subtotal</td><td class="eur">200</td><td class="eur">400</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">100</td><td class="eur">200</td><td>Uniqlo, H&M popular; Orchard Road for shopping</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">80</td><td class="eur">120</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Gym / fitness</td><td class="eur">100</td><td class="eur">200</td><td>ActiveSG $2.50/entry; private gyms 100-250 SGD/month</td></tr>
+                    <tr><td></td><td>Entertainment</td><td class="eur">200</td><td class="eur">400</td><td>Movies, drinks (alcohol taxed heavily), activities</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">480</td><td class="eur">920</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~4,710</td><td class="eur">~7,710</td><td>Realistic range: 4,500 - 8,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Singapore</h2>
+            <p class="section-subtitle">Monthly gross salaries in SGD. Data from MOM, Glassdoor, PayScale 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>AWS (Annual Wage Supplement):</strong> Many Singapore employers pay a 13th month salary, known as the AWS. This is customary but not mandatory. Some companies also offer performance bonuses of 1-6 months. The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">15,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:80%;">12,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">10,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">9,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">8,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chemical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">7,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">7,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">6,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:37%;">5,500 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:37%;">5,500 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">5,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Servant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">5,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">4,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">4,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:21%;">3,200 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:20%;">3,000 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:17%;">2,500 SGD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:15%;">2,200 SGD</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>No minimum wage (mostly):</strong> Singapore does not have a universal minimum wage. However, the Progressive Wage Model (PWM) sets minimum wages for specific sectors: cleaning, security, landscape, retail, food services, and waste management. Wages start from ~$1,400-1,600/month for entry-level PWM roles.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Singapore Tax System</h2>
+            <p class="section-subtitle">Singapore has one of the lowest income tax rates in the developed world. Progressive system with generous exemptions. Updated for YA 2026.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Brackets (Resident Individuals)</h3>
+            <table class="data-table">
+                <thead><tr><th>Chargeable Income (SGD)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 20,000</td><td class="eur">0%</td><td>First $20K is tax-free</td></tr>
+                    <tr><td>20,001 - 30,000</td><td class="eur">2%</td><td>Tax on next $10K = $200</td></tr>
+                    <tr><td>30,001 - 40,000</td><td class="eur">3.5%</td><td>Tax on next $10K = $350</td></tr>
+                    <tr><td>40,001 - 80,000</td><td class="eur">7%</td><td>Tax on next $40K = $2,800</td></tr>
+                    <tr><td>80,001 - 120,000</td><td class="eur">11.5%</td><td>Tax on next $40K = $4,600</td></tr>
+                    <tr><td>120,001 - 160,000</td><td class="eur">15%</td><td>Tax on next $40K = $6,000</td></tr>
+                    <tr><td>160,001 - 200,000</td><td class="eur">18%</td><td>Tax on next $40K = $7,200</td></tr>
+                    <tr><td>200,001 - 240,000</td><td class="eur">19%</td><td>Tax on next $40K = $7,600</td></tr>
+                    <tr><td>240,001 - 280,000</td><td class="eur">19.5%</td><td>Tax on next $40K = $7,800</td></tr>
+                    <tr><td>280,001 - 320,000</td><td class="eur">20%</td><td>Tax on next $40K = $8,000</td></tr>
+                    <tr><td>320,001+</td><td class="eur">22%</td><td>Top marginal rate</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">CPF Contributions (Central Provident Fund)</h3>
+            <table class="data-table">
+                <thead><tr><th>Component</th><th>Employee</th><th>Employer</th><th>Total</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>CPF (age 55 and below)</strong></td><td class="eur">20%</td><td class="eur">17%</td><td class="eur">37%</td><td>For Singapore citizens and PRs only; foreigners exempt</td></tr>
+                    <tr><td><strong>CPF (age 55-60)</strong></td><td class="eur">15%</td><td class="eur">14.5%</td><td class="eur">29.5%</td><td>Reduced rates for older workers</td></tr>
+                    <tr><td><strong>CPF (age 60-65)</strong></td><td class="eur">9.5%</td><td class="eur">11%</td><td class="eur">20.5%</td><td>Further reduced</td></tr>
+                    <tr><td><strong>CPF Ordinary Wage ceiling</strong></td><td colspan="3" class="eur">$6,800/month</td><td>CPF contributions capped at this amount</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Other Taxes</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>GST (Goods & Services Tax)</strong></td><td class="eur">9%</td><td>Applied to most goods and services</td></tr>
+                    <tr><td><strong>Capital gains tax</strong></td><td class="eur">0%</td><td>No capital gains tax in Singapore</td></tr>
+                    <tr><td><strong>Inheritance / estate tax</strong></td><td class="eur">0%</td><td>Abolished since 2008</td></tr>
+                    <tr><td><strong>Dividend tax</strong></td><td class="eur">0%</td><td>One-tier corporate tax system; no dividend tax</td></tr>
+                    <tr><td><strong>Non-resident tax rate</strong></td><td class="eur">15% or resident rate</td><td>Whichever is higher; for employment income</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="sgGrossSalary">Annual Gross Salary (SGD):</label>
+                <input type="number" id="sgGrossSalary" value="80000" min="0" max="1000000">
+                <label for="sgResidentType">Resident Type:</label>
+                <select id="sgResidentType">
+                    <option value="citizen">Singapore Citizen / PR (CPF applies)</option>
+                    <option value="foreigner">Foreigner (No CPF)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateSGTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="sgTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + CPF</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">4,000</td><td class="eur">48,000</td><td class="eur">~1,000</td><td class="eur" style="color:#059669; font-weight:700;">~3,000</td><td>25.0%</td></tr>
+                    <tr><td class="eur">6,000</td><td class="eur">72,000</td><td class="eur">~1,500</td><td class="eur" style="color:#059669; font-weight:700;">~4,500</td><td>25.0%</td></tr>
+                    <tr><td class="eur">8,000</td><td class="eur">96,000</td><td class="eur">~1,900</td><td class="eur" style="color:#059669; font-weight:700;">~6,100</td><td>23.8%</td></tr>
+                    <tr><td class="eur">10,000</td><td class="eur">120,000</td><td class="eur">~2,200</td><td class="eur" style="color:#059669; font-weight:700;">~7,800</td><td>22.0%</td></tr>
+                    <tr><td class="eur">15,000</td><td class="eur">180,000</td><td class="eur">~3,100</td><td class="eur" style="color:#059669; font-weight:700;">~11,900</td><td>20.7%</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Note:</strong> CPF (20% employee share) is technically not a tax -- it goes into your personal retirement/housing/healthcare savings accounts. For citizens/PRs, the effective "tax" rate is very low (often under 5%). Foreigners on EP/S Pass pay no CPF, so their take-home is even higher.
+            </div>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Singapore salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Singapore = 100.</p>
+
+            <div class="calc-container">
+                <label for="sgPppAmount">Your monthly spending in Singapore (SGD):</label>
+                <input type="number" id="sgPppAmount" value="5000" min="100" max="100000">
+                <button class="calc-btn" onclick="calculateSGPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="sgPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>5,000 SGD buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Singapore = 100. If India has a PPP index of 21, your 5,000 SGD in Singapore has the same purchasing power as 5,000 x (21/100) = 1,050 SGD in India. You'd need ~79% less money in India for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by Area / District</h2>
+            <p class="section-subtitle">Comparing major areas in Singapore. Orchard/CBD = most expensive baseline. Data: PropertyGuru, 99.co, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>Area</th><th>Avg Rent 1-bed (SGD)</th><th>Meal at Hawker (SGD)</th><th>Coffee (SGD)</th><th>Lifestyle Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Orchard / CBD</strong></td><td class="eur">3,500-5,500</td><td class="eur">5-8</td><td class="eur">6-8</td><td>Most expensive; luxury shopping, business district, expat hub</td></tr>
+                    <tr><td><strong>Marina Bay</strong></td><td class="eur">3,200-5,000</td><td class="eur">5-7</td><td class="eur">5-7</td><td>Iconic skyline; Gardens by the Bay; upscale living</td></tr>
+                    <tr><td><strong>Tiong Bahru</strong></td><td class="eur">2,500-3,800</td><td class="eur">3.50-5</td><td class="eur">5-7</td><td>Hipster cafes, heritage shophouses, trendy but charming</td></tr>
+                    <tr><td><strong>Jurong</strong></td><td class="eur">1,800-2,800</td><td class="eur">3-4.50</td><td class="eur">2-4</td><td>West side; Jurong Lake District developing; more affordable</td></tr>
+                    <tr><td><strong>Tampines</strong></td><td class="eur">1,800-2,800</td><td class="eur">3-4.50</td><td class="eur">2-4</td><td>East side; large HDB town; family-friendly; good amenities</td></tr>
+                    <tr><td><strong>Woodlands</strong></td><td class="eur">1,500-2,500</td><td class="eur">3-4</td><td class="eur">1.50-3</td><td>North; near JB (Malaysia) border; most affordable; improving MRT</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Kopi vs coffee:</strong> A traditional "kopi" at a hawker centre costs $1.20-2.00, while a latte at a cafe costs $5-8. Living in heartland areas (Jurong, Tampines, Woodlands) can save you 30-50% on rent compared to Orchard/CBD, with MRT access keeping commute times manageable.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Singapore Healthcare System</h2>
+            <p class="section-subtitle">Singapore uses a hybrid public-private system built on the "3M" framework: Medisave, MediShield Life, and Medifund.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">3M</div>
+                    <div class="stat-unit">Framework</div>
+                    <div class="stat-desc">Medisave + MediShield Life + Medifund</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">$10-20</div>
+                    <div class="stat-unit">SGD polyclinic visit</div>
+                    <div class="stat-desc">Subsidized for citizens; PRs pay slightly more</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Top 10</div>
+                    <div class="stat-unit">World ranking</div>
+                    <div class="stat-desc">WHO ranks Singapore among the best healthcare systems</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">CHAS</div>
+                    <div class="stat-unit">Subsidy card</div>
+                    <div class="stat-desc">Community Health Assist Scheme for lower/middle income</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">The 3M Healthcare Framework</h3>
+            <table class="data-table">
+                <thead><tr><th>Component</th><th>What It Is</th><th>Who It Covers</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Medisave</strong></td><td>Mandatory medical savings account</td><td>Citizens & PRs</td><td>Part of CPF (8-10.5% of salary goes to Medisave); can be used for hospitalization, approved outpatient treatments, insurance premiums</td></tr>
+                    <tr><td><strong>MediShield Life</strong></td><td>Basic health insurance</td><td>All citizens & PRs (mandatory)</td><td>Covers large hospital bills and expensive outpatient treatments; premiums paid via Medisave; lifetime coverage</td></tr>
+                    <tr><td><strong>Medifund</strong></td><td>Safety net endowment fund</td><td>Needy citizens</td><td>Government safety net for those who cannot afford bills even after Medisave + MediShield</td></tr>
+                    <tr><td><strong>Integrated Shield Plans (IP)</strong></td><td>Private insurance top-up</td><td>Optional for citizens & PRs</td><td>Offered by private insurers (AIA, Prudential, Great Eastern); upgrades to private hospital / Class A wards</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Healthcare Costs</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost (SGD)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Polyclinic visit (citizen)</td><td class="eur">10-20</td><td>Government-run; subsidized; need to queue or book online</td></tr>
+                    <tr><td>Polyclinic visit (PR)</td><td class="eur">20-40</td><td>Less subsidized than citizens</td></tr>
+                    <tr><td>GP visit (private clinic)</td><td class="eur">30-80</td><td>No referral needed; faster but more expensive</td></tr>
+                    <tr><td>Specialist visit (public)</td><td class="eur">30-100</td><td>Referral from polyclinic needed for subsidy</td></tr>
+                    <tr><td>A&E (public hospital)</td><td class="eur">100-200</td><td>Emergency department; additional charges for treatment</td></tr>
+                    <tr><td>Hospital stay (subsidized ward)</td><td class="eur">50-200/day</td><td>Class B2/C wards heavily subsidized for citizens</td></tr>
+                    <tr><td>Hospital stay (private)</td><td class="eur">500-2,000/day</td><td>Mount Elizabeth, Gleneagles, Raffles Hospital</td></tr>
+                    <tr><td>Dental - basic check-up</td><td class="eur">40-80</td><td>Cleaning and check-up; polyclinics cheaper</td></tr>
+                    <tr><td>Dental - filling</td><td class="eur">60-200</td><td>Depends on material and clinic type</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Pioneer & Merdeka Generation:</strong> Seniors from the Pioneer Generation (born before 1950, received citizenship by 1987) and Merdeka Generation (born 1950-1959) receive additional healthcare subsidies, including outpatient care discounts at polyclinics, top-ups to Medisave, and premium subsidies for MediShield Life.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-user-shield"></i>
+                <strong>For expats/foreigners:</strong> You are NOT covered by MediShield Life or Medisave. You must get private health insurance. Many employers provide group insurance. Without insurance, a hospital stay can cost thousands. Always verify your coverage before arriving.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Singapore</h2>
+            <p class="section-subtitle">Housing is the single biggest expense in Singapore. Understanding HDB, condos, and stamp duty is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Housing Types</h3>
+            <table class="data-table">
+                <thead><tr><th>Type</th><th>Who Can Buy</th><th>Price Range</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>HDB Flat (BTO)</strong></td><td>Citizens only (new)</td><td class="eur">$300K - $600K+</td><td>Build-To-Order; 99-year lease; subsidized; long wait (3-5 years); ballot system</td></tr>
+                    <tr><td><strong>HDB Flat (Resale)</strong></td><td>Citizens & PRs</td><td class="eur">$400K - $1M+</td><td>Immediate availability; CPF housing grants available for citizens</td></tr>
+                    <tr><td><strong>Condominium</strong></td><td>Anyone (including foreigners)</td><td class="eur">$1M - $5M+</td><td>99-year or freehold; pool, gym, security; ABSD applies</td></tr>
+                    <tr><td><strong>Landed Property</strong></td><td>Citizens only (restricted)</td><td class="eur">$3M - $30M+</td><td>Terraced, semi-D, bungalow; foreigners need special approval from SLA</td></tr>
+                    <tr><td><strong>Rental (HDB room)</strong></td><td>Anyone</td><td class="eur">$800 - $1,500/mo</td><td>Renting a room in an HDB flat; common for singles/students</td></tr>
+                    <tr><td><strong>Rental (whole HDB)</strong></td><td>Anyone</td><td class="eur">$2,000 - $3,500/mo</td><td>Minimum 6-month lease for non-citizens</td></tr>
+                    <tr><td><strong>Rental (condo)</strong></td><td>Anyone</td><td class="eur">$3,000 - $6,000+/mo</td><td>Popular with expats; usually 1-2 year lease</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Stamp Duty (Buyer's Stamp Duty + ABSD)</h3>
+            <table class="data-table">
+                <thead><tr><th>Buyer Type</th><th>BSD</th><th>ABSD</th><th>Total Additional Cost</th></tr></thead>
+                <tbody>
+                    <tr><td>Singapore citizen (1st property)</td><td class="eur">Up to 6%</td><td class="eur">0%</td><td>BSD only</td></tr>
+                    <tr><td>Singapore citizen (2nd property)</td><td class="eur">Up to 6%</td><td class="eur">20%</td><td>Significant penalty for 2nd home</td></tr>
+                    <tr><td>PR (1st property)</td><td class="eur">Up to 6%</td><td class="eur">5%</td><td>Moderate additional cost</td></tr>
+                    <tr><td><strong>Foreigner (any property)</strong></td><td class="eur">Up to 6%</td><td class="eur" style="color:#dc2626; font-weight:700;">60%</td><td style="color:#dc2626; font-weight:700;">Extremely expensive! On a $1.5M condo, ABSD alone = $900K</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>PropertyGuru.com.sg</td><td>All types</td><td>Largest property portal in Singapore; buy and rent</td></tr>
+                    <tr><td>99.co</td><td>All types</td><td>Modern interface; good filters; popular with younger renters</td></tr>
+                    <tr><td>SRX.com.sg</td><td>All types</td><td>Good for price data and market trends</td></tr>
+                    <tr><td>Carousell Property</td><td>Rental / Resale</td><td>Peer-to-peer listings; sometimes direct from owner</td></tr>
+                    <tr><td>Facebook groups</td><td>Room rental</td><td>"Singapore Room Rental" groups; verify in person before paying</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Foreigners beware:</strong> The 60% Additional Buyer's Stamp Duty (ABSD) makes buying property in Singapore extremely expensive for foreigners. Most expats rent. If you're on Employment Pass, renting a condo or HDB room is the standard approach. Always check URA and HDB rules before signing anything.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Singapore</h2>
+            <p class="section-subtitle">Singapore has world-class public transport but the most expensive car ownership anywhere on Earth.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">5</div>
+                    <div class="stat-unit">MRT lines</div>
+                    <div class="stat-desc">North-South, East-West, Circle, Downtown, Thomson-East Coast</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">$100K+</div>
+                    <div class="stat-unit">COE alone</div>
+                    <div class="stat-desc">Certificate of Entitlement just for the right to own a car</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">$0.80-2.50</div>
+                    <div class="stat-unit">SGD per MRT trip</div>
+                    <div class="stat-desc">Distance-based fare with EZ-Link/SimplyGo</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Grab</div>
+                    <div class="stat-unit">Ride-hailing king</div>
+                    <div class="stat-desc">Southeast Asia's super app; replaced Uber</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost (SGD)</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>MRT (Mass Rapid Transit)</td><td class="eur">$0.80-2.50/trip</td><td>5 lines covering most of the island; efficient, clean, air-conditioned</td></tr>
+                    <tr><td>Public bus</td><td class="eur">$0.80-2.20/trip</td><td>Extensive network; integrates with MRT via EZ-Link transfers</td></tr>
+                    <tr><td>EZ-Link / SimplyGo card</td><td class="eur">$5 deposit</td><td>Contactless card for all public transport; SimplyGo also accepts credit cards</td></tr>
+                    <tr><td>Monthly concession pass</td><td class="eur">$120-128</td><td>Unlimited bus + MRT for adults; much cheaper passes for students/seniors</td></tr>
+                    <tr><td>Grab (ride-hailing)</td><td class="eur">$8-30/trip</td><td>GrabCar, JustGrab; surge pricing during peak hours; GrabShare for budget</td></tr>
+                    <tr><td>Taxi (metered)</td><td class="eur">$3.90 flag-down</td><td>ComfortDelGro, SMRT, Trans-Cab; peak hour & midnight surcharges</td></tr>
+                    <tr><td>COE (Certificate of Entitlement)</td><td class="eur" style="color:#dc2626;">$100,000+</td><td>Just for the RIGHT to own a car; valid 10 years; bidding system</td></tr>
+                    <tr><td>ARF (Additional Registration Fee)</td><td class="eur" style="color:#dc2626;">100% of OMV</td><td>Tax equal to the car's Open Market Value; doubles the price</td></tr>
+                    <tr><td>ERP (Electronic Road Pricing)</td><td class="eur">$0.50-6.00/pass</td><td>Congestion pricing at gantries; varies by time and location</td></tr>
+                    <tr><td>Cycling</td><td class="eur">Free (own bike)</td><td>Growing network of PCN (Park Connector Network); 300+ km of paths</td></tr>
+                    <tr><td>E-scooter (PMD)</td><td class="eur">Restricted</td><td>Banned on footpaths since 2019; only allowed on cycling paths; must be registered</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-car"></i>
+                <strong>Car ownership reality:</strong> A Toyota Corolla that costs $25,000 USD in most countries will cost $150,000+ SGD in Singapore after COE, ARF, GST, and registration fees. Most Singaporeans use public transport or Grab. Unless you have a very specific need, do NOT buy a car in Singapore -- it is genuinely the most expensive place on Earth to own one.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Singapore</h2>
+            <p class="section-subtitle">Singapore's work culture, employment rights, and visa framework for foreigners.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">14</div>
+                    <div class="stat-unit">Days annual leave</div>
+                    <div class="stat-desc">Minimum by law; increases with tenure (up to 21+)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">11</div>
+                    <div class="stat-unit">Public holidays</div>
+                    <div class="stat-desc">Multi-ethnic: Chinese NY, Hari Raya, Deepavali, Christmas</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">16 weeks</div>
+                    <div class="stat-unit">Maternity leave</div>
+                    <div class="stat-desc">Government-paid for first 2 children; 12 weeks for 3rd+</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">63</div>
+                    <div class="stat-unit">Retirement age</div>
+                    <div class="stat-desc">Minimum retirement age; re-employment up to 68</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Pass Framework</h3>
+            <table class="data-table">
+                <thead><tr><th>Pass Type</th><th>Min Salary</th><th>Who It's For</th><th>Key Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Employment Pass (EP)</strong></td><td class="eur">$5,600+/month</td><td>Professionals, managers, executives</td><td>COMPASS framework points-based; employer must sponsor; renewable</td></tr>
+                    <tr><td><strong>S Pass</strong></td><td class="eur">$3,150+/month</td><td>Mid-skilled workers</td><td>Quota and levy apply to employer; max 10-18% of workforce</td></tr>
+                    <tr><td><strong>Work Permit</strong></td><td class="eur">Varies</td><td>Semi-skilled workers</td><td>Source country restrictions; levy; specific sectors only</td></tr>
+                    <tr><td><strong>ONE Pass</strong></td><td class="eur">$30,000+/month</td><td>Top talent</td><td>5-year pass; spouse can work; not tied to single employer</td></tr>
+                    <tr><td><strong>EntrePass</strong></td><td class="eur">N/A</td><td>Entrepreneurs</td><td>For starting a business; must meet innovation/investment criteria</td></tr>
+                    <tr><td><strong>Dependant Pass (DP)</strong></td><td class="eur">N/A</td><td>Spouse/children of EP/S Pass</td><td>DP holders need LOC (Letter of Consent) to work</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Employment Rights</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Employment Act</strong></td><td>Covers all employees except seafarers, domestic workers, and statutory board/civil servants</td><td>Part IV additional protections for workers earning up to $4,500/month</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 44 hours/week (max 48 with OT)</td><td>Overtime pay at 1.5x for non-exempt employees</td></tr>
+                    <tr><td><strong>Annual leave</strong></td><td>Minimum 7 days (1st year), increasing to 14 days (8th year)</td><td>Many companies offer 14-21 days from the start</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>14 days outpatient + 60 days hospitalization per year</td><td>Must be certified by company doctor or approved clinic</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>16 weeks (first 2 children); Government-Paid Maternity Leave (GPML)</td><td>Employer pays first 8 weeks; government reimburses last 8 weeks</td></tr>
+                    <tr><td><strong>Paternity leave</strong></td><td>2 weeks government-paid</td><td>For married fathers; child must be Singapore citizen</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>Typically 1-3 months</td><td>Depends on contract; during probation usually 1 week - 1 month</td></tr>
+                    <tr><td><strong>CPF contributions</strong></td><td>Employee 20% + Employer 17% (citizens/PRs under 55)</td><td>Foreigners do not contribute to CPF</td></tr>
+                    <tr><td><strong>COMPASS Framework</strong></td><td>Points-based system for EP applications</td><td>Evaluates salary, qualifications, diversity, support for local employment; min 40 points</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Work culture:</strong> (1) <strong>Meritocracy</strong> -- Singapore values performance and results; promotions are merit-based. (2) <strong>Long hours</strong> -- work culture can be intense; 50-60 hour weeks are common in finance and consulting. (3) <strong>Hierarchical</strong> -- respect for seniority; "face" culture matters. (4) <strong>Multi-cultural</strong> -- workplaces are diverse; English is the working language. (5) <strong>Networking</strong> -- guanxi (relationships) and connections matter; attend industry events.
+            </div>
+        </div>
+
+        <!-- TAB 10: Singapore Basics -->
+        <div id="sgbasics" class="tab-content">
+            <h2 class="section-title">Essential Singapore Terms & Culture</h2>
+            <p class="section-subtitle">Singapore is a unique melting pot of Chinese, Malay, Indian, and Western cultures. Here's what you need to know.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Singlish Survival Guide</h3>
+            <table class="data-table">
+                <thead><tr><th>Singlish</th><th>Meaning</th><th>Example / Context</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Lah</strong></td><td>Emphasis particle (most iconic)</td><td>"Can lah!" = "Sure, no problem!"; softens or emphasizes statements</td></tr>
+                    <tr><td><strong>Can / Cannot</strong></td><td>Yes / No (universal answer)</td><td>"Can you help?" "Can." -- the most Singaporean response possible</td></tr>
+                    <tr><td><strong>Shiok</strong></td><td>Awesome, delicious, satisfying</td><td>"This laksa damn shiok!" = "This laksa is incredible!"</td></tr>
+                    <tr><td><strong>Kiasu</strong></td><td>Fear of missing out / competitive</td><td>"So kiasu, queue 2 hours for new restaurant" -- a defining national trait</td></tr>
+                    <tr><td><strong>Chope</strong></td><td>To reserve (usually a hawker seat)</td><td>Place tissue packet on table to "chope" your seat -- sacred unwritten rule</td></tr>
+                    <tr><td><strong>Makan</strong></td><td>To eat (from Malay)</td><td>"Let's go makan" = "Let's go eat"</td></tr>
+                    <tr><td><strong>Paiseh</strong></td><td>Embarrassed / shy / sorry</td><td>"Paiseh, can I squeeze through?" -- polite way to apologize</td></tr>
+                    <tr><td><strong>Atas</strong></td><td>High-class / fancy / posh</td><td>"Wah, this restaurant very atas" = "This place is fancy"</td></tr>
+                    <tr><td><strong>Sian</strong></td><td>Bored / tired / fed up</td><td>"Monday again, sian..." -- universal Monday mood</td></tr>
+                    <tr><td><strong>Bo jio</strong></td><td>Didn't invite me!</td><td>"You go eat without me? Bo jio!" -- playful complaint</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Key Acronyms & Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Term</th><th>Full Name</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>HDB</strong></td><td>Housing & Development Board</td><td>80% of Singaporeans live in HDB flats; government-built public housing</td></tr>
+                    <tr><td><strong>COE</strong></td><td>Certificate of Entitlement</td><td>Bidding certificate to own a car; costs $100K+; valid 10 years</td></tr>
+                    <tr><td><strong>CPF</strong></td><td>Central Provident Fund</td><td>Mandatory savings for retirement, housing, healthcare; 37% of salary</td></tr>
+                    <tr><td><strong>ERP</strong></td><td>Electronic Road Pricing</td><td>Congestion charge system; gantries charge during peak hours</td></tr>
+                    <tr><td><strong>IRAS</strong></td><td>Inland Revenue Authority of Singapore</td><td>Tax authority; file taxes via myTax Portal by April 18 each year</td></tr>
+                    <tr><td><strong>SingPass</strong></td><td>Singapore Personal Access</td><td>Digital identity for all government e-services; essential for everything</td></tr>
+                    <tr><td><strong>NRIC / FIN</strong></td><td>National Registration IC / Foreign ID Number</td><td>Your identity number; needed for everything from banking to healthcare</td></tr>
+                    <tr><td><strong>NEA</strong></td><td>National Environment Agency</td><td>Handles hawker centres, environment, dengue prevention</td></tr>
+                    <tr><td><strong>MOM</strong></td><td>Ministry of Manpower</td><td>Work pass applications, employment disputes, labour laws</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Rules & Fines</h3>
+            <div class="info-box">
+                <i class="fas fa-gavel"></i>
+                <strong>Singapore is a "fine" city (literally):</strong> (1) <strong>Chewing gum</strong> -- importing, selling, and distributing is banned (therapeutic gum from dentists is OK). (2) <strong>Littering</strong> -- $300 fine for first offence; repeat offenders face Corrective Work Orders. (3) <strong>Smoking</strong> -- banned in most public places; designated smoking areas only. (4) <strong>Jaywalking</strong> -- $50 fine; within 50m of a crossing. (5) <strong>Durian</strong> -- banned on MRT, buses, and most hotels (the smell!). (6) <strong>Eating/drinking on MRT</strong> -- $500 fine. These are enforced.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Hawker Culture (UNESCO Heritage)</h3>
+            <div class="info-box">
+                <i class="fas fa-utensils"></i>
+                <strong>Hawker centres are Singapore's soul:</strong> UNESCO-inscribed in 2020. Over 100 hawker centres island-wide serving incredible food at $3-6 per plate. Must-try: chicken rice, laksa, char kway teow, nasi lemak, roti prata, satay, bak kut teh. Always "chope" (reserve) your seat with a tissue packet. Tipping is NOT expected anywhere in Singapore -- not at hawkers, not at restaurants, not in taxis. Some restaurants add 10% service charge automatically.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Multi-Ethnic Society</h3>
+            <div class="info-box">
+                <i class="fas fa-users"></i>
+                <strong>Four official languages:</strong> English (working language), Mandarin, Malay (national language), Tamil. The population is roughly 74% Chinese, 13% Malay, 9% Indian, 3% others. Public holidays reflect all major ethnic and religious celebrations: Chinese New Year, Hari Raya Puasa, Hari Raya Haji, Deepavali, Christmas, Vesak Day. This diversity is a source of national pride and is reflected in the food, festivals, and daily life.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Singapore</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~60,000</div>
+                    <div class="stat-unit">SGD/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in HDB</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~96,000</div>
+                    <div class="stat-unit">SGD/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in HDB, mid-range lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">SGD/month minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal, HDB)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,500</div>
+                    <div class="stat-unit">SGD/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (SGD)</th><th>Gross Salary Needed (SGD)</th><th>Net After Tax/CPF</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>HDB room rental, very frugal</small></td><td class="eur">2,500</td><td class="eur">3,500</td><td class="eur">2,800</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own HDB rental, modest</small></td><td class="eur">3,500</td><td class="eur">5,000</td><td class="eur">4,000</td><td class="eur eur-low">+500</td></tr>
+                    <tr><td><strong>Couple (HDB, frugal)</strong><br><small>2 adults, hawker food focus</small></td><td class="eur">4,500</td><td class="eur">6,500</td><td class="eur">5,200</td><td class="eur eur-low">+700</td></tr>
+                    <tr><td><strong>Couple (condo, comfortable)</strong><br><small>2 adults, dining out regularly</small></td><td class="eur">8,500</td><td class="eur">11,000</td><td class="eur">8,800</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, condo</small></td><td class="eur">12,000</td><td class="eur">16,000</td><td class="eur">12,800</td><td class="eur eur-low">+800</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Collect your <strong>NRIC (citizens) or FIN card</strong> (foreigners) from ICA. (2) Register for <strong>SingPass</strong> (singpass.gov.sg) -- your digital identity for all government services. (3) Open a bank account (DBS, OCBC, UOB are the big 3; bring passport + employment letter + proof of address). (4) Get a <strong>mobile SIM</strong> (Singtel, StarHub, M1, or MVNOs like Circles.Life). (5) Find <strong>accommodation</strong> via PropertyGuru or 99.co. (6) Get an <strong>EZ-Link card</strong> or set up SimplyGo for public transport. (7) Register with a GP / get health insurance sorted. (8) Explore your nearest <strong>hawker centre</strong> -- this is where life happens.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (IRAS, MOM, CPF Board, HDB) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Singapore Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#EF3340;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const sgPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 123, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 109, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 105, region: 'Nordic' },
+        { name: 'Ireland', currency: 'EUR', ppp: 102, region: 'Western Europe' },
+        { name: 'USA', currency: 'USD', ppp: 100, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 91, region: 'Oceania' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 95, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 95, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 95, region: 'Nordic' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 94, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 91, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 88, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 92, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 93, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 86, region: 'North America' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 84, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 76, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 68, region: 'East Asia' },
+        { name: 'UAE', currency: 'AED', ppp: 80, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 53, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 71, region: 'Southern Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 75, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 62, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 59, region: 'Southern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 53, region: 'Eastern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 45, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 43, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 55, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 38, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 29, region: 'Eurasia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 34, region: 'Southeast Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 34, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 25, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 27, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 25, region: 'Southeast Asia' },
+        { name: 'China', currency: 'CNY', ppp: 36, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 21, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 17, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 19, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 22, region: 'South Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 36, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 27, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 34, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 25, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 29, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 21, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 19, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 24, region: 'Africa' },
+    ];
+
+    function calculateSGPPP() {
+        const amount = parseFloat(document.getElementById('sgPppAmount').value) || 5000;
+        const tbody = document.querySelector('#sgPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#sgPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} SGD buys equiv. of`;
+
+        sgPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} SGD (${diff})</td></tr>`;
+        });
+    }
+    calculateSGPPP();
+
+    // Singapore Tax Calculator
+    function calculateSGTax() {
+        const annualGross = parseFloat(document.getElementById('sgGrossSalary').value) || 80000;
+        const residentType = document.getElementById('sgResidentType').value;
+        const isCitizen = residentType === 'citizen';
+
+        // CPF calculation (citizens/PRs only)
+        const cpfCeiling = 6800 * 12; // $6,800/month OW ceiling
+        const cpfBase = Math.min(annualGross, cpfCeiling);
+        const cpfEmployee = isCitizen ? cpfBase * 0.20 : 0;
+        const cpfEmployer = isCitizen ? cpfBase * 0.17 : 0;
+
+        // Taxable income (after CPF employee contribution is deductible for tax relief purposes)
+        const taxableIncome = annualGross - cpfEmployee;
+
+        // Singapore progressive tax
+        let incomeTax = 0;
+        const brackets = [
+            { limit: 20000, rate: 0 },
+            { limit: 30000, rate: 0.02 },
+            { limit: 40000, rate: 0.035 },
+            { limit: 80000, rate: 0.07 },
+            { limit: 120000, rate: 0.115 },
+            { limit: 160000, rate: 0.15 },
+            { limit: 200000, rate: 0.18 },
+            { limit: 240000, rate: 0.19 },
+            { limit: 280000, rate: 0.195 },
+            { limit: 320000, rate: 0.20 },
+            { limit: Infinity, rate: 0.22 },
+        ];
+
+        let remaining = taxableIncome;
+        let prevLimit = 0;
+        for (const bracket of brackets) {
+            if (remaining <= 0) break;
+            const taxableInBracket = Math.min(remaining, bracket.limit - prevLimit);
+            incomeTax += taxableInBracket * bracket.rate;
+            remaining -= taxableInBracket;
+            prevLimit = bracket.limit;
+        }
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        const totalDeductions = incomeTax + cpfEmployee;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+        const taxOnlyRate = ((incomeTax / annualGross) * 100);
+
+        const resultDiv = document.getElementById('sgTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} SGD</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} SGD</span></div>
+                ${isCitizen ? `<div><strong>CPF (employee):</strong><br><span style="font-size:1.3rem; color:#EF3340; font-weight:800;">${Math.round(cpfEmployee/12).toLocaleString()} SGD</span></div>` : ''}
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} SGD</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Tax only rate: ${taxOnlyRate.toFixed(1)}%</div>
+                ${isCitizen ? `<div>CPF employee: ${Math.round(cpfEmployee/12).toLocaleString()} SGD/mo</div>` : ''}
+                ${isCitizen ? `<div>CPF employer (additional): ${Math.round(cpfEmployer/12).toLocaleString()} SGD/mo</div>` : ''}
+                <div>Annual income tax: ${incomeTax.toLocaleString()} SGD</div>
+            </div>
+            ${isCitizen ? `<div style="margin-top:12px; padding:10px; background:#ecfdf5; border-radius:8px; font-size:13px;">
+                <strong style="color:#059669;">Note:</strong> CPF contributions (${Math.round(cpfEmployee/12).toLocaleString()} SGD/mo) go into YOUR savings accounts (Ordinary, Special, Medisave) -- not lost to tax. Your employer also contributes ${Math.round(cpfEmployer/12).toLocaleString()} SGD/mo on top of your salary.
+            </div>` : ''}
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 4500 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 4500 ? '#059669' : '#dc2626'};">${netMonthly >= 4500 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~4,500 SGD net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 4500 ? '+' : ''}${Math.round(netMonthly - 4500).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

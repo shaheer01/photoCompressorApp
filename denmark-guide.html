@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denmark Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Denmark 2026. Monthly expenses in DKK, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="denmark living cost, denmark salary, danish tax, cost of living copenhagen, expat denmark, leveomkostninger Danmark">
+    <link rel="canonical" href="https://compressphotos.cloud/denmark-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E9;&#x1F1F0;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #C60C30 0%, #8B0A20 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #C60C30; border-bottom: 3px solid #C60C30; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #C60C30; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #C60C30; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #C60C30, #E84860);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #C60C30; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #C60C30; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #C60C30; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #C60C30, #8B0A20); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#C60C30; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Salaries, oil fund & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>Healthcare, salaries & more</small></div></a>
+                        <a href="denmark-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div><strong>Denmark</strong><small>You are here</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Denmark Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Danish tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to Denmark.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=800&q=80" alt="Nyhavn colorful waterfront, Copenhagen - iconic Danish landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="danish">Danish Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Denmark (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in DKK. Based on Danmarks Statistik, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. Denmark has high taxes but also generous public services. For example, to spend 18,000 DKK/month, you need roughly 30,000 DKK gross (~40% effective tax). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~18,000</div>
+                    <div class="stat-unit">DKK/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~28,000</div>
+                    <div class="stat-unit">DKK/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000</div>
+                    <div class="stat-unit">DKK avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000</div>
+                    <div class="stat-unit">DKK avg monthly gross</div>
+                    <div class="stat-desc">Denmark-wide median gross salary</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (DKK)</th><th>High (DKK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (2-room apartment)</td><td class="eur">7,000</td><td class="eur">10,500</td><td>Includes utilities in many cases; Copenhagen much higher</td></tr>
+                    <tr><td></td><td>Electricity & heating</td><td class="eur">800</td><td class="eur">1,400</td><td>District heating (fjernvarme) common; electricity ~2.50 DKK/kWh</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">250</td><td class="eur">400</td><td>TDC, Telenor, YouSee; fiber widespread</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">200</td><td class="eur">400</td><td>Lebara, Lycamobile budget; CBB, Oister mid-range</td></tr>
+                    <tr><td></td><td>DR licence (media licence)</td><td class="eur">0</td><td class="eur">0</td><td>Abolished in 2022; funded via tax</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">8,250</td><td class="eur">12,700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">4,000</td><td class="eur">6,000</td><td>Netto, Rema 1000, Lidl cheap; Irma, Meny premium</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">4,000</td><td class="eur">6,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Rejsekort / monthly pass (2 persons)</td><td class="eur">1,200</td><td class="eur">1,800</td><td>Rejsekort for buses/trains/metro; zones vary by city</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">1,500</td><td>Car ownership expensive (registreringsafgift 85-150% tax); cycling dominant</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">1,200</td><td class="eur">3,300</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health</td></tr>
+                    <tr><td></td><td>Healthcare (public)</td><td class="eur">0</td><td class="eur">0</td><td>Free via tax; universal coverage (sundhedskort / yellow card)</td></tr>
+                    <tr><td></td><td>Dental (adult, not covered)</td><td class="eur">200</td><td class="eur">500</td><td>Dental partially subsidized; expect out-of-pocket costs</td></tr>
+                    <tr><td></td><td>Sygeforsikring "Danmark"</td><td class="eur">0</td><td class="eur">200</td><td>Voluntary supplementary insurance; covers dental, physio, glasses</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">200</td><td class="eur">700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">800</td><td class="eur">1,500</td><td>H&M, Zara affordable; Danish design brands premium</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">500</td><td class="eur">800</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">400</td><td class="eur">1,000</td><td>Gym 200-400 DKK/month; sports clubs (foreninger) popular</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">300</td><td class="eur">600</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">2,000</td><td class="eur">3,900</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Household contents (indboforsikring)</td><td class="eur">100</td><td class="eur">250</td><td>Covers theft, fire, water damage to belongings</td></tr>
+                    <tr><td></td><td>Liability (ansvarsforsikring)</td><td class="eur">50</td><td class="eur">100</td><td>Often bundled with indboforsikring</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">150</td><td class="eur">350</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~15,800</td><td class="eur">~26,950</td><td>Realistic range: 18,000 - 28,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Denmark</h2>
+            <p class="section-subtitle">Monthly gross salaries in DKK. Data from Danmarks Statistik, Jobindex, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-money-bill-wave"></i>
+                <strong>No minimum wage law:</strong> Denmark has no statutory minimum wage. Instead, wages are set through collective agreements (overenskomster) between unions and employer organizations. The effective minimum is around 130-145 DKK/hour (~22,500 DKK/month) depending on the sector.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">75,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Director</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:93%;">70,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:80%;">60,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">55,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">52,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">50,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:63%;">47,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (folkeskole)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:59%;">44,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:57%;">43,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">42,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">41,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:49%;">37,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:48%;">36,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">35,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Social Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">33,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">30,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">28,000 DKK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">25,000 DKK</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-money-bill-wave"></i>
+                <strong>Pension (arbejdsmarkedspension):</strong> Most Danish employees contribute 12-17% of gross salary to an occupational pension on top of the salary shown above. Employers typically pay 8-10% and employees 4-7%. This is in addition to ATP (mandatory labour market supplementary pension).
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Danish Tax System (Skattesystemet)</h2>
+            <p class="section-subtitle">Denmark has one of the highest tax burdens in the world, but it funds free healthcare, education, and generous social benefits. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Components</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax Component</th><th>Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>AM-bidrag (Labour market contribution)</td><td class="eur">8%</td><td>Deducted first from gross income; not technically a tax but mandatory</td></tr>
+                    <tr><td>Bundskat (Bottom bracket tax)</td><td class="eur">12.09%</td><td>Applied to income above personfradrag (personal allowance ~49,700 DKK/year)</td></tr>
+                    <tr><td>Topskat (Top bracket tax)</td><td class="eur">15%</td><td>Applied to income above ~588,900 DKK/year (after AM-bidrag)</td></tr>
+                    <tr><td>Kommuneskat (Municipal tax)</td><td class="eur">~24.9%</td><td>Varies by municipality (22.5% - 27.8%); avg ~24.9%</td></tr>
+                    <tr><td>Kirkeskat (Church tax)</td><td class="eur">~0.7%</td><td>Only if member of Folkekirken (Danish National Church); optional</td></tr>
+                    <tr><td>Personfradrag (Personal allowance)</td><td class="eur">49,700 DKK</td><td>Annual tax-free allowance (~4,142 DKK/month)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Skatteloft (Tax ceiling):</strong> Denmark has a combined tax ceiling of ~52.07% (2026). This means the total of bundskat + topskat + kommuneskat + kirkeskat cannot exceed ~52.07% of income. This effectively caps the marginal tax rate.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Key Deductions</h3>
+            <table class="data-table">
+                <thead><tr><th>Deduction</th><th>Amount / Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Beskæftigelsesfradrag (Employment deduction)</td><td class="eur">Max ~44,600 DKK/year</td><td>10.65% of salary income, capped</td></tr>
+                    <tr><td>Rentefradrag (Interest deduction)</td><td class="eur">~25-33%</td><td>Mortgage interest deductible; major benefit for homeowners</td></tr>
+                    <tr><td>Transport fradrag (Commuter deduction)</td><td class="eur">Varies</td><td>For commutes >24 km round trip; 1.98 DKK/km (25-120 km)</td></tr>
+                    <tr><td>Haandvaerker fradrag (Home service deduction)</td><td class="eur">Max 12,900 DKK/year</td><td>For home improvements and household services</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Researcher Tax Scheme (Forskerordningen)</h3>
+            <div class="info-box">
+                <i class="fas fa-flask"></i>
+                <strong>Flat 27% tax + 8% AM-bidrag</strong> for up to 7 years for qualifying foreign researchers and highly-paid employees (minimum salary ~75,100 DKK/month in 2026). This is a major incentive for expats -- effective rate ~32.84% vs. normal ~45%. Apply within 30 days of starting work.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="dkGrossSalary">Annual Gross Salary (DKK):</label>
+                <input type="number" id="dkGrossSalary" value="500000" min="0" max="5000000">
+                <label for="dkMunicipalRate">Municipal tax rate (%):</label>
+                <input type="number" id="dkMunicipalRate" value="24.9" min="22" max="28" step="0.1">
+                <label for="dkChurchTax">Church member (Kirkeskat)?</label>
+                <select id="dkChurchTax">
+                    <option value="0">No</option>
+                    <option value="0.7">Yes (~0.7%)</option>
+                </select>
+                <label for="dkResearcher">Researcher scheme (Forskerordningen)?</label>
+                <select id="dkResearcher">
+                    <option value="no">No - normal taxation</option>
+                    <option value="yes">Yes - flat 27% + AM-bidrag</option>
+                </select>
+                <button class="calc-btn" onclick="calculateDKTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="dkTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + AM-bidrag</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">25,000</td><td class="eur">300,000</td><td class="eur">~8,800</td><td class="eur" style="color:#059669; font-weight:700;">~16,200</td><td>35.2%</td></tr>
+                    <tr><td class="eur">35,000</td><td class="eur">420,000</td><td class="eur">~13,300</td><td class="eur" style="color:#059669; font-weight:700;">~21,700</td><td>38.0%</td></tr>
+                    <tr><td class="eur">45,000</td><td class="eur">540,000</td><td class="eur">~18,000</td><td class="eur" style="color:#059669; font-weight:700;">~27,000</td><td>40.0%</td></tr>
+                    <tr><td class="eur">55,000</td><td class="eur">660,000</td><td class="eur">~24,200</td><td class="eur" style="color:#059669; font-weight:700;">~30,800</td><td>44.0%</td></tr>
+                    <tr><td class="eur">75,000</td><td class="eur">900,000</td><td class="eur">~35,200</td><td class="eur" style="color:#059669; font-weight:700;">~39,800</td><td>46.9%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Danish salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Denmark = 100.</p>
+
+            <div class="calc-container">
+                <label for="dkPppAmount">Your monthly spending in Denmark (DKK):</label>
+                <input type="number" id="dkPppAmount" value="20000" min="1000" max="500000">
+                <button class="calc-btn" onclick="calculateDKPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="dkPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>20,000 DKK buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Denmark = 100. If India has a PPP index of 20, your 20,000 DKK in Denmark has the same purchasing power as 20,000 x (20/100) = 4,000 DKK in India. You'd need ~80% less money in India for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Danish cities. Copenhagen = 100 (most expensive baseline). Data: Danmarks Statistik, Numbeo, Boligportalen 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 2-room (DKK)</th><th>Monthly Pass (DKK)</th><th>Meal Out (DKK)</th><th>Beer 0.5L (DKK)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Copenhagen</strong></td><td class="eur">9,000-14,000</td><td class="eur">640</td><td class="eur">130-250</td><td class="eur">55-75</td><td>Capital; most expensive; vibrant, cycling paradise</td></tr>
+                    <tr><td><strong>Aarhus</strong></td><td class="eur">6,500-10,000</td><td class="eur">520</td><td class="eur">110-200</td><td class="eur">45-60</td><td>2nd city; university town; culture capital</td></tr>
+                    <tr><td><strong>Odense</strong></td><td class="eur">5,500-8,500</td><td class="eur">460</td><td class="eur">100-180</td><td class="eur">40-55</td><td>H.C. Andersen hometown; new light rail; growing</td></tr>
+                    <tr><td><strong>Aalborg</strong></td><td class="eur">5,000-8,000</td><td class="eur">480</td><td class="eur">100-170</td><td class="eur">40-55</td><td>North Jutland; university city; waterfront revival</td></tr>
+                    <tr><td><strong>Esbjerg</strong></td><td class="eur">4,500-7,000</td><td class="eur">440</td><td class="eur">90-160</td><td class="eur">35-50</td><td>West coast; energy sector hub; affordable</td></tr>
+                    <tr><td><strong>Roskilde</strong></td><td class="eur">6,000-9,000</td><td class="eur">580</td><td class="eur">110-190</td><td class="eur">45-60</td><td>Near Copenhagen; Viking history; festival city</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Copenhagen housing crisis:</strong> Finding affordable housing in Copenhagen is extremely competitive. Expect to join waiting lists for almene boliger (social housing) that can take 5-15 years. Many expats start in shared apartments (kollektiv) or suburbs like Hvidovre, Broendbyvester, or Taastrup and commute via S-tog.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Danish Healthcare System (Sundhedsvaesenet)</h2>
+            <p class="section-subtitle">Denmark has a universal, tax-funded healthcare system. All residents with a CPR number receive a sundhedskort (health card / yellow card).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">GP & hospital visits</div>
+                    <div class="stat-desc">100% tax-funded; no co-pays for most services</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~10.5%</div>
+                    <div class="stat-unit">of GDP on health</div>
+                    <div class="stat-desc">Among highest in OECD countries</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Sundhedskort</div>
+                    <div class="stat-unit">Yellow health card</div>
+                    <div class="stat-desc">Issued with CPR number; your key to healthcare</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">1813</div>
+                    <div class="stat-unit">Medical helpline</div>
+                    <div class="stat-desc">Call for non-emergency medical advice (Capital Region)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Group 1 vs Group 2 Insurance</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Group 1 (default)</th><th>Group 2</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>GP (praktiserende laege)</strong></td><td>Must register with one specific GP; free visits</td><td>Can visit any GP; partial reimbursement only</td></tr>
+                    <tr><td><strong>Specialist referral</strong></td><td>Need referral from GP</td><td>Can go directly; pay part of cost yourself</td></tr>
+                    <tr><td><strong>Cost</strong></td><td>Free (tax-funded)</td><td>Pay upfront, partial reimbursement</td></tr>
+                    <tr><td><strong>Recommendation</strong></td><td>Best for most people</td><td>Rare; only ~2% of Danes choose Group 2</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (laegebesoeg)</td><td class="eur">Free</td><td>Register with a GP via sundhed.dk; yellow card required</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">Free (with referral)</td><td>GP refers you; may have waiting time</td></tr>
+                    <tr><td>Hospital (sygehus)</td><td class="eur">Free</td><td>Including surgery, ICU, maternity; no co-pay</td></tr>
+                    <tr><td>Emergency (skadestue)</td><td class="eur">Free</td><td>Call 112 for emergencies; 1813 for non-urgent (Capital Region)</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Subsidized</td><td>Tilskud system: pay full price until ~1,005 DKK/year, then 50-85% subsidized</td></tr>
+                    <tr><td>Dental (voksentandpleje)</td><td class="eur">Partially subsidized</td><td>Adults pay most dental costs (~65-85%); children under 18 fully free</td></tr>
+                    <tr><td>Mental health (psykolog)</td><td class="eur">Partially covered</td><td>GP referral needed; 60% covered for approved conditions; long wait</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">Partially subsidized</td><td>GP referral; partial subsidy via Sygesikring</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>Prenatal, delivery, postnatal care; jordemoder (midwife) included</td></tr>
+                    <tr><td>Glasses / contacts</td><td class="eur">Not covered</td><td>Must pay out of pocket; Sygeforsikring "Danmark" covers partially</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Sygeforsikring "Danmark" tip:</strong> This voluntary supplementary insurance (~150-200 DKK/month) covers part of dental, physiotherapy, glasses, and alternative treatment costs. About 2 million Danes are members. Worth considering if you need regular dental work or glasses. Apply at sygeforsikring.dk.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Denmark (Boligsogning)</h2>
+            <p class="section-subtitle">The Danish housing market is unique with social housing (almene boliger), cooperatives (andelsboliger), and private rentals.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Housing Types</h3>
+            <table class="data-table">
+                <thead><tr><th>Danish Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Lejebolig</strong></td><td>Rental apartment</td><td>Private or public rental; most common for newcomers</td></tr>
+                    <tr><td><strong>Andelsbolig</strong></td><td>Cooperative housing</td><td>Buy a share in the cooperative; often cheaper than ejerbolig; restrictions on resale price</td></tr>
+                    <tr><td><strong>Ejerbolig</strong></td><td>Owner-occupied</td><td>Full ownership; apartments or houses; subject to ejendomsvaerdiskat (property value tax)</td></tr>
+                    <tr><td><strong>Almen bolig</strong></td><td>Social housing</td><td>Non-profit; income-independent; managed by housing associations; long waiting lists</td></tr>
+                    <tr><td><strong>Kollegium</strong></td><td>Student housing</td><td>For enrolled students; very affordable; limited availability</td></tr>
+                    <tr><td><strong>Fremleje</strong></td><td>Sublet</td><td>Subletting someone's apartment; temporary; max 2 years typically</td></tr>
+                    <tr><td><strong>Depositum</strong></td><td>Security deposit</td><td>Max 3 months rent; returned after inspection at move-out</td></tr>
+                    <tr><td><strong>Forudbetalt leje</strong></td><td>Prepaid rent</td><td>Max 3 months; used for your last months of tenancy</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Boligportalen.dk</td><td>Private rentals</td><td>Largest rental platform; subscription required (~99 DKK/month)</td></tr>
+                    <tr><td>Lejebolig.dk</td><td>Rentals</td><td>Good selection; some free listings</td></tr>
+                    <tr><td>Boligsiden.dk</td><td>Buy / sell</td><td>For purchasing ejerbolig or andelsbolig</td></tr>
+                    <tr><td>AKB, KAB, DAB</td><td>Social housing</td><td>Housing associations; join waiting list via boligselskab website</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Lejligheder i Koebenhavn" groups; popular for expats</td></tr>
+                    <tr><td>Findroommate.dk</td><td>Shared housing</td><td>For finding rooms in shared apartments (boefaellesskaber)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Beware of scams:</strong> Never pay rent or deposit before seeing the apartment and signing a contract. Common scam: fake listings on Facebook or international sites asking for upfront payment via wire transfer. Always meet the landlord in person and verify ownership. Use the standard Danish lease template (typeformular A, 10. udgave).
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Denmark (Transport)</h2>
+            <p class="section-subtitle">Denmark is a cycling nation with excellent public transport. Copenhagen is consistently ranked the world's best city for cycling.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~640</div>
+                    <div class="stat-unit">DKK/month (CPH pass)</div>
+                    <div class="stat-desc">All zones Copenhagen monthly pass</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">49%</div>
+                    <div class="stat-unit">Copenhageners cycle</div>
+                    <div class="stat-desc">To work or school daily by bicycle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~13.50</div>
+                    <div class="stat-unit">DKK/litre petrol</div>
+                    <div class="stat-desc">Diesel ~11.50 DKK; among highest in EU</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">85-150%</div>
+                    <div class="stat-unit">Car registration tax</div>
+                    <div class="stat-desc">Registreringsafgift makes car ownership very expensive</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Rejsekort (travel card)</td><td class="eur">Per trip (zoned)</td><td>Electronic card; cheapest per-trip option; mandatory for buses/trains/metro</td></tr>
+                    <tr><td>Copenhagen all-zone pass</td><td class="eur">~640 DKK/month</td><td>Unlimited metro, S-tog, buses in all CPH zones</td></tr>
+                    <tr><td>Aarhus monthly pass</td><td class="eur">~520 DKK/month</td><td>Letbane (light rail), buses in Aarhus area</td></tr>
+                    <tr><td>DSB (national rail)</td><td class="eur">Varies</td><td>IC/ICL trains; Copenhagen-Aarhus ~350-500 DKK; Orange tickets from 99 DKK</td></tr>
+                    <tr><td>Copenhagen Metro</td><td class="eur">~24 DKK single</td><td>M1-M4 lines; runs 24/7; automated driverless trains</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">500-1,500 DKK/month</td><td>Ansvarsforsikring mandatory; kasko optional; very expensive for young drivers</td></tr>
+                    <tr><td>Car registration tax</td><td class="eur">85-150% of value</td><td>Registreringsafgift; makes a 200,000 DKK car cost 370,000-500,000 DKK</td></tr>
+                    <tr><td>Bicycle (second-hand)</td><td class="eur">500-3,000 DKK</td><td>DBA.dk, Facebook Marketplace; Swapfiets subscription ~149 DKK/month</td></tr>
+                    <tr><td>E-scooter rental</td><td class="eur">~3 DKK/min</td><td>Tier, Voi; widespread in Copenhagen and Aarhus</td></tr>
+                    <tr><td>Oresund Bridge (to Sweden)</td><td class="eur">~325 DKK one way</td><td>BroPas subscription ~420 DKK/month for commuters</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-bicycle"></i>
+                <strong>Pro tip:</strong> Invest in a good bicycle -- it will be your primary transport in any Danish city. Copenhagen has 400+ km of dedicated cycle lanes. Buy a sturdy lock (Abus, AXA); bike theft is common. Register your frame number at politi.dk. In winter, cities maintain cycle lanes -- they are cleared before car roads.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Denmark -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Denmark (At arbejde i Danmark)</h2>
+            <p class="section-subtitle">Danish work culture emphasizes trust, flat hierarchies, and work-life balance (the "Danish model").</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">25</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Ferieloven guarantees 5 weeks paid vacation</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">37 hours</div>
+                    <div class="stat-unit">Standard work week</div>
+                    <div class="stat-desc">Most common; flexible hours widespread</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">52 weeks</div>
+                    <div class="stat-unit">Parental leave</div>
+                    <div class="stat-desc">Shared between parents; 24 weeks reserved for each</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Flexicurity</div>
+                    <div class="stat-unit">Labour model</div>
+                    <div class="stat-desc">Easy to hire/fire + strong safety net + active job support</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ansaettelseskontrakt</strong></td><td>Employment contract; must be provided within 1 month</td><td>Read carefully; check overenskomst (collective agreement) coverage</td></tr>
+                    <tr><td><strong>Proevetid</strong></td><td>Probation period, typically 3 months</td><td>14 days notice during probation; up to 6 months in some sectors</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 37 hours/week</td><td>Flexible working (fleksibel arbejdstid) very common; many leave by 16:00</td></tr>
+                    <tr><td><strong>Vacation (ferie)</strong></td><td>25 days/year (5 weeks) + feriefridage</td><td>Ferieloven; many employers add 5 extra feriefridage (total 30 days)</td></tr>
+                    <tr><td><strong>Sick leave (sygdom)</strong></td><td>Full salary for 30 days (most employers)</td><td>After 30 days: sygedagpenge from municipality (~4,695 DKK/week max)</td></tr>
+                    <tr><td><strong>Flexicurity model</strong></td><td>Easy to hire/fire + strong unemployment benefits + active employment policy</td><td>Denmark's famous labour market model; low job security but strong safety net</td></tr>
+                    <tr><td><strong>A-kasse</strong></td><td>Unemployment insurance fund</td><td>Voluntary; ~400-500 DKK/month; entitles you to dagpenge (up to ~19,700 DKK/month) for 2 years</td></tr>
+                    <tr><td><strong>Barsel (parental leave)</strong></td><td>52 weeks total shared; paid via barselsdagpenge</td><td>Mother: 4 weeks before + 14 weeks after; Father: 2 weeks; rest shared</td></tr>
+                    <tr><td><strong>Fagforening (union)</strong></td><td>~67% of workforce unionized</td><td>HK, Djoof, IDA, 3F, FOA etc.; strong role in wage negotiations</td></tr>
+                    <tr><td><strong>Opsigelsesfrist</strong></td><td>Notice period increases with tenure</td><td>1 month (0-6 mo), up to 6 months (9+ years); employee always 1 month</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Danish work culture essentials:</strong> (1) <strong>Flat hierarchy</strong> -- everyone uses first names, including the CEO. No "Herr Direktor" culture. (2) <strong>Work-life balance</strong> -- leaving at 16:00 is normal; no guilt. Picking up kids from daycare is a valid reason to leave. (3) <strong>Hygge at work</strong> -- Friday cake (fredagskage), coffee breaks, and social events matter. (4) <strong>Consensus-driven</strong> -- decisions are made collectively; everyone's opinion is valued. (5) <strong>Trust-based</strong> -- no micromanagement; you're trusted to manage your own time and tasks.
+            </div>
+        </div>
+
+        <!-- TAB 10: Danish Basics -->
+        <div id="danish" class="tab-content">
+            <h2 class="section-title">Essential Danish Terms & Bureaucracy</h2>
+            <p class="section-subtitle">Denmark has efficient digital bureaucracy. Most things are handled online via NemID/MitID and borger.dk.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Bureaucracy Survival Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Danish Term</th><th>English</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>CPR-nummer</strong></td><td>Civil registration number</td><td>FIRST thing to get; your Danish personal ID number; needed for everything</td></tr>
+                    <tr><td><strong>Folkeregister</strong></td><td>National register</td><td>Register your address here; at International House or kommune</td></tr>
+                    <tr><td><strong>MitID</strong></td><td>Digital ID (replaced NemID)</td><td>Required for online banking, tax, borger.dk, healthcare; set up at borgerservice</td></tr>
+                    <tr><td><strong>Borger.dk</strong></td><td>Citizen portal</td><td>Online portal for all government services; tax, healthcare, address changes</td></tr>
+                    <tr><td><strong>Skat.dk</strong></td><td>Tax authority (SKAT)</td><td>Handles your tax card (skattekort), annual tax return (aarsopgoerelse)</td></tr>
+                    <tr><td><strong>Sundhedskort</strong></td><td>Health card (yellow card)</td><td>Issued after CPR registration; proof of healthcare coverage; shows your GP</td></tr>
+                    <tr><td><strong>NemKonto</strong></td><td>Easy account</td><td>Your designated bank account for all government payments (salary, tax refunds)</td></tr>
+                    <tr><td><strong>E-Boks / Digital Post</strong></td><td>Digital mailbox</td><td>ALL official correspondence goes here; check regularly; legally binding</td></tr>
+                    <tr><td><strong>Opholdstilladelse</strong></td><td>Residence permit</td><td>For non-EU citizens; apply via nyidanmark.dk (SIRI)</td></tr>
+                    <tr><td><strong>International House</strong></td><td>One-stop service center</td><td>In Copenhagen and Aarhus; handles CPR, tax, SIRI in one place for expats</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Everyday Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Danish</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Hej</td><td>Hi / Hello</td><td>hi (like English "hi")</td></tr>
+                    <tr><td>Tak</td><td>Thanks</td><td>tahk</td></tr>
+                    <tr><td>Undskyld</td><td>Excuse me / Sorry</td><td>OON-skyul</td></tr>
+                    <tr><td>Ja / Nej</td><td>Yes / No</td><td>ya / nai</td></tr>
+                    <tr><td>Taler du engelsk?</td><td>Do you speak English?</td><td>TAH-ler doo ENG-elsk</td></tr>
+                    <tr><td>Jeg forstaar ikke</td><td>I don't understand</td><td>yai for-STOR ik-keh</td></tr>
+                    <tr><td>Hvor er...?</td><td>Where is...?</td><td>vor air</td></tr>
+                    <tr><td>Hvad koster det?</td><td>How much does it cost?</td><td>va KOS-ter deh</td></tr>
+                    <tr><td>Hej hej / Farvel</td><td>Bye / Goodbye (formal)</td><td>hi hi / far-VEL</td></tr>
+                    <tr><td>Hyggeligt</td><td>Cozy / Nice (the essence of hygge)</td><td>HOO-geh-leet</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Hygge</strong> -- the Danish concept of coziness and togetherness; candles, warm drinks, good company. Embrace it. (2) <strong>Janteloven</strong> -- the "Law of Jante"; don't brag or act superior; equality is deeply valued. (3) <strong>Almost everyone speaks English</strong> -- but learning Danish shows respect and helps integration (Sprogskole offers free/subsidized Danish classes for immigrants). (4) <strong>Cashless society</strong> -- MobilePay is universal; many shops don't accept cash at all. Cards accepted everywhere. (5) <strong>Pant (bottle deposit)</strong> -- return bottles/cans at supermarket machines (1-3 DKK each); recycling rate ~90%. (6) <strong>Cycling etiquette</strong> -- use hand signals, stay in your lane, don't stop suddenly in cycle lanes.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Denmark</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~400,000</div>
+                    <div class="stat-unit">DKK/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~550,000</div>
+                    <div class="stat-unit">DKK/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~18,000</div>
+                    <div class="stat-unit">DKK/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~25,000</div>
+                    <div class="stat-unit">DKK/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (DKK)</th><th>Gross Salary Needed (DKK)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared room (kollektiv), very frugal</small></td><td class="eur">10,000</td><td class="eur">18,000</td><td class="eur">11,500</td><td class="eur eur-low">+1,500</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside Copenhagen</small></td><td class="eur">14,000</td><td class="eur">25,000</td><td class="eur">16,000</td><td class="eur eur-low">+2,000</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">20,000</td><td class="eur">38,000</td><td class="eur">23,000</td><td class="eur eur-low">+3,000</td></tr>
+                    <tr><td><strong>Couple (Copenhagen)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">28,000</td><td class="eur">52,000</td><td class="eur">31,000</td><td class="eur eur-low">+3,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Copenhagen</small></td><td class="eur">33,000</td><td class="eur">60,000</td><td class="eur">36,000</td><td class="eur eur-low">+3,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>CPR number</strong> at International House or kommune (within 5 days of arrival). (2) Open a bank account (Danske Bank, Nordea, Jyske Bank, or Lunar for digital). (3) Set up <strong>MitID</strong> at borgerservice. (4) Receive your <strong>sundhedskort</strong> (yellow health card) by post. (5) Set up <strong>NemKonto</strong> at your bank. (6) Check <strong>E-Boks / Digital Post</strong> regularly. (7) Get a <strong>Rejsekort</strong> for public transport. (8) Buy a bicycle. (9) Join an <strong>A-kasse</strong> (unemployment insurance). (10) Sign up for Danish language classes (sprogskole).
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Skattestyrelsen, Danmarks Statistik, your kommune) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Denmark Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#C60C30;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="denmark-guide.html" style="color:#C60C30;">Denmark Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const dkPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 117, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 104, region: 'Nordic' },
+        { name: 'USA', currency: 'USD', ppp: 96, region: 'North America' },
+        { name: 'Ireland', currency: 'EUR', ppp: 97, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 91, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 91, region: 'Western Europe' },
+        { name: 'Finland', currency: 'EUR', ppp: 91, region: 'Nordic' },
+        { name: 'Belgium', currency: 'EUR', ppp: 88, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 87, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 89, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 90, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 84, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 83, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 87, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 80, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 73, region: 'East Asia' },
+        { name: 'Italy', currency: 'EUR', ppp: 72, region: 'Southern Europe' },
+        { name: 'Spain', currency: 'EUR', ppp: 68, region: 'Southern Europe' },
+        { name: 'South Korea', currency: 'KRW', ppp: 65, region: 'East Asia' },
+        { name: 'Portugal', currency: 'EUR', ppp: 59, region: 'Southern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 50, region: 'Eastern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 57, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 43, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 52, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 41, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 37, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 28, region: 'Eurasia' },
+        { name: 'Mexico', currency: 'MXN', ppp: 32, region: 'North America' },
+        { name: 'Brazil', currency: 'BRL', ppp: 35, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 26, region: 'South America' },
+        { name: 'Colombia', currency: 'COP', ppp: 24, region: 'South America' },
+        { name: 'China', currency: 'CNY', ppp: 35, region: 'East Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 32, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 32, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 23, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 26, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 24, region: 'Southeast Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 96, region: 'Southeast Asia' },
+        { name: 'UAE', currency: 'AED', ppp: 77, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 50, region: 'Middle East' },
+        { name: 'India', currency: 'INR', ppp: 20, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 17, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 18, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 21, region: 'South Asia' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 28, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 20, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 18, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 23, region: 'Africa' },
+    ];
+
+    function calculateDKPPP() {
+        const amount = parseFloat(document.getElementById('dkPppAmount').value) || 20000;
+        const tbody = document.querySelector('#dkPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#dkPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} DKK buys equiv. of`;
+
+        dkPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} DKK (${diff})</td></tr>`;
+        });
+    }
+    calculateDKPPP();
+
+    // Danish Tax Calculator
+    function calculateDKTax() {
+        const annualGross = parseFloat(document.getElementById('dkGrossSalary').value) || 500000;
+        const municipalRate = parseFloat(document.getElementById('dkMunicipalRate').value) / 100 || 0.249;
+        const churchRate = parseFloat(document.getElementById('dkChurchTax').value) / 100 || 0;
+        const isResearcher = document.getElementById('dkResearcher').value === 'yes';
+
+        // AM-bidrag (labour market contribution) - always 8%
+        const amBidrag = annualGross * 0.08;
+        const incomeAfterAM = annualGross - amBidrag;
+
+        let incomeTax, totalTax, netAnnual;
+
+        if (isResearcher) {
+            // Researcher scheme: flat 27% on income after AM-bidrag
+            incomeTax = incomeAfterAM * 0.27;
+            totalTax = amBidrag + incomeTax;
+            netAnnual = annualGross - totalTax;
+        } else {
+            // Normal taxation
+            const personfradrag = 49700; // Personal allowance 2026
+            const beskaeftigelsesfradrag = Math.min(incomeAfterAM * 0.1065, 44600); // Employment deduction
+            const taxableIncome = Math.max(0, incomeAfterAM - personfradrag);
+
+            // Bundskat (12.09%)
+            const bundskat = Math.max(0, taxableIncome) * 0.1209;
+
+            // Kommuneskat (municipal tax)
+            const kommuneskat = Math.max(0, taxableIncome) * municipalRate;
+
+            // Kirkeskat (church tax)
+            const kirkeskat = churchRate > 0 ? Math.max(0, taxableIncome) * churchRate : 0;
+
+            // Topskat (15% on income above threshold)
+            const topskatThreshold = 588900;
+            const topskat = incomeAfterAM > topskatThreshold ? (incomeAfterAM - topskatThreshold) * 0.15 : 0;
+
+            // Apply beskaeftigelsesfradrag as reduction
+            incomeTax = bundskat + kommuneskat + kirkeskat + topskat;
+
+            // Simplified: reduce tax by the effect of beskaeftigelsesfradrag
+            const fradragEffect = beskaeftigelsesfradrag * (0.1209 + municipalRate + churchRate);
+            incomeTax = Math.max(0, incomeTax - fradragEffect);
+
+            // Apply tax ceiling (~52.07%)
+            const effectiveMarginal = (incomeTax / incomeAfterAM) * 100;
+            if (effectiveMarginal > 52.07 && incomeAfterAM > 0) {
+                incomeTax = incomeAfterAM * 0.5207;
+            }
+
+            totalTax = amBidrag + incomeTax;
+            netAnnual = annualGross - totalTax;
+        }
+
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalTax / annualGross) * 100);
+
+        const resultDiv = document.getElementById('dkTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} DKK</span></div>
+                <div><strong>AM-bidrag (8%):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(amBidrag/12).toLocaleString()} DKK</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} DKK</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} DKK</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            ${isResearcher ? '<div style="margin-top:10px; padding:8px 12px; background:#ecfdf5; border-radius:6px; font-size:13px; color:#059669;"><strong>Researcher scheme applied:</strong> Flat 27% + 8% AM-bidrag = ~32.84% effective rate</div>' : ''}
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 18000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 18000 ? '#059669' : '#dc2626'};">${netMonthly >= 18000 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~18,000 DKK net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 18000 ? '+' : ''}${Math.round(netMonthly - 18000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

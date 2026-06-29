@@ -37,7 +37,7 @@ if (window.location.hostname === 'compressphotos.cloud' ||
     // For production: 'https://analytics.compressphotos.cloud'
     CONFIG.analyticsApiUrl = 'https://pulsepointanalytics.space'; // GCP backend
     CONFIG.analyticsApiKey = 'pk_7a56835f65ca448298a67af7b164b84b'; // API key for event tracking
-    CONFIG.backendApiUrl = 'https://api.compressphotos.cloud';
+    CONFIG.backendApiUrl = 'https://compressphotos-backend-753240137971.me-central1.run.app';
     CONFIG.analyticsDebug = false;
     CONFIG.analyticsEnabled = true; // Enabled with ngrok
     CONFIG.environment = 'production';

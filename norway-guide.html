@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norway Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Norway 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="norway living cost, norway salary, norwegian tax, cost of living oslo, expat norway, levekostnader Norge">
+    <link rel="canonical" href="https://compressphotos.cloud/norway-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F3;&#x1F1F4;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #BA0C2F 0%, #00205B 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #BA0C2F; border-bottom: 3px solid #BA0C2F; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #BA0C2F; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #BA0C2F; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #00205B; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #BA0C2F, #E8485C);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #BA0C2F; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #BA0C2F; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #BA0C2F; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #BA0C2F, #00205B); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#BA0C2F; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div><strong>Norway</strong><small>You are here</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Norway Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Norwegian tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to Norway.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80" alt="Northern Lights over Norway - stunning Arctic landscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="norwegian">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Norway (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in NOK. Based on SSB (Statistics Norway), real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Norway is one of the most expensive countries in the world. To earn this take-home, you need a higher gross salary. For example, to spend 30,000 NOK/month, you need roughly 42,000 NOK gross (~30% effective tax). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000</div>
+                    <div class="stat-unit">NOK/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~48,000</div>
+                    <div class="stat-unit">NOK/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000</div>
+                    <div class="stat-unit">NOK avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~620,000</div>
+                    <div class="stat-unit">NOK avg annual salary</div>
+                    <div class="stat-desc">Norway-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (NOK)</th><th>High (NOK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (2-room apartment)</td><td class="eur">10,000</td><td class="eur">16,000</td><td>Oslo much higher; includes felleskostnader in borettslag</td></tr>
+                    <tr><td></td><td>Electricity</td><td class="eur">1,200</td><td class="eur">2,500</td><td>Varies by season; spot price + nettleie; winter peaks</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">450</td><td class="eur">700</td><td>Telenor, Telia, Altibox; fiber widespread</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">400</td><td class="eur">700</td><td>Telia, Telenor, Ice; data-rich plans common</td></tr>
+                    <tr><td></td><td>NRK License</td><td class="eur">0</td><td class="eur">0</td><td>Funded through taxes since 2020; no separate fee</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">12,050</td><td class="eur">19,900</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">7,000</td><td class="eur">10,000</td><td>Rema 1000, Kiwi, Extra (budget); Meny, Coop Mega (premium)</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">7,000</td><td class="eur">10,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Monthly transit pass (2 persons)</td><td class="eur">1,600</td><td class="eur">2,400</td><td>Ruter (Oslo) ~814 NOK/person; varies by city</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">2,000</td><td>Taxis expensive; car ownership costly (bompenger, insurance)</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">1,600</td><td class="eur">4,400</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health</td></tr>
+                    <tr><td></td><td>Out-of-pocket medical (frikort threshold)</td><td class="eur">200</td><td class="eur">500</td><td>Egenandeler until frikort (free card) at 3,165 NOK/year; then free</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">200</td><td class="eur">500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">1,500</td><td class="eur">3,000</td><td>High prices; outlet shopping or online popular</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">800</td><td class="eur">1,500</td><td>Haircuts 500-900 NOK; toiletries expensive</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">800</td><td class="eur">2,000</td><td>Gym 300-600 NOK/month; outdoor activities mostly free (friluftsliv)</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">500</td><td class="eur">1,000</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">3,600</td><td class="eur">7,500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Innboforsikring (contents insurance)</td><td class="eur">200</td><td class="eur">400</td><td>Covers theft, fire, water damage; highly recommended</td></tr>
+                    <tr><td></td><td>Reiseforsikring (travel insurance)</td><td class="eur">150</td><td class="eur">300</td><td>Covers trips abroad; often bundled with bank/credit card</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">350</td><td class="eur">700</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~24,800</td><td class="eur">~43,000</td><td>Realistic range: 30,000 - 48,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Norway</h2>
+            <p class="section-subtitle">Monthly gross salaries in NOK. Data from SSB (Statistics Norway), NAV, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>Holiday pay (feriepenger):</strong> Norwegian employers withhold 10.2% (12% for workers over 60) of your annual salary as holiday pay, paid out the following June. You effectively get no salary in June/July but receive a lump sum instead. The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (lege)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">95,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:89%;">85,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Petroleum Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:89%;">85,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (advokat)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:84%;">80,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:74%;">70,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:71%;">67,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:68%;">65,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (laerer)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:58%;">55,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (sykepleier)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">52,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">52,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">50,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">48,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Carpenter (snekker)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">45,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">42,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef (kokk)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:39%;">37,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">33,000 NOK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Cleaner (renholder)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:31%;">30,000 NOK</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>No statutory minimum wage:</strong> Norway has no legal minimum wage. Instead, wages are set through collective agreements (tariffavtaler) negotiated by unions. Some sectors (construction, cleaning, hospitality) have legally mandated minimum rates via allmenngjorte tariffavtaler. Construction: ~230 NOK/hour. Cleaning: ~210 NOK/hour.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Norwegian Tax System (Skattesystemet)</h2>
+            <p class="section-subtitle">Norway uses a dual income tax system with a flat rate on ordinary income plus bracket tax (trinnskatt) on personal income. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Trinnskatt (Bracket Tax) on Personal Income</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Personal Income (NOK)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 208,050</td><td class="eur">0%</td><td>No bracket tax below this threshold</td></tr>
+                    <tr><td>208,051 - 292,850</td><td class="eur">1.7%</td><td>Trinnskatt step 1</td></tr>
+                    <tr><td>292,851 - 670,000</td><td class="eur">4.0%</td><td>Trinnskatt step 2</td></tr>
+                    <tr><td>670,001 - 937,900</td><td class="eur">13.6%</td><td>Trinnskatt step 3</td></tr>
+                    <tr><td>937,901 - 1,350,000</td><td class="eur">16.6%</td><td>Trinnskatt step 4</td></tr>
+                    <tr><td>1,350,001+</td><td class="eur">17.6%</td><td>Trinnskatt step 5 (highest earners)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Other Taxes & Contributions</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax / Contribution</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Skatt pa alminnelig inntekt (ordinary income tax)</td><td class="eur">22%</td><td>Everyone</td><td>Flat rate on net income after deductions (personfradrag ~58,250 NOK, minstefradrag)</td></tr>
+                    <tr><td>Trygdeavgift (National Insurance)</td><td class="eur">7.9%</td><td>Employees</td><td>Funds folketrygden (pension, health, unemployment). Self-employed: 11.0%</td></tr>
+                    <tr><td>Arbeidsgiveravgift (employer's contribution)</td><td class="eur">14.1%</td><td>Employer</td><td>Varies by zone (0% in Troms/Finnmark); not deducted from salary</td></tr>
+                    <tr><td>Wealth tax (formuesskatt)</td><td class="eur">1.0-1.1%</td><td>Net wealth above threshold</td><td>Municipal + state; threshold ~1.7M NOK (single). Applies to net assets.</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Key Deductions</h3>
+            <table class="data-table">
+                <thead><tr><th>Deduction</th><th>Amount (NOK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Personfradrag (personal allowance)</td><td class="eur">~58,250</td><td>Standard deduction from ordinary income; Class 1</td></tr>
+                    <tr><td>Minstefradrag (minimum deduction)</td><td class="eur">46% of income, max ~109,950</td><td>Automatic deduction for work-related expenses</td></tr>
+                    <tr><td>Mortgage interest deduction</td><td class="eur">22% of interest paid</td><td>Reduces ordinary income tax; significant for homeowners</td></tr>
+                    <tr><td>Pendlerfradrag (commuter deduction)</td><td class="eur">Varies</td><td>For long-distance commuters; distance-based</td></tr>
+                    <tr><td>BSU (savings for youth)</td><td class="eur">20% of up to 27,500/year</td><td>Tax deduction for first-home savings; age under 34</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="noGrossSalary">Annual Gross Salary (NOK):</label>
+                <input type="number" id="noGrossSalary" value="620000" min="0" max="5000000">
+                <label for="noAge">Age under 34 (BSU eligible)?</label>
+                <select id="noAge">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <button class="calc-btn" onclick="calculateNOTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="noTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Trygd</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">35,000</td><td class="eur">420,000</td><td class="eur">~8,400</td><td class="eur" style="color:#059669; font-weight:700;">~26,600</td><td>24.0%</td></tr>
+                    <tr><td class="eur">45,000</td><td class="eur">540,000</td><td class="eur">~12,200</td><td class="eur" style="color:#059669; font-weight:700;">~32,800</td><td>27.1%</td></tr>
+                    <tr><td class="eur">55,000</td><td class="eur">660,000</td><td class="eur">~16,500</td><td class="eur" style="color:#059669; font-weight:700;">~38,500</td><td>30.0%</td></tr>
+                    <tr><td class="eur">70,000</td><td class="eur">840,000</td><td class="eur">~24,500</td><td class="eur" style="color:#059669; font-weight:700;">~45,500</td><td>35.0%</td></tr>
+                    <tr><td class="eur">95,000</td><td class="eur">1,140,000</td><td class="eur">~37,000</td><td class="eur" style="color:#059669; font-weight:700;">~58,000</td><td>38.9%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Norwegian salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Norway = 100.</p>
+
+            <div class="calc-container">
+                <label for="noPppAmount">Your monthly spending in Norway (NOK):</label>
+                <input type="number" id="noPppAmount" value="35000" min="1000" max="500000">
+                <button class="calc-btn" onclick="calculateNOPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="noPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>35,000 NOK buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Norway = 100. If India has a PPP index of 19, your 35,000 NOK in Norway has the same purchasing power as 35,000 x (19/100) = 6,650 NOK in India. You'd need ~81% less money in India for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Norwegian cities. Oslo = 100 (most expensive baseline). Data: SSB, Numbeo, Finn.no 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 2-room (NOK)</th><th>Monthly Pass (NOK)</th><th>Meal Out (NOK)</th><th>Beer 0.5L (NOK)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Oslo</strong></td><td class="eur">13,000-18,000</td><td class="eur">814</td><td class="eur">200-350</td><td class="eur">95-120</td><td>Most expensive; cultural hub; fjord access</td></tr>
+                    <tr><td><strong>Bergen</strong></td><td class="eur">10,000-14,000</td><td class="eur">720</td><td class="eur">180-300</td><td class="eur">85-110</td><td>Gateway to fjords; rainy but charming; Bryggen</td></tr>
+                    <tr><td><strong>Trondheim</strong></td><td class="eur">9,500-13,000</td><td class="eur">690</td><td class="eur">170-280</td><td class="eur">80-105</td><td>Student city (NTNU); tech hub; Nidarosdomen</td></tr>
+                    <tr><td><strong>Stavanger</strong></td><td class="eur">10,500-14,500</td><td class="eur">700</td><td class="eur">190-310</td><td class="eur">90-115</td><td>Oil capital; high salaries; Preikestolen nearby</td></tr>
+                    <tr><td><strong>Tromsoe</strong></td><td class="eur">9,000-12,500</td><td class="eur">650</td><td class="eur">170-280</td><td class="eur">85-110</td><td>Arctic city; northern lights; midnight sun; lower taxes in Nord-Norge</td></tr>
+                    <tr><td><strong>Kristiansand</strong></td><td class="eur">8,500-12,000</td><td class="eur">620</td><td class="eur">160-260</td><td class="eur">80-100</td><td>Southern coast; summer paradise; family-friendly</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Nord-Norge tax benefit:</strong> Residents of Troms and Finnmark enjoy lower employer social contributions (0% vs 14.1%) and a special personal tax deduction (tiltakssonen). This makes Tromsoe and northern cities financially attractive despite higher heating costs.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Norwegian Healthcare System (Helsetjenesten)</h2>
+            <p class="section-subtitle">Norway has a universal public healthcare system funded through taxes and national insurance (folketrygden). The fastlege (GP) system is central.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">3,165</div>
+                    <div class="stat-unit">NOK frikort threshold</div>
+                    <div class="stat-desc">Annual out-of-pocket cap; after this all is free</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~300</div>
+                    <div class="stat-unit">NOK per GP visit</div>
+                    <div class="stat-desc">Egenandel (co-pay) for fastlege visit</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Fastlege</div>
+                    <div class="stat-unit">Your assigned GP</div>
+                    <div class="stat-desc">Everyone gets a fastlege; can change twice/year</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">Hospital care</div>
+                    <div class="stat-desc">Public hospitals; no charge once frikort reached</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">How the System Works</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Funding</strong></td><td>Through taxes and trygdeavgift (7.9% of salary)</td><td>No separate health insurance premiums needed</td></tr>
+                    <tr><td><strong>Fastlege (GP)</strong></td><td>Assigned family doctor; gatekeeper for specialists</td><td>Register via helsenorge.no; change up to 2x/year</td></tr>
+                    <tr><td><strong>Frikort (free card)</strong></td><td>After 3,165 NOK/year in co-pays, all becomes free</td><td>Automatic; tracked digitally via helsenorge.no</td></tr>
+                    <tr><td><strong>Legevakt</strong></td><td>Emergency walk-in clinic; open evenings/weekends</td><td>Higher co-pay (~460 NOK); for urgent non-emergency</td></tr>
+                    <tr><td><strong>113 / 116 117</strong></td><td>Emergency (113) and non-emergency medical helpline</td><td>116 117 for medical advice; open 24/7</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (fastlege)</td><td class="eur">~300 NOK</td><td>Egenandel; counts toward frikort</td></tr>
+                    <tr><td>Specialist visit (with referral)</td><td class="eur">~400 NOK</td><td>Referral from fastlege required; counts toward frikort</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">Free</td><td>Public hospitals fully covered; food included</td></tr>
+                    <tr><td>Prescription drugs (bla resept)</td><td class="eur">39% co-pay, max 520 NOK</td><td>Blue prescription (bla resept) for chronic conditions; counts toward frikort</td></tr>
+                    <tr><td>Dental - adults</td><td class="eur">NOT covered</td><td>Full price for adults; very expensive (1,500-5,000 NOK for basic treatment)</td></tr>
+                    <tr><td>Dental - children (under 18)</td><td class="eur">Free</td><td>Public dental service (Den offentlige tannhelsetjenesten)</td></tr>
+                    <tr><td>Mental health</td><td class="eur">~400 NOK co-pay</td><td>Referral from fastlege; psychologist covered with referral; waiting can be long</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Free</td><td>All prenatal care, delivery, postnatal care covered; jordmor (midwife) free</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">~200-400 NOK/session</td><td>With referral; counts toward frikort</td></tr>
+                    <tr><td>Children under 16</td><td class="eur">Free</td><td>All healthcare free for children under 16</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Dental costs warning:</strong> Adult dental care in Norway is almost entirely out-of-pocket and extremely expensive. A simple filling can cost 1,000-2,000 NOK, a root canal 5,000-10,000 NOK. Many Norwegians travel to Sweden, Poland, or Hungary for dental work. Consider private dental insurance (tannhelseforsikring) through IF, Tryg, or your employer.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Norway (Bolig)</h2>
+            <p class="section-subtitle">Norway has high property prices and a competitive rental market, especially in Oslo. Understanding borettslag vs. sameie is key.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Norwegian Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Borettslag</strong></td><td>Housing cooperative</td><td>You buy a share (andel); pay monthly felleskostnader; common in cities. Often has shared debt (fellesgjeld).</td></tr>
+                    <tr><td><strong>Sameie</strong></td><td>Condominium</td><td>You own the unit directly; pay felleskostnader for shared areas/maintenance</td></tr>
+                    <tr><td><strong>Felleskostnader</strong></td><td>Common costs</td><td>Monthly fee for maintenance, water, heating, insurance, etc. (~3,000-6,000 NOK)</td></tr>
+                    <tr><td><strong>Fellesgjeld</strong></td><td>Shared debt</td><td>Cooperative's collective mortgage; included in felleskostnader repayment. Check this before buying!</td></tr>
+                    <tr><td><strong>Kommunal bolig</strong></td><td>Municipal housing</td><td>Subsidized housing for those with low income or special needs; applied through kommunen</td></tr>
+                    <tr><td><strong>Depositum</strong></td><td>Security deposit</td><td>Typically 3 months rent; must be in a separate deposit account (depositumskonto)</td></tr>
+                    <tr><td><strong>Folkeregisteret</strong></td><td>Population register</td><td>Must register your address with Skatteetaten within 8 days of moving</td></tr>
+                    <tr><td><strong>Husleieloven</strong></td><td>Tenancy Act</td><td>Protects tenants; 3-month notice period; limits on rent increases</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Finn.no</td><td>All types</td><td>THE dominant platform for housing in Norway; rentals and purchases</td></tr>
+                    <tr><td>Hybel.no</td><td>Rooms & shared</td><td>Popular for students and young professionals; rooms in shared flats</td></tr>
+                    <tr><td>Utleiemegleren.no</td><td>Managed rentals</td><td>Professional rental agency; higher prices but more secure</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Leilighet til leie Oslo" groups; popular but beware scams</td></tr>
+                    <tr><td>Studentsamskipnaden (SiO, Sit, etc.)</td><td>Student housing</td><td>Subsidized housing for enrolled students; apply early</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Buying Property</h3>
+            <table class="data-table">
+                <thead><tr><th>Factor</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Average price (Oslo)</td><td class="eur">75,000-100,000 NOK/sqm</td><td>Small apartments in central Oslo; suburbs cheaper</td></tr>
+                    <tr><td>Down payment</td><td class="eur">15% minimum</td><td>Banks require 15% egenkapital; stricter for investment properties (40%)</td></tr>
+                    <tr><td>Mortgage rate (2026)</td><td class="eur">~4.5-5.5%</td><td>Variable rates common; fixed rates available for 3-10 years</td></tr>
+                    <tr><td>Dokumentavgift</td><td class="eur">2.5% of purchase price</td><td>Transfer tax on sameie purchases; borettslag exempt</td></tr>
+                    <tr><td>Bidding process</td><td>Open bidding (budrunde)</td><td>Offers are binding; 24-hour minimum acceptance deadline; intense in Oslo</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Borettslag fellesgjeld warning:</strong> When buying a borettslag unit, always check the fellesgjeld (shared debt). A cheap-looking apartment might have millions in shared debt that you're responsible for through higher felleskostnader. The real cost = purchase price + your share of fellesgjeld. Check the annual report (arsrapport) before bidding.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Norway (Transport)</h2>
+            <p class="section-subtitle">Norway has good public transport in cities, extensive ferry networks, and the most electric vehicles per capita in the world.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">814</div>
+                    <div class="stat-unit">NOK/month (Oslo)</div>
+                    <div class="stat-desc">Ruter monthly pass - all zones</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~90%</div>
+                    <div class="stat-unit">EV market share</div>
+                    <div class="stat-desc">New car sales are overwhelmingly electric</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~19</div>
+                    <div class="stat-unit">NOK/litre petrol</div>
+                    <div class="stat-desc">Among the world's most expensive fuel</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">4,114 km</div>
+                    <div class="stat-unit">Rail network</div>
+                    <div class="stat-desc">Vy (formerly NSB); scenic routes worldwide famous</td>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Ruter monthly pass (Oslo/Akershus)</td><td class="eur">814 NOK/month</td><td>All buses, trams, T-bane, ferries, local trains in Oslo region</td></tr>
+                    <tr><td>Skyss monthly pass (Bergen)</td><td class="eur">720 NOK/month</td><td>Bergen area buses and Bybanen (light rail)</td></tr>
+                    <tr><td>AtB monthly pass (Trondheim)</td><td class="eur">690 NOK/month</td><td>Trondheim area buses and trams</td></tr>
+                    <tr><td>Vy (train) Oslo-Bergen</td><td class="eur">350-900 NOK</td><td>~7 hours; one of the world's most scenic train rides; book early (minipris)</td></tr>
+                    <tr><td>Vy Oslo-Trondheim</td><td class="eur">300-800 NOK</td><td>~7 hours; minipris from ~249 NOK</td></tr>
+                    <tr><td>Domestic flights</td><td class="eur">500-2,000 NOK</td><td>Norwegian, SAS, Wideroe; essential for reaching northern Norway</td></tr>
+                    <tr><td>Hurtigruten coastal steamer</td><td class="eur">1,000-5,000 NOK</td><td>Bergen-Kirkenes; 11-day journey; can also book single legs</td></tr>
+                    <tr><td>Bompenger (road tolls)</td><td class="eur">20-80 NOK/pass</td><td>Automatic via AutoPASS chip; ubiquitous around cities</td></tr>
+                    <tr><td>Car insurance (bilforsikring)</td><td class="eur">800-2,000 NOK/month</td><td>Ansvarsforsikring mandatory; kasko optional but recommended</td></tr>
+                    <tr><td>EU-kontroll (vehicle inspection)</td><td class="eur">~400-600 NOK</td><td>Every 2 years after car is 4 years old; at Statens vegvesen</td></tr>
+                    <tr><td>Electric car benefits</td><td class="eur">Reduced tolls, free parking (varies)</td><td>Lower purchase tax, reduced bompenger, access to bus lanes (diminishing)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Book Vy train tickets as early as possible for minipris fares (often 50-70% off). The Bergen Railway (Bergensbanen) and Nordlandsbanen are bucket-list scenic journeys. For northern Norway, domestic flights are often the only practical option -- Wideroe operates short-hop routes between small Arctic airports.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Norway -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Norway (Arbeid i Norge)</h2>
+            <p class="section-subtitle">Norwegian work culture emphasizes flat hierarchies, work-life balance, and strong worker protections under Arbeidsmiljoloven.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">25 days</div>
+                    <div class="stat-unit">Ferie (vacation)</div>
+                    <div class="stat-desc">Statutory 25 working days (5 weeks); many get more</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">6 months</div>
+                    <div class="stat-unit">Proveperiode</div>
+                    <div class="stat-desc">Probation period; 14-day notice during this time</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">49 weeks</div>
+                    <div class="stat-unit">Foreldrepermisjon</div>
+                    <div class="stat-desc">Parental leave at 100% pay (or 59 weeks at 80%)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~50%</div>
+                    <div class="stat-unit">Union membership</div>
+                    <div class="stat-desc">LO, Unio, YS, Akademikerne; strong tradition</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Arbeidsmiljoloven</strong></td><td>Working Environment Act; comprehensive worker protection law</td><td>Covers hours, safety, discrimination, termination, etc.</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 37.5 hours/week</td><td>Max 40 hours/week by law; 9 hours/day max. Overtime paid at 40% premium minimum.</td></tr>
+                    <tr><td><strong>Vacation (ferie)</strong></td><td>25 working days (5 weeks); 6 weeks if over 60</td><td>Employer must ensure employees take vacation. Feriepenger (10.2%) paid in June.</td></tr>
+                    <tr><td><strong>Sick leave (sykmelding)</strong></td><td>100% pay for up to 1 year</td><td>First 16 days: employer pays (arbeidsgiverperioden). After: NAV pays sykepengar.</td></tr>
+                    <tr><td><strong>Self-certification (egenmelding)</strong></td><td>3 days sick without doctor's note</td><td>Up to 4 times per 12 months; after that need sykmelding from lege</td></tr>
+                    <tr><td><strong>Parental leave</strong></td><td>49 weeks at 100% or 59 weeks at 80%</td><td>Shared between parents; 15 weeks reserved for each parent (fedrekvote/modrekvote)</td></tr>
+                    <tr><td><strong>Notice period (oppsigelse)</strong></td><td>1-6 months depending on tenure</td><td>1 month standard; increases with years of service and age</td></tr>
+                    <tr><td><strong>Unions (fagforeninger)</strong></td><td>~50% of workforce unionized</td><td>LO (largest), Unio (education/health), Akademikerne (professionals). Tax deduction for dues.</td></tr>
+                    <tr><td><strong>Termination protection</strong></td><td>Must have saklig grunn (valid reason)</td><td>Strong protection; unfair dismissal can be challenged through courts</td></tr>
+                    <tr><td><strong>Collective agreements</strong></td><td>Tariffavtaler set wages and conditions</td><td>Negotiated between unions and employers' organizations; cover large sectors</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Norwegian work culture essentials:</strong> (1) <strong>Flat hierarchy</strong> -- first-name basis with everyone, including the CEO. Titles are rarely used. (2) <strong>Janteloven</strong> -- don't brag or act superior; humility and equality are deeply valued. (3) <strong>Work-life balance</strong> -- leaving at 4pm is normal and expected; no one impresses by working late. (4) <strong>Lunsj</strong> -- lunch is typically a matpakke (packed lunch) eaten at 11:30; business lunches are rare. (5) <strong>Consensus culture</strong> -- decisions are made collectively; expect many meetings. (6) <strong>Trust-based</strong> -- flexible working, home office common; managers trust employees to deliver.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="norwegian" class="tab-content">
+            <h2 class="section-title">Norwegian Culture & Essential Phrases</h2>
+            <p class="section-subtitle">Understanding Norwegian culture -- from dugnad to friluftsliv -- will help you integrate and enjoy life in Norway.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Cultural Concepts</h3>
+            <table class="data-table">
+                <thead><tr><th>Concept</th><th>What It Means</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Friluftsliv</strong></td><td>Open-air living / outdoor life</td><td>Core part of Norwegian identity. Hiking, skiing, cabin trips. "Det finnes ikke darlig vaer, bare darlige klaer" (no bad weather, only bad clothes).</td></tr>
+                    <tr><td><strong>Dugnad</strong></td><td>Communal voluntary work</td><td>Neighborhoods, sports clubs, and borettslag organize dugnader (clean-ups, painting, etc.). Participation is socially expected.</td></tr>
+                    <tr><td><strong>Koselig</strong></td><td>Cozy / pleasant atmosphere</td><td>Similar to Danish hygge. Candles, warm blankets, cabin life, good company. Norwegians are masters of koselig during dark winters.</td></tr>
+                    <tr><td><strong>Hytte</strong></td><td>Cabin / cottage</td><td>Many Norwegians own a hytte in the mountains or by the coast. Weekend cabin trips are a national pastime.</td></tr>
+                    <tr><td><strong>Allemannsretten</strong></td><td>Right to roam</td><td>Legal right to camp, hike, and forage on uncultivated land. You can pitch a tent almost anywhere for up to 2 nights.</td></tr>
+                    <tr><td><strong>Janteloven</strong></td><td>Law of Jante (social norm)</td><td>Don't think you're better than others. Promotes equality and modesty. Bragging is socially frowned upon.</td></tr>
+                    <tr><td><strong>Bunader</strong></td><td>Traditional folk costume</td><td>Worn on 17. mai (Constitution Day) and special occasions. Each region has its own bunad design.</td></tr>
+                    <tr><td><strong>17. mai</strong></td><td>Constitution Day (May 17)</td><td>Norway's national day. Children's parades (barnetog), ice cream, hot dogs, bunader. The most important celebration of the year.</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Norwegian Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Norwegian</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Hei / Hallo</td><td>Hi / Hello</td><td>hay / hah-LOH</td></tr>
+                    <tr><td>Takk / Tusen takk</td><td>Thanks / Thank you very much</td><td>tahk / TOO-sen tahk</td></tr>
+                    <tr><td>Vaer sa snill</td><td>Please (be so kind)</td><td>vehr saw snil</td></tr>
+                    <tr><td>Unnskyld</td><td>Excuse me / Sorry</td><td>OON-shild</td></tr>
+                    <tr><td>Snakker du engelsk?</td><td>Do you speak English?</td><td>SNAH-ker doo ENG-elsk</td></tr>
+                    <tr><td>Jeg forstar ikke</td><td>I don't understand</td><td>yay for-STOR ik-ke</td></tr>
+                    <tr><td>Hvor er...?</td><td>Where is...?</td><td>vor ehr</td></tr>
+                    <tr><td>Hvor mye koster det?</td><td>How much does it cost?</td><td>vor MEE-eh KOS-ter deh</td></tr>
+                    <tr><td>Ha det bra / Ha det</td><td>Goodbye / Bye</td><td>hah deh brah / hah deh</td></tr>
+                    <tr><td>Skaal!</td><td>Cheers!</td><td>skawl</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Practical Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Vinmonopolet</strong> -- the state-run alcohol monopoly. Beer (under 4.7%) at supermarkets; wine and spirits only at Vinmonopolet. Limited hours, closed Sundays. Very expensive. (2) <strong>BankID</strong> -- Norway's digital identity. Essential for everything: banking, taxes (Altinn), healthcare (Helsenorge), signing contracts. Get it as soon as possible. (3) <strong>Cash is dead</strong> -- Norway is nearly cashless. Vipps (mobile payment app) is ubiquitous; even market stalls and children's lemonade stands use Vipps. (4) <strong>Darkness</strong> -- in northern Norway, polar night (morketid) means no sun for weeks in winter. Even Oslo gets only ~6 hours of daylight in December. Invest in a SAD lamp. (5) <strong>Matpakke</strong> -- packed lunch is the norm. Open-faced sandwiches (smorbroed) with brunost (brown cheese), leverpostei, or cold cuts. Eating out for lunch is rare and expensive.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Norway</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~480,000</div>
+                    <div class="stat-unit">NOK/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~720,000</div>
+                    <div class="stat-unit">NOK/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000</div>
+                    <div class="stat-unit">NOK/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000</div>
+                    <div class="stat-unit">NOK/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (NOK)</th><th>Gross Salary Needed (NOK)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal</small></td><td class="eur">15,000</td><td class="eur">25,000</td><td class="eur">18,000</td><td class="eur eur-low">+3,000</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside big city</small></td><td class="eur">22,000</td><td class="eur">35,000</td><td class="eur">25,000</td><td class="eur eur-low">+3,000</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">35,000</td><td class="eur">55,000</td><td class="eur">38,000</td><td class="eur eur-low">+3,000</td></tr>
+                    <tr><td><strong>Couple (Oslo)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">48,000</td><td class="eur">78,000</td><td class="eur">52,000</td><td class="eur eur-low">+4,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Oslo</small></td><td class="eur">55,000</td><td class="eur">90,000</td><td class="eur">59,000</td><td class="eur eur-low">+4,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Register at <strong>Politiet</strong> (police) for EU/EEA citizens or UDI for non-EU (residence permit). (2) Get a <strong>D-number</strong> or personnummer (national ID number) from Skatteetaten. (3) Open a bank account (DNB, Nordea, SpareBank 1) -- you need a D-number/personnummer first. (4) Get <strong>BankID</strong> through your bank -- essential for digital Norway. (5) Register with a <strong>fastlege</strong> on helsenorge.no. (6) Get a <strong>Ruter/Skyss/AtB</strong> transit pass. (7) Download <strong>Vipps</strong> (mobile payment app -- everyone uses it). (8) Register your address with <strong>Folkeregisteret</strong> via Skatteetaten.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Skatteetaten, SSB, NAV) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Norway Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#BA0C2F;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const noPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 112, region: 'Western Europe' },
+        { name: 'Denmark', currency: 'DKK', ppp: 96, region: 'Nordic' },
+        { name: 'Iceland', currency: 'ISK', ppp: 98, region: 'Nordic' },
+        { name: 'Sweden', currency: 'SEK', ppp: 88, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 87, region: 'Nordic' },
+        { name: 'Ireland', currency: 'EUR', ppp: 93, region: 'Western Europe' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 87, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 83, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 81, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 84, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 85, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 86, region: 'Western Europe' },
+        { name: 'USA', currency: 'USD', ppp: 92, region: 'North America' },
+        { name: 'Canada', currency: 'CAD', ppp: 79, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 83, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 77, region: 'Oceania' },
+        { name: 'Spain', currency: 'EUR', ppp: 65, region: 'Southern Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 69, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 57, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 54, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 42, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 48, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 39, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 35, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 50, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 27, region: 'Eurasia' },
+        { name: 'Japan', currency: 'JPY', ppp: 70, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 63, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 33, region: 'East Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 92, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 31, region: 'Southeast Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 31, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 22, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 25, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 23, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 19, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 16, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 17, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 20, region: 'South Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 33, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 25, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 31, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 23, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 27, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 19, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 17, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 22, region: 'Africa' },
+        { name: 'UAE', currency: 'AED', ppp: 73, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 48, region: 'Middle East' },
+    ];
+
+    function calculateNOPPP() {
+        const amount = parseFloat(document.getElementById('noPppAmount').value) || 35000;
+        const tbody = document.querySelector('#noPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#noPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} NOK buys equiv. of`;
+
+        noPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} NOK (${diff})</td></tr>`;
+        });
+    }
+    calculateNOPPP();
+
+    // Norwegian Tax Calculator
+    function calculateNOTax() {
+        const annualGross = parseFloat(document.getElementById('noGrossSalary').value) || 620000;
+        const bsuEligible = document.getElementById('noAge').value === 'yes';
+
+        // Minstefradrag (minimum deduction): 46% of income, max ~109,950
+        const minstefradrag = Math.min(annualGross * 0.46, 109950);
+
+        // Personfradrag (personal allowance)
+        const personfradrag = 58250;
+
+        // Trygdeavgift (National Insurance contribution) - 7.9%
+        const trygdeavgift = annualGross * 0.079;
+
+        // Ordinary income tax (22% on net income)
+        const ordinaryIncome = Math.max(0, annualGross - minstefradrag - personfradrag);
+        const ordinaryTax = ordinaryIncome * 0.22;
+
+        // Trinnskatt (bracket tax)
+        let trinnskatt = 0;
+        const brackets = [
+            { low: 208050, high: 292850, rate: 0.017 },
+            { low: 292850, high: 670000, rate: 0.040 },
+            { low: 670000, high: 937900, rate: 0.136 },
+            { low: 937900, high: 1350000, rate: 0.166 },
+            { low: 1350000, high: Infinity, rate: 0.176 },
+        ];
+        for (const b of brackets) {
+            if (annualGross > b.low) {
+                trinnskatt += (Math.min(annualGross, b.high) - b.low) * b.rate;
+            }
+        }
+
+        // BSU deduction
+        const bsuDeduction = bsuEligible ? 5500 : 0; // 20% of 27,500 max
+
+        const totalTax = Math.max(0, ordinaryTax + trinnskatt + trygdeavgift - bsuDeduction);
+        const netAnnual = annualGross - totalTax;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalTax / annualGross) * 100);
+
+        const resultDiv = document.getElementById('noTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#00205B; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} NOK</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round((ordinaryTax + trinnskatt)/12).toLocaleString()} NOK</span></div>
+                <div><strong>Trygdeavgift:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(trygdeavgift/12).toLocaleString()} NOK</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} NOK</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Ordinary tax (22%): ${Math.round(ordinaryTax/12).toLocaleString()} NOK/mo</div>
+                <div>Trinnskatt: ${Math.round(trinnskatt/12).toLocaleString()} NOK/mo</div>
+                <div>Trygdeavgift (7.9%): ${Math.round(trygdeavgift/12).toLocaleString()} NOK/mo</div>
+                <div>Minstefradrag: ${Math.round(minstefradrag).toLocaleString()} NOK/yr</div>
+                ${bsuDeduction > 0 ? `<div>BSU deduction: -${bsuDeduction.toLocaleString()} NOK/yr</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 30000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 30000 ? '#059669' : '#dc2626'};">${netMonthly >= 30000 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~30,000 NOK net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 30000 ? '+' : ''}${Math.round(netMonthly - 30000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

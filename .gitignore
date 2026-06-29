@@ -1,2 +1,11 @@
 .dockerignore
 logs/
+node_modules/
+backend/node_modules/
+.env.production
+
+# Local Netlify folder
+.netlify
+
+# Claude
+.claude/scheduled_tasks.lock

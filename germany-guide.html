@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germany Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Germany 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="germany living cost, germany salary, german tax, cost of living berlin, expat germany, Lebenshaltungskosten Deutschland">
+    <link rel="canonical" href="https://compressphotos.cloud/germany-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E9;&#x1F1EA;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #C1121F 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #FFC300; border-bottom: 3px solid #FFC300; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #1a1a2e; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #C1121F; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #1a1a2e, #C1121F);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #1a1a2e; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #1a1a2e; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #1a1a2e; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #1a1a2e, #C1121F); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#FFC300; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html" style="background:#fffbeb;"><span class="country-flag">🇩🇪</span><div><strong>Germany</strong><small>You are here</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Germany Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, German tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to Germany.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=80" alt="Brandenburg Gate, Berlin - iconic German landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="german">German Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Germany (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on Destatis, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend 2,400 EUR/month, you need roughly 3,200 EUR gross (~35% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,400</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,800</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Germany-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent warm (2-room apartment)</td><td class="eur">800</td><td class="eur">1,200</td><td>Warmmiete includes Nebenkosten; Munich/Frankfurt much higher</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">35</td><td class="eur">50</td><td>Telekom, Vodafone, O2; fiber expanding</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">30</td><td class="eur">50</td><td>Aldi Talk, congstar, fraenk offer budget plans</td></tr>
+                    <tr><td></td><td>GEZ (Rundfunkbeitrag / TV tax)</td><td class="eur">18.36</td><td class="eur">18.36</td><td>Mandatory per household; no exceptions</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">883</td><td class="eur">1,318</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">500</td><td class="eur">700</td><td>Aldi, Lidl, Rewe, Edeka; discounters significantly cheaper</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">500</td><td class="eur">700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Deutschlandticket (2 persons)</td><td class="eur">98</td><td class="eur">98</td><td>49 EUR each; all local & regional public transport nationwide</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">200</td><td>Car sharing (SHARE NOW, Sixt), taxi, fuel</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">98</td><td class="eur">298</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance</td></tr>
+                    <tr><td></td><td>Public health insurance (GKV, employee share)</td><td class="eur">400</td><td class="eur">500</td><td>~14.6% split 50/50 with employer; shown is employee portion for 2 earners</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">400</td><td class="eur">500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">100</td><td class="eur">200</td><td></td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">80</td><td class="eur">120</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">60</td><td class="eur">150</td><td>Gym 20-50 EUR/month; Verein (sports club) 10-30 EUR/month</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">50</td><td class="eur">80</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">290</td><td class="eur">550</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Haftpflichtversicherung (liability)</td><td class="eur">5</td><td class="eur">10</td><td>Highly recommended; covers accidental damage to others</td></tr>
+                    <tr><td></td><td>Hausratversicherung (household contents)</td><td class="eur">10</td><td class="eur">20</td><td>Covers theft, fire, water damage to belongings</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">15</td><td class="eur">30</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~2,186</td><td class="eur">~3,396</td><td>Realistic range: 2,400 - 3,800 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Germany</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from Destatis, Stepstone Gehaltsreport, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>13th salary:</strong> Many German employers pay a 13th monthly salary (Weihnachtsgeld) and sometimes a 14th (Urlaubsgeld). This varies by industry and collective agreements (Tarifvertrag). The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">7,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:93%;">6,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:83%;">5,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:79%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:79%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:74%;">5,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:69%;">4,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:64%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:64%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">4,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:57%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Servant (Beamter)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:57%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:46%;">3,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:34%;">2,400 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Minimum wage (2026):</strong> Germany's statutory minimum wage (Mindestlohn) is 12.82 EUR/hour, approximately 2,200 EUR/month gross for a 40-hour week. Reviewed annually by the Mindestlohnkommission.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">German Tax System (Steuersystem)</h2>
+            <p class="section-subtitle">Germany uses a progressive income tax (Einkommensteuer) plus mandatory social contributions. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Brackets (Einkommensteuer)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 11,604</td><td class="eur">0%</td><td>Grundfreibetrag (tax-free allowance)</td></tr>
+                    <tr><td>11,605 - 17,005</td><td class="eur">14% - 24%</td><td>Progressive zone 1 (gradually increasing)</td></tr>
+                    <tr><td>17,006 - 66,760</td><td class="eur">24% - 42%</td><td>Progressive zone 2</td></tr>
+                    <tr><td>66,761 - 277,825</td><td class="eur">42%</td><td>Proportional zone (Spitzensteuersatz)</td></tr>
+                    <tr><td>277,826+</td><td class="eur">45%</td><td>Reichensteuer (wealth tax surcharge)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Additional Taxes & Surcharges</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Solidaritaetszuschlag (Soli)</td><td class="eur">5.5%</td><td>High earners only</td><td>Applied on income tax; exemption for incomes below ~62,000 EUR (single)</td></tr>
+                    <tr><td>Kirchensteuer (Church tax)</td><td class="eur">8-9%</td><td>Church members only</td><td>8% in Bavaria/Baden-Wuerttemberg, 9% elsewhere; opt out by declaring Kirchenaustritt</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Contributions (Sozialabgaben)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Total Rate</th><th>Employee Share</th><th>Employer Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Health insurance (Krankenversicherung)</td><td class="eur">~14.6% + supplement</td><td class="eur">~7.3% + ~0.85%</td><td class="eur">~7.3% + ~0.85%</td><td>Plus Zusatzbeitrag varies by insurer (~1.7%)</td></tr>
+                    <tr><td>Pension (Rentenversicherung)</td><td class="eur">18.6%</td><td class="eur">9.3%</td><td class="eur">9.3%</td><td>Mandatory; state pension system</td></tr>
+                    <tr><td>Unemployment (Arbeitslosenversicherung)</td><td class="eur">2.6%</td><td class="eur">1.3%</td><td class="eur">1.3%</td><td>Agentur fuer Arbeit</td></tr>
+                    <tr><td>Nursing care (Pflegeversicherung)</td><td class="eur">3.4%</td><td class="eur">1.7%</td><td class="eur">1.7%</td><td>+0.6% surcharge if childless and over 23</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="deGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="deGrossSalary" value="50000" min="0" max="500000">
+                <label for="deChurchTax">Church member (Kirchensteuer)?</label>
+                <select id="deChurchTax">
+                    <option value="0">No</option>
+                    <option value="9">Yes - 9% (most states)</option>
+                    <option value="8">Yes - 8% (Bavaria / Baden-Wuerttemberg)</option>
+                </select>
+                <label for="deChildless">Childless and over 23?</label>
+                <select id="deChildless">
+                    <option value="yes">Yes (extra nursing care surcharge)</option>
+                    <option value="no">No</option>
+                </select>
+                <button class="calc-btn" onclick="calculateDETax()">Calculate Net Salary</button>
+                <div class="calc-result" id="deTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">2,500</td><td class="eur">30,000</td><td class="eur">~770</td><td class="eur" style="color:#059669; font-weight:700;">~1,730</td><td>30.8%</td></tr>
+                    <tr><td class="eur">3,500</td><td class="eur">42,000</td><td class="eur">~1,190</td><td class="eur" style="color:#059669; font-weight:700;">~2,310</td><td>34.0%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">60,000</td><td class="eur">~1,900</td><td class="eur" style="color:#059669; font-weight:700;">~3,100</td><td>38.0%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">84,000</td><td class="eur">~2,900</td><td class="eur" style="color:#059669; font-weight:700;">~4,100</td><td>41.4%</td></tr>
+                    <tr><td class="eur">10,000</td><td class="eur">120,000</td><td class="eur">~4,300</td><td class="eur" style="color:#059669; font-weight:700;">~5,700</td><td>43.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your German salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Germany = 100.</p>
+
+            <div class="calc-container">
+                <label for="dePppAmount">Your monthly spending in Germany (EUR):</label>
+                <input type="number" id="dePppAmount" value="3000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateDEPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="dePppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>3,000 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Germany = 100. If India has a PPP index of 23, your 3,000 EUR in Germany has the same purchasing power as 3,000 x (23/100) = 690 EUR in India. You'd need ~77% less money in India for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major German cities. Munich = 100 (most expensive baseline). Data: Destatis, Numbeo, ImmobilienScout24 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 2-room (EUR)</th><th>Monthly Pass (EUR)</th><th>Meal Out (EUR)</th><th>Beer 0.5L (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Munich</strong></td><td class="eur">1,200-1,800</td><td class="eur">49</td><td class="eur">15-25</td><td class="eur">4.50</td><td>Most expensive; beer gardens, Alps nearby</td></tr>
+                    <tr><td><strong>Frankfurt</strong></td><td class="eur">1,000-1,500</td><td class="eur">49</td><td class="eur">14-22</td><td class="eur">4.00</td><td>Financial hub; international; Ebbelwoi culture</td></tr>
+                    <tr><td><strong>Hamburg</strong></td><td class="eur">900-1,400</td><td class="eur">49</td><td class="eur">13-20</td><td class="eur">3.80</td><td>Port city; vibrant nightlife; Speicherstadt</td></tr>
+                    <tr><td><strong>Berlin</strong></td><td class="eur">850-1,300</td><td class="eur">49</td><td class="eur">10-18</td><td class="eur">3.50</td><td>Cheapest capital for its size; arts & culture hub</td></tr>
+                    <tr><td><strong>Duesseldorf</strong></td><td class="eur">900-1,350</td><td class="eur">49</td><td class="eur">13-20</td><td class="eur">3.80</td><td>Fashion, Japanese community, Altbier</td></tr>
+                    <tr><td><strong>Stuttgart</strong></td><td class="eur">950-1,450</td><td class="eur">49</td><td class="eur">14-22</td><td class="eur">4.00</td><td>Auto industry (Mercedes, Porsche); hilly</td></tr>
+                    <tr><td><strong>Cologne</strong></td><td class="eur">850-1,300</td><td class="eur">49</td><td class="eur">12-19</td><td class="eur">3.50</td><td>Carnival, Koelsch beer, Rhein river; friendly</td></tr>
+                    <tr><td><strong>Leipzig</strong></td><td class="eur">550-900</td><td class="eur">49</td><td class="eur">9-15</td><td class="eur">3.00</td><td>Affordable; booming arts scene; "new Berlin"</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Deutschlandticket advantage:</strong> Since 2023, the 49 EUR Deutschlandticket covers ALL local and regional public transport nationwide. This makes the monthly pass cost identical across all cities -- a massive benefit for commuters.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">German Healthcare System (Krankenversicherung)</h2>
+            <p class="section-subtitle">Germany has a dual system: public (Gesetzliche Krankenversicherung / GKV) and private (Private Krankenversicherung / PKV).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~14.6%</div>
+                    <div class="stat-unit">GKV contribution rate</div>
+                    <div class="stat-desc">Split 50/50 between employer and employee</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">5-10</div>
+                    <div class="stat-unit">EUR prescription co-pay</div>
+                    <div class="stat-desc">Per medication; children exempt</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">TK</div>
+                    <div class="stat-unit">Largest insurer</div>
+                    <div class="stat-desc">Techniker Krankenkasse; also AOK, Barmer</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">GP visits (GKV)</div>
+                    <div class="stat-desc">No co-pay for doctor visits under GKV</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">GKV vs PKV Comparison</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>GKV (Public)</th><th>PKV (Private)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Eligibility</strong></td><td>Everyone; mandatory if salary below ~69,300 EUR/year</td><td>Self-employed, civil servants, or salary above ~69,300 EUR/year</td></tr>
+                    <tr><td><strong>Cost basis</strong></td><td>% of income (income-dependent)</td><td>Based on age, health, coverage level</td></tr>
+                    <tr><td><strong>Family coverage</strong></td><td>Free family insurance (Familienversicherung) for spouse & kids</td><td>Each family member pays separately</td></tr>
+                    <tr><td><strong>Waiting times</strong></td><td>Can be longer for specialists</td><td>Often shorter; priority appointments</td></tr>
+                    <tr><td><strong>Coverage</strong></td><td>Standardized; comprehensive basic care</td><td>Customizable; can be more comprehensive</td></tr>
+                    <tr><td><strong>Switching back</strong></td><td>Always possible</td><td>Difficult to return to GKV after age 55</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost (GKV)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (Hausarzt)</td><td class="eur">Free</td><td>Register with a Hausarzt; no referral needed but recommended</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">Free</td><td>Referral from Hausarzt speeds up process (Ueberweisung)</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">10 EUR/day (max 28 days/year)</td><td>Zuzahlung (co-payment); rest covered by GKV</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">5-10 EUR co-pay</td><td>Per medication; chronic patients can apply for exemption</td></tr>
+                    <tr><td>Dental - basic</td><td class="eur">Partially covered</td><td>Check-ups covered; fillings/crowns 50-65% (with Bonusheft)</td></tr>
+                    <tr><td>Dental - extras</td><td class="eur">Not covered</td><td>Zahnzusatzversicherung (supplementary dental) highly recommended; ~15-40 EUR/month</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Covered</td><td>Psychotherapy covered; long waiting lists (3-6 months); Terminservicestelle 116 117</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>Prenatal care, delivery, midwife (Hebamme) all covered</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">10% co-pay + 10 EUR</td><td>Requires prescription from doctor</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Bonusheft tip:</strong> Keep a Bonusheft (dental bonus booklet) and visit the dentist annually for check-ups. After 5 years, GKV covers 60% of dental crowns/bridges; after 10 years, 65%. Without it, only 50% is covered. This can save you hundreds of euros.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Germany (Wohnungssuche)</h2>
+            <p class="section-subtitle">The German rental market can be competitive, especially in Munich, Berlin, and Frankfurt. Understanding key terms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>German Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Kaltmiete</strong></td><td>Cold rent</td><td>Base rent without utilities; what's listed in most ads</td></tr>
+                    <tr><td><strong>Warmmiete</strong></td><td>Warm rent</td><td>Kaltmiete + Nebenkosten (utilities); your actual monthly cost</td></tr>
+                    <tr><td><strong>Nebenkosten</strong></td><td>Additional costs</td><td>Heating, water, garbage, building insurance, etc. (~2-3 EUR/sqm)</td></tr>
+                    <tr><td><strong>Kaution</strong></td><td>Security deposit</td><td>Maximum 3 months Kaltmiete; must be held in separate account</td></tr>
+                    <tr><td><strong>Schufa</strong></td><td>Credit check</td><td>Schufa-Auskunft required by most landlords; get via meineschufa.de</td></tr>
+                    <tr><td><strong>Anmeldung</strong></td><td>Address registration</td><td>MANDATORY within 14 days of moving in; at Buergeramt; need Wohnungsgeberbestaetigung from landlord</td></tr>
+                    <tr><td><strong>Mietpreisbremse</strong></td><td>Rent brake</td><td>Law limiting rent increases in tight markets; max 10% above local average</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>ImmobilienScout24.de</td><td>All types</td><td>Largest housing platform in Germany; essential for searching</td></tr>
+                    <tr><td>WG-Gesucht.de</td><td>Shared flats (WG)</td><td>Best for WG (Wohngemeinschaft) rooms; popular with students/young professionals</td></tr>
+                    <tr><td>Immowelt.de</td><td>All types</td><td>Second largest platform; good selection</td></tr>
+                    <tr><td>eBay Kleinanzeigen</td><td>All types</td><td>Classifieds; sometimes hidden gems; beware scams</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Wohnung in Berlin" groups; popular for expats</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> Schufa-Auskunft, last 3 payslips (Gehaltsabrechnungen), copy of ID/passport, Mietschuldenfreiheitsbescheinigung (letter from previous landlord confirming no rent debt), and sometimes a personal cover letter (Bewerbungsschreiben). Prepare these in advance -- competitive apartments get 50-100+ applicants.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Germany (Verkehr)</h2>
+            <p class="section-subtitle">Germany has excellent public transport, a world-famous Autobahn, and growing cycling infrastructure.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">49</div>
+                    <div class="stat-unit">EUR/month</div>
+                    <div class="stat-desc">Deutschlandticket - all local/regional transport</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">No limit</div>
+                    <div class="stat-unit">Autobahn speed</div>
+                    <div class="stat-desc">No general speed limit (recommended 130 km/h)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.85</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.70 EUR; fluctuates with oil prices</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">33,000+</div>
+                    <div class="stat-unit">km rail network</div>
+                    <div class="stat-desc">Deutsche Bahn; largest in central Europe</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Deutschlandticket</td><td class="eur">49 EUR/month</td><td>All local buses, trams, U-Bahn, S-Bahn, regional trains nationwide</td></tr>
+                    <tr><td>BahnCard 25</td><td class="eur">~62 EUR/year</td><td>25% off all Deutsche Bahn long-distance (ICE/IC) tickets</td></tr>
+                    <tr><td>BahnCard 50</td><td class="eur">~244 EUR/year</td><td>50% off all DB long-distance tickets; great for frequent travelers</td></tr>
+                    <tr><td>ICE Berlin-Munich</td><td class="eur">30-150 EUR</td><td>~4 hours; book early (Sparpreise from 17.90 EUR)</td></tr>
+                    <tr><td>Car insurance (Kfz-Versicherung)</td><td class="eur">50-120 EUR/month</td><td>Haftpflicht mandatory; Teilkasko/Vollkasko optional</td></tr>
+                    <tr><td>TUeV (vehicle inspection)</td><td class="eur">~100 EUR</td><td>Every 2 years (new cars: first after 3 years); mandatory safety check</td></tr>
+                    <tr><td>Car sharing</td><td class="eur">Varies</td><td>SHARE NOW, Sixt Share, MILES; popular in cities</td></tr>
+                    <tr><td>Bicycle (second-hand)</td><td class="eur">50-300 EUR</td><td>eBay Kleinanzeigen; Swapfiets subscription ~20 EUR/month</td></tr>
+                    <tr><td>E-scooter rental</td><td class="eur">~0.20 EUR/min</td><td>Tier, Lime, Bolt; widespread in cities</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Buy a BahnCard 25 and combine it with Sparpreise (advance fares) on bahn.de. You can travel ICE Berlin-Munich for as low as 13 EUR with planning. The Deutschlandticket does NOT cover long-distance trains (ICE, IC, EC) -- only regional (RE, RB, S-Bahn).
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Germany -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Germany (Arbeiten in Deutschland)</h2>
+            <p class="section-subtitle">German work culture, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20-30</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum 20 (5-day week); most get 25-30</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">6 months</div>
+                    <div class="stat-unit">Probezeit</div>
+                    <div class="stat-desc">Probation period; 2-week notice during this time</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">14 months</div>
+                    <div class="stat-unit">Elternzeit</div>
+                    <div class="stat-desc">Parental leave (Elterngeld); 65-67% of net salary</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Puenktlich</div>
+                    <div class="stat-unit">Punctuality</div>
+                    <div class="stat-desc">Being on time is non-negotiable in German culture</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Arbeitsvertrag</strong></td><td>Employment contract; must be in writing since 2022</td><td>Read carefully; check for Tarifvertrag (collective agreement) reference</td></tr>
+                    <tr><td><strong>Probezeit</strong></td><td>Probation period, typically 6 months</td><td>Either party can terminate with 2 weeks notice; after Probezeit: 4 weeks notice minimum</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 35-40 hours/week</td><td>Arbeitszeitgesetz limits to max 8h/day (10h with compensation); strict enforcement</td></tr>
+                    <tr><td><strong>Vacation (Urlaub)</strong></td><td>Legal minimum: 20 days (5-day week)</td><td>Most employers offer 25-30 days; unused days can carry over until March</td></tr>
+                    <tr><td><strong>Sick leave (Krankschreibung)</strong></td><td>Employer pays 100% for first 6 weeks</td><td>After that: Krankengeld from health insurance (~70% of gross, max 90% of net)</td></tr>
+                    <tr><td><strong>Kurzarbeit</strong></td><td>Short-time work scheme</td><td>Government subsidizes reduced hours during economic downturns; famous from COVID response</td></tr>
+                    <tr><td><strong>Betriebsrat (Works Council)</strong></td><td>Employee representation in companies with 5+ employees</td><td>Powerful rights: consulted on hiring, firing, working conditions; cannot be dissolved by employer</td></tr>
+                    <tr><td><strong>Elternzeit</strong></td><td>Up to 3 years parental leave per child</td><td>Elterngeld: 65-67% of net salary for 12 months (+ 2 months if partner takes leave)</td></tr>
+                    <tr><td><strong>Mutterschutz</strong></td><td>Maternity protection: 6 weeks before, 8 weeks after birth</td><td>Full salary; cannot be terminated during pregnancy and 4 months after birth</td></tr>
+                    <tr><td><strong>Kuendigungsschutz</strong></td><td>Dismissal protection after 6 months in companies with 10+ employees</td><td>Employer needs valid reason to terminate; strong employee protection</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>German work culture essentials:</strong> (1) <strong>Puenktlichkeit</strong> -- arrive on time, always. 5 minutes early is on time. (2) <strong>Feierabend</strong> -- work-life separation is sacred; don't email colleagues after hours. (3) <strong>Direct communication</strong> -- Germans are straightforward; it's not rude, it's efficient. (4) <strong>Titles matter</strong> -- use Herr/Frau + last name until invited to use first names (Duzen vs. Siezen). (5) <strong>Paper-heavy</strong> -- expect lots of paperwork; Germany runs on forms and signatures.
+            </div>
+        </div>
+
+        <!-- TAB 10: German Basics -->
+        <div id="german" class="tab-content">
+            <h2 class="section-title">Essential German Terms & Bureaucracy</h2>
+            <p class="section-subtitle">Germany is famous for its bureaucracy (Buerokratie). Knowing these terms will save you hours of confusion.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Bureaucracy Survival Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>German Term</th><th>English</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Anmeldung</strong></td><td>Address registration</td><td>FIRST thing to do (within 14 days); at Buergeramt; needed for everything else</td></tr>
+                    <tr><td><strong>Buergeramt / Einwohnermeldeamt</strong></td><td>Citizens' office</td><td>Where you do Anmeldung, get documents; book Termin (appointment) online</td></tr>
+                    <tr><td><strong>Finanzamt</strong></td><td>Tax office</td><td>Assigns your Steuer-ID (tax number); handles income tax</td></tr>
+                    <tr><td><strong>Krankenkasse</strong></td><td>Health insurance provider</td><td>TK, AOK, Barmer, DAK -- choose one; mandatory</td></tr>
+                    <tr><td><strong>Steuer-ID</strong></td><td>Tax identification number</td><td>Permanent 11-digit number; sent by post after Anmeldung</td></tr>
+                    <tr><td><strong>Aufenthaltstitel</strong></td><td>Residence permit</td><td>At Auslaenderbehorde (foreigners' office); non-EU citizens</td></tr>
+                    <tr><td><strong>Auslaenderbehorde</strong></td><td>Immigration office</td><td>For visa extensions, work permits, permanent residence (Niederlassungserlaubnis)</td></tr>
+                    <tr><td><strong>Schufa</strong></td><td>Credit scoring agency</td><td>German equivalent of credit score; needed for renting, phone contracts, loans</td></tr>
+                    <tr><td><strong>Wohnungsgeberbestaetigung</strong></td><td>Landlord confirmation</td><td>Document from landlord confirming you live there; needed for Anmeldung</td></tr>
+                    <tr><td><strong>Termin</strong></td><td>Appointment</td><td>Everything in Germany requires a Termin -- book early, often weeks in advance</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Everyday Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>German</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Guten Tag</td><td>Good day / Hello</td><td>GOO-ten tahk</td></tr>
+                    <tr><td>Danke schoen</td><td>Thank you</td><td>DAHN-kuh shern</td></tr>
+                    <tr><td>Bitte</td><td>Please / You're welcome</td><td>BIT-uh</td></tr>
+                    <tr><td>Entschuldigung</td><td>Excuse me / Sorry</td><td>ent-SHOOL-di-goong</td></tr>
+                    <tr><td>Sprechen Sie Englisch?</td><td>Do you speak English?</td><td>SHPREH-khen zee ENG-lish</td></tr>
+                    <tr><td>Ich verstehe nicht</td><td>I don't understand</td><td>ikh fair-SHTAY-uh nikht</td></tr>
+                    <tr><td>Wo ist...?</td><td>Where is...?</td><td>vo ist</td></tr>
+                    <tr><td>Wie viel kostet das?</td><td>How much does it cost?</td><td>vee feel KOS-tet dahs</td></tr>
+                    <tr><td>Tschuess / Auf Wiedersehen</td><td>Bye / Goodbye (formal)</td><td>chews / owf VEE-der-zay-en</td></tr>
+                    <tr><td>Genau</td><td>Exactly (Germans say this constantly)</td><td>geh-NOW</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Ruhezeit</strong> -- quiet hours (typically 10pm-6am and all day Sunday); no loud music, drilling, or vacuuming. (2) <strong>Pfand</strong> -- bottle deposit system (0.25 EUR for single-use, 0.08-0.15 EUR for reusable); return bottles at supermarkets. (3) <strong>Cash is king</strong> -- many restaurants, bakeries, and small shops are still cash-only ("Nur Barzahlung"). Always carry some cash. (4) <strong>Sonntag</strong> -- almost all shops closed on Sundays; plan grocery shopping for Saturday. (5) <strong>Muellltrennung</strong> -- strict recycling; separate paper, plastic, glass, bio, and Restmuell. Your neighbors WILL notice if you do it wrong.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Germany</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~38,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~55,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,400</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,500</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>WG room, very frugal</small></td><td class="eur">1,200</td><td class="eur">2,000</td><td class="eur">1,400</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside big city</small></td><td class="eur">1,800</td><td class="eur">3,000</td><td class="eur">2,000</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">2,800</td><td class="eur">4,500</td><td class="eur">3,000</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (Munich/Frankfurt)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">3,800</td><td class="eur">6,200</td><td class="eur">4,000</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, big city</small></td><td class="eur">4,200</td><td class="eur">7,000</td><td class="eur">4,500</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Do your <strong>Anmeldung</strong> at the Buergeramt (within 14 days!). (2) Open a bank account (N26, DKB, Sparkasse, Deutsche Bank). (3) Get health insurance (Krankenkasse -- TK, AOK, or Barmer are popular). (4) Wait for your <strong>Steuer-ID</strong> by post (~2-4 weeks). (5) Get a Schufa-Auskunft (meineschufa.de). (6) Buy a SIM card (Aldi Talk, congstar). (7) Get a <strong>Deutschlandticket</strong> (49 EUR/month). (8) Register at the Auslaenderbehorde if non-EU.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Bundesfinanzministerium, Destatis, your Krankenkasse) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Germany Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#FFC300;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const dePppCountries = [
+        { name: 'Netherlands', currency: 'EUR', ppp: 105, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 105, region: 'Nordic' },
+        { name: 'France', currency: 'EUR', ppp: 97, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 101, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 102, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 103, region: 'Western Europe' },
+        { name: 'Spain', currency: 'EUR', ppp: 78, region: 'Southern Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 83, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 68, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 65, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 50, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 58, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 47, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 42, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 60, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 32, region: 'Eurasia' },
+        { name: 'USA', currency: 'USD', ppp: 110, region: 'North America' },
+        { name: 'Canada', currency: 'CAD', ppp: 95, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 100, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 92, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 84, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 75, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 40, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 23, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 19, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 21, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 24, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 37, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 27, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 30, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 28, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 37, region: 'Southeast Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 110, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 40, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 30, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 37, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 28, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 32, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 23, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 21, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 26, region: 'Africa' },
+        { name: 'UAE', currency: 'AED', ppp: 88, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 58, region: 'Middle East' },
+        { name: 'Switzerland', currency: 'CHF', ppp: 135, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 120, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 115, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 105, region: 'Nordic' },
+        { name: 'Ireland', currency: 'EUR', ppp: 112, region: 'Western Europe' },
+    ];
+
+    function calculateDEPPP() {
+        const amount = parseFloat(document.getElementById('dePppAmount').value) || 3000;
+        const tbody = document.querySelector('#dePppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#dePppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        dePppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateDEPPP();
+
+    // German Tax Calculator
+    function calculateDETax() {
+        const annualGross = parseFloat(document.getElementById('deGrossSalary').value) || 50000;
+        const churchRate = parseFloat(document.getElementById('deChurchTax').value) || 0;
+        const childless = document.getElementById('deChildless').value === 'yes';
+
+        // Social contributions (employee share) - capped at Beitragsbemessungsgrenze
+        const healthCap = 62100; // 2026 approx
+        const pensionCap = 90600; // 2026 approx West
+        const healthBase = Math.min(annualGross, healthCap);
+        const pensionBase = Math.min(annualGross, pensionCap);
+
+        const healthIns = healthBase * 0.0815; // 7.3% + ~1.15% avg Zusatzbeitrag / 2
+        const pension = pensionBase * 0.093;
+        const unemployment = Math.min(annualGross, pensionCap) * 0.013;
+        const nursingBase = Math.min(annualGross, healthCap);
+        const nursing = nursingBase * (childless ? 0.023 : 0.017);
+
+        const totalSocial = healthIns + pension + unemployment + nursing;
+
+        // Taxable income (after social deductions are partially deductible, simplified)
+        const taxableIncome = Math.max(0, annualGross - totalSocial * 0.5);
+
+        // German progressive tax calculation (simplified)
+        let incomeTax = 0;
+        if (taxableIncome <= 11604) {
+            incomeTax = 0;
+        } else if (taxableIncome <= 17005) {
+            const y = (taxableIncome - 11604) / 10000;
+            incomeTax = (922.98 * y + 1400) * y;
+        } else if (taxableIncome <= 66760) {
+            const z = (taxableIncome - 17005) / 10000;
+            incomeTax = (181.19 * z + 2397) * z + 1025.38;
+        } else if (taxableIncome <= 277825) {
+            incomeTax = 0.42 * taxableIncome - 10602.13;
+        } else {
+            incomeTax = 0.45 * taxableIncome - 18936.88;
+        }
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        // Soli (only on high incomes)
+        let soli = 0;
+        if (incomeTax > 18130) { // approx threshold for singles
+            soli = incomeTax * 0.055;
+        }
+
+        // Church tax
+        const churchTax = churchRate > 0 ? incomeTax * (churchRate / 100) : 0;
+
+        const totalTax = incomeTax + soli + churchTax;
+        const totalDeductions = totalTax + totalSocial;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('deTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} EUR</span></div>
+                <div><strong>Social contributions:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalSocial/12).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Health: ${Math.round(healthIns/12)} EUR/mo</div>
+                <div>Pension: ${Math.round(pension/12)} EUR/mo</div>
+                <div>Unemployment: ${Math.round(unemployment/12)} EUR/mo</div>
+                <div>Nursing care: ${Math.round(nursing/12)} EUR/mo</div>
+                ${soli > 0 ? `<div>Soli: ${Math.round(soli/12)} EUR/mo</div>` : ''}
+                ${churchTax > 0 ? `<div>Church tax: ${Math.round(churchTax/12)} EUR/mo</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 2400 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 2400 ? '#059669' : '#dc2626'};">${netMonthly >= 2400 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~2,400 EUR net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 2400 ? '+' : ''}${Math.round(netMonthly - 2400).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

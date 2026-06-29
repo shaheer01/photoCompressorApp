@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spain Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Spain 2026. Monthly expenses, salary by profession, IRPF tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="spain living cost, spain salary, spanish tax, cost of living madrid, expat spain, coste de vida España">
+    <link rel="canonical" href="https://compressphotos.cloud/spain-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1EA;&#x1F1F8;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #AA151B 0%, #8B1015 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #F1BF00; border-bottom: 3px solid #F1BF00; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #AA151B; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #AA151B; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #AA151B, #D94045);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #AA151B; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #AA151B; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #AA151B; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #AA151B, #D94045); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#F1BF00; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Steuern, Krankenkasse & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div><strong>Spain</strong><small>You are here</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Spain Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, IRPF tax system, Seguridad Social, healthcare, and PPP calculator. For expats and newcomers planning to move to Spain.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&q=80" alt="Sagrada Familia, Barcelona - iconic Spanish landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="spanish">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Spain (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in EUR. Based on INE, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. Spain is one of the most affordable countries in Western Europe, offering excellent quality of life at lower costs. See the <strong>Tax Structure</strong> tab for details on IRPF and Seguridad Social.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,800</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,000</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,600</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~28,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Spain-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (2-bedroom apartment)</td><td class="eur">600</td><td class="eur">1,000</td><td>Madrid/Barcelona much higher; includes comunidad fees typically</td></tr>
+                    <tr><td></td><td>Utilities (electricity, water, gas)</td><td class="eur">100</td><td class="eur">180</td><td>Electricity expensive; regulated (PVPC) vs free market tariffs</td></tr>
+                    <tr><td></td><td>Internet + TV</td><td class="eur">30</td><td class="eur">50</td><td>Movistar, Vodafone, Orange; fiber widely available</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">20</td><td class="eur">40</td><td>Pepephone, Simyo, Digi offer budget plans from 5 EUR</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">750</td><td class="eur">1,270</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">350</td><td class="eur">550</td><td>Mercadona, Lidl, Carrefour, Aldi; excellent quality at low prices</td></tr>
+                    <tr><td></td><td>Eating out / tapas</td><td class="eur">80</td><td class="eur">200</td><td>Menu del dia 10-15 EUR; tapas bars very affordable</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">430</td><td class="eur">750</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Monthly transport pass (2 persons)</td><td class="eur">80</td><td class="eur">120</td><td>Abono Transportes ~55 EUR in Madrid; varies by city/zone</td></tr>
+                    <tr><td></td><td>Occasional taxi / car</td><td class="eur">0</td><td class="eur">100</td><td>Cabify, Uber, Bolt; BiciMAD bike-sharing in Madrid</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">80</td><td class="eur">220</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Seguridad Social (Health)</td></tr>
+                    <tr><td></td><td>Public healthcare (employee share)</td><td class="eur">0</td><td class="eur">0</td><td>Covered through Seguridad Social payroll deductions (see Tax tab)</td></tr>
+                    <tr><td></td><td>Private health insurance (optional)</td><td class="eur">0</td><td class="eur">120</td><td>Sanitas, Adeslas, DKV; 40-80 EUR/person; shorter wait times</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">0</td><td class="eur">120</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">60</td><td class="eur">150</td><td>Zara, Mango, Primark all Spanish/accessible brands</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">50</td><td class="eur">100</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">40</td><td class="eur">100</td><td>Gym 25-45 EUR/month; outdoor activities widely available</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">30</td><td class="eur">60</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">180</td><td class="eur">410</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Home insurance (seguro de hogar)</td><td class="eur">15</td><td class="eur">30</td><td>Often required by landlords; covers theft, fire, water damage</td></tr>
+                    <tr><td></td><td>Liability insurance</td><td class="eur">5</td><td class="eur">10</td><td>Responsabilidad civil; included in many home policies</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">20</td><td class="eur">40</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,460</td><td class="eur">~2,810</td><td>Realistic range: 1,800 - 3,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Spain</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from INE, Glassdoor, InfoJobs, and LinkedIn Salary Insights 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>14 pagas:</strong> Most Spanish employees receive 14 monthly payments per year (12 regular + 2 extra pagas -- one in June/July, one at Christmas). Some companies prorate this into 12 equal payments. The figures below show standard monthly gross (based on 12 payments).
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Director</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:91%;">5,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:82%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (Abogado)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">3,700 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:64%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">3,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Profesor)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">2,900 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:51%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (Enfermero/a)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:47%;">2,600 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:45%;">2,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:42%;">2,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef (Cocinero)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">2,100 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Tourism Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">1,900 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:31%;">1,700 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Camarero (Waiter)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">1,500 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Salario Minimo Interprofesional (SMI) 2026:</strong> Spain's minimum wage is approximately 1,184 EUR/month (14 pagas) or ~1,382 EUR/month (12 pagas). This has risen significantly in recent years. The SMI is reviewed annually by the government.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Spanish Tax System (Sistema Tributario)</h2>
+            <p class="section-subtitle">Spain uses progressive income tax (IRPF) plus mandatory Seguridad Social contributions. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">IRPF Income Tax Brackets (Impuesto sobre la Renta)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>State Rate</th><th>Regional Rate (avg)</th><th>Combined Rate</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 12,450</td><td class="eur">9.5%</td><td class="eur">9.5%</td><td class="eur">19%</td></tr>
+                    <tr><td>12,451 - 20,200</td><td class="eur">12%</td><td class="eur">12%</td><td class="eur">24%</td></tr>
+                    <tr><td>20,201 - 35,200</td><td class="eur">15%</td><td class="eur">15%</td><td class="eur">30%</td></tr>
+                    <tr><td>35,201 - 60,000</td><td class="eur">18.5%</td><td class="eur">18.5%</td><td class="eur">37%</td></tr>
+                    <tr><td>60,001 - 300,000</td><td class="eur">22.5%</td><td class="eur">22.5%</td><td class="eur">45%</td></tr>
+                    <tr><td>300,001+</td><td class="eur">24.5%</td><td class="eur">22.5%</td><td class="eur">47%</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Regional variation:</strong> IRPF is split between state and autonomous community (comunidad autonoma). Regional rates vary -- Madrid has lower rates while Catalonia and Andalusia tend to be higher. The rates above use national averages.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Seguridad Social Contributions (Cotizaciones)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Employee Share</th><th>Employer Share</th><th>Total</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Common contingencies (Contingencias comunes)</td><td class="eur">4.70%</td><td class="eur">23.60%</td><td class="eur">28.30%</td><td>Covers healthcare, pensions, sick leave</td></tr>
+                    <tr><td>Unemployment (Desempleo)</td><td class="eur">1.55%</td><td class="eur">5.50%</td><td class="eur">7.05%</td><td>General rate for indefinite contracts</td></tr>
+                    <tr><td>Training (Formacion profesional)</td><td class="eur">0.10%</td><td class="eur">0.60%</td><td class="eur">0.70%</td><td>Professional training fund</td></tr>
+                    <tr><td>FOGASA (Wage guarantee)</td><td class="eur">0%</td><td class="eur">0.20%</td><td class="eur">0.20%</td><td>Fund guaranteeing wages if employer goes bankrupt</td></tr>
+                    <tr class="subtotal"><td><strong>Total employee</strong></td><td class="eur"><strong>6.35%</strong></td><td class="eur"><strong>~29.90%</strong></td><td class="eur"><strong>~36.25%</strong></td><td>Employee pays much less than employer</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Autonomo (Self-Employed) Rates</h3>
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Monthly Quota</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>New autonomo (tarifa plana, first 12 months)</td><td class="eur">80 EUR/month</td><td>Flat rate for new self-employed; can extend to 24 months if low income</td></tr>
+                    <tr><td>Regular autonomo (income-based from 2023)</td><td class="eur">230 - 500+ EUR/month</td><td>Based on net income brackets; replaces old flat system</td></tr>
+                    <tr><td>Sociedad Limitada (SL) administrator</td><td class="eur">~380 EUR/month minimum</td><td>Higher minimum base for company directors</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Beckham Law (Regimen de Impatriados)</h3>
+            <div class="info-box">
+                <i class="fas fa-star"></i>
+                <strong>For expats:</strong> The Beckham Law allows qualifying newcomers to pay a flat 24% tax on Spanish-sourced income (up to 600,000 EUR) for 6 years, instead of progressive IRPF rates. Foreign income (except salary) is generally exempt. Requirements: not a Spanish tax resident in the previous 5 years, moving for employment or as a company director. Apply within 6 months of starting work via form 149 at the Agencia Tributaria.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="esGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="esGrossSalary" value="35000" min="0" max="500000">
+                <label for="esBeckham">Apply Beckham Law?</label>
+                <select id="esBeckham">
+                    <option value="no">No - standard IRPF</option>
+                    <option value="yes">Yes - flat 24% rate</option>
+                </select>
+                <label for="esPayments">Number of payments per year:</label>
+                <select id="esPayments">
+                    <option value="14">14 pagas (standard)</option>
+                    <option value="12">12 pagas (prorated)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateESTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="esTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">1,500</td><td class="eur">18,000</td><td class="eur">~310</td><td class="eur" style="color:#059669; font-weight:700;">~1,190</td><td>20.7%</td></tr>
+                    <tr><td class="eur">2,500</td><td class="eur">30,000</td><td class="eur">~620</td><td class="eur" style="color:#059669; font-weight:700;">~1,880</td><td>24.8%</td></tr>
+                    <tr><td class="eur">3,500</td><td class="eur">42,000</td><td class="eur">~1,010</td><td class="eur" style="color:#059669; font-weight:700;">~2,490</td><td>28.9%</td></tr>
+                    <tr><td class="eur">5,000</td><td class="eur">60,000</td><td class="eur">~1,650</td><td class="eur" style="color:#059669; font-weight:700;">~3,350</td><td>33.0%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">84,000</td><td class="eur">~2,600</td><td class="eur" style="color:#059669; font-weight:700;">~4,400</td><td>37.1%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Spanish salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Spain = 100.</p>
+
+            <div class="calc-container">
+                <label for="esPppAmount">Your monthly spending in Spain (EUR):</label>
+                <input type="number" id="esPppAmount" value="2500" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateESPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="esPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>2,500 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Spain = 100. If Germany has a PPP index of 128, your 2,500 EUR in Spain has the same purchasing power as 2,500 x (128/100) = 3,200 EUR in Germany. You'd need 28% more money in Germany for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Spanish cities. Barcelona = 100 (most expensive baseline). Data: INE, Numbeo, Idealista 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 2-bed (EUR)</th><th>Monthly Pass (EUR)</th><th>Menu del Dia (EUR)</th><th>Beer (Cana) (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Barcelona</strong></td><td class="eur">1,100-1,600</td><td class="eur">40</td><td class="eur">12-18</td><td class="eur">3.00</td><td>Most expensive; beach + culture; heavy tourism</td></tr>
+                    <tr><td><strong>Madrid</strong></td><td class="eur">1,000-1,500</td><td class="eur">55</td><td class="eur">12-16</td><td class="eur">2.80</td><td>Capital; great nightlife; Abono Transportes covers wide area</td></tr>
+                    <tr><td><strong>Valencia</strong></td><td class="eur">700-1,100</td><td class="eur">35</td><td class="eur">10-14</td><td class="eur">2.20</td><td>Beach + city; paella homeland; booming tech scene</td></tr>
+                    <tr><td><strong>Seville</strong></td><td class="eur">650-1,000</td><td class="eur">35</td><td class="eur">10-13</td><td class="eur">2.00</td><td>Flamenco, tapas culture; very hot summers</td></tr>
+                    <tr><td><strong>Malaga</strong></td><td class="eur">700-1,100</td><td class="eur">35</td><td class="eur">10-14</td><td class="eur">2.20</td><td>Costa del Sol; growing digital nomad hub; Picasso's birthplace</td></tr>
+                    <tr><td><strong>Bilbao</strong></td><td class="eur">700-1,050</td><td class="eur">40</td><td class="eur">12-15</td><td class="eur">2.50</td><td>Guggenheim; Basque cuisine (pintxos); rainy but green</td></tr>
+                    <tr><td><strong>Granada</strong></td><td class="eur">500-800</td><td class="eur">30</td><td class="eur">8-12</td><td class="eur">1.80</td><td>Alhambra; free tapas tradition; affordable student city</td></tr>
+                    <tr><td><strong>Alicante</strong></td><td class="eur">550-850</td><td class="eur">30</td><td class="eur">9-12</td><td class="eur">2.00</td><td>Sunny, beach lifestyle; popular with British/Nordic expats</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Free tapas!</strong> In cities like Granada, Almeria, and parts of Andalusia, ordering a drink automatically comes with a free tapa. This tradition can significantly reduce your food costs and is one of Spain's great cultural experiences.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Spanish Healthcare System (Seguridad Social)</h2>
+            <p class="section-subtitle">Spain has a universal public healthcare system (Sistema Nacional de Salud) funded through Seguridad Social contributions.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">Universal</div>
+                    <div class="stat-unit">Public coverage</div>
+                    <div class="stat-desc">All residents and workers covered via Seguridad Social</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">GP & specialist visits</div>
+                    <div class="stat-desc">No co-pays for public healthcare visits</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Tarjeta</div>
+                    <div class="stat-unit">Sanitaria</div>
+                    <div class="stat-desc">Health card; get one at your centro de salud</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">0-60%</div>
+                    <div class="stat-unit">Prescription co-pay</div>
+                    <div class="stat-desc">Based on income; pensioners pay 0-10%</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Public vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Public (Seguridad Social)</th><th>Private (Seguro Privado)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Cost</strong></td><td>Free at point of use (funded by SS contributions)</td><td>40-120 EUR/month per person (Sanitas, Adeslas, DKV)</td></tr>
+                    <tr><td><strong>Wait times</strong></td><td>Can be long for specialists (weeks to months)</td><td>Usually seen within days</td></tr>
+                    <tr><td><strong>GP access</strong></td><td>Centro de salud; assigned by address</td><td>Choose your own doctor</td></tr>
+                    <tr><td><strong>Specialist referral</strong></td><td>Required from GP (medico de cabecera)</td><td>Direct access to specialists</td></tr>
+                    <tr><td><strong>Emergency (Urgencias)</strong></td><td>Excellent; no wait for serious cases</td><td>Private hospitals often less crowded</td></tr>
+                    <tr><td><strong>Quality</strong></td><td>High overall; ranked 7th globally by WHO</td><td>High; often same doctors work in both systems</td></tr>
+                    <tr><td><strong>Coverage</strong></td><td>Comprehensive; includes dental for children</td><td>Customizable; better dental coverage for adults</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered (Public System)</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (Medico de cabecera)</td><td class="eur">Free</td><td>Assigned by your centro de salud based on address (empadronamiento)</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">Free</td><td>Referral needed; wait times vary by region (weeks to months)</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">Free</td><td>All hospital care covered; no daily co-pay</td></tr>
+                    <tr><td>Emergency (Urgencias)</td><td class="eur">Free</td><td>Go to hospital urgencias; 24/7 service</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">0-60% co-pay</td><td>Working adults ~40-50%; pensioners 0-10%; chronic conditions reduced</td></tr>
+                    <tr><td>Dental - basic</td><td class="eur">Limited</td><td>Extractions and some treatments covered; most dental work NOT covered for adults</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Free</td><td>Psychologists and psychiatrists available; long waiting lists</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>Prenatal care, delivery, postnatal care all covered</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">Free</td><td>Via referral from public system; private sessions 30-60 EUR</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Tarjeta Sanitaria tip:</strong> To get your public health card (Tarjeta Sanitaria Individual), you need to be registered at your local centro de salud. Requirements: empadronamiento (padron registration) and Seguridad Social number. Non-EU citizens need a valid residency permit. The card gives you access to all public healthcare services in your comunidad autonoma, and urgencias nationwide.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Spain (Vivienda)</h2>
+            <p class="section-subtitle">The Spanish rental market is competitive in major cities. Understanding key terms and requirements is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Spanish Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Fianza</strong></td><td>Security deposit</td><td>Legally 1 month's rent for unfurnished, 2 months for furnished; deposited with regional authority</td></tr>
+                    <tr><td><strong>Empadronamiento</strong></td><td>Municipal registration</td><td>MANDATORY registration at your local ayuntamiento; needed for healthcare, school, voting, residency</td></tr>
+                    <tr><td><strong>NIE</strong></td><td>Foreigner ID number</td><td>Numero de Identificacion de Extranjero; essential for renting, working, banking, everything</td></tr>
+                    <tr><td><strong>Comunidad de propietarios</strong></td><td>Community fees</td><td>Building maintenance fees; usually paid by owner but check contract</td></tr>
+                    <tr><td><strong>IBI</strong></td><td>Property tax</td><td>Impuesto sobre Bienes Inmuebles; annual tax paid by owner (sometimes passed to tenant)</td></tr>
+                    <tr><td><strong>Contrato de alquiler</strong></td><td>Rental contract</td><td>Standard 5-year contracts (Ley de Vivienda 2023); 7 years if landlord is a company</td></tr>
+                    <tr><td><strong>Piso compartido</strong></td><td>Shared flat</td><td>Common for students and young professionals; 250-500 EUR/room</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Idealista.com</td><td>All types</td><td>Largest housing platform in Spain; essential for searching</td></tr>
+                    <tr><td>Fotocasa.es</td><td>All types</td><td>Second largest; good for comparison</td></tr>
+                    <tr><td>Milanuncios.com</td><td>All types</td><td>Classifieds; sometimes direct owner listings (particulares)</td></tr>
+                    <tr><td>Habitaclia.com</td><td>All types</td><td>Popular in Catalonia and eastern Spain</td></tr>
+                    <tr><td>Pisos.com</td><td>All types</td><td>Growing platform; good user interface</td></tr>
+                    <tr><td>Facebook groups</td><td>Rooms / shared</td><td>"Pisos en Madrid" groups; popular for shared flats</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> NIE (foreigner ID number), nomina (payslip) or employment contract, passport/ID, and sometimes a bank guarantee (aval bancario) equivalent to 3-6 months rent. Some landlords require your income to be 3x the rent. Be prepared -- popular apartments in Madrid and Barcelona receive 20-50+ applications. Scams exist on all platforms; never pay before seeing the property and signing a contract.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Spain (Transporte)</h2>
+            <p class="section-subtitle">Spain has excellent public transport, high-speed rail (AVE), and growing cycling infrastructure.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~55</div>
+                    <div class="stat-unit">EUR/month</div>
+                    <div class="stat-desc">Abono Transportes Madrid (all zones A-B1)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">310 km/h</div>
+                    <div class="stat-unit">AVE top speed</div>
+                    <div class="stat-desc">Madrid-Barcelona in 2.5 hours by high-speed rail</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.55</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.45 EUR; cheaper than NW Europe</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3,400+</div>
+                    <div class="stat-unit">km AVE network</div>
+                    <div class="stat-desc">Largest high-speed rail network in Europe</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Abono Transportes Madrid</td><td class="eur">~55 EUR/month</td><td>Metro, bus, Cercanias in zones A-B1; under 26 get 50% discount</td></tr>
+                    <tr><td>T-Casual Barcelona (TMB)</td><td class="eur">11.35 EUR (10 trips)</td><td>Metro, bus, tram in zone 1; T-Usual monthly ~40 EUR</td></tr>
+                    <tr><td>Metro Valencia (Metrovalencia)</td><td class="eur">~40 EUR/month</td><td>Bono Oro monthly pass; covers metro, tram, bus</td></tr>
+                    <tr><td>AVE Madrid-Barcelona</td><td class="eur">25-120 EUR</td><td>2.5 hours; book on renfe.com early for best prices (Promo fares from 19 EUR)</td></tr>
+                    <tr><td>Renfe Cercanias</td><td class="eur">Free - subsidized</td><td>Government free/subsidized commuter rail passes; renewed annually</td></tr>
+                    <tr><td>Ouigo / iryo (competitors)</td><td class="eur">9-50 EUR</td><td>Low-cost high-speed trains; Madrid-Barcelona from 9 EUR with Ouigo</td></tr>
+                    <tr><td>BiciMAD (Madrid bike-share)</td><td class="eur">25 EUR/year</td><td>Electric bike-sharing; first 30 min included per trip; 5,000+ bikes</td></tr>
+                    <tr><td>Bicing (Barcelona bike-share)</td><td class="eur">50 EUR/year</td><td>Mechanical + electric bikes; first 30 min free</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">30-80 EUR/month</td><td>Third-party mandatory (a terceros); fully comprehensive (a todo riesgo) more</td></tr>
+                    <tr><td>ITV (vehicle inspection)</td><td class="eur">~40 EUR</td><td>Every 2 years (cars 4-10 years old); annual after 10 years</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Spain now has 3 high-speed rail operators competing on the same routes: <strong>Renfe AVE</strong> (national), <strong>Ouigo</strong> (French, ultra-low-cost), and <strong>iryo</strong> (Italian-backed). Competition has driven prices down dramatically. Madrid-Barcelona can be as cheap as 9 EUR with Ouigo if booked early. Also, Renfe Cercanias commuter rail passes remain heavily subsidized or free -- check abono gratuito renewal each year.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Spain -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Spain (Trabajar en Espana)</h2>
+            <p class="section-subtitle">Spanish work culture, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">22</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum (30 calendar days = ~22 working days)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">14 pagas</div>
+                    <div class="stat-unit">Payments/year</div>
+                    <div class="stat-desc">Most workers receive 14 monthly payments</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">40h</div>
+                    <div class="stat-unit">Weekly hours</div>
+                    <div class="stat-desc">Standard work week; jornada intensiva in summer</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">14+</div>
+                    <div class="stat-unit">Public holidays</div>
+                    <div class="stat-desc">National + regional + local fiestas</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Convenio Colectivo</strong></td><td>Collective bargaining agreement by sector</td><td>Sets minimum salaries, hours, and conditions for each industry; legally binding</td></tr>
+                    <tr><td><strong>14 pagas</strong></td><td>12 monthly + 2 extra payments (June & December)</td><td>Some companies prorate into 12 equal payments; check your contract</td></tr>
+                    <tr><td><strong>Periodo de prueba</strong></td><td>Probation: 2 months (general), 6 months (university graduates)</td><td>Either party can terminate freely during probation</td></tr>
+                    <tr><td><strong>Jornada intensiva</strong></td><td>Summer schedule: continuous 7am-3pm (no lunch break)</td><td>June-September in many companies; allows enjoying long summer evenings</td></tr>
+                    <tr><td><strong>Vacation (Vacaciones)</strong></td><td>30 calendar days (22 working days) minimum</td><td>By law; many take 2-3 weeks in August; some companies close entirely in August</td></tr>
+                    <tr><td><strong>Sick leave (Baja laboral)</strong></td><td>Days 4-15: employer pays 60%; Day 16+: Seguridad Social pays 60-75%</td><td>First 3 days typically unpaid unless improved by convenio colectivo</td></tr>
+                    <tr><td><strong>Maternity/Paternity</strong></td><td>16 weeks each parent, 100% salary (from SS)</td><td>Spain equalized paternity leave to 16 weeks in 2021; non-transferable between parents</td></tr>
+                    <tr><td><strong>Despido (Dismissal)</strong></td><td>Severance: 20-33 days salary per year worked</td><td>Procedente (fair): 20 days; Improcedente (unfair): 33 days (max 24 months)</td></tr>
+                    <tr><td><strong>Contrato indefinido</strong></td><td>Permanent contract</td><td>2022 labor reform made indefinite contracts the default; temporary contracts heavily restricted</td></tr>
+                    <tr><td><strong>Autonomo</strong></td><td>Self-employed / freelance registration</td><td>Must register with Seguridad Social + Hacienda; tarifa plana 80 EUR/month first year</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Spanish work culture essentials:</strong> (1) <strong>Siesta is mostly dead</strong> -- the traditional afternoon break is disappearing in cities, though lunch is still 1.5-2 hours (2-4pm). Many modern companies operate 9am-6pm. (2) <strong>Puentes (bridge holidays)</strong> -- when a holiday falls on Tuesday/Thursday, the Monday/Friday becomes a "puente" day off. Plan around these! (3) <strong>Relationships matter</strong> -- personal connections and trust are important in business; invest time in building rapport. (4) <strong>August is sacred</strong> -- many businesses slow down or close; avoid starting projects in August. (5) <strong>Sobremesa</strong> -- the post-meal conversation is a valued tradition; business lunches can extend 2-3 hours.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="spanish" class="tab-content">
+            <h2 class="section-title">Essential Spanish Phrases & Local Culture</h2>
+            <p class="section-subtitle">Understanding Spanish schedules, culture, and key phrases will transform your experience.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Horarios (Schedules) -- Spain Runs Late!</h3>
+            <table class="data-table">
+                <thead><tr><th>Activity</th><th>Typical Time</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Desayuno (Breakfast)</strong></td><td>7:30 - 9:30 AM</td><td>Light: cafe con leche + tostada con tomate; second breakfast at ~11am</td></tr>
+                    <tr><td><strong>Almuerzo/Comida (Lunch)</strong></td><td>2:00 - 3:30 PM</td><td>Main meal of the day; menu del dia at restaurants (starter + main + dessert + drink)</td></tr>
+                    <tr><td><strong>Merienda (Afternoon snack)</strong></td><td>5:30 - 7:00 PM</td><td>Coffee + pastry or bocadillo; especially for children</td></tr>
+                    <tr><td><strong>Cena (Dinner)</strong></td><td>9:00 - 10:30 PM</td><td>Lighter than lunch; restaurants may not open until 8:30-9pm</td></tr>
+                    <tr><td><strong>Shops</strong></td><td>10:00 AM - 2:00 PM, 5:00 - 8:30 PM</td><td>Many small shops close for lunch; malls/supermarkets open continuously</td></tr>
+                    <tr><td><strong>Banks</strong></td><td>8:30 AM - 2:00 PM</td><td>Most banks close after lunch; some open Thursday afternoons</td></tr>
+                    <tr><td><strong>Going out (Salir)</strong></td><td>11:00 PM - 6:00 AM</td><td>Clubs rarely fill before midnight; pre-drinks (botellones historically, now less common) start late</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Spanish</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Hola / Buenos dias</td><td>Hello / Good morning</td><td>OH-lah / BWEH-nos DEE-as</td></tr>
+                    <tr><td>Gracias / Muchas gracias</td><td>Thank you / Thank you very much</td><td>GRAH-thyahs / MOO-chas GRAH-thyahs</td></tr>
+                    <tr><td>Por favor</td><td>Please</td><td>por fah-VOR</td></tr>
+                    <tr><td>Perdona / Disculpe</td><td>Sorry / Excuse me</td><td>pair-DOH-nah / dis-COOL-peh</td></tr>
+                    <tr><td>Hablas ingles?</td><td>Do you speak English?</td><td>AH-blas een-GLAYS</td></tr>
+                    <tr><td>No entiendo</td><td>I don't understand</td><td>no en-tee-EN-doh</td></tr>
+                    <tr><td>Donde esta...?</td><td>Where is...?</td><td>DON-deh es-TAH</td></tr>
+                    <tr><td>Cuanto cuesta?</td><td>How much does it cost?</td><td>KWAN-toh KWES-tah</td></tr>
+                    <tr><td>La cuenta, por favor</td><td>The bill, please</td><td>lah KWEN-tah por fah-VOR</td></tr>
+                    <tr><td>Una cana, por favor</td><td>A small beer, please</td><td>OO-nah KAH-nyah por fah-VOR</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Tapas culture:</strong> Tapas are small dishes shared among friends. In most bars, you order drinks and choose tapas from the menu or bar counter. In southern Spain (Granada, Jaen, Almeria), you get a free tapa with every drink. <strong>Raciones</strong> are larger shared portions. Going for tapas ("ir de tapas" or "tapear") is a social activity -- you typically visit 2-4 bars in one evening, having a drink and tapa at each.
+            </div>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Sobremesa:</strong> The art of lingering at the table after a meal, chatting and enjoying coffee or digestivos. This can last 30 minutes to 2 hours. Waiters will NEVER rush you or bring the bill unasked -- you must request it ("la cuenta, por favor"). Tipping is not expected but rounding up or leaving small change (1-2 EUR) is appreciated.
+            </div>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Fiestas & Puentes:</strong> Spain has 14+ public holidays per year (national + regional + local). Famous ones: Semana Santa (Easter week), San Fermin (Pamplona bull run, July), La Tomatina (August), Fallas (Valencia, March), Feria de Abril (Seville). When a holiday falls on Tuesday or Thursday, the adjacent Monday or Friday becomes a "puente" (bridge day) -- many businesses close for a 4-day weekend. August is vacation month; Spain practically shuts down.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Spain</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~24,000</div>
+                    <div class="stat-unit">EUR/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~38,000</div>
+                    <div class="stat-unit">EUR/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,800</div>
+                    <div class="stat-unit">EUR/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,500</div>
+                    <div class="stat-unit">EUR/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat (piso compartido), very frugal</small></td><td class="eur">800</td><td class="eur">1,400</td><td class="eur">1,050</td><td class="eur eur-low">+250</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside big city</small></td><td class="eur">1,200</td><td class="eur">2,000</td><td class="eur">1,500</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">2,000</td><td class="eur">3,200</td><td class="eur">2,300</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Couple (Madrid/Barcelona)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">3,000</td><td class="eur">4,800</td><td class="eur">3,300</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, big city</small></td><td class="eur">3,500</td><td class="eur">5,500</td><td class="eur">3,800</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>NIE</strong> (foreigner identification number) at the Oficina de Extranjeria or police station -- needed for EVERYTHING. (2) Do your <strong>empadronamiento</strong> at the local ayuntamiento (town hall). (3) Open a bank account (CaixaBank, BBVA, Santander, Sabadell; or digital: N26, Revolut with Spanish IBAN). (4) Get your <strong>Seguridad Social number</strong> and register with a centro de salud for your <strong>Tarjeta Sanitaria</strong>. (5) Get a Spanish SIM card (Vodafone, Orange, Pepephone, Digi). (6) Get a transport pass (Abono Transportes in Madrid, T-Casual in Barcelona). (7) Register at the Agencia Tributaria if self-employed (modelo 036/037). (8) Apply for <strong>Beckham Law</strong> within 6 months if eligible.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Agencia Tributaria, INE, Seguridad Social) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Spain Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#F1BF00;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="spain-guide.html" style="color:#F1BF00;">Spain Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const esPppCountries = [
+        { name: 'Germany', currency: 'EUR', ppp: 128, region: 'Western Europe' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 135, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 124, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 130, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 131, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 132, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 135, region: 'Nordic' },
+        { name: 'Italy', currency: 'EUR', ppp: 106, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 87, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 83, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 64, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 74, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 60, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 54, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 77, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 41, region: 'Eurasia' },
+        { name: 'USA', currency: 'USD', ppp: 141, region: 'North America' },
+        { name: 'Canada', currency: 'CAD', ppp: 122, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 128, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 118, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 108, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 96, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 51, region: 'East Asia' },
+        { name: 'India', currency: 'INR', ppp: 29, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 24, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 27, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 31, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 47, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 35, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 38, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 36, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 47, region: 'Southeast Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 141, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 51, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 38, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 47, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 36, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 41, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 29, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 27, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 33, region: 'Africa' },
+        { name: 'UAE', currency: 'AED', ppp: 113, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 74, region: 'Middle East' },
+        { name: 'Switzerland', currency: 'CHF', ppp: 173, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 154, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 147, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 135, region: 'Nordic' },
+        { name: 'Ireland', currency: 'EUR', ppp: 144, region: 'Western Europe' },
+    ];
+
+    function calculateESPPP() {
+        const amount = parseFloat(document.getElementById('esPppAmount').value) || 2500;
+        const tbody = document.querySelector('#esPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#esPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        esPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateESPPP();
+
+    // Spanish Tax Calculator
+    function calculateESTax() {
+        const annualGross = parseFloat(document.getElementById('esGrossSalary').value) || 35000;
+        const beckham = document.getElementById('esBeckham').value === 'yes';
+        const payments = parseInt(document.getElementById('esPayments').value) || 14;
+
+        // Seguridad Social (employee share ~6.35%, capped at max base ~4,720 EUR/month in 2026)
+        const maxMonthlyBase = 4720;
+        const monthlyGross = annualGross / 12;
+        const ssBase = Math.min(monthlyGross, maxMonthlyBase);
+        const totalSS = ssBase * 12 * 0.0635;
+
+        // Taxable income
+        const taxableIncome = annualGross - totalSS;
+
+        let incomeTax = 0;
+
+        if (beckham) {
+            // Beckham Law: flat 24% on income up to 600,000
+            incomeTax = Math.min(taxableIncome, 600000) * 0.24;
+            if (taxableIncome > 600000) {
+                incomeTax += (taxableIncome - 600000) * 0.47;
+            }
+        } else {
+            // Standard IRPF progressive brackets
+            const brackets = [
+                { limit: 12450, rate: 0.19 },
+                { limit: 20200, rate: 0.24 },
+                { limit: 35200, rate: 0.30 },
+                { limit: 60000, rate: 0.37 },
+                { limit: 300000, rate: 0.45 },
+                { limit: Infinity, rate: 0.47 }
+            ];
+
+            let remaining = Math.max(0, taxableIncome);
+            let prevLimit = 0;
+
+            for (const bracket of brackets) {
+                const taxable = Math.min(remaining, bracket.limit - prevLimit);
+                if (taxable <= 0) break;
+                incomeTax += taxable * bracket.rate;
+                remaining -= taxable;
+                prevLimit = bracket.limit;
+            }
+
+            // Personal minimum deduction (minimo personal ~5,550 EUR at 19%)
+            incomeTax = Math.max(0, incomeTax - 5550 * 0.19);
+        }
+
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        const totalDeductions = incomeTax + totalSS;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const netPerPayment = netAnnual / payments;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('esTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>IRPF (income tax):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} EUR/mo</span></div>
+                <div><strong>Seguridad Social:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalSS/12).toLocaleString()} EUR/mo</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Net per paga (${payments} pagas):</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netPerPayment).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>SS employee: ${Math.round(totalSS/12)} EUR/mo (~6.35%)</div>
+                <div>IRPF: ${Math.round(incomeTax/12)} EUR/mo</div>
+                ${beckham ? '<div style="color:#AA151B; font-weight:600;">Beckham Law applied (24% flat)</div>' : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 1800 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 1800 ? '#059669' : '#dc2626'};">${netMonthly >= 1800 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~1,800 EUR net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 1800 ? '+' : ''}${Math.round(netMonthly - 1800).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

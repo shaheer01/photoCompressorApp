@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switzerland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Switzerland 2026. Monthly expenses in CHF, salaries by profession, cantonal tax calculator, Krankenkasse, and PPP comparisons for expats.">
+    <meta name="keywords" content="switzerland living cost, swiss salary, swiss tax, cost of living zurich, expat switzerland, Lebenshaltungskosten Schweiz, Krankenkasse">
+    <link rel="canonical" href="https://compressphotos.cloud/switzerland-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E8;&#x1F1ED;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #D52B1E 0%, #8B1A12 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #D52B1E; border-bottom: 3px solid #D52B1E; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #D52B1E; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #D52B1E; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #D52B1E, #E8685C);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #D52B1E; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #D52B1E; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #D52B1E; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #D52B1E, #8B1A12); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#D52B1E; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Steuern, Krankenkasse & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div><strong>Switzerland</strong><small>You are here</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Switzerland Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, cantonal tax system, Krankenkasse, and PPP calculator. For expats and newcomers planning to move to Switzerland.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&q=80" alt="Swiss Alps and lake - iconic Switzerland landscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="swiss">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Switzerland (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in CHF. Based on BFS (Federal Statistical Office), real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Switzerland is one of the most expensive countries in the world. To earn this take-home, you need a higher gross salary. For example, to spend 5,000 CHF/month, you need roughly 6,500 CHF gross (~23% effective deductions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~5,200</div>
+                    <div class="stat-unit">CHF/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~8,500</div>
+                    <div class="stat-unit">CHF/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,800</div>
+                    <div class="stat-unit">CHF avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~78,000</div>
+                    <div class="stat-unit">CHF avg annual salary</div>
+                    <div class="stat-desc">Switzerland-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (CHF)</th><th>High (CHF)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (3.5-room apartment)</td><td class="eur">1,800</td><td class="eur">2,800</td><td>Nettomiete; Zurich/Geneva significantly higher; 3.5 Zimmer = 2 bedrooms</td></tr>
+                    <tr><td></td><td>Nebenkosten (utilities)</td><td class="eur">150</td><td class="eur">300</td><td>Heating, water, garbage; sometimes included in rent (Bruttomiete)</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">50</td><td class="eur">80</td><td>Swisscom, Sunrise, Salt; fiber widely available</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">40</td><td class="eur">80</td><td>Wingo, Yallo, Salt basic plans from 15-25 CHF each</td></tr>
+                    <tr><td></td><td>Serafe (TV/radio fee)</td><td class="eur">27.55</td><td class="eur">27.55</td><td>Mandatory per household; replaced Billag in 2019; 335 CHF/year</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">2,068</td><td class="eur">3,288</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">800</td><td class="eur">1,200</td><td>Migros, Coop, Aldi, Lidl; Swiss prices much higher than EU neighbors</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">800</td><td class="eur">1,200</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Public transport passes (2 persons)</td><td class="eur">150</td><td class="eur">400</td><td>Halbtax 185 CHF/year each; monthly zone passes vary by city</td></tr>
+                    <tr><td></td><td>Occasional car / taxi</td><td class="eur">0</td><td class="eur">300</td><td>Mobility car sharing, taxi; fuel ~1.85 CHF/litre</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">150</td><td class="eur">700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance (Krankenkasse)</td></tr>
+                    <tr><td></td><td>Grundversicherung (2 adults)</td><td class="eur">700</td><td class="eur">1,000</td><td>Mandatory basic insurance; 350-500 CHF per person; varies by canton and franchise</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">700</td><td class="eur">1,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">150</td><td class="eur">300</td><td>Expensive in Switzerland; many shop across border in Germany/France</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">100</td><td class="eur">180</td><td>Haircuts 50-80 CHF; toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">100</td><td class="eur">250</td><td>Gym 60-100 CHF/month; ski passes, hiking gear</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">60</td><td class="eur">100</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">410</td><td class="eur">830</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Haftpflichtversicherung (liability)</td><td class="eur">10</td><td class="eur">20</td><td>Highly recommended; covers accidental damage to others</td></tr>
+                    <tr><td></td><td>Hausratversicherung (household)</td><td class="eur">15</td><td class="eur">30</td><td>Covers theft, fire, water damage; mandatory in some cantons</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">25</td><td class="eur">50</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~4,153</td><td class="eur">~7,068</td><td>Realistic range: 5,200 - 8,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Switzerland</h2>
+            <p class="section-subtitle">Monthly gross salaries in CHF. Data from BFS Lohnstrukturerhebung, jobs.ch, Glassdoor 2026. Swiss salaries are among the highest in the world.</p>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>13th salary:</strong> Most Swiss employers pay a mandatory 13th monthly salary (Dreizehnter Monatslohn). This is standard and often included in job offers. The figures below show standard monthly gross (excluding 13th month).
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">15,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Banker (senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:93%;">14,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:73%;">11,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">10,500 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">10,500 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharma Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:67%;">10,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">9,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">9,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">8,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">8,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Gymnasium)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">8,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">7,500 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:43%;">6,500 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:43%;">6,500 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">6,000 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">5,200 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">5,200 CHF</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">4,500 CHF</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>No federal minimum wage:</strong> Switzerland has no national minimum wage. Some cantons (Geneva: 24.32 CHF/hr, Neuchatel, Basel-Stadt, Jura, Ticino) have introduced cantonal minimum wages. Most industries rely on collective agreements (Gesamtarbeitsvertrag / GAV). The median salary is approximately 6,500 CHF/month gross.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Swiss Tax System (Steuersystem)</h2>
+            <p class="section-subtitle">Switzerland has a three-tier tax system: federal (Bund), cantonal (Kanton), and communal (Gemeinde). Rates vary dramatically by location. Updated for 2026.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Federal Income Tax (Direkte Bundessteuer)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (CHF)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 14,500</td><td class="eur">0%</td><td>Tax-free allowance</td></tr>
+                    <tr><td>14,501 - 31,600</td><td class="eur">0.77%</td><td>First progressive bracket</td></tr>
+                    <tr><td>31,601 - 41,400</td><td class="eur">0.88% - 2.64%</td><td>Progressive increase</td></tr>
+                    <tr><td>41,401 - 55,200</td><td class="eur">2.97%</td><td>Middle bracket</td></tr>
+                    <tr><td>55,201 - 72,500</td><td class="eur">5.94%</td><td>Upper-middle bracket</td></tr>
+                    <tr><td>72,501 - 78,100</td><td class="eur">6.60%</td><td>Higher bracket</td></tr>
+                    <tr><td>78,101 - 103,600</td><td class="eur">8.80%</td><td>High income bracket</td></tr>
+                    <tr><td>103,601 - 134,600</td><td class="eur">11.00%</td><td>Very high income</td></tr>
+                    <tr><td>134,601 - 176,000</td><td class="eur">13.20%</td><td>Top progressive bracket</td></tr>
+                    <tr><td>176,001 - 755,200</td><td class="eur">11.50% (flat)</td><td>High earner flat rate</td></tr>
+                    <tr><td>755,201+</td><td class="eur">11.50%</td><td>Maximum federal rate</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cantonal & Communal Taxes (Kantons- und Gemeindesteuer)</h3>
+            <table class="data-table">
+                <thead><tr><th>Canton</th><th>Approx. Effective Tax Rate (100k CHF income)</th><th>Tax Multiplier</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Zug</strong></td><td class="eur eur-low">~12%</td><td class="eur">Lowest</td><td>Tax haven; crypto valley; very low rates</td></tr>
+                    <tr><td><strong>Schwyz</strong></td><td class="eur eur-low">~14%</td><td class="eur">Very low</td><td>Popular with high earners</td></tr>
+                    <tr><td><strong>Nidwalden</strong></td><td class="eur eur-low">~14%</td><td class="eur">Very low</td><td>Central Switzerland; low taxes</td></tr>
+                    <tr><td><strong>Zurich</strong></td><td class="eur">~22%</td><td class="eur">Medium</td><td>Largest city; moderate rates</td></tr>
+                    <tr><td><strong>Bern</strong></td><td class="eur">~25%</td><td class="eur">Above avg</td><td>Capital; higher rates</td></tr>
+                    <tr><td><strong>Basel-Stadt</strong></td><td class="eur">~26%</td><td class="eur">Above avg</td><td>Pharma hub; higher rates</td></tr>
+                    <tr><td><strong>Geneva</strong></td><td class="eur eur-high">~30%</td><td class="eur">High</td><td>International city; highest cantonal rates</td></tr>
+                    <tr><td><strong>Vaud</strong></td><td class="eur eur-high">~28%</td><td class="eur">High</td><td>Lausanne; French-speaking</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Contributions</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Total Rate</th><th>Employee Share</th><th>Employer Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>AHV/IV/EO (1st pillar pension)</td><td class="eur">10.6%</td><td class="eur">5.3%</td><td class="eur">5.3%</td><td>State pension; mandatory for everyone</td></tr>
+                    <tr><td>ALV (unemployment insurance)</td><td class="eur">2.2%</td><td class="eur">1.1%</td><td class="eur">1.1%</td><td>Up to 148,200 CHF salary cap</td></tr>
+                    <tr><td>BVG / 2nd pillar (occupational pension)</td><td class="eur">~7-18%</td><td class="eur">~50%</td><td class="eur">~50%</td><td>Mandatory above 22,050 CHF/year; age-dependent contributions</td></tr>
+                    <tr><td>NBU (non-occupational accident)</td><td class="eur">~1-3%</td><td class="eur">~1-3%</td><td class="eur">0%</td><td>Employee pays NBU; employer pays BU (occupational accident)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Quellensteuer (withholding tax):</strong> If you hold an L or B permit (non-C permit foreigners), your employer deducts tax at source (Quellensteuer). Rates vary by canton, marital status, and number of children. You can request ordinary tax assessment (ordentliche Veranlagung) if your gross income exceeds 120,000 CHF/year.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="chGrossSalary">Annual Gross Salary (CHF):</label>
+                <input type="number" id="chGrossSalary" value="100000" min="0" max="1000000">
+                <label for="chCanton">Canton:</label>
+                <select id="chCanton">
+                    <option value="22">Zurich (~22%)</option>
+                    <option value="30">Geneva (~30%)</option>
+                    <option value="26">Basel-Stadt (~26%)</option>
+                    <option value="25">Bern (~25%)</option>
+                    <option value="28">Vaud / Lausanne (~28%)</option>
+                    <option value="20">Lucerne (~20%)</option>
+                    <option value="12">Zug (~12%)</option>
+                    <option value="14">Schwyz (~14%)</option>
+                </select>
+                <label for="chKrankenkasse">Monthly Krankenkasse premium (CHF):</label>
+                <input type="number" id="chKrankenkasse" value="400" min="200" max="800">
+                <button class="calc-btn" onclick="calculateCHTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="chTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross (Zurich)</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">5,000</td><td class="eur">60,000</td><td class="eur">~1,100</td><td class="eur" style="color:#059669; font-weight:700;">~3,900</td><td>22.0%</td></tr>
+                    <tr><td class="eur">7,000</td><td class="eur">84,000</td><td class="eur">~1,700</td><td class="eur" style="color:#059669; font-weight:700;">~5,300</td><td>24.3%</td></tr>
+                    <tr><td class="eur">9,000</td><td class="eur">108,000</td><td class="eur">~2,400</td><td class="eur" style="color:#059669; font-weight:700;">~6,600</td><td>26.7%</td></tr>
+                    <tr><td class="eur">12,000</td><td class="eur">144,000</td><td class="eur">~3,500</td><td class="eur" style="color:#059669; font-weight:700;">~8,500</td><td>29.2%</td></tr>
+                    <tr><td class="eur">15,000</td><td class="eur">180,000</td><td class="eur">~4,800</td><td class="eur" style="color:#059669; font-weight:700;">~10,200</td><td>32.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Swiss salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Switzerland = 100.</p>
+
+            <div class="calc-container">
+                <label for="chPppAmount">Your monthly spending in Switzerland (CHF):</label>
+                <input type="number" id="chPppAmount" value="5000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateCHPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="chPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>5,000 CHF buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Switzerland = 100 (most expensive baseline). If Germany has a PPP index of 74, your 5,000 CHF in Switzerland has the same purchasing power as 5,000 x (74/100) = 3,700 CHF equivalent in Germany. You'd need ~26% less money in Germany for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Swiss cities. Zurich = 100 (most expensive baseline). Data: BFS, Comparis, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 3.5-room (CHF)</th><th>Monthly Pass (CHF)</th><th>Meal Out (CHF)</th><th>Beer 0.5L (CHF)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Zurich</strong></td><td class="eur">2,400-3,200</td><td class="eur">87</td><td class="eur">25-45</td><td class="eur">7.00</td><td>Financial hub; lake, nightlife; most expensive</td></tr>
+                    <tr><td><strong>Geneva</strong></td><td class="eur">2,200-3,000</td><td class="eur">70</td><td class="eur">25-45</td><td class="eur">7.00</td><td>International orgs (UN, CERN); French-speaking; very expensive</td></tr>
+                    <tr><td><strong>Basel</strong></td><td class="eur">1,600-2,400</td><td class="eur">88</td><td class="eur">20-35</td><td class="eur">6.00</td><td>Pharma hub (Roche, Novartis); tri-border region; cultural</td></tr>
+                    <tr><td><strong>Bern</strong></td><td class="eur">1,500-2,200</td><td class="eur">84</td><td class="eur">20-35</td><td class="eur">6.00</td><td>Capital; UNESCO old town; relaxed pace; Berndeutsch</td></tr>
+                    <tr><td><strong>Lausanne</strong></td><td class="eur">1,800-2,600</td><td class="eur">74</td><td class="eur">22-40</td><td class="eur">6.50</td><td>Olympic capital; university city; steep hills; Lake Geneva</td></tr>
+                    <tr><td><strong>Lucerne</strong></td><td class="eur">1,600-2,300</td><td class="eur">75</td><td class="eur">20-35</td><td class="eur">6.00</td><td>Tourist magnet; stunning lake and mountain views; central</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Canton matters more than city:</strong> In Switzerland, your tax burden depends heavily on which canton and commune (Gemeinde) you live in. Moving from Geneva to Zug on the same salary can save you 15-18% in taxes. Many high earners strategically choose low-tax cantons like Zug, Schwyz, or Nidwalden.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Swiss Healthcare System (Krankenkasse)</h2>
+            <p class="section-subtitle">Switzerland has mandatory private health insurance (Grundversicherung). There is no public option -- everyone must buy from a private insurer.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">350-500</div>
+                    <div class="stat-unit">CHF/month per adult</div>
+                    <div class="stat-desc">Grundversicherung premium (varies by canton)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">300-2,500</div>
+                    <div class="stat-unit">CHF/year franchise</div>
+                    <div class="stat-desc">Deductible you choose (higher = lower premium)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">700</div>
+                    <div class="stat-unit">CHF/year max Selbstbehalt</div>
+                    <div class="stat-desc">10% co-pay after franchise, capped at 700 CHF</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3 months</div>
+                    <div class="stat-unit">Registration deadline</div>
+                    <div class="stat-desc">Must register within 3 months of arriving</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">How the Franchise System Works</h3>
+            <table class="data-table">
+                <thead><tr><th>Franchise Level (CHF/year)</th><th>Approx. Monthly Premium (adult)</th><th>Best For</th><th>Max Out-of-Pocket (excl. premium)</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">300 (minimum)</td><td class="eur">450-550</td><td>Frequent doctor visits, families, chronic conditions</td><td class="eur">1,000 (300 + 700 Selbstbehalt)</td></tr>
+                    <tr><td class="eur">500</td><td class="eur">420-510</td><td>Moderate healthcare use</td><td class="eur">1,200</td></tr>
+                    <tr><td class="eur">1,000</td><td class="eur">380-460</td><td>Occasional visits</td><td class="eur">1,700</td></tr>
+                    <tr><td class="eur">1,500</td><td class="eur">350-430</td><td>Rarely sick</td><td class="eur">2,200</td></tr>
+                    <tr><td class="eur">2,000</td><td class="eur">320-400</td><td>Young and healthy</td><td class="eur">2,700</td></tr>
+                    <tr><td class="eur">2,500 (maximum)</td><td class="eur">300-380</td><td>Very healthy, want lowest premiums</td><td class="eur">3,200</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What Grundversicherung Covers</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Coverage</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visits (Hausarzt)</td><td class="eur">Covered (after franchise)</td><td>Choose HMO/Hausarzt model for lower premiums</td></tr>
+                    <tr><td>Specialist visits</td><td class="eur">Covered (after franchise)</td><td>Referral may be needed depending on insurance model</td></tr>
+                    <tr><td>Hospital (general ward)</td><td class="eur">Covered</td><td>General ward only; semi-private/private requires Zusatzversicherung</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Covered (Spezialitaetenliste)</td><td>Only drugs on the federal list; 10% co-pay applies</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Fully covered</td><td>No franchise or Selbstbehalt for pregnancy and birth</td></tr>
+                    <tr><td>Dental</td><td class="eur">NOT covered</td><td>Dental is excluded from Grundversicherung; buy Zahnversicherung separately</td></tr>
+                    <tr><td>Mental health</td><td class="eur">Covered</td><td>Psychotherapy covered since 2022 referral model reform; 15 sessions initially</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">Covered (with prescription)</td><td>Max 9 sessions per prescription; then renewal needed</td></tr>
+                    <tr><td>Alternative medicine</td><td class="eur">Partially covered</td><td>Acupuncture, homeopathy, TCM if done by certified MD</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Compare premiums annually:</strong> Use <strong>priminfo.admin.ch</strong> (official federal comparator) or <strong>comparis.ch</strong> to compare Krankenkasse premiums every autumn. You can switch insurers by November 30 for the following year. Premiums vary massively between insurers for identical coverage (Grundversicherung is standardized by law).
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Switzerland (Wohnungssuche)</h2>
+            <p class="section-subtitle">The Swiss rental market is extremely tight, especially in Zurich and Geneva. Vacancy rates below 1% are common. Understanding the system is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Nettomiete</strong></td><td>Net rent</td><td>Base rent without utilities; what's usually listed in ads</td></tr>
+                    <tr><td><strong>Bruttomiete</strong></td><td>Gross rent</td><td>Nettomiete + Nebenkosten; your total monthly rent payment</td></tr>
+                    <tr><td><strong>Nebenkosten / Akonto</strong></td><td>Additional costs</td><td>Heating, water, garbage, elevator; typically 150-300 CHF/month</td></tr>
+                    <tr><td><strong>Kaution / Mietdepot</strong></td><td>Security deposit</td><td>Max 3 months rent; deposited in a Mietkautionskonto (blocked bank account)</td></tr>
+                    <tr><td><strong>3.5-Zimmer</strong></td><td>3.5 rooms</td><td>Swiss counting: living room + 2 bedrooms + kitchen (half room). Standard for couples.</td></tr>
+                    <tr><td><strong>Genossenschaft</strong></td><td>Housing cooperative</td><td>Non-profit housing; 20-40% cheaper; long waiting lists (years); buy shares to join</td></tr>
+                    <tr><td><strong>Wohnungsbesichtigung</strong></td><td>Apartment viewing</td><td>Expect group viewings with 20-50+ people; bring documents ready</td></tr>
+                    <tr><td><strong>Referenzzinssatz</strong></td><td>Reference interest rate</td><td>Determines if landlord can raise/lower rent; set by Swiss National Bank</td></tr>
+                    <tr><td><strong>Anmeldung (Einwohnerkontrolle)</strong></td><td>Residence registration</td><td>Register within 14 days at your Gemeinde (municipality); mandatory</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Homegate.ch</td><td>All types</td><td>Largest housing platform in Switzerland; essential for searching</td></tr>
+                    <tr><td>Immoscout24.ch</td><td>All types</td><td>Second largest; good selection across all cantons</td></tr>
+                    <tr><td>Comparis.ch/immobilien</td><td>All types</td><td>Aggregator; compares listings from multiple platforms</td></tr>
+                    <tr><td>WG-Zimmer.ch / Ronorp.net</td><td>Shared flats (WG)</td><td>Best for WG rooms; popular with students and young professionals</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"WG Zurich", "Wohnung Zurich" groups; sometimes hidden gems</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> Betreibungsregisterauszug (debt collection register extract -- get from your Betreibungsamt, costs ~17 CHF), last 3 payslips, copy of Ausweis/permit, and a personal cover letter (Bewerbungsschreiben). In Zurich, competitive apartments get 100+ applicants. Having a Swiss employer reference letter helps enormously. Genossenschaft (co-op) housing is much cheaper but waiting lists can be 5-10+ years.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Switzerland (Verkehr)</h2>
+            <p class="section-subtitle">Switzerland has one of the world's best public transport networks. SBB trains run like clockwork (literally -- they helped design the Swiss Railway Clock).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">185</div>
+                    <div class="stat-unit">CHF/year Halbtax</div>
+                    <div class="stat-desc">Half-price card -- 50% off almost all public transport</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3,860</div>
+                    <div class="stat-unit">CHF/year GA Travelcard</div>
+                    <div class="stat-desc">Unlimited travel on all Swiss public transport</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.85</div>
+                    <div class="stat-unit">CHF/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.90 CHF; cheaper than neighbors</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">5,400+</div>
+                    <div class="stat-unit">km rail network</div>
+                    <div class="stat-desc">SBB/CFF/FFS; densest rail network in the world</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Halbtax (Half-Fare Card)</td><td class="eur">185 CHF/year</td><td>50% off trains, buses, boats, many cable cars; ESSENTIAL purchase for anyone in Switzerland</td></tr>
+                    <tr><td>GA Travelcard (Generalabonnement)</td><td class="eur">3,860 CHF/year (2nd class)</td><td>Unlimited travel on SBB, PostBus, boats, city transport nationwide; worth it if you commute daily</td></tr>
+                    <tr><td>City monthly pass (Zurich zone 110)</td><td class="eur">87 CHF</td><td>ZVV Zurich; with Halbtax. Without Halbtax: ~174 CHF</td></tr>
+                    <tr><td>SBB Zurich-Bern</td><td class="eur">26 CHF (Halbtax)</td><td>~1 hour; Supersaver tickets from 17.60 CHF; runs every 30 min</td></tr>
+                    <tr><td>SBB Zurich-Geneva</td><td class="eur">44 CHF (Halbtax)</td><td>~2.5 hours; book early for Sparbillette (saver tickets)</td></tr>
+                    <tr><td>Car insurance (Motorfahrzeugversicherung)</td><td class="eur">80-200 CHF/month</td><td>Haftpflicht mandatory; Kasko optional; varies by canton</td></tr>
+                    <tr><td>Motorway vignette (Autobahnvignette)</td><td class="eur">40 CHF/year</td><td>Mandatory for highway use; available at post offices, border crossings</td></tr>
+                    <tr><td>Mobility car sharing</td><td class="eur">Varies</td><td>Swiss car sharing coop; 1,500+ vehicles nationwide; excellent network</td></tr>
+                    <tr><td>E-bike (new)</td><td class="eur">2,000-5,000 CHF</td><td>Very popular; many employers offer subsidies; PubliBike for short-term rental</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Buy a <strong>Halbtax</strong> immediately upon arrival -- it pays for itself within 2-3 train trips. Combine with <strong>Supersaver tickets</strong> (Sparbillette) on sbb.ch for the cheapest fares. The SBB Mobile app is excellent. If you commute daily by train, calculate whether a <strong>GA Travelcard</strong> or <strong>Streckenabonnement</strong> (route-specific pass) is cheaper.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Switzerland -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Switzerland (Arbeiten in der Schweiz)</h2>
+            <p class="section-subtitle">High salaries, strong worker protections, and a pragmatic work culture. Understanding permits and Quellensteuer is critical for foreigners.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20-25</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum 20 days (4 weeks); most get 25; under 20 years: 5 weeks</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">1-3 months</div>
+                    <div class="stat-unit">Probezeit</div>
+                    <div class="stat-desc">Probation period; 7-day notice during first month</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">14 weeks</div>
+                    <div class="stat-unit">Mutterschaftsurlaub</div>
+                    <div class="stat-desc">Maternity leave at 80% salary; 2 weeks paternity since 2021</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Puenktlich</div>
+                    <div class="stat-unit">Punctuality</div>
+                    <div class="stat-desc">Swiss precision applies to meetings and deadlines</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Permits</h3>
+            <table class="data-table">
+                <thead><tr><th>Permit</th><th>Duration</th><th>Eligibility</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>L permit</strong></td><td>Up to 12 months</td><td>Short-term residence</td><td>Tied to employment contract; renewable; Quellensteuer applies</td></tr>
+                    <tr><td><strong>B permit</strong></td><td>5 years (EU/EFTA); 1 year (non-EU)</td><td>Residence permit with employment</td><td>Standard work permit; Quellensteuer for non-C permit holders</td></tr>
+                    <tr><td><strong>C permit</strong></td><td>Unlimited</td><td>After 5-10 years (varies by nationality)</td><td>Permanent residence; no Quellensteuer; ordinary tax assessment</td></tr>
+                    <tr><td><strong>G permit (Grenzgaenger)</strong></td><td>5 years</td><td>Cross-border commuters</td><td>Live in EU border area, work in Switzerland; special tax rules</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Employment Rights & Culture</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 40-42 hours/week</td><td>Max 45h (industry/retail) or 50h (others) by law; overtime must be compensated</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>1 month (year 1), 2 months (years 2-9), 3 months (10+ years)</td><td>During Probezeit: 7 days; always to end of month</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>Employer pays salary for limited time (3-8 weeks depending on tenure)</td><td>Most employers have Krankentaggeldversicherung (daily sickness benefit insurance) covering 80% for up to 720 days</td></tr>
+                    <tr><td><strong>13th salary</strong></td><td>Standard practice; usually paid in December</td><td>Check your Arbeitsvertrag; some split it across months</td></tr>
+                    <tr><td><strong>Pillar 3a (private pension)</strong></td><td>Max 7,056 CHF/year (employed, 2026)</td><td>Tax-deductible voluntary pension savings; VIAC, frankly, finpension popular</td></tr>
+                    <tr><td><strong>Quellensteuer</strong></td><td>Tax withheld at source for L/B permit holders</td><td>Rates vary by canton, marital status, children; can correct via Nachtraegliche ordentliche Veranlagung</td></tr>
+                    <tr><td><strong>Kuendigung (termination)</strong></td><td>Relatively easy compared to EU</td><td>No mandatory severance; but cannot fire during illness, pregnancy, or military service</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Swiss work culture essentials:</strong> (1) <strong>Puenktlichkeit</strong> -- punctuality is sacred; 5 minutes early is expected. (2) <strong>Consensus culture</strong> -- decisions are made collectively; be patient. (3) <strong>Direct but polite</strong> -- Swiss are precise and honest but less blunt than Germans. (4) <strong>Work-life balance</strong> -- respected; don't call or email after hours. (5) <strong>Apero</strong> -- after-work drinks with colleagues are common and important for networking. (6) <strong>Multilingual advantage</strong> -- speaking the local language (plus English) dramatically improves career prospects.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="swiss" class="tab-content">
+            <h2 class="section-title">Living in Switzerland: Local Basics</h2>
+            <p class="section-subtitle">Switzerland has 4 national languages, strict social norms, and a unique culture that varies by region. Understanding the basics makes integration much smoother.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">The Four Language Regions</h3>
+            <table class="data-table">
+                <thead><tr><th>Region</th><th>Language</th><th>Population %</th><th>Major Cities</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Deutschschweiz</strong></td><td>Swiss German (Schwiizerdueeutsch)</td><td class="eur">63%</td><td>Zurich, Bern, Basel, Lucerne</td><td>Spoken Swiss German differs massively from written Hochdeutsch</td></tr>
+                    <tr><td><strong>Romandie</strong></td><td>French</td><td class="eur">23%</td><td>Geneva, Lausanne, Neuchatel</td><td>Standard French; closer to Parisian French</td></tr>
+                    <tr><td><strong>Svizzera italiana</strong></td><td>Italian</td><td class="eur">8%</td><td>Lugano, Bellinzona, Locarno</td><td>Ticino canton; Mediterranean flair</td></tr>
+                    <tr><td><strong>Rumantschia</strong></td><td>Romansh</td><td class="eur">0.5%</td><td>Graubuenden region</td><td>Ancient Romance language; 5 dialects; endangered</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Swiss German Phrases (Zurich dialect)</h3>
+            <table class="data-table">
+                <thead><tr><th>Swiss German</th><th>High German</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Grueezi</td><td>Gruess Gott</td><td>Hello (formal)</td><td>GREW-eh-tsee</td></tr>
+                    <tr><td>Hoi / Sali</td><td>Hallo</td><td>Hi (informal)</td><td>hoy / SAH-lee</td></tr>
+                    <tr><td>Merci vilmal</td><td>Vielen Dank</td><td>Thank you very much</td><td>MER-see FEEL-mal</td></tr>
+                    <tr><td>Exguese</td><td>Entschuldigung</td><td>Excuse me</td><td>ex-GOO-zeh</td></tr>
+                    <tr><td>Wie gaats?</td><td>Wie geht's?</td><td>How are you?</td><td>vee GAHTS</td></tr>
+                    <tr><td>Ade / Tschuess</td><td>Auf Wiedersehen</td><td>Goodbye</td><td>ah-DEH / chews</td></tr>
+                    <tr><td>En Guete</td><td>Guten Appetit</td><td>Bon appetit</td><td>en GWEH-teh</td></tr>
+                    <tr><td>Prost / Zum Wohl</td><td>Prost</td><td>Cheers</td><td>prohst / tsoom VOHL</td></tr>
+                    <tr><td>Ich verstah noed</td><td>Ich verstehe nicht</td><td>I don't understand</td><td>ikh fer-SHTAH nerd</td></tr>
+                    <tr><td>Genau</td><td>Genau</td><td>Exactly (universal!)</td><td>geh-NOW</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Rules & Social Norms</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Recycling (Abfalltrennung)</strong> -- extremely strict. You must buy official Zueri-Sack (Zurich) or equivalent garbage bags; illegal dumping leads to fines. Glass, paper, cardboard, PET, aluminum, batteries all have separate collection points and specific collection days. (2) <strong>Sonntagsruhe (Sunday rest)</strong> -- no laundry, vacuuming, mowing, or noisy activities on Sundays. Shops are closed (except train station shops). (3) <strong>Quiet hours (Nachtruhe)</strong> -- 10pm-7am and 12pm-1pm (midday rest in some areas); no loud music, no bathing after 10pm in some buildings. (4) <strong>Roestigraben</strong> -- the cultural divide between German-speaking and French-speaking Switzerland; visible in voting patterns and attitudes. (5) <strong>Grueezi etiquette</strong> -- greet neighbors, shopkeepers, even strangers on hiking trails. Not greeting people is considered very rude.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Practical Everyday Tips</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Grocery shopping</strong></td><td>Migros, Coop (main), Aldi, Lidl (cheaper), Denner (discount)</td><td>Many people cross to Germany/France for cheaper shopping (Einkaufstourismus)</td></tr>
+                    <tr><td><strong>Banking</strong></td><td>UBS, Credit Suisse (now UBS), ZKB, PostFinance, Raiffeisen</td><td>Neon, Yuh (neobanks) popular with younger people; TWINT is Swiss mobile payment</td></tr>
+                    <tr><td><strong>SIM card</strong></td><td>Swisscom, Sunrise, Salt, Wingo, Yallo</td><td>Wingo/Yallo offer budget plans from 15-25 CHF/month</td></tr>
+                    <tr><td><strong>Voting</strong></td><td>Direct democracy; 4 votes/year on referendums</td><td>Swiss citizens vote on everything; foreigners cannot vote (except some cantonal exceptions)</td></tr>
+                    <tr><td><strong>Military service</strong></td><td>Mandatory for Swiss men; Zivildienst (civil service) alternative</td><td>Or pay 3% of income as Wehrpflichtersatzabgabe (military exemption tax) if unfit/exempt</td></tr>
+                    <tr><td><strong>Tipping</strong></td><td>Included in bill (service charge included by law)</td><td>Rounding up or 5-10% for good service is appreciated but not expected</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Switzerland</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026. Remember: Switzerland is expensive but salaries are proportionally the highest in the world.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~70,000</div>
+                    <div class="stat-unit">CHF/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~110,000</div>
+                    <div class="stat-unit">CHF/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~5,200</div>
+                    <div class="stat-unit">CHF/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~7,000</div>
+                    <div class="stat-unit">CHF/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (CHF)</th><th>Gross Salary Needed (CHF)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>WG room, very frugal</small></td><td class="eur">2,500</td><td class="eur">3,500</td><td class="eur">2,800</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside big city</small></td><td class="eur">3,800</td><td class="eur">5,200</td><td class="eur">4,100</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="eur">5,500</td><td class="eur">8,000</td><td class="eur">6,000</td><td class="eur eur-low">+500</td></tr>
+                    <tr><td><strong>Couple (Zurich/Geneva)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">7,500</td><td class="eur">11,000</td><td class="eur">8,000</td><td class="eur eur-low">+500</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, big city</small></td><td class="eur">9,000</td><td class="eur">13,500</td><td class="eur">9,800</td><td class="eur eur-low">+800</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Register at the <strong>Einwohnerkontrolle / Gemeinde</strong> (within 14 days). (2) Open a bank account (UBS, ZKB, PostFinance, or neobank like Neon). (3) Get <strong>Krankenkasse</strong> (mandatory health insurance -- compare on priminfo.admin.ch within 3 months). (4) Buy a <strong>Halbtax</strong> card (185 CHF/year -- essential). (5) Get a SIM card (Wingo, Yallo, Salt). (6) Set up <strong>TWINT</strong> (Swiss mobile payment -- widely used). (7) Apply for <strong>Pillar 3a</strong> pension account (tax-deductible savings). (8) Learn local recycling rules and buy official garbage bags.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Krankenkasse premiums, cantonal tax rates, and rents change annually. Always verify current rates with official sources (BFS, ESTV, priminfo.admin.ch, your canton's Steueramt) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Switzerland Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#D52B1E;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="switzerland-guide.html" style="color:#D52B1E;">Switzerland Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const chPppCountries = [
+        { name: 'Germany', currency: 'EUR', ppp: 74, region: 'Western Europe' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 78, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 72, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 76, region: 'Western Europe' },
+        { name: 'Belgium', currency: 'EUR', ppp: 75, region: 'Western Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 62, region: 'Southern Europe' },
+        { name: 'Spain', currency: 'EUR', ppp: 58, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 50, region: 'Southern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 48, region: 'Southern Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 76, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 83, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 78, region: 'Nordic' },
+        { name: 'Norway', currency: 'NOK', ppp: 89, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 85, region: 'Nordic' },
+        { name: 'Finland', currency: 'EUR', ppp: 78, region: 'Nordic' },
+        { name: 'Poland', currency: 'PLN', ppp: 37, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 43, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 35, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 31, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 44, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 24, region: 'Eurasia' },
+        { name: 'USA', currency: 'USD', ppp: 82, region: 'North America' },
+        { name: 'Canada', currency: 'CAD', ppp: 70, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 74, region: 'Oceania' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 68, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 62, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 56, region: 'East Asia' },
+        { name: 'China', currency: 'CNY', ppp: 30, region: 'East Asia' },
+        { name: 'Singapore', currency: 'SGD', ppp: 82, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 17, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 14, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 16, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 18, region: 'South Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 27, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 20, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 22, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 21, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 27, region: 'Southeast Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 30, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 22, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 27, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 21, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 24, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 17, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 16, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 19, region: 'Africa' },
+        { name: 'UAE', currency: 'AED', ppp: 65, region: 'Middle East' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 43, region: 'Middle East' },
+    ];
+
+    function calculateCHPPP() {
+        const amount = parseFloat(document.getElementById('chPppAmount').value) || 5000;
+        const tbody = document.querySelector('#chPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#chPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} CHF buys equiv. of`;
+
+        chPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} CHF (${diff})</td></tr>`;
+        });
+    }
+    calculateCHPPP();
+
+    // Swiss Tax Calculator
+    function calculateCHTax() {
+        const annualGross = parseFloat(document.getElementById('chGrossSalary').value) || 100000;
+        const cantonRate = parseFloat(document.getElementById('chCanton').value) || 22;
+        const monthlyKK = parseFloat(document.getElementById('chKrankenkasse').value) || 400;
+
+        // Social contributions (employee share)
+        const ahv = annualGross * 0.053; // AHV/IV/EO
+        const alv = Math.min(annualGross, 148200) * 0.011; // ALV
+        // BVG (simplified - age dependent, using average ~7%)
+        const bvgBase = Math.max(0, Math.min(annualGross, 88200) - 25725);
+        const bvg = bvgBase * 0.07; // simplified average
+        const nbu = annualGross * 0.015; // NBU approx
+
+        const totalSocial = ahv + alv + bvg + nbu;
+
+        // Taxable income (simplified - after social deductions and Pillar 3a)
+        const pillar3a = 7056; // max deduction
+        const taxableIncome = Math.max(0, annualGross - totalSocial - pillar3a);
+
+        // Federal tax (simplified progressive)
+        let federalTax = 0;
+        if (taxableIncome <= 14500) {
+            federalTax = 0;
+        } else if (taxableIncome <= 31600) {
+            federalTax = (taxableIncome - 14500) * 0.0077;
+        } else if (taxableIncome <= 41400) {
+            federalTax = 131.65 + (taxableIncome - 31600) * 0.0188;
+        } else if (taxableIncome <= 55200) {
+            federalTax = 315.87 + (taxableIncome - 41400) * 0.0297;
+        } else if (taxableIncome <= 72500) {
+            federalTax = 725.69 + (taxableIncome - 55200) * 0.0594;
+        } else if (taxableIncome <= 78100) {
+            federalTax = 1752.41 + (taxableIncome - 72500) * 0.066;
+        } else if (taxableIncome <= 103600) {
+            federalTax = 2122.01 + (taxableIncome - 78100) * 0.088;
+        } else if (taxableIncome <= 134600) {
+            federalTax = 4366.01 + (taxableIncome - 103600) * 0.11;
+        } else if (taxableIncome <= 176000) {
+            federalTax = 7776.01 + (taxableIncome - 134600) * 0.132;
+        } else {
+            federalTax = 13240.81 + (taxableIncome - 176000) * 0.115;
+        }
+
+        // Cantonal + communal tax (simplified as effective rate on taxable income)
+        const cantonalTax = taxableIncome * (cantonRate / 100) * 0.7; // rough: cantonal rate includes federal portion
+
+        const totalTax = federalTax + cantonalTax;
+        const annualKK = monthlyKK * 12;
+        const totalDeductions = totalTax + totalSocial;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+        const netAfterKK = netMonthly - monthlyKK;
+
+        const resultDiv = document.getElementById('chTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} CHF</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalTax/12).toLocaleString()} CHF</span></div>
+                <div><strong>Social contributions:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalSocial/12).toLocaleString()} CHF</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} CHF</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>AHV/IV/EO: ${Math.round(ahv/12)} CHF/mo</div>
+                <div>ALV: ${Math.round(alv/12)} CHF/mo</div>
+                <div>BVG (2nd pillar): ${Math.round(bvg/12)} CHF/mo</div>
+                <div>NBU: ${Math.round(nbu/12)} CHF/mo</div>
+                <div>Federal tax: ${Math.round(federalTax/12)} CHF/mo</div>
+                <div>Cantonal+communal: ${Math.round(cantonalTax/12)} CHF/mo</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:#fff7ed; border-radius:8px; font-size:13px;">
+                <strong>Krankenkasse (not deducted from salary):</strong> ${monthlyKK} CHF/mo | Net after KK: <strong>${Math.round(netAfterKK).toLocaleString()} CHF/mo</strong>
+            </div>
+            <div style="margin-top:8px; padding:10px; background:${netAfterKK >= 5200 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netAfterKK >= 5200 ? '#059669' : '#dc2626'};">${netAfterKK >= 5200 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~5,200 CHF net (after KK) | You have ${Math.round(netAfterKK).toLocaleString()} (${netAfterKK >= 5200 ? '+' : ''}${Math.round(netAfterKK - 5200).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

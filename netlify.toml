@@ -20,6 +20,117 @@
   to = "/analytics.html"
   status = 200
 
+# Pretty URLs - serve .html files without extension
+[[redirects]]
+  from = "/living-cost-guides"
+  to = "/living-cost-guides.html"
+  status = 200
+
+[[redirects]]
+  from = "/sweden-guide"
+  to = "/sweden-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/netherlands-guide"
+  to = "/netherlands-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk-guide"
+  to = "/uk-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/germany-guide"
+  to = "/germany-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/canada-guide"
+  to = "/canada-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/australia-guide"
+  to = "/australia-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/uae-guide"
+  to = "/uae-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/singapore-guide"
+  to = "/singapore-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/norway-guide"
+  to = "/norway-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/usa-guide"
+  to = "/usa-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/denmark-guide"
+  to = "/denmark-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/new-zealand-guide"
+  to = "/new-zealand-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/saudi-arabia-guide"
+  to = "/saudi-arabia-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/switzerland-guide"
+  to = "/switzerland-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/france-guide"
+  to = "/france-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/spain-guide"
+  to = "/spain-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/portugal-guide"
+  to = "/portugal-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/terms-of-service.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/schengen-visa-photo"
+  to = "/schengen-visa-photo.html"
+  status = 200
+
 # Headers for security and performance
 [[headers]]
   for = "/*"
@@ -36,7 +147,7 @@
 [[headers]]
   for = "*.html"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=300, must-revalidate"
 
 [[headers]]
   for = "*.css"
@@ -58,7 +169,7 @@
       img-src 'self' data: https: blob:;
       style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
       font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
-      connect-src 'self' https://ipapi.co https://ip-api.com https://ipwho.is https://pulsepointanalytics.space;
+      connect-src 'self' https://ipapi.co https://ip-api.com https://ipwho.is https://pulsepointanalytics.space https://compressphotos-backend-753240137971.me-central1.run.app;
       frame-src 'self';
       object-src 'none';
     """

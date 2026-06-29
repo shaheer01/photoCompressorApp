@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Cost Guides by Country | Salaries, Expenses & Tax Calculators - CompressPhotos</title>
+    <meta name="description" content="Compare living costs across countries. Comprehensive guides with monthly expenses, salaries by profession, tax calculators, and PPP comparisons for Sweden, Netherlands, UK, and more.">
+    <meta name="keywords" content="living cost comparison, cost of living by country, expat guide, salary comparison, tax calculator, purchasing power parity">
+    <link rel="canonical" href="https://compressphotos.cloud/living-cost-guides.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guides-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .guides-hero h1 { font-size: 2.8rem; margin-bottom: 12px; font-weight: 800; }
+        .guides-hero p { font-size: 1.15rem; opacity: 0.85; max-width: 650px; margin: 0 auto; }
+        .guides-hero .hero-stats {
+            display: flex; justify-content: center; gap: 40px; margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .guides-hero .hero-stat {
+            text-align: center;
+        }
+        .guides-hero .hero-stat-value {
+            font-size: 2rem; font-weight: 800; color: #60a5fa;
+        }
+        .guides-hero .hero-stat-label {
+            font-size: 13px; opacity: 0.7; margin-top: 4px;
+        }
+
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        .country-card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .country-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+        }
+
+        .country-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .country-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 80px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        }
+        .country-card-flag {
+            position: absolute;
+            top: 16px; right: 16px;
+            font-size: 36px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            z-index: 2;
+        }
+        .country-card-name {
+            position: absolute;
+            bottom: 12px; left: 16px;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 800;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .country-card-body {
+            padding: 20px;
+        }
+        .country-card-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .country-card-stat {
+            text-align: center;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .country-card-stat-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+        .country-card-stat-label {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        .country-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .country-card-tag {
+            padding: 4px 10px;
+            background: #eff6ff;
+            color: #2563eb;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .country-card-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #1e293b;
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .country-card:hover .country-card-cta {
+            background: #2563eb;
+        }
+
+        .coming-soon-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .coming-soon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .coming-soon-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .coming-soon-chip:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .coming-soon-chip .chip-flag {
+            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .guides-hero h1 { font-size: 1.8rem; }
+            .country-grid { grid-template-columns: 1fr; padding: 30px 0; }
+            .guides-hero .hero-stats { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#2563eb; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">🇩🇪</span><div>Germany<small>Tax, healthcare & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guides-hero">
+        <div class="container">
+            <h1><i class="fas fa-globe-europe" style="margin-right:12px;"></i>Living Cost Guides</h1>
+            <p>Comprehensive country guides with monthly expenses, salary data by profession, interactive tax calculators, and purchasing power parity comparisons. Everything you need to plan your move abroad.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">17</div>
+                    <div class="hero-stat-label">Countries covered</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">50+</div>
+                    <div class="hero-stat-label">Professions compared</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">40+</div>
+                    <div class="hero-stat-label">PPP countries</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">2026</div>
+                    <div class="hero-stat-label">Data updated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Search Bar -->
+        <div style="max-width:500px; margin:40px auto 0; position:relative;">
+            <i class="fas fa-search" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#94a3b8; font-size:16px;"></i>
+            <input type="text" id="countrySearch" placeholder="Search countries... e.g. Sweden, Germany, UAE"
+                style="width:100%; padding:14px 14px 14px 44px; border:2px solid #e2e8f0; border-radius:12px; font-size:15px; outline:none; transition:border-color 0.2s, box-shadow 0.2s; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.06);"
+                onfocus="this.style.borderColor='#2563eb'; this.style.boxShadow='0 4px 20px rgba(37,99,235,0.15)'"
+                onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.06)'"
+                oninput="filterCountries(this.value)">
+            <span id="searchClear" onclick="document.getElementById('countrySearch').value=''; filterCountries(''); this.style.display='none';"
+                style="display:none; position:absolute; right:14px; top:50%; transform:translateY(-50%); cursor:pointer; color:#94a3b8; font-size:18px; padding:4px;">&times;</span>
+        </div>
+        <p id="noResults" style="display:none; text-align:center; color:#94a3b8; margin-top:24px; font-size:15px;"><i class="fas fa-search"></i> No countries match your search.</p>
+
+        <div class="country-grid">
+
+            <!-- Sweden -->
+            <a href="sweden-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=600&q=80');">
+                    <span class="country-card-flag">🇸🇪</span>
+                    <div class="country-card-name">Sweden</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">33-41K</div>
+                            <div class="country-card-stat-label">SEK/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">18</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">480 days</div>
+                            <div class="country-card-stat-label">Parental leave</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">Free</div>
+                            <div class="country-card-stat-label">Healthcare & uni</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (65 countries)</span>
+                        <span class="country-card-tag">Budget Planner</span>
+                        <span class="country-card-tag">10 Cities</span>
+                        <span class="country-card-tag">Housing Queue</span>
+                        <span class="country-card-tag">SFI Language</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Sweden Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Netherlands -->
+            <a href="netherlands-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=600&q=80');">
+                    <span class="country-card-flag">🇳🇱</span>
+                    <div class="country-card-name">Netherlands</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">2.7-4.4K</div>
+                            <div class="country-card-stat-label">EUR/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">30%</div>
+                            <div class="country-card-stat-label">Ruling for expats</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">23M</div>
+                            <div class="country-card-stat-label">Bicycles!</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">30% Ruling Calc</span>
+                        <span class="country-card-tag">PPP (40 countries)</span>
+                        <span class="country-card-tag">Zorgverzekering</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">Dutch Basics</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Netherlands Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- UK -->
+            <a href="uk-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80');">
+                    <span class="country-card-flag">🇬🇧</span>
+                    <div class="country-card-name">United Kingdom</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">2.6-4.3K</div>
+                            <div class="country-card-stat-label">GBP/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">Free</div>
+                            <div class="country-card-stat-label">NHS Healthcare</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">10</div>
+                            <div class="country-card-stat-label">Cities compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax + NI Calculator</span>
+                        <span class="country-card-tag">Student Loan</span>
+                        <span class="country-card-tag">PPP (36 countries)</span>
+                        <span class="country-card-tag">NHS Guide</span>
+                        <span class="country-card-tag">British Slang</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore UK Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Germany -->
+            <a href="germany-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=80');">
+                    <span class="country-card-flag">🇩🇪</span>
+                    <div class="country-card-name">Germany</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">2.4-3.8K</div>
+                            <div class="country-card-stat-label">EUR/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">49 EUR</div>
+                            <div class="country-card-stat-label">Deutschlandticket</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">8</div>
+                            <div class="country-card-stat-label">Cities compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Gesetzlich vs PKV</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">German Basics</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Germany Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Canada -->
+            <a href="canada-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80');">
+                    <span class="country-card-flag">🇨🇦</span>
+                    <div class="country-card-name">Canada</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">3.2-5.4K</div>
+                            <div class="country-card-stat-label">CAD/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">Free</div>
+                            <div class="country-card-stat-label">Provincial healthcare</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">10</div>
+                            <div class="country-card-stat-label">Cities compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">RRSP & TFSA</span>
+                        <span class="country-card-tag">10 Cities</span>
+                        <span class="country-card-tag">Immigration</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Canada Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Australia -->
+            <a href="australia-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80');">
+                    <span class="country-card-flag">🇦🇺</span>
+                    <div class="country-card-name">Australia</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">3.8-6.2K</div>
+                            <div class="country-card-stat-label">AUD/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">Free</div>
+                            <div class="country-card-stat-label">Medicare healthcare</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">8</div>
+                            <div class="country-card-stat-label">Cities compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Superannuation</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">Aussie Basics</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Australia Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- UAE -->
+            <a href="uae-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80');">
+                    <span class="country-card-flag">🇦🇪</span>
+                    <div class="country-card-name">UAE</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">8.5-16K</div>
+                            <div class="country-card-stat-label">AED/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">0%</div>
+                            <div class="country-card-stat-label">Income tax!</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">7</div>
+                            <div class="country-card-stat-label">Emirates compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax-Free Income</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Golden Visa</span>
+                        <span class="country-card-tag">7 Emirates</span>
+                        <span class="country-card-tag">Gratuity Calculator</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore UAE Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Singapore -->
+            <a href="singapore-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80');">
+                    <span class="country-card-flag">🇸🇬</span>
+                    <div class="country-card-name">Singapore</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">4.5-8.5K</div>
+                            <div class="country-card-stat-label">SGD/month expenses</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">11</div>
+                            <div class="country-card-stat-label">Tabs of data</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">Low</div>
+                            <div class="country-card-stat-label">Tax rates</div>
+                        </div>
+                        <div class="country-card-stat">
+                            <div class="country-card-stat-value">6</div>
+                            <div class="country-card-stat-label">Areas compared</div>
+                        </div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">CPF System</span>
+                        <span class="country-card-tag">Hawker Culture</span>
+                        <span class="country-card-tag">Singlish</span>
+                    </div>
+                    <div class="country-card-cta">
+                        Explore Singapore Guide <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Norway -->
+            <a href="norway-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80');">
+                    <span class="country-card-flag">🇳🇴</span>
+                    <div class="country-card-name">Norway</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">28-42K</div><div class="country-card-stat-label">NOK/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">Free</div><div class="country-card-stat-label">Universal healthcare</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Oil Fund</span>
+                        <span class="country-card-tag">6 Cities</span>
+                        <span class="country-card-tag">Friluftsliv</span>
+                    </div>
+                    <div class="country-card-cta">Explore Norway Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- USA -->
+            <a href="usa-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f04?w=600&q=80');">
+                    <span class="country-card-flag">🇺🇸</span>
+                    <div class="country-card-name">USA</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">3.4-6.7K</div><div class="country-card-stat-label">USD/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">10</div><div class="country-card-stat-label">Cities compared</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">H-1B</div><div class="country-card-stat-label">Visa guide</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">401k Guide</span>
+                        <span class="country-card-tag">10 Cities</span>
+                        <span class="country-card-tag">Tipping Culture</span>
+                    </div>
+                    <div class="country-card-cta">Explore USA Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- Denmark -->
+            <a href="denmark-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=600&q=80');">
+                    <span class="country-card-flag">🇩🇰</span>
+                    <div class="country-card-name">Denmark</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">15.8-27K</div><div class="country-card-stat-label">DKK/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">Free</div><div class="country-card-stat-label">Universal healthcare</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Flexicurity</span>
+                        <span class="country-card-tag">6 Cities</span>
+                        <span class="country-card-tag">Hygge</span>
+                    </div>
+                    <div class="country-card-cta">Explore Denmark Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- New Zealand -->
+            <a href="new-zealand-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=600&q=80');">
+                    <span class="country-card-flag">🇳🇿</span>
+                    <div class="country-card-name">New Zealand</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">4.2-7.5K</div><div class="country-card-stat-label">NZD/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">Free</div><div class="country-card-stat-label">ACC + public health</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">KiwiSaver</span>
+                        <span class="country-card-tag">ACC Levy</span>
+                        <span class="country-card-tag">6 Cities</span>
+                        <span class="country-card-tag">Kiwi Slang</span>
+                    </div>
+                    <div class="country-card-cta">Explore New Zealand Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- Saudi Arabia -->
+            <a href="saudi-arabia-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=600&q=80');">
+                    <span class="country-card-flag">🇸🇦</span>
+                    <div class="country-card-name">Saudi Arabia</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">6.5-14K</div><div class="country-card-stat-label">SAR/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">0%</div><div class="country-card-stat-label">Income tax!</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax-Free Income</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Vision 2030</span>
+                        <span class="country-card-tag">Saudization</span>
+                        <span class="country-card-tag">Iqama Guide</span>
+                    </div>
+                    <div class="country-card-cta">Explore Saudi Arabia Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- Switzerland -->
+            <a href="switzerland-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&q=80');">
+                    <span class="country-card-flag">🇨🇭</span>
+                    <div class="country-card-name">Switzerland</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">4.5-7.5K</div><div class="country-card-stat-label">CHF/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">Top</div><div class="country-card-stat-label">World salaries</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Canton Tax Calc</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Krankenkasse</span>
+                        <span class="country-card-tag">6 Cities</span>
+                        <span class="country-card-tag">4 Languages</span>
+                    </div>
+                    <div class="country-card-cta">Explore Switzerland Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- France -->
+            <a href="france-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80');">
+                    <span class="country-card-flag">🇫🇷</span>
+                    <div class="country-card-name">France</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">2.3-3.6K</div><div class="country-card-stat-label">EUR/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">35h</div><div class="country-card-stat-label">Work week!</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">8</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">Carte Vitale</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">RTT Days</span>
+                    </div>
+                    <div class="country-card-cta">Explore France Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- Spain -->
+            <a href="spain-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=600&q=80');">
+                    <span class="country-card-flag">🇪🇸</span>
+                    <div class="country-card-name">Spain</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">1.8-3K</div><div class="country-card-stat-label">EUR/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">14</div><div class="country-card-stat-label">Monthly pagas!</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">8</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">Beckham Law</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">Tapas Culture</span>
+                    </div>
+                    <div class="country-card-cta">Explore Spain Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- Portugal -->
+            <a href="portugal-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80');">
+                    <span class="country-card-flag">🇵🇹</span>
+                    <div class="country-card-name">Portugal</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">1.5-2.8K</div><div class="country-card-stat-label">EUR/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">D7</div><div class="country-card-stat-label">Nomad visa</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">8</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">NHR Regime</span>
+                        <span class="country-card-tag">PPP (40+ countries)</span>
+                        <span class="country-card-tag">8 Cities</span>
+                        <span class="country-card-tag">Pastel de Nata</span>
+                    </div>
+                    <div class="country-card-cta">Explore Portugal Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Vote & Coming Soon Section -->
+    <section class="coming-soon-section" style="background:#f8fafc;">
+        <div class="container">
+            <h2 style="font-size:1.8rem; font-weight:800; color:#1e293b; margin-bottom:8px;">Vote for the Next Country Guide</h2>
+            <p style="color:#64748b; max-width:600px; margin:0 auto;">Click a country to vote! The most-voted country gets built next. Your vote helps us prioritize the next guide.</p>
+
+            <div class="coming-soon-grid" id="voteGrid" style="margin-top:30px;">
+            </div>
+
+            <div style="margin-top:40px; padding:30px; background:white; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.08); max-width:500px; margin-left:auto; margin-right:auto;">
+                <h3 style="font-size:1.1rem; font-weight:700; color:#1e293b; margin-bottom:16px;"><i class="fas fa-plus-circle" style="color:#2563eb; margin-right:8px;"></i>Request a Country</h3>
+                <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Don't see your country? Submit a request and we'll add it to the list.</p>
+                <div style="display:flex; gap:8px;">
+                    <input type="text" id="countryRequest" placeholder="e.g. South Korea, Brazil..." style="flex:1; padding:10px 14px; border:2px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='#2563eb'" onblur="this.style.borderColor='#e2e8f0'">
+                    <button onclick="submitCountryRequest()" style="padding:10px 20px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Submit</button>
+                </div>
+                <div id="requestConfirmation" style="display:none; margin-top:12px; padding:10px; background:#f0fdf4; border-radius:8px; color:#059669; font-size:13px; font-weight:600;">
+                    <i class="fas fa-check-circle"></i> Thanks! Your request has been recorded.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Living Cost Guides.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#60a5fa;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany</a> |
+                <a href="canada-guide.html" style="color:#D80621;">Canada</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia</a> |
+                <a href="uae-guide.html" style="color:#00732F;">UAE</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway</a> |
+                <a href="usa-guide.html" style="color:#002868;">USA</a> |
+                <a href="denmark-guide.html" style="color:#C60C30;">Denmark</a> |
+                <a href="new-zealand-guide.html" style="color:#000000;">New Zealand</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia</a> |
+                <a href="switzerland-guide.html" style="color:#D52B1E;">Switzerland</a> |
+                <a href="france-guide.html" style="color:#002395;">France</a> |
+                <a href="spain-guide.html" style="color:#AA151B;">Spain</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        document.querySelectorAll('.nav-dropdown.open').forEach(dd => {
+            if (!dd.contains(e.target)) dd.classList.remove('open');
+        });
+    });
+
+    // Backend API voting system
+    const API_BASE = window.location.hostname === 'localhost'
+        ? 'http://localhost:3001'
+        : 'https://compressphotos-backend-753240137971.me-central1.run.app';
+
+    const flagMap = {
+        'Italy': '🇮🇹', 'Finland': '🇫🇮',
+        'Ireland': '🇮🇪', 'Belgium': '🇧🇪',
+        'Austria': '🇦🇹', 'Qatar': '🇶🇦', 'Japan': '🇯🇵', 'South Korea': '🇰🇷',
+        'Brazil': '🇧🇷', 'Mexico': '🇲🇽', 'Poland': '🇵🇱', 'Czech Republic': '🇨🇿'
+    };
+
+    function getUserVotes() {
+        try { return JSON.parse(localStorage.getItem('userVotedCountries') || '[]'); } catch { return []; }
+    }
+
+    async function voteForCountry(name) {
+        const userVotes = getUserVotes();
+        const isUnvote = userVotes.includes(name);
+
+        // Update localStorage tracking
+        if (isUnvote) {
+            localStorage.setItem('userVotedCountries', JSON.stringify(userVotes.filter(v => v !== name)));
+        } else {
+            userVotes.push(name);
+            localStorage.setItem('userVotedCountries', JSON.stringify(userVotes));
+        }
+
+        // Try backend first
+        if (backendAvailable) {
+            try {
+                await fetch(`${API_BASE}/api/votes/${encodeURIComponent(name)}`, { method: isUnvote ? 'DELETE' : 'POST' });
+            } catch (err) { console.warn('Backend vote failed, using local:', err.message); }
+        }
+
+        // Always update local counts as backup
+        const localCounts = getLocalVoteCounts();
+        localCounts[name] = Math.max(0, (localCounts[name] || 0) + (isUnvote ? -1 : 1));
+        localStorage.setItem('localVoteCounts', JSON.stringify(localCounts));
+
+        await loadAndRenderVotes();
+    }
+
+    // Default countries for fallback when backend is down
+    const defaultCountries = [
+        'Italy', 'Finland', 'Ireland',
+        'Belgium', 'Austria', 'Qatar', 'Japan',
+        'South Korea', 'Brazil', 'Mexico', 'Poland', 'Czech Republic'
+    ];
+
+    function getLocalVoteCounts() {
+        try { return JSON.parse(localStorage.getItem('localVoteCounts') || '{}'); } catch { return {}; }
+    }
+
+    function renderVoteChips(countries, userVotes) {
+        const grid = document.getElementById('voteGrid');
+        grid.innerHTML = countries.map(c => {
+            const name = c.country_name || c;
+            const count = c.vote_count ?? (getLocalVoteCounts()[name] || 0);
+            const flag = flagMap[name] || '🌍';
+            const voted = userVotes.includes(name);
+            const isCustom = c.is_custom || false;
+            return `<div class="coming-soon-chip" onclick="voteForCountry('${name.replace(/'/g, "\\'")}')" style="cursor:pointer; ${voted ? 'border-color:#2563eb; background:#eff6ff;' : ''} position:relative; padding-right:50px;">
+                <span class="chip-flag">${flag}</span> ${name}${isCustom ? ' <span style="font-size:10px;color:#94a3b8;">(requested)</span>' : ''}
+                <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:${voted ? '#2563eb' : '#94a3b8'};">
+                    <i class="fas fa-thumbs-up"></i> ${count}
+                </span>
+            </div>`;
+        }).join('');
+    }
+
+    let backendAvailable = true;
+
+    async function loadAndRenderVotes() {
+        const userVotes = getUserVotes();
+
+        try {
+            const resp = await fetch(`${API_BASE}/api/votes`, { signal: AbortSignal.timeout(5000) });
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            const data = await resp.json();
+            const countries = data.votes || [];
+            if (countries.length === 0) throw new Error('Empty votes response');
+            countries.sort((a, b) => b.vote_count - a.vote_count);
+            backendAvailable = true;
+            renderVoteChips(countries, userVotes);
+        } catch (err) {
+            console.warn('Backend unavailable, using local fallback:', err.message);
+            backendAvailable = false;
+            // Fallback: render default countries with local vote counts
+            const localCounts = getLocalVoteCounts();
+            const fallback = defaultCountries.map(name => ({
+                country_name: name,
+                vote_count: localCounts[name] || 0,
+                is_custom: false
+            }));
+            // Add any custom requested countries from localStorage
+            const customCountries = JSON.parse(localStorage.getItem('customRequestedCountries') || '[]');
+            customCountries.forEach(name => {
+                if (!defaultCountries.includes(name)) {
+                    fallback.push({ country_name: name, vote_count: localCounts[name] || 0, is_custom: true });
+                }
+            });
+            fallback.sort((a, b) => b.vote_count - a.vote_count);
+            renderVoteChips(fallback, userVotes);
+        }
+    }
+
+    async function submitCountryRequest() {
+        const input = document.getElementById('countryRequest');
+        const name = input.value.trim();
+        if (!name) return;
+
+        // Try backend
+        if (backendAvailable) {
+            try {
+                await fetch(`${API_BASE}/api/votes/request/new`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ country: name })
+                });
+            } catch (err) { console.warn('Backend request failed, saving locally:', err.message); }
+        }
+
+        // Save custom country locally as well
+        const custom = JSON.parse(localStorage.getItem('customRequestedCountries') || '[]');
+        if (!custom.includes(name)) {
+            custom.push(name);
+            localStorage.setItem('customRequestedCountries', JSON.stringify(custom));
+        }
+
+        // Add flag if we don't have one
+        if (!flagMap[name]) flagMap[name] = '🌍';
+
+        // Mark as voted
+        const userVotes = getUserVotes();
+        if (!userVotes.includes(name)) {
+            userVotes.push(name);
+            localStorage.setItem('userVotedCountries', JSON.stringify(userVotes));
+        }
+
+        // Set local vote count to 1
+        const localCounts = getLocalVoteCounts();
+        localCounts[name] = (localCounts[name] || 0) + 1;
+        localStorage.setItem('localVoteCounts', JSON.stringify(localCounts));
+
+        input.value = '';
+        const conf = document.getElementById('requestConfirmation');
+        conf.style.display = 'block';
+        setTimeout(() => { conf.style.display = 'none'; }, 3000);
+
+        await loadAndRenderVotes();
+    }
+
+    document.getElementById('countryRequest').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') submitCountryRequest();
+    });
+
+    // Load votes from backend on page load
+    loadAndRenderVotes();
+
+    // Country search/filter
+    function filterCountries(query) {
+        const q = query.toLowerCase().trim();
+        const cards = document.querySelectorAll('.country-card');
+        const clearBtn = document.getElementById('searchClear');
+        const noResults = document.getElementById('noResults');
+        clearBtn.style.display = q ? 'block' : 'none';
+
+        let visible = 0;
+        cards.forEach(card => {
+            const name = card.querySelector('.country-card-name')?.textContent?.toLowerCase() || '';
+            const tags = card.querySelector('.country-card-tags')?.textContent?.toLowerCase() || '';
+            const match = !q || name.includes(q) || tags.includes(q);
+            card.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+        noResults.style.display = (q && visible === 0) ? 'block' : 'none';
+    }
+    </script>
+</body>
+</html>

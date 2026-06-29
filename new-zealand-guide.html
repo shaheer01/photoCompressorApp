@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Zealand Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in New Zealand 2026. Monthly expenses, salary by profession, tax calculator with KiwiSaver, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="new zealand living cost, nz salary, kiwisaver, cost of living auckland, expat new zealand, wellington expenses, ACC levy">
+    <link rel="canonical" href="https://compressphotos.cloud/new-zealand-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F3;&#x1F1FF;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #000000; border-bottom: 3px solid #000000; background: rgba(255,255,255,0.15); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #1a1a2e; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #000000; background: #f0f0f0; }
+
+        .nzd { font-family: 'Courier New', monospace; font-weight: 600; }
+        .nzd-low { color: #059669; }
+        .nzd-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #000000, #4a4a5a);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f0f5; border-left: 4px solid #000000; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #000000; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #000000; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #000000, #4a4a5a); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#C0C0C0; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Salaries, oil fund & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, tax & more</small></div></a>
+                        <a href="new-zealand-guide.html" style="background:#f0f0f0;"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div><strong>New Zealand</strong><small>You are here</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Sécu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>New Zealand Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, NZ tax system with KiwiSaver, healthcare, and PPP calculator. For expats and newcomers planning to move to Aotearoa New Zealand.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 28, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800&q=80" alt="Milford Sound, New Zealand - stunning fjord landscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="local">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in New Zealand (Mid-size City)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in NZD. Based on Stats NZ, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend 3,200 NZD/month, you need roughly 4,500 NZD gross (~29% effective tax+KiwiSaver). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200</div>
+                    <div class="stat-unit">NZD/month (low)</div>
+                    <div class="stat-desc">Frugal couple in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~5,500</div>
+                    <div class="stat-unit">NZD/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">NZD avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~62,000</div>
+                    <div class="stat-unit">NZD avg annual salary</div>
+                    <div class="stat-desc">NZ-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (NZD)</th><th>High (NZD)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (2-bedroom flat/unit)</td><td class="nzd">1,300</td><td class="nzd">2,200</td><td>Auckland much higher; Wellington/Christchurch mid-range</td></tr>
+                    <tr><td></td><td>Electricity & gas</td><td class="nzd">180</td><td class="nzd">280</td><td>Meridian, Genesis, Contact Energy; winter heating costs more</td></tr>
+                    <tr><td></td><td>Internet (fibre)</td><td class="nzd">75</td><td class="nzd">110</td><td>Spark, Vodafone, 2degrees; fibre widespread</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="nzd">40</td><td class="nzd">80</td><td>Skinny, Warehouse Mobile, 2degrees prepay options</td></tr>
+                    <tr><td></td><td>Contents insurance</td><td class="nzd">30</td><td class="nzd">60</td><td>AMI, AA Insurance, State; covers theft/fire/earthquake damage</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="nzd">1,625</td><td class="nzd">2,730</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="nzd">600</td><td class="nzd">900</td><td>Countdown, Pak'nSave (cheapest), New World; farmers markets for produce</td></tr>
+                    <tr><td></td><td>Eating out (occasional)</td><td class="nzd">100</td><td class="nzd">250</td><td>Cafe brunch ~$20-25; restaurant dinner ~$30-50pp</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="nzd">700</td><td class="nzd">1,150</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Public transport (2 persons)</td><td class="nzd">200</td><td class="nzd">350</td><td>AT HOP (Auckland), Snapper (Wellington); monthly passes vary by zone</td></tr>
+                    <tr><td></td><td>Fuel / car costs</td><td class="nzd">0</td><td class="nzd">300</td><td>Petrol ~$2.80/L; WoF & rego required</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="nzd">200</td><td class="nzd">650</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Healthcare</td></tr>
+                    <tr><td></td><td>GP visits (2 adults, occasional)</td><td class="nzd">50</td><td class="nzd">120</td><td>GP visit ~$50-65; subsidised if enrolled with a practice</td></tr>
+                    <tr><td></td><td>Prescriptions</td><td class="nzd">0</td><td class="nzd">20</td><td>Most prescriptions $5 per item (funded by PHARMAC)</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="nzd">50</td><td class="nzd">140</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="nzd">100</td><td class="nzd">250</td><td>Kmart, The Warehouse for budget; imported brands expensive</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="nzd">60</td><td class="nzd">120</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="nzd">80</td><td class="nzd">200</td><td>Gym $15-25/week; free hiking/outdoor activities abundant</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="nzd">40</td><td class="nzd">80</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="nzd">280</td><td class="nzd">650</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Car insurance (if applicable)</td><td class="nzd">0</td><td class="nzd">120</td><td>Third-party recommended minimum; full cover ~$80-120/month</td></tr>
+                    <tr><td></td><td>Health insurance (optional private)</td><td class="nzd">0</td><td class="nzd">200</td><td>Southern Cross, nib; covers private surgery, dental, optical</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="nzd">0</td><td class="nzd">320</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="nzd">~2,855</td><td class="nzd">~5,640</td><td>Realistic range: 3,200 - 5,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in New Zealand</h2>
+            <p class="section-subtitle">Monthly gross salaries in NZD. Data from Stats NZ, Seek, Hays Salary Guide 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>KiwiSaver note:</strong> Most employees contribute 3%, 4%, 6%, 8%, or 10% of gross salary to KiwiSaver (retirement fund). Employer contributes minimum 3%. The figures below show standard monthly gross before KiwiSaver deductions.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Surgeon / Specialist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">16,700 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Manager / CTO</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:78%;">13,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Dentist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:72%;">12,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">10,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:57%;">9,500 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:54%;">9,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant (CA)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">8,300 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:48%;">8,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Registered Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:42%;">7,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (secondary)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">6,700 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:39%;">6,500 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:37%;">6,200 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Plumber</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:36%;">6,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Admin / Office Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">5,000 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">4,500 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:23%;">3,900 NZD</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Hospitality Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:22%;">3,700 NZD</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>Minimum wage (2026):</strong> New Zealand's adult minimum wage is $23.50 NZD/hour, approximately $3,760 NZD/month gross for a 40-hour week. Starting-out and training rates are $18.80/hour. Reviewed annually by the Government.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">New Zealand Tax System</h2>
+            <p class="section-subtitle">NZ uses a progressive PAYE income tax plus ACC levies and optional KiwiSaver contributions. Updated for 2026 tax year (April 2026 - March 2027).</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Brackets (PAYE)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (NZD)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>$0 - $14,000</td><td class="nzd">10.5%</td><td>Low income earners</td></tr>
+                    <tr><td>$14,001 - $48,000</td><td class="nzd">17.5%</td><td>Middle bracket</td></tr>
+                    <tr><td>$48,001 - $70,000</td><td class="nzd">30%</td><td>Upper-middle bracket</td></tr>
+                    <tr><td>$70,001 - $180,000</td><td class="nzd">33%</td><td>High income bracket</td></tr>
+                    <tr><td>$180,001+</td><td class="nzd">39%</td><td>Top bracket (introduced 2021)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">ACC Levy (Accident Compensation Corporation)</h3>
+            <table class="data-table">
+                <thead><tr><th>Levy Type</th><th>Rate (2026)</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>ACC Earners' Levy</td><td class="nzd">~1.60%</td><td>Employees (deducted from pay)</td><td>Covers non-work injuries; rate set annually by ACC</td></tr>
+                    <tr><td>ACC Work Levy</td><td class="nzd">~0.67%</td><td>Employer</td><td>Covers work-related injuries; varies by industry risk</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">KiwiSaver (Retirement Savings)</h3>
+            <table class="data-table">
+                <thead><tr><th>Component</th><th>Rate</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Employee contribution</td><td class="nzd">3%, 4%, 6%, 8%, or 10%</td><td>Choose your rate; default is 3%; deducted from gross pay</td></tr>
+                    <tr><td>Employer contribution</td><td class="nzd">3% minimum</td><td>Mandatory employer match; some employers contribute more</td></tr>
+                    <tr><td>Government contribution</td><td class="nzd">Up to $521/year</td><td>Member Tax Credit; contribute $1,042+ to get full amount</td></tr>
+                    <tr><td>Withdrawal</td><td class="nzd">Age 65</td><td>Can withdraw for first home purchase or serious hardship</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="nzGrossSalary">Annual Gross Salary (NZD):</label>
+                <input type="number" id="nzGrossSalary" value="70000" min="0" max="500000">
+                <label for="nzKiwiSaver">KiwiSaver employee contribution rate:</label>
+                <select id="nzKiwiSaver">
+                    <option value="3">3% (default)</option>
+                    <option value="4">4%</option>
+                    <option value="6">6%</option>
+                    <option value="8">8%</option>
+                    <option value="10">10%</option>
+                    <option value="0">Opt-out (0%)</option>
+                </select>
+                <label for="nzStudentLoan">Student loan repayment?</label>
+                <select id="nzStudentLoan">
+                    <option value="no">No</option>
+                    <option value="yes">Yes (12% above $22,828)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateNZTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="nzTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>PAYE + ACC</th><th>KiwiSaver 3%</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="nzd">3,500</td><td class="nzd">42,000</td><td class="nzd">~540</td><td class="nzd">105</td><td class="nzd" style="color:#059669; font-weight:700;">~2,855</td><td>18.4%</td></tr>
+                    <tr><td class="nzd">5,000</td><td class="nzd">60,000</td><td class="nzd">~890</td><td class="nzd">150</td><td class="nzd" style="color:#059669; font-weight:700;">~3,960</td><td>20.8%</td></tr>
+                    <tr><td class="nzd">5,833</td><td class="nzd">70,000</td><td class="nzd">~1,100</td><td class="nzd">175</td><td class="nzd" style="color:#059669; font-weight:700;">~4,558</td><td>21.9%</td></tr>
+                    <tr><td class="nzd">8,333</td><td class="nzd">100,000</td><td class="nzd">~1,780</td><td class="nzd">250</td><td class="nzd" style="color:#059669; font-weight:700;">~6,303</td><td>24.4%</td></tr>
+                    <tr><td class="nzd">12,500</td><td class="nzd">150,000</td><td class="nzd">~3,030</td><td class="nzd">375</td><td class="nzd" style="color:#059669; font-weight:700;">~9,095</td><td>27.2%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your NZ salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. New Zealand = 100.</p>
+
+            <div class="calc-container">
+                <label for="nzPppAmount">Your monthly spending in New Zealand (NZD):</label>
+                <input type="number" id="nzPppAmount" value="4000" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateNZPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="nzPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>4,000 NZD buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> New Zealand = 100. If India has a PPP index of 25, your 4,000 NZD in NZ has the same purchasing power as 4,000 x (25/100) = 1,000 NZD in India. You'd need ~75% less money in India for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major New Zealand cities. Auckland = 100 (most expensive baseline). Data: Stats NZ, Trade Me Property, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 2-bed (NZD)</th><th>Monthly Pass (NZD)</th><th>Meal Out (NZD)</th><th>Flat White (NZD)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Auckland</strong></td><td class="nzd">2,000-2,800</td><td class="nzd">195</td><td class="nzd">22-40</td><td class="nzd">5.50</td><td>Largest city; traffic congestion; harbour views; most job opportunities</td></tr>
+                    <tr><td><strong>Wellington</strong></td><td class="nzd">1,600-2,400</td><td class="nzd">155</td><td class="nzd">20-35</td><td class="nzd">5.50</td><td>Capital; compact; cafe culture; windy; government jobs hub</td></tr>
+                    <tr><td><strong>Christchurch</strong></td><td class="nzd">1,300-1,900</td><td class="nzd">85</td><td class="nzd">18-32</td><td class="nzd">5.00</td><td>Rebuilt after quakes; garden city; affordable; South Island gateway</td></tr>
+                    <tr><td><strong>Hamilton</strong></td><td class="nzd">1,200-1,700</td><td class="nzd">105</td><td class="nzd">18-30</td><td class="nzd">5.00</td><td>Waikato region; rural-urban mix; growing tech sector</td></tr>
+                    <tr><td><strong>Tauranga</strong></td><td class="nzd">1,400-2,000</td><td class="nzd">100</td><td class="nzd">20-35</td><td class="nzd">5.50</td><td>Bay of Plenty; beach lifestyle; popular with retirees; fast-growing</td></tr>
+                    <tr><td><strong>Dunedin</strong></td><td class="nzd">1,000-1,500</td><td class="nzd">75</td><td class="nzd">16-28</td><td class="nzd">4.50</td><td>Student city (Otago Uni); Scottish heritage; very affordable; cold winters</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Auckland housing crisis:</strong> Auckland has NZ's most expensive housing market. Many Kiwis are moving to Christchurch, Hamilton, or Tauranga for more affordable rents and better quality of life. Remote work has accelerated this trend since 2020.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">New Zealand Healthcare System</h2>
+            <p class="section-subtitle">NZ has a public healthcare system funded by general taxation plus ACC for accident-related care. Private health insurance is optional but common.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">$50-65</div>
+                    <div class="stat-unit">NZD per GP visit</div>
+                    <div class="stat-desc">Subsidised when enrolled; under-14s free</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">$5</div>
+                    <div class="stat-unit">NZD per prescription</div>
+                    <div class="stat-desc">Most funded medications; PHARMAC subsidised</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">Public hospital care</div>
+                    <div class="stat-desc">Emergency and inpatient care free for residents</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ACC</div>
+                    <div class="stat-unit">Accident cover</div>
+                    <div class="stat-desc">All injuries covered regardless of fault; no suing</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Public vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Public System</th><th>Private (e.g. Southern Cross)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Eligibility</strong></td><td>NZ residents and citizens; some visa holders eligible</td><td>Anyone willing to pay premiums</td></tr>
+                    <tr><td><strong>Cost</strong></td><td>Funded by taxes; GP co-pay required</td><td>$50-200+ NZD/month per person depending on cover</td></tr>
+                    <tr><td><strong>Wait times</strong></td><td>Can be long for elective surgery (months-years)</td><td>Much shorter; choose your specialist</td></tr>
+                    <tr><td><strong>GP visits</strong></td><td>$50-65 per visit (subsidised)</td><td>Some plans cover GP visits partially</td></tr>
+                    <tr><td><strong>Hospital / surgery</strong></td><td>Free but wait lists for non-urgent</td><td>Immediate access to private hospitals</td></tr>
+                    <tr><td><strong>Dental (adults)</strong></td><td>NOT covered (except emergency hospital)</td><td>Covered partially; dental plans available</td></tr>
+                    <tr><td><strong>Mental health</strong></td><td>Free through community mental health teams; long waits</td><td>Faster access to psychologists/counsellors</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered Publicly</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (enrolled)</td><td class="nzd">$50-65</td><td>Government subsidy reduces cost; Community Services Card holders pay less (~$19)</td></tr>
+                    <tr><td>After-hours / urgent care</td><td class="nzd">$70-100</td><td>Higher than daytime GP; cheaper than ED for non-emergencies</td></tr>
+                    <tr><td>Emergency department</td><td class="nzd">Free</td><td>Public hospitals; can be long waits for non-critical cases</td></tr>
+                    <tr><td>Hospital inpatient</td><td class="nzd">Free</td><td>All treatment, surgery, medicines while in hospital</td></tr>
+                    <tr><td>Prescriptions</td><td class="nzd">$5 per item</td><td>PHARMAC-funded medicines; after 20 items/year: free</td></tr>
+                    <tr><td>Maternity</td><td class="nzd">Free</td><td>Lead Maternity Carer (midwife/GP/specialist); all prenatal and delivery care</td></tr>
+                    <tr><td>Under-14 GP visits</td><td class="nzd">Free</td><td>Free for children under 14 at enrolled practices</td></tr>
+                    <tr><td>ACC injury treatment</td><td class="nzd">Subsidised</td><td>Accident-related GP visit ~$15-25; physio, surgery covered by ACC</td></tr>
+                    <tr><td>Dental (adults)</td><td class="nzd">Full cost</td><td>NOT publicly funded; check-up ~$80-150; filling ~$150-300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>ACC advantage:</strong> New Zealand's ACC scheme covers ALL injuries for ALL people in NZ (including tourists) regardless of fault. This means if you break your leg skiing, ACC pays for treatment, rehab, and even 80% of your salary while you recover. The trade-off: you cannot sue for personal injury.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in New Zealand</h2>
+            <p class="section-subtitle">NZ's housing market is notoriously expensive relative to incomes. Understanding rental terms and tenancy rights is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Term</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Bond</strong></td><td>Security deposit; max 4 weeks' rent; held by Tenancy Services (government), not landlord</td></tr>
+                    <tr><td><strong>Letting fee</strong></td><td>Banned since December 2018; tenants no longer pay letting fees</td></tr>
+                    <tr><td><strong>Fixed-term tenancy</strong></td><td>Set period (usually 6-12 months); cannot be ended early without agreement</td></tr>
+                    <tr><td><strong>Periodic tenancy</strong></td><td>Rolling tenancy; tenant gives 28 days' notice; landlord gives 90 days'</td></tr>
+                    <tr><td><strong>Healthy Homes Standards</strong></td><td>Mandatory insulation, heating, ventilation, moisture, drainage standards for rentals</td></tr>
+                    <tr><td><strong>WoF (Warrant of Fitness) for rentals</strong></td><td>Some councils have voluntary rental WoF standards for quality assurance</td></tr>
+                    <tr><td><strong>Flatmates / flatting</strong></td><td>Sharing a house with others; very common in NZ, especially in Auckland/Wellington</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Trade Me Property</td><td>All types</td><td>NZ's #1 platform for rental listings; essential for flat-hunting</td></tr>
+                    <tr><td>Facebook Marketplace / Groups</td><td>All types</td><td>"Flats in Auckland/Wellington" groups; good for flatmates</td></tr>
+                    <tr><td>Homes.co.nz</td><td>Research</td><td>Property value estimates, neighbourhood info, school zones</td></tr>
+                    <tr><td>NZ Flatmates</td><td>Shared flats</td><td>Find flatmates or rooms in existing flats</td></tr>
+                    <tr><td>Realestate.co.nz</td><td>Buy/rent</td><td>Official real estate listings; good for understanding the market</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Tenancy Tribunal:</strong> Disputes with landlords are handled by the Tenancy Tribunal (not courts). Common issues: bond disputes, maintenance failures, illegal rent increases. File claims at tenancytribunal.govt.nz. The process is low-cost ($20.44 filing fee) and designed for tenants to self-represent.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in New Zealand</h2>
+            <p class="section-subtitle">NZ is car-dependent outside major cities. Public transport is improving but varies greatly by city.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">$2.80</div>
+                    <div class="stat-unit">NZD/litre petrol</div>
+                    <div class="stat-desc">91 octane; diesel ~$2.10; fluctuates with global oil</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">$195</div>
+                    <div class="stat-unit">NZD/month Auckland pass</div>
+                    <div class="stat-desc">AT HOP monthly pass; covers buses, trains, ferries</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">100 km/h</div>
+                    <div class="stat-unit">Open road speed limit</div>
+                    <div class="stat-desc">50 km/h urban; expressways 110 km/h</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Left</div>
+                    <div class="stat-unit">Side of road</div>
+                    <div class="stat-desc">Drive on the left; right-hand drive cars (like UK/AU)</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Auckland AT HOP monthly</td><td class="nzd">$195/month</td><td>Buses, trains, ferries; tag on/off; 50% discount for under-25s (half-price)</td></tr>
+                    <tr><td>Wellington Snapper / Metlink</td><td class="nzd">$155/month</td><td>Buses, trains, harbour ferries; compact city, good coverage</td></tr>
+                    <tr><td>Christchurch Metro</td><td class="nzd">$85/month</td><td>Bus network; flat city good for cycling; limited rail</td></tr>
+                    <tr><td>InterCity bus (long distance)</td><td class="nzd">$15-80</td><td>Between cities; book early for cheap fares; FlexiPass available</td></tr>
+                    <tr><td>WoF (Warrant of Fitness)</td><td class="nzd">$50-70</td><td>Vehicle safety inspection; every 12 months (6 months if over 14 years old)</td></tr>
+                    <tr><td>Vehicle registration (rego)</td><td class="nzd">~$110/year</td><td>ACC levy included; must display current rego label</td></tr>
+                    <tr><td>Car insurance (third-party)</td><td class="nzd">$40-60/month</td><td>Not legally required but strongly recommended; full cover $80-120/month</td></tr>
+                    <tr><td>Domestic flights</td><td class="nzd">$60-250</td><td>Air New Zealand, Jetstar; Auckland-Wellington ~1hr; book early</td></tr>
+                    <tr><td>Interislander ferry</td><td class="nzd">$55-80 per person</td><td>Wellington-Picton; 3.5 hours; essential North-South Island link</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-car"></i>
+                <strong>Pro tip:</strong> Outside Auckland and Wellington, a car is practically essential. Buy a reliable Japanese import (Toyota, Honda, Mazda) for $5,000-12,000 NZD. Check the vehicle history at carjam.co.nz before buying. NZ has excellent road trips -- invest in a car for weekend adventures!
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in New Zealand -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in New Zealand (Mahi)</h2>
+            <p class="section-subtitle">NZ work culture, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">4 weeks</div>
+                    <div class="stat-unit">Annual leave minimum</div>
+                    <div class="stat-desc">20 days paid leave; after 12 months of continuous employment</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">90 days</div>
+                    <div class="stat-unit">Trial period</div>
+                    <div class="stat-desc">For employers with fewer than 20 staff; can dismiss within 90 days</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">26 weeks</div>
+                    <div class="stat-unit">Paid parental leave</div>
+                    <div class="stat-desc">Government-funded; up to $712.17/week (2026)</td>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Casual</div>
+                    <div class="stat-unit">Work culture</div>
+                    <div class="stat-desc">First-name basis; flat hierarchies; "she'll be right" attitude</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Employment agreement</strong></td><td>Must be in writing; individual or collective agreement</td><td>Must include hours, pay, leave entitlements, job description</td></tr>
+                    <tr><td><strong>Trial period</strong></td><td>Up to 90 days for businesses with <20 staff</td><td>Larger employers: 90-day trial not available; probation possible with conditions</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 37.5-40 hours/week</td><td>No legal maximum but must have breaks: 30min after 4 hours; 10min rest breaks</td></tr>
+                    <tr><td><strong>Annual leave</strong></td><td>Minimum 4 weeks (20 days) paid</td><td>Accrues after 12 months continuous employment; can negotiate 5th week</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>10 days per year (after 6 months)</td><td>Can accumulate up to 20 days; employer may request medical certificate after 3 consecutive days</td></tr>
+                    <tr><td><strong>Public holidays</strong></td><td>11 statutory public holidays</td><td>Time-and-a-half if you work; plus a day in lieu; includes Matariki (Maori New Year)</td></tr>
+                    <tr><td><strong>KiwiSaver</strong></td><td>Auto-enrolled for new employees (18-64)</td><td>Can opt out within 2-8 weeks; 3% default employee + 3% employer contribution</td></tr>
+                    <tr><td><strong>Parental leave</strong></td><td>26 weeks paid + 26 weeks unpaid (primary carer)</td><td>Partner gets 2 weeks unpaid; government pays up to $712.17/week</td></tr>
+                    <tr><td><strong>Redundancy</strong></td><td>No statutory redundancy pay</td><td>Some employment agreements include redundancy clauses; negotiate this upfront</td></tr>
+                    <tr><td><strong>Personal grievance</strong></td><td>90 days to raise a grievance after issue occurs</td><td>Employment Relations Authority (ERA) handles disputes; free mediation available</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Kiwi work culture essentials:</strong> (1) <strong>Flat hierarchy</strong> -- call your boss by first name; no "sir" or "madam." (2) <strong>Work-life balance</strong> -- leaving at 5pm is normal and expected; overtime culture is frowned upon. (3) <strong>Friday drinks</strong> -- many workplaces have casual Friday afternoon drinks. (4) <strong>Can-do attitude</strong> -- Kiwis value practical problem-solving ("No. 8 wire mentality"). (5) <strong>Tall poppy syndrome</strong> -- don't brag about achievements; modesty is valued. (6) <strong>Morning tea & afternoon tea</strong> -- workplace breaks for tea/coffee and snacks are a NZ tradition.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="local" class="tab-content">
+            <h2 class="section-title">Local Basics: Kiwi Slang & Maori Culture</h2>
+            <p class="section-subtitle">Understanding Kiwi English, Maori language (Te Reo), and cultural norms will help you settle in faster.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Essential Kiwi Slang</h3>
+            <table class="data-table">
+                <thead><tr><th>Kiwi Term</th><th>Meaning</th><th>Example</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sweet as</strong></td><td>Great, no problem, all good</td><td>"Can you help me move?" -- "Sweet as, bro"</td></tr>
+                    <tr><td><strong>She'll be right</strong></td><td>It'll be fine, don't worry</td><td>"Is this road safe?" -- "She'll be right"</td></tr>
+                    <tr><td><strong>Chur / Chur bro</strong></td><td>Thanks, cheers, cool</td><td>"Here's your coffee" -- "Chur"</td></tr>
+                    <tr><td><strong>Jandals</strong></td><td>Flip-flops / thongs</td><td>"Grab your jandals, we're going to the beach"</td></tr>
+                    <tr><td><strong>Dairy</strong></td><td>Corner shop / convenience store</td><td>"I'll pop down to the dairy for some milk"</td></tr>
+                    <tr><td><strong>Bach</strong></td><td>Holiday home / cottage (pronounced "batch")</td><td>"We're heading to the bach this weekend"</td></tr>
+                    <tr><td><strong>Tramping</strong></td><td>Hiking / bushwalking</td><td>"Let's go tramping in Tongariro"</td></tr>
+                    <tr><td><strong>Togs</strong></td><td>Swimsuit / swimming costume</td><td>"Don't forget your togs for the hot pools"</td></tr>
+                    <tr><td><strong>Wop-wops</strong></td><td>Remote rural area, middle of nowhere</td><td>"They live out in the wop-wops"</td></tr>
+                    <tr><td><strong>Flat white</strong></td><td>NZ's signature coffee (espresso + steamed milk)</td><td>Ordering a "flat white" at any cafe is the Kiwi default</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Te Reo Maori (Maori Language)</h3>
+            <table class="data-table">
+                <thead><tr><th>Te Reo Maori</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Kia ora</strong></td><td>Hello / Hi / Thank you</td><td>KEY-ah OR-ah</td></tr>
+                    <tr><td><strong>Aotearoa</strong></td><td>New Zealand ("Land of the long white cloud")</td><td>OW-tay-ah-ROH-ah</td></tr>
+                    <tr><td><strong>Whanau</strong></td><td>Family (extended family)</td><td>FAH-no</td></tr>
+                    <tr><td><strong>Aroha</strong></td><td>Love, compassion</td><td>ah-ROH-ha</td></tr>
+                    <tr><td><strong>Mana</strong></td><td>Prestige, authority, spiritual power</td><td>MAH-na</td></tr>
+                    <tr><td><strong>Haere mai</strong></td><td>Welcome, come here</td><td>HY-reh MY</td></tr>
+                    <tr><td><strong>Ka pai</strong></td><td>Good, well done</td><td>kah PIE</td></tr>
+                    <tr><td><strong>Marae</strong></td><td>Maori meeting grounds (sacred communal space)</td><td>mah-RYE</td></tr>
+                    <tr><td><strong>Tangi</strong></td><td>Funeral ceremony</td><td>TUNG-ee</td></tr>
+                    <tr><td><strong>Mahi</strong></td><td>Work</td><td>MAH-hee</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Maori Culture & Tikanga (Customs)</h3>
+            <div class="info-box">
+                <i class="fas fa-feather-alt"></i>
+                <strong>Maori culture is central to NZ identity:</strong> (1) <strong>Hongi</strong> -- traditional Maori greeting where you press noses and foreheads; symbolises the breath of life. (2) <strong>Powhiri</strong> -- formal welcome ceremony at a marae; remove shoes before entering the wharenui (meeting house). (3) <strong>Haka</strong> -- ceremonial war dance (made famous by the All Blacks); performed at significant events. (4) <strong>Matariki</strong> -- Maori New Year (public holiday since 2022); celebrated when the Pleiades star cluster rises. (5) <strong>Te Tiriti o Waitangi</strong> -- the Treaty of Waitangi (1840) is NZ's founding document; Waitangi Day (Feb 6) is a public holiday.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Tips for Newcomers</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Shoes off</strong> -- take shoes off when entering someone's home (very common). (2) <strong>BYO</strong> -- "Bring Your Own" alcohol to restaurants/BBQs; BYO restaurants are popular and charge a small corkage fee. (3) <strong>BBQ culture</strong> -- Kiwis love a barbie (BBQ), especially in summer; sausage sizzle fundraisers are everywhere. (4) <strong>Rugby is religion</strong> -- the All Blacks are national heroes; learn the basics of rugby to fit in. (5) <strong>Tipping is not expected</strong> -- NZ has no tipping culture; workers are paid fair wages. (6) <strong>Earthquake preparedness</strong> -- NZ is on the Ring of Fire; keep an emergency kit with water, food, and torches. (7) <strong>UV radiation</strong> -- NZ has very high UV; "Slip, Slop, Slap, Wrap" (shirt, sunscreen, hat, sunglasses) is essential.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in New Zealand</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~55,000</div>
+                    <div class="stat-unit">NZD/year gross (single)</div>
+                    <div class="stat-desc">Comfortable living in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~85,000</div>
+                    <div class="stat-unit">NZD/year gross (couple)</div>
+                    <div class="stat-desc">Two adults in mid-size city</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200</div>
+                    <div class="stat-unit">NZD/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">NZD/month recommended</div>
+                    <div class="stat-desc">Comfortable net for couple with buffer</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (NZD)</th><th>Gross Salary Needed (NZD)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Flatting, very frugal</small></td><td class="nzd">1,800</td><td class="nzd">2,800</td><td class="nzd">2,100</td><td class="nzd nzd-low">+300</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Own flat outside Auckland</small></td><td class="nzd">2,500</td><td class="nzd">4,000</td><td class="nzd">2,900</td><td class="nzd nzd-low">+400</td></tr>
+                    <tr><td><strong>Couple (mid-size city)</strong><br><small>2 adults, comfortable</small></td><td class="nzd">3,800</td><td class="nzd">6,000</td><td class="nzd">4,200</td><td class="nzd nzd-low">+400</td></tr>
+                    <tr><td><strong>Couple (Auckland)</strong><br><small>2 adults, good lifestyle</small></td><td class="nzd">5,200</td><td class="nzd">8,500</td><td class="nzd">5,800</td><td class="nzd nzd-low">+600</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Auckland</small></td><td class="nzd">6,000</td><td class="nzd">10,000</td><td class="nzd">6,700</td><td class="nzd nzd-low">+700</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get an <strong>IRD number</strong> (tax number) from ird.govt.nz -- needed before starting work. (2) Open a bank account (ANZ, ASB, BNZ, Westpac, Kiwibank). (3) Enrol with a <strong>GP / medical centre</strong> (NHI number assigned automatically). (4) Get a <strong>NZ phone number</strong> (Skinny, 2degrees, Spark prepay). (5) Set up <strong>KiwiSaver</strong> with your employer (auto-enrolled). (6) Get an <strong>AT HOP / Snapper card</strong> for public transport. (7) Apply for a <strong>Community Services Card</strong> if low income (cheaper GP visits & prescriptions). (8) Register with <strong>RealMe</strong> (government digital identity) for online government services.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (IRD, Stats NZ, Tenancy Services, MBIE) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. New Zealand Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#C0C0C0;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#C0C0C0;">New Zealand Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const nzPppCountries = [
+        { name: 'Australia', currency: 'AUD', ppp: 109, region: 'Oceania' },
+        { name: 'Switzerland', currency: 'CHF', ppp: 147, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 131, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 125, region: 'Nordic' },
+        { name: 'USA', currency: 'USD', ppp: 120, region: 'North America' },
+        { name: 'Ireland', currency: 'EUR', ppp: 122, region: 'Western Europe' },
+        { name: 'Singapore', currency: 'SGD', ppp: 120, region: 'Southeast Asia' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 114, region: 'Western Europe' },
+        { name: 'Sweden', currency: 'SEK', ppp: 114, region: 'Nordic' },
+        { name: 'Germany', currency: 'EUR', ppp: 109, region: 'Western Europe' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 112, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 103, region: 'North America' },
+        { name: 'France', currency: 'EUR', ppp: 106, region: 'Western Europe' },
+        { name: 'Japan', currency: 'JPY', ppp: 91, region: 'East Asia' },
+        { name: 'South Korea', currency: 'KRW', ppp: 82, region: 'East Asia' },
+        { name: 'Spain', currency: 'EUR', ppp: 85, region: 'Southern Europe' },
+        { name: 'Italy', currency: 'EUR', ppp: 90, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 74, region: 'Southern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 63, region: 'Eastern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 54, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 51, region: 'Eastern Europe' },
+        { name: 'Croatia', currency: 'EUR', ppp: 65, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 35, region: 'Eurasia' },
+        { name: 'UAE', currency: 'AED', ppp: 96, region: 'Middle East' },
+        { name: 'China', currency: 'CNY', ppp: 43, region: 'East Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 40, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 40, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 29, region: 'Southeast Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 33, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 30, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 25, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 21, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 23, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 26, region: 'South Asia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 43, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 33, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 40, region: 'North America' },
+        { name: 'Colombia', currency: 'COP', ppp: 30, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 35, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 25, region: 'Africa' },
+        { name: 'Egypt', currency: 'EGP', ppp: 23, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 28, region: 'Africa' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 63, region: 'Middle East' },
+        { name: 'Finland', currency: 'EUR', ppp: 114, region: 'Nordic' },
+    ];
+
+    function calculateNZPPP() {
+        const amount = parseFloat(document.getElementById('nzPppAmount').value) || 4000;
+        const tbody = document.querySelector('#nzPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#nzPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} NZD buys equiv. of`;
+
+        nzPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="nzd" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} NZD (${diff})</td></tr>`;
+        });
+    }
+    calculateNZPPP();
+
+    // NZ Tax Calculator
+    function calculateNZTax() {
+        const annualGross = parseFloat(document.getElementById('nzGrossSalary').value) || 70000;
+        const kiwiSaverRate = parseFloat(document.getElementById('nzKiwiSaver').value) / 100;
+        const hasStudentLoan = document.getElementById('nzStudentLoan').value === 'yes';
+
+        // PAYE calculation (progressive)
+        let paye = 0;
+        if (annualGross > 180000) {
+            paye += (annualGross - 180000) * 0.39;
+            paye += (180000 - 70000) * 0.33;
+            paye += (70000 - 48000) * 0.30;
+            paye += (48000 - 14000) * 0.175;
+            paye += 14000 * 0.105;
+        } else if (annualGross > 70000) {
+            paye += (annualGross - 70000) * 0.33;
+            paye += (70000 - 48000) * 0.30;
+            paye += (48000 - 14000) * 0.175;
+            paye += 14000 * 0.105;
+        } else if (annualGross > 48000) {
+            paye += (annualGross - 48000) * 0.30;
+            paye += (48000 - 14000) * 0.175;
+            paye += 14000 * 0.105;
+        } else if (annualGross > 14000) {
+            paye += (annualGross - 14000) * 0.175;
+            paye += 14000 * 0.105;
+        } else {
+            paye += annualGross * 0.105;
+        }
+
+        // ACC Earners' Levy (~1.60% on earnings up to ~$142,283)
+        const accCap = 142283;
+        const accLevy = Math.min(annualGross, accCap) * 0.016;
+
+        // KiwiSaver
+        const kiwiSaver = annualGross * kiwiSaverRate;
+        const employerKS = annualGross * 0.03; // employer contribution (info only)
+
+        // Student loan (12% on income above $22,828)
+        let studentLoan = 0;
+        if (hasStudentLoan && annualGross > 22828) {
+            studentLoan = (annualGross - 22828) * 0.12;
+        }
+
+        const totalDeductions = paye + accLevy + kiwiSaver + studentLoan;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('nzTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">$${Math.round(grossMonthly).toLocaleString()} NZD</span></div>
+                <div><strong>PAYE tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">$${Math.round(paye/12).toLocaleString()} NZD</span></div>
+                <div><strong>ACC levy:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">$${Math.round(accLevy/12).toLocaleString()} NZD</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">$${Math.round(netMonthly).toLocaleString()} NZD</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>PAYE: $${Math.round(paye/12)} NZD/mo</div>
+                <div>ACC: $${Math.round(accLevy/12)} NZD/mo</div>
+                <div>KiwiSaver (you): $${Math.round(kiwiSaver/12)} NZD/mo</div>
+                <div>KiwiSaver (employer): +$${Math.round(employerKS/12)} NZD/mo</div>
+                ${studentLoan > 0 ? `<div>Student loan: $${Math.round(studentLoan/12)} NZD/mo</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 3200 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 3200 ? '#059669' : '#dc2626'};">${netMonthly >= 3200 ? '&#10003;' : '&#10007;'} Couple survival check:</strong>
+                Need ~$3,200 NZD net | You have $${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 3200 ? '+' : ''}$${Math.round(netMonthly - 3200).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>
