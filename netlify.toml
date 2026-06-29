@@ -112,6 +112,31 @@
   status = 200
 
 [[redirects]]
+  from = "/austria-guide"
+  to = "/austria-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/ireland-guide"
+  to = "/ireland-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/japan-guide"
+  to = "/japan-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/italy-guide"
+  to = "/italy-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/finland-guide"
+  to = "/finland-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/privacy-policy"
   to = "/privacy-policy.html"
   status = 200
