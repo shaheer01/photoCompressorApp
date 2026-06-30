@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qatar Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Qatar 2026. Monthly expenses in Doha, salary by profession, tax-free income, healthcare, and PPP comparisons for expats moving to Qatar.">
+    <meta name="keywords" content="Qatar living cost, Doha salary, Qatar cost of living, expat Qatar, tax free income Qatar, Doha expenses, Qatar guide, Lusail, The Pearl">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Qatar Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in Qatar 2026. Monthly expenses in Doha, salary by profession, tax-free income, healthcare, and PPP comparisons for expats moving to Qatar.">
+    <meta property="og:url" content="https://compressphotos.cloud/qatar-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qatar Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in Qatar 2026. Monthly expenses in Doha, salary by profession, tax-free income, healthcare, and PPP comparisons for expats moving to Qatar.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/qatar-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F6;&#x1F1E6;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #8A1538 0%, #5C0E25 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #8A1538; border-bottom: 3px solid #8A1538; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #8A1538; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #8A1538; background: #fdf2f4; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #8A1538, #C4244E);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #fdf2f4; border-left: 4px solid #8A1538; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #8A1538; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #8A1538; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #8A1538, #C4244E); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Qatar Living Cost Guide 2026",
+      "description": "Complete guide to living costs in Qatar 2026. Monthly expenses in Doha, salary by profession, tax-free income, healthcare, and PPP comparisons for expats moving to Qatar.",
+      "image": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80",
+      "datePublished": "2026-06-29",
+      "dateModified": "2026-06-29",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/qatar-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#8A1538; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Tax, healthcare & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1F9;</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, DEWA & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, S&eacute;cu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1F9;</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1EE;</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="qatar-guide.html" style="background:#fdf2f4;"><span class="country-flag">&#x1F1F6;&#x1F1E6;</span><div><strong>Qatar</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Qatar Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, tax-free income advantages, healthcare, and PPP calculator. For expats and newcomers planning to move to Doha, Lusail, The Pearl, or anywhere in Qatar.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 29, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80" alt="Doha skyline and corniche - iconic Qatar landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="qatarbasics">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Qatar (Doha)</h2>
+            <p class="section-subtitle">For a couple (2 adults). All amounts in QAR. Based on real 2026 data and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> Qatar has <strong>no personal income tax</strong>, so your gross salary equals your take-home pay. These figures represent actual monthly spending. Housing and AC are the biggest expenses -- summer electricity bills can be very high due to extreme heat. Rent is typically paid monthly or quarterly.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~8,000</div>
+                    <div class="stat-unit">QAR/month (low)</div>
+                    <div class="stat-desc">Frugal couple in Doha</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~14,000</div>
+                    <div class="stat-unit">QAR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~12,000</div>
+                    <div class="stat-unit">QAR avg salary needed</div>
+                    <div class="stat-desc">Monthly salary to live comfortably</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~168,000</div>
+                    <div class="stat-unit">QAR avg annual salary</div>
+                    <div class="stat-desc">Qatar-wide average gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (QAR)</th><th>High (QAR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent 1-bed apartment</td><td class="eur">4,000</td><td class="eur">7,000</td><td>Monthly or quarterly; compounds popular for families</td></tr>
+                    <tr><td></td><td>Electricity & water (Kahramaa)</td><td class="eur">300</td><td class="eur">600</td><td>AC is major cost; summer bills much higher</td></tr>
+                    <tr><td></td><td>Internet (Ooredoo / Vodafone)</td><td class="eur">300</td><td class="eur">450</td><td>Fibre packages; Ooredoo dominant provider</td></tr>
+                    <tr><td></td><td>Mobile phones (2 SIMs)</td><td class="eur">150</td><td class="eur">300</td><td>Ooredoo or Vodafone Qatar; prepaid or postpaid</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">4,750</td><td class="eur">8,350</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (2 adults)</td><td class="eur">1,500</td><td class="eur">2,500</td><td>Lulu, Carrefour, Al Meera; imported goods cost more</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">1,500</td><td class="eur">2,500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Karwa bus / Doha Metro</td><td class="eur">100</td><td class="eur">200</td><td>Metro QAR 2-6/ride; Karwa buses across Doha</td></tr>
+                    <tr><td></td><td>Car fuel (if driving)</td><td class="eur">200</td><td class="eur">350</td><td>Petrol ~QAR 1.75/litre; very cheap</td></tr>
+                    <tr><td></td><td>Car insurance</td><td class="eur">150</td><td class="eur">300</td><td>Mandatory third-party or comprehensive</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">450</td><td class="eur">850</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Healthcare</td></tr>
+                    <tr><td></td><td>Health insurance (expat coverage)</td><td class="eur">100</td><td class="eur">500</td><td>Mandatory for expats; employer often provides</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">100</td><td class="eur">500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">200</td><td class="eur">400</td><td>Mall culture; Villaggio, Mall of Qatar, Place Vendome</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">150</td><td class="eur">250</td><td>Haircuts, toiletries, grooming</td></tr>
+                    <tr><td></td><td>Gym membership</td><td class="eur">200</td><td class="eur">400</td><td>Fitness First, Anytime Fitness, hotel gyms</td></tr>
+                    <tr><td></td><td>Entertainment & dining out</td><td class="eur">300</td><td class="eur">500</td><td>Restaurants, cinema, activities</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">850</td><td class="eur">1,550</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~7,650</td><td class="eur">~13,750</td><td>Realistic range: ~8,000 - ~14,000 with rounding</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Qatar</h2>
+            <p class="section-subtitle">Monthly salaries in QAR. Data from GulfTalent, Bayt.com, Glassdoor 2026. All salaries are tax-free.</p>
+
+            <div class="info-box">
+                <i class="fas fa-money-bill-wave"></i>
+                <strong>Key note:</strong> Qatar salaries vary significantly between expat nationalities and Qatari nationals. Qataris in government roles receive substantially higher packages including housing, education, and land allowances. Western expats typically earn more than South/Southeast Asian expats for the same role. The figures below represent mid-range averages for experienced professionals.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">50,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Oil & Gas Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:80%;">40,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">35,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">30,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">28,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">25,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">25,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:46%;">23,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">20,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:36%;">18,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:36%;">18,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Engineer (general)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">15,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:28%;">14,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:22%;">11,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:14%;">7,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:12%;">6,000 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:9%;">4,500 QAR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Labourer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:6%;">3,000 QAR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-money-bill-wave"></i>
+                <strong>Remember:</strong> All Qatar salaries are <strong>tax-free</strong>. A 20,000 QAR salary means 20,000 QAR in your pocket. Compare this to Europe where 30-45% goes to tax and social contributions. Many packages also include housing allowance, transport allowance, and annual flights home. Qatar packages are often among the most generous in the Gulf.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Qatar Tax System -- The Tax-Free Advantage</h2>
+            <p class="section-subtitle">Qatar has no personal income tax. Social contributions apply only to Qatari nationals (5% employee + 10% employer).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-unit">Personal income tax</div>
+                    <div class="stat-desc">No income tax on salaries</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-unit">Capital gains tax</div>
+                    <div class="stat-desc">No tax on investment gains</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-unit">VAT</div>
+                    <div class="stat-desc">No VAT in Qatar (as of 2026)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">10%</div>
+                    <div class="stat-unit">Corporate tax</div>
+                    <div class="stat-desc">On foreign company profits; Qatari/GCC exempt</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Qatar Tax Overview</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax Type</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Personal income tax</strong></td><td class="eur" style="color:#059669;">0%</td><td>Nobody</td><td>No income tax on salaries, bonuses, or allowances</td></tr>
+                    <tr><td><strong>Capital gains tax</strong></td><td class="eur" style="color:#059669;">0%</td><td>Nobody</td><td>No tax on stocks, crypto, or property gains</td></tr>
+                    <tr><td><strong>VAT</strong></td><td class="eur" style="color:#059669;">0%</td><td>Nobody</td><td>Qatar has not yet implemented VAT (planned under GCC framework but delayed)</td></tr>
+                    <tr><td><strong>Social contributions (Qataris only)</strong></td><td class="eur">5% + 10%</td><td>Qatari nationals</td><td>Employee 5% + employer 10% to General Retirement Authority; expats exempt</td></tr>
+                    <tr><td><strong>Corporate tax</strong></td><td class="eur">10%</td><td>Foreign companies</td><td>Flat 10% on taxable income; Qatari/GCC-owned companies exempt</td></tr>
+                    <tr><td><strong>Withholding tax</strong></td><td class="eur">5%</td><td>Non-resident entities</td><td>On royalties, technical fees, commissions paid to non-residents</td></tr>
+                    <tr><td><strong>Property transfer fee</strong></td><td class="eur">0.25%</td><td>Buyer</td><td>Minimal registration fee on property transactions</td></tr>
+                    <tr><td><strong>Customs duty</strong></td><td class="eur">5%</td><td>Importers</td><td>Standard GCC customs rate on most imported goods</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">End of Service Gratuity</h3>
+            <div class="info-box">
+                <i class="fas fa-gift"></i>
+                <strong>Gratuity (end of service benefit):</strong> Qatar Labour Law provides end-of-service gratuity for workers who complete at least one year. You receive <strong>3 weeks' basic salary</strong> for each year of service. This is calculated based on your last basic salary. For example, after 10 years on a 15,000 QAR basic salary, you'd receive approximately 75,000 QAR (15,000 / 30 x 21 x 10). The gratuity is capped at one year's total salary.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Take-Home Pay Comparison Calculator</h3>
+            <div class="calc-container">
+                <label for="qatarGrossSalary">Monthly Salary in Qatar (QAR):</label>
+                <input type="number" id="qatarGrossSalary" value="18000" min="0" max="500000">
+                <button class="calc-btn" onclick="calculateQatarTax()">Compare Take-Home Pay</button>
+                <div class="calc-result" id="qatarTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Qatar vs Other Countries</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Salary (QAR)</th><th>Qatar Take-Home</th><th>UK Equivalent Take-Home</th><th>Germany Equivalent Take-Home</th><th>Sweden Equivalent Take-Home</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">10,000</td><td class="eur" style="color:#059669; font-weight:700;">10,000</td><td class="eur">~7,500</td><td class="eur">~6,500</td><td class="eur">~5,800</td></tr>
+                    <tr><td class="eur">18,000</td><td class="eur" style="color:#059669; font-weight:700;">18,000</td><td class="eur">~12,200</td><td class="eur">~10,800</td><td class="eur">~9,900</td></tr>
+                    <tr><td class="eur">25,000</td><td class="eur" style="color:#059669; font-weight:700;">25,000</td><td class="eur">~16,000</td><td class="eur">~14,800</td><td class="eur">~13,500</td></tr>
+                    <tr><td class="eur">40,000</td><td class="eur" style="color:#059669; font-weight:700;">40,000</td><td class="eur">~23,500</td><td class="eur">~22,000</td><td class="eur">~20,000</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Qatar salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Qatar = 100.</p>
+
+            <div class="calc-container">
+                <label for="qatarPppAmount">Your monthly spending in Qatar (QAR):</label>
+                <input type="number" id="qatarPppAmount" value="12000" min="100" max="500000">
+                <button class="calc-btn" onclick="calculateQatarPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="qatarPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>12,000 QAR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Qatar = 100. If Switzerland has a PPP index of 200, your 12,000 QAR in Qatar has the same purchasing power as 12,000 x (200/100) = 24,000 QAR in Switzerland. You'd need 100% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by Area in Qatar</h2>
+            <p class="section-subtitle">Comparing key areas across Qatar. Doha centre = 100 (most expensive baseline). Data: PropertyFinder Qatar, Numbeo 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>Area</th><th>Avg Rent 1-bed (QAR)</th><th>Meal Out (QAR)</th><th>Cost Index</th><th>Key Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>The Pearl-Qatar</strong></td><td class="eur">6,000-10,000</td><td class="eur">50-120</td><td>120</td><td>Luxury island; freehold for expats; waterfront dining; Porto Arabia</td></tr>
+                    <tr><td><strong>Lusail City</strong></td><td class="eur">5,000-9,000</td><td class="eur">45-100</td><td>110</td><td>Qatar's future city; brand new; FIFA World Cup stadium; rapidly developing</td></tr>
+                    <tr><td><strong>West Bay (Doha)</strong></td><td class="eur">5,000-8,000</td><td class="eur">50-100</td><td>100</td><td>Business district; skyscrapers; Corniche; most corporate offices</td></tr>
+                    <tr><td><strong>Al Wakra</strong></td><td class="eur">3,000-5,000</td><td class="eur">25-50</td><td>65</td><td>Southern suburb; family-friendly; souq; beach; Doha Metro connected</td></tr>
+                    <tr><td><strong>Al Khor</strong></td><td class="eur">2,500-4,500</td><td class="eur">20-45</td><td>55</td><td>Northern town; QatarEnergy workers; mangroves; quieter; 50 km from Doha</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Freehold areas for expats:</strong> Non-Qataris can purchase property in designated areas including The Pearl-Qatar, Lusail, West Bay Lagoon, and Al Khor Resort. In other areas, expats can only rent. The Pearl and Lusail are the most popular freehold zones, offering residency permits with property purchase.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Healthcare in Qatar</h2>
+            <p class="section-subtitle">Qatar has a high-quality healthcare system anchored by Hamad Medical Corporation. Health insurance is mandatory for all expats.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">Mandatory</div>
+                    <div class="stat-unit">Health insurance</div>
+                    <div class="stat-desc">Required for all expats</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">HMC</div>
+                    <div class="stat-unit">Hamad Medical Corp</div>
+                    <div class="stat-desc">Main public healthcare provider</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">PHCC</div>
+                    <div class="stat-unit">Primary Health Care Corp</div>
+                    <div class="stat-desc">Government primary care centres</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">High</div>
+                    <div class="stat-unit">Quality of care</div>
+                    <div class="stat-desc">JCI-accredited hospitals; world-class facilities</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Public vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Public (HMC / PHCC)</th><th>Private Hospitals</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Cost</strong></td><td>Subsidized; low co-pays with health card</td><td>Higher fees; covered by insurance</td></tr>
+                    <tr><td><strong>Waiting times</strong></td><td>Can be longer for non-urgent cases</td><td>Generally shorter; appointment-based</td></tr>
+                    <tr><td><strong>Quality</strong></td><td>Excellent; HMC is JCI-accredited</td><td>Very good; modern facilities</td></tr>
+                    <tr><td><strong>Language</strong></td><td>Arabic primary; English widely available</td><td>English widely spoken; multilingual staff</td></tr>
+                    <tr><td><strong>Key providers</strong></td><td>Hamad General Hospital, Al Wakra Hospital, Women's Hospital</td><td>Al Ahli Hospital, Aster DM, Sidra Medicine (women & children)</td></tr>
+                    <tr><td><strong>Expat access</strong></td><td>Available with Hamad Health Card (QAR 100/year)</td><td>Full access with insurance; preferred by many expats</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Health Insurance Details</h3>
+            <table class="data-table">
+                <thead><tr><th>Aspect</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Employer obligation</td><td>Must provide health insurance for employees</td><td>Mandatory under Qatar's national health insurance scheme</td></tr>
+                    <tr><td>Monthly cost</td><td>QAR 100-500/month depending on plan</td><td>Basic plans ~QAR 100; comprehensive ~QAR 300-500</td></tr>
+                    <tr><td>Dependents</td><td>Sponsor must insure dependents</td><td>Spouse and children on your visa need coverage</td></tr>
+                    <tr><td>Dental</td><td>Often separate or limited coverage</td><td>Many plans have dental caps; consider supplementary dental</td></tr>
+                    <tr><td>Sidra Medicine</td><td>World-class women's and children's hospital</td><td>Qatar Foundation facility; outstanding paediatric care</td></tr>
+                    <tr><td>Emergency</td><td>Dial 999 (ambulance) or 999 (police)</td><td>Emergency treatment provided regardless of insurance at HMC</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Medication warning:</strong> Similar to other Gulf states, some common medications are controlled or banned in Qatar (e.g., codeine, some ADHD medications, certain sleeping pills). Always carry a prescription and doctor's letter. Check the Qatar Ministry of Public Health list before bringing any medication into the country. You can apply for a permit to bring controlled medications.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Qatar</h2>
+            <p class="section-subtitle">Expats can rent across Qatar and buy in designated freehold areas. Understanding compounds, Qatar Cool, and rental norms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Term</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Compound</strong></td><td>Gated residential community with shared amenities (pool, gym, playground). Very popular for families. Ezdan and Barwa are the largest compound developers in Qatar. Often include maintenance and some utilities.</td></tr>
+                    <tr><td><strong>Qatar Cool</strong></td><td>District cooling system in select areas (The Pearl, Lusail, West Bay). Cooling charges are separate from Kahramaa electricity -- can add QAR 500-2,000/month in summer. Check if your building uses Qatar Cool before signing.</td></tr>
+                    <tr><td><strong>Kahramaa</strong></td><td>Qatar General Electricity & Water Corporation. Your utility provider. Register with QID and tenancy contract. Deposit required (QAR 1,000-3,000).</td></tr>
+                    <tr><td><strong>Security deposit</strong></td><td>Typically 2 months' rent. Refundable on move-out minus damages. Some landlords charge 1 month.</td></tr>
+                    <tr><td><strong>Tenancy contract</strong></td><td>Must be registered with the municipality. Needed for QID renewal, school enrollment, and utility connections.</td></tr>
+                    <tr><td><strong>Freehold zones</strong></td><td>Expats can purchase property in designated areas: The Pearl, Lusail, West Bay Lagoon, Al Khor Resort. Ownership grants residency permit for buyer and family.</td></tr>
+                    <tr><td><strong>Ezdan Holdings</strong></td><td>Qatar's largest private real estate company. Operates thousands of residential units in compounds across the country. Budget-friendly option.</td></tr>
+                    <tr><td><strong>Barwa Real Estate</strong></td><td>State-backed developer. Barwa Village, Barwa City -- large-scale affordable housing for workers and families.</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>PropertyFinder.qa</td><td>All types</td><td>Major property portal in Qatar; verified listings</td></tr>
+                    <tr><td>Qatar Living</td><td>All types</td><td>Largest expat classifieds; direct owner listings; community forums</td></tr>
+                    <tr><td>Just Property Qatar</td><td>All types</td><td>Real estate portal with agent listings</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Qatar Rentals", "Doha Flatmates"; direct owner deals</td></tr>
+                    <tr><td>Company noticeboard</td><td>All types</td><td>Many expats find housing through work colleagues and company HR</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Furnished vs Unfurnished</h3>
+            <table class="data-table">
+                <thead><tr><th>Type</th><th>Pros</th><th>Cons</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Furnished</strong></td><td>Move in immediately; no furniture costs; good for short-term contracts</td><td>20-40% more expensive; less personal; furniture quality varies</td></tr>
+                    <tr><td><strong>Unfurnished</strong></td><td>Cheaper rent; customize your space; longer-term savings</td><td>Upfront furniture costs (QAR 8,000-25,000); IKEA, Home Centre, Pan Home popular</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Qatar Cool warning:</strong> If your building uses Qatar Cool district cooling, your cooling costs are billed separately from Kahramaa electricity. Summer cooling bills in The Pearl or Lusail can reach QAR 1,500-2,000/month for a 2-bed apartment. Always ask about cooling charges before signing a lease. Some landlords include Qatar Cool in the rent -- negotiate this.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Qatar</h2>
+            <p class="section-subtitle">Qatar's Doha Metro opened for the 2022 FIFA World Cup. Outside Doha, a car is essential. Fuel is very cheap.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">Doha Metro</div>
+                    <div class="stat-unit">3 lines</div>
+                    <div class="stat-desc">Red, Green, Gold lines; opened 2019</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.75</div>
+                    <div class="stat-unit">QAR/litre petrol</div>
+                    <div class="stat-desc">Among the cheapest globally</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">2-6</div>
+                    <div class="stat-unit">QAR per Metro ride</div>
+                    <div class="stat-desc">Standard/Gold class options</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Karwa</div>
+                    <div class="stat-unit">Bus network</div>
+                    <div class="stat-desc">Mowasalat operates Karwa buses and taxis</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Doha Metro (Standard)</td><td class="eur">2 QAR/trip</td><td>3 lines (Red, Green, Gold); modern; clean; connects airport, malls, West Bay</td></tr>
+                    <tr><td>Doha Metro (Gold class)</td><td class="eur">6 QAR/trip</td><td>Premium cabin; more spacious; family-friendly section</td></tr>
+                    <tr><td>Lusail Tram</td><td class="eur">2-6 QAR/trip</td><td>Connects Lusail City areas; integrated with Metro</td></tr>
+                    <tr><td>Karwa Bus</td><td class="eur">3-5 QAR/trip</td><td>Extensive network across Doha; air-conditioned; travel card required</td></tr>
+                    <tr><td>Karwa Taxi</td><td class="eur">10 QAR base + 1.6/km</td><td>Turquoise taxis operated by Mowasalat; metered; safe; can be hailed or booked</td></tr>
+                    <tr><td>Uber / Careem</td><td class="eur">Varies</td><td>Both operate in Qatar; Careem popular; cashless option</td></tr>
+                    <tr><td>Car purchase (used)</td><td class="eur">20,000-70,000 QAR</td><td>Cars essential outside Doha; large used car market; Japanese/Korean brands popular</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">1,500-4,000 QAR/year</td><td>Third-party mandatory; comprehensive recommended</td></tr>
+                    <tr><td>Petrol</td><td class="eur">~1.75 QAR/litre</td><td>Subsidized; among cheapest globally; updated monthly by QatarEnergy</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-car"></i>
+                <strong>Driving in Qatar:</strong> You need a Qatar driving license. Some nationalities can convert their home license directly (UK, USA, Canada, Australia, France, Germany, and select others). Others must take driving lessons and pass a test. An International Driving Permit (IDP) is valid for visitors for up to 6 months. Be aware: no dedicated cycling infrastructure exists, and walking is impractical in summer heat (45+ degrees Celsius). A car is considered essential for life outside central Doha.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Qatar -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Qatar</h2>
+            <p class="section-subtitle">Employment law, visa system, kafala reforms, and work culture. Updated per Qatar Labour Law No. 14 of 2004 and recent reforms.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">30</div>
+                    <div class="stat-unit">Annual leave days</div>
+                    <div class="stat-desc">After 5 years; 3 weeks for first 5 years</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">6 months</div>
+                    <div class="stat-unit">Max probation</div>
+                    <div class="stat-desc">Probation period; can be terminated with notice</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Fri-Sat</div>
+                    <div class="stat-unit">Weekend</div>
+                    <div class="stat-desc">Friday-Saturday for most; some private sector varies</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">QID</div>
+                    <div class="stat-unit">Qatar ID card</div>
+                    <div class="stat-desc">Essential identity document for all residents</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Work visa / QID</strong></td><td>Employer sponsors work permit and residency (QID - Qatar Identity Card)</td><td>QID needed for everything: banking, SIM card, driving license, renting</td></tr>
+                    <tr><td><strong>Kafala reforms</strong></td><td>Major reforms since 2020: workers can change jobs without employer NOC</td><td>No-objection certificate no longer required after notice period; significant improvement</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>8 hours/day or 48 hours/week standard</td><td>Reduced to 6 hours during Ramadan; summer outdoor work ban (10am-3:30pm, June-Sept)</td></tr>
+                    <tr><td><strong>Annual leave</strong></td><td>3 weeks (first 5 years), 30 days (after 5 years)</td><td>Public holidays additional (approx. 10 days/year)</td></tr>
+                    <tr><td><strong>Probation</strong></td><td>Maximum 6 months</td><td>Either party can terminate with notice during probation</td></tr>
+                    <tr><td><strong>End of service gratuity</strong></td><td>3 weeks' basic salary per year of service</td><td>Paid on termination after minimum 1 year; based on last basic salary</td></tr>
+                    <tr><td><strong>WPS</strong></td><td>Wage Protection System -- all salaries must be paid through banking system</td><td>Ensures timely payment; Ministry of Labour monitors compliance</td></tr>
+                    <tr><td><strong>Minimum wage</strong></td><td>QAR 1,000/month + QAR 300 food + QAR 500 housing (if not provided)</td><td>Introduced 2021; applies to all nationalities; first non-discriminatory minimum in Gulf</td></tr>
+                    <tr><td><strong>Free zones</strong></td><td>Qatar Free Zones Authority (QFZA): Ras Bufontas and Umm Alhoul</td><td>100% foreign ownership; 20-year tax holidays; streamlined processes</td></tr>
+                    <tr><td><strong>Exit permits</strong></td><td>Abolished for most workers since 2019</td><td>Workers no longer need employer permission to leave Qatar; major reform</td></tr>
+                    <tr><td><strong>Non-compete</strong></td><td>Enforceable if reasonable in scope and duration</td><td>Must be in writing; typically limited to 1-2 years and specific industry</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Qatar work culture essentials:</strong> (1) <strong>Relationships first</strong> -- build trust and personal connections before business discussions; hospitality is deeply valued. (2) <strong>Hierarchy</strong> -- respect seniority; decisions often come from the top. (3) <strong>Ramadan</strong> -- working hours reduced; eating/drinking in public during fasting hours is prohibited by law. (4) <strong>Dress code</strong> -- business formal is standard; modest dress expected everywhere. (5) <strong>Patience</strong> -- "Inshallah" and "bukra" (tomorrow) are common; processes can take time. (6) <strong>Qatarization</strong> -- government policy to increase Qatari nationals in the workforce; prioritized in oil/gas and government sectors.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="qatarbasics" class="tab-content">
+            <h2 class="section-title">Essential Qatar Prices & Cultural Guide</h2>
+            <p class="section-subtitle">Key daily prices, cultural etiquette, and survival knowledge for living in Qatar.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Everyday Prices</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Price (QAR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Coffee (cafe)</strong></td><td class="eur">15-25</td><td>Starbucks, % Arabica, local cafes; karak tea QAR 3-5</td></tr>
+                    <tr><td><strong>Meal out (mid-range)</strong></td><td class="eur">30-60</td><td>Per person; restaurant in mall or Souq Waqif</td></tr>
+                    <tr><td><strong>Fast food meal</strong></td><td class="eur">20-35</td><td>McDonald's, KFC, local shawarma spots much cheaper (QAR 5-10)</td></tr>
+                    <tr><td><strong>Petrol (per litre)</strong></td><td class="eur">~1.75</td><td>Among the cheapest in the world; prices set monthly</td></tr>
+                    <tr><td><strong>Cinema ticket</strong></td><td class="eur">35-55</td><td>VOX Cinemas, Novo Cinemas; IMAX/VIP more expensive</td></tr>
+                    <tr><td><strong>Gym membership</strong></td><td class="eur">200-400/month</td><td>Fitness First, Anytime Fitness; hotel gyms often QAR 500+</td></tr>
+                    <tr><td><strong>Haircut (men)</strong></td><td class="eur">30-60</td><td>Barbershops; salon haircuts for women QAR 80-200</td></tr>
+                    <tr><td><strong>Domestic water (5 gallon)</strong></td><td class="eur">5-8</td><td>Delivered; tap water is safe but most people use bottled/filtered</td></tr>
+                    <tr><td><strong>Karak tea</strong></td><td class="eur">3-5</td><td>Qatar's unofficial national drink; sweet milky tea; available everywhere</td></tr>
+                    <tr><td><strong>Laundry (per kg)</strong></td><td class="eur">8-15</td><td>Laundry services common; in-unit washing machines standard</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Etiquette</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Guidelines</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ramadan</strong></td><td>No eating, drinking, or smoking in public during daylight hours. Working hours reduced. Iftar meals widely shared. Show respect even if you're not Muslim. Restaurants are curtained during the day.</td></tr>
+                    <tr><td><strong>Dress code</strong></td><td>Modest clothing in public spaces (shoulders and knees covered). Beachwear only at beaches/pools. Malls have signage about dress codes. Business attire is formal.</td></tr>
+                    <tr><td><strong>Alcohol</strong></td><td>Legal only in licensed hotel venues. Qatar Distribution Company (QDC) sells alcohol with a permit (QAR 250/year, requires employer letter). Not available in supermarkets. Zero-tolerance drink driving.</td></tr>
+                    <tr><td><strong>Weekend</strong></td><td>Friday-Saturday for government and most private sector. Some companies follow Saturday-Sunday. Friday is the holy day.</td></tr>
+                    <tr><td><strong>Photography</strong></td><td>Do NOT photograph people (especially women in traditional dress) without permission. Avoid photographing government buildings, military, and Emiri palaces.</td></tr>
+                    <tr><td><strong>Public behaviour</strong></td><td>Swearing, rude gestures, and public displays of affection are illegal and can result in fines or arrest. Qatar is more conservative than Dubai.</td></tr>
+                    <tr><td><strong>Souq Waqif</strong></td><td>Historic market in central Doha; traditional goods, spices, restaurants, falcon souq. Best visited in the evening. A must-see cultural experience.</td></tr>
+                    <tr><td><strong>National Day</strong></td><td>December 18th -- huge celebrations; cars decorated with flags; patriotic events; expect traffic and crowds around the Corniche.</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Useful Arabic Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Arabic</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Marhaba</td><td>Hello / Welcome</td><td>MAR-ha-ba</td></tr>
+                    <tr><td>Shukran</td><td>Thank you</td><td>SHOOK-ran</td></tr>
+                    <tr><td>Inshallah</td><td>God willing (used constantly!)</td><td>in-SHA-lah</td></tr>
+                    <tr><td>Yalla</td><td>Let's go / Come on / Hurry</td><td>YAL-la</td></tr>
+                    <tr><td>Habibi / Habibti</td><td>My dear (male / female)</td><td>ha-BEE-bee / ha-BEEB-tee</td></tr>
+                    <tr><td>Mashallah</td><td>God has willed it (praise/admiration)</td><td>mash-AL-lah</td></tr>
+                    <tr><td>Khalas</td><td>Enough / Done / Finished</td><td>KHA-las</td></tr>
+                    <tr><td>Afwan</td><td>You're welcome / Excuse me</td><td>AF-wan</td></tr>
+                    <tr><td>As-salamu alaykum</td><td>Peace be upon you (formal greeting)</td><td>as-sa-LA-mu a-LAY-kum</td></tr>
+                    <tr><td>Bukra</td><td>Tomorrow (can mean "eventually")</td><td>BUK-ra</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Cultural tips:</strong> (1) <strong>Karak tea</strong> is Qatar's social ritual -- sweet, spiced milky tea available at every corner for QAR 3-5. (2) <strong>Left hand</strong> -- avoid using your left hand to eat, greet, or hand things to people (considered unclean in Arab culture). (3) <strong>Shoes off</strong> -- remove shoes when entering someone's home. (4) <strong>Tipping</strong> -- not mandatory but 10% is appreciated at restaurants. (5) <strong>Desert trips</strong> -- dune bashing, camping, and inland sea trips are quintessential Qatar experiences.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Qatar</h2>
+            <p class="section-subtitle">What monthly salary do you need? Remember: all salaries are tax-free and there is no VAT. Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~7,000</div>
+                    <div class="stat-unit">QAR/month (single, basic)</div>
+                    <div class="stat-desc">Minimum Doha survival</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~12,000</div>
+                    <div class="stat-unit">QAR/month (couple)</div>
+                    <div class="stat-desc">Comfortable life in Doha</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~8,000</div>
+                    <div class="stat-unit">QAR/month min expenses</div>
+                    <div class="stat-desc">Bare minimum for couple (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~14,000</div>
+                    <div class="stat-unit">QAR/month comfortable</div>
+                    <div class="stat-desc">Good lifestyle for couple in Doha</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (QAR)</th><th>Salary Needed (QAR)</th><th>Take-Home (QAR)</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared room, Ezdan compound</small></td><td class="eur">3,500</td><td class="eur">4,500</td><td class="eur">4,500</td><td class="eur eur-low">+1,000</td></tr>
+                    <tr><td><strong>Basic single</strong><br><small>Studio in Doha, careful spending</small></td><td class="eur">6,000</td><td class="eur">7,000</td><td class="eur">7,000</td><td class="eur eur-low">+1,000</td></tr>
+                    <tr><td><strong>Couple (frugal)</strong><br><small>1-bed, cooking at home</small></td><td class="eur">8,000</td><td class="eur">9,500</td><td class="eur">9,500</td><td class="eur eur-low">+1,500</td></tr>
+                    <tr><td><strong>Couple (comfortable)</strong><br><small>1-bed nice area, dining out</small></td><td class="eur">12,000</td><td class="eur">14,000</td><td class="eur">14,000</td><td class="eur eur-low">+2,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, good school</small></td><td class="eur">20,000</td><td class="eur">25,000</td><td class="eur">25,000</td><td class="eur eur-low">+5,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>First steps when you arrive:</strong> (1) Complete <strong>medical test</strong> and <strong>fingerprinting</strong> for your QID (Qatar Identity Card). (2) Open a <strong>bank account</strong> (QNB, Commercial Bank, Doha Bank -- need QID, passport, salary certificate). (3) Get your <strong>health insurance</strong> card activated (provided by employer). (4) Get a <strong>mobile phone</strong> SIM (Ooredoo or Vodafone; need QID). (5) Set up <strong>Kahramaa</strong> for your apartment (need QID + tenancy contract). (6) Register for <strong>Ehteraz</strong> app (national health app). (7) Apply for <strong>driving license</strong> if eligible for auto-conversion.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and costs change as Qatar continues rapid development post-FIFA 2022 World Cup. Always verify current rates with official sources (Ministry of Labour, PHCC, Kahramaa) before making financial decisions. Exchange rate reference: 1 USD = 3.64 QAR (pegged).
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Qatar Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#8A1538;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#CE1126;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="uae-guide.html" style="color:#00732F;">UAE Guide</a> |
+                <a href="austria-guide.html" style="color:#ED2939;">Austria Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA Guide</a> |
+                <a href="denmark-guide.html" style="color:#C8102E;">Denmark Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand Guide</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia Guide</a> |
+                <a href="switzerland-guide.html" style="color:#D52B1E;">Switzerland Guide</a> |
+                <a href="france-guide.html" style="color:#002395;">France Guide</a> |
+                <a href="spain-guide.html" style="color:#AA151B;">Spain Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="qatar-guide.html" style="color:#8A1538;">Qatar Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator -- Qatar = 100
+    const qatarPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 200, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 172, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 163, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 157, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 154, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 146, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 142, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 138, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 138, region: 'Western Europe' },
+        { name: 'Finland', currency: 'EUR', ppp: 135, region: 'Nordic' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 134, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 132, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 131, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 129, region: 'North America' },
+        { name: 'Belgium', currency: 'EUR', ppp: 128, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 126, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 123, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 120, region: 'East Asia' },
+        { name: 'Italy', currency: 'EUR', ppp: 117, region: 'Southern Europe' },
+        { name: 'UAE', currency: 'AED', ppp: 115, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 105, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 92, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 80, region: 'Middle East' },
+        { name: 'South Korea', currency: 'KRW', ppp: 90, region: 'East Asia' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 72, region: 'Eastern Europe' },
+        { name: 'Greece', currency: 'EUR', ppp: 78, region: 'Southern Europe' },
+        { name: 'Poland', currency: 'PLN', ppp: 60, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 55, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 40, region: 'Eurasia' },
+        { name: 'China', currency: 'CNY', ppp: 48, region: 'East Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 44, region: 'Southeast Asia' },
+        { name: 'Malaysia', currency: 'MYR', ppp: 44, region: 'Southeast Asia' },
+        { name: 'Mexico', currency: 'MXN', ppp: 44, region: 'North America' },
+        { name: 'Brazil', currency: 'BRL', ppp: 47, region: 'South America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 38, region: 'Africa' },
+        { name: 'Philippines', currency: 'PHP', ppp: 36, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 33, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 34, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 28, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 24, region: 'South Asia' },
+        { name: 'Bangladesh', currency: 'BDT', ppp: 26, region: 'South Asia' },
+        { name: 'Sri Lanka', currency: 'LKR', ppp: 29, region: 'South Asia' },
+        { name: 'Egypt', currency: 'EGP', ppp: 26, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 28, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 32, region: 'Africa' },
+    ];
+
+    function calculateQatarPPP() {
+        const amount = parseFloat(document.getElementById('qatarPppAmount').value) || 12000;
+        const tbody = document.querySelector('#qatarPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#qatarPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} QAR buys equiv. of`;
+
+        qatarPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} QAR (${diff})</td></tr>`;
+        });
+    }
+    calculateQatarPPP();
+
+    // Qatar Tax Comparison Calculator
+    function calculateQatarTax() {
+        const monthlySalary = parseFloat(document.getElementById('qatarGrossSalary').value) || 18000;
+        const annualSalary = monthlySalary * 12;
+
+        // Qatar: 0% tax
+        const qatarTakeHome = monthlySalary;
+
+        // UK approximation
+        const ukEffectiveRate = monthlySalary <= 10000 ? 0.25 : monthlySalary <= 20000 ? 0.32 : monthlySalary <= 35000 ? 0.36 : 0.42;
+        const ukTakeHome = Math.round(monthlySalary * (1 - ukEffectiveRate));
+
+        // Germany approximation
+        const deEffectiveRate = monthlySalary <= 10000 ? 0.31 : monthlySalary <= 20000 ? 0.38 : monthlySalary <= 35000 ? 0.41 : 0.45;
+        const deTakeHome = Math.round(monthlySalary * (1 - deEffectiveRate));
+
+        // Sweden approximation
+        const seEffectiveRate = monthlySalary <= 10000 ? 0.35 : monthlySalary <= 20000 ? 0.42 : monthlySalary <= 35000 ? 0.45 : 0.52;
+        const seTakeHome = Math.round(monthlySalary * (1 - seEffectiveRate));
+
+        // Gratuity calculation (3 weeks per year of service)
+        const dailySalary = monthlySalary / 30;
+        const gratuity1yr = Math.round(dailySalary * 21);
+        const gratuity5yr = Math.round(dailySalary * 21 * 5);
+        const gratuity10yr = Math.round(dailySalary * 21 * 10);
+
+        const ukSaved = monthlySalary - ukTakeHome;
+        const deSaved = monthlySalary - deTakeHome;
+        const seSaved = monthlySalary - seTakeHome;
+
+        const resultDiv = document.getElementById('qatarTaxResult');
+        resultDiv.innerHTML = `
+            <h4 style="margin:0 0 15px; color:#1e293b;">Monthly Take-Home Comparison</h4>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Qatar (0% tax):</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${qatarTakeHome.toLocaleString()} QAR</span></div>
+                <div><strong>UK equivalent:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${ukTakeHome.toLocaleString()} QAR</span><br><small style="color:#dc2626;">-${ukSaved.toLocaleString()} to tax</small></div>
+                <div><strong>Germany equivalent:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${deTakeHome.toLocaleString()} QAR</span><br><small style="color:#dc2626;">-${deSaved.toLocaleString()} to tax</small></div>
+                <div><strong>Sweden equivalent:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${seTakeHome.toLocaleString()} QAR</span><br><small style="color:#dc2626;">-${seSaved.toLocaleString()} to tax</small></div>
+            </div>
+            <div style="margin-top:15px; padding:10px; background:#ecfdf5; border-radius:8px;">
+                <strong style="color:#059669;">&#10003; Annual savings vs UK:</strong> ${(ukSaved * 12).toLocaleString()} QAR/year | <strong>vs Germany:</strong> ${(deSaved * 12).toLocaleString()} QAR/year | <strong>vs Sweden:</strong> ${(seSaved * 12).toLocaleString()} QAR/year
+            </div>
+            <h4 style="margin:20px 0 10px; color:#1e293b;">Gratuity Accumulation</h4>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>After 1 year:</strong><br><span style="font-size:1.2rem; color:#1a1a2e; font-weight:700;">${gratuity1yr.toLocaleString()} QAR</span></div>
+                <div><strong>After 5 years:</strong><br><span style="font-size:1.2rem; color:#1a1a2e; font-weight:700;">${gratuity5yr.toLocaleString()} QAR</span></div>
+                <div><strong>After 10 years:</strong><br><span style="font-size:1.2rem; color:#1a1a2e; font-weight:700;">${gratuity10yr.toLocaleString()} QAR</span></div>
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

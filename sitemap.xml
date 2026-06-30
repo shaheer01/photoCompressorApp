@@ -182,4 +182,60 @@
         <priority>0.2</priority>
     </url>
 
+    <!-- Belgium -->
+    <url>
+        <loc>https://compressphotos.cloud/belgium-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Qatar -->
+    <url>
+        <loc>https://compressphotos.cloud/qatar-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- South Korea -->
+    <url>
+        <loc>https://compressphotos.cloud/south-korea-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Brazil -->
+    <url>
+        <loc>https://compressphotos.cloud/brazil-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Mexico -->
+    <url>
+        <loc>https://compressphotos.cloud/mexico-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Poland -->
+    <url>
+        <loc>https://compressphotos.cloud/poland-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Czech Republic -->
+    <url>
+        <loc>https://compressphotos.cloud/czech-republic-guide</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

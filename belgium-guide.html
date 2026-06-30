@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belgium Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Belgium 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="belgium living cost, belgium salary, belgian tax, cost of living brussels, expat belgium, levensduurte Belgie">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Belgium Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in Belgium 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta property="og:url" content="https://compressphotos.cloud/belgium-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Belgium Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in Belgium 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/belgium-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E7;&#x1F1EA;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #FFD100; border-bottom: 3px solid #FFD100; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #1a1a2e; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #FFD100; background: #fffdf0; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #1a1a2e, #FFD100);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #fffdf0; border-left: 4px solid #FFD100; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #1a1a2e; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #1a1a2e; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #1a1a2e, #FFD100); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Belgium Living Cost Guide 2026",
+      "description": "Complete guide to living costs in Belgium 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.",
+      "image": "https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80",
+      "datePublished": "2026-06-30",
+      "dateModified": "2026-06-30",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/belgium-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#FFD100; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">🇩🇪</span><div>Germany<small>Steuern, salaries & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">🇦🇹</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">🇮🇪</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">🇯🇵</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">🇮🇹</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">🇫🇮</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="belgium-guide.html" style="background:#fffdf0;"><span class="country-flag">🇧🇪</span><div><strong>Belgium</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Belgium Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Belgian tax system, healthcare via mutualites, and PPP calculator. For expats and newcomers planning to move to Belgium.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80" alt="Grand Place, Brussels - iconic Belgian landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Calculator</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="basics">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Belgium (Brussels)</h2>
+            <p class="section-subtitle">For a single adult. All amounts in EUR. Based on StatBel, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. Belgium has one of the highest tax burdens in Europe (~50% effective for average earners). See the <strong>Tax Calculator</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,700</div>
+                    <div class="stat-unit">EUR/month (low)</div>
+                    <div class="stat-desc">Frugal single in Brussels</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,700</div>
+                    <div class="stat-unit">EUR/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200</div>
+                    <div class="stat-unit">EUR avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~40,000</div>
+                    <div class="stat-unit">EUR avg annual salary</div>
+                    <div class="stat-desc">Belgium-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (EUR)</th><th>High (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent 1-bed apartment (Brussels)</td><td class="eur">700</td><td class="eur">1,100</td><td>Central Brussels higher; Schaerbeek, Anderlecht more affordable</td></tr>
+                    <tr><td></td><td>Utilities (electricity, gas, water)</td><td class="eur">150</td><td class="eur">250</td><td>Energy prices stabilized post-2023; varies by season</td></tr>
+                    <tr><td></td><td>Internet</td><td class="eur">35</td><td class="eur">55</td><td>Proximus, Telenet, Orange, VOO; fiber expanding</td></tr>
+                    <tr><td></td><td>Mobile phone</td><td class="eur">15</td><td class="eur">30</td><td>Orange, Proximus, BASE; budget MVNOs available</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">900</td><td class="eur">1,435</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries</td><td class="eur">300</td><td class="eur">400</td><td>Colruyt (cheapest), Delhaize, Aldi, Lidl, Carrefour</td></tr>
+                    <tr><td></td><td>Dining out (occasional)</td><td class="eur">50</td><td class="eur">120</td><td>Lunch specials 12-18 EUR; dinner 25-45 EUR</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">350</td><td class="eur">520</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>STIB/MIVB monthly pass (Brussels)</td><td class="eur">49</td><td class="eur">49</td><td>All buses, trams, metro in Brussels region</td></tr>
+                    <tr><td></td><td>Occasional taxi / car</td><td class="eur">0</td><td class="eur">100</td><td>Uber, Bolt available; car sharing Cambio</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">49</td><td class="eur">149</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Healthcare</td></tr>
+                    <tr><td></td><td>Mutualite / Ziekenfonds (annual, amortized)</td><td class="eur">8</td><td class="eur">15</td><td>~100 EUR/year membership; mandatory health insurance via mutualite</td></tr>
+                    <tr><td></td><td>Out-of-pocket medical (co-pays)</td><td class="eur">20</td><td class="eur">50</td><td>~25% patient share after reimbursement; GP visit ~4-6 EUR after refund</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">28</td><td class="eur">65</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">50</td><td class="eur">120</td><td></td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">40</td><td class="eur">80</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">25</td><td class="eur">60</td><td>Gym 25-40 EUR/month; sports clubs available</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">30</td><td class="eur">50</td><td>Cleaning products, small items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">145</td><td class="eur">310</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Household insurance (assurance habitation)</td><td class="eur">15</td><td class="eur">25</td><td>Fire insurance mandatory for renters in most leases</td></tr>
+                    <tr><td></td><td>Civil liability (RC familiale)</td><td class="eur">5</td><td class="eur">10</td><td>Covers accidental damage to third parties; highly recommended</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="eur">20</td><td class="eur">35</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,492</td><td class="eur">~2,514</td><td>Realistic range: 1,700 - 2,700 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Belgium</h2>
+            <p class="section-subtitle">Monthly gross salaries in EUR. Data from StatBel, Jobat, Glassdoor, Robert Half 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>13th month salary:</strong> In Belgium, virtually all employees receive a mandatory 13th month salary (eindejaarspremie / prime de fin d'annee) and often a holiday bonus (vakantiegeld / pecule de vacances). Meal vouchers (cheques-repas) of up to 8 EUR/day are also standard. The figures below show standard monthly gross.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">8,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (GP)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:69%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:69%;">5,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:66%;">5,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:63%;">5,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:59%;">4,700 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">4,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:53%;">4,200 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Secondary)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">4,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:48%;">3,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">3,500 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Primary)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:41%;">3,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:41%;">3,300 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">3,000 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse (Starting)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">2,800 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:34%;">2,700 EUR</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:29%;">2,300 EUR</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-euro-sign"></i>
+                <strong>Minimum wage (2026):</strong> Belgium has one of the highest minimum wages in Europe. The guaranteed average minimum monthly income (RMMG / GMMI) is approximately 2,070 EUR/month gross for a full-time worker. Wages are indexed automatically to inflation via the health index.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Calculator -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Belgian Tax System (Belastingstelsel / Systeme fiscal)</h2>
+            <p class="section-subtitle">Belgium has a progressive income tax (personenbelasting / impot des personnes physiques) plus mandatory social contributions. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Brackets (IPP / PB)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (EUR)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 15,200</td><td class="eur">25%</td><td>First bracket; reduced rate</td></tr>
+                    <tr><td>15,200 - 26,830</td><td class="eur">40%</td><td>Second bracket</td></tr>
+                    <tr><td>26,830 - 46,440</td><td class="eur">45%</td><td>Third bracket</td></tr>
+                    <tr><td>46,440+</td><td class="eur">50%</td><td>Top marginal rate; one of highest in EU</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Contributions (Cotisations sociales / Sociale bijdragen)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Employee Rate</th><th>Employer Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Social security (ONSS/RSZ)</td><td class="eur">13.07%</td><td class="eur">~25%</td><td>Employee share is 13.07% of gross; covers pension, health, unemployment</td></tr>
+                    <tr><td>Special social contribution</td><td class="eur">0-731 EUR/year</td><td class="eur">-</td><td>Additional contribution based on household income; max ~61 EUR/month</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Additional Taxes</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Municipal tax (opcentiemen / centimes additionnels)</td><td class="eur">0-9%</td><td>Surcharge on income tax; varies by municipality (Brussels avg ~6%)</td></tr>
+                    <tr><td>Tax-free allowance (belastingvrije som)</td><td class="eur">10,160 EUR</td><td>Basic personal exemption; higher with dependents</td></tr>
+                    <tr><td>VAT (BTW/TVA)</td><td class="eur">21%</td><td>Standard rate; 6% on food/books; 12% on some services</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="beGrossSalary">Annual Gross Salary (EUR):</label>
+                <input type="number" id="beGrossSalary" value="45000" min="0" max="500000">
+                <label for="beMunicipality">Municipal tax rate (%):</label>
+                <select id="beMunicipality">
+                    <option value="6">Brussels average (~6%)</option>
+                    <option value="7">Antwerp (~7%)</option>
+                    <option value="7.5">Ghent (~7.5%)</option>
+                    <option value="8">Higher municipality (~8%)</option>
+                    <option value="0">No municipal tax (0%)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateBETax()">Calculate Net Salary</button>
+                <div class="calc-result" id="beTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">2,500</td><td class="eur">30,000</td><td class="eur">~900</td><td class="eur" style="color:#059669; font-weight:700;">~1,600</td><td>36.0%</td></tr>
+                    <tr><td class="eur">3,500</td><td class="eur">42,000</td><td class="eur">~1,400</td><td class="eur" style="color:#059669; font-weight:700;">~2,100</td><td>40.0%</td></tr>
+                    <tr><td class="eur">4,500</td><td class="eur">54,000</td><td class="eur">~2,000</td><td class="eur" style="color:#059669; font-weight:700;">~2,500</td><td>44.4%</td></tr>
+                    <tr><td class="eur">6,000</td><td class="eur">72,000</td><td class="eur">~2,900</td><td class="eur" style="color:#059669; font-weight:700;">~3,100</td><td>48.3%</td></tr>
+                    <tr><td class="eur">8,000</td><td class="eur">96,000</td><td class="eur">~4,000</td><td class="eur" style="color:#059669; font-weight:700;">~4,000</td><td>50.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Belgian salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Belgium = 100.</p>
+
+            <div class="calc-container">
+                <label for="bePppAmount">Your monthly spending in Belgium (EUR):</label>
+                <input type="number" id="bePppAmount" value="2500" min="100" max="50000">
+                <button class="calc-btn" onclick="calculateBEPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="bePppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>2,500 EUR buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Belgium = 100. If Switzerland has a PPP index of 157, your 2,500 EUR in Belgium has the same purchasing power as 2,500 x (157/100) = 3,925 EUR in Switzerland. You'd need ~57% more money in Switzerland for the same standard of living. Belgium's global PPP index is 83.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Belgian cities. Brussels = 100 (most expensive baseline). Data: StatBel, Numbeo, Immoweb 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (EUR)</th><th>Monthly Pass (EUR)</th><th>Meal Out (EUR)</th><th>Beer 0.5L (EUR)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Brussels</strong></td><td class="eur">700-1,100</td><td class="eur">49</td><td class="eur">15-25</td><td class="eur">4.00</td><td>EU capital; multicultural; bilingual FR/NL; most expensive</td></tr>
+                    <tr><td><strong>Antwerp</strong></td><td class="eur">650-1,000</td><td class="eur">49</td><td class="eur">14-22</td><td class="eur">3.50</td><td>Fashion & diamond capital; vibrant nightlife; Flemish</td></tr>
+                    <tr><td><strong>Ghent</strong></td><td class="eur">600-950</td><td class="eur">49</td><td class="eur">13-20</td><td class="eur">3.50</td><td>University city; medieval charm; great food scene; Flemish</td></tr>
+                    <tr><td><strong>Bruges</strong></td><td class="eur">550-850</td><td class="eur">49</td><td class="eur">14-22</td><td class="eur">3.50</td><td>UNESCO heritage; touristy but charming; smaller job market</td></tr>
+                    <tr><td><strong>Liege</strong></td><td class="eur">450-750</td><td class="eur">35</td><td class="eur">11-18</td><td class="eur">3.00</td><td>Francophone; affordable; university city; industrial heritage</td></tr>
+                    <tr><td><strong>Leuven</strong></td><td class="eur">600-950</td><td class="eur">49</td><td class="eur">12-20</td><td class="eur">3.00</td><td>KU Leuven university; AB InBev HQ; young population; Flemish</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Regional differences:</strong> Belgium is divided into three regions (Brussels-Capital, Flanders, Wallonia) with different languages, tax rates, and cost levels. Flanders is generally wealthier with higher salaries but also higher rents. Wallonia and Liege are more affordable. Brussels is the most international but most expensive.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Belgian Healthcare System (Mutualite / Ziekenfonds)</h2>
+            <p class="section-subtitle">Belgium has a mandatory health insurance system with high-quality care. Patients pay upfront and get reimbursed ~75% by their mutualite.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~75%</div>
+                    <div class="stat-unit">Reimbursement rate</div>
+                    <div class="stat-desc">Standard reimbursement by mutualite</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~100</div>
+                    <div class="stat-unit">EUR/year membership</div>
+                    <div class="stat-desc">Annual mutualite/ziekenfonds fee</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">4-6</div>
+                    <div class="stat-unit">EUR effective GP cost</div>
+                    <div class="stat-desc">Patient co-pay after reimbursement</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">eHealth</div>
+                    <div class="stat-unit">Digital platform</div>
+                    <div class="stat-desc">Electronic prescriptions & health records</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">How Belgian Healthcare Works</h3>
+            <table class="data-table">
+                <thead><tr><th>Step</th><th>What Happens</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Join a mutualite</strong></td><td>Register with a health insurance fund</td><td>Choose from: CM/MC, Solidaris/Socialistische, Liberale, Neutraal, or CAAMI/HZIV (state fund)</td></tr>
+                    <tr><td><strong>2. Get a Global Medical File</strong></td><td>Register with a GP (medecin generaliste / huisarts)</td><td>DMG/GMD gives higher reimbursement rates; 30% more refunded</td></tr>
+                    <tr><td><strong>3. Pay upfront</strong></td><td>Pay the doctor/pharmacy at point of care</td><td>GP visit ~28 EUR; you pay full amount first</td></tr>
+                    <tr><td><strong>4. Get reimbursed</strong></td><td>Mutualite reimburses ~75% within days</td><td>Via bank transfer; effective cost ~4-6 EUR for GP with DMG</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered & Costs</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Typical Cost</th><th>After Reimbursement</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (with DMG)</td><td class="eur">~28 EUR</td><td class="eur">~4-6 EUR</td><td>Higher reimbursement with Global Medical File</td></tr>
+                    <tr><td>Specialist visit</td><td class="eur">~35-60 EUR</td><td class="eur">~10-20 EUR</td><td>No referral needed but recommended by GP</td></tr>
+                    <tr><td>Hospital stay</td><td class="eur">Varies</td><td class="eur">Day fee ~18 EUR</td><td>Per diem charge; rest covered; supplements for single room</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">Varies</td><td class="eur">~1-15 EUR co-pay</td><td>Category A (vital) free; B/C partially covered; D not covered</td></tr>
+                    <tr><td>Dental - basic</td><td class="eur">~40-80 EUR</td><td class="eur">~10-25 EUR</td><td>Annual check-up and basic care well covered</td></tr>
+                    <tr><td>Mental health</td><td class="eur">~50-80 EUR</td><td class="eur">~10-30 EUR</td><td>Psychologist sessions partly covered since 2022 reform; 8 sessions/year</td></tr>
+                    <tr><td>Maternity</td><td class="eur">Covered</td><td class="eur">Minimal</td><td>Prenatal, delivery, postnatal covered; birth premium ~1,300 EUR first child</td></tr>
+                    <tr><td>Physiotherapy</td><td class="eur">~30-50 EUR</td><td class="eur">~8-15 EUR</td><td>Requires prescription; chronic conditions get more sessions</td></tr>
+                    <tr><td>Emergency (urgences/spoed)</td><td class="eur">~50-150 EUR</td><td class="eur">~20-40 EUR</td><td>Supplement for non-urgent ER visits possible</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Maximum billing (MAF):</strong> Belgium has a maximum billing system (maximumfactuur / maximum a facturer). Once your household's annual medical co-pays exceed a threshold (based on income, starting at ~480 EUR for lowest incomes), everything else is 100% reimbursed for the rest of the year. This protects against catastrophic medical costs.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Belgium (Woning zoeken / Chercher un logement)</h2>
+            <p class="section-subtitle">Belgium's rental market varies significantly by region. Understanding the rules for deposits, indexation, and registration is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Rental Rules</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Security deposit (garantie locative / huurwaarborg)</strong></td><td>Maximum 3 months rent</td><td>Must be placed in a blocked bank account (garantie bancaire); not cash to landlord</td></tr>
+                    <tr><td><strong>Lease registration</strong></td><td>Mandatory registration at bureau d'enregistrement</td><td>Landlord must register within 2 months; free for residential leases; protects tenant</td></tr>
+                    <tr><td><strong>Rent indexation</strong></td><td>Annual indexation allowed based on health index</td><td>Tied to gezondheidsindex / indice sante; automatic increase each anniversary</td></tr>
+                    <tr><td><strong>Standard lease duration</strong></td><td>9 years (standard) or 3 years (short)</td><td>9-year leases offer most tenant protection; short leases have different rules</td></tr>
+                    <tr><td><strong>Notice period (tenant)</strong></td><td>3 months notice at any time</td><td>Penalty of 3/2/1 months rent if leaving in year 1/2/3 of 9-year lease</td></tr>
+                    <tr><td><strong>Energy certificate (EPC/PEB)</strong></td><td>Mandatory for all rental listings</td><td>Shows energy efficiency rating; affects heating costs significantly</td></tr>
+                    <tr><td><strong>Commune registration</strong></td><td>Register at commune/gemeente within 8 days</td><td>Police may visit to confirm residence; needed for Belgian ID card</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Immoweb.be</td><td>All types</td><td>Largest housing platform in Belgium; essential for searching</td></tr>
+                    <tr><td>Zimmo.be</td><td>All types</td><td>Second major platform; good filtering options</td></tr>
+                    <tr><td>Immoscoop.be</td><td>All types</td><td>Aggregator; combines listings from multiple sources</td></tr>
+                    <tr><td>Logic-immo.be</td><td>All types</td><td>French-speaking Belgium focus; good for Wallonia/Brussels</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Appartements a louer Bruxelles" groups; popular for expats</td></tr>
+                    <tr><td>Real estate agencies</td><td>All types</td><td>ERA, Century 21, Trevi; agent fees typically paid by landlord</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Important:</strong> In Belgium, the tenant typically does NOT pay the real estate agent's commission -- the landlord does. However, always confirm this upfront. You will need to provide: proof of income (3 recent payslips), ID/passport, sometimes a reference from previous landlord, and the deposit (3 months into a blocked bank account). Fire insurance (assurance incendie) is usually mandatory per the lease.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Belgium (Vervoer / Transport)</h2>
+            <p class="section-subtitle">Belgium has separate transport networks for each region plus national railways. The country is compact -- you can cross it in 2 hours by train.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">49</div>
+                    <div class="stat-unit">EUR/month</div>
+                    <div class="stat-desc">STIB/MIVB Brussels monthly pass</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">SNCB/NMBS</div>
+                    <div class="stat-unit">National railway</div>
+                    <div class="stat-desc">Connects all major cities; frequent service</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1.80</div>
+                    <div class="stat-unit">EUR/litre petrol</div>
+                    <div class="stat-desc">Diesel ~1.70 EUR; prices fluctuate</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">30,500+</div>
+                    <div class="stat-unit">km road network</div>
+                    <div class="stat-desc">Dense motorway system; toll-free (mostly)</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>STIB/MIVB (Brussels)</td><td class="eur">49 EUR/month</td><td>All buses, trams, metro in Brussels-Capital region</td></tr>
+                    <tr><td>De Lijn (Flanders)</td><td class="eur">49 EUR/month</td><td>All buses and trams in Flemish region; Buzzy Pazz</td></tr>
+                    <tr><td>TEC (Wallonia)</td><td class="eur">42 EUR/month</td><td>All buses in Wallonia region</td></tr>
+                    <tr><td>SNCB/NMBS train</td><td class="eur">Varies</td><td>Brussels-Antwerp ~8 EUR; Brussels-Ghent ~10 EUR; Go Pass 10 (youth) ~55 EUR</td></tr>
+                    <tr><td>SNCB/NMBS rail pass</td><td class="eur">~89 EUR</td><td>10 trips anywhere in Belgium (Standard Multi); best value for regular commuters</td></tr>
+                    <tr><td>Combined pass (MOBIB)</td><td class="eur">Varies</td><td>MOBIB card works across STIB, De Lijn, TEC, and SNCB with different subscriptions</td></tr>
+                    <tr><td>Villo! bikes (Brussels)</td><td class="eur">35 EUR/year</td><td>Brussels bike-sharing; first 30 min free per trip; 5,000+ bikes</td></tr>
+                    <tr><td>Blue-bike (SNCB)</td><td class="eur">12 EUR/year + 3.15/ride</td><td>Bike rental at train stations; perfect for last-mile</td></tr>
+                    <tr><td>Car insurance</td><td class="eur">60-150 EUR/month</td><td>RC auto mandatory; omnium optional; high compared to neighbors</td></tr>
+                    <tr><td>Cambio car sharing</td><td class="eur">Varies</td><td>Popular car-sharing service in major Belgian cities</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Belgium offers an employer-paid commute benefit. Most employers are legally required to reimburse at least part of your public transport costs (often 100% for train). Company cars with fuel cards are extremely common in Belgium as a tax-efficient benefit -- roughly 1 in 5 Belgian workers has a company car. The salary sacrifice makes it very attractive despite heavy traffic.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Belgium -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Belgium (Werken / Travailler en Belgique)</h2>
+            <p class="section-subtitle">Belgian work culture, employment rights, and the famous Belgian benefits package.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20+10</div>
+                    <div class="stat-unit">Days off/year</div>
+                    <div class="stat-desc">20 vacation days + 10 public holidays</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">13th month</div>
+                    <div class="stat-unit">Salary bonus</div>
+                    <div class="stat-desc">Mandatory end-of-year premium for most sectors</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">8 EUR/day</div>
+                    <div class="stat-unit">Meal vouchers</div>
+                    <div class="stat-desc">Cheques-repas/maaltijdcheques; tax-free benefit</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Strong</div>
+                    <div class="stat-unit">Union presence</div>
+                    <div class="stat-desc">FGTB, CSC, CGSLB; ~50% unionization rate</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Work permit</strong></td><td>EU citizens: no permit needed; Non-EU: Single Permit required</td><td>Combined work + residence permit; employer applies; highly skilled workers have easier process</td></tr>
+                    <tr><td><strong>Vacation days</strong></td><td>20 legal days (5-day week) + 10 public holidays</td><td>Public holidays include: New Year, Easter Monday, Labour Day (1 May), Ascension, Whit Monday, National Day (21 July), Assumption, All Saints, Armistice (11 Nov), Christmas</td></tr>
+                    <tr><td><strong>13th month salary</strong></td><td>End-of-year premium (eindejaarspremie)</td><td>Mandatory in most sectors via collective agreements (CAO/CCT); usually full month's salary</td></tr>
+                    <tr><td><strong>Holiday bonus</strong></td><td>Double holiday pay (dubbel vakantiegeld)</td><td>92% of monthly salary paid in May/June; legally mandated for employees</td></tr>
+                    <tr><td><strong>Meal vouchers</strong></td><td>Up to 8 EUR/day (employer 6.91 + employee 1.09)</td><td>Tax-advantaged; accepted at supermarkets, restaurants; Edenred, Sodexo cards</td></tr>
+                    <tr><td><strong>Eco-cheques</strong></td><td>Up to 250 EUR/year</td><td>For ecological purchases (energy-efficient appliances, organic food, bike)</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 38 hours/week</td><td>Some sectors 35-39h; overtime strictly regulated and compensated</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>Based on seniority; complex calculation</td><td>Increases with years of service; can be very long (3+ months) for senior employees</td></tr>
+                    <tr><td><strong>Sick leave</strong></td><td>Employer pays 100% for first 30 days (white-collar)</td><td>After that: mutualite pays ~60% of capped salary; no limit on duration</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>15 weeks (6 before + 9 after birth)</td><td>First 30 days: 82% of salary; remaining: 75% (capped)</td></tr>
+                    <tr><td><strong>Paternity leave</strong></td><td>20 days</td><td>First 3 days: 100% employer; remaining 17: 82% from mutualite</td></tr>
+                    <tr><td><strong>Company car</strong></td><td>Very common tax-efficient benefit</td><td>~20% of workers have one; includes fuel card; taxed as benefit-in-kind</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Belgian work culture:</strong> (1) <strong>Consensus-driven</strong> -- decisions involve consultation; direct confrontation is avoided. (2) <strong>Work-life balance</strong> -- Belgians value their free time; overtime is uncommon. (3) <strong>Three languages</strong> -- workplace language depends on region (Dutch in Flanders, French in Wallonia, both + English in Brussels). (4) <strong>Lunch culture</strong> -- the lunch break is important; 1 hour is standard. (5) <strong>Union power</strong> -- strikes are relatively common; unions negotiate sector-wide wages (paritaire comites / paritaire comites).
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="basics" class="tab-content">
+            <h2 class="section-title">Local Basics & Everyday Costs</h2>
+            <p class="section-subtitle">What everyday items and activities cost in Belgium. Because beer and frites are a way of life.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Food & Drink</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Price Range (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Beer (cafe/bar, 25-33cl)</td><td class="eur">2.50 - 5.00</td><td>Belgium is the beer capital; 1,500+ breweries; abbey, Trappist, lambic</td></tr>
+                    <tr><td>Special/Trappist beer (bar)</td><td class="eur">4.00 - 7.00</td><td>Chimay, Westmalle, Orval, Rochefort, Westvleteren</td></tr>
+                    <tr><td>Frites/Frieten (cone)</td><td class="eur">3.00 - 4.00</td><td>From a frituur/friterie; with sauce (andalouse, samurai) +0.50</td></tr>
+                    <tr><td>Coffee (cafe)</td><td class="eur">2.50 - 3.50</td><td>Espresso or filter; specialty coffee shops 3.50-5.00</td></tr>
+                    <tr><td>Waffle (street)</td><td class="eur">2.00 - 5.00</td><td>Brussels waffle (light) or Liege waffle (sweet, doughy); avoid tourist traps</td></tr>
+                    <tr><td>Croissant (bakery)</td><td class="eur">1.20 - 2.00</td><td>Belgian bakeries (boulangeries/bakkerijen) are excellent</td></tr>
+                    <tr><td>Lunch menu (restaurant)</td><td class="eur">12.00 - 18.00</td><td>Plat du jour / dagschotel; many restaurants offer lunch deals</td></tr>
+                    <tr><td>Dinner (restaurant, main)</td><td class="eur">18.00 - 35.00</td><td>Moules-frites ~20 EUR; stoofvlees (carbonade) ~18 EUR</td></tr>
+                    <tr><td>Chocolates (box, 250g)</td><td class="eur">8.00 - 25.00</td><td>Neuhaus, Leonidas, Pierre Marcolini; supermarket brands much cheaper</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Entertainment & Services</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Price Range (EUR)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Cinema ticket</td><td class="eur">10.00 - 14.00</td><td>Kinepolis, UGC; student/early bird discounts available</td></tr>
+                    <tr><td>Gym membership</td><td class="eur">25.00 - 40.00</td><td>Basic Fit ~25 EUR; premium gyms 35-60 EUR/month</td></tr>
+                    <tr><td>Haircut (men)</td><td class="eur">15.00 - 25.00</td><td>Barber shops; women's cut 30-60 EUR</td></tr>
+                    <tr><td>Newspaper</td><td class="eur">2.00 - 3.00</td><td>De Standaard, Le Soir, De Morgen, La Libre</td></tr>
+                    <tr><td>Museum entry</td><td class="eur">8.00 - 15.00</td><td>Many free first Wednesday of month; Brussels Card for tourists</td></tr>
+                    <tr><td>Festival ticket (1 day)</td><td class="eur">80.00 - 120.00</td><td>Tomorrowland, Rock Werchter, Dour, Pukkelpop; Belgium is festival heaven</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Supermarket Price Comparison</h3>
+            <table class="data-table">
+                <thead><tr><th>Store</th><th>Price Level</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Colruyt</strong></td><td class="eur eur-low">Lowest price guaranteed</td><td>Guarantees lowest price in Belgium; no-frills warehouse style</td></tr>
+                    <tr><td><strong>Aldi</strong></td><td class="eur eur-low">Budget</td><td>German discounter; good quality own-brand products</td></tr>
+                    <tr><td><strong>Lidl</strong></td><td class="eur eur-low">Budget</td><td>German discounter; weekly themed promotions</td></tr>
+                    <tr><td><strong>Carrefour</strong></td><td class="eur">Mid-range</td><td>Hypermarkets and Express stores; wide selection</td></tr>
+                    <tr><td><strong>Delhaize</strong></td><td class="eur eur-high">Premium</td><td>Higher quality; good fresh produce and deli; more expensive</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Belgian life hacks:</strong> (1) <strong>Colruyt price match</strong> -- Colruyt guarantees the lowest price on branded products; if cheaper elsewhere, they match it. (2) <strong>Brocante / rommelmarkt</strong> -- flea markets every weekend; great for furniture and household items. (3) <strong>Night shops (nachtwinkel)</strong> -- open late for essentials; slightly more expensive. (4) <strong>Tipping</strong> -- service is included (service compris); tipping is optional, round up or 5-10% for great service.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Belgium</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,700</div>
+                    <div class="stat-unit">EUR/month minimum</div>
+                    <div class="stat-desc">Bare minimum for single in Brussels (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,500</div>
+                    <div class="stat-unit">EUR/month comfortable</div>
+                    <div class="stat-desc">Comfortable single in Brussels</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~32,000</div>
+                    <div class="stat-unit">EUR/year gross (min)</div>
+                    <div class="stat-desc">Minimum gross to cover 1,700 net/month</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~45,000</div>
+                    <div class="stat-unit">EUR/year gross (comfortable)</div>
+                    <div class="stat-desc">Gross for comfortable 2,500 net/month</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (EUR)</th><th>Gross Salary Needed (EUR)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared room, very frugal</small></td><td class="eur">1,100</td><td class="eur">2,100</td><td class="eur">1,300</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Basic single (Brussels)</strong><br><small>Own studio, careful spending</small></td><td class="eur">1,700</td><td class="eur">3,200</td><td class="eur">1,900</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Comfortable single</strong><br><small>1-bed flat, dining out sometimes</small></td><td class="eur">2,500</td><td class="eur">4,500</td><td class="eur">2,700</td><td class="eur eur-low">+200</td></tr>
+                    <tr><td><strong>Couple (Brussels)</strong><br><small>2 adults, good lifestyle</small></td><td class="eur">3,200</td><td class="eur">5,800</td><td class="eur">3,500</td><td class="eur eur-low">+300</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Brussels</small></td><td class="eur">4,000</td><td class="eur">7,200</td><td class="eur">4,300</td><td class="eur eur-low">+300</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Register at your <strong>commune/gemeente</strong> (within 8 days of arrival). (2) Open a bank account (BNP Paribas Fortis, KBC, ING, Belfius). (3) Join a <strong>mutualite/ziekenfonds</strong> (CM, Solidaris, or CAAMI). (4) Get your <strong>eID</strong> (Belgian identity card for residents). (5) Register with a GP and open a <strong>DMG/GMD</strong> (Global Medical File). (6) Get a <strong>MOBIB card</strong> for public transport. (7) Buy a SIM card (Orange, Proximus, BASE). (8) Apply for Single Permit if non-EU.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calculator"></i>
+                <strong>Remember the extras:</strong> Belgian salaries look lower after tax than neighboring countries, but don't forget the extensive benefits: meal vouchers (~160 EUR/month tax-free), eco-cheques (~250 EUR/year), 13th month salary, double holiday pay, employer-paid transport, and potentially a company car with fuel card. These easily add 300-500 EUR/month in effective income.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Wages are automatically indexed to inflation in Belgium. Always verify current rates with official sources (SPF Finances, StatBel, your mutualite) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Belgium Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#FFD100;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="austria-guide.html" style="color:#EF3340;">Austria Guide</a> |
+                <a href="uae-guide.html" style="color:#00843D;">UAE Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA Guide</a> |
+                <a href="denmark-guide.html" style="color:#C8102E;">Denmark Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand Guide</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia Guide</a> |
+                <a href="switzerland-guide.html" style="color:#FF0000;">Switzerland Guide</a> |
+                <a href="france-guide.html" style="color:#002395;">France Guide</a> |
+                <a href="spain-guide.html" style="color:#F1BF00;">Spain Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="belgium-guide.html" style="color:#FFD100;">Belgium Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const bePppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 157, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 135, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 128, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 123, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 120, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 114, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 111, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 108, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 108, region: 'Western Europe' },
+        { name: 'Finland', currency: 'EUR', ppp: 106, region: 'Nordic' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 105, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 104, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 102, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 101, region: 'North America' },
+        { name: 'France', currency: 'EUR', ppp: 99, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 96, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 94, region: 'East Asia' },
+        { name: 'Italy', currency: 'EUR', ppp: 92, region: 'Southern Europe' },
+        { name: 'UAE', currency: 'AED', ppp: 90, region: 'Middle East' },
+        { name: 'Spain', currency: 'EUR', ppp: 82, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 72, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 63, region: 'Middle East' },
+        { name: 'Poland', currency: 'PLN', ppp: 50, region: 'Eastern Europe' },
+        { name: 'Czech Republic', currency: 'CZK', ppp: 55, region: 'Eastern Europe' },
+        { name: 'Hungary', currency: 'HUF', ppp: 45, region: 'Eastern Europe' },
+        { name: 'Romania', currency: 'RON', ppp: 40, region: 'Eastern Europe' },
+        { name: 'Turkey', currency: 'TRY', ppp: 30, region: 'Eurasia' },
+        { name: 'Brazil', currency: 'BRL', ppp: 38, region: 'South America' },
+        { name: 'Mexico', currency: 'MXN', ppp: 35, region: 'North America' },
+        { name: 'South Africa', currency: 'ZAR', ppp: 30, region: 'Africa' },
+        { name: 'China', currency: 'CNY', ppp: 38, region: 'East Asia' },
+        { name: 'Thailand', currency: 'THB', ppp: 35, region: 'Southeast Asia' },
+        { name: 'India', currency: 'INR', ppp: 22, region: 'South Asia' },
+        { name: 'Pakistan', currency: 'PKR', ppp: 18, region: 'South Asia' },
+        { name: 'Philippines', currency: 'PHP', ppp: 28, region: 'Southeast Asia' },
+        { name: 'Indonesia', currency: 'IDR', ppp: 26, region: 'Southeast Asia' },
+        { name: 'Vietnam', currency: 'VND', ppp: 25, region: 'Southeast Asia' },
+        { name: 'Egypt', currency: 'EGP', ppp: 20, region: 'Africa' },
+        { name: 'Nigeria', currency: 'NGN', ppp: 22, region: 'Africa' },
+        { name: 'Kenya', currency: 'KES', ppp: 24, region: 'Africa' },
+        { name: 'Colombia', currency: 'COP', ppp: 26, region: 'South America' },
+        { name: 'Argentina', currency: 'ARS', ppp: 28, region: 'South America' },
+    ];
+
+    function calculateBEPPP() {
+        const amount = parseFloat(document.getElementById('bePppAmount').value) || 2500;
+        const tbody = document.querySelector('#bePppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#bePppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} EUR buys equiv. of`;
+
+        bePppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} EUR (${diff})</td></tr>`;
+        });
+    }
+    calculateBEPPP();
+
+    // Belgian Tax Calculator
+    function calculateBETax() {
+        const annualGross = parseFloat(document.getElementById('beGrossSalary').value) || 45000;
+        const municipalRate = parseFloat(document.getElementById('beMunicipality').value) || 6;
+
+        // Social contributions (employee share: 13.07%)
+        const socialContributions = annualGross * 0.1307;
+
+        // Taxable income (after social contributions)
+        const taxableIncome = annualGross - socialContributions;
+
+        // Tax-free allowance
+        const taxFreeAllowance = 10160;
+        const taxableAfterAllowance = Math.max(0, taxableIncome - taxFreeAllowance);
+
+        // Belgian progressive tax brackets
+        let incomeTax = 0;
+        let remaining = taxableAfterAllowance;
+
+        // 25% on first 15,200
+        const bracket1 = Math.min(remaining, 15200);
+        incomeTax += bracket1 * 0.25;
+        remaining -= bracket1;
+
+        // 40% on 15,200 - 26,830 (bracket size: 11,630)
+        if (remaining > 0) {
+            const bracket2 = Math.min(remaining, 11630);
+            incomeTax += bracket2 * 0.40;
+            remaining -= bracket2;
+        }
+
+        // 45% on 26,830 - 46,440 (bracket size: 19,610)
+        if (remaining > 0) {
+            const bracket3 = Math.min(remaining, 19610);
+            incomeTax += bracket3 * 0.45;
+            remaining -= bracket3;
+        }
+
+        // 50% on remainder above 46,440
+        if (remaining > 0) {
+            incomeTax += remaining * 0.50;
+        }
+
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        // Municipal tax (surcharge on income tax)
+        const municipalTax = incomeTax * (municipalRate / 100);
+
+        // Special social contribution (simplified: ~730 EUR/year for average earners)
+        const specialSocial = Math.min(731, Math.max(0, (annualGross - 18900) * 0.02));
+
+        const totalTax = incomeTax + municipalTax + specialSocial;
+        const totalDeductions = totalTax + socialContributions;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('beTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} EUR</span></div>
+                <div><strong>Social (13.07%):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(socialContributions/12).toLocaleString()} EUR</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} EUR</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Social contributions: ${Math.round(socialContributions/12)} EUR/mo</div>
+                <div>Municipal tax (${municipalRate}%): ${Math.round(municipalTax/12)} EUR/mo</div>
+                <div>Special social: ${Math.round(specialSocial/12)} EUR/mo</div>
+                <div>Tax-free allowance: ${taxFreeAllowance.toLocaleString()} EUR/yr</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 1700 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 1700 ? '#059669' : '#dc2626'};">${netMonthly >= 1700 ? '&#10003;' : '&#10007;'} Survival check:</strong>
+                Need ~1,700 EUR net (single, frugal) | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 1700 ? '+' : ''}${Math.round(netMonthly - 1700).toLocaleString()} buffer)
+            </div>
+            <div style="margin-top:8px; padding:10px; background:#fffdf0; border-radius:8px; font-size:13px;">
+                <strong>Don't forget extra benefits:</strong> Meal vouchers (~160 EUR/mo), 13th month salary (~${Math.round(grossMonthly).toLocaleString()} EUR gross), double holiday pay (~${Math.round(grossMonthly * 0.92).toLocaleString()} EUR gross), eco-cheques (~250 EUR/yr), and potentially a company car.
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

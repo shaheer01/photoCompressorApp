@@ -137,6 +137,41 @@
   status = 200
 
 [[redirects]]
+  from = "/belgium-guide"
+  to = "/belgium-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/qatar-guide"
+  to = "/qatar-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/south-korea-guide"
+  to = "/south-korea-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/brazil-guide"
+  to = "/brazil-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/mexico-guide"
+  to = "/mexico-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/poland-guide"
+  to = "/poland-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/czech-republic-guide"
+  to = "/czech-republic-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/privacy-policy"
   to = "/privacy-policy.html"
   status = 200

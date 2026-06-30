@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazil Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Brazil 2026. Monthly expenses, salary by profession, IRPF tax calculator, SUS healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="brazil living cost, brazil salary, brazilian tax, cost of living sao paulo, expat brazil, custo de vida Brasil">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Brazil Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in Brazil 2026. Monthly expenses, salary by profession, IRPF tax calculator, SUS healthcare, and PPP comparisons for expats.">
+    <meta property="og:url" content="https://compressphotos.cloud/brazil-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brazil Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in Brazil 2026. Monthly expenses, salary by profession, IRPF tax calculator, SUS healthcare, and PPP comparisons for expats.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/brazil-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E7;&#x1F1F7;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #009739 0%, #006B28 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #009739; border-bottom: 3px solid #009739; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #009739; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #009739; background: #f0fff4; }
+
+        .brl { font-family: 'Courier New', monospace; font-weight: 600; }
+        .brl-low { color: #059669; }
+        .brl-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #009739, #FEDD00);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0fff4; border-left: 4px solid #009739; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #009739; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #009739; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #009739, #FEDD00); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Brazil Living Cost Guide 2026",
+      "description": "Complete guide to living costs in Brazil 2026. Monthly expenses, salary by profession, IRPF tax calculator, SUS healthcare, and PPP comparisons for expats.",
+      "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80",
+      "datePublished": "2026-06-29",
+      "dateModified": "2026-06-29",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/brazil-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#009739; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-americas"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Steuern, Sozialabgaben & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1F9;</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>Pastel de nata, fado & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1F9;</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1EE;</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="brazil-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1E7;&#x1F1F7;</span><div><strong>Brazil</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Brazil Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Brazilian IRPF tax system, SUS healthcare, and PPP calculator. For expats and digital nomads planning to move to Brazil.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 29, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80" alt="Rio de Janeiro Christ the Redeemer and Sugarloaf Mountain - iconic Brazilian cityscape" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="brazilian">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Brazil (Sao Paulo)</h2>
+            <p class="section-subtitle">For a single adult. All amounts in BRL (R$). Based on IBGE, DIEESE, real 2026 data, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend R$5,000/month, you need roughly R$6,500 gross (~23% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,500</div>
+                    <div class="stat-unit">BRL/month (low)</div>
+                    <div class="stat-desc">Frugal single in Sao Paulo</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,500</div>
+                    <div class="stat-unit">BRL/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">BRL avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200</div>
+                    <div class="stat-unit">BRL avg monthly salary</div>
+                    <div class="stat-desc">Brazil-wide median gross</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (R$)</th><th>High (R$)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1-bedroom apartment)</td><td class="brl">1,500</td><td class="brl">3,000</td><td>Varies greatly by bairro; central SP much higher</td></tr>
+                    <tr><td></td><td>Utilities (electricity, water, gas)</td><td class="brl">300</td><td class="brl">500</td><td>CPFL, Sabesp; bandeira tarifaria affects electricity price</td></tr>
+                    <tr><td></td><td>Internet (fiber)</td><td class="brl">100</td><td class="brl">180</td><td>Vivo, Claro, TIM; fiber widely available in cities</td></tr>
+                    <tr><td></td><td>Mobile phone</td><td class="brl">50</td><td class="brl">120</td><td>Vivo, Claro, TIM, Oi; prepaid from R$30/month</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="brl">1,950</td><td class="brl">3,800</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries</td><td class="brl">800</td><td class="brl">1,200</td><td>Carrefour, Extra, Pao de Acucar; feiras livres (street markets) cheaper</td></tr>
+                    <tr><td></td><td>Eating out (occasional)</td><td class="brl">200</td><td class="brl">500</td><td>Prato feito (PF) R$18-30; rodizio R$60-120; por quilo restaurants popular</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="brl">1,000</td><td class="brl">1,700</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Bilhete Unico (monthly pass)</td><td class="brl">231</td><td class="brl">231</td><td>SPTrans bus + Metro integration; R$4.40/trip with 3 transfers in 3 hours</td></tr>
+                    <tr><td></td><td>Uber / 99 rides</td><td class="brl">0</td><td class="brl">300</td><td>Very affordable; 99 often cheaper than Uber; widely used</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="brl">231</td><td class="brl">531</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health</td></tr>
+                    <tr><td></td><td>SUS (public healthcare)</td><td class="brl">0</td><td class="brl">0</td><td>Free universal healthcare for all residents via SUS</td></tr>
+                    <tr><td></td><td>Private health plan (plano de saude)</td><td class="brl">300</td><td class="brl">800</td><td>Amil, Bradesco Saude, SulAmerica, Unimed; employer often provides</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="brl">0</td><td class="brl">800</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="brl">100</td><td class="brl">300</td><td>Renner, Riachuelo, C&A; shopping centers everywhere</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="brl">80</td><td class="brl">200</td><td>Haircuts, toiletries; Brazilians spend heavily on personal care</td></tr>
+                    <tr><td></td><td>Gym (academia)</td><td class="brl">80</td><td class="brl">150</td><td>Smart Fit R$80-100; Bodytech R$200+; outdoor exercise very popular</td></tr>
+                    <tr><td></td><td>Entertainment & leisure</td><td class="brl">100</td><td class="brl">300</td><td>Cinema R$30-50; concerts; beach activities free</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="brl">360</td><td class="brl">950</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Renter's insurance (seguro residencial)</td><td class="brl">30</td><td class="brl">80</td><td>Porto Seguro, Bradesco Seguros; optional but recommended</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="brl">30</td><td class="brl">80</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="brl">~3,571</td><td class="brl">~7,861</td><td>Realistic range: R$3,500 - R$6,500 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Brazil</h2>
+            <p class="section-subtitle">Monthly gross salaries in BRL. Data from IBGE, CAGED, Glassdoor, Catho 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>13th salary (decimo terceiro):</strong> Brazilian CLT law mandates a <strong>13th salary</strong> paid in two installments (November and December), equal to one month's base salary. So annual gross = monthly salary x 13. Workers also receive <strong>1/3 vacation bonus</strong> (abono de ferias) on top of their holiday month.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (Specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">R$25,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:72%;">R$18,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (Sr)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">R$15,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Dentist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:56%;">R$14,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (Senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:48%;">R$12,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Civil Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:44%;">R$11,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">University Professor</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">R$10,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (Jr)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:32%;">R$8,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:28%;">R$7,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:24%;">R$6,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Analyst</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:22%;">R$5,500</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Public)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:20%;">R$5,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:18%;">R$4,500</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Administrative Assistant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:14%;">R$3,500</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (Private)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:12%;">R$3,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:8%;">R$2,000</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Waiter / Hospitality</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:7%;">R$1,800</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Minimum Wage</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:6%;">R$1,518</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-dollar-sign"></i>
+                <strong>Minimum wage (salario minimo) 2026:</strong> Brazil's salario minimo is <strong>R$1,518/month</strong> (x13 = R$19,734/year). This affects many social benefits and pension calculations. Regional floors exist for some states (e.g., Sao Paulo, Rio, Parana, Santa Catarina have higher state minimums for certain professions).
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Brazilian Tax System (Sistema Tributario)</h2>
+            <p class="section-subtitle">Brazil uses progressive income tax (IRPF - Imposto de Renda Pessoa Fisica) plus mandatory social security contributions (INSS). Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">IRPF Income Tax Brackets (Monthly)</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Taxable Income (R$)</th><th>Tax Rate</th><th>Deduction (R$)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Up to 2,259.20</td><td class="brl">0%</td><td class="brl">0</td><td>Exempt (isento)</td></tr>
+                    <tr><td>2,259.21 - 2,826.65</td><td class="brl">7.5%</td><td class="brl">169.44</td><td></td></tr>
+                    <tr><td>2,826.66 - 3,751.05</td><td class="brl">15%</td><td class="brl">381.44</td><td></td></tr>
+                    <tr><td>3,751.06 - 4,664.68</td><td class="brl">22.5%</td><td class="brl">662.77</td><td></td></tr>
+                    <tr><td>Above 4,664.68</td><td class="brl">27.5%</td><td class="brl">896.00</td><td>Highest bracket</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">INSS Social Security Contributions (Employee)</h3>
+            <table class="data-table">
+                <thead><tr><th>Salary Range (R$)</th><th>Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Up to 1,518.00</td><td class="brl">7.5%</td><td>Up to minimum wage</td></tr>
+                    <tr><td>1,518.01 - 2,793.88</td><td class="brl">9%</td><td></td></tr>
+                    <tr><td>2,793.89 - 4,190.83</td><td class="brl">12%</td><td></td></tr>
+                    <tr><td>4,190.84 - 8,157.41</td><td class="brl">14%</td><td>Ceiling (teto do INSS)</td></tr>
+                    <tr><td>Above 8,157.41</td><td class="brl">Capped</td><td>INSS contribution maxes out at R$8,157.41 base</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Other Taxes & Contributions</h3>
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>FGTS (Fundo de Garantia):</strong> Employers deposit <strong>8% of gross salary</strong> into an FGTS account for each employee. This is NOT deducted from the employee's salary -- it's an additional employer cost. Workers can access FGTS upon termination without just cause, home purchase, retirement, or certain emergencies. The <strong>saque-aniversario</strong> option allows annual birthday withdrawals.
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">ICMS, ISS & Consumer Taxes</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Applies To</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="brl">ICMS</td><td>7-25%</td><td>Goods, transport, communications</td><td>State tax; varies by state and product; SP standard 18%</td></tr>
+                    <tr><td class="brl">ISS</td><td>2-5%</td><td>Services</td><td>Municipal tax on services rendered</td></tr>
+                    <tr><td class="brl">IPI</td><td>0-30%+</td><td>Manufactured products</td><td>Federal excise tax; higher on luxury/imported goods</td></tr>
+                    <tr><td class="brl">IOF</td><td>Varies</td><td>Financial transactions</td><td>Tax on credit, FX, insurance, securities</td></tr>
+                    <tr><td class="brl">IPVA</td><td>2-4%</td><td>Vehicle ownership (annual)</td><td>State tax on vehicle value; SP charges 4%</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="brGrossSalary">Monthly Gross Salary (R$):</label>
+                <input type="number" id="brGrossSalary" value="8000" min="0" max="200000">
+                <label for="brDependents">Number of dependents:</label>
+                <select id="brDependents">
+                    <option value="0">0 dependents</option>
+                    <option value="1">1 dependent</option>
+                    <option value="2">2 dependents</option>
+                    <option value="3">3 dependents</option>
+                </select>
+                <button class="calc-btn" onclick="calculateBRTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="brTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>INSS</th><th>IRPF</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="brl">R$2,000</td><td class="brl">~R$163</td><td class="brl">R$0</td><td class="brl" style="color:#059669; font-weight:700;">~R$1,837</td><td>8.2%</td></tr>
+                    <tr><td class="brl">R$4,000</td><td class="brl">~R$413</td><td class="brl">~R$119</td><td class="brl" style="color:#059669; font-weight:700;">~R$3,468</td><td>13.3%</td></tr>
+                    <tr><td class="brl">R$8,000</td><td class="brl">~R$893</td><td class="brl">~R$697</td><td class="brl" style="color:#059669; font-weight:700;">~R$6,410</td><td>19.9%</td></tr>
+                    <tr><td class="brl">R$15,000</td><td class="brl">~R$908</td><td class="brl">~R$2,279</td><td class="brl" style="color:#059669; font-weight:700;">~R$11,813</td><td>21.2%</td></tr>
+                    <tr><td class="brl">R$25,000</td><td class="brl">~R$908</td><td class="brl">~R$5,029</td><td class="brl" style="color:#059669; font-weight:700;">~R$19,063</td><td>23.7%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Brazilian salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Brazil = 100.</p>
+
+            <div class="calc-container">
+                <label for="brPppAmount">Your monthly spending in Brazil (R$):</label>
+                <input type="number" id="brPppAmount" value="5000" min="100" max="200000">
+                <button class="calc-btn" onclick="calculateBRPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="brPppTable">
+                <thead><tr><th>Country</th><th>Currency</th><th>PPP Index</th><th>Region</th><th>R$5,000 buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Brazil = 100. If Germany has a PPP index of 189, your R$5,000 in Brazil has the same purchasing power as R$5,000 x (189/100) = R$9,450 in Germany. You'd need ~89% more money in Germany for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Brazilian cities. Sao Paulo = 100 (most expensive baseline). Data: IBGE, Numbeo, QuintoAndar 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (R$)</th><th>Transport Pass (R$)</th><th>Meal Out (R$)</th><th>Beer 600ml (R$)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sao Paulo</strong></td><td class="brl">2,000-3,500</td><td class="brl">231</td><td class="brl">25-50</td><td class="brl">12-18</td><td>Largest city; economic capital; best job market; intense traffic</td></tr>
+                    <tr><td><strong>Rio de Janeiro</strong></td><td class="brl">1,800-3,200</td><td class="brl">220</td><td class="brl">25-45</td><td class="brl">10-15</td><td>Beaches, mountains; tourism hub; Zona Sul expensive; safety varies</td></tr>
+                    <tr><td><strong>Brasilia</strong></td><td class="brl">1,500-2,800</td><td class="brl">200</td><td class="brl">20-40</td><td class="brl">10-14</td><td>Federal capital; high public sector salaries; planned city; dry climate</td></tr>
+                    <tr><td><strong>Curitiba</strong></td><td class="brl">1,200-2,200</td><td class="brl">180</td><td class="brl">18-35</td><td class="brl">8-12</td><td>Best public transport; European influence; cooler climate; great quality of life</td></tr>
+                    <tr><td><strong>Florianopolis</strong></td><td class="brl">1,500-2,800</td><td class="brl">175</td><td class="brl">22-40</td><td class="brl">10-15</td><td>Island city; 42 beaches; tech hub (Silicon Island); seasonal prices</td></tr>
+                    <tr><td><strong>Belo Horizonte</strong></td><td class="brl">1,100-2,000</td><td class="brl">185</td><td class="brl">18-35</td><td class="brl">7-12</td><td>BH; boteco culture; pao de queijo capital; affordable; friendly locals</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Regional differences:</strong> Brazil is a continent-sized country with enormous cost variation. Northern and Northeastern cities (Salvador, Recife, Fortaleza, Manaus) are generally 30-50% cheaper than Sao Paulo, but salaries are also lower. The South (Curitiba, Porto Alegre, Florianopolis) offers a good balance of quality of life and moderate costs. <strong>Florianopolis</strong> has become Brazil's tech hub with many startups and remote workers.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Brazilian Healthcare System (SUS)</h2>
+            <p class="section-subtitle">Brazil has a universal public healthcare system: the Sistema Unico de Saude (SUS). It's the largest public health system in the world, covering 210+ million people.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">SUS</div>
+                    <div class="stat-unit">Universal Health System</div>
+                    <div class="stat-desc">Free healthcare for all -- citizens, residents, and even tourists</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">All SUS services</div>
+                    <div class="stat-desc">Consultations, surgeries, medications, vaccines</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Cartao SUS</div>
+                    <div class="stat-unit">Health card</div>
+                    <div class="stat-desc">Your SUS patient ID -- register at any UBS</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ANS</div>
+                    <div class="stat-unit">Regulatory agency</div>
+                    <div class="stat-desc">Regulates private health plans (planos de saude)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">SUS vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>SUS (Public)</th><th>Private (Plano de Saude)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Eligibility</strong></td><td>Everyone -- no registration required (but Cartao SUS helps)</td><td>Anyone willing to pay premiums or employer-provided</td></tr>
+                    <tr><td><strong>Cost</strong></td><td>Completely free -- consultations, surgeries, medications</td><td>R$300-800/month depending on age and coverage level</td></tr>
+                    <tr><td><strong>Primary care</strong></td><td>UBS (Unidade Basica de Saude); Estrategia Saude da Familia</td><td>Choose any doctor; same-day/next-day appointments common</td></tr>
+                    <tr><td><strong>Waiting times</strong></td><td>Can be very long for specialists and elective surgery (months)</td><td>Much shorter; often same-week for specialists</td></tr>
+                    <tr><td><strong>Quality</strong></td><td>Excellent for emergencies, vaccines, complex procedures; varies by region</td><td>Modern facilities; Albert Einstein, Sirio-Libanes world-class in SP</td></tr>
+                    <tr><td><strong>Emergency (Pronto Socorro)</strong></td><td>Available 24/7 at UPAs and hospitals; triaged by severity</td><td>Private hospitals have faster ER; less overcrowding</td></tr>
+                    <tr><td><strong>Medications</strong></td><td>Free via Farmacia Popular program and UBS pharmacies</td><td>Depends on plan; co-pays at partner pharmacies</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered (SUS)</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Primary care (UBS)</td><td class="brl">Free</td><td>Register at your local UBS; Agentes Comunitarios de Saude may visit your home</td></tr>
+                    <tr><td>Specialist consultation</td><td class="brl">Free</td><td>Referral from UBS; waiting times can be long; regulated system</td></tr>
+                    <tr><td>Emergency (UPA / Pronto Socorro)</td><td class="brl">Free</td><td>UPAs (24h urgent care) for non-life-threatening; hospitals for emergencies</td></tr>
+                    <tr><td>Hospital stay & surgery</td><td class="brl">Free</td><td>Including complex procedures, organ transplants (Brazil is #2 globally)</td></tr>
+                    <tr><td>Medications (Farmacia Popular)</td><td class="brl">Free or subsidized</td><td>Free hypertension, diabetes, asthma drugs; others at up to 90% discount</td></tr>
+                    <tr><td>Vaccines</td><td class="brl">Free</td><td>Programa Nacional de Imunizacao -- one of the world's most comprehensive</td></tr>
+                    <tr><td>Dental (Brasil Sorridente)</td><td class="brl">Free</td><td>Basic dental care at UBS; Centros de Especialidades Odontologicas for complex</td></tr>
+                    <tr><td>Mental health (CAPS)</td><td class="brl">Free</td><td>CAPS centers for psychosocial care; anti-asylum model; community-based</td></tr>
+                    <tr><td>SAMU 192</td><td class="brl">Free</td><td>Emergency ambulance service; call 192; available nationwide</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Private health plans:</strong> About 25% of Brazilians have private health insurance (plano de saude). Most mid-to-large employers provide it as a benefit. Top private hospitals in Sao Paulo (Hospital Albert Einstein, Sirio-Libanes, Hospital Israelita) are among the best in Latin America. Plans range from R$300/month (basic, Amil, Hapvida) to R$800+/month (premium, Bradesco Saude, SulAmerica). The ANS (Agencia Nacional de Saude Suplementar) regulates all private plans.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Brazil (Mercado Imobiliario)</h2>
+            <p class="section-subtitle">The Brazilian rental market varies enormously by city and neighborhood. Understanding key terms and platforms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Portuguese Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Aluguel</strong></td><td>Monthly rent</td><td>Base rent amount; condominio and IPTU usually charged separately</td></tr>
+                    <tr><td><strong>Condominio</strong></td><td>Building maintenance fee</td><td>Covers common areas, security (porteiro), pool, gym; can be R$300-1,500+ in luxury buildings</td></tr>
+                    <tr><td><strong>IPTU</strong></td><td>Property tax (annual)</td><td>Imposto Predial e Territorial Urbano; usually split into 12 monthly installments; tenant often pays</td></tr>
+                    <tr><td><strong>Fiador</strong></td><td>Guarantor</td><td>A property owner who guarantees your rent; traditional requirement; hard for newcomers</td></tr>
+                    <tr><td><strong>Seguro fianca</strong></td><td>Rental insurance</td><td>Alternative to fiador; insurance company guarantees rent; costs ~1 month's rent/year</td></tr>
+                    <tr><td><strong>Caucao</strong></td><td>Security deposit</td><td>Alternative to fiador; typically 3 months' rent deposited in poupanca (savings account)</td></tr>
+                    <tr><td><strong>Contrato de locacao</strong></td><td>Rental contract</td><td>Governed by Lei do Inquilinato (Tenant Law); typically 30 months; protects both parties</td></tr>
+                    <tr><td><strong>CPF</strong></td><td>Tax ID number</td><td>Cadastro de Pessoa Fisica -- essential for renting, banking, buying anything in Brazil</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>QuintoAndar</td><td>Rentals (no fiador)</td><td>Most popular; no fiador needed; digital contract; streamlined process; highly recommended</td></tr>
+                    <tr><td>ZAP Imoveis</td><td>All types</td><td>Largest property portal; rentals and sales; filters by neighborhood</td></tr>
+                    <tr><td>Viva Real</td><td>All types</td><td>Major portal; merged with ZAP group; good for apartments</td></tr>
+                    <tr><td>OLX Brasil</td><td>All types</td><td>Classifieds; direct from owner; beware scams; popular for furniture too</td></tr>
+                    <tr><td>Imovel Web</td><td>All types</td><td>Property portal with good search filters</td></tr>
+                    <tr><td>Airbnb / Booking</td><td>Short-term</td><td>Good for initial arrival; monthly discounts available; furnished options</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Total Monthly Housing Cost Example (Sao Paulo)</h3>
+            <div class="info-box">
+                <i class="fas fa-home"></i>
+                <strong>Real cost breakdown:</strong> A 1-bedroom apartment in a decent Sao Paulo neighborhood (Vila Mariana, Pinheiros, Moema): Aluguel R$2,200 + Condominio R$600 + IPTU R$150 = <strong>R$2,950 total</strong> before utilities. In cheaper neighborhoods (Tatuape, Santana, Butanta), expect: Aluguel R$1,500 + Condominio R$400 + IPTU R$100 = <strong>R$2,000 total</strong>.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> CPF (tax number -- foreigners can get one at Receita Federal), valid passport/RNE, proof of income (3 months holerites/payslips or bank statements), and one of: fiador (guarantor with property), seguro fianca (rental insurance), or caucao (deposit of 3 months). <strong>QuintoAndar</strong> eliminates the fiador requirement entirely, making it the best option for newcomers.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Brazil (Transporte)</h2>
+            <p class="section-subtitle">Brazil has expanding metro systems in major cities, extensive bus networks, and ride-hailing is extremely popular and affordable.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">R$4.40</div>
+                    <div class="stat-unit">Bus/Metro fare (SP)</div>
+                    <div class="stat-desc">Bilhete Unico allows transfers within 3 hours</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Metro</div>
+                    <div class="stat-unit">6 lines in SP</div>
+                    <div class="stat-desc">Clean, fast, expanding; 101 stations</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~R$6.50</div>
+                    <div class="stat-unit">Petrol per litre</div>
+                    <div class="stat-desc">Ethanol (alcool) ~R$4.50; flex-fuel cars common</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">99 / Uber</div>
+                    <div class="stat-unit">Ride-hailing</div>
+                    <div class="stat-desc">Extremely popular; 99 is Brazilian; very affordable</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Bilhete Unico (Sao Paulo)</td><td class="brl">R$4.40/trip</td><td>Bus + Metro integration; up to 3 transfers in 3 hours for single fare; ~R$231/month</td></tr>
+                    <tr><td>Metro SP</td><td class="brl">R$4.40/trip</td><td>6 lines; clean and efficient; covers central SP; expanding to new areas</td></tr>
+                    <tr><td>CPTM (commuter rail SP)</td><td class="brl">R$4.40/trip</td><td>7 lines; integrates with Metro; covers Greater SP metropolitan area</td></tr>
+                    <tr><td>MetroRio</td><td class="brl">R$6.90/trip</td><td>3 lines; covers Zona Sul to Zona Norte; integrates with BRT and VLT</td></tr>
+                    <tr><td>VLT Rio (Light Rail)</td><td class="brl">R$4.30/trip</td><td>Porto Maravilha area; connects ferries, buses, Metro</td></tr>
+                    <tr><td>Uber / 99 (city ride)</td><td class="brl">R$15-40</td><td>Very affordable; 99 often cheaper; used daily by many Brazilians; InDriver also popular</td></tr>
+                    <tr><td>Intercity bus</td><td class="brl">R$50-250</td><td>Extensive network; SP-Rio from R$80; comfortable leito (sleeper) buses available</td></tr>
+                    <tr><td>Domestic flights</td><td class="brl">R$200-800</td><td>GOL, LATAM, Azul; essential for long distances; SP-Rio from R$200; SP-Salvador from R$400</td></tr>
+                    <tr><td>Car insurance (seguro auto)</td><td class="brl">R$150-400/month</td><td>Porto Seguro, Bradesco, SulAmerica; varies hugely by city and vehicle</td></tr>
+                    <tr><td>Pedaggio (tolls)</td><td class="brl">Varies</td><td>SP-Rio ~R$120 in tolls one way; Sem Parar electronic tag recommended</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-subway"></i>
+                <strong>Pro tip:</strong> Get a <strong>Bilhete Unico</strong> card at any Metro station or SPTrans office. The integrated fare system means one R$4.40 payment covers bus + Metro + bus transfers within 3 hours. For intercity travel, apps like <strong>ClickBus</strong> and <strong>BusBud</strong> let you compare and book bus tickets online. For flights, book 2-3 weeks ahead on <strong>GOL</strong>, <strong>Azul</strong>, or <strong>LATAM</strong> for best prices. Brazil's size makes flying essential -- SP to Manaus is 4 hours by plane vs. 50+ hours by bus.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Brazil -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Brazil (Trabalhar no Brasil)</h2>
+            <p class="section-subtitle">Brazilian work culture, CLT employment rights, benefits, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">30</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal right under CLT; plus 1/3 vacation bonus</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">13</div>
+                    <div class="stat-unit">Monthly salaries/year</div>
+                    <div class="stat-desc">Decimo terceiro salario (13th salary)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">FGTS</div>
+                    <div class="stat-unit">8% employer deposit</div>
+                    <div class="stat-desc">Fundo de Garantia -- severance fund</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">CLT</div>
+                    <div class="stat-unit">Labor law</div>
+                    <div class="stat-desc">Consolidacao das Leis do Trabalho</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>CLT (Carteira assinada)</strong></td><td>Formal employment contract registered in CTPS</td><td>CTPS (Carteira de Trabalho) is your work card; now digital (CTPS Digital app)</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 44 hours/week, 8 hours/day (Mon-Fri) + 4h Saturday</td><td>Many companies do 40h/week; overtime +50% weekdays, +100% Sundays/holidays</td></tr>
+                    <tr><td><strong>Vacation (Ferias)</strong></td><td>30 calendar days per year after 12 months</td><td>Plus 1/3 abono de ferias (vacation bonus); can sell 10 days back (abono pecuniario)</td></tr>
+                    <tr><td><strong>13th salary (Decimo terceiro)</strong></td><td>Extra month's salary paid in 2 installments</td><td>1st installment by Nov 30; 2nd by Dec 20; proportional if &lt;12 months</td></tr>
+                    <tr><td><strong>FGTS</strong></td><td>Employer deposits 8% of gross into FGTS account monthly</td><td>Not deducted from salary; access on termination, home purchase, retirement</td></tr>
+                    <tr><td><strong>Vale-Refeicao (VR)</strong></td><td>Meal voucher -- R$30-50/day typical</td><td>Employer benefit; used at restaurants; iFood, Sodexo, Alelo cards</td></tr>
+                    <tr><td><strong>Vale-Transporte (VT)</strong></td><td>Transport subsidy; employer pays above 6% of salary</td><td>Mandatory benefit; covers commute costs; loaded on Bilhete Unico</td></tr>
+                    <tr><td><strong>Vale-Alimentacao (VA)</strong></td><td>Grocery voucher -- R$400-800/month typical</td><td>Used at supermarkets; very common benefit; not mandatory</td></tr>
+                    <tr><td><strong>Plano de saude</strong></td><td>Private health insurance provided by employer</td><td>Very common for CLT employees; Amil, Bradesco, SulAmerica, Unimed</td></tr>
+                    <tr><td><strong>PLR</strong></td><td>Profit sharing (Participacao nos Lucros e Resultados)</td><td>Negotiated via union; can be 1-3 months salary; common in large companies</td></tr>
+                    <tr><td><strong>Dismissal</strong></td><td>Without just cause: 40% FGTS penalty + notice period</td><td>Employer pays 40% of total FGTS balance as fine; 30-day notice (or payment)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Feriados (Public Holidays) 2026</h3>
+            <table class="data-table">
+                <thead><tr><th>Date</th><th>Holiday</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>1 January</td><td>Confraternizacao Universal (New Year)</td><td></td></tr>
+                    <tr><td>16-17 February</td><td>Carnaval</td><td>Not official federal holiday but universally observed; country stops</td></tr>
+                    <tr><td>3 April</td><td>Sexta-feira Santa (Good Friday)</td><td>Moves annually</td></tr>
+                    <tr><td>21 April</td><td>Tiradentes</td><td>National hero; Inconfidencia Mineira</td></tr>
+                    <tr><td>1 May</td><td>Dia do Trabalhador (Labour Day)</td><td></td></tr>
+                    <tr><td>4 June</td><td>Corpus Christi</td><td>Moves annually; pont (bridge holiday) common</td></tr>
+                    <tr><td>7 September</td><td>Independencia do Brasil</td><td>Independence Day; military parades</td></tr>
+                    <tr><td>12 October</td><td>Nossa Senhora Aparecida</td><td>Patron saint of Brazil; also Dia das Criancas (Children's Day)</td></tr>
+                    <tr><td>2 November</td><td>Finados (All Souls' Day)</td><td></td></tr>
+                    <tr><td>15 November</td><td>Proclamacao da Republica</td><td>Republic Day</td></tr>
+                    <tr><td>20 November</td><td>Dia da Consciencia Negra</td><td>Black Awareness Day; became national holiday in 2024</td></tr>
+                    <tr><td>25 December</td><td>Natal (Christmas)</td><td></td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Brazilian work culture:</strong> (1) <strong>Relationships are everything</strong> -- Brazilians prioritize personal connections (jeitinho brasileiro); networking and rapport matter more than cold qualifications. (2) <strong>Almoco (lunch)</strong> -- lunch is the main meal, usually 1-2 hours; por quilo (pay-by-weight) restaurants are the standard. (3) <strong>Flexibility</strong> -- meetings may start late; flexibility and adaptability are valued. (4) <strong>Hierarchy</strong> -- respect for seniority; use Senhor/Senhora or first names depending on company culture. (5) <strong>PJ vs CLT</strong> -- many companies hire as PJ (Pessoa Juridica / contractor) to reduce costs, but this means fewer benefits; understand the trade-offs. (6) <strong>Remote work</strong> -- growing rapidly, especially in tech; regulated under CLT since 2022 reform.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="brazilian" class="tab-content">
+            <h2 class="section-title">Essential Brazilian Culture & Everyday Prices</h2>
+            <p class="section-subtitle">Brazil has a vibrant culture of warmth, music, and alegria. Knowing these basics and prices will help you navigate daily life.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Everyday Prices</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Price (R$)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Cafezinho (espresso)</td><td class="brl">R$5-8</td><td>Small strong coffee; served everywhere; often free at businesses</td></tr>
+                    <tr><td>Beer (cerveja 600ml)</td><td class="brl">R$8-15</td><td>Brahma, Skol, Antarctica at botecos; craft beer R$15-25</td></tr>
+                    <tr><td>Pao de queijo</td><td class="brl">R$3-5</td><td>Cheese bread; iconic snack from Minas Gerais; found everywhere</td></tr>
+                    <tr><td>Coxinha</td><td class="brl">R$5-8</td><td>Chicken croquette; most popular salgado (savory snack)</td></tr>
+                    <tr><td>Prato feito (PF)</td><td class="brl">R$18-30</td><td>Set meal: rice, beans, meat, salad; the Brazilian daily lunch</td></tr>
+                    <tr><td>Por quilo restaurant</td><td class="brl">R$50-80/kg</td><td>Pay by weight; self-service; typical lunch R$25-40</td></tr>
+                    <tr><td>Rodizio (churrascaria)</td><td class="brl">R$60-120</td><td>All-you-can-eat BBQ; Fogo de Chao-style; includes salad bar</td></tr>
+                    <tr><td>Cinema ticket</td><td class="brl">R$30-50</td><td>Meia-entrada (half price) for students with student ID</td></tr>
+                    <tr><td>Gym (academia) monthly</td><td class="brl">R$80-150</td><td>Smart Fit R$80-100; premium gyms R$200+; outdoor workout common</td></tr>
+                    <tr><td>Haircut (men)</td><td class="brl">R$30-60</td><td>Barbershops everywhere; women's salon R$60-150</td></tr>
+                    <tr><td>1L milk</td><td class="brl">R$6-8</td><td>UHT (longa vida) milk most common in Brazil</td></tr>
+                    <tr><td>Acai bowl</td><td class="brl">R$12-25</td><td>With granola, banana, honey; ubiquitous; larger sizes cost more</td></tr>
+                    <tr><td>Coconut water (agua de coco)</td><td class="brl">R$5-10</td><td>Fresh from the coconut on beaches; bottled at markets</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Portuguese Phrases</h3>
+            <table class="data-table">
+                <thead><tr><th>Brazilian Portuguese</th><th>English</th><th>Pronunciation</th></tr></thead>
+                <tbody>
+                    <tr><td>Oi / Ola</td><td>Hi / Hello</td><td>OY / oh-LAH</td></tr>
+                    <tr><td>Tudo bem? / Tudo bom?</td><td>How are you? / All good?</td><td>TOO-doo BAYN / TOO-doo BOHN</td></tr>
+                    <tr><td>Obrigado / Obrigada</td><td>Thank you (male/female speaker)</td><td>oh-bree-GAH-doo / oh-bree-GAH-dah</td></tr>
+                    <tr><td>Por favor</td><td>Please</td><td>por fah-VOR</td></tr>
+                    <tr><td>Com licenca</td><td>Excuse me</td><td>kon lee-SEN-sah</td></tr>
+                    <tr><td>Quanto custa?</td><td>How much does it cost?</td><td>KWAN-too KOOSH-tah</td></tr>
+                    <tr><td>Onde fica...?</td><td>Where is...?</td><td>ON-jee FEE-kah</td></tr>
+                    <tr><td>Nao entendi</td><td>I didn't understand</td><td>now en-TEN-jee</td></tr>
+                    <tr><td>Voce fala ingles?</td><td>Do you speak English?</td><td>voh-SAY FAH-lah in-GLAYS</td></tr>
+                    <tr><td>A conta, por favor</td><td>The bill, please</td><td>ah KON-tah por fah-VOR</td></tr>
+                    <tr><td>Beleza / Valeu</td><td>Cool / Thanks (informal)</td><td>beh-LEH-zah / vah-LEW</td></tr>
+                    <tr><td>Tchau</td><td>Bye</td><td>CHOW</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Jeitinho brasileiro</strong> -- the Brazilian way of finding creative solutions; flexibility and improvisation are national traits. (2) <strong>Cafezinho</strong> -- small strong coffee offered everywhere as a sign of hospitality; refusing is considered rude. (3) <strong>Churrasco</strong> -- BBQ is a weekend tradition; picanha (top sirloin cap) is the king of cuts. (4) <strong>Samba & MPB</strong> -- music is central to Brazilian identity; samba, forro, sertanejo, funk carioca, and MPB (Musica Popular Brasileira) are the main genres. (5) <strong>Futebol</strong> -- football is religion; everyone has a team; avoid disparaging someone's time (team). (6) <strong>Warm greetings</strong> -- expect hugs, kisses on the cheek (1 in SP, 2 in Rio), and physical closeness; Brazilians are very affectionate. (7) <strong>Tipping</strong> -- restaurants include 10% service charge (gorjeta); not mandatory but customary to pay; no additional tip expected.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Brazil</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~R$3,000</div>
+                    <div class="stat-unit">BRL/month net (minimum)</div>
+                    <div class="stat-desc">Bare minimum single in Sao Paulo</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~R$5,500</div>
+                    <div class="stat-unit">BRL/month net (comfortable)</div>
+                    <div class="stat-desc">Comfortable single in Sao Paulo</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~R$4,000</div>
+                    <div class="stat-unit">BRL gross needed (min)</div>
+                    <div class="stat-desc">Gross salary for minimum lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~R$7,500</div>
+                    <div class="stat-unit">BRL gross needed (comfy)</div>
+                    <div class="stat-desc">Gross salary for comfortable lifestyle</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (R$)</th><th>Gross Salary Needed (R$)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal, SUS only</small></td><td class="brl">R$2,000</td><td class="brl">R$2,800</td><td class="brl">R$2,300</td><td class="brl brl-low">+R$300</td></tr>
+                    <tr><td><strong>Basic single (smaller city)</strong><br><small>Own apartment outside SP/Rio</small></td><td class="brl">R$3,000</td><td class="brl">R$4,000</td><td class="brl">R$3,350</td><td class="brl brl-low">+R$350</td></tr>
+                    <tr><td><strong>Single (Sao Paulo)</strong><br><small>Own 1-bed, moderate lifestyle</small></td><td class="brl">R$4,500</td><td class="brl">R$6,000</td><td class="brl">R$4,900</td><td class="brl brl-low">+R$400</td></tr>
+                    <tr><td><strong>Comfortable single (SP)</strong><br><small>Nice bairro, private health, eating out</small></td><td class="brl">R$5,500</td><td class="brl">R$7,500</td><td class="brl">R$5,950</td><td class="brl brl-low">+R$450</td></tr>
+                    <tr><td><strong>Couple (Sao Paulo)</strong><br><small>2 adults, good lifestyle</small></td><td class="brl">R$7,500</td><td class="brl">R$10,000</td><td class="brl">R$7,850</td><td class="brl brl-low">+R$350</td></tr>
+                    <tr><td><strong>Family with child (SP)</strong><br><small>2 adults + 1 child, private school</small></td><td class="brl">R$12,000</td><td class="brl">R$16,000</td><td class="brl">R$12,400</td><td class="brl brl-low">+R$400</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get your <strong>CPF</strong> at Receita Federal (or Brazilian consulate before arrival). (2) Open a bank account (Nubank, Inter, C6 Bank -- all digital and free; or Itau, Bradesco, Banco do Brasil traditional). (3) Get a <strong>Cartao SUS</strong> at any UBS for public healthcare access. (4) Register with <strong>Policia Federal</strong> for your CRNM (foreign resident card) if applicable. (5) Get a SIM card (Vivo, Claro, or TIM; Vivo has best coverage). (6) Get a <strong>Bilhete Unico</strong> card for public transport. (7) Download essential apps: 99, Uber, iFood, Rappi, Nubank, PicPay. (8) PIX is the universal payment system -- instant, free, used everywhere; set it up immediately.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (Receita Federal, IBGE, DIEESE, Ministerio do Trabalho) before making financial decisions. Exchange rates fluctuate significantly -- check USD/BRL and EUR/BRL rates before planning your budget.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Brazil Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#009739;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00008B;">Australia Guide</a> |
+                <a href="austria-guide.html" style="color:#ED2939;">Austria Guide</a> |
+                <a href="uae-guide.html" style="color:#00732F;">UAE Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA Guide</a> |
+                <a href="denmark-guide.html" style="color:#C60C30;">Denmark Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand Guide</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia Guide</a> |
+                <a href="switzerland-guide.html" style="color:#D52B1E;">Switzerland Guide</a> |
+                <a href="france-guide.html" style="color:#002395;">France Guide</a> |
+                <a href="spain-guide.html" style="color:#AA151B;">Spain Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="brazil-guide.html" style="color:#009739;">Brazil Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator - Brazil = 100
+    const brPppCountries = [
+        { name: 'Switzerland', currency: 'CHF', ppp: 289, region: 'Western Europe' },
+        { name: 'Norway', currency: 'NOK', ppp: 249, region: 'Nordic' },
+        { name: 'Denmark', currency: 'DKK', ppp: 236, region: 'Nordic' },
+        { name: 'Singapore', currency: 'SGD', ppp: 227, region: 'Southeast Asia' },
+        { name: 'USA', currency: 'USD', ppp: 222, region: 'North America' },
+        { name: 'Australia', currency: 'AUD', ppp: 211, region: 'Oceania' },
+        { name: 'Sweden', currency: 'SEK', ppp: 204, region: 'Nordic' },
+        { name: 'Netherlands', currency: 'EUR', ppp: 200, region: 'Western Europe' },
+        { name: 'Ireland', currency: 'EUR', ppp: 200, region: 'Western Europe' },
+        { name: 'Finland', currency: 'EUR', ppp: 196, region: 'Nordic' },
+        { name: 'United Kingdom', currency: 'GBP', ppp: 193, region: 'Western Europe' },
+        { name: 'Austria', currency: 'EUR', ppp: 191, region: 'Western Europe' },
+        { name: 'Germany', currency: 'EUR', ppp: 189, region: 'Western Europe' },
+        { name: 'Canada', currency: 'CAD', ppp: 187, region: 'North America' },
+        { name: 'Belgium', currency: 'EUR', ppp: 184, region: 'Western Europe' },
+        { name: 'France', currency: 'EUR', ppp: 182, region: 'Western Europe' },
+        { name: 'New Zealand', currency: 'NZD', ppp: 178, region: 'Oceania' },
+        { name: 'Japan', currency: 'JPY', ppp: 173, region: 'East Asia' },
+        { name: 'Italy', currency: 'EUR', ppp: 169, region: 'Southern Europe' },
+        { name: 'UAE', currency: 'AED', ppp: 167, region: 'Middle East' },
+        { name: 'South Korea', currency: 'KRW', ppp: 160, region: 'East Asia' },
+        { name: 'Spain', currency: 'EUR', ppp: 151, region: 'Southern Europe' },
+        { name: 'Portugal', currency: 'EUR', ppp: 133, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', currency: 'SAR', ppp: 116, region: 'Middle East' },
+    ];
+
+    function calculateBRPPP() {
+        const amount = parseFloat(document.getElementById('brPppAmount').value) || 5000;
+        const tbody = document.querySelector('#brPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#brPppTable th:last-child');
+        headerCell.textContent = `R$${amount.toLocaleString()} buys equiv. of`;
+
+        brPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.currency}</td><td>${c.ppp}</td><td>${c.region}</td><td class="brl" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">R$${equiv.toLocaleString()} (${diff})</td></tr>`;
+        });
+    }
+    calculateBRPPP();
+
+    // Brazilian Tax Calculator
+    function calculateBRTax() {
+        const monthlyGross = parseFloat(document.getElementById('brGrossSalary').value) || 8000;
+        const dependents = parseInt(document.getElementById('brDependents').value) || 0;
+
+        // INSS calculation (progressive rates)
+        let inss = 0;
+        if (monthlyGross <= 1518.00) {
+            inss = monthlyGross * 0.075;
+        } else if (monthlyGross <= 2793.88) {
+            inss = 1518.00 * 0.075 + (monthlyGross - 1518.00) * 0.09;
+        } else if (monthlyGross <= 4190.83) {
+            inss = 1518.00 * 0.075 + (2793.88 - 1518.00) * 0.09 + (monthlyGross - 2793.88) * 0.12;
+        } else if (monthlyGross <= 8157.41) {
+            inss = 1518.00 * 0.075 + (2793.88 - 1518.00) * 0.09 + (4190.83 - 2793.88) * 0.12 + (monthlyGross - 4190.83) * 0.14;
+        } else {
+            inss = 1518.00 * 0.075 + (2793.88 - 1518.00) * 0.09 + (4190.83 - 2793.88) * 0.12 + (8157.41 - 4190.83) * 0.14;
+        }
+        inss = Math.round(inss * 100) / 100;
+
+        // IRPF calculation
+        const dependentDeduction = dependents * 189.59;
+        const taxableIncome = monthlyGross - inss - dependentDeduction;
+
+        let irpf = 0;
+        if (taxableIncome <= 2259.20) {
+            irpf = 0;
+        } else if (taxableIncome <= 2826.65) {
+            irpf = taxableIncome * 0.075 - 169.44;
+        } else if (taxableIncome <= 3751.05) {
+            irpf = taxableIncome * 0.15 - 381.44;
+        } else if (taxableIncome <= 4664.68) {
+            irpf = taxableIncome * 0.225 - 662.77;
+        } else {
+            irpf = taxableIncome * 0.275 - 896.00;
+        }
+        irpf = Math.max(0, Math.round(irpf * 100) / 100);
+
+        const totalDeductions = inss + irpf;
+        const netMonthly = monthlyGross - totalDeductions;
+        const effectiveRate = ((totalDeductions / monthlyGross) * 100);
+        const annualGross = monthlyGross * 13;
+        const annualNet = netMonthly * 13;
+
+        const resultDiv = document.getElementById('brTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">R$${Math.round(monthlyGross).toLocaleString()}</span></div>
+                <div><strong>INSS:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">R$${Math.round(inss).toLocaleString()}</span></div>
+                <div><strong>IRPF:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">R$${Math.round(irpf).toLocaleString()}</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">R$${Math.round(netMonthly).toLocaleString()}</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; font-size:13px; color:#64748b;">
+                <div>Annual gross (x13): R$${Math.round(annualGross).toLocaleString()} | Annual net (x13): R$${Math.round(annualNet).toLocaleString()}</div>
+                <div>FGTS (employer deposits): R$${Math.round(monthlyGross * 0.08).toLocaleString()}/month (not deducted from your salary)</div>
+                ${dependents > 0 ? `<div>Dependent deduction: R$${Math.round(dependentDeduction).toLocaleString()}/month (${dependents} dependent${dependents > 1 ? 's' : ''})</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 3000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 3000 ? '#059669' : '#dc2626'};">${netMonthly >= 3000 ? '&#10003;' : '&#10007;'} Sao Paulo survival check:</strong>
+                Need ~R$3,000 net/month minimum | You have R$${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 3000 ? '+' : ''}R$${Math.round(netMonthly - 3000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

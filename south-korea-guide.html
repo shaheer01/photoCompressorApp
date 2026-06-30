@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Korea Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in South Korea 2026. Monthly expenses in KRW, salary by profession, tax calculator, healthcare, housing with jeonse system, and PPP comparisons for expats.">
+    <meta name="keywords" content="south korea living cost, korea salary, korean tax, cost of living seoul, expat korea, 한국 생활비">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="South Korea Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in South Korea 2026. Monthly expenses in KRW, salary by profession, tax calculator, healthcare, housing with jeonse system, and PPP comparisons for expats.">
+    <meta property="og:url" content="https://compressphotos.cloud/south-korea-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="South Korea Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in South Korea 2026. Monthly expenses in KRW, salary by profession, tax calculator, healthcare, housing with jeonse system, and PPP comparisons for expats.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/south-korea-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F0;&#x1F1F7;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #003478 0%, #001F4D 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #003478; border-bottom: 3px solid #003478; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #003478; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #C60C30; background: #fff5f5; }
+
+        .eur { font-family: 'Courier New', monospace; font-weight: 600; }
+        .eur-low { color: #059669; }
+        .eur-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1a1a2e; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #003478, #C60C30);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #003478; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #003478; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #003478; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #003478, #001F4D); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "South Korea Living Cost Guide 2026",
+      "description": "Complete guide to living costs in South Korea 2026. Monthly expenses in KRW, salary by profession, tax calculator, healthcare, housing with jeonse system, and PPP comparisons for expats.",
+      "image": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80",
+      "datePublished": "2026-06-29",
+      "dateModified": "2026-06-29",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/south-korea-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#003478; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-asia"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EA;</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F1;</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">&#x1F1EC;&#x1F1E7;</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1EA;</span><div>Germany<small>Sozialversicherung, tax & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1E6;</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1FA;</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1F9;</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">&#x1F1E6;&#x1F1EA;</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1EC;</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1F4;</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">&#x1F1FA;&#x1F1F8;</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">&#x1F1E9;&#x1F1F0;</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">&#x1F1F3;&#x1F1FF;</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">&#x1F1F8;&#x1F1E6;</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">&#x1F1E8;&#x1F1ED;</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1F7;</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">&#x1F1EA;&#x1F1F8;</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">&#x1F1F5;&#x1F1F9;</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1EA;</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">&#x1F1EF;&#x1F1F5;</span><div>Japan<small>Key money, bonasu & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">&#x1F1EE;&#x1F1F9;</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">&#x1F1EB;&#x1F1EE;</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="south-korea-guide.html" style="background:#fffbeb;"><span class="country-flag">&#x1F1F0;&#x1F1F7;</span><div><strong>South Korea</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>South Korea Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Korean tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to South Korea.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 29, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80" alt="Seoul cityscape with traditional and modern architecture" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Structure</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="korean">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in South Korea (Seoul-based)</h2>
+            <p class="section-subtitle">For a single adult. All amounts in KRW. Based on KOSIS, real 2026 data, and expat reports. Excludes jeonse (key money deposit) arrangements.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Seoul is 20-35% more expensive than other cities. To earn this take-home, you need a higher gross salary. For example, to spend 2,000,000 KRW/month, you need roughly 2,600,000 KRW gross (~23% effective tax+social contributions). See the <strong>Tax Structure</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,500,000</div>
+                    <div class="stat-unit">KRW/month (low)</div>
+                    <div class="stat-desc">Frugal single in Seoul</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,500,000</div>
+                    <div class="stat-unit">KRW/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle in Seoul</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,200,000</div>
+                    <div class="stat-unit">KRW avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover mid-range expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3,800,000</div>
+                    <div class="stat-unit">KRW avg monthly salary</div>
+                    <div class="stat-desc">South Korea median gross monthly</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (KRW)</th><th>High (KRW)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1-bedroom, wolse)</td><td class="eur">600,000</td><td class="eur">1,200,000</td><td>600K outskirts/officetel; 900K-1.2M Gangnam/Hongdae areas</td></tr>
+                    <tr><td></td><td>Internet (fiber)</td><td class="eur">20,000</td><td class="eur">40,000</td><td>KT, SK Broadband, LG U+; world's fastest internet</td></tr>
+                    <tr><td></td><td>Mobile phone (1 SIM)</td><td class="eur">30,000</td><td class="eur">70,000</td><td>Budget MVNOs 30K; SKT, KT, LG U+ premium plans 50-70K</td></tr>
+                    <tr><td></td><td>Utilities (gas, electric, water)</td><td class="eur">100,000</td><td class="eur">200,000</td><td>Higher in winter (ondol floor heating); summer AC adds cost</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="eur">750,000</td><td class="eur">1,510,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries</td><td class="eur">400,000</td><td class="eur">600,000</td><td>E-Mart, Homeplus budget; Lotte Mart, SSG premium</td></tr>
+                    <tr><td></td><td>Eating out</td><td class="eur">200,000</td><td class="eur">400,000</td><td>Kimbap 3-4K; bibimbap 8-10K; Korean BBQ 15-25K/person</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="eur">600,000</td><td class="eur">1,000,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>T-money transit card (subway + bus)</td><td class="eur">55,000</td><td class="eur">65,000</td><td>Seoul Metro base fare 1,400 KRW; free bus transfers within 30min</td></tr>
+                    <tr><td></td><td>Occasional taxi</td><td class="eur">0</td><td class="eur">50,000</td><td>Base fare 4,800 KRW; Kakao Taxi app widely used</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="eur">55,000</td><td class="eur">115,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance</td></tr>
+                    <tr><td></td><td>National Health Insurance (NHI)</td><td class="eur">80,000</td><td class="eur">150,000</td><td>~3.545% of income (employee share); employer matches</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="eur">80,000</td><td class="eur">150,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="eur">50,000</td><td class="eur">150,000</td><td>Zara, Uniqlo, Daiso budget; Korean fashion brands higher</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="eur">30,000</td><td class="eur">80,000</td><td>Haircuts, skincare, cosmetics; Olive Young, Innisfree</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="eur">50,000</td><td class="eur">100,000</td><td>Gym 50-80K/month; jjimjilbang (spa) 12-15K per visit</td></tr>
+                    <tr><td></td><td>Household supplies</td><td class="eur">20,000</td><td class="eur">50,000</td><td>Daiso, Artbox for budget household items</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="eur">150,000</td><td class="eur">380,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance & Miscellaneous</td></tr>
+                    <tr><td></td><td>Renter's insurance</td><td class="eur">5,000</td><td class="eur">15,000</td><td>Optional but recommended; ~60,000-180,000 KRW/year</td></tr>
+                    <tr><td></td><td>Subscriptions (Netflix, Spotify, etc.)</td><td class="eur">15,000</td><td class="eur">30,000</td><td>Netflix 13,500 KRW; Spotify 10,900 KRW; Melon 10,900 KRW</td></tr>
+                    <tr class="subtotal"><td></td><td>Misc subtotal</td><td class="eur">20,000</td><td class="eur">45,000</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="eur">~1,655,000</td><td class="eur">~3,200,000</td><td>Realistic range: 1,500,000 - 2,500,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in South Korea</h2>
+            <p class="section-subtitle">Monthly gross salaries in KRW. Data from KOSIS, JobKorea, Saramin, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-won-sign"></i>
+                <strong>Bonus culture:</strong> Many Korean companies pay bonuses ranging from 100-400% of monthly salary annually, often split across quarters or given as performance bonuses. The figures below show standard monthly gross excluding bonuses. Large chaebols (Samsung, Hyundai, LG) tend to offer the highest total compensation packages.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">12,000,000+ KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Investment Banker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:83%;">10,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer (attorney)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:75%;">9,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:58%;">7,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (general)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">6,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:46%;">5,500,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Pharmacist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:42%;">5,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (mid)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">4,500,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">4,200,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (public school)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">4,000,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:31%;">3,800,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:29%;">3,500,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Office Worker (average)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:27%;">3,200,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">English Teacher (hagwon)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:23%;">2,800,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail / Service Staff</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:19%;">2,300,000 KRW</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Part-time (alba)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:15%;">1,800,000 KRW</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-won-sign"></i>
+                <strong>Minimum wage (2026):</strong> South Korea's minimum wage is ~10,030 KRW/hour (reviewed annually). Approximately 2,096,270 KRW/month gross for full-time (209 hours). Minimum wage is the same across all regions, unlike Japan.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Structure -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Korean Tax System (sogeutkse)</h2>
+            <p class="section-subtitle">South Korea uses progressive national income tax plus local income tax and mandatory social insurance. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">National Income Tax Brackets</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (KRW)</th><th>Tax Rate</th><th>Cumulative Tax (KRW)</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 14,000,000</td><td class="eur">6%</td><td class="eur">840,000</td></tr>
+                    <tr><td>14,000,001 - 50,000,000</td><td class="eur">15%</td><td class="eur">6,240,000</td></tr>
+                    <tr><td>50,000,001 - 88,000,000</td><td class="eur">24%</td><td class="eur">15,360,000</td></tr>
+                    <tr><td>88,000,001 - 150,000,000</td><td class="eur">35%</td><td class="eur">37,060,000</td></tr>
+                    <tr><td>150,000,001 - 300,000,000</td><td class="eur">38%</td><td class="eur">94,060,000</td></tr>
+                    <tr><td>300,000,001 - 500,000,000</td><td class="eur">40%</td><td class="eur">174,060,000</td></tr>
+                    <tr><td>500,000,001 - 1,000,000,000</td><td class="eur">42%</td><td class="eur">384,060,000</td></tr>
+                    <tr><td>1,000,000,001+</td><td class="eur">45%</td><td class="eur">-</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Additional Taxes</h3>
+            <table class="data-table">
+                <thead><tr><th>Tax</th><th>Rate</th><th>Who Pays</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Local income tax (jibang sogeuktse)</td><td class="eur">10%</td><td>All taxpayers</td><td>10% of national income tax amount (not income); effectively adds ~0.6-4.5% to effective rate</td></tr>
+                    <tr><td>VAT (bugagachise)</td><td class="eur">10%</td><td>Everyone</td><td>Flat 10% on goods and services; included in displayed prices</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Insurance (4 Major Insurances) - Employee Share</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Total Rate</th><th>Employee Share</th><th>Employer Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>National Health Insurance (NHI)</td><td class="eur">7.09%</td><td class="eur">3.545%</td><td class="eur">3.545%</td><td>Includes long-term care insurance; covers 70% of medical costs</td></tr>
+                    <tr><td>National Pension Service (NPS)</td><td class="eur">9.0%</td><td class="eur">4.5%</td><td class="eur">4.5%</td><td>Retirement pension; foreigners from certain countries can claim refund on departure</td></tr>
+                    <tr><td>Employment Insurance</td><td class="eur">1.8%</td><td class="eur">0.9%</td><td class="eur">0.9%</td><td>Covers unemployment benefits and job training</td></tr>
+                    <tr><td>Industrial Accident Insurance</td><td class="eur">~1.0%</td><td class="eur">0%</td><td class="eur">~1.0%</td><td>Fully employer-paid; covers workplace injuries</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-gift"></i>
+                <strong>Year-end tax settlement (yeonmal jeongsang):</strong> Every February, Korean employees go through year-end tax settlement -- essentially an automatic tax return. You can claim deductions for credit card spending (over 25% of salary), medical expenses, education costs, donations, and housing rent. Many Koreans receive significant tax refunds, sometimes called the "13th month salary." Keep all receipts!
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="krGrossSalary">Annual Gross Salary (KRW):</label>
+                <input type="number" id="krGrossSalary" value="45000000" min="0" max="1000000000">
+                <label for="krDependent">Number of dependents:</label>
+                <select id="krDependent">
+                    <option value="0">0 (single)</option>
+                    <option value="1">1 dependent</option>
+                    <option value="2">2 dependents</option>
+                </select>
+                <button class="calc-btn" onclick="calculateKRTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="krTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="eur">2,500,000</td><td class="eur">30,000,000</td><td class="eur">~430,000</td><td class="eur" style="color:#059669; font-weight:700;">~2,070,000</td><td>17.2%</td></tr>
+                    <tr><td class="eur">3,500,000</td><td class="eur">42,000,000</td><td class="eur">~680,000</td><td class="eur" style="color:#059669; font-weight:700;">~2,820,000</td><td>19.4%</td></tr>
+                    <tr><td class="eur">5,000,000</td><td class="eur">60,000,000</td><td class="eur">~1,100,000</td><td class="eur" style="color:#059669; font-weight:700;">~3,900,000</td><td>22.0%</td></tr>
+                    <tr><td class="eur">7,000,000</td><td class="eur">84,000,000</td><td class="eur">~1,750,000</td><td class="eur" style="color:#059669; font-weight:700;">~5,250,000</td><td>25.0%</td></tr>
+                    <tr><td class="eur">10,000,000</td><td class="eur">120,000,000</td><td class="eur">~2,900,000</td><td class="eur" style="color:#059669; font-weight:700;">~7,100,000</td><td>29.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Korean salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. South Korea = 100.</p>
+
+            <div class="calc-container">
+                <label for="krPppAmount">Your monthly spending in South Korea (KRW):</label>
+                <input type="number" id="krPppAmount" value="2000000" min="100000" max="50000000">
+                <button class="calc-btn" onclick="calculateKRPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="krPppTable">
+                <thead><tr><th>Country</th><th>PPP Index</th><th>Region</th><th>2,000,000 KRW buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> South Korea = 100. If Switzerland has a PPP index of 181, your 2,000,000 KRW in South Korea has the same purchasing power as 2,000,000 x (181/100) = 3,620,000 KRW in Switzerland. You'd need ~81% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major South Korean cities. Seoul = most expensive baseline. Data: KOSIS, Numbeo, Zigbang 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (KRW)</th><th>Monthly Transit (KRW)</th><th>Meal Out (KRW)</th><th>Coffee (KRW)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Seoul</strong></td><td class="eur">700,000-1,200,000</td><td class="eur">55,000-65,000</td><td class="eur">8,000-12,000</td><td class="eur">4,500-6,000</td><td>Most expensive; best jobs, culture, nightlife</td></tr>
+                    <tr><td><strong>Busan</strong></td><td class="eur">400,000-800,000</td><td class="eur">45,000-55,000</td><td class="eur">7,000-10,000</td><td class="eur">4,000-5,500</td><td>Beach city; fresh seafood; second largest; growing tech scene</td></tr>
+                    <tr><td><strong>Incheon</strong></td><td class="eur">450,000-850,000</td><td class="eur">50,000-60,000</td><td class="eur">7,000-10,000</td><td class="eur">4,000-5,500</td><td>Airport hub; Songdo smart city; close to Seoul</td></tr>
+                    <tr><td><strong>Daegu</strong></td><td class="eur">350,000-650,000</td><td class="eur">40,000-50,000</td><td class="eur">6,500-9,000</td><td class="eur">3,500-5,000</td><td>Hot summers; textile industry; affordable living</td></tr>
+                    <tr><td><strong>Daejeon</strong></td><td class="eur">350,000-600,000</td><td class="eur">40,000-50,000</td><td class="eur">6,500-9,000</td><td class="eur">3,500-5,000</td><td>Science city (KAIST); central location; KTX hub</td></tr>
+                    <tr><td><strong>Jeju</strong></td><td class="eur">400,000-750,000</td><td class="eur">30,000-40,000</td><td class="eur">7,000-10,000</td><td class="eur">4,000-5,500</td><td>Island paradise; tourism-driven; limited public transit; car needed</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Busan advantage:</strong> Increasingly popular with digital nomads and young professionals. Rent is 30-40% less than Seoul, seafood is fresher and cheaper (Jagalchi Market), the beach lifestyle is unmatched in Korea, and the KTX connects to Seoul in just 2.5 hours. The Busan startup scene is growing with government incentives for tech companies relocating from Seoul.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Korean Healthcare System (geongang boheum)</h2>
+            <p class="section-subtitle">South Korea has universal healthcare through the National Health Insurance (NHI) system, managed by NHIS (National Health Insurance Service).</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-unit">Patient copay (outpatient)</div>
+                    <div class="stat-desc">You pay 30% at hospitals; 20% at clinics; insurance covers the rest</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~3.545%</div>
+                    <div class="stat-unit">Employee contribution</div>
+                    <div class="stat-desc">Employer matches equally; includes long-term care</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Excellent</div>
+                    <div class="stat-unit">Hospital quality</div>
+                    <div class="stat-desc">World-class facilities; medical tourism hub</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Low</div>
+                    <div class="stat-unit">Wait times</div>
+                    <div class="stat-desc">Walk-in to specialists same day; no GP referral needed</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">NHI Coverage Details</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Who is covered</strong></td><td>All residents including foreigners staying 6+ months</td><td>Mandatory enrollment; foreigners on work visas auto-enrolled</td></tr>
+                    <tr><td><strong>Contribution rate</strong></td><td>7.09% of income (split 50/50 employer-employee)</td><td>Includes 12.81% long-term care surcharge on NHI premium</td></tr>
+                    <tr><td><strong>Coverage scope</strong></td><td>~70% of medical costs covered</td><td>Outpatient, inpatient, prescriptions, dental (basic), mental health</td></tr>
+                    <tr><td><strong>Catastrophic cap</strong></td><td>Annual out-of-pocket ceiling applies</td><td>Varies by income bracket; protects against financial devastation</td></tr>
+                    <tr><td><strong>Dependents</strong></td><td>Spouse and children covered under employee's plan</td><td>No additional premium for registered dependents</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What Healthcare Costs Look Like</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Your Cost (copay)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Clinic visit (local clinic)</td><td class="eur">~5,000-15,000 KRW</td><td>Walk-in; no appointment needed at most clinics</td></tr>
+                    <tr><td>Hospital outpatient</td><td class="eur">~10,000-30,000 KRW</td><td>30% copay at general hospitals; 40% at tertiary hospitals</td></tr>
+                    <tr><td>Hospital stay (per day)</td><td class="eur">~30,000-80,000 KRW</td><td>Shared room covered; single room (1-in room) costs extra</td></tr>
+                    <tr><td>Prescription drugs</td><td class="eur">~3,000-10,000 KRW</td><td>30% copay; pharmacy (yakguk) separate from hospital</td></tr>
+                    <tr><td>Dental (basic cleaning)</td><td class="eur">~15,000-30,000 KRW</td><td>Scaling covered once/year by NHI; crowns/implants not fully covered</td></tr>
+                    <tr><td>Mental health</td><td class="eur">~10,000-20,000 KRW</td><td>Covered under NHI; psychiatry and counseling available</td></tr>
+                    <tr><td>MRI scan</td><td class="eur">~100,000-200,000 KRW</td><td>NHI covers when medically necessary; same-day availability common</td></tr>
+                    <tr><td>Health checkup (jonghap geongang geomjin)</td><td class="eur">Free - 100,000 KRW</td><td>NHIS provides free checkup every 2 years; companies offer annual checkups</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Medical tourism powerhouse:</strong> South Korea is one of the world's top medical tourism destinations. Procedures like LASIK, dental implants, dermatology, and cosmetic surgery are significantly cheaper than in Western countries, even without insurance. Gangnam district alone has hundreds of clinics. Many hospitals have international patient centers with English, Chinese, and Japanese-speaking staff.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in South Korea (jip guhagi)</h2>
+            <p class="section-subtitle">Korean housing has a unique deposit system. Understanding jeonse, wolse, and the 보증금 (deposit) system is essential before apartment hunting.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Rental Systems</h3>
+            <table class="data-table">
+                <thead><tr><th>Korean Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Jeonse (전세)</strong></td><td>Key money deposit lease</td><td>Pay a massive lump-sum deposit (50-80% of property value) and live rent-free. Landlord invests your deposit and returns it when you leave. Declining in popularity but still common. Typical Seoul jeonse: 200-500 million KRW</td></tr>
+                    <tr><td><strong>Wolse (월세)</strong></td><td>Monthly rent</td><td>Pay a smaller deposit (보증금, typically 5-10 million KRW) plus monthly rent. More common for foreigners and younger renters. Higher deposit = lower monthly rent</td></tr>
+                    <tr><td><strong>Bogeum (보증금)</strong></td><td>Security deposit</td><td>Refundable deposit paid upfront in both jeonse and wolse. In wolse, typically 5-20x monthly rent. Returned at lease end minus damages</td></tr>
+                    <tr><td><strong>Gwanlibee (관리비)</strong></td><td>Maintenance/management fee</td><td>Monthly building maintenance fee covering elevator, security, common areas. Typically 50,000-200,000 KRW. Often not included in listed rent price</td></tr>
+                    <tr><td><strong>Junggae susuryo (중개수수료)</strong></td><td>Agent/broker fee</td><td>Real estate agent commission; typically 0.3-0.9% of transaction value (regulated by law)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Housing Types</h3>
+            <table class="data-table">
+                <thead><tr><th>Type</th><th>Description</th><th>Best For</th><th>Seoul Monthly Rent (KRW)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Officetel (오피스텔)</strong></td><td>Studio/1-bed in mixed-use building; often furnished</td><td>Young professionals, expats</td><td class="eur">600,000-1,200,000</td></tr>
+                    <tr><td><strong>Apartment (아파트)</strong></td><td>Units in large residential complexes; most desirable</td><td>Families, long-term residents</td><td class="eur">800,000-2,500,000</td></tr>
+                    <tr><td><strong>Villa (빌라)</strong></td><td>Low-rise walk-up building (3-5 floors); no elevator</td><td>Budget living, couples</td><td class="eur">400,000-800,000</td></tr>
+                    <tr><td><strong>Goshiwon (고시원)</strong></td><td>Tiny single room (~3-5 sqm) with shared facilities</td><td>Students, ultra-budget</td><td class="eur">300,000-500,000</td></tr>
+                    <tr><td><strong>One-room (원룸)</strong></td><td>Studio apartment with kitchen and bathroom</td><td>Singles, students</td><td class="eur">500,000-900,000</td></tr>
+                    <tr><td><strong>Share house</strong></td><td>Shared living with private room; growing trend</td><td>Young people, newcomers</td><td class="eur">400,000-700,000</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Zigbang (직방)</td><td>All types</td><td>Most popular housing app in Korea; real-time listings; VR tours</td></tr>
+                    <tr><td>Dabang (다방)</td><td>All types</td><td>Second largest; strong in one-room and officetel listings</td></tr>
+                    <tr><td>Naver Budongsan</td><td>Apartments, villas</td><td>Integrated with Naver; good for apartment complexes</td></tr>
+                    <tr><td>Peter Pan (피터팬)</td><td>No-agent listings</td><td>Direct from landlord; saves broker fees; verify carefully</td></tr>
+                    <tr><td>Seoul Global Center</td><td>Foreigner-friendly</td><td>Free consultation for foreigners; help with contracts in English</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Jeonse risk warning:</strong> While jeonse can save you monthly rent, there have been cases of "jeonse fraud" (전세사기) where landlords disappear with deposits or properties are over-leveraged. Always: (1) verify property ownership at the registry office (등기부등본), (2) check for existing liens or mortgages, (3) use jeonse insurance from HUG (주택도시보증공사), and (4) get legal advice, especially as a foreigner. Many expats prefer wolse for safety despite higher monthly costs.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in South Korea (gyotong)</h2>
+            <p class="section-subtitle">South Korea has one of the world's best public transport systems, especially in Seoul. Fast, affordable, and incredibly well-connected.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">T-money</div>
+                    <div class="stat-unit">Transit card</div>
+                    <div class="stat-desc">Tap-and-go for subway, bus, taxi, convenience stores</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">305 km/h</div>
+                    <div class="stat-unit">KTX speed</div>
+                    <div class="stat-desc">Seoul-Busan in 2h30m; Seoul-Daejeon in 50min</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,750</div>
+                    <div class="stat-unit">KRW/litre petrol</div>
+                    <div class="stat-desc">Car ownership common but not needed in cities</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">23 lines</div>
+                    <div class="stat-unit">Seoul Metro</div>
+                    <div class="stat-desc">One of world's largest subway systems; free Wi-Fi on all trains</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>T-money card</td><td class="eur">2,500 KRW (card cost)</td><td>Rechargeable; works on all public transit, taxis, convenience stores nationwide</td></tr>
+                    <tr><td>Seoul Metro single ride</td><td class="eur">1,400 KRW (T-money)</td><td>Base fare for first 10km; 100 KRW per 5km after; card is 50 KRW cheaper than cash</td></tr>
+                    <tr><td>Seoul bus</td><td class="eur">1,400 KRW (T-money)</td><td>Free transfer to/from subway within 30 minutes</td></tr>
+                    <tr><td>Commuter pass (Gihu Pass)</td><td class="eur">55,000-65,000 KRW/month</td><td>Climate Card: unlimited Seoul metro+bus for 65,000 KRW; student discounts available</td></tr>
+                    <tr><td>KTX Seoul-Busan</td><td class="eur">~59,800 KRW</td><td>Standard seat; ~2h30m; book via Korail app or SRT for competing routes</td></tr>
+                    <tr><td>KTX Seoul-Daejeon</td><td class="eur">~23,700 KRW</td><td>~50min; frequent departures; business seats available</td></tr>
+                    <tr><td>Intercity bus</td><td class="eur">10,000-30,000 KRW</td><td>Express and intercity buses; comfortable; book via Bustago app</td></tr>
+                    <tr><td>Taxi (base fare)</td><td class="eur">4,800 KRW</td><td>Kakao Taxi app essential; late-night surcharge 20-40%; very safe</td></tr>
+                    <tr><td>Domestic flight (LCC)</td><td class="eur">40,000-100,000 KRW</td><td>Jeju Air, Jin Air, T'way; mainly Seoul-Jeju route (~1hr)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tips:</strong> (1) Get the <strong>Climate Card (기후동행카드)</strong> -- 65,000 KRW/month for unlimited Seoul metro and bus rides. Best deal in Korean transit. (2) <strong>Kakao Taxi</strong> is essential -- no Korean needed, GPS-based pickup, pay by card. (3) Free bus-subway transfers within 30 minutes save significant money. (4) <strong>Naver Map</strong> or <strong>Kakao Map</strong> are far better than Google Maps in Korea for navigation and transit directions. (5) Last trains run around midnight; night buses (올빼미 버스) cover major routes until 3-4 AM.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in South Korea -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in South Korea (hanguk-eseo ilhagi)</h2>
+            <p class="section-subtitle">Korean work culture, visa types, employment rights, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">15+</div>
+                    <div class="stat-unit">Paid leave days/year</div>
+                    <div class="stat-desc">Legal minimum 15 days (after 1 year); increases to 25 days</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">52 hours</div>
+                    <div class="stat-unit">Weekly work cap</div>
+                    <div class="stat-desc">40 regular + 12 overtime max; strictly enforced since 2018</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Improving</div>
+                    <div class="stat-unit">Work-life balance</div>
+                    <div class="stat-desc">Overtime culture declining; flexible work growing</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">15 days</div>
+                    <div class="stat-unit">Public holidays</div>
+                    <div class="stat-desc">Plus Chuseok (3 days) and Seollal (3 days) major holidays</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Visa Types for Working in South Korea</h3>
+            <table class="data-table">
+                <thead><tr><th>Visa Type</th><th>For Whom</th><th>Duration</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>E-7 (Special Occupation)</strong></td><td>Skilled professionals: IT, engineering, finance, research</td><td>1-3 years (renewable)</td><td>Most common work visa for professionals; requires job offer and degree</td></tr>
+                    <tr><td><strong>E-2 (Teaching)</strong></td><td>English conversation instructors at hagwons/schools</td><td>1 year (renewable)</td><td>Requires bachelor's degree from English-speaking country + background check</td></tr>
+                    <tr><td><strong>E-1 (Professor)</strong></td><td>University professors and researchers</td><td>1-5 years</td><td>Academic positions at universities and research institutions</td></tr>
+                    <tr><td><strong>D-8 (Corporate Investment)</strong></td><td>Entrepreneurs and startup founders</td><td>1-2 years</td><td>Requires minimum investment; OASIS visa for tech startups</td></tr>
+                    <tr><td><strong>H-1 (Working Holiday)</strong></td><td>18-30 year olds from eligible countries</td><td>1 year</td><td>Can work part-time; limited to specific nationalities</td></tr>
+                    <tr><td><strong>F-2 (Residence)</strong></td><td>Long-term residents, point-based</td><td>3-5 years</td><td>Points for income, age, Korean ability; leads to F-5</td></tr>
+                    <tr><td><strong>F-5 (Permanent Residence)</strong></td><td>Long-term qualifying residents</td><td>Permanent</td><td>Requires 5+ years on F-2 or specific qualifications; TOPIK Level 5+</td></tr>
+                    <tr><td><strong>F-6 (Marriage)</strong></td><td>Spouse of Korean national</td><td>1-3 years</td><td>No work restrictions; path to permanent residence</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Employment Rights & Culture</h3>
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Annual leave (yeoncha)</strong></td><td>15 days after 1 year; +1 day per 2 years up to 25 days max</td><td>Unused leave must be compensated financially; companies increasingly encourage usage</td></tr>
+                    <tr><td><strong>Weekly work hours</strong></td><td>40 hours standard + max 12 overtime = 52 hours cap</td><td>52-hour work week law strictly enforced; penalties for violations</td></tr>
+                    <tr><td><strong>Overtime pay</strong></td><td>150% of hourly wage for overtime; 200% for holidays</td><td>Night work (10PM-6AM) also gets 50% premium</td></tr>
+                    <tr><td><strong>Probation (suseup)</strong></td><td>Typically 3 months</td><td>Can be terminated more easily; minimum wage can be 90% during probation</td></tr>
+                    <tr><td><strong>Severance pay (toejiggeum)</strong></td><td>1 month salary per year of service</td><td>Mandatory for all employees who worked 1+ year; paid on resignation or termination</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>90 days (120 for multiples)</td><td>60 days employer-paid; 30 days from employment insurance; job protected</td></tr>
+                    <tr><td><strong>Paternity leave</strong></td><td>10 days paid</td><td>Must be used within 90 days of birth; increasing trend of usage</td></tr>
+                    <tr><td><strong>Retirement pension (NPS)</strong></td><td>4.5% employee + 4.5% employer = 9% total</td><td>Foreigners from certain countries can claim lump-sum refund on departure</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Korean work culture essentials:</strong> (1) <strong>Hoesik (회식)</strong> -- team dinners with drinking are common; attendance is culturally expected but declining among younger generation. (2) <strong>Hierarchy matters</strong> -- use proper titles (부장님, 과장님, 대리님); age and seniority influence workplace dynamics. (3) <strong>Bballi bballi (빨리빨리)</strong> -- "hurry hurry" culture means fast turnaround is expected; deadlines are taken seriously. (4) <strong>Kakao Talk</strong> -- used extensively for work communication, even after hours; boundaries improving with "right to disconnect" laws. (5) <strong>52-hour week law</strong> -- since 2018, companies face penalties for exceeding limits; PC shutdown systems (PC-off) enforced at many large companies. (6) <strong>Business cards</strong> -- exchange with both hands; study before putting away.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="korean" class="tab-content">
+            <h2 class="section-title">Essential Prices & Local Customs</h2>
+            <p class="section-subtitle">Common daily prices and cultural essentials for life in South Korea.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Everyday Prices (Seoul, 2026)</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Price Range (KRW)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Americano coffee</td><td class="eur">4,500-6,000</td><td>Starbucks ~5,500; Mega Coffee/Compose ~2,000-3,000 budget chains</td></tr>
+                    <tr><td>Soju (bottle, restaurant)</td><td class="eur">4,000-5,000</td><td>Convenience store: ~1,800; essential Korean social drink</td></tr>
+                    <tr><td>Kimbap (roll)</td><td class="eur">3,000-4,000</td><td>Kimbap Cheonguk/Nara chains; convenience store kimbap ~1,500</td></tr>
+                    <tr><td>Bibimbap (restaurant)</td><td class="eur">8,000-12,000</td><td>Classic Korean mixed rice bowl; banchan (side dishes) always free</td></tr>
+                    <tr><td>Korean BBQ (per person)</td><td class="eur">15,000-25,000</td><td>Samgyeopsal (pork belly) cheaper; galbi (beef ribs) higher</td></tr>
+                    <tr><td>Cinema ticket</td><td class="eur">12,000-15,000</td><td>CGV, Lotte Cinema, Megabox; Tuesday discounts common</td></tr>
+                    <tr><td>Gym membership (monthly)</td><td class="eur">50,000-80,000</td><td>Local gyms 50K; premium chains 80-150K; apartment gyms often free</td></tr>
+                    <tr><td>Jjimjilbang (spa) entry</td><td class="eur">12,000-18,000</td><td>24-hour spa/sauna complex; includes sleeping area; great budget hotel alternative</td></tr>
+                    <tr><td>Beer (500ml, convenience store)</td><td class="eur">2,500-4,000</td><td>Cass, Hite local; imported craft 4,000-7,000</td></tr>
+                    <tr><td>Delivery food (1 person)</td><td class="eur">10,000-18,000</td><td>Baemin, Coupang Eats; delivery culture is massive in Korea</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social Etiquette & Customs</h3>
+            <table class="data-table">
+                <thead><tr><th>Custom</th><th>What to Do</th><th>Why It Matters</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Age hierarchy (나이)</strong></td><td>Older people are addressed with respect; ask age early -- it's normal</td><td>Korean language has formal/informal levels; age determines which to use</td></tr>
+                    <tr><td><strong>Shoes off (신발)</strong></td><td>Remove shoes at homes, some restaurants (look for raised seating areas)</td><td>Deeply ingrained; ondol (floor heating) means floors are living space</td></tr>
+                    <tr><td><strong>Drinking etiquette</strong></td><td>Pour for others (never yourself); turn away from elders when drinking</td><td>Use both hands when receiving a drink from someone older</td></tr>
+                    <tr><td><strong>Bowing (인사)</strong></td><td>Light bow for greetings; deeper for elders and formal situations</td><td>Handshakes also common in business; bow + handshake together is respectful</td></tr>
+                    <tr><td><strong>Tipping</strong></td><td>Do NOT tip -- it is not expected and can cause confusion</td><td>Service charge included; tipping culture does not exist</td></tr>
+                    <tr><td><strong>Banchan (반찬)</strong></td><td>Side dishes at restaurants are free and unlimited refills</td><td>Kimchi, kongnamul, etc.; just ask for more -- "banchan deo juseyo"</td></tr>
+                    <tr><td><strong>Delivery culture</strong></td><td>Everything is deliverable 24/7 via Baemin, Coupang Eats</td><td>Korea has the most advanced delivery infrastructure in the world</td></tr>
+                    <tr><td><strong>Convenience stores</strong></td><td>CU, GS25, 7-Eleven -- for food, bills, ATMs, parcels</td><td>Everywhere; great cheap meals; eat-in seating usually available</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Essential Apps</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Must-have apps:</strong> (1) <strong>Kakao Talk</strong> -- Korea's WhatsApp; everyone uses it; essential for social life and even some businesses. (2) <strong>Naver Map</strong> -- far better than Google Maps in Korea; transit directions, restaurant reviews, street view. (3) <strong>Kakao Taxi</strong> -- ride-hailing; no Korean needed. (4) <strong>Baemin (배달의민족)</strong> -- food delivery king. (5) <strong>Coupang</strong> -- Korea's Amazon; Rocket Delivery (dawn delivery) is incredible. (6) <strong>Papago</strong> -- Naver's translator; better than Google Translate for Korean. (7) <strong>Toss</strong> -- banking/payments super app. (8) <strong>Zigbang/Dabang</strong> -- housing search.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in South Korea</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~1,400,000</div>
+                    <div class="stat-unit">KRW/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for single in Seoul (very frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~2,200,000</div>
+                    <div class="stat-unit">KRW/month comfortable</div>
+                    <div class="stat-desc">Comfortable single life in Seoul</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~30,000,000</div>
+                    <div class="stat-unit">KRW/year gross (survival)</div>
+                    <div class="stat-desc">Minimum annual gross for Seoul</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~42,000,000</div>
+                    <div class="stat-unit">KRW/year gross (comfortable)</div>
+                    <div class="stat-desc">Comfortable annual gross for Seoul</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (KRW)</th><th>Gross Salary Needed (KRW)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Goshiwon, very frugal</small></td><td class="eur">1,000,000</td><td class="eur">1,400,000</td><td class="eur">1,150,000</td><td class="eur eur-low">+150,000</td></tr>
+                    <tr><td><strong>Basic single (Seoul)</strong><br><small>One-room, budget</small></td><td class="eur">1,400,000</td><td class="eur">1,900,000</td><td class="eur">1,550,000</td><td class="eur eur-low">+150,000</td></tr>
+                    <tr><td><strong>Comfortable single</strong><br><small>Officetel, good lifestyle</small></td><td class="eur">2,200,000</td><td class="eur">2,900,000</td><td class="eur">2,400,000</td><td class="eur eur-low">+200,000</td></tr>
+                    <tr><td><strong>Couple (Seoul)</strong><br><small>1-bed apartment, comfortable</small></td><td class="eur">3,000,000</td><td class="eur">4,100,000</td><td class="eur">3,300,000</td><td class="eur eur-low">+300,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2-bed apartment, Seoul</small></td><td class="eur">4,200,000</td><td class="eur">5,800,000</td><td class="eur">4,500,000</td><td class="eur eur-low">+300,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Do your <strong>Alien Registration (외국인등록)</strong> at the immigration office within 90 days. (2) Get your <strong>Alien Registration Card (ARC)</strong> -- needed for everything. (3) Open a bank account (KEB Hana, Shinhan, Woori -- Hana is most foreigner-friendly). (4) Enroll in <strong>National Health Insurance (NHI)</strong> or confirm employer enrollment. (5) Get a <strong>phone number</strong> (requires ARC; use prepaid SIM initially). (6) Buy a <strong>T-money card</strong> at any convenience store. (7) Download <strong>Kakao Talk, Naver Map, Papago, Baemin</strong>. (8) Register for <strong>Coupang</strong> for essentials delivery.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change annually. Always verify current rates with official sources (National Tax Service, KOSIS, NHIS, your local immigration office) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. South Korea Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#003478;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#006AA7;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6700;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="austria-guide.html" style="color:#EF3340;">Austria Guide</a> |
+                <a href="uae-guide.html" style="color:#00843D;">UAE Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA Guide</a> |
+                <a href="denmark-guide.html" style="color:#C60C30;">Denmark Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand Guide</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia Guide</a> |
+                <a href="switzerland-guide.html" style="color:#FF0000;">Switzerland Guide</a> |
+                <a href="france-guide.html" style="color:#002395;">France Guide</a> |
+                <a href="spain-guide.html" style="color:#AA151B;">Spain Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="south-korea-guide.html" style="color:#003478;">South Korea Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const krPppCountries = [
+        { name: 'Switzerland', ppp: 181, region: 'Western Europe' },
+        { name: 'Norway', ppp: 156, region: 'Nordic' },
+        { name: 'Denmark', ppp: 147, region: 'Nordic' },
+        { name: 'Singapore', ppp: 142, region: 'Southeast Asia' },
+        { name: 'USA', ppp: 139, region: 'North America' },
+        { name: 'Australia', ppp: 132, region: 'Oceania' },
+        { name: 'Sweden', ppp: 128, region: 'Nordic' },
+        { name: 'Netherlands', ppp: 125, region: 'Western Europe' },
+        { name: 'Ireland', ppp: 125, region: 'Western Europe' },
+        { name: 'Finland', ppp: 122, region: 'Nordic' },
+        { name: 'United Kingdom', ppp: 121, region: 'Western Europe' },
+        { name: 'Austria', ppp: 119, region: 'Western Europe' },
+        { name: 'Germany', ppp: 118, region: 'Western Europe' },
+        { name: 'Canada', ppp: 117, region: 'North America' },
+        { name: 'Belgium', ppp: 115, region: 'Western Europe' },
+        { name: 'France', ppp: 114, region: 'Western Europe' },
+        { name: 'New Zealand', ppp: 111, region: 'Oceania' },
+        { name: 'Japan', ppp: 108, region: 'East Asia' },
+        { name: 'Italy', ppp: 106, region: 'Southern Europe' },
+        { name: 'UAE', ppp: 104, region: 'Middle East' },
+        { name: 'Spain', ppp: 94, region: 'Southern Europe' },
+        { name: 'Portugal', ppp: 83, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', ppp: 72, region: 'Middle East' },
+    ];
+
+    function calculateKRPPP() {
+        const amount = parseFloat(document.getElementById('krPppAmount').value) || 2000000;
+        const tbody = document.querySelector('#krPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#krPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} KRW buys equiv. of`;
+
+        krPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.ppp}</td><td>${c.region}</td><td class="eur" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} KRW (${diff})</td></tr>`;
+        });
+    }
+    calculateKRPPP();
+
+    // Korean Tax Calculator
+    function calculateKRTax() {
+        const annualGross = parseFloat(document.getElementById('krGrossSalary').value) || 45000000;
+        const dependents = parseInt(document.getElementById('krDependent').value) || 0;
+
+        // Employment income deduction
+        let employmentDeduction = 0;
+        if (annualGross <= 5000000) employmentDeduction = annualGross * 0.7;
+        else if (annualGross <= 15000000) employmentDeduction = 3500000 + (annualGross - 5000000) * 0.4;
+        else if (annualGross <= 45000000) employmentDeduction = 7500000 + (annualGross - 15000000) * 0.15;
+        else if (annualGross <= 100000000) employmentDeduction = 12000000 + (annualGross - 45000000) * 0.05;
+        else employmentDeduction = 14750000 + (annualGross - 100000000) * 0.02;
+        employmentDeduction = Math.min(employmentDeduction, 20000000);
+
+        // Social insurance (employee share)
+        const nhi = annualGross * 0.03545;
+        const nps = Math.min(annualGross * 0.045, 265500 * 12);
+        const employmentInsurance = annualGross * 0.009;
+        const socialInsurance = nhi + nps + employmentInsurance;
+
+        // Basic deduction
+        const basicDeduction = 1500000;
+        const dependentDeduction = dependents * 1500000;
+
+        // Taxable income
+        const taxableIncome = Math.max(0, annualGross - employmentDeduction - socialInsurance - basicDeduction - dependentDeduction);
+
+        // National income tax (progressive)
+        let incomeTax = 0;
+        if (taxableIncome <= 14000000) {
+            incomeTax = taxableIncome * 0.06;
+        } else if (taxableIncome <= 50000000) {
+            incomeTax = 840000 + (taxableIncome - 14000000) * 0.15;
+        } else if (taxableIncome <= 88000000) {
+            incomeTax = 6240000 + (taxableIncome - 50000000) * 0.24;
+        } else if (taxableIncome <= 150000000) {
+            incomeTax = 15360000 + (taxableIncome - 88000000) * 0.35;
+        } else if (taxableIncome <= 300000000) {
+            incomeTax = 37060000 + (taxableIncome - 150000000) * 0.38;
+        } else if (taxableIncome <= 500000000) {
+            incomeTax = 94060000 + (taxableIncome - 300000000) * 0.40;
+        } else if (taxableIncome <= 1000000000) {
+            incomeTax = 174060000 + (taxableIncome - 500000000) * 0.42;
+        } else {
+            incomeTax = 384060000 + (taxableIncome - 1000000000) * 0.45;
+        }
+        incomeTax = Math.max(0, Math.round(incomeTax));
+
+        // Local income tax (10% of national income tax)
+        const localTax = Math.round(incomeTax * 0.10);
+
+        const totalTax = incomeTax + localTax;
+        const totalDeductions = totalTax + socialInsurance;
+        const netAnnual = annualGross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const grossMonthly = annualGross / 12;
+        const effectiveRate = ((totalDeductions / annualGross) * 100);
+
+        const resultDiv = document.getElementById('krTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#1a1a2e; font-weight:800;">${Math.round(grossMonthly).toLocaleString()} KRW</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(incomeTax/12).toLocaleString()} KRW</span></div>
+                <div><strong>Local tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(localTax/12).toLocaleString()} KRW</span></div>
+                <div><strong>Social insurance:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(socialInsurance/12).toLocaleString()} KRW</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} KRW</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>NHI: ${Math.round(nhi/12).toLocaleString()} KRW/mo</div>
+                <div>NPS: ${Math.round(nps/12).toLocaleString()} KRW/mo</div>
+                <div>Taxable income: ${Math.round(taxableIncome).toLocaleString()} KRW/yr</div>
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 1400000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 1400000 ? '#059669' : '#dc2626'};">${netMonthly >= 1400000 ? '&#10003;' : '&#10007;'} Seoul survival check:</strong>
+                Need ~1,400,000 KRW net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 1400000 ? '+' : ''}${Math.round(netMonthly - 1400000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

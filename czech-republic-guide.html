@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech Republic Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Czech Republic 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="czech republic living cost, czech salary, czech tax, cost of living prague, expat czech republic, životní náklady Česko">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Czech Republic Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in Czech Republic 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta property="og:url" content="https://compressphotos.cloud/czech-republic-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Czech Republic Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in Czech Republic 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/czech-republic-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1E8;&#x1F1FF;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #11457E 0%, #0A2E55 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: white; border-bottom: 3px solid #11457E; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #11457E; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #D7141A; background: #fff5f5; }
+
+        .czk { font-family: 'Courier New', monospace; font-weight: 600; }
+        .czk-low { color: #059669; }
+        .czk-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #11457E; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #11457E, #D7141A);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #f0f4ff; border-left: 4px solid #11457E; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #11457E; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #11457E; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #11457E, #D7141A); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Czech Republic Living Cost Guide 2026",
+      "description": "Complete guide to living costs in Czech Republic 2026. Monthly expenses, salary by profession, tax calculator, healthcare, and PPP comparisons for expats.",
+      "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80",
+      "datePublished": "2026-06-29",
+      "dateModified": "2026-06-29",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/czech-republic-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#D7141A; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">🇩🇪</span><div>Germany<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">🇦🇹</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">🇮🇪</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">🇯🇵</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">🇮🇹</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">🇫🇮</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="czech-republic-guide.html" style="background:#fffbeb;"><span class="country-flag">🇨🇿</span><div><strong>Czech Republic</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Czech Republic Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Czech tax system, healthcare, and PPP calculator. For expats and newcomers planning to move to the Czech Republic.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 29, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80" alt="Charles Bridge and Prague Castle - iconic Czech Republic landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Calculator</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="local">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Prague</h2>
+            <p class="section-subtitle">For a single adult. All amounts in CZK (Kc). Based on CSU data, real 2026 costs, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. Prague is the most expensive Czech city. Other cities like Brno, Ostrava, or Plzen are 15-30% cheaper, especially for rent. See the <strong>City Comparison</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~28,000</div>
+                    <div class="stat-unit">CZK/month (low)</div>
+                    <div class="stat-desc">Frugal single in Prague</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~45,000</div>
+                    <div class="stat-unit">CZK/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~45,600</div>
+                    <div class="stat-unit">CZK avg gross salary</div>
+                    <div class="stat-desc">Czech Republic national median gross</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">20,800</div>
+                    <div class="stat-unit">CZK minimum wage</div>
+                    <div class="stat-desc">Statutory minimum monthly gross (2026)</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (CZK)</th><th>High (CZK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1-bedroom apartment)</td><td class="czk">15,000</td><td class="czk">25,000</td><td>Prague centre vs outskirts; includes energy bills in some listings</td></tr>
+                    <tr><td></td><td>Utilities (electricity, heating, water)</td><td class="czk">3,000</td><td class="czk">5,000</td><td>CEZ, PRE, innogy; varies by season and apartment size</td></tr>
+                    <tr><td></td><td>Internet</td><td class="czk">500</td><td class="czk">800</td><td>O2, UPC/Vodafone, T-Mobile; fiber widely available</td></tr>
+                    <tr><td></td><td>Mobile phone</td><td class="czk">400</td><td class="czk">700</td><td>T-Mobile CZ, O2, Vodafone; or budget MVNOs like Kaktus</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="czk">18,900</td><td class="czk">31,500</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries</td><td class="czk">5,000</td><td class="czk">8,000</td><td>Albert, Tesco, Lidl, Kaufland, Billa; discounters much cheaper</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="czk">5,000</td><td class="czk">8,000</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>Litacka monthly pass</td><td class="czk">550</td><td class="czk">550</td><td>Prague integrated transport (metro, tram, bus); annual pass CZK 3,650</td></tr>
+                    <tr><td></td><td>Occasional taxi / Bolt</td><td class="czk">0</td><td class="czk">500</td><td>Bolt, Liftago popular in Prague</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="czk">550</td><td class="czk">1,050</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health Insurance</td></tr>
+                    <tr><td></td><td>Public health insurance (employee share)</td><td class="czk">0</td><td class="czk">0</td><td>VZP or other pojistovny; employer deducts 4.5% from gross + pays 9%</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="czk">0</td><td class="czk">0</td><td>Included in payroll deductions</td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="czk">1,000</td><td class="czk">2,000</td><td>H&M, Zara, local markets</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="czk">500</td><td class="czk">1,000</td><td>Haircuts, toiletries, cosmetics</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="czk">600</td><td class="czk">1,200</td><td>Gym CZK 600-1,200/month; Multisport card popular</td></tr>
+                    <tr><td></td><td>Eating out / entertainment</td><td class="czk">1,500</td><td class="czk">3,000</td><td>Lunch menu (poledni menu) CZK 150-200; beer evenings</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="czk">3,600</td><td class="czk">7,200</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance & Misc</td></tr>
+                    <tr><td></td><td>Household insurance</td><td class="czk">200</td><td class="czk">400</td><td>Pojisteni domacnosti; optional but recommended</td></tr>
+                    <tr><td></td><td>Miscellaneous</td><td class="czk">500</td><td class="czk">1,000</td><td>Laundry, small purchases, subscriptions</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance & misc subtotal</td><td class="czk">700</td><td class="czk">1,400</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="czk">~28,750</td><td class="czk">~49,150</td><td>Realistic range: 28,000 - 45,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Czech Republic</h2>
+            <p class="section-subtitle">Monthly gross salaries in CZK. Data from CSU (Czech Statistical Office), Platy.cz, Glassdoor 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>Note:</strong> Prague salaries are typically 20-40% higher than the national average. IT and finance sectors pay the most. Many employers offer stravenky (meal vouchers) worth CZK 100-200/day as an additional benefit, which are tax-advantaged.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">60,000 - 100,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:80%;">50,000 - 80,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:78%;">55,000 - 85,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:72%;">45,000 - 75,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Financial Analyst</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:68%;">45,000 - 70,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">40,000 - 60,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Mechanical Engineer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:58%;">38,000 - 55,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">35,000 - 50,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Architect</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:52%;">35,000 - 50,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:45%;">35,000 - 45,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:42%;">30,000 - 42,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Police Officer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">30,000 - 40,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">28,000 - 38,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Chef / Cook</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:32%;">25,000 - 32,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Bus Driver</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">25,000 - 32,000 CZK</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:24%;">22,000 - 28,000 CZK</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>Minimum wage (2026):</strong> The Czech statutory minimum wage (minimalni mzda) is CZK 20,800/month gross (CZK 124.40/hour) for a 40-hour work week. This is one of the lowest in the EU but purchasing power is relatively strong due to lower costs.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Calculator -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Czech Tax System (Danovy system)</h2>
+            <p class="section-subtitle">Czech Republic uses a flat income tax with mandatory social and health insurance contributions. Updated for 2026 tax year.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Rates</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (CZK)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Up to ~CZK 1,935,552 (48x average wage)</td><td class="czk">15%</td><td>Flat rate for most employees</td></tr>
+                    <tr><td>Above ~CZK 1,935,552</td><td class="czk">23%</td><td>Solidarni zvyseni dane (solidarity surcharge rate) on income exceeding threshold</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Slevy na dani (Tax Credits)</h3>
+            <table class="data-table">
+                <thead><tr><th>Credit</th><th>Annual Amount (CZK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Basic taxpayer credit (zakladni sleva)</td><td class="czk">30,840</td><td>Everyone gets this; reduces tax bill directly</td></tr>
+                    <tr><td>Student credit</td><td class="czk">4,020</td><td>For students up to age 26 (28 for PhD)</td></tr>
+                    <tr><td>Spouse credit (non-working spouse)</td><td class="czk">24,840</td><td>If spouse earns less than CZK 68,000/year</td></tr>
+                    <tr><td>Disability credit</td><td class="czk">2,520 - 16,140</td><td>Depends on degree of disability</td></tr>
+                    <tr><td>Child tax bonus (danova zvyhodneni)</td><td class="czk">15,204 - 27,840</td><td>Per child; amount increases for 2nd and 3rd+ child</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Social & Health Insurance Contributions</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Employee Share</th><th>Employer Share</th><th>Total</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Social insurance (socialni pojisteni)</td><td class="czk">6.5%</td><td class="czk">24.8%</td><td class="czk">31.3%</td><td>Covers pension, sickness, unemployment</td></tr>
+                    <tr><td>Health insurance (zdravotni pojisteni)</td><td class="czk">4.5%</td><td class="czk">9.0%</td><td class="czk">13.5%</td><td>VZP, CPZP, OZP, etc.</td></tr>
+                    <tr class="subtotal"><td><strong>Total employee deductions</strong></td><td class="czk"><strong>11.0%</strong></td><td class="czk"><strong>33.8%</strong></td><td class="czk"><strong>44.8%</strong></td><td>Employee pays 11% of gross; employer pays 33.8% on top</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="czGrossSalary">Monthly Gross Salary (CZK):</label>
+                <input type="number" id="czGrossSalary" value="50000" min="0" max="1000000">
+                <label for="czChildren">Number of children:</label>
+                <select id="czChildren">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3+</option>
+                </select>
+                <label for="czStudent">Student?</label>
+                <select id="czStudent">
+                    <option value="no">No</option>
+                    <option value="yes">Yes (under 26)</option>
+                </select>
+                <button class="calc-btn" onclick="calculateCZTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="czTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + Social</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="czk">25,000</td><td class="czk">300,000</td><td class="czk">~5,330</td><td class="czk" style="color:#059669; font-weight:700;">~19,670</td><td>21.3%</td></tr>
+                    <tr><td class="czk">35,000</td><td class="czk">420,000</td><td class="czk">~8,260</td><td class="czk" style="color:#059669; font-weight:700;">~26,740</td><td>23.6%</td></tr>
+                    <tr><td class="czk">50,000</td><td class="czk">600,000</td><td class="czk">~12,670</td><td class="czk" style="color:#059669; font-weight:700;">~37,330</td><td>25.3%</td></tr>
+                    <tr><td class="czk">75,000</td><td class="czk">900,000</td><td class="czk">~20,420</td><td class="czk" style="color:#059669; font-weight:700;">~54,580</td><td>27.2%</td></tr>
+                    <tr><td class="czk">100,000</td><td class="czk">1,200,000</td><td class="czk">~28,170</td><td class="czk" style="color:#059669; font-weight:700;">~71,830</td><td>28.2%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Czech salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Czech Republic = 100.</p>
+
+            <div class="calc-container">
+                <label for="czPppAmount">Your monthly spending in Czech Republic (CZK):</label>
+                <input type="number" id="czPppAmount" value="35000" min="1000" max="500000">
+                <button class="calc-btn" onclick="calculateCZPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="czPppTable">
+                <thead><tr><th>Country</th><th>PPP Index (CZ=100)</th><th>Region</th><th>35,000 CZK buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Czech Republic = 100. If Switzerland has a PPP index of 236, your 35,000 CZK in Czech Republic has the same purchasing power as 35,000 x (236/100) = 82,600 CZK equivalent in Switzerland. You'd need ~136% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Czech cities. Prague = 100 (most expensive baseline). Data: CSU, Numbeo, Sreality.cz 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (CZK)</th><th>Monthly Pass (CZK)</th><th>Meal Out (CZK)</th><th>Beer 0.5L (CZK)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Prague</strong></td><td class="czk">15,000-25,000</td><td class="czk">550</td><td class="czk">180-280</td><td class="czk">50-70</td><td>Most expensive; cultural capital; best job market</td></tr>
+                    <tr><td><strong>Brno</strong></td><td class="czk">10,000-18,000</td><td class="czk">550</td><td class="czk">150-220</td><td class="czk">40-55</td><td>2nd city; university town; strong IT sector; wine region</td></tr>
+                    <tr><td><strong>Ostrava</strong></td><td class="czk">7,000-13,000</td><td class="czk">495</td><td class="czk">130-190</td><td class="czk">35-50</td><td>Industrial city; very affordable; growing tech scene</td></tr>
+                    <tr><td><strong>Plzen</strong></td><td class="czk">9,000-15,000</td><td class="czk">450</td><td class="czk">140-200</td><td class="czk">35-50</td><td>Home of Pilsner Urquell; Skoda HQ; relaxed lifestyle</td></tr>
+                    <tr><td><strong>Olomouc</strong></td><td class="czk">8,000-14,000</td><td class="czk">400</td><td class="czk">130-190</td><td class="czk">35-45</td><td>Beautiful baroque city; major university; affordable</td></tr>
+                    <tr><td><strong>Ceske Budejovice</strong></td><td class="czk">8,000-14,000</td><td class="czk">400</td><td class="czk">130-190</td><td class="czk">35-50</td><td>Home of Budweiser Budvar; South Bohemia gateway</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Prague vs Brno:</strong> Brno offers 25-35% lower rents than Prague with a thriving tech and startup scene. Many expats choose Brno for better value while still enjoying excellent infrastructure, universities (Masaryk, VUT), and a vibrant cultural life. Train to Prague takes just 2.5 hours.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Czech Healthcare System (Zdravotnictvi)</h2>
+            <p class="section-subtitle">Czech Republic has a universal public health insurance system with multiple insurance companies (zdravotni pojistovny). Quality is high and co-pays are minimal.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">13.5%</div>
+                    <div class="stat-unit">Total health contribution</div>
+                    <div class="stat-desc">4.5% employee + 9% employer</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">VZP</div>
+                    <div class="stat-unit">Largest insurer</div>
+                    <div class="stat-desc">Vseobecna zdravotni pojistovna; ~60% market share</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">30 CZK</div>
+                    <div class="stat-unit">Emergency room co-pay</div>
+                    <div class="stat-desc">Abolished for most visits; minimal out-of-pocket costs</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">EHIC</div>
+                    <div class="stat-unit">EU card valid</div>
+                    <div class="stat-desc">European Health Insurance Card accepted across EU</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Health Insurance Companies (Pojistovny)</h3>
+            <table class="data-table">
+                <thead><tr><th>Insurance Company</th><th>Code</th><th>Market Share</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>VZP (Vseobecna zdravotni pojistovna)</strong></td><td>111</td><td>~60%</td><td>Largest; state-owned; widest network; default for most employees</td></tr>
+                    <tr><td><strong>CPZP (Ceska prumyslova ZP)</strong></td><td>205</td><td>~12%</td><td>Good benefits programs; popular with employers</td></tr>
+                    <tr><td><strong>OZP (Oborova zdravotni pojistovna)</strong></td><td>207</td><td>~8%</td><td>Good preventive care programs</td></tr>
+                    <tr><td><strong>ZPMV (ZP Ministerstva vnitra)</strong></td><td>211</td><td>~7%</td><td>Originally for interior ministry; open to all</td></tr>
+                    <tr><td><strong>Vojenska ZP</strong></td><td>201</td><td>~5%</td><td>Military health insurance; open to civilians too</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (prakticky lekar)</td><td class="czk">Free</td><td>Register with a GP; referrals to specialists needed for some</td></tr>
+                    <tr><td>Specialist visit</td><td class="czk">Free</td><td>Dermatology, cardiology, etc.; may need referral (doporuceni)</td></tr>
+                    <tr><td>Hospital stay</td><td class="czk">100 CZK/day</td><td>Regulatory fee per day; otherwise fully covered</td></tr>
+                    <tr><td>Prescription drugs</td><td class="czk">30-100+ CZK co-pay</td><td>Many drugs fully covered; some require doplatek (co-payment)</td></tr>
+                    <tr><td>Dental - basic</td><td class="czk">Partially covered</td><td>Check-ups and basic fillings covered; cosmetic/premium materials extra</td></tr>
+                    <tr><td>Dental - crowns/bridges</td><td class="czk">Co-pay varies</td><td>Standard materials covered; premium ceramics/implants private pay</td></tr>
+                    <tr><td>Mental health</td><td class="czk">Covered</td><td>Psychiatry covered; psychotherapy increasingly covered; long waits</td></tr>
+                    <tr><td>Maternity</td><td class="czk">Fully covered</td><td>Prenatal care, delivery, postnatal; 28 weeks maternity leave</td></tr>
+                    <tr><td>Emergency (pohotovost)</td><td class="czk">Free</td><td>Call 155 (ambulance) or 112 (EU emergency); excellent response times</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>EHIC for EU citizens:</strong> If you're an EU citizen, your European Health Insurance Card (EHIC) provides temporary coverage in Czech Republic. For long-term stays, you must register with a Czech health insurance company (pojistovna). Non-EU citizens need to arrange coverage through their employer or purchase commercial health insurance until they get employee status.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Czech Republic (Bydleni)</h2>
+            <p class="section-subtitle">The Czech rental market, especially in Prague, has become competitive. Understanding local terms and platforms is essential.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Czech Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Kauce</strong></td><td>Security deposit</td><td>Typically 1-2 months rent; returned at end of lease minus damages</td></tr>
+                    <tr><td><strong>Najemni smlouva</strong></td><td>Rental contract</td><td>Always get a written lease; defines rights and obligations</td></tr>
+                    <tr><td><strong>Najem</strong></td><td>Rent (base)</td><td>Base rent without services/utilities</td></tr>
+                    <tr><td><strong>Poplatky za sluzby</strong></td><td>Service charges</td><td>Water, heating, garbage, building maintenance; paid monthly as advance</td></tr>
+                    <tr><td><strong>Energie</strong></td><td>Energy costs</td><td>Electricity and gas; usually separate contracts with CEZ, PRE, innogy</td></tr>
+                    <tr><td><strong>Dispozice (1+kk, 2+1, etc.)</strong></td><td>Layout notation</td><td>1+kk = studio with kitchenette; 2+1 = 2 rooms + separate kitchen; kk = kitchenette</td></tr>
+                    <tr><td><strong>Prihlasen k pobytu</strong></td><td>Residence registration</td><td>Register your address at the foreign police (cizinecka policie) or town hall</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Sreality.cz</td><td>All types</td><td>Largest Czech property portal; most listings; both rental and sale</td></tr>
+                    <tr><td>Bezrealitky.cz</td><td>Direct from owners</td><td>No agent fees; deal directly with landlords; growing platform</td></tr>
+                    <tr><td>Reality.idnes.cz</td><td>All types</td><td>Major media portal listings; good selection</td></tr>
+                    <tr><td>Flatshare (spolubydleni.cz)</td><td>Shared flats</td><td>Popular with students and young professionals</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Flats for rent Prague" groups; popular with expats; beware scams</td></tr>
+                    <tr><td>Expats.cz</td><td>Expat-focused</td><td>English-language classifieds; higher prices but easier for newcomers</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Housing Costs by Type</h3>
+            <table class="data-table">
+                <thead><tr><th>Type</th><th>Prague (CZK/month)</th><th>Brno (CZK/month)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>1+kk (studio)</td><td class="czk">12,000-18,000</td><td class="czk">8,000-13,000</td><td>Most common for singles</td></tr>
+                    <tr><td>2+kk (1 bedroom)</td><td class="czk">15,000-25,000</td><td class="czk">10,000-18,000</td><td>Living room + bedroom + kitchenette</td></tr>
+                    <tr><td>3+kk (2 bedrooms)</td><td class="czk">20,000-35,000</td><td class="czk">14,000-24,000</td><td>Suitable for couples/small families</td></tr>
+                    <tr><td>Shared room (spolubydleni)</td><td class="czk">6,000-12,000</td><td class="czk">4,000-8,000</td><td>Room in shared flat; cheapest option</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Watch out for:</strong> (1) Agent fees (provize) are typically 1 month's rent -- use Bezrealitky.cz to avoid these. (2) New builds have 21% VAT included in purchase price. (3) Verify the landlord's ownership at the Katastr nemovitosti (land registry). (4) Heating costs can spike significantly in winter (November-March). (5) Prague districts 1-3 are most expensive; districts 4-10 offer better value with good metro/tram access.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Czech Republic (Doprava)</h2>
+            <p class="section-subtitle">Excellent public transport networks, affordable intercity trains, and a well-connected country for its size.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">550</div>
+                    <div class="stat-unit">CZK/month</div>
+                    <div class="stat-desc">Litacka Prague monthly pass (metro, tram, bus)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3,650</div>
+                    <div class="stat-unit">CZK/year</div>
+                    <div class="stat-desc">Litacka annual pass -- save over 50%</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~40</div>
+                    <div class="stat-unit">CZK/litre petrol</div>
+                    <div class="stat-desc">Diesel ~38 CZK; fluctuates with oil prices</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">9,500+</div>
+                    <div class="stat-unit">km rail network</div>
+                    <div class="stat-desc">Ceske drahy + RegioJet + Leo Express</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Litacka monthly (Prague)</td><td class="czk">550 CZK/month</td><td>All Prague metro (3 lines), trams (30+ lines), buses; integrated PID system</td></tr>
+                    <tr><td>Litacka annual (Prague)</td><td class="czk">3,650 CZK/year</td><td>Best value; works out to ~304 CZK/month</td></tr>
+                    <tr><td>Ceske drahy (national rail)</td><td class="czk">Varies</td><td>State railway; covers entire country; InKarta discount card available</td></tr>
+                    <tr><td>RegioJet</td><td class="czk">From 99 CZK</td><td>Private operator; Prague-Brno from CZK 99; comfortable coaches with WiFi, coffee</td></tr>
+                    <tr><td>Leo Express</td><td class="czk">From 89 CZK</td><td>Private operator; modern trains; competitive pricing; Prague-Ostrava route</td></tr>
+                    <tr><td>FlixBus / RegioJet bus</td><td class="czk">From 79 CZK</td><td>Intercity buses; often cheaper than trains; good for international routes</td></tr>
+                    <tr><td>Prague-Brno (train)</td><td class="czk">150-350 CZK</td><td>~2.5 hours; frequent departures; RegioJet or Ceske drahy</td></tr>
+                    <tr><td>MHD (city public transport)</td><td class="czk">300-550 CZK/month</td><td>Most Czech cities have integrated MHD; trams in Prague, Brno, Ostrava, Plzen, Olomouc</td></tr>
+                    <tr><td>Bolt / Liftago (ride-hailing)</td><td class="czk">~25 CZK/km</td><td>Popular in Prague; cheaper than traditional taxis</td></tr>
+                    <tr><td>Nextbike / Rekola (bike sharing)</td><td class="czk">From 30 CZK/ride</td><td>Available in Prague, Brno, and other cities; electric bikes too</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Buy the Litacka annual pass (CZK 3,650) -- it saves over 40% compared to monthly passes and includes all Prague zones. For intercity travel, RegioJet and Leo Express often have flash sales with tickets from CZK 79-99. Book 2-3 weeks ahead for best prices. The InKarta from Ceske drahy gives 25% off all national rail tickets for CZK 550/year.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Czech Republic -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Czech Republic (Prace v Cesku)</h2>
+            <p class="section-subtitle">Czech work culture, employment rights, visa requirements, and practical info for newcomers.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">20</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">Legal minimum 4 weeks; some employers offer 25</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3 months</div>
+                    <div class="stat-unit">Zkusebni doba</div>
+                    <div class="stat-desc">Probation period; 6 months for managers</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Stravenky</div>
+                    <div class="stat-unit">Meal vouchers</div>
+                    <div class="stat-desc">Tax-advantaged benefit; CZK 100-200/day typical</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">13</div>
+                    <div class="stat-unit">Public holidays</div>
+                    <div class="stat-desc">Including Czech Statehood Day, Jan Hus Day</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Pracovni smlouva</strong></td><td>Employment contract; must be in writing before start date</td><td>Must include job type, place of work, start date; 3 copies</td></tr>
+                    <tr><td><strong>Zkusebni doba</strong></td><td>Probation period: 3 months (6 for managers)</td><td>Either party can terminate without reason during probation</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 40 hours/week</td><td>Max 8 hours/day; overtime limited to 150 hours/year; must be compensated</td></tr>
+                    <tr><td><strong>Dovolena (vacation)</strong></td><td>Legal minimum: 4 weeks (20 working days)</td><td>Many employers offer 5 weeks (25 days); teachers get 8 weeks</td></tr>
+                    <tr><td><strong>Sick leave (nemocenska)</strong></td><td>Days 1-3: unpaid (karenni doba abolished, now paid at 60%); Days 4-14: employer pays 60%; Day 15+: CSSZ pays</td><td>Need nemocensky list from doctor</td></tr>
+                    <tr><td><strong>Stravenky (meal vouchers)</strong></td><td>Tax-free benefit up to 70% of meal value</td><td>Sodexo, Edenred, Up; increasingly replaced by stravenkovy pausal (cash allowance)</td></tr>
+                    <tr><td><strong>Employee card (zamestnanecka karta)</strong></td><td>Work permit for non-EU citizens</td><td>Dual permit (residence + work); employer must apply; processing ~60-90 days</td></tr>
+                    <tr><td><strong>Blue Card EU</strong></td><td>For highly qualified workers with university degree</td><td>Salary must be 1.5x Czech average; faster processing; EU-wide mobility</td></tr>
+                    <tr><td><strong>Maternity leave (materska)</strong></td><td>28 weeks (37 for multiple births)</td><td>70% of daily assessment base; followed by rodicovsky prispevek up to 4 years</td></tr>
+                    <tr><td><strong>Vypovedni doba</strong></td><td>Notice period: minimum 2 months</td><td>Starts from 1st of following month; employer needs valid reason for dismissal</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Work Culture Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>Czech work culture essentials:</strong> (1) <strong>Punctuality</strong> -- Czechs value being on time for meetings and work. (2) <strong>Lunch culture</strong> -- poledni menu (lunch specials) at restaurants are a big tradition; many workers eat out for CZK 150-200. (3) <strong>Direct communication</strong> -- Czechs are straightforward but polite; avoid excessive small talk in business settings. (4) <strong>Stravenky</strong> -- meal vouchers are a beloved benefit; ask about them during job negotiations. (5) <strong>Home office</strong> -- increasingly common since COVID; many IT companies offer hybrid or full remote work.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="local" class="tab-content">
+            <h2 class="section-title">Local Prices & Everyday Costs</h2>
+            <p class="section-subtitle">What things actually cost day-to-day in Czech Republic. Prices in CZK, Prague-based unless noted.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Food & Drink</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Low (CZK)</th><th>High (CZK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Coffee (kavarna)</td><td class="czk">60</td><td class="czk">90</td><td>Espresso or cappuccino; specialty coffee shops CZK 80-120</td></tr>
+                    <tr><td>Beer 0.5L (hospoda)</td><td class="czk">45</td><td class="czk">70</td><td>Pilsner Urquell, Staropramen, Kozel; craft beer CZK 70-100</td></tr>
+                    <tr><td>Svickova na smetane</td><td class="czk">180</td><td class="czk">250</td><td>National dish: marinated beef with cream sauce and knedliky</td></tr>
+                    <tr><td>Lunch menu (poledni menu)</td><td class="czk">150</td><td class="czk">200</td><td>Weekday lunch specials at restaurants; soup + main course</td></tr>
+                    <tr><td>Dinner at restaurant</td><td class="czk">250</td><td class="czk">500</td><td>Mid-range restaurant; fine dining CZK 800+</td></tr>
+                    <tr><td>Trdlo (chimney cake)</td><td class="czk">80</td><td class="czk">120</td><td>Popular street food; tourist areas more expensive</td></tr>
+                    <tr><td>Bread (chleb, 1kg)</td><td class="czk">30</td><td class="czk">50</td><td>Rohlik (roll) CZK 3-5 each at bakery</td></tr>
+                    <tr><td>Milk (1 litre)</td><td class="czk">22</td><td class="czk">30</td><td>Madeta, Olma brands; bio/organic more</td></tr>
+                    <tr><td>Chicken breast (1kg)</td><td class="czk">130</td><td class="czk">180</td><td>Supermarket price; butcher slightly more</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Entertainment & Services</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Low (CZK)</th><th>High (CZK)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Cinema ticket</td><td class="czk">200</td><td class="czk">280</td><td>Cinema City, CineStar; IMAX/premium CZK 300+</td></tr>
+                    <tr><td>Gym membership</td><td class="czk">600</td><td class="czk">1,200</td><td>Monthly; John Reed, Fitness Park; Multisport card CZK 1,100-1,500</td></tr>
+                    <tr><td>Haircut (men)</td><td class="czk">200</td><td class="czk">400</td><td>Barber shops; women CZK 400-800</td></tr>
+                    <tr><td>Theater / concert</td><td class="czk">200</td><td class="czk">800</td><td>National Theatre, Rudolfinum; standing tickets cheaper</td></tr>
+                    <tr><td>Swimming pool (entry)</td><td class="czk">100</td><td class="czk">200</td><td>Public pools (plovarna); aquaparks more</td></tr>
+                    <tr><td>Monthly streaming (Netflix)</td><td class="czk">200</td><td class="czk">350</td><td>Standard to Premium plan</td></tr>
+                    <tr><td>Domestic postage (letter)</td><td class="czk">19</td><td class="czk">27</td><td>Ceska posta standard letter</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Essentials</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Beer culture</strong> -- Czech Republic has the highest beer consumption per capita in the world; beer is often cheaper than water in restaurants. (2) <strong>Tipping</strong> -- round up to nearest 10 CZK or add 10%; say the total you want to pay when handing over money. (3) <strong>Cash vs card</strong> -- cards widely accepted in Prague; smaller towns and pubs may prefer cash. (4) <strong>Shoes off indoors</strong> -- always remove shoes when entering a Czech home; hosts usually offer papuce (slippers). (5) <strong>Name days</strong> -- Czechs celebrate jmeniny (name days) almost as much as birthdays.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Czech Republic</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~25,000</div>
+                    <div class="stat-unit">CZK/month net minimum</div>
+                    <div class="stat-desc">Bare minimum for single in Prague (frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~40,000</div>
+                    <div class="stat-unit">CZK/month net comfortable</div>
+                    <div class="stat-desc">Comfortable single lifestyle in Prague</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~33,000</div>
+                    <div class="stat-unit">CZK gross for minimum</div>
+                    <div class="stat-desc">Gross salary needed for ~25,000 net</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~53,000</div>
+                    <div class="stat-unit">CZK gross for comfortable</div>
+                    <div class="stat-desc">Gross salary needed for ~40,000 net</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (CZK)</th><th>Gross Salary Needed (CZK)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal</small></td><td class="czk">15,000</td><td class="czk">22,000</td><td class="czk">17,000</td><td class="czk czk-low">+2,000</td></tr>
+                    <tr><td><strong>Basic single (outside Prague)</strong><br><small>Own flat in Brno/Ostrava</small></td><td class="czk">20,000</td><td class="czk">28,000</td><td class="czk">22,000</td><td class="czk czk-low">+2,000</td></tr>
+                    <tr><td><strong>Single in Prague (frugal)</strong><br><small>1-bed apartment, careful spending</small></td><td class="czk">28,000</td><td class="czk">38,000</td><td class="czk">30,000</td><td class="czk czk-low">+2,000</td></tr>
+                    <tr><td><strong>Single in Prague (comfortable)</strong><br><small>Nice apartment, dining out, hobbies</small></td><td class="czk">40,000</td><td class="czk">55,000</td><td class="czk">42,000</td><td class="czk czk-low">+2,000</td></tr>
+                    <tr><td><strong>Couple in Prague</strong><br><small>2 adults, good lifestyle</small></td><td class="czk">55,000</td><td class="czk">75,000</td><td class="czk">58,000</td><td class="czk czk-low">+3,000</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Prague</small></td><td class="czk">65,000</td><td class="czk">90,000</td><td class="czk">68,000</td><td class="czk czk-low">+3,000</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Register your address at the <strong>cizinecka policie</strong> (foreign police) or town hall within 30 days. (2) Open a bank account (Fio banka, Ceska sporitelna, Komercni banka, or Revolut). (3) Get health insurance -- your employer handles this for employees; self-employed must register directly with VZP/CPZP. (4) Get a <strong>Litacka</strong> transport card (CZK 550/month for Prague). (5) Buy a Czech SIM card (T-Mobile, O2, Vodafone; or budget Kaktus). (6) Get your <strong>rodne cislo</strong> (birth number / personal ID) if staying long-term. (7) Register with a GP (prakticky lekar) near your home. (8) Download Mapy.cz -- the best map app for Czech Republic.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax rates change periodically. Always verify current rates with official sources (CSU, Financni sprava, your pojistovna) before making financial decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Czech Republic Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#D7141A;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden Guide</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands Guide</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK Guide</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany Guide</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada Guide</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia Guide</a> |
+                <a href="austria-guide.html" style="color:#EF3340;">Austria Guide</a> |
+                <a href="uae-guide.html" style="color:#C8102E;">UAE Guide</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore Guide</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway Guide</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA Guide</a> |
+                <a href="denmark-guide.html" style="color:#C8102E;">Denmark Guide</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand Guide</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia Guide</a> |
+                <a href="switzerland-guide.html" style="color:#FF0000;">Switzerland Guide</a> |
+                <a href="france-guide.html" style="color:#002395;">France Guide</a> |
+                <a href="spain-guide.html" style="color:#F1BF00;">Spain Guide</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal Guide</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland Guide</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan Guide</a> |
+                <a href="italy-guide.html" style="color:#008C45;">Italy Guide</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland Guide</a> |
+                <a href="czech-republic-guide.html" style="color:#11457E;">Czech Republic Guide</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const czPppCountries = [
+        { name: 'Switzerland', ppp: 236, region: 'Western Europe' },
+        { name: 'Norway', ppp: 204, region: 'Nordic' },
+        { name: 'Denmark', ppp: 193, region: 'Nordic' },
+        { name: 'Singapore', ppp: 185, region: 'Southeast Asia' },
+        { name: 'USA', ppp: 182, region: 'North America' },
+        { name: 'Australia', ppp: 173, region: 'Oceania' },
+        { name: 'Sweden', ppp: 167, region: 'Nordic' },
+        { name: 'Netherlands', ppp: 164, region: 'Western Europe' },
+        { name: 'Ireland', ppp: 164, region: 'Western Europe' },
+        { name: 'Finland', ppp: 160, region: 'Nordic' },
+        { name: 'United Kingdom', ppp: 158, region: 'Western Europe' },
+        { name: 'Austria', ppp: 156, region: 'Western Europe' },
+        { name: 'Germany', ppp: 155, region: 'Western Europe' },
+        { name: 'Canada', ppp: 153, region: 'North America' },
+        { name: 'Belgium', ppp: 151, region: 'Western Europe' },
+        { name: 'France', ppp: 149, region: 'Western Europe' },
+        { name: 'New Zealand', ppp: 145, region: 'Oceania' },
+        { name: 'Japan', ppp: 142, region: 'East Asia' },
+        { name: 'Italy', ppp: 138, region: 'Southern Europe' },
+        { name: 'UAE', ppp: 136, region: 'Middle East' },
+        { name: 'South Korea', ppp: 131, region: 'East Asia' },
+        { name: 'Spain', ppp: 124, region: 'Southern Europe' },
+        { name: 'Portugal', ppp: 109, region: 'Southern Europe' },
+        { name: 'Czech Republic', ppp: 100, region: 'Central Europe' },
+        { name: 'Saudi Arabia', ppp: 95, region: 'Middle East' },
+        { name: 'Poland', ppp: 91, region: 'Central Europe' },
+        { name: 'Brazil', ppp: 82, region: 'South America' },
+    ];
+
+    function calculateCZPPP() {
+        const amount = parseFloat(document.getElementById('czPppAmount').value) || 35000;
+        const tbody = document.querySelector('#czPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#czPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} CZK buys equiv. of`;
+
+        czPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : c.ppp < 100 ? `${100 - c.ppp}% cheaper` : 'Baseline';
+            const color = c.ppp > 100 ? '#dc2626' : c.ppp < 100 ? '#059669' : '#11457E';
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.ppp}</td><td>${c.region}</td><td class="czk" style="color:${color}">${equiv.toLocaleString()} CZK (${diff})</td></tr>`;
+        });
+    }
+    calculateCZPPP();
+
+    // Czech Tax Calculator
+    function calculateCZTax() {
+        const monthlyGross = parseFloat(document.getElementById('czGrossSalary').value) || 50000;
+        const children = parseInt(document.getElementById('czChildren').value) || 0;
+        const isStudent = document.getElementById('czStudent').value === 'yes';
+        const annualGross = monthlyGross * 12;
+
+        // Social insurance (employee share): 6.5%
+        const socialIns = monthlyGross * 0.065;
+        // Health insurance (employee share): 4.5%
+        const healthIns = monthlyGross * 0.045;
+        const totalSocial = socialIns + healthIns;
+
+        // Taxable income = gross (super-gross abolished in 2021)
+        const monthlyTaxBase = monthlyGross;
+        const annualTaxBase = monthlyTaxBase * 12;
+
+        // Tax calculation
+        const threshold = 1935552; // 48x average wage approx
+        let annualTax = 0;
+        if (annualTaxBase <= threshold) {
+            annualTax = annualTaxBase * 0.15;
+        } else {
+            annualTax = threshold * 0.15 + (annualTaxBase - threshold) * 0.23;
+        }
+
+        // Tax credits (slevy na dani)
+        let annualCredits = 30840; // basic taxpayer credit
+        if (isStudent) annualCredits += 4020;
+
+        // Child tax bonus
+        let childBonus = 0;
+        if (children >= 1) childBonus += 15204;
+        if (children >= 2) childBonus += 22320;
+        if (children >= 3) childBonus += 27840;
+
+        annualTax = Math.max(0, annualTax - annualCredits);
+        annualTax = Math.max(0, annualTax - childBonus);
+
+        const monthlyTax = annualTax / 12;
+        const totalDeductions = totalSocial + monthlyTax;
+        const netMonthly = monthlyGross - totalDeductions;
+        const effectiveRate = ((totalDeductions / monthlyGross) * 100);
+
+        const resultDiv = document.getElementById('czTaxResult');
+        resultDiv.innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#11457E; font-weight:800;">${Math.round(monthlyGross).toLocaleString()} CZK</span></div>
+                <div><strong>Income tax:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(monthlyTax).toLocaleString()} CZK</span></div>
+                <div><strong>Social + health:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalSocial).toLocaleString()} CZK</span></div>
+                <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} CZK</span></div>
+                <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+            </div>
+            <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                <div>Social insurance (6.5%): ${Math.round(socialIns).toLocaleString()} CZK/mo</div>
+                <div>Health insurance (4.5%): ${Math.round(healthIns).toLocaleString()} CZK/mo</div>
+                <div>Tax credits applied: ${Math.round(annualCredits / 12).toLocaleString()} CZK/mo</div>
+                ${childBonus > 0 ? `<div>Child bonus: ${Math.round(childBonus / 12).toLocaleString()} CZK/mo</div>` : ''}
+            </div>
+            <div style="margin-top:12px; padding:10px; background:${netMonthly >= 25000 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                <strong style="color:${netMonthly >= 25000 ? '#059669' : '#dc2626'};">${netMonthly >= 25000 ? '&#10003;' : '&#10007;'} Prague survival check:</strong>
+                Need ~25,000 CZK net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 25000 ? '+' : ''}${Math.round(netMonthly - 25000).toLocaleString()} buffer)
+            </div>
+        `;
+    }
+    </script>
+</body>
+</html>

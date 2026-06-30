@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos</title>
+    <meta name="description" content="Complete guide to living costs in Poland 2026. Monthly expenses, salary by profession, PIT tax calculator, NFZ healthcare, and PPP comparisons for expats.">
+    <meta name="keywords" content="poland living cost, poland salary, polish tax, cost of living warsaw, expat poland, koszty życia Polska">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Poland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta property="og:description" content="Complete guide to living costs in Poland 2026. Monthly expenses, salary by profession, PIT tax calculator, NFZ healthcare, and PPP comparisons for expats.">
+    <meta property="og:url" content="https://compressphotos.cloud/poland-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CompressPhotos">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Poland Living Cost Guide 2026 | Salaries, Expenses & Tax Calculator - CompressPhotos">
+    <meta name="twitter:description" content="Complete guide to living costs in Poland 2026. Monthly expenses, salary by profession, PIT tax calculator, NFZ healthcare, and PPP comparisons for expats.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80">
+    <link rel="canonical" href="https://compressphotos.cloud/poland-guide.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F1F5;&#x1F1F1;</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #DC143C 0%, #A0102E 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+        .guide-hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .guide-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; }
+        .last-updated { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+        .hero-photo {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .hero-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+        .guide-tabs {
+            display: flex; gap: 0; background: #1e293b;
+            border-radius: 12px 12px 0 0; overflow-x: auto;
+            z-index: 100;
+        }
+        .guide-tab {
+            padding: 14px 16px; cursor: pointer; white-space: nowrap;
+            color: #94a3b8; font-weight: 600; border: none; background: none;
+            font-size: 14px; transition: all 0.2s;
+        }
+        .guide-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+        .guide-tab.active { color: #DC143C; border-bottom: 3px solid #DC143C; background: rgba(255,255,255,0.05); }
+        .guide-tabs::-webkit-scrollbar { height: 4px; }
+        .guide-tabs::-webkit-scrollbar-track { background: #1e293b; }
+        .guide-tabs::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+
+        .tab-content { display: none; padding: 40px 0; }
+        .tab-content.active { display: block; }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .data-table th {
+            background: #1e293b; color: white; padding: 14px 16px;
+            text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover { background: #f1f5f9; }
+        .data-table .subtotal td { font-weight: 700; background: #f8fafc; border-top: 2px solid #e2e8f0; }
+        .data-table .grand-total td { font-weight: 700; background: #DC143C; color: white; font-size: 15px; }
+        .data-table .category-header td { font-weight: 700; color: #DC143C; background: #fff5f5; }
+
+        .pln { font-family: 'Courier New', monospace; font-weight: 600; }
+        .pln-low { color: #059669; }
+        .pln-high { color: #dc2626; }
+
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card-guide {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .stat-card-guide .stat-value { font-size: 2rem; font-weight: 800; color: #1e293b; }
+        .stat-card-guide .stat-unit { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-card-guide .stat-desc { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+
+        .salary-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+        .salary-bar-label { min-width: 180px; font-size: 14px; font-weight: 500; }
+        .salary-bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 6px; position: relative; overflow: hidden; }
+        .salary-bar-fill {
+            height: 100%; border-radius: 6px; display: flex; align-items: center;
+            padding-left: 10px; color: white; font-size: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #DC143C, #FF6B6B);
+            transition: width 1s ease;
+        }
+
+        .info-box {
+            background: #fff5f5; border-left: 4px solid #DC143C; padding: 16px 20px;
+            border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; line-height: 1.6;
+        }
+        .info-box i { color: #DC143C; margin-right: 8px; }
+
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+        .section-subtitle { color: #64748b; margin-bottom: 24px; font-size: 15px; }
+
+        .calc-container {
+            background: white; border-radius: 12px; padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;
+        }
+        .calc-container label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+        .calc-container input, .calc-container select {
+            width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 15px; transition: border-color 0.2s;
+        }
+        .calc-container input:focus, .calc-container select:focus { border-color: #DC143C; outline: none; }
+        .calc-btn {
+            background: linear-gradient(135deg, #DC143C, #A0102E); color: white; border: none;
+            padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 700;
+            cursor: pointer; margin-top: 16px; width: 100%;
+        }
+        .calc-result { margin-top: 20px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            .guide-hero h1 { font-size: 1.5rem; }
+            .guide-tabs { border-radius: 0; }
+            .guide-tab { padding: 12px 16px; font-size: 12px; }
+            .salary-bar-label { min-width: 120px; font-size: 12px; }
+            .hero-photo img { height: 200px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Poland Living Cost Guide 2026",
+      "description": "Complete guide to living costs in Poland 2026. Monthly expenses, salary by profession, PIT tax calculator, NFZ healthcare, and PPP comparisons for expats.",
+      "image": "https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80",
+      "datePublished": "2026-06-29",
+      "dateModified": "2026-06-29",
+      "author": {"@type": "Organization", "name": "CompressPhotos"},
+      "publisher": {"@type": "Organization", "name": "CompressPhotos", "url": "https://compressphotos.cloud"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://compressphotos.cloud/poland-guide.html"}
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+                    <i class="fas fa-images"></i>
+                    <span>CompressPhotos</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Compress</a>
+                <a href="schengen-visa-photo.html" class="nav-link"><i class="fas fa-passport"></i> Visa Photo</a>
+                <div class="nav-dropdown" id="guidesDropdown">
+                    <button class="nav-dropdown-toggle" style="color:#DC143C; font-weight:700;" onclick="this.parentElement.classList.toggle('open')">
+                        <i class="fas fa-globe-europe"></i> Living Cost Guides <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="sweden-guide.html"><span class="country-flag">🇸🇪</span><div>Sweden<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="netherlands-guide.html"><span class="country-flag">🇳🇱</span><div>Netherlands<small>30% ruling, expenses & more</small></div></a>
+                        <a href="uk-guide.html"><span class="country-flag">🇬🇧</span><div>United Kingdom<small>NHS, salaries, tax & more</small></div></a>
+                        <a href="germany-guide.html"><span class="country-flag">🇩🇪</span><div>Germany<small>Steuern, Miete & more</small></div></a>
+                        <a href="canada-guide.html"><span class="country-flag">🇨🇦</span><div>Canada<small>Immigration, RRSP & more</small></div></a>
+                        <a href="australia-guide.html"><span class="country-flag">🇦🇺</span><div>Australia<small>Medicare, super & more</small></div></a>
+                        <a href="austria-guide.html"><span class="country-flag">🇦🇹</span><div>Austria<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="uae-guide.html"><span class="country-flag">🇦🇪</span><div>UAE<small>Tax-free, Dubai & more</small></div></a>
+                        <a href="singapore-guide.html"><span class="country-flag">🇸🇬</span><div>Singapore<small>CPF, hawkers & more</small></div></a>
+                        <a href="norway-guide.html"><span class="country-flag">🇳🇴</span><div>Norway<small>Oil fund, fjords & more</small></div></a>
+                        <a href="usa-guide.html"><span class="country-flag">🇺🇸</span><div>USA<small>401k, healthcare & more</small></div></a>
+                        <a href="denmark-guide.html"><span class="country-flag">🇩🇰</span><div>Denmark<small>Hygge, flexicurity & more</small></div></a>
+                        <a href="new-zealand-guide.html"><span class="country-flag">🇳🇿</span><div>New Zealand<small>KiwiSaver, ACC & more</small></div></a>
+                        <a href="saudi-arabia-guide.html"><span class="country-flag">🇸🇦</span><div>Saudi Arabia<small>Tax-free, Vision 2030 & more</small></div></a>
+                        <a href="switzerland-guide.html"><span class="country-flag">🇨🇭</span><div>Switzerland<small>Cantons, Krankenkasse & more</small></div></a>
+                        <a href="france-guide.html"><span class="country-flag">🇫🇷</span><div>France<small>35h week, Secu & more</small></div></a>
+                        <a href="spain-guide.html"><span class="country-flag">🇪🇸</span><div>Spain<small>Tapas, siestas & more</small></div></a>
+                        <a href="portugal-guide.html"><span class="country-flag">🇵🇹</span><div>Portugal<small>NHR, D7 visa & more</small></div></a>
+                        <a href="ireland-guide.html"><span class="country-flag">🇮🇪</span><div>Ireland<small>Tech hub, craic & more</small></div></a>
+                        <a href="japan-guide.html"><span class="country-flag">🇯🇵</span><div>Japan<small>Shinkansen, konbini & more</small></div></a>
+                        <a href="italy-guide.html"><span class="country-flag">🇮🇹</span><div>Italy<small>Aperitivo, IRPEF & more</small></div></a>
+                        <a href="finland-guide.html"><span class="country-flag">🇫🇮</span><div>Finland<small>Sauna, sisu & more</small></div></a>
+                        <a href="poland-guide.html" style="background:#fff5f5;"><span class="country-flag">🇵🇱</span><div><strong>Poland</strong><small>You are here</small></div></a>
+                        <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-hero">
+        <div class="container">
+            <h1>Poland Living Cost Guide 2026</h1>
+            <p>Complete breakdown of monthly expenses, salaries by profession, Polish PIT tax system, NFZ healthcare, and PPP calculator. For expats and newcomers planning to move to Poland.</p>
+            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: June 29, 2026 | Next review: December 2026</div>
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80" alt="Warsaw Old Town, Poland - historic Polish landmark" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-tabs">
+            <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
+            <button class="guide-tab" data-tab="salary">Salaries</button>
+            <button class="guide-tab" data-tab="tax">Tax Calculator</button>
+            <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
+            <button class="guide-tab" data-tab="cities">City Comparison</button>
+            <button class="guide-tab" data-tab="healthcare">Healthcare</button>
+            <button class="guide-tab" data-tab="housing">Housing</button>
+            <button class="guide-tab" data-tab="transport">Transport</button>
+            <button class="guide-tab" data-tab="working">Working</button>
+            <button class="guide-tab" data-tab="local">Local Basics</button>
+            <button class="guide-tab" data-tab="summary">Survival Summary</button>
+        </div>
+
+        <!-- TAB 1: Monthly Expenses -->
+        <div id="expenses" class="tab-content active">
+            <h2 class="section-title">Monthly Living Expenses in Warsaw</h2>
+            <p class="section-subtitle">For a single person. All amounts in PLN (Polish zloty). Based on GUS data, real 2026 prices, and expat reports.</p>
+
+            <div class="info-box" style="margin-bottom:20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> These figures are <strong>monthly expenses (after-tax spending)</strong>. To earn this take-home, you need a higher gross salary. For example, to spend 5,000 PLN/month, you need roughly 7,200 PLN gross (~30% effective tax+ZUS contributions). See the <strong>Tax Calculator</strong> tab for details.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~5,000</div>
+                    <div class="stat-unit">PLN/month (low)</div>
+                    <div class="stat-desc">Frugal single in Warsaw</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~8,000</div>
+                    <div class="stat-unit">PLN/month (high)</div>
+                    <div class="stat-desc">Comfortable lifestyle</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~7,200</div>
+                    <div class="stat-unit">PLN avg gross needed</div>
+                    <div class="stat-desc">Gross salary to cover low-end expenses</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~7,800</div>
+                    <div class="stat-unit">PLN avg monthly gross</div>
+                    <div class="stat-desc">Poland-wide median gross salary</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Category</th><th>Item</th><th>Low (PLN)</th><th>High (PLN)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr class="category-header"><td colspan="5">Housing</td></tr>
+                    <tr><td></td><td>Rent (1-bedroom apartment, Warsaw)</td><td class="pln">2,500</td><td class="pln">4,000</td><td>Centre 3,000-4,000; outskirts 2,500-3,000; includes czynsz administracyjny</td></tr>
+                    <tr><td></td><td>Utilities (electricity, heating, water, garbage)</td><td class="pln">500</td><td class="pln">800</td><td>Higher in winter (heating); includes gas, water, electricity</td></tr>
+                    <tr><td></td><td>Internet</td><td class="pln">60</td><td class="pln">100</td><td>UPC, Orange, Play, Vectra; fiber widely available</td></tr>
+                    <tr><td></td><td>Mobile phone</td><td class="pln">30</td><td class="pln">60</td><td>Play, Orange, T-Mobile, Plus; budget: nju mobile, a]2</td></tr>
+                    <tr class="subtotal"><td></td><td>Housing subtotal</td><td class="pln">3,090</td><td class="pln">4,960</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Food & Groceries</td></tr>
+                    <tr><td></td><td>Groceries (1 person)</td><td class="pln">1,200</td><td class="pln">1,800</td><td>Biedronka, Lidl cheapest; Zabka convenience; Auchan, Carrefour for bulk</td></tr>
+                    <tr class="subtotal"><td></td><td>Food subtotal</td><td class="pln">1,200</td><td class="pln">1,800</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Transport</td></tr>
+                    <tr><td></td><td>ZTM monthly pass (Warsaw)</td><td class="pln">110</td><td class="pln">110</td><td>Zones 1+2; metro, buses, trams; 20-minute single ticket 4.40 PLN</td></tr>
+                    <tr><td></td><td>Occasional taxi / Bolt / Uber</td><td class="pln">0</td><td class="pln">200</td><td>Bolt, Uber, FreeNow widely available; 5-10 PLN/km</td></tr>
+                    <tr class="subtotal"><td></td><td>Transport subtotal</td><td class="pln">110</td><td class="pln">310</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Health</td></tr>
+                    <tr><td></td><td>NFZ (public) via employer</td><td class="pln">0</td><td class="pln">0</td><td>Covered by employer ZUS contributions; deducted from gross</td></tr>
+                    <tr><td></td><td>Private healthcare (optional)</td><td class="pln">0</td><td class="pln">300</td><td>Medicover, LuxMed, Enel-Med packages PLN 100-300/month</td></tr>
+                    <tr class="subtotal"><td></td><td>Health subtotal</td><td class="pln">0</td><td class="pln">300</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Personal & Lifestyle</td></tr>
+                    <tr><td></td><td>Clothes</td><td class="pln">150</td><td class="pln">300</td><td>Reserved, H&M, Zara; outlet shopping popular</td></tr>
+                    <tr><td></td><td>Personal care</td><td class="pln">80</td><td class="pln">150</td><td>Haircuts, toiletries (Rossmann, Hebe)</td></tr>
+                    <tr><td></td><td>Sport & leisure</td><td class="pln">100</td><td class="pln">250</td><td>Gym 100-180 PLN; MultiSport card popular (~150 PLN via employer)</td></tr>
+                    <tr><td></td><td>Dining out & entertainment</td><td class="pln">200</td><td class="pln">500</td><td>Restaurants, cinema, bars, cultural events</td></tr>
+                    <tr class="subtotal"><td></td><td>Personal subtotal</td><td class="pln">530</td><td class="pln">1,200</td><td></td></tr>
+
+                    <tr class="category-header"><td colspan="5">Insurance</td></tr>
+                    <tr><td></td><td>Renters insurance (optional)</td><td class="pln">15</td><td class="pln">30</td><td>OC/AC mieszkania; covers contents and liability</td></tr>
+                    <tr class="subtotal"><td></td><td>Insurance subtotal</td><td class="pln">15</td><td class="pln">30</td><td></td></tr>
+
+                    <tr class="grand-total"><td colspan="2"><i class="fas fa-calculator"></i> TOTAL MONTHLY EXPENSES</td><td class="pln">~4,945</td><td class="pln">~8,600</td><td>Realistic range: 5,000 - 8,000 with buffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Poland</h2>
+            <p class="section-subtitle">Monthly gross salaries in PLN. Data from GUS, Pracuj.pl, Glassdoor, and Just Join IT 2026.</p>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>B2B vs UoP:</strong> Many Polish IT professionals work on B2B contracts (samozatrudnienie) instead of umowa o prace (employment contract). B2B salaries are typically 20-40% higher gross but you pay your own ZUS and have fewer protections. The figures below show UoP (employment contract) gross salaries.
+            </div>
+
+            <div style="margin:30px 0;">
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;">20,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">IT Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:90%;">18,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (specialist)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:75%;">15,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Data Scientist</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%;">14,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Software Engineer (mid)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:60%;">12,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Lawyer</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%;">11,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Accountant (senior)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:50%;">10,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Marketing Manager</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:45%;">9,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Doctor (resident)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:40%;">8,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Nurse</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:35%;">7,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (experienced)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:38%;">7,500 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Electrician</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:33%;">6,500 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Administrative worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:30%;">6,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Teacher (starting)</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:25%;">5,000 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Retail Worker</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:24%;">4,800 PLN</div></div></div>
+                <div class="salary-bar"><span class="salary-bar-label">Minimum Wage</span><div class="salary-bar-track"><div class="salary-bar-fill" style="width:23%;">4,666 PLN</div></div></div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-coins"></i>
+                <strong>Minimum wage (2026):</strong> Poland's statutory minimum wage (placa minimalna) is 4,666 PLN/month gross (approximately 28.10 PLN/hour). This is reviewed twice yearly by the government. After tax and ZUS deductions, net take-home is approximately 3,510 PLN.
+            </div>
+        </div>
+
+        <!-- TAB 3: Tax Calculator -->
+        <div id="tax" class="tab-content">
+            <h2 class="section-title">Polish Tax System (PIT)</h2>
+            <p class="section-subtitle">Poland uses a progressive income tax (PIT) plus mandatory ZUS social contributions. Updated for 2026 tax year under Polski Lad reforms.</p>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Income Tax Brackets (PIT)</h3>
+            <table class="data-table">
+                <thead><tr><th>Annual Taxable Income (PLN)</th><th>Tax Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>0 - 30,000</td><td class="pln">0%</td><td>Kwota wolna od podatku (tax-free allowance)</td></tr>
+                    <tr><td>30,001 - 120,000</td><td class="pln">12%</td><td>First tax bracket (Polski Lad reform reduced from 17%)</td></tr>
+                    <tr><td>120,001+</td><td class="pln">32%</td><td>Second bracket; applies only to income above 120,000 PLN</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">ZUS Social Contributions (Employee Share)</h3>
+            <table class="data-table">
+                <thead><tr><th>Contribution</th><th>Employee Rate</th><th>Employer Rate</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Pension (emerytalna)</td><td class="pln">9.76%</td><td class="pln">9.76%</td><td>Mandatory; capped at 30x national average monthly salary</td></tr>
+                    <tr><td>Disability (rentowa)</td><td class="pln">1.50%</td><td class="pln">6.50%</td><td>Employee pays less than employer</td></tr>
+                    <tr><td>Sickness (chorobowa)</td><td class="pln">2.45%</td><td class="pln">-</td><td>Employee only; enables sick leave pay</td></tr>
+                    <tr><td>Health insurance (zdrowotna)</td><td class="pln">9.00%</td><td class="pln">-</td><td>Calculated on gross minus social; NOT tax-deductible under Polski Lad</td></tr>
+                    <tr class="subtotal"><td><strong>Total employee share</strong></td><td class="pln"><strong>~13.71% + 9% health</strong></td><td class="pln">-</td><td>Effective total deduction ~22-25% before income tax</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Net Salary Calculator</h3>
+            <div class="calc-container">
+                <label for="plGrossSalary">Monthly Gross Salary (PLN):</label>
+                <input type="number" id="plGrossSalary" value="10000" min="0" max="200000">
+                <label for="plContractType">Contract type:</label>
+                <select id="plContractType">
+                    <option value="uop">Umowa o prace (employment)</option>
+                    <option value="b2b">B2B (self-employed, 19% flat tax)</option>
+                </select>
+                <label for="plAge26">Under 26 years old? (PIT exemption up to 85,528 PLN/year)</label>
+                <select id="plAge26">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <button class="calc-btn" onclick="calculatePLTax()">Calculate Net Salary</button>
+                <div class="calc-result" id="plTaxResult"></div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Quick Reference: Net Pay by Gross (UoP)</h3>
+            <table class="data-table">
+                <thead><tr><th>Monthly Gross</th><th>Annual Gross</th><th>Tax + ZUS</th><th>Net Monthly</th><th>Effective Rate</th></tr></thead>
+                <tbody>
+                    <tr><td class="pln">5,000</td><td class="pln">60,000</td><td class="pln">~1,370</td><td class="pln" style="color:#059669; font-weight:700;">~3,630</td><td>27.4%</td></tr>
+                    <tr><td class="pln">7,500</td><td class="pln">90,000</td><td class="pln">~2,230</td><td class="pln" style="color:#059669; font-weight:700;">~5,270</td><td>29.7%</td></tr>
+                    <tr><td class="pln">10,000</td><td class="pln">120,000</td><td class="pln">~3,080</td><td class="pln" style="color:#059669; font-weight:700;">~6,920</td><td>30.8%</td></tr>
+                    <tr><td class="pln">15,000</td><td class="pln">180,000</td><td class="pln">~5,100</td><td class="pln" style="color:#059669; font-weight:700;">~9,900</td><td>34.0%</td></tr>
+                    <tr><td class="pln">20,000</td><td class="pln">240,000</td><td class="pln">~7,200</td><td class="pln" style="color:#059669; font-weight:700;">~12,800</td><td>36.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: PPP Calculator -->
+        <div id="ppp" class="tab-content">
+            <h2 class="section-title">Purchasing Power Parity (PPP) Calculator</h2>
+            <p class="section-subtitle">Compare how far your Polish salary goes in other countries. Based on World Bank/OECD 2025-2026 PPP indices. Poland = 100.</p>
+
+            <div class="calc-container">
+                <label for="plPppAmount">Your monthly spending in Poland (PLN):</label>
+                <input type="number" id="plPppAmount" value="6000" min="100" max="100000">
+                <button class="calc-btn" onclick="calculatePLPPP()">Compare Purchasing Power</button>
+            </div>
+
+            <table class="data-table" id="plPppTable">
+                <thead><tr><th>Country</th><th>PPP Index (PL=100)</th><th>Region</th><th>6,000 PLN buys equiv. of</th></tr></thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>How to read:</strong> Poland = 100. If Switzerland has a PPP index of 260, your 6,000 PLN in Poland has the same purchasing power as 6,000 x (260/100) = 15,600 PLN equivalent in Switzerland. You'd need 160% more money in Switzerland for the same standard of living.
+            </div>
+        </div>
+
+        <!-- TAB 5: City Comparison -->
+        <div id="cities" class="tab-content">
+            <h2 class="section-title">Cost of Living by City</h2>
+            <p class="section-subtitle">Comparing major Polish cities. Warsaw = most expensive baseline. Data: GUS, Numbeo, Otodom 2026.</p>
+
+            <table class="data-table">
+                <thead><tr><th>City</th><th>Avg Rent 1-bed (PLN)</th><th>Monthly Pass (PLN)</th><th>Meal Out (PLN)</th><th>Beer 0.5L (PLN)</th><th>Livability Note</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Warsaw</strong></td><td class="pln">2,500-4,000</td><td class="pln">110</td><td class="pln">35-60</td><td class="pln">12-15</td><td>Capital, most expensive; best job market; modern skyline</td></tr>
+                    <tr><td><strong>Krakow</strong></td><td class="pln">2,000-3,200</td><td class="pln">100</td><td class="pln">30-50</td><td class="pln">10-14</td><td>Tourist hub; historical; large expat community; smog in winter</td></tr>
+                    <tr><td><strong>Wroclaw</strong></td><td class="pln">1,800-3,000</td><td class="pln">110</td><td class="pln">28-45</td><td class="pln">10-13</td><td>IT hub; beautiful bridges; growing tech scene</td></tr>
+                    <tr><td><strong>Gdansk</strong></td><td class="pln">2,000-3,200</td><td class="pln">100</td><td class="pln">30-50</td><td class="pln">10-14</td><td>Coastal city; Tri-City area; great quality of life</td></tr>
+                    <tr><td><strong>Poznan</strong></td><td class="pln">1,800-2,800</td><td class="pln">98</td><td class="pln">25-45</td><td class="pln">9-13</td><td>Business hub; international trade fairs; student city</td></tr>
+                    <tr><td><strong>Lodz</strong></td><td class="pln">1,400-2,200</td><td class="pln">80</td><td class="pln">25-40</td><td class="pln">8-12</td><td>Most affordable big city; revitalized centre; film industry</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Warsaw vs rest of Poland:</strong> Warsaw salaries are typically 20-40% higher than other cities, but rents are also 30-50% more expensive. Cities like Wroclaw and Lodz offer excellent value -- strong IT job markets with significantly lower living costs. Remote work has made smaller cities increasingly attractive.
+            </div>
+        </div>
+
+        <!-- TAB 6: Healthcare -->
+        <div id="healthcare" class="tab-content">
+            <h2 class="section-title">Polish Healthcare System (NFZ)</h2>
+            <p class="section-subtitle">Poland has a public system (NFZ - Narodowy Fundusz Zdrowia) funded by mandatory contributions. Private healthcare is widespread as a supplement.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">9%</div>
+                    <div class="stat-unit">Health contribution rate</div>
+                    <div class="stat-desc">Deducted from gross salary (skladka zdrowotna)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Free</div>
+                    <div class="stat-unit">GP & specialist visits</div>
+                    <div class="stat-desc">Under NFZ; but long waiting times</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Medicover</div>
+                    <div class="stat-unit">Popular private provider</div>
+                    <div class="stat-desc">Also LuxMed, Enel-Med, PZU Zdrowie</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">100-300</div>
+                    <div class="stat-unit">PLN/month private</div>
+                    <div class="stat-desc">Individual package; often employer-paid</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:30px; color:#1e293b;">NFZ (Public) vs Private Healthcare</h3>
+            <table class="data-table">
+                <thead><tr><th>Feature</th><th>NFZ (Public)</th><th>Private (Medicover/LuxMed)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Cost</strong></td><td>9% of gross salary (mandatory)</td><td>100-300 PLN/month per person; often employer-subsidized</td></tr>
+                    <tr><td><strong>GP access</strong></td><td>Free; register with POZ (primary care)</td><td>Same-day or next-day appointments typical</td></tr>
+                    <tr><td><strong>Specialist waiting</strong></td><td>Weeks to months (sometimes 6-12 months)</td><td>Usually within days; no referral needed for most</td></tr>
+                    <tr><td><strong>Hospital</strong></td><td>Free; quality varies by facility</td><td>Private hospitals available; better rooms</td></tr>
+                    <tr><td><strong>Dental</strong></td><td>Basic care covered; limited providers</td><td>Usually included in premium packages</td></tr>
+                    <tr><td><strong>Prescriptions</strong></td><td>Subsidized (refundacja); varies 0-100%</td><td>Same subsidies apply; private doesn't change drug costs</td></tr>
+                    <tr><td><strong>Emergency (SOR)</strong></td><td>Free for everyone; dial 112</td><td>Same emergency care; no private ER in Poland</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">What's Covered by NFZ</h3>
+            <table class="data-table">
+                <thead><tr><th>Service</th><th>Cost (NFZ)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>GP visit (lekarz POZ)</td><td class="pln">Free</td><td>Register with a POZ clinic; brings skierowanie (referral) for specialists</td></tr>
+                    <tr><td>Specialist visit</td><td class="pln">Free</td><td>Requires skierowanie from POZ; long wait times (weeks to months)</td></tr>
+                    <tr><td>Hospital stay</td><td class="pln">Free</td><td>Fully covered; bring own toiletries; food quality varies</td></tr>
+                    <tr><td>Prescription drugs</td><td class="pln">Subsidized</td><td>Refundacja system: 100%, 70%, 50%, or 30% coverage depending on drug</td></tr>
+                    <tr><td>Dental (basic)</td><td class="pln">Free (limited)</td><td>Basic fillings and extractions; very few NFZ dentists; most go private</td></tr>
+                    <tr><td>Maternity</td><td class="pln">Fully covered</td><td>Prenatal care, delivery, postnatal care all covered</td></tr>
+                    <tr><td>Mental health</td><td class="pln">Free</td><td>Psychiatrist and psychologist covered; extremely long waits</td></tr>
+                    <tr><td>Ambulance / Emergency</td><td class="pln">Free</td><td>SOR (Szpitalny Oddzial Ratunkowy); dial 112 or 999</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Practical advice:</strong> Most employed expats in Poland use a combination of NFZ (for hospital/emergency) and private healthcare (for daily needs). Employer-provided packages from Medicover or LuxMed are extremely common -- ask during job negotiations. Private packages typically include unlimited GP visits, specialists, basic diagnostics, and dental.
+            </div>
+        </div>
+
+        <!-- TAB 7: Housing -->
+        <div id="housing" class="tab-content">
+            <h2 class="section-title">Housing in Poland (Szukanie mieszkania)</h2>
+            <p class="section-subtitle">The Polish rental market is competitive in major cities, especially Warsaw and Krakow. Understanding key terms saves time and money.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Key Terms</h3>
+            <table class="data-table">
+                <thead><tr><th>Polish Term</th><th>English</th><th>Explanation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Czynsz</strong></td><td>Rent / admin fee</td><td>Can mean total rent OR just the admin fee (czynsz administracyjny) -- always clarify</td></tr>
+                    <tr><td><strong>Czynsz administracyjny</strong></td><td>Building admin fee</td><td>Monthly fee to spoldzielnia/wspolnota (housing cooperative); covers common areas, garbage, water</td></tr>
+                    <tr><td><strong>Kaucja</strong></td><td>Security deposit</td><td>Typically 1-2 months rent; returned at end of lease minus damages</td></tr>
+                    <tr><td><strong>Umowa najmu</strong></td><td>Rental agreement</td><td>Should be written; defines rent, deposit, notice period; register with urzad skarbowy for tax</td></tr>
+                    <tr><td><strong>Najem okazjonalny</strong></td><td>Occasional rental</td><td>Special contract type giving landlord easier eviction rights; requires notarial deed</td></tr>
+                    <tr><td><strong>Akt notarialny</strong></td><td>Notarial deed</td><td>Required for property purchase; notary fees 0.5-3% of property value</td></tr>
+                    <tr><td><strong>Ksiega wieczysta</strong></td><td>Land register</td><td>Check online at ekw.ms.gov.pl; verifies ownership and encumbrances</td></tr>
+                    <tr><td><strong>Zameldowanie</strong></td><td>Address registration</td><td>Required within 30 days for foreigners; at urzad gminy; landlord must agree</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Where to Search</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Type</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Otodom.pl</td><td>All types</td><td>Largest housing platform in Poland; best for apartments and houses</td></tr>
+                    <tr><td>OLX.pl</td><td>All types</td><td>General classifieds; many direct-from-owner listings; beware scams</td></tr>
+                    <tr><td>Gumtree.pl</td><td>All types</td><td>Popular with expats; English-friendly listings available</td></tr>
+                    <tr><td>Facebook groups</td><td>All types</td><td>"Mieszkania do wynajecia Warszawa" groups; active and fast</td></tr>
+                    <tr><td>Morizon.pl / Domiporta.pl</td><td>All types</td><td>Aggregator sites; compare listings across platforms</td></tr>
+                    <tr><td>Real estate agents</td><td>All types</td><td>Commission typically 1 month rent; helpful for non-Polish speakers</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Documents you'll need:</strong> Passport/ID, work contract or income proof, sometimes PESEL number (Polish ID number). For purchase: you'll need a notariusz (notary), akt notarialny, and potentially a bank mortgage (kredyt hipoteczny). Non-EU citizens buying agricultural land need government permission. Always verify the ksiega wieczysta (land register) before buying.
+            </div>
+        </div>
+
+        <!-- TAB 8: Transport -->
+        <div id="transport" class="tab-content">
+            <h2 class="section-title">Transport in Poland (Transport)</h2>
+            <p class="section-subtitle">Poland has improving public transport, an extensive intercity rail network, and affordable ride-sharing services.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">110</div>
+                    <div class="stat-unit">PLN/month</div>
+                    <div class="stat-desc">ZTM Warsaw monthly pass (Zones 1+2)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">PKP</div>
+                    <div class="stat-unit">Intercity trains</div>
+                    <div class="stat-desc">Pendolino, IC, TLK connecting major cities</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6.50</div>
+                    <div class="stat-unit">PLN/litre petrol</div>
+                    <div class="stat-desc">Diesel ~6.30 PLN; Orlen, BP, Shell stations</td>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">Bolt</div>
+                    <div class="stat-unit">Most popular ride-hail</div>
+                    <div class="stat-desc">Cheaper than Uber in Poland; also FreeNow</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Transport Type</th><th>Cost</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>ZTM Warsaw monthly pass</td><td class="pln">110 PLN/month</td><td>Zones 1+2; metro (2 lines), buses, trams; student discount 50%</td></tr>
+                    <tr><td>Single ticket (Warsaw)</td><td class="pln">4.40 PLN (20 min)</td><td>Also 3.40 PLN (zone 1 only); 75-min ticket 6.00 PLN</td></tr>
+                    <tr><td>PKP Intercity (Warsaw-Krakow)</td><td class="pln">60-180 PLN</td><td>Pendolino ~2.5 hours; book early on intercity.pl for best prices</td></tr>
+                    <tr><td>PKP Intercity (Warsaw-Gdansk)</td><td class="pln">50-150 PLN</td><td>Pendolino ~3 hours; TLK cheaper but slower</td></tr>
+                    <tr><td>FlixBus (intercity)</td><td class="pln">20-80 PLN</td><td>Budget intercity buses; extensive network; book online</td></tr>
+                    <tr><td>Bolt / Uber ride (city)</td><td class="pln">15-40 PLN</td><td>Typical city ride; Bolt usually 10-20% cheaper than Uber</td></tr>
+                    <tr><td>City bike (Veturilo Warsaw)</td><td class="pln">Free first 20 min</td><td>Annual subscription ~40 PLN; also Nextbike in other cities</td></tr>
+                    <tr><td>Car insurance (OC mandatory)</td><td class="pln">50-150 PLN/month</td><td>OC (liability) mandatory; AC (comprehensive) optional; compare on rankomat.pl</td></tr>
+                    <tr><td>Motorway tolls (autostrady)</td><td class="pln">Varies</td><td>e-TOLL system; A1, A2, A4 have tolled sections; vignette not needed</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-train"></i>
+                <strong>Pro tip:</strong> Buy PKP Intercity tickets on intercity.pl or the IC Mobile app at least 30 days in advance for "Tanie bilety" (cheap tickets) -- Warsaw-Krakow Pendolino from as low as 49 PLN. The Koleje Mazowieckie (KM) and SKM regional trains are affordable for suburban commuting. In Warsaw, the Warszawska Karta Miejska gives discounts on public transport.
+            </div>
+        </div>
+
+        <!-- TAB 9: Working in Poland -->
+        <div id="working" class="tab-content">
+            <h2 class="section-title">Working in Poland (Praca w Polsce)</h2>
+            <p class="section-subtitle">Polish employment law, work culture, and practical info for newcomers and expats.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">26</div>
+                    <div class="stat-unit">Vacation days/year</div>
+                    <div class="stat-desc">After 10+ years of work experience (20 days for less)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">3 months</div>
+                    <div class="stat-unit">Probation period</div>
+                    <div class="stat-desc">Okres probny; 2 weeks notice during this time</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">B2B</div>
+                    <div class="stat-unit">Popular in IT</div>
+                    <div class="stat-desc">Self-employment contracts; higher gross, less security</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">ZUS</div>
+                    <div class="stat-unit">Social security</div>
+                    <div class="stat-desc">Zaklad Ubezpieczen Spolecznych; mandatory contributions</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Topic</th><th>Details</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Umowa o prace (UoP)</strong></td><td>Standard employment contract; strongest worker protections</td><td>Full ZUS, health insurance, paid leave, sick pay; most secure contract type</td></tr>
+                    <tr><td><strong>B2B / Samozatrudnienie</strong></td><td>Self-employment contract; very popular in IT sector</td><td>Higher gross pay but you pay own ZUS (~1,600 PLN/month); no paid leave or sick pay</td></tr>
+                    <tr><td><strong>Umowa zlecenie</strong></td><td>Civil law contract (mandate contract)</td><td>Flexible; partial ZUS coverage; common for part-time or project work</td></tr>
+                    <tr><td><strong>Umowa o dzielo</strong></td><td>Contract for specific work/result</td><td>No ZUS (unless with employer); 50% tax-deductible costs for creative work</td></tr>
+                    <tr><td><strong>Work permit</strong></td><td>Required for non-EU citizens; employer applies</td><td>Type A (standard), EU Blue Card (highly skilled); processing 1-3 months</td></tr>
+                    <tr><td><strong>EU Blue Card</strong></td><td>For highly qualified workers earning 1.5x average salary</td><td>Fast-track residency; family reunification rights; path to permanent residence</td></tr>
+                    <tr><td><strong>Working hours</strong></td><td>Standard 40 hours/week (8h/day, 5 days)</td><td>Overtime paid at 150-200%; max 48h/week including overtime</td></tr>
+                    <tr><td><strong>Vacation (urlop)</strong></td><td>20 days (<10 years experience) or 26 days (10+ years)</td><td>Education years count toward experience (e.g., university = 8 years)</td></tr>
+                    <tr><td><strong>Sick leave (L4)</strong></td><td>Employer pays 80% for first 33 days; then ZUS pays</td><td>Electronic L4 (e-ZLA) sent directly to employer by doctor</td></tr>
+                    <tr><td><strong>Maternity leave</strong></td><td>20 weeks at 100% salary (or 52 weeks at 80%)</td><td>Urlop macierzynski; father gets 2 weeks (ojcowski)</td></tr>
+                    <tr><td><strong>Notice period</strong></td><td>2 weeks (probation), 1 month (<6mo), 3 months (3+ years)</td><td>Okres wypowiedzenia depends on tenure length</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">UoP vs B2B Comparison</h3>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <strong>The B2B question:</strong> In Polish IT, B2B contracts are extremely popular. Example at 20,000 PLN/month: <strong>UoP net ~12,800 PLN</strong> vs <strong>B2B net ~15,500 PLN</strong> (with 19% flat tax + ZUS preferential). However, B2B means no paid vacation, no sick leave, no severance, and you handle your own accounting (typically via an accountant for ~200-400 PLN/month). Many companies offer both options -- choose based on your risk tolerance and life situation.
+            </div>
+        </div>
+
+        <!-- TAB 10: Local Basics -->
+        <div id="local" class="tab-content">
+            <h2 class="section-title">Local Prices & Everyday Costs</h2>
+            <p class="section-subtitle">What things actually cost in Poland in 2026. Prices from Warsaw/Krakow; smaller cities 10-20% cheaper.</p>
+
+            <h3 style="margin-top:20px; color:#1e293b;">Food & Drink</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Low (PLN)</th><th>High (PLN)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Coffee (cafe)</td><td class="pln">12</td><td class="pln">18</td><td>Specialty coffee scene booming; Green Caffe Nero, Costa, local cafes</td></tr>
+                    <tr><td>Beer (pub, 0.5L)</td><td class="pln">8</td><td class="pln">15</td><td>Craft beer scene strong; Tyskie, Zywiec, Lech for mainstream</td></tr>
+                    <tr><td>Pierogi (restaurant, portion)</td><td class="pln">15</td><td class="pln">25</td><td>National dish; ruskie, z miesem, z kapusta i grzybami varieties</td></tr>
+                    <tr><td>Lunch menu (obiad)</td><td class="pln">20</td><td class="pln">35</td><td>Many restaurants offer "lunch menu" (zestaw obiadowy) 12:00-15:00</td></tr>
+                    <tr><td>Restaurant dinner</td><td class="pln">40</td><td class="pln">80</td><td>Mid-range restaurant; main course + drink</td></tr>
+                    <tr><td>McDonald's meal</td><td class="pln">25</td><td class="pln">35</td><td>Big Mac meal ~30 PLN; local fast food often cheaper</td></tr>
+                    <tr><td>Bread (loaf)</td><td class="pln">5</td><td class="pln">8</td><td>From Biedronka/Lidl; artisan bread 8-15 PLN</td></tr>
+                    <tr><td>Milk (1L)</td><td class="pln">4</td><td class="pln">6</td><td>Mlekpol, Mlekovita brands</td></tr>
+                    <tr><td>Chicken breast (1kg)</td><td class="pln">20</td><td class="pln">30</td><td>Supermarket prices; market/sklep cheaper</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Entertainment & Services</h3>
+            <table class="data-table">
+                <thead><tr><th>Item</th><th>Low (PLN)</th><th>High (PLN)</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>Cinema ticket</td><td class="pln">25</td><td class="pln">35</td><td>Multikino, Cinema City, Helios; IMAX ~45 PLN</td></tr>
+                    <tr><td>Gym membership</td><td class="pln">100</td><td class="pln">180</td><td>CityFit budget ~80 PLN; premium gyms 150-250 PLN</td></tr>
+                    <tr><td>MultiSport card</td><td class="pln">100</td><td class="pln">160</td><td>Access to gyms, pools, fitness classes; usually co-funded by employer</td></tr>
+                    <tr><td>Haircut (men)</td><td class="pln">40</td><td class="pln">80</td><td>Barber shops increasingly popular; women's cut 80-200 PLN</td></tr>
+                    <tr><td>Netflix subscription</td><td class="pln">33</td><td class="pln">60</td><td>Basic to premium; also HBO Max, Disney+, Canal+ available</td></tr>
+                    <tr><td>Museum entry</td><td class="pln">15</td><td class="pln">30</td><td>Many museums free on certain days; student discounts available</td></tr>
+                    <tr><td>Weekend trip (domestic)</td><td class="pln">500</td><td class="pln">1,200</td><td>Zakopane, Tri-City, Mazury; accommodation + transport + food</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:30px; color:#1e293b;">Cultural Tips</h3>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Things to know:</strong> (1) <strong>Imieniny</strong> -- name days are celebrated alongside birthdays; check the calendar. (2) <strong>Sklep monopolowy</strong> -- alcohol shops; supermarkets also sell alcohol but not after 22:00 in some cities. (3) <strong>Sunday trading ban</strong> -- most shops closed on Sundays (except 1st and last Sunday of month, and certain periods); Zabka stays open as a "postal" service. (4) <strong>Biedronka</strong> -- the cheapest mainstream supermarket; Lidl close second. (5) <strong>Tipping</strong> -- 10% in restaurants is standard; round up for taxis and delivery. (6) <strong>Polish people love complaining about Poland</strong> -- but are very proud of it; don't join in as a foreigner.
+            </div>
+        </div>
+
+        <!-- TAB 11: Survival Summary -->
+        <div id="summary" class="tab-content">
+            <h2 class="section-title">Minimum Earnings to Survive in Poland</h2>
+            <p class="section-subtitle">What gross salary do you need? Here's the realistic breakdown for Warsaw in 2026.</p>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">~4,500</div>
+                    <div class="stat-unit">PLN/month minimum</div>
+                    <div class="stat-desc">Bare minimum net for Warsaw (very frugal)</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~7,000</div>
+                    <div class="stat-unit">PLN/month comfortable</div>
+                    <div class="stat-desc">Comfortable single lifestyle in Warsaw</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~6,500</div>
+                    <div class="stat-unit">PLN gross needed (min)</div>
+                    <div class="stat-desc">Gross salary for minimum net survival</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~10,000</div>
+                    <div class="stat-unit">PLN gross recommended</div>
+                    <div class="stat-desc">Gross for comfortable Warsaw living</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead><tr><th>Lifestyle</th><th>Monthly Expenses (PLN)</th><th>Gross Salary Needed (PLN)</th><th>Net After Tax</th><th>Buffer</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Survival mode</strong><br><small>Shared flat, very frugal</small></td><td class="pln">3,000</td><td class="pln">4,666</td><td class="pln">3,510</td><td class="pln pln-low">+510</td></tr>
+                    <tr><td><strong>Basic single (Warsaw)</strong><br><small>Own flat, budget living</small></td><td class="pln">4,500</td><td class="pln">6,500</td><td class="pln">4,800</td><td class="pln pln-low">+300</td></tr>
+                    <tr><td><strong>Comfortable single</strong><br><small>Warsaw, good lifestyle</small></td><td class="pln">7,000</td><td class="pln">10,000</td><td class="pln">7,200</td><td class="pln pln-low">+200</td></tr>
+                    <tr><td><strong>Couple (Warsaw)</strong><br><small>2 adults, comfortable</small></td><td class="pln">9,000</td><td class="pln">13,000</td><td class="pln">9,500</td><td class="pln pln-low">+500</td></tr>
+                    <tr><td><strong>Family with child</strong><br><small>2 adults + 1 child, Warsaw</small></td><td class="pln">12,000</td><td class="pln">17,000</td><td class="pln">12,500</td><td class="pln pln-low">+500</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Newcomer checklist (first 2 weeks):</strong> (1) Get a <strong>PESEL</strong> number at urzad gminy (residence registration office). (2) Open a bank account (mBank, ING, Santander, PKO BP -- mBank and ING have English apps). (3) Get a SIM card (Play, Orange, T-Mobile -- available at salons and Zabka). (4) Register for <strong>NFZ</strong> health insurance (automatic via employer). (5) Get a <strong>Profil Zaufany</strong> (trusted profile) for online government services at pz.gov.pl. (6) Buy a <strong>ZTM pass</strong> or Warszawska Karta Miejska. (7) Apply for <strong>zameldowanie</strong> (address registration). (8) If non-EU: apply for work permit / Karta Pobytu (residence card) at urzad wojewodzki.
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Data note:</strong> All figures updated June 2026. Rents, salaries, and tax brackets change regularly. Always verify current rates with official sources (GUS, Ministerstwo Finansow, ZUS) before making financial decisions. Poland's economy has been growing rapidly -- expect annual salary increases of 7-10%.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#1e293b; color:#94a3b8; padding:40px 0; margin-top:60px;">
+        <div class="container" style="text-align:center;">
+            <p>&copy; 2026 CompressPhotos. Poland Living Cost Guide.</p>
+            <p style="margin-top:8px; font-size:13px;">
+                <a href="index.html" style="color:#DC143C;">Image Compressor</a> |
+                <a href="sweden-guide.html" style="color:#fecc02;">Sweden</a> |
+                <a href="netherlands-guide.html" style="color:#FF6B00;">Netherlands</a> |
+                <a href="uk-guide.html" style="color:#C8102E;">UK</a> |
+                <a href="germany-guide.html" style="color:#FFC300;">Germany</a> |
+                <a href="canada-guide.html" style="color:#FF0000;">Canada</a> |
+                <a href="australia-guide.html" style="color:#00843D;">Australia</a> |
+                <a href="austria-guide.html" style="color:#EF3340;">Austria</a> |
+                <a href="uae-guide.html" style="color:#C8102E;">UAE</a> |
+                <a href="singapore-guide.html" style="color:#EF3340;">Singapore</a> |
+                <a href="norway-guide.html" style="color:#BA0C2F;">Norway</a> |
+                <a href="usa-guide.html" style="color:#3C3B6E;">USA</a> |
+                <a href="denmark-guide.html" style="color:#C8102E;">Denmark</a> |
+                <a href="new-zealand-guide.html" style="color:#00247D;">New Zealand</a> |
+                <a href="saudi-arabia-guide.html" style="color:#006C35;">Saudi Arabia</a> |
+                <a href="switzerland-guide.html" style="color:#FF0000;">Switzerland</a> |
+                <a href="france-guide.html" style="color:#002395;">France</a> |
+                <a href="spain-guide.html" style="color:#F1BF00;">Spain</a> |
+                <a href="portugal-guide.html" style="color:#006600;">Portugal</a> |
+                <a href="ireland-guide.html" style="color:#169B62;">Ireland</a> |
+                <a href="japan-guide.html" style="color:#BC002D;">Japan</a> |
+                <a href="italy-guide.html" style="color:#009246;">Italy</a> |
+                <a href="finland-guide.html" style="color:#003580;">Finland</a> |
+                <a href="poland-guide.html" style="color:#DC143C;">Poland</a> |
+                <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
+                <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Click outside handler for dropdown -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('guidesDropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // PPP Calculator
+    const plPppCountries = [
+        { name: 'Switzerland', ppp: 260, region: 'Western Europe' },
+        { name: 'Norway', ppp: 224, region: 'Nordic' },
+        { name: 'Denmark', ppp: 212, region: 'Nordic' },
+        { name: 'Singapore', ppp: 204, region: 'Southeast Asia' },
+        { name: 'USA', ppp: 200, region: 'North America' },
+        { name: 'Australia', ppp: 190, region: 'Oceania' },
+        { name: 'Sweden', ppp: 184, region: 'Nordic' },
+        { name: 'Netherlands', ppp: 180, region: 'Western Europe' },
+        { name: 'Ireland', ppp: 180, region: 'Western Europe' },
+        { name: 'Finland', ppp: 176, region: 'Nordic' },
+        { name: 'United Kingdom', ppp: 174, region: 'Western Europe' },
+        { name: 'Austria', ppp: 172, region: 'Western Europe' },
+        { name: 'Germany', ppp: 170, region: 'Western Europe' },
+        { name: 'Canada', ppp: 168, region: 'North America' },
+        { name: 'Belgium', ppp: 166, region: 'Western Europe' },
+        { name: 'France', ppp: 164, region: 'Western Europe' },
+        { name: 'New Zealand', ppp: 160, region: 'Oceania' },
+        { name: 'Japan', ppp: 156, region: 'East Asia' },
+        { name: 'Italy', ppp: 152, region: 'Southern Europe' },
+        { name: 'UAE', ppp: 150, region: 'Middle East' },
+        { name: 'South Korea', ppp: 144, region: 'East Asia' },
+        { name: 'Spain', ppp: 136, region: 'Southern Europe' },
+        { name: 'Portugal', ppp: 120, region: 'Southern Europe' },
+        { name: 'Saudi Arabia', ppp: 104, region: 'Middle East' },
+        { name: 'Brazil', ppp: 90, region: 'South America' },
+    ];
+
+    function calculatePLPPP() {
+        const amount = parseFloat(document.getElementById('plPppAmount').value) || 6000;
+        const tbody = document.querySelector('#plPppTable tbody');
+        tbody.innerHTML = '';
+        const headerCell = document.querySelector('#plPppTable th:last-child');
+        headerCell.textContent = `${amount.toLocaleString()} PLN buys equiv. of`;
+
+        plPppCountries.forEach(c => {
+            const equiv = Math.round(amount * c.ppp / 100);
+            const diff = c.ppp > 100 ? `${c.ppp - 100}% more expensive` : `${100 - c.ppp}% cheaper`;
+            tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.ppp}</td><td>${c.region}</td><td class="pln" style="color:${c.ppp > 100 ? '#dc2626' : '#059669'}">${equiv.toLocaleString()} PLN (${diff})</td></tr>`;
+        });
+    }
+    calculatePLPPP();
+
+    // Polish Tax Calculator
+    function calculatePLTax() {
+        const monthlyGross = parseFloat(document.getElementById('plGrossSalary').value) || 10000;
+        const contractType = document.getElementById('plContractType').value;
+        const under26 = document.getElementById('plAge26').value === 'yes';
+        const annualGross = monthlyGross * 12;
+
+        if (contractType === 'uop') {
+            // UoP (employment contract) calculation
+            // ZUS employee contributions
+            const pension = monthlyGross * 0.0976;
+            const disability = monthlyGross * 0.015;
+            const sickness = monthlyGross * 0.0245;
+            const totalZusSocial = pension + disability + sickness;
+
+            // Health insurance base
+            const healthBase = monthlyGross - totalZusSocial;
+            const healthIns = healthBase * 0.09;
+
+            // Taxable income (monthly)
+            const taxableMonthly = monthlyGross - totalZusSocial - 250; // 250 PLN monthly work costs
+            const taxableAnnual = taxableMonthly * 12;
+
+            // PIT calculation
+            let annualTax = 0;
+            if (!under26 && taxableAnnual > 0) {
+                const kwotaWolna = 30000;
+                if (taxableAnnual <= kwotaWolna) {
+                    annualTax = 0;
+                } else if (taxableAnnual <= 120000) {
+                    annualTax = (taxableAnnual - kwotaWolna) * 0.12;
+                } else {
+                    annualTax = (120000 - kwotaWolna) * 0.12 + (taxableAnnual - 120000) * 0.32;
+                }
+            }
+
+            const monthlyTax = Math.max(0, Math.round(annualTax / 12));
+            const totalDeductions = totalZusSocial + healthIns + monthlyTax;
+            const netMonthly = monthlyGross - totalDeductions;
+            const effectiveRate = ((totalDeductions / monthlyGross) * 100);
+
+            const resultDiv = document.getElementById('plTaxResult');
+            resultDiv.innerHTML = `
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                    <div><strong>Gross monthly:</strong><br><span style="font-size:1.3rem; color:#DC143C; font-weight:800;">${Math.round(monthlyGross).toLocaleString()} PLN</span></div>
+                    <div><strong>ZUS (social):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(totalZusSocial).toLocaleString()} PLN</span></div>
+                    <div><strong>Health (9%):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(healthIns).toLocaleString()} PLN</span></div>
+                    <div><strong>PIT:</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(monthlyTax).toLocaleString()} PLN</span></div>
+                    <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netMonthly).toLocaleString()} PLN</span></div>
+                    <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveRate.toFixed(1)}%</span></div>
+                </div>
+                <div style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; font-size:13px; color:#64748b;">
+                    <div>Pension: ${Math.round(pension)} PLN/mo</div>
+                    <div>Disability: ${Math.round(disability)} PLN/mo</div>
+                    <div>Sickness: ${Math.round(sickness)} PLN/mo</div>
+                    <div>Health: ${Math.round(healthIns)} PLN/mo</div>
+                    ${under26 ? '<div style="color:#059669;">PIT exemption (under 26) applied!</div>' : ''}
+                </div>
+                <div style="margin-top:12px; padding:10px; background:${netMonthly >= 4500 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                    <strong style="color:${netMonthly >= 4500 ? '#059669' : '#dc2626'};">${netMonthly >= 4500 ? '&#10003;' : '&#10007;'} Warsaw survival check:</strong>
+                    Need ~4,500 PLN net | You have ${Math.round(netMonthly).toLocaleString()} (${netMonthly >= 4500 ? '+' : ''}${Math.round(netMonthly - 4500).toLocaleString()} buffer)
+                </div>
+            `;
+        } else {
+            // B2B calculation (19% flat tax)
+            const zusPref = 1600; // preferential ZUS (first 2 years ~400, then full ~1600)
+            const healthB2B = (monthlyGross - zusPref) * 0.09;
+            const taxableB2B = monthlyGross - zusPref;
+            const pitB2B = taxableB2B * 0.19;
+            const totalB2B = zusPref + healthB2B + pitB2B;
+            const netB2B = monthlyGross - totalB2B;
+            const effectiveB2B = ((totalB2B / monthlyGross) * 100);
+
+            const resultDiv = document.getElementById('plTaxResult');
+            resultDiv.innerHTML = `
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:15px;">
+                    <div><strong>Gross (B2B):</strong><br><span style="font-size:1.3rem; color:#DC143C; font-weight:800;">${Math.round(monthlyGross).toLocaleString()} PLN</span></div>
+                    <div><strong>ZUS (full):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(zusPref).toLocaleString()} PLN</span></div>
+                    <div><strong>Health (9%):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(healthB2B).toLocaleString()} PLN</span></div>
+                    <div><strong>PIT (19% flat):</strong><br><span style="font-size:1.3rem; color:#dc2626; font-weight:800;">${Math.round(pitB2B).toLocaleString()} PLN</span></div>
+                    <div><strong>Net monthly:</strong><br><span style="font-size:1.3rem; color:#059669; font-weight:800;">${Math.round(netB2B).toLocaleString()} PLN</span></div>
+                    <div><strong>Effective rate:</strong><br><span style="font-size:1.3rem; color:#64748b; font-weight:800;">${effectiveB2B.toFixed(1)}%</span></div>
+                </div>
+                <div style="margin-top:12px; padding:10px; background:#fff5f5; border-radius:8px; font-size:13px;">
+                    <strong>B2B note:</strong> ZUS shown is full rate (~1,600 PLN). First 24 months of activity qualify for preferential rate (~400 PLN). You also need to budget ~200-400 PLN/month for an accountant (biuro rachunkowe). No paid vacation or sick leave on B2B.
+                </div>
+                <div style="margin-top:12px; padding:10px; background:${netB2B >= 4500 ? '#ecfdf5' : '#fef2f2'}; border-radius:8px;">
+                    <strong style="color:${netB2B >= 4500 ? '#059669' : '#dc2626'};">${netB2B >= 4500 ? '&#10003;' : '&#10007;'} Warsaw survival check:</strong>
+                    Need ~4,500 PLN net | You have ${Math.round(netB2B).toLocaleString()} (${netB2B >= 4500 ? '+' : ''}${Math.round(netB2B - 4500).toLocaleString()} buffer)
+                </div>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>
