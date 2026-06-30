@@ -199,7 +199,7 @@
       "@type": "ItemList",
       "name": "Living Cost Guides by Country",
       "description": "Compare living costs across 22 countries with salaries, expenses, tax calculators and PPP comparisons",
-      "numberOfItems": 29,
+      "numberOfItems": 30,
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Sweden Living Cost Guide", "url": "https://compressphotos.cloud/sweden-guide"},
         {"@type": "ListItem", "position": 2, "name": "Netherlands Living Cost Guide", "url": "https://compressphotos.cloud/netherlands-guide"},
@@ -229,7 +229,8 @@
         {"@type": "ListItem", "position": 26, "name": "Brazil Living Cost Guide", "url": "https://compressphotos.cloud/brazil-guide"},
         {"@type": "ListItem", "position": 27, "name": "Mexico Living Cost Guide", "url": "https://compressphotos.cloud/mexico-guide"},
         {"@type": "ListItem", "position": 28, "name": "Poland Living Cost Guide", "url": "https://compressphotos.cloud/poland-guide"},
-        {"@type": "ListItem", "position": 29, "name": "Czech Republic Living Cost Guide", "url": "https://compressphotos.cloud/czech-republic-guide"}
+        {"@type": "ListItem", "position": 29, "name": "Czech Republic Living Cost Guide", "url": "https://compressphotos.cloud/czech-republic-guide"},
+        {"@type": "ListItem", "position": 30, "name": "Turkey Living Cost Guide", "url": "https://compressphotos.cloud/turkey-guide"}
       ]
     }
     </script>
@@ -280,6 +281,7 @@
                         <a href="mexico-guide.html"><span class="country-flag">🇲🇽</span><div>Mexico<small>Salaries, tax, PPP & more</small></div></a>
                         <a href="poland-guide.html"><span class="country-flag">🇵🇱</span><div>Poland<small>Salaries, tax, PPP & more</small></div></a>
                         <a href="czech-republic-guide.html"><span class="country-flag">🇨🇿</span><div>Czech Republic<small>Salaries, tax, PPP & more</small></div></a>
+                        <a href="turkey-guide.html"><span class="country-flag">🇹🇷</span><div>Turkey<small>Salaries, tax, PPP & more</small></div></a>
                         <a href="living-cost-guides.html" class="dropdown-footer"><i class="fas fa-th-large"></i> View All Country Guides</a>
                     </div>
                 </div>
@@ -295,8 +297,7 @@
             <p>Comprehensive country guides with monthly expenses, salary data by profession, interactive tax calculators, and purchasing power parity comparisons. Everything you need to plan your move abroad.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="hero-stat-value">29</div>
-
+                    <div class="hero-stat-value">30</div>
                     <div class="hero-stat-label">Countries covered</div>
                 </div>
                 <div class="hero-stat">
@@ -1147,6 +1148,29 @@
                 </div>
             </a>
 
+            <!-- Turkey -->
+            <a href="turkey-guide.html" class="country-card">
+                <div class="country-card-image" style="background-image: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80');">
+                    <span class="country-card-flag">🇹🇷</span>
+                    <div class="country-card-name">Turkey</div>
+                </div>
+                <div class="country-card-body">
+                    <div class="country-card-stats">
+                        <div class="country-card-stat"><div class="country-card-stat-value">25-42K</div><div class="country-card-stat-label">TRY/month expenses</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">11</div><div class="country-card-stat-label">Tabs of data</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">₺22K</div><div class="country-card-stat-label">Minimum wage</div></div>
+                        <div class="country-card-stat"><div class="country-card-stat-value">6</div><div class="country-card-stat-label">Cities compared</div></div>
+                    </div>
+                    <div class="country-card-tags">
+                        <span class="country-card-tag">Tax Calculator</span>
+                        <span class="country-card-tag">SGK Healthcare</span>
+                        <span class="country-card-tag">Kıdem Tazminatı</span>
+                        <span class="country-card-tag">İstanbulkart</span>
+                    </div>
+                    <div class="country-card-cta">Explore Turkey Guide <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
         </div>
     </div>
 
@@ -1208,6 +1232,7 @@
                 <a href="mexico-guide.html" style="color:#006341;">Mexico</a> |
                 <a href="poland-guide.html" style="color:#DC143C;">Poland</a> |
                 <a href="czech-republic-guide.html" style="color:#11457E;">Czech Republic</a> |
+                <a href="turkey-guide.html" style="color:#E30A17;">Turkey</a> |
                 <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a> |
                 <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
             </p>
@@ -1231,7 +1256,8 @@
         'Belgium': '🇧🇪', 'Austria': '🇦🇹', 'Qatar': '🇶🇦', 'South Korea': '🇰🇷',
         'Brazil': '🇧🇷', 'Mexico': '🇲🇽', 'Poland': '🇵🇱', 'Czech Republic': '🇨🇿',
         'India': '🇮🇳', 'Thailand': '🇹🇭', 'Turkey': '🇹🇷', 'Greece': '🇬🇷',
-        'Hungary': '🇭🇺', 'Croatia': '🇭🇷', 'Vietnam': '🇻🇳', 'Colombia': '🇨🇴'
+        'Hungary': '🇭🇺', 'Croatia': '🇭🇷', 'Vietnam': '🇻🇳', 'Colombia': '🇨🇴',
+        'Argentina': '🇦🇷'
     };
 
     function getUserVotes() {
@@ -1267,8 +1293,8 @@
 
     // Default countries for fallback when backend is down
     const defaultCountries = [
-        'India', 'Thailand', 'Turkey', 'Greece',
-        'Hungary', 'Croatia', 'Vietnam', 'Colombia'
+        'India', 'Thailand', 'Greece',
+        'Hungary', 'Croatia', 'Vietnam', 'Colombia', 'Argentina'
     ];
 
     function getLocalVoteCounts() {
