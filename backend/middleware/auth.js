@@ -166,9 +166,10 @@ const cleanExpiredSessions = async () => {
     const result = await query(
         'DELETE FROM user_sessions WHERE expires_at < NOW()'
     );
-    
-    logger.info(`Cleaned ${result.rowCount} expired sessions`);
-    return result.rowCount;
+
+    const affectedRows = result.rows?.affectedRows || 0;
+    logger.info(`Cleaned ${affectedRows} expired sessions`);
+    return affectedRows;
 };
 
 // Revoke all user sessions (for logout all devices)
@@ -177,8 +178,8 @@ const revokeAllUserSessions = async (userId) => {
         'DELETE FROM user_sessions WHERE user_id = ?',
         [userId]
     );
-    
-    return result.rowCount;
+
+    return result.rows?.affectedRows || 0;
 };
 
 module.exports = {

@@ -88,23 +88,23 @@ async function handleCheckoutCompleted(session) {
             const subscriptionEndDate = new Date(subscription.current_period_end * 1000);
             
             await client.query(
-                `UPDATE users SET 
+                `UPDATE users SET
                     is_premium = true,
-                    subscription_type = $1,
-                    subscription_id = $2,
+                    subscription_type = ?,
+                    subscription_id = ?,
                     subscription_start_date = NOW(),
-                    subscription_end_date = $3,
+                    subscription_end_date = ?,
                     updated_at = NOW()
-                 WHERE id = $4`,
+                 WHERE id = ?`,
                 [planId, subscription.id, subscriptionEndDate, userId]
             );
 
             // Record the transaction
             await client.query(
-                `INSERT INTO subscription_transactions 
-                 (user_id, stripe_payment_intent_id, stripe_subscription_id, amount_cents, 
+                `INSERT INTO subscription_transactions
+                 (user_id, stripe_payment_intent_id, stripe_subscription_id, amount_cents,
                   subscription_type, status, metadata)
-                 VALUES ($1, $2, $3, $4, $5, 'succeeded', $6)`,
+                 VALUES (?, ?, ?, ?, ?, 'succeeded', ?)`,
                 [
                     userId,
                     session.payment_intent,
@@ -144,7 +144,7 @@ async function handlePaymentSucceeded(invoice) {
         
         // Find user by customer ID
         const userResult = await query(
-            'SELECT id FROM users WHERE stripe_customer_id = $1',
+            'SELECT id FROM users WHERE stripe_customer_id = ?',
             [customer.id]
         );
 
@@ -154,34 +154,35 @@ async function handlePaymentSucceeded(invoice) {
         }
 
         const userId = userResult.rows[0].id;
-        
+
         await transaction(async (client) => {
             // Extend subscription
             const subscriptionEndDate = new Date(subscription.current_period_end * 1000);
-            
+
             await client.query(
-                `UPDATE users SET 
+                `UPDATE users SET
                     is_premium = true,
-                    subscription_end_date = $1,
+                    subscription_end_date = ?,
                     updated_at = NOW()
-                 WHERE id = $2`,
+                 WHERE id = ?`,
                 [subscriptionEndDate, userId]
             );
 
             // Record successful payment
             await client.query(
-                `INSERT INTO subscription_transactions 
+                `INSERT INTO subscription_transactions
                  (user_id, stripe_payment_intent_id, stripe_subscription_id, stripe_invoice_id,
                   amount_cents, subscription_type, status, metadata)
-                 VALUES ($1, $2, $3, $4, $5, 
-                         (SELECT subscription_type FROM users WHERE id = $1), 
-                         'succeeded', $6)`,
+                 VALUES (?, ?, ?, ?, ?,
+                         (SELECT subscription_type FROM users WHERE id = ?),
+                         'succeeded', ?)`,
                 [
                     userId,
                     invoice.payment_intent,
                     subscription.id,
                     invoice.id,
                     invoice.amount_paid,
+                    userId,
                     JSON.stringify({ invoiceId: invoice.id })
                 ]
             );
@@ -209,7 +210,7 @@ async function handlePaymentFailed(invoice) {
         
         // Find user by customer ID
         const userResult = await query(
-            'SELECT id, email, first_name FROM users WHERE stripe_customer_id = $1',
+            'SELECT id, email, first_name FROM users WHERE stripe_customer_id = ?',
             [customer.id]
         );
 
@@ -219,24 +220,25 @@ async function handlePaymentFailed(invoice) {
         }
 
         const user = userResult.rows[0];
-        
+
         // Record failed payment
         await query(
-            `INSERT INTO subscription_transactions 
+            `INSERT INTO subscription_transactions
              (user_id, stripe_payment_intent_id, stripe_subscription_id, stripe_invoice_id,
               amount_cents, subscription_type, status, metadata)
-             VALUES ($1, $2, $3, $4, $5, 
-                     (SELECT subscription_type FROM users WHERE id = $1), 
-                     'failed', $6)`,
+             VALUES (?, ?, ?, ?, ?,
+                     (SELECT subscription_type FROM users WHERE id = ?),
+                     'failed', ?)`,
             [
                 user.id,
                 invoice.payment_intent,
                 subscription.id,
                 invoice.id,
                 invoice.amount_due,
-                JSON.stringify({ 
+                user.id,
+                JSON.stringify({
                     invoiceId: invoice.id,
-                    attemptCount: invoice.attempt_count 
+                    attemptCount: invoice.attempt_count
                 })
             ]
         );
@@ -260,7 +262,7 @@ async function handleSubscriptionUpdated(subscription) {
         
         // Find user by customer ID
         const userResult = await query(
-            'SELECT id FROM users WHERE stripe_customer_id = $1',
+            'SELECT id FROM users WHERE stripe_customer_id = ?',
             [customer.id]
         );
 
@@ -271,13 +273,13 @@ async function handleSubscriptionUpdated(subscription) {
 
         const userId = userResult.rows[0].id;
         const subscriptionEndDate = new Date(subscription.current_period_end * 1000);
-        
+
         // Update subscription details
         await query(
-            `UPDATE users SET 
-                subscription_end_date = $1,
+            `UPDATE users SET
+                subscription_end_date = ?,
                 updated_at = NOW()
-             WHERE id = $2`,
+             WHERE id = ?`,
             [subscriptionEndDate, userId]
         );
 
@@ -298,7 +300,7 @@ async function handleSubscriptionDeleted(subscription) {
         
         // Find user by customer ID
         const userResult = await query(
-            'SELECT id, email FROM users WHERE stripe_customer_id = $1',
+            'SELECT id, email FROM users WHERE stripe_customer_id = ?',
             [customer.id]
         );
 
@@ -311,7 +313,7 @@ async function handleSubscriptionDeleted(subscription) {
 
         // Get subscription type before updating
         const userDataResult = await query(
-            'SELECT subscription_type FROM users WHERE id = $1',
+            'SELECT subscription_type FROM users WHERE id = ?',
             [user.id]
         );
         const subscriptionType = userDataResult.rows[0]?.subscription_type;
@@ -324,7 +326,7 @@ async function handleSubscriptionDeleted(subscription) {
                 subscription_id = NULL,
                 subscription_end_date = NULL,
                 updated_at = NOW()
-             WHERE id = $1`,
+             WHERE id = ?`,
             [user.id]
         );
 
@@ -350,7 +352,7 @@ async function handleTrialWillEnd(subscription) {
         
         // Find user by customer ID
         const userResult = await query(
-            'SELECT id, email, first_name FROM users WHERE stripe_customer_id = $1',
+            'SELECT id, email, first_name FROM users WHERE stripe_customer_id = ?',
             [customer.id]
         );
 

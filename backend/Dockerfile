@@ -1,9 +1,8 @@
 FROM node:18-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies for Sharp and other native modules
+# Install system dependencies for Sharp (libvips) and HEIF support
 RUN apk add --no-cache \
     vips-dev \
     python3 \
@@ -11,34 +10,30 @@ RUN apk add --no-cache \
     g++ \
     libc6-compat
 
-# Copy package files
+# Copy package files first for better caching
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --omit=dev && npm cache clean --force
+# Install production dependencies
+RUN npm ci --omit=dev && npm cache clean --force
 
 # Copy application code
 COPY . .
 
-# Create directories for logs and uploads
-RUN mkdir -p logs uploads
+# Create directories for logs
+RUN mkdir -p logs
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
+    adduser -S nodejs -u 1001 && \
+    chown -R nodejs:nodejs /app
 
-# Change ownership of app directory
-RUN chown -R nodejs:nodejs /app
-
-# Switch to non-root user
 USER nodejs
 
-# Expose port
+# Cloud Run uses PORT env var
 EXPOSE 3001
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD node -e "require('http').get('http://localhost:3001/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+# Health check using the readiness endpoint
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:' + (process.env.PORT || 3001) + '/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
 
-# Start the application
 CMD ["node", "server.js"]

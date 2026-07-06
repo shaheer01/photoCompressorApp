@@ -47,7 +47,6 @@ logs/
 # Uploads directory (uploaded files should be in Cloud Storage)
 uploads/
 
-# Docker files (not needed for Cloud Run)
-Dockerfile
+# Docker files (keep Dockerfile for Cloud Build)
 docker-compose.yml
 .dockerignore

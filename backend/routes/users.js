@@ -18,7 +18,7 @@ router.get('/profile', async (req, res) => {
                 id, first_name, last_name, email, is_premium, subscription_type,
                 subscription_start_date, subscription_end_date, created_at, last_login, login_count
              FROM users 
-             WHERE id = $1`,
+             WHERE id = ?`,
             [req.user.id]
         );
 
@@ -38,7 +38,7 @@ router.get('/profile', async (req, res) => {
                 SUM(total_compressed_size_mb) as total_compressed_mb,
                 SUM(total_savings_mb) as total_savings_mb
              FROM usage_statistics 
-             WHERE user_id = $1 AND date >= DATE_TRUNC('month', CURRENT_DATE)`,
+             WHERE user_id = ? AND date >= DATE_FORMAT(CURRENT_DATE, '%Y-%m-01')`,
             [req.user.id]
         );
 
@@ -98,43 +98,39 @@ router.put('/profile', [
         }
 
         const { firstName, lastName, email } = req.body;
-        const updates = {};
-        const params = [req.user.id];
-        let paramIndex = 2;
+        const setClauses = [];
+        const params = [];
 
         // Build dynamic update query
         if (firstName !== undefined) {
-            updates.first_name = `$${paramIndex}`;
+            setClauses.push('first_name = ?');
             params.push(firstName);
-            paramIndex++;
         }
-        
+
         if (lastName !== undefined) {
-            updates.last_name = `$${paramIndex}`;
+            setClauses.push('last_name = ?');
             params.push(lastName);
-            paramIndex++;
         }
-        
+
         if (email !== undefined) {
             // Check if email is already taken by another user
             const emailCheck = await query(
-                'SELECT id FROM users WHERE email = $1 AND id != $2',
+                'SELECT id FROM users WHERE email = ? AND id != ?',
                 [email, req.user.id]
             );
-            
+
             if (emailCheck.rows.length > 0) {
                 return res.status(409).json({
                     error: 'Email already taken',
                     message: 'This email is already associated with another account'
                 });
             }
-            
-            updates.email = `$${paramIndex}`;
+
+            setClauses.push('email = ?');
             params.push(email);
-            paramIndex++;
         }
 
-        if (Object.keys(updates).length === 0) {
+        if (setClauses.length === 0) {
             return res.status(400).json({
                 error: 'No updates provided',
                 message: 'Please provide at least one field to update'
@@ -142,17 +138,22 @@ router.put('/profile', [
         }
 
         // Add updated_at
-        updates.updated_at = 'NOW()';
+        setClauses.push('updated_at = NOW()');
 
-        const setClause = Object.entries(updates)
-            .map(([key, value]) => `${key} = ${value}`)
-            .join(', ');
+        // Add the WHERE param at the end
+        params.push(req.user.id);
 
-        const result = await query(
-            `UPDATE users SET ${setClause} 
-             WHERE id = $1 
-             RETURNING id, first_name, last_name, email, is_premium, subscription_type`,
+        const setClause = setClauses.join(', ');
+
+        await query(
+            `UPDATE users SET ${setClause} WHERE id = ?`,
             params
+        );
+
+        // Fetch the updated user
+        const result = await query(
+            'SELECT id, first_name, last_name, email, is_premium, subscription_type FROM users WHERE id = ?',
+            [req.user.id]
         );
 
         const updatedUser = result.rows[0];
@@ -200,7 +201,7 @@ router.put('/password', [
 
         // Get current password hash
         const userResult = await query(
-            'SELECT password_hash FROM users WHERE id = $1',
+            'SELECT password_hash FROM users WHERE id = ?',
             [req.user.id]
         );
 
@@ -225,7 +226,7 @@ router.put('/password', [
 
         // Update password
         await query(
-            'UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2',
+            'UPDATE users SET password_hash = ?, updated_at = NOW() WHERE id = ?',
             [newPasswordHash, req.user.id]
         );
 
@@ -250,11 +251,11 @@ router.get('/sessions', async (req, res) => {
         const sessionsResult = await query(
             `SELECT 
                 id, device_info, ip_address, created_at, last_used, expires_at,
-                CASE WHEN token_hash = $2 THEN true ELSE false END as is_current
-             FROM user_sessions 
-             WHERE user_id = $1 AND expires_at > NOW()
+                CASE WHEN token_hash = ? THEN true ELSE false END as is_current
+             FROM user_sessions
+             WHERE user_id = ? AND expires_at > NOW()
              ORDER BY last_used DESC`,
-            [req.user.id, req.token]
+            [req.token, req.user.id]
         );
 
         const sessions = sessionsResult.rows.map(session => ({
@@ -287,11 +288,11 @@ router.delete('/sessions/:sessionId', async (req, res) => {
         const { sessionId } = req.params;
 
         const result = await query(
-            'DELETE FROM user_sessions WHERE id = $1 AND user_id = $2',
+            'DELETE FROM user_sessions WHERE id = ? AND user_id = ?',
             [sessionId, req.user.id]
         );
 
-        if (result.rowCount === 0) {
+        if ((result.rows?.affectedRows || 0) === 0) {
             return res.status(404).json({
                 error: 'Session not found',
                 message: 'Session does not exist or does not belong to you'
@@ -323,7 +324,7 @@ router.get('/usage-history', async (req, res) => {
                 date, images_processed, total_original_size_mb, 
                 total_compressed_size_mb, total_savings_mb
              FROM usage_statistics 
-             WHERE user_id = $1 AND date >= CURRENT_DATE - INTERVAL '${parseInt(days)} days'
+             WHERE user_id = ? AND date >= CURRENT_DATE - INTERVAL ${parseInt(days)} DAY
              ORDER BY date DESC`,
             [req.user.id]
         );
@@ -370,7 +371,7 @@ router.delete('/account', [
 
         // Verify password
         const userResult = await query(
-            'SELECT password_hash FROM users WHERE id = $1',
+            'SELECT password_hash FROM users WHERE id = ?',
             [req.user.id]
         );
 
@@ -391,13 +392,13 @@ router.delete('/account', [
         // Delete account in transaction
         await transaction(async (client) => {
             // Delete related data (cascade will handle most of this)
-            await client.query('DELETE FROM user_sessions WHERE user_id = $1', [req.user.id]);
-            await client.query('DELETE FROM usage_statistics WHERE user_id = $1', [req.user.id]);
-            await client.query('DELETE FROM subscription_transactions WHERE user_id = $1', [req.user.id]);
-            await client.query('UPDATE image_processing_logs SET user_id = NULL WHERE user_id = $1', [req.user.id]);
-            
+            await client.query('DELETE FROM user_sessions WHERE user_id = ?', [req.user.id]);
+            await client.query('DELETE FROM usage_statistics WHERE user_id = ?', [req.user.id]);
+            await client.query('DELETE FROM subscription_transactions WHERE user_id = ?', [req.user.id]);
+            await client.query('UPDATE image_processing_logs SET user_id = NULL WHERE user_id = ?', [req.user.id]);
+
             // Delete user account
-            await client.query('DELETE FROM users WHERE id = $1', [req.user.id]);
+            await client.query('DELETE FROM users WHERE id = ?', [req.user.id]);
         });
 
         logger.info(`Account deleted for user: ${req.user.email}`);

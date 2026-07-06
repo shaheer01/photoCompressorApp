@@ -5,20 +5,27 @@ const logger = require('../utils/logger');
 let pool;
 
 const dbConfig = {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    connectionLimit: 20, // Maximum number of connections in the pool
-    acquireTimeout: 30000, // How long to wait for a connection
-    timeout: 60000, // Query timeout
-    reconnect: true,
-    multipleStatements: false,
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+    connectionLimit: 10,
+    waitForConnections: true,
+    connectTimeout: 30000,
+    multipleStatements: false
 };
 
-// Alternative: use DATABASE_URL if provided (for services like Heroku)
+// Cloud SQL on Cloud Run uses Unix socket via Cloud SQL Proxy
+if (process.env.INSTANCE_CONNECTION_NAME) {
+    dbConfig.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+    logger.info(`Using Cloud SQL socket: ${dbConfig.socketPath}`);
+} else {
+    dbConfig.host = process.env.DB_HOST || 'localhost';
+    dbConfig.port = parseInt(process.env.DB_PORT) || 3306;
+    if (process.env.NODE_ENV === 'production') {
+        dbConfig.ssl = { rejectUnauthorized: false };
+    }
+}
+
 if (process.env.DATABASE_URL) {
     pool = mysql.createPool(process.env.DATABASE_URL);
 } else {

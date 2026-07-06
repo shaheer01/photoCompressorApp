@@ -18,7 +18,7 @@ router.get('/global', async (req, res) => {
                 AVG(compression_ratio) as avg_compression_ratio,
                 AVG(processing_time_ms) as avg_processing_time
              FROM image_processing_logs
-             WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'`
+             WHERE created_at >= CURRENT_DATE - INTERVAL 30 DAY`
         );
 
         const premiumUsersResult = await query(
@@ -73,19 +73,19 @@ router.get('/user', verifyToken, async (req, res) => {
                 MIN(created_at) as first_compression,
                 MAX(created_at) as last_compression
              FROM image_processing_logs 
-             WHERE user_id = $1 AND created_at >= CURRENT_DATE - INTERVAL '${days} days'`,
+             WHERE user_id = ? AND created_at >= CURRENT_DATE - INTERVAL ${days} DAY`,
             [req.user.id]
         );
 
         // Get daily breakdown
         const dailyResult = await query(
-            `SELECT 
+            `SELECT
                 DATE(created_at) as date,
                 COUNT(*) as images_count,
                 SUM(original_size_bytes) as original_bytes,
                 SUM(compressed_size_bytes) as compressed_bytes
-             FROM image_processing_logs 
-             WHERE user_id = $1 AND created_at >= CURRENT_DATE - INTERVAL '${days} days'
+             FROM image_processing_logs
+             WHERE user_id = ? AND created_at >= CURRENT_DATE - INTERVAL ${days} DAY
              GROUP BY DATE(created_at)
              ORDER BY date DESC`,
             [req.user.id]
@@ -93,24 +93,24 @@ router.get('/user', verifyToken, async (req, res) => {
 
         // Get compression method breakdown
         const methodResult = await query(
-            `SELECT 
+            `SELECT
                 compression_method,
                 COUNT(*) as count,
                 AVG(compression_ratio) as avg_ratio
-             FROM image_processing_logs 
-             WHERE user_id = $1 AND created_at >= CURRENT_DATE - INTERVAL '${days} days'
+             FROM image_processing_logs
+             WHERE user_id = ? AND created_at >= CURRENT_DATE - INTERVAL ${days} DAY
              GROUP BY compression_method`,
             [req.user.id]
         );
 
         // Get quality settings breakdown
         const qualityResult = await query(
-            `SELECT 
+            `SELECT
                 quality_setting,
                 COUNT(*) as count,
                 AVG(compression_ratio) as avg_ratio
-             FROM image_processing_logs 
-             WHERE user_id = $1 AND created_at >= CURRENT_DATE - INTERVAL '${days} days'
+             FROM image_processing_logs
+             WHERE user_id = ? AND created_at >= CURRENT_DATE - INTERVAL ${days} DAY
              GROUP BY quality_setting
              ORDER BY quality_setting`,
             [req.user.id]
@@ -166,12 +166,12 @@ router.get('/leaderboard', async (req, res) => {
     try {
         // Get top users by compression savings (anonymized)
         const savingsResult = await query(
-            `SELECT 
-                CONCAT('User-', SUBSTRING(MD5(user_id::text) FROM 1 FOR 8)) as anonymous_id,
+            `SELECT
+                CONCAT('User-', SUBSTRING(MD5(CAST(user_id AS CHAR)), 1, 8)) as anonymous_id,
                 SUM(original_size_bytes - compressed_size_bytes) as total_saved_bytes,
                 COUNT(*) as images_processed
-             FROM image_processing_logs 
-             WHERE user_id IS NOT NULL AND created_at >= CURRENT_DATE - INTERVAL '30 days'
+             FROM image_processing_logs
+             WHERE user_id IS NOT NULL AND created_at >= CURRENT_DATE - INTERVAL 30 DAY
              GROUP BY user_id
              ORDER BY total_saved_bytes DESC
              LIMIT 10`
@@ -179,12 +179,12 @@ router.get('/leaderboard', async (req, res) => {
 
         // Get top compression ratios
         const ratioResult = await query(
-            `SELECT 
-                CONCAT('User-', SUBSTRING(MD5(user_id::text) FROM 1 FOR 8)) as anonymous_id,
+            `SELECT
+                CONCAT('User-', SUBSTRING(MD5(CAST(user_id AS CHAR)), 1, 8)) as anonymous_id,
                 AVG(compression_ratio) as avg_compression_ratio,
                 COUNT(*) as images_processed
-             FROM image_processing_logs 
-             WHERE user_id IS NOT NULL AND created_at >= CURRENT_DATE - INTERVAL '30 days'
+             FROM image_processing_logs
+             WHERE user_id IS NOT NULL AND created_at >= CURRENT_DATE - INTERVAL 30 DAY
              GROUP BY user_id
              HAVING COUNT(*) >= 5
              ORDER BY avg_compression_ratio DESC
@@ -233,18 +233,18 @@ router.get('/trends', async (req, res) => {
                 SUM(compressed_size_bytes) as total_compressed_bytes,
                 AVG(compression_ratio) as avg_compression_ratio
              FROM image_processing_logs 
-             WHERE created_at >= CURRENT_DATE - INTERVAL '${period} days'
+             WHERE created_at >= CURRENT_DATE - INTERVAL ${period} DAY
              GROUP BY DATE(created_at)
              ORDER BY date`
         );
 
         // Get user growth
         const userGrowthResult = await query(
-            `SELECT 
+            `SELECT
                 DATE(created_at) as date,
                 COUNT(*) as new_users
-             FROM users 
-             WHERE created_at >= CURRENT_DATE - INTERVAL '${period} days' AND is_active = true
+             FROM users
+             WHERE created_at >= CURRENT_DATE - INTERVAL ${period} DAY AND is_active = true
              GROUP BY DATE(created_at)
              ORDER BY date`
         );
@@ -303,9 +303,9 @@ router.get('/admin', verifyToken, async (req, res) => {
                 SELECT 
                     (SELECT COUNT(*) FROM users WHERE is_active = true) as total_users,
                     (SELECT COUNT(*) FROM users WHERE is_premium = true AND is_active = true) as premium_users,
-                    (SELECT COUNT(*) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL '${days} days') as recent_compressions,
-                    (SELECT SUM(original_size_bytes) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL '${days} days') as total_original_bytes,
-                    (SELECT SUM(compressed_size_bytes) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL '${days} days') as total_compressed_bytes
+                    (SELECT COUNT(*) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL ${days} DAY) as recent_compressions,
+                    (SELECT SUM(original_size_bytes) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL ${days} DAY) as total_original_bytes,
+                    (SELECT SUM(compressed_size_bytes) FROM image_processing_logs WHERE created_at >= CURRENT_DATE - INTERVAL ${days} DAY) as total_compressed_bytes
             `),
             
             // Recent activity
@@ -315,7 +315,7 @@ router.get('/admin', verifyToken, async (req, res) => {
                     COUNT(*) as compressions,
                     COUNT(DISTINCT user_id) as active_users
                 FROM image_processing_logs 
-                WHERE created_at >= CURRENT_DATE - INTERVAL '7 days'
+                WHERE created_at >= CURRENT_DATE - INTERVAL 7 DAY
                 GROUP BY DATE(created_at)
                 ORDER BY date DESC
             `),
@@ -331,7 +331,7 @@ router.get('/admin', verifyToken, async (req, res) => {
                     SUM(ipl.original_size_bytes - ipl.compressed_size_bytes) as total_saved_bytes
                 FROM users u
                 LEFT JOIN image_processing_logs ipl ON u.id = ipl.user_id
-                WHERE u.is_active = true AND ipl.created_at >= CURRENT_DATE - INTERVAL '${days} days'
+                WHERE u.is_active = true AND ipl.created_at >= CURRENT_DATE - INTERVAL ${days} DAY
                 GROUP BY u.id, u.email, u.first_name, u.last_name, u.is_premium
                 ORDER BY total_compressions DESC
                 LIMIT 20
@@ -343,7 +343,7 @@ router.get('/admin', verifyToken, async (req, res) => {
                     compression_method,
                     COUNT(*) as count
                 FROM image_processing_logs 
-                WHERE created_at >= CURRENT_DATE - INTERVAL '${days} days'
+                WHERE created_at >= CURRENT_DATE - INTERVAL ${days} DAY
                 GROUP BY compression_method
             `),
             
@@ -355,7 +355,7 @@ router.get('/admin', verifyToken, async (req, res) => {
                     COUNT(*) as count,
                     SUM(amount_cents) as total_revenue_cents
                 FROM subscription_transactions 
-                WHERE processed_at >= CURRENT_DATE - INTERVAL '${days} days'
+                WHERE processed_at >= CURRENT_DATE - INTERVAL ${days} DAY
                 GROUP BY subscription_type, status
             `)
         ]);

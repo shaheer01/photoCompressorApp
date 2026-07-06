@@ -22,15 +22,18 @@ const errorHandler = (error, req, res, next) => {
     } else if (error.name === 'CastError') {
         statusCode = 400;
         message = 'Invalid data format';
-    } else if (error.code === '23505') { // PostgreSQL unique violation
+    } else if (error.code === 'ER_DUP_ENTRY' || error.errno === 1062) { // MySQL unique violation
         statusCode = 409;
         message = 'Resource already exists';
-    } else if (error.code === '23503') { // PostgreSQL foreign key violation
+    } else if (error.code === 'ER_NO_REFERENCED_ROW_2' || error.errno === 1452) { // MySQL foreign key violation
         statusCode = 400;
         message = 'Invalid reference data';
-    } else if (error.code === '23502') { // PostgreSQL not null violation
+    } else if (error.code === 'ER_BAD_NULL_ERROR' || error.errno === 1048) { // MySQL not null violation
         statusCode = 400;
         message = 'Required field missing';
+    } else if (error.code === 'ER_DATA_TOO_LONG' || error.errno === 1406) { // MySQL data too long
+        statusCode = 400;
+        message = 'Input data exceeds maximum length';
     }
 
     // Don't expose sensitive error details in production

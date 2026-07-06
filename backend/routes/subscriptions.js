@@ -99,7 +99,7 @@ router.post('/create-checkout-session', [
 
         // Check if user already has an active subscription
         const existingSubscription = await query(
-            'SELECT subscription_id FROM users WHERE id = $1 AND is_premium = true AND subscription_end_date > NOW()',
+            'SELECT subscription_id FROM users WHERE id = ? AND is_premium = true AND subscription_end_date > NOW()',
             [req.user.id]
         );
 
@@ -113,7 +113,7 @@ router.post('/create-checkout-session', [
         // Get price ID from settings
         const priceIdKey = planId === 'monthly' ? 'stripe_monthly_price_id' : 'stripe_yearly_price_id';
         const settingResult = await query(
-            'SELECT setting_value FROM admin_settings WHERE setting_key = $1',
+            'SELECT setting_value FROM admin_settings WHERE setting_key = ?',
             [priceIdKey]
         );
 
@@ -141,7 +141,7 @@ router.post('/create-checkout-session', [
             
             // Update user with customer ID
             await query(
-                'UPDATE users SET stripe_customer_id = $1 WHERE id = $2',
+                'UPDATE users SET stripe_customer_id = ? WHERE id = ?',
                 [customerId, req.user.id]
             );
         }
@@ -236,7 +236,7 @@ router.get('/current', async (req, res) => {
                 is_premium, subscription_type, subscription_id, 
                 subscription_start_date, subscription_end_date, stripe_customer_id
              FROM users 
-             WHERE id = $1`,
+             WHERE id = ?`,
             [req.user.id]
         );
 
