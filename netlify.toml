@@ -27,8 +27,18 @@
   status = 200
 
 [[redirects]]
+  from = "/sweden-guide/*"
+  to = "/sweden-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/sweden-guide"
   to = "/sweden-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/netherlands-guide/*"
+  to = "/netherlands-guide.html"
   status = 200
 
 [[redirects]]
@@ -37,8 +47,18 @@
   status = 200
 
 [[redirects]]
+  from = "/uk-guide/*"
+  to = "/uk-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/uk-guide"
   to = "/uk-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/germany-guide/*"
+  to = "/germany-guide.html"
   status = 200
 
 [[redirects]]
@@ -47,8 +67,18 @@
   status = 200
 
 [[redirects]]
+  from = "/canada-guide/*"
+  to = "/canada-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/canada-guide"
   to = "/canada-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/australia-guide/*"
+  to = "/australia-guide.html"
   status = 200
 
 [[redirects]]
@@ -57,8 +87,18 @@
   status = 200
 
 [[redirects]]
+  from = "/uae-guide/*"
+  to = "/uae-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/uae-guide"
   to = "/uae-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/singapore-guide/*"
+  to = "/singapore-guide.html"
   status = 200
 
 [[redirects]]
@@ -67,8 +107,18 @@
   status = 200
 
 [[redirects]]
+  from = "/norway-guide/*"
+  to = "/norway-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/norway-guide"
   to = "/norway-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/usa-guide/*"
+  to = "/usa-guide.html"
   status = 200
 
 [[redirects]]
@@ -77,8 +127,18 @@
   status = 200
 
 [[redirects]]
+  from = "/denmark-guide/*"
+  to = "/denmark-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/denmark-guide"
   to = "/denmark-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/new-zealand-guide/*"
+  to = "/new-zealand-guide.html"
   status = 200
 
 [[redirects]]
@@ -87,8 +147,18 @@
   status = 200
 
 [[redirects]]
+  from = "/saudi-arabia-guide/*"
+  to = "/saudi-arabia-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/saudi-arabia-guide"
   to = "/saudi-arabia-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/switzerland-guide/*"
+  to = "/switzerland-guide.html"
   status = 200
 
 [[redirects]]
@@ -97,8 +167,18 @@
   status = 200
 
 [[redirects]]
+  from = "/france-guide/*"
+  to = "/france-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/france-guide"
   to = "/france-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/spain-guide/*"
+  to = "/spain-guide.html"
   status = 200
 
 [[redirects]]
@@ -107,8 +187,18 @@
   status = 200
 
 [[redirects]]
+  from = "/portugal-guide/*"
+  to = "/portugal-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/portugal-guide"
   to = "/portugal-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/austria-guide/*"
+  to = "/austria-guide.html"
   status = 200
 
 [[redirects]]
@@ -117,8 +207,18 @@
   status = 200
 
 [[redirects]]
+  from = "/ireland-guide/*"
+  to = "/ireland-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/ireland-guide"
   to = "/ireland-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/japan-guide/*"
+  to = "/japan-guide.html"
   status = 200
 
 [[redirects]]
@@ -127,8 +227,18 @@
   status = 200
 
 [[redirects]]
+  from = "/italy-guide/*"
+  to = "/italy-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/italy-guide"
   to = "/italy-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/finland-guide/*"
+  to = "/finland-guide.html"
   status = 200
 
 [[redirects]]
@@ -137,8 +247,18 @@
   status = 200
 
 [[redirects]]
+  from = "/belgium-guide/*"
+  to = "/belgium-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/belgium-guide"
   to = "/belgium-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/qatar-guide/*"
+  to = "/qatar-guide.html"
   status = 200
 
 [[redirects]]
@@ -147,8 +267,18 @@
   status = 200
 
 [[redirects]]
+  from = "/south-korea-guide/*"
+  to = "/south-korea-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/south-korea-guide"
   to = "/south-korea-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/brazil-guide/*"
+  to = "/brazil-guide.html"
   status = 200
 
 [[redirects]]
@@ -157,8 +287,18 @@
   status = 200
 
 [[redirects]]
+  from = "/mexico-guide/*"
+  to = "/mexico-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/mexico-guide"
   to = "/mexico-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/poland-guide/*"
+  to = "/poland-guide.html"
   status = 200
 
 [[redirects]]
@@ -167,8 +307,18 @@
   status = 200
 
 [[redirects]]
+  from = "/czech-republic-guide/*"
+  to = "/czech-republic-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/czech-republic-guide"
   to = "/czech-republic-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/turkey-guide/*"
+  to = "/turkey-guide.html"
   status = 200
 
 [[redirects]]

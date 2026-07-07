@@ -801,15 +801,62 @@
         }
     });
 
-    // Tab switching
+    // === Tab Navigation with URL routing ===
+    const guideBase = window.location.pathname.split('/').filter(Boolean)[0] || '';
+    const basePath = '/' + guideBase;
+
+    function toSlug(text) {
+        return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    const tabSlugs = {};
+    const slugTabs = {};
     document.querySelectorAll('.guide-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById(tab.dataset.tab).classList.add('active');
-        });
+        const id = tab.dataset.tab;
+        const slug = toSlug(tab.textContent);
+        tabSlugs[id] = slug;
+        slugTabs[slug] = id;
     });
+
+    function activateTab(tabId, updateUrl) {
+        document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        const btn = document.querySelector('.guide-tab[data-tab="' + tabId + '"]');
+        if (btn) btn.classList.add('active');
+        const content = document.getElementById(tabId);
+        if (content) content.classList.add('active');
+        if (updateUrl && tabSlugs[tabId]) {
+            const firstTab = document.querySelector('.guide-tab').dataset.tab;
+            const newPath = tabId === firstTab ? basePath : basePath + '/' + tabSlugs[tabId];
+            history.pushState({ tab: tabId }, '', newPath);
+        }
+    }
+
+    document.querySelectorAll('.guide-tab').forEach(tab => {
+        tab.addEventListener('click', () => activateTab(tab.dataset.tab, true));
+    });
+
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.tab) {
+            activateTab(e.state.tab, false);
+        } else {
+            const firstTab = document.querySelector('.guide-tab').dataset.tab;
+            activateTab(firstTab, false);
+        }
+    });
+
+    (function() {
+        const path = window.location.pathname.replace(/\/$/, '');
+        const parts = path.split('/').filter(Boolean);
+        const slug = parts.length > 1 ? parts.slice(1).join('/') : null;
+        const firstTab = document.querySelector('.guide-tab').dataset.tab;
+        if (slug && slugTabs[slug]) {
+            activateTab(slugTabs[slug], false);
+            history.replaceState({ tab: slugTabs[slug] }, '', path);
+        } else {
+            history.replaceState({ tab: firstTab }, '', path);
+        }
+    })();
 
     // PPP Calculator
     const trPppCountries = [
