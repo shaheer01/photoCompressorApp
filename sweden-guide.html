@@ -220,8 +220,8 @@
     <div class="container">
         <div class="guide-tabs">
             <button class="guide-tab active" data-tab="expenses">Monthly Expenses</button>
-            <button class="guide-tab" data-tab="salary">Salaries by Profession</button>
             <button class="guide-tab" data-tab="working">Working in Sweden</button>
+            <button class="guide-tab" data-tab="salary">Salaries by Profession</button>
             <button class="guide-tab" data-tab="tax">Tax Structure</button>
             <button class="guide-tab" data-tab="ppp">PPP Calculator</button>
             <button class="guide-tab" data-tab="cities">City Comparison</button>
@@ -332,102 +332,6 @@
                 <i class="fas fa-info-circle"></i>
                 <strong>Note:</strong> These estimates are for Stockholm area. Costs are 10-20% lower in Gothenburg, Malmo, and smaller cities. Childcare (forskola) is heavily subsidized at ~1,500-3,000 SEK/month when the child turns 1.
             </div>
-        </div>
-
-        <!-- TAB 2: Salaries -->
-        <div id="salary" class="tab-content">
-            <h2 class="section-title">Salaries by Profession in Sweden (2026)</h2>
-            <p class="section-subtitle">Monthly gross salary in SEK. Sweden has no statutory minimum wage; wages are set through collective agreements (kollektivavtal).</p>
-
-            <div class="info-box">
-                <i class="fas fa-exclamation-triangle"></i>
-                <strong>No legal minimum wage:</strong> Sweden does not have a government-mandated minimum wage. Instead, wages are negotiated through unions and employer organizations. Typical collective agreement minimums range from 22,000-26,000 SEK/month for entry-level positions.
-            </div>
-
-            <div class="stat-cards">
-                <div class="stat-card-guide">
-                    <div class="stat-value">36,500</div>
-                    <div class="stat-unit">SEK/month</div>
-                    <div class="stat-desc">Median salary in Sweden 2026</div>
-                </div>
-                <div class="stat-card-guide">
-                    <div class="stat-value">~23,000</div>
-                    <div class="stat-unit">SEK/month</div>
-                    <div class="stat-desc">Typical collective agreement minimum</div>
-                </div>
-                <div class="stat-card-guide">
-                    <div class="stat-value">32%</div>
-                    <div class="stat-unit">avg. municipal tax</div>
-                    <div class="stat-desc">Kommunalskatt varies 29-35%</div>
-                </div>
-                <div class="stat-card-guide">
-                    <div class="stat-value">31.42%</div>
-                    <div class="stat-unit">employer payroll tax</div>
-                    <div class="stat-desc">Arbetsgivaravgift (on top of gross)</div>
-                </div>
-            </div>
-
-            <h3 style="margin: 30px 0 15px; color: #1e293b;">Gross Monthly Salary by Profession</h3>
-            <div id="salaryBars"></div>
-
-            <table class="data-table" style="margin-top:30px;">
-                <thead>
-                    <tr><th>Profession</th><th>Entry Level (SEK)</th><th>Mid-Career (SEK)</th><th>Senior (SEK)</th><th>Sector</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Software Engineer</td><td class="sek">38,000</td><td class="sek">52,000</td><td class="sek">70,000+</td><td>Tech</td></tr>
-                    <tr><td>Data Scientist</td><td class="sek">40,000</td><td class="sek">55,000</td><td class="sek">72,000</td><td>Tech</td></tr>
-                    <tr><td>Doctor (Specialist)</td><td class="sek">45,000</td><td class="sek">65,000</td><td class="sek">85,000+</td><td>Healthcare</td></tr>
-                    <tr><td>Nurse (Sjukskoterska)</td><td class="sek">30,000</td><td class="sek">36,000</td><td class="sek">42,000</td><td>Healthcare</td></tr>
-                    <tr><td>Teacher (Larare)</td><td class="sek">30,500</td><td class="sek">37,000</td><td class="sek">43,000</td><td>Education</td></tr>
-                    <tr><td>Electrician</td><td class="sek">28,000</td><td class="sek">35,000</td><td class="sek">42,000</td><td>Trades</td></tr>
-                    <tr><td>Construction Worker</td><td class="sek">27,000</td><td class="sek">33,000</td><td class="sek">40,000</td><td>Construction</td></tr>
-                    <tr><td>Accountant (Revisor)</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">55,000</td><td>Finance</td></tr>
-                    <tr><td>Marketing Manager</td><td class="sek">33,000</td><td class="sek">45,000</td><td class="sek">60,000</td><td>Business</td></tr>
-                    <tr><td>Restaurant Worker</td><td class="sek">23,000</td><td class="sek">27,000</td><td class="sek">32,000</td><td>Hospitality</td></tr>
-                    <tr><td>Retail (Butikspersonal)</td><td class="sek">22,500</td><td class="sek">26,000</td><td class="sek">30,000</td><td>Retail</td></tr>
-                    <tr><td>Cleaner (Stadare)</td><td class="sek">22,000</td><td class="sek">25,000</td><td class="sek">28,000</td><td>Services</td></tr>
-                    <tr><td>Warehouse Worker</td><td class="sek">24,000</td><td class="sek">28,000</td><td class="sek">33,000</td><td>Logistics</td></tr>
-                    <tr><td>Pharmacist</td><td class="sek">35,000</td><td class="sek">42,000</td><td class="sek">50,000</td><td>Healthcare</td></tr>
-                    <tr><td>Lawyer (Jurist)</td><td class="sek">35,000</td><td class="sek">50,000</td><td class="sek">75,000+</td><td>Legal</td></tr>
-                    <tr><td>Bus Driver</td><td class="sek">26,000</td><td class="sek">30,000</td><td class="sek">34,000</td><td>Transport</td></tr>
-                    <tr><td>Police Officer</td><td class="sek">29,000</td><td class="sek">36,000</td><td class="sek">44,000</td><td>Public</td></tr>
-                    <tr><td>Chef (Kock)</td><td class="sek">25,000</td><td class="sek">30,000</td><td class="sek">38,000</td><td>Hospitality</td></tr>
-                    <tr><td>Dentist (Tandlakare)</td><td class="sek">38,000</td><td class="sek">55,000</td><td class="sek">75,000</td><td>Healthcare</td></tr>
-                    <tr><td>Psychologist</td><td class="sek">33,000</td><td class="sek">40,000</td><td class="sek">50,000</td><td>Healthcare</td></tr>
-                    <tr><td>DevOps / Cloud Engineer</td><td class="sek">40,000</td><td class="sek">55,000</td><td class="sek">75,000</td><td>Tech</td></tr>
-                    <tr><td>UX / UI Designer</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">55,000</td><td>Tech / Design</td></tr>
-                    <tr><td>Project Manager</td><td class="sek">35,000</td><td class="sek">48,000</td><td class="sek">65,000</td><td>Business</td></tr>
-                    <tr><td>Civil Engineer</td><td class="sek">34,000</td><td class="sek">45,000</td><td class="sek">60,000</td><td>Engineering</td></tr>
-                    <tr><td>Architect</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">58,000</td><td>Design</td></tr>
-                    <tr><td>Social Worker (Socionom)</td><td class="sek">29,000</td><td class="sek">34,000</td><td class="sek">40,000</td><td>Public</td></tr>
-                    <tr><td>Journalist</td><td class="sek">28,000</td><td class="sek">35,000</td><td class="sek">45,000</td><td>Media</td></tr>
-                    <tr><td>Truck Driver (Lastbilsforare)</td><td class="sek">27,000</td><td class="sek">32,000</td><td class="sek">38,000</td><td>Transport</td></tr>
-                    <tr><td>Childcare (Barnskotare)</td><td class="sek">24,000</td><td class="sek">27,000</td><td class="sek">31,000</td><td>Education</td></tr>
-                    <tr><td>Hairdresser (Frisor)</td><td class="sek">22,000</td><td class="sek">26,000</td><td class="sek">32,000</td><td>Services</td></tr>
-                    <tr><td>Personal Trainer</td><td class="sek">22,000</td><td class="sek">28,000</td><td class="sek">35,000</td><td>Fitness</td></tr>
-                </tbody>
-            </table>
-
-            <div class="info-box">
-                <i class="fas fa-info-circle"></i>
-                <strong>Sources:</strong> SCB (Statistics Sweden), Medlingsinstitutet, Unionen, and industry collective agreements. Salaries may vary by region - Stockholm typically 5-15% higher than national average.
-            </div>
-
-            <h3 style="margin: 30px 0 15px;">Salary After Tax - What You Actually Take Home</h3>
-            <table class="data-table">
-                <thead>
-                    <tr><th>Gross Salary (SEK)</th><th>Tax (~%)</th><th>Net Salary (SEK)</th><th>Typical Jobs at This Level</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="sek">22,000</td><td>~16%</td><td class="sek" style="color:#059669; font-weight:700;">18,500</td><td>Cleaner, Retail, Entry Hairdresser</td></tr>
-                    <tr><td class="sek">28,000</td><td>~19%</td><td class="sek" style="color:#059669; font-weight:700;">22,700</td><td>Construction, Warehouse, Bus Driver</td></tr>
-                    <tr><td class="sek">35,000</td><td>~22%</td><td class="sek" style="color:#059669; font-weight:700;">27,200</td><td>Teacher, Nurse, Electrician</td></tr>
-                    <tr><td class="sek">45,000</td><td>~25%</td><td class="sek" style="color:#059669; font-weight:700;">33,800</td><td>Accountant, Marketing Manager</td></tr>
-                    <tr><td class="sek">55,000</td><td>~28%</td><td class="sek" style="color:#059669; font-weight:700;">39,400</td><td>Software Engineer (mid), Data Scientist</td></tr>
-                    <tr><td class="sek">70,000</td><td>~34%</td><td class="sek" style="color:#059669; font-weight:700;">46,200</td><td>Senior Engineer, Doctor, Senior Lawyer</td></tr>
-                </tbody>
-            </table>
         </div>
 
         <!-- TAB 15: Working in Sweden -->
@@ -726,9 +630,9 @@
                 </tbody>
             </table>
 
-            <div style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); border-radius: 12px; padding: 24px; margin: 20px 0; border-left: 4px solid #22c55e;">
-                <h4 style="margin: 0 0 8px; color: #166534;"><i class="fas fa-shield-alt"></i> Red Flags in Employment Contracts</h4>
-                <ul style="margin: 0; color: #15803d; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+            <div style="background: linear-gradient(135deg, #fee2e2, #fecaca); border-radius: 12px; padding: 24px; margin: 20px 0; border-left: 4px solid #ef4444;">
+                <h4 style="margin: 0 0 8px; color: #991b1b;"><i class="fas fa-shield-alt"></i> Red Flags in Employment Contracts</h4>
+                <ul style="margin: 0; color: #b91c1c; font-size: 14px; line-height: 1.8; padding-left: 20px;">
                     <li><strong>"You cannot leave for X years"</strong> — Unenforceable under Swedish law. You can always resign with notice.</li>
                     <li><strong>"We will revoke your visa if you quit"</strong> — Employers cannot revoke visas. You get a 3-month grace period.</li>
                     <li><strong>"You must repay your work permit costs"</strong> — Illegal. The employer pays for the permit.</li>
@@ -767,6 +671,102 @@
                 <strong>Data note:</strong> Employment law figures (notice periods, sick pay rates, parental leave amounts) are based on Swedish law (LAS, Föräldraledighetslagen, Semesterlagen) and Försäkringskassan rates as of June 2026. Union fees are approximate and vary by income level — check each union's website for your exact fee. Work permit processing times are estimates from Migrationsverket. Work permit information reflects the June 1, 2026 reform (Bill Prop. 2025/26:87) — permits are no longer employer-tied, salary threshold raised to 90% of median. This is general guidance — consult a union or immigration lawyer for advice specific to your situation.
             </div>
         </div>
+        <!-- TAB 2: Salaries -->
+        <div id="salary" class="tab-content">
+            <h2 class="section-title">Salaries by Profession in Sweden (2026)</h2>
+            <p class="section-subtitle">Monthly gross salary in SEK. Sweden has no statutory minimum wage; wages are set through collective agreements (kollektivavtal).</p>
+
+            <div class="info-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>No legal minimum wage:</strong> Sweden does not have a government-mandated minimum wage. Instead, wages are negotiated through unions and employer organizations. Typical collective agreement minimums range from 22,000-26,000 SEK/month for entry-level positions.
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat-card-guide">
+                    <div class="stat-value">36,500</div>
+                    <div class="stat-unit">SEK/month</div>
+                    <div class="stat-desc">Median salary in Sweden 2026</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">~23,000</div>
+                    <div class="stat-unit">SEK/month</div>
+                    <div class="stat-desc">Typical collective agreement minimum</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">32%</div>
+                    <div class="stat-unit">avg. municipal tax</div>
+                    <div class="stat-desc">Kommunalskatt varies 29-35%</div>
+                </div>
+                <div class="stat-card-guide">
+                    <div class="stat-value">31.42%</div>
+                    <div class="stat-unit">employer payroll tax</div>
+                    <div class="stat-desc">Arbetsgivaravgift (on top of gross)</div>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 15px; color: #1e293b;">Gross Monthly Salary by Profession</h3>
+            <div id="salaryBars"></div>
+
+            <table class="data-table" style="margin-top:30px;">
+                <thead>
+                    <tr><th>Profession</th><th>Entry Level (SEK)</th><th>Mid-Career (SEK)</th><th>Senior (SEK)</th><th>Sector</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Software Engineer</td><td class="sek">38,000</td><td class="sek">52,000</td><td class="sek">70,000+</td><td>Tech</td></tr>
+                    <tr><td>Data Scientist</td><td class="sek">40,000</td><td class="sek">55,000</td><td class="sek">72,000</td><td>Tech</td></tr>
+                    <tr><td>Doctor (Specialist)</td><td class="sek">45,000</td><td class="sek">65,000</td><td class="sek">85,000+</td><td>Healthcare</td></tr>
+                    <tr><td>Nurse (Sjukskoterska)</td><td class="sek">30,000</td><td class="sek">36,000</td><td class="sek">42,000</td><td>Healthcare</td></tr>
+                    <tr><td>Teacher (Larare)</td><td class="sek">30,500</td><td class="sek">37,000</td><td class="sek">43,000</td><td>Education</td></tr>
+                    <tr><td>Electrician</td><td class="sek">28,000</td><td class="sek">35,000</td><td class="sek">42,000</td><td>Trades</td></tr>
+                    <tr><td>Construction Worker</td><td class="sek">27,000</td><td class="sek">33,000</td><td class="sek">40,000</td><td>Construction</td></tr>
+                    <tr><td>Accountant (Revisor)</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">55,000</td><td>Finance</td></tr>
+                    <tr><td>Marketing Manager</td><td class="sek">33,000</td><td class="sek">45,000</td><td class="sek">60,000</td><td>Business</td></tr>
+                    <tr><td>Restaurant Worker</td><td class="sek">23,000</td><td class="sek">27,000</td><td class="sek">32,000</td><td>Hospitality</td></tr>
+                    <tr><td>Retail (Butikspersonal)</td><td class="sek">22,500</td><td class="sek">26,000</td><td class="sek">30,000</td><td>Retail</td></tr>
+                    <tr><td>Cleaner (Stadare)</td><td class="sek">22,000</td><td class="sek">25,000</td><td class="sek">28,000</td><td>Services</td></tr>
+                    <tr><td>Warehouse Worker</td><td class="sek">24,000</td><td class="sek">28,000</td><td class="sek">33,000</td><td>Logistics</td></tr>
+                    <tr><td>Pharmacist</td><td class="sek">35,000</td><td class="sek">42,000</td><td class="sek">50,000</td><td>Healthcare</td></tr>
+                    <tr><td>Lawyer (Jurist)</td><td class="sek">35,000</td><td class="sek">50,000</td><td class="sek">75,000+</td><td>Legal</td></tr>
+                    <tr><td>Bus Driver</td><td class="sek">26,000</td><td class="sek">30,000</td><td class="sek">34,000</td><td>Transport</td></tr>
+                    <tr><td>Police Officer</td><td class="sek">29,000</td><td class="sek">36,000</td><td class="sek">44,000</td><td>Public</td></tr>
+                    <tr><td>Chef (Kock)</td><td class="sek">25,000</td><td class="sek">30,000</td><td class="sek">38,000</td><td>Hospitality</td></tr>
+                    <tr><td>Dentist (Tandlakare)</td><td class="sek">38,000</td><td class="sek">55,000</td><td class="sek">75,000</td><td>Healthcare</td></tr>
+                    <tr><td>Psychologist</td><td class="sek">33,000</td><td class="sek">40,000</td><td class="sek">50,000</td><td>Healthcare</td></tr>
+                    <tr><td>DevOps / Cloud Engineer</td><td class="sek">40,000</td><td class="sek">55,000</td><td class="sek">75,000</td><td>Tech</td></tr>
+                    <tr><td>UX / UI Designer</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">55,000</td><td>Tech / Design</td></tr>
+                    <tr><td>Project Manager</td><td class="sek">35,000</td><td class="sek">48,000</td><td class="sek">65,000</td><td>Business</td></tr>
+                    <tr><td>Civil Engineer</td><td class="sek">34,000</td><td class="sek">45,000</td><td class="sek">60,000</td><td>Engineering</td></tr>
+                    <tr><td>Architect</td><td class="sek">32,000</td><td class="sek">42,000</td><td class="sek">58,000</td><td>Design</td></tr>
+                    <tr><td>Social Worker (Socionom)</td><td class="sek">29,000</td><td class="sek">34,000</td><td class="sek">40,000</td><td>Public</td></tr>
+                    <tr><td>Journalist</td><td class="sek">28,000</td><td class="sek">35,000</td><td class="sek">45,000</td><td>Media</td></tr>
+                    <tr><td>Truck Driver (Lastbilsforare)</td><td class="sek">27,000</td><td class="sek">32,000</td><td class="sek">38,000</td><td>Transport</td></tr>
+                    <tr><td>Childcare (Barnskotare)</td><td class="sek">24,000</td><td class="sek">27,000</td><td class="sek">31,000</td><td>Education</td></tr>
+                    <tr><td>Hairdresser (Frisor)</td><td class="sek">22,000</td><td class="sek">26,000</td><td class="sek">32,000</td><td>Services</td></tr>
+                    <tr><td>Personal Trainer</td><td class="sek">22,000</td><td class="sek">28,000</td><td class="sek">35,000</td><td>Fitness</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <strong>Sources:</strong> SCB (Statistics Sweden), Medlingsinstitutet, Unionen, and industry collective agreements. Salaries may vary by region - Stockholm typically 5-15% higher than national average.
+            </div>
+
+            <h3 style="margin: 30px 0 15px;">Salary After Tax - What You Actually Take Home</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Gross Salary (SEK)</th><th>Tax (~%)</th><th>Net Salary (SEK)</th><th>Typical Jobs at This Level</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="sek">22,000</td><td>~16%</td><td class="sek" style="color:#059669; font-weight:700;">18,500</td><td>Cleaner, Retail, Entry Hairdresser</td></tr>
+                    <tr><td class="sek">28,000</td><td>~19%</td><td class="sek" style="color:#059669; font-weight:700;">22,700</td><td>Construction, Warehouse, Bus Driver</td></tr>
+                    <tr><td class="sek">35,000</td><td>~22%</td><td class="sek" style="color:#059669; font-weight:700;">27,200</td><td>Teacher, Nurse, Electrician</td></tr>
+                    <tr><td class="sek">45,000</td><td>~25%</td><td class="sek" style="color:#059669; font-weight:700;">33,800</td><td>Accountant, Marketing Manager</td></tr>
+                    <tr><td class="sek">55,000</td><td>~28%</td><td class="sek" style="color:#059669; font-weight:700;">39,400</td><td>Software Engineer (mid), Data Scientist</td></tr>
+                    <tr><td class="sek">70,000</td><td>~34%</td><td class="sek" style="color:#059669; font-weight:700;">46,200</td><td>Senior Engineer, Doctor, Senior Lawyer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- TAB 3: Tax Structure -->
         <div id="tax" class="tab-content">
             <h2 class="section-title">Swedish Tax Structure 2026</h2>
