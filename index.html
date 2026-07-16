@@ -90,7 +90,7 @@
           "name": "What image formats does the photo compressor support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Currently, our image compressor supports JPEG/JPG photo formats, which are the most common image types for photography and web use. Support for PNG compression, WebP optimization, HEIC conversion, and other image formats is coming soon based on user demand."
+            "text": "Our image compressor supports JPEG, PNG, WebP, AVIF, HEIC/HEIF (iPhone photos), TIFF, GIF, BMP, SVG, ICO, and PDF as input, and can convert and compress to JPEG, PNG, WebP, AVIF, TIFF, GIF, or HEIF as output. Use the dedicated HEIC to JPG/PNG converter on the home page to quickly convert iPhone photos."
           }
         },
         {
@@ -441,6 +441,56 @@
         </div>
     </section>
 
+    <!-- HEIC to JPG/PNG Converter -->
+    <section id="heic-converter" class="upload-section heic-converter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-mobile-alt"></i> Convert iPhone HEIC Photos to JPG or PNG</h2>
+                <p>iPhones save photos in Apple's HEIC/HEIF format. Convert them to JPG or PNG free, right here in your browser - no app or account needed.</p>
+            </div>
+            <div class="upload-container">
+                <div class="upload-area" id="heicUploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-mobile-alt" alt="Convert iPhone HEIC photos"></i>
+                        <h3>Drag & Drop Your HEIC Photos Here</h3>
+                        <p>Or click to browse files</p>
+                        <input type="file" id="heicFileInput" multiple accept="image/heic,image/heif,.heic,.heif" hidden>
+                        <button class="btn-secondary" id="heicBrowseBtn" type="button">
+                            Browse HEIC Files
+                        </button>
+                        <p class="supported-formats-hint">Supports: HEIC, HEIF (iPhone photos)</p>
+                        <div class="privacy-notice">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Your photos are processed securely and never stored</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heic-format-choice">
+                    <span class="heic-format-label">Convert to:</span>
+                    <div class="heic-format-toggle">
+                        <button type="button" class="heic-format-btn active" data-format="jpeg">
+                            <i class="fas fa-file-image"></i> JPG
+                        </button>
+                        <button type="button" class="heic-format-btn" data-format="png">
+                            <i class="fas fa-file-image"></i> PNG
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-list" id="heicProcessingList"></div>
+
+                <div class="heic-results-header" id="heicResultsHeader" style="display:none;">
+                    <h4>Converted Photos</h4>
+                    <button class="btn-primary" id="heicDownloadAllBtn" style="display:none;">
+                        <i class="fas fa-download"></i> Download All
+                    </button>
+                </div>
+                <div class="heic-results-grid" id="heicResultsGrid"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- TrackWise Advertisement Banner -->
     <section class="trackwise-ad-section">
         <div class="container">
@@ -616,7 +666,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>What image formats does the photo compressor support?</h3>
-                    <p>Currently, our image compressor supports JPEG/JPG photo formats, which are the most common image types for photography and web use. Support for PNG compression, WebP optimization, HEIC conversion, and other image formats is coming soon based on user demand.</p>
+                    <p>Our image compressor supports JPEG, PNG, WebP, AVIF, HEIC/HEIF (iPhone photos), TIFF, GIF, BMP, SVG, ICO, and PDF as input, and can convert and compress to JPEG, PNG, WebP, AVIF, TIFF, GIF, or HEIF as output. If you just need to convert iPhone HEIC photos to JPG or PNG, use the dedicated <a href="#heic-converter">HEIC Converter</a> above for a simpler, one-click flow.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Are my images stored on your servers?</h3>
@@ -1471,6 +1521,178 @@
             document.body.appendChild(notification);
             setTimeout(() => notification.remove(), 4000);
         }
+
+        // === HEIC to JPG/PNG Converter ===
+        (function() {
+            const heicUploadArea = document.getElementById('heicUploadArea');
+            const heicFileInput = document.getElementById('heicFileInput');
+            const heicBrowseBtn = document.getElementById('heicBrowseBtn');
+            const heicProcessingList = document.getElementById('heicProcessingList');
+            const heicResultsHeader = document.getElementById('heicResultsHeader');
+            const heicResultsGrid = document.getElementById('heicResultsGrid');
+            const heicDownloadAllBtn = document.getElementById('heicDownloadAllBtn');
+            if (!heicUploadArea) return;
+
+            let heicFormat = 'jpeg';
+            let heicQueue = [];
+            let heicIdCounter = 0;
+
+            document.querySelectorAll('.heic-format-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.heic-format-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    heicFormat = btn.dataset.format;
+                    const done = heicQueue.filter(i => i.status === 'completed' || i.status === 'error');
+                    if (done.length) heicConvert(done);
+                });
+            });
+
+            heicBrowseBtn.addEventListener('click', () => heicFileInput.click());
+            heicUploadArea.addEventListener('click', (e) => {
+                if (heicBrowseBtn.contains(e.target)) return;
+                heicFileInput.click();
+            });
+            heicFileInput.addEventListener('change', (e) => {
+                heicAddFiles(Array.from(e.target.files));
+                heicFileInput.value = '';
+            });
+
+            heicUploadArea.addEventListener('dragover', (e) => { e.preventDefault(); heicUploadArea.classList.add('dragover'); });
+            heicUploadArea.addEventListener('dragleave', () => heicUploadArea.classList.remove('dragover'));
+            heicUploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                heicUploadArea.classList.remove('dragover');
+                heicAddFiles(Array.from(e.dataTransfer.files));
+            });
+
+            function heicAddFiles(files) {
+                const valid = files.filter(f => /\.(heic|heif)$/i.test(f.name) || f.type === 'image/heic' || f.type === 'image/heif');
+                if (!valid.length) {
+                    showNotification('Please select HEIC or HEIF photos (from an iPhone).', 'error');
+                    return;
+                }
+                const items = valid.map(file => ({ id: ++heicIdCounter, file, status: 'pending', convertedBlob: null }));
+                heicQueue.push(...items);
+                heicRenderQueue();
+                heicConvert(items);
+            }
+
+            function heicRenderQueue() {
+                heicProcessingList.innerHTML = heicQueue.map(item => `
+                    <div class="processing-item">
+                        <div class="file-info">
+                            <div class="file-status ${item.status}" id="heic-status-${item.id}">
+                                ${item.status === 'pending' ? '<i class="fas fa-clock"></i>' :
+                                  item.status === 'processing' ? '<i class="fas fa-spinner fa-spin"></i>' :
+                                  item.status === 'completed' ? '<i class="fas fa-check"></i>' :
+                                  '<i class="fas fa-times"></i>'}
+                            </div>
+                            <div>
+                                <div class="file-name">${item.file.name}</div>
+                                <div class="file-size">${formatFileSize(item.file.size)}</div>
+                            </div>
+                        </div>
+                    </div>`).join('');
+            }
+
+            async function heicConvert(items) {
+                items.forEach(item => { item.status = 'processing'; });
+                heicRenderQueue();
+
+                const formData = new FormData();
+                items.forEach(item => formData.append('images', item.file));
+                formData.append('quality', '95');
+                formData.append('format', heicFormat);
+                formData.append('stripMetadata', 'false');
+
+                try {
+                    const response = await fetch(`${API_BASE}/api/images/compress`, {
+                        method: 'POST',
+                        body: formData,
+                        headers: getAuthHeaders()
+                    });
+
+                    if (!response.ok) {
+                        const err = await response.json().catch(() => ({}));
+                        throw new Error(err.message || err.error || `Server error: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    data.results.forEach((result, i) => {
+                        const item = items[i];
+                        if (!item) return;
+
+                        if (result.success) {
+                            const byteChars = atob(result.compressedData);
+                            const byteArray = new Uint8Array(byteChars.length);
+                            for (let j = 0; j < byteChars.length; j++) byteArray[j] = byteChars.charCodeAt(j);
+                            item.convertedBlob = new Blob([byteArray], { type: result.mimeType });
+                            item.convertedSize = result.compressedSize;
+                            const nameBase = item.file.name.replace(/\.[^/.]+$/, '');
+                            const ext = result.outputFilename.match(/\.[^/.]+$/)?.[0] || (heicFormat === 'png' ? '.png' : '.jpg');
+                            item.outputFilename = nameBase + ext;
+                            item.status = 'completed';
+                        } else {
+                            item.status = 'error';
+                            showNotification(`Failed: ${item.file.name} - ${result.errorMessage || 'Unknown error'}`, 'error');
+                        }
+                    });
+
+                    showNotification(
+                        `Converted ${data.summary.successfulCompressions}/${data.summary.totalFiles} photo(s) to ${heicFormat.toUpperCase()}`,
+                        data.summary.failedCompressions > 0 ? 'warning' : 'success'
+                    );
+                } catch (error) {
+                    console.error('HEIC conversion failed:', error);
+                    items.forEach(item => { item.status = 'error'; });
+                    showNotification(`Conversion failed: ${error.message}`, 'error');
+                }
+
+                heicRenderQueue();
+                heicRenderResults();
+            }
+
+            function heicRenderResults() {
+                const completed = heicQueue.filter(i => i.status === 'completed');
+                heicResultsHeader.style.display = completed.length ? 'flex' : 'none';
+
+                heicResultsGrid.innerHTML = completed.map(item => `
+                    <div class="heic-result-item">
+                        <div class="heic-result-info">
+                            <div class="file-name">${item.outputFilename}</div>
+                            <div class="file-size">${formatFileSize(item.file.size)} &rarr; ${formatFileSize(item.convertedSize)}</div>
+                        </div>
+                        <button class="btn-primary heic-download-btn" data-id="${item.id}">
+                            <i class="fas fa-download"></i> Download ${heicFormat === 'png' ? 'PNG' : 'JPG'}
+                        </button>
+                    </div>`).join('');
+
+                heicResultsGrid.querySelectorAll('.heic-download-btn').forEach(btn => {
+                    btn.addEventListener('click', () => heicDownload(parseInt(btn.dataset.id, 10)));
+                });
+
+                heicDownloadAllBtn.style.display = completed.length > 1 ? 'inline-flex' : 'none';
+            }
+
+            function heicDownload(id) {
+                const item = heicQueue.find(i => i.id === id);
+                if (!item || !item.convertedBlob) return;
+
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(item.convertedBlob);
+                link.download = item.outputFilename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                showNotification('Photo downloaded!', 'success');
+            }
+
+            heicDownloadAllBtn.addEventListener('click', () => {
+                const completed = heicQueue.filter(i => i.status === 'completed');
+                completed.forEach((item, idx) => setTimeout(() => heicDownload(item.id), idx * 300));
+            });
+        })();
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {

@@ -762,6 +762,126 @@ body {
     background: #e2e8f0;
 }
 
+/* HEIC to JPG/PNG Converter */
+.heic-converter-section {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.heic-converter-section .section-header h2 i {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+.heic-format-choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.heic-format-label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.heic-format-toggle {
+    display: flex;
+    gap: 8px;
+    background: #e2e8f0;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.heic-format-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #475569;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.heic-format-btn:hover {
+    color: #1e293b;
+}
+
+.heic-format-btn.active {
+    background: white;
+    color: #2563eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.processing-list:empty {
+    display: none;
+}
+
+.heic-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+.heic-results-header h4 {
+    color: #1e293b;
+    font-size: 20px;
+}
+
+.heic-results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.heic-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+}
+
+.heic-result-info .file-name {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.heic-result-info .file-size {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.heic-download-btn {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .heic-format-choice {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .heic-result-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /* Features Section */
 .features-section {
     padding: 80px 0;
