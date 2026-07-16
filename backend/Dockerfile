@@ -2,19 +2,35 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install system dependencies for Sharp (libvips) and HEIF support
+# Install system dependencies for Sharp (libvips) and real HEIC/HEIF support.
+# Alpine's vips-dev bundles a libheif with AVIF-only codec support; libheif-dev
+# and libde265-dev add the HEVC decoder that real iPhone HEIC photos need.
 RUN apk add --no-cache \
     vips-dev \
+    vips-heif \
+    libheif-dev \
+    libde265-dev \
+    pkgconfig \
     python3 \
     make \
     g++ \
     libc6-compat
 
+# Force Sharp to compile its native addon against the system libvips/libheif
+# (with HEVC support) instead of using its own bundled prebuilt binary, which
+# excludes HEVC decoding for patent-licensing reasons.
+ENV SHARP_FORCE_GLOBAL_LIBVIPS=1
+ENV CXXFLAGS="-std=c++17"
+
 # Copy package files first for better caching
 COPY package*.json ./
 
-# Install production dependencies
-RUN npm ci --omit=dev && npm cache clean --force
+# Install production dependencies, then rebuild sharp from source now that
+# node-addon-api/node-gyp are available, linking against the system libvips.
+RUN npm ci --omit=dev \
+    && npm install --no-save node-addon-api node-gyp \
+    && npm rebuild sharp \
+    && npm cache clean --force
 
 # Copy application code
 COPY . .
